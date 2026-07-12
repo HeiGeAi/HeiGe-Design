@@ -1,0 +1,996 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>制表局 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 瑞士纪律</div>
+<div class="hero"><div class="fam">瑞士纪律</div><h1>制表局<span class="badge">✓ lint 0 error</span></h1><div class="slug">grid-bureau · GridBureau-design-system</div><p class="desc">Grid Bureau is Swiss institutional order pushed to its authoritarian extreme: a neutral grayscale field governed by exactly one functional certification blue (#2757d6), set in Inter with every figure spoken in monospace. Everything snaps to an 8px baseline grid that is left exposed, not hidden. The signature is a numbered statute gutter (§1.0 / §1.1) and a dark monospace filing stamp that registers each block like an official public record. Original system by HeiGe-Design.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#f4f5f7;--ink:#1a1d24;--pri:#2757d6;--onpri:#ffffff;--acc:#2757d6;--surf:#ffffff;--muted:#5b6270;--line:#d5d8dd;--r:2px;--dff:"Inter", "Helvetica Neue", "Helvetica", "Arial", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Inter", "Helvetica Neue", "Helvetica", "Arial", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "SFMono-Regular", "SF Mono", "JetBrains Mono", "Menlo", "Consolas", "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">制表局</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#2757d6"></i><i style="background:#ffffff"></i><i style="background:#1a1d24"></i><i style="background:#f4f5f7"></i><i style="background:#5b6270"></i><i style="background:#d5d8dd"></i><i style="background:#e4e6ea"></i><i style="background:#14171d"></i></div>
+  <div class="swrap"><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">input-field</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">index-item</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">card-record</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">divider-rule</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">baseline-ruler</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">filing-stamp</span></div>
+  </div>
+  <div class="card" style="--bg:#f4f5f7;--ink:#1a1d24;--pri:#2757d6;--onpri:#ffffff;--acc:#2757d6;--surf:#ffffff;--muted:#5b6270;--line:#d5d8dd;--r:2px;--dff:"Inter", "Helvetica Neue", "Helvetica", "Arial", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Inter", "Helvetica Neue", "Helvetica", "Arial", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "SFMono-Regular", "SF Mono", "JetBrains Mono", "Menlo", "Consolas", "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">制表局</div></div>
+    <div class="swrap"><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#ffffff;color:#1a1d24;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two things this system does that a generic template cannot fake.
+
+**UI signature — The Baseline Ledger.** The 8px baseline grid is rendered visibly as faint horizontal `grid` rules across the content column, and a fixed left rail numbers every block as a statute clause (§1.0, §1.1, §1.2) in tabular mono. Each record sheet is anchored by a dark `filing-stamp` block — `REF 2757-D · FILED 2026-07-11 · CLASS A` in monospace white-on-`block`. Text seats *exactly* on the visible baselines, so the page reads as a certified, registered document rather than a UI. Remove the numbered rail and the exposed grid and it becomes an ordinary admin panel; with them, it is unmistakably the Bureau.
+
+**Deck signature — The Record Divider.** Section dividers render as a full-bleed dark `block` with a single monumental mono `numeral` (§02) hanging into the left gutter, a hairline underscore, and a mono regist</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Do expose the baseline grid and reserve the numbered left gutter — the structure *is* the brand.
+- Do keep `primary` blue strictly functional: it marks what is live or actionable, nothing else.
+- Do set every number, code and label in monospace with tabular figures; keep prose in Inter.
+- Do separate layers with hairlines and inversion, and align everything to the pixel.
+- Do allow exactly one deliberate grid break per view as the accent.
+
+**Don't**
+- **Don't touch the cliché purple-blue gradient** (`#667eea → #764ba2`) or any gradient wash. This system has one flat functional blue and no gradients at all.
+- **Don't build the centered card triptych** — a centered title, a gray subtitle, and three equal rounded cards. Grid Bureau is left-aligned, statute-numbered, and asymmetric by grid.
+- **Don't render Chinese with a Japanese font** (Mochiy, Zen Maru, etc.); always fall back to Noto Sans SC / PingFang SC. Simplified glyphs must never tofu.
+- **Don't animate shadows or glows** — there are none, depth is hairlines and inversion, and the system must scroll without a single repaint.
+- Don't round the corners, don't add drop shadows, and don't let a second color creep in &quot;for variety.&quot;</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: GridBureau-design-system
+description: &gt;-
+  Grid Bureau is Swiss institutional order pushed to its authoritarian extreme:
+  a neutral grayscale field governed by exactly one functional certification
+  blue (#2757d6), set in Inter with every figure spoken in monospace. Everything
+  snaps to an 8px baseline grid that is left exposed, not hidden. The signature
+  is a numbered statute gutter (§1.0 / §1.1) and a dark monospace filing stamp
+  that registers each block like an official public record. Original system by
+  HeiGe-Design.
+
+colors:
+  primary: &quot;#2757d6&quot;      # functional certification blue — the only chroma in the whole system
+  on-primary: &quot;#ffffff&quot;   # text/marks sitting on primary
+  ink: &quot;#1a1d24&quot;          # body + headings, cool near-black (never pure #000)
+  canvas: &quot;#f4f5f7&quot;       # cool-gray page ground (never pure #fff)
+  surface: &quot;#ffffff&quot;      # the white record sheet / card
+  muted: &quot;#5b6270&quot;        # secondary text, captions, gutter ordinals
+  hairline: &quot;#d5d8dd&quot;     # 1px structural rules and borders
+  grid: &quot;#e4e6ea&quot;         # the exposed baseline-grid lines — the signature substrate
+  block: &quot;#14171d&quot;        # inverted dark block: masthead, filing stamp, dividers, footer
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 72px
+    fontWeight: 800
+    lineHeight: 1.0
+    letterSpacing: &quot;-1.8px&quot;
+  display-lg:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 40px
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: &quot;-0.8px&quot;
+  heading:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 20px
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: &quot;-0.2px&quot;
+  body:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: &quot;0px&quot;
+  mono:
+    fontFamily: '&quot;IBM Plex Mono&quot;, &quot;SFMono-Regular&quot;, &quot;SF Mono&quot;, &quot;JetBrains Mono&quot;, &quot;Menlo&quot;, &quot;Consolas&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 13px
+    fontWeight: 500
+    lineHeight: 1.85
+    letterSpacing: &quot;0.2px&quot;
+  numeral:
+    fontFamily: '&quot;IBM Plex Mono&quot;, &quot;SFMono-Regular&quot;, &quot;SF Mono&quot;, &quot;JetBrains Mono&quot;, &quot;Menlo&quot;, &quot;Consolas&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 128px
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: &quot;-4px&quot;
+  eyebrow:
+    fontFamily: '&quot;IBM Plex Mono&quot;, &quot;SFMono-Regular&quot;, &quot;SF Mono&quot;, &quot;JetBrains Mono&quot;, &quot;Menlo&quot;, &quot;Consolas&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 12px
+    fontWeight: 600
+    lineHeight: 1.33
+    letterSpacing: &quot;2px&quot;
+  button:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 14px
+    fontWeight: 600
+    lineHeight: 1.0
+    letterSpacing: &quot;0.4px&quot;
+  caption:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 12px
+    fontWeight: 400
+    lineHeight: 1.33
+    letterSpacing: &quot;0.1px&quot;
+
+rounded:
+  none: 0px      # default everywhere — the bureau does not round corners
+  sm: 2px        # optical only, for input affordances
+  pill: 9999px   # reserved strictly for the functional status token
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 48px
+  section: 96px
+
+components:
+  # —— UI interface components ——
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  input-field:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.sm} {spacing.md}&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  index-item:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  card-record:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  divider-rule:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    height: 1px
+  baseline-ruler:
+    backgroundColor: &quot;{colors.grid}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    height: 1px
+  filing-stamp:
+    backgroundColor: &quot;{colors.block}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.mono}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm} {spacing.md}&quot;
+  status-pill:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  caption-note:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  footer:
+    backgroundColor: &quot;{colors.block}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  # —— slide presentation components (16:9, fused HeiGe-PPT) ——
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.block}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Grid Bureau · 制表局
+
+An institutional design system by **HeiGe-Design**. Swiss discipline, filed and stamped.
+
+## Overview
+
+Grid Bureau is the aesthetic of a public register that decided its own bureaucracy was beautiful. It is built for the systems nobody chooses but everybody trusts: government portals, enterprise intranets, policy platforms, document and records systems. The brief is neutral authority — so the design refuses to charm you and earns credibility by being visibly, provably orderly.
+
+Two colors do the work. **Ink (`#1a1d24`) on canvas (`#f4f5f7`)** carries every word; **functional blue (`#2757d6`)** is the single chroma in the entire system and it never decorates — it only marks things that are *live*: the action you can take, the record that is active, the closing call. Everything else is grayscale and hairline. Authority here is not a color, it is the absence of unnecessary color.
+
+The rhythm is the grid itself. Where most systems hide their 8px baseline, Grid Bureau **exposes it** as faint horizontal rules and reserves a fixed left gutter for statute-style ordinals — §1.0, §1.1, §1.2 — so every block on the page reads as a numbered, filed clause. Prose is set in Inter; every number, code and label is set in monospace. The bureau counts in monospace. That split — humane Inter for what people read, tabular mono for what the system asserts — is the whole personality in one rule.
+
+## Colors
+
+Discipline is the point. One functional hue, a tight grayscale, nothing warm, nothing gradient.
+
+### Brand &amp; Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#2757d6` | Functional certification blue. The only chroma. Used exclusively on interactive and asserted elements — primary buttons, active status, the closing slide. Never a background wash, never a gradient. |
+| `on-primary` | `#ffffff` | Text and marks on blue or on the dark block. Contrast on `primary` = 6.14:1, on `block` = 17.95:1. |
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#f4f5f7` | Cool-gray page ground. Deliberately not pure white — pure white is a blank sheet, canvas is a *form*. |
+| `surface` | `#ffffff` | The white record sheet. Cards, inputs, index rows sit here, lifted off canvas by a single hairline, never a shadow. |
+| `block` | `#14171d` | Inverted dark field. Filing stamps, section dividers, footer, masthead. The bureau's black rubber stamp. |
+| `hairline` | `#d5d8dd` | 1px structural rules and borders. The system's connective tissue. |
+| `grid` | `#e4e6ea` | The exposed baseline-grid lines. One notch lighter than hairline so structure reads as substrate, not as content. |
+
+### Text
+| Token | Hex | Role | Contrast |
+|---|---|---|---|
+| `ink` | `#1a1d24` | Body, headings, everything you read. Cool near-black, never `#000`. | 15.46:1 on canvas · 16.87:1 on surface |
+| `muted` | `#5b6270` | Secondary text, captions, gutter ordinals, filing metadata. | 5.62:1 on canvas · 6.13:1 on surface |
+
+### Semantic
+There is no green/red delta layer and no &quot;info/warning/success&quot; palette. In this system, **state is expressed by the functional blue turning on or off**, not by adding hues. A record is either active (blue) or inert (gray). One switch, no rainbow. Anything that needs &quot;warning&quot; gravity gets the dark `block`, not a new color.
+
+## Typography
+
+### Font Family
+- **Inter** is the workhorse for all human-read text — a neutral grotesque descended from the Swiss International Style, chosen for its institutional calm. Stack: `&quot;Inter&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`.
+- **IBM Plex Mono** is the voice of the machine: every numeral, filing code, ordinal, label and tabular figure. Stack: `&quot;IBM Plex Mono&quot;, &quot;SFMono-Regular&quot;, &quot;SF Mono&quot;, &quot;JetBrains Mono&quot;, &quot;Menlo&quot;, &quot;Consolas&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace`.
+
+**Chinese fallback is mandatory and non-negotiable.** Every stack ends in a system CJK font (`Noto Sans SC` / `PingFang SC` / `Microsoft YaHei`) so that when the webfont fails to load — common on mainland networks — Chinese renders cleanly instead of collapsing into tofu. **Chinese is never rendered with a Japanese font** (Mochiy, Zen Maru, etc.): simplified glyphs go missing or mutate into Japanese variants. Mono roles carry only Latin codes and digits in practice; the CJK fallback is a safety net, not an invitation to set Chinese prose in monospace.
+
+### Hierarchy
+Every size lands on the 8px baseline. Line-heights below are the ratios; in implementation they resolve to 8px multiples so text seats exactly on the exposed grid.
+
+| Role | Family | Size / Line | Weight | Tracking | Use |
+|---|---|---|---|---|---|
+| `display-xl` | Inter | 72 / 72px | 800 | -1.8px | Cover title, one monumental line |
+| `display-lg` | Inter | 40 / 44px | 700 | -0.8px | Section title, quote body, closing line |
+| `heading` | Inter | 20 / 24px | 600 | -0.2px | Card and clause titles |
+| `body` | Inter | 16 / 24px | 400 | 0 | Paragraphs, index rows |
+| `numeral` | Plex Mono | 128 / 128px | 700 | -4px | The giant filed number (§02, stat hero) |
+| `mono` | Plex Mono | 13 / 24px | 500 | 0.2px | Filing codes, tabular data, stamps |
+| `eyebrow` | Plex Mono | 12 / 16px | 600 | 2px | UPPERCASE kickers / register labels |
+| `button` | Inter | 14 / 14px | 600 | 0.4px | Control labels |
+| `caption` | Inter | 12 / 16px | 400 | 0.1px | Footnotes, fine print |
+
+### Principles
+- **Two voices, one rule.** Inter reads; mono asserts. Never blur the two — a heading is never mono, a filing code is never Inter.
+- **Contrast by size, not by color.** The jump from `body` 16px to `numeral` 128px is 1:8. Hierarchy is built from that gulf, so color stays out of it.
+- **Tabular figures always.** All numerals use `font-variant-numeric: tabular-nums` so columns of numbers align to the pixel — the actual reason a tabulation bureau exists.
+
+## Layout
+
+- **8px baseline grid, exposed.** The unit is 8px. Vertical rhythm is quantized to it, and the grid is rendered as faint `grid`-colored rules so the discipline is visible. Nothing floats between baselines.
+- **12-column column grid** on a `max-width: 1200px` container, `xl` (48px) outer gutters on desktop.
+- **The reference gutter.** The leftmost column (roughly 64–96px) is reserved and never holds prose. It carries only statute ordinals in mono (§1.0 / §1.1) and hairline tick marks. This empty, numbered rail is what makes a page read as an *official record* rather than a webpage.
+- **Whitespace is structural, not decorative.** Space is measured in the spacing scale (`xs` 4 → `section` 96) and always aligned to the module. There is no &quot;sprinkle padding to breathe&quot; — every gap is a deliberate interval on the grid.
+- **The one permitted break.** Swiss power comes from a single, surgical violation: exactly one element per view may break the column grid or the baseline (a title that overhangs the gutter, a stat that bleeds a column). One break reads as intent; two reads as accident.
+
+## Elevation &amp; Depth
+
+Grid Bureau is **flat by law**. Depth is not simulated with light.
+
+| Layer | Method |
+|---|---|
+| Base | `canvas` ground |
+| Raised | `surface` sheet separated by a **1px `hairline`**, never a shadow |
+| Asserted | inversion to the dark `block` (stamp, divider, footer) |
+| Live | `primary` fill on the element that is actionable |
+
+- **No drop shadows. No glow. No `box-shadow` blur.** A sheet is lifted by a hairline border and a change of ground color, the way a physical form sits in a folder.
+- **Never animate a shadow or a filter.** There are none to animate. This also makes the whole system cheap to render and buttery to scroll — no per-frame repaint anywhere.
+- Because there is no ambient shadow, alignment must be perfect: with nothing soft to hide behind, a 1px misalignment is glaring. That is the intended pressure.
+
+## Shapes
+
+- **Square corners are the default and the signature.** `rounded.none` (0px) on cards, buttons, inputs, slides. The bureau does not round corners. The only radii that exist are `sm` (2px, optical relief on a text input) and `pill` (reserved strictly for the functional `status-pill`).
+- **Hairlines, not fills, define regions.** Boxes are drawn with 1px `hairline`/`grid` rules. Rules extend fully to the module edge — no floating dividers hanging in the middle of nowhere.
+- **Images are filed, not styled.** Photography sits in a strict rectangular frame with a 1px hairline and a mono caption line beneath it (a registration code + description). No rounded photos, no blobs, no organic crops, no full-bleed drama except the one permitted break.
+- **Tick geometry.** Small mono tick marks and rule ends replace icons wherever possible; the visual language is drafting board, not icon set.
+
+## Presentation System
+
+Grid Bureau renders 16:9 as an **official record deck**. The exposed grid and reference gutter carry straight from screen to slide, so a keynote looks like a set of filed pages projected large. HeiGe-PPT law — one line per slide, a three-second read, a single visual hammer — maps cleanly onto bureaucratic restraint.
+
+- **Cover (`slide-cover`).** Canvas ground with the exposed baseline grid faintly visible. A hairline masthead rule runs full width near the top. Above it, a mono filing line: `REF · 2757-D — REGISTER 01`. Below it, one monumental `display-xl` title, left-aligned, hanging its first character into the reference gutter — the one permitted break. Bottom-left, a mono date/classification stamp. Golden three seconds: the numbered masthead + oversized title says &quot;this is an authoritative document&quot; before a word is read. Visual hammer: the title, alone, huge.
+- **Section divider (`slide-section-divider`).** Full-bleed dark `block`. A single giant `numeral` (§02) hangs in the left gutter in mono, `on-primary` white, with the section name set small beside it and a hairline underline. Pure transition, pure number — the deck's chapter stamp.
+- **Data (`slide-stat-hero`).** White `surface`. One `numeral` figure at 128px dominates, its unit and label in mono beneath, everything seated on the visible baseline. If one number must be *asserted*, its digits — and only its digits — turn `primary` blue. One blue number per data slide, maximum.
+- **Quote (`slide-quote`).** Canvas ground. One `display-lg` statement, left-aligned, occupying the optical center of the grid, with a short `primary` hairline rule and a mono attribution line below. One thought, filed and dated.
+- **Closing (`slide-closing`).** The only slide that goes full `primary` blue. `on-primary` white `display-lg` call to action, a mono reference code in the corner. The single moment the system lets its one color take the whole frame — earned because it never did so before.
+
+## Signature Moment
+
+Two things this system does that a generic template cannot fake.
+
+**UI signature — The Baseline Ledger.** The 8px baseline grid is rendered visibly as faint horizontal `grid` rules across the content column, and a fixed left rail numbers every block as a statute clause (§1.0, §1.1, §1.2) in tabular mono. Each record sheet is anchored by a dark `filing-stamp` block — `REF 2757-D · FILED 2026-07-11 · CLASS A` in monospace white-on-`block`. Text seats *exactly* on the visible baselines, so the page reads as a certified, registered document rather than a UI. Remove the numbered rail and the exposed grid and it becomes an ordinary admin panel; with them, it is unmistakably the Bureau.
+
+**Deck signature — The Record Divider.** Section dividers render as a full-bleed dark `block` with a single monumental mono `numeral` (§02) hanging into the left gutter, a hairline underscore, and a mono register line (`SECTION 02 / 06 — REGISTER`). No illustration, no gradient, no icon — just a filed number the size of the frame. It turns a chapter break into an official stamp, and it is impossible to reproduce without the mono-numeral-plus-gutter discipline that defines this system.
+
+## Do's and Don'ts
+
+**Do**
+- Do expose the baseline grid and reserve the numbered left gutter — the structure *is* the brand.
+- Do keep `primary` blue strictly functional: it marks what is live or actionable, nothing else.
+- Do set every number, code and label in monospace with tabular figures; keep prose in Inter.
+- Do separate layers with hairlines and inversion, and align everything to the pixel.
+- Do allow exactly one deliberate grid break per view as the accent.
+
+**Don't**
+- **Don't touch the cliché purple-blue gradient** (`#667eea → #764ba2`) or any gradient wash. This system has one flat functional blue and no gradients at all.
+- **Don't build the centered card triptych** — a centered title, a gray subtitle, and three equal rounded cards. Grid Bureau is left-aligned, statute-numbered, and asymmetric by grid.
+- **Don't render Chinese with a Japanese font** (Mochiy, Zen Maru, etc.); always fall back to Noto Sans SC / PingFang SC. Simplified glyphs must never tofu.
+- **Don't animate shadows or glows** — there are none, depth is hairlines and inversion, and the system must scroll without a single repaint.
+- Don't round the corners, don't add drop shadows, and don't let a second color creep in &quot;for variety.&quot;
+
+## Responsive Behavior
+
+Mobile is **re-choreographed, not shrunk**. The document logic survives; the layout is rebuilt.
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥1200px | Full 12-column grid, reserved left reference gutter, exposed baseline rules, `xl` outer margins. |
+| 768–1199px | 8-column grid, gutter narrows, outer margins drop to `lg`. Stat heroes go one-up. |
+| ≤767px | Grid folds to a single column. The reference gutter can't sit beside content, so **the ordinal (§1.1) moves above its block** as a mono eyebrow line — the numbering survives, its position is re-choreographed. Baseline rules stay visible but lighten; `numeral` clamps down so no giant figure overflows or breaks a line. |
+
+- Manually broken titles lock each line with `white-space: nowrap` and size on the longest line via `clamp()`, so no single character or punctuation mark is ever orphaned onto its own row at any width down to 390px.
+- Chinese width is limited in `em`/`px`, never `ch` (which is measured on the Latin `0` and forces Chinese to wrap early into orphans).
+- All motion — the little there is — respects `prefers-reduced-motion: reduce`.
+
+## Anti-Slop Pledge
+
+Strip the name off Grid Bureau and it still reads as a system someone *engineered*: an exposed baseline grid, a statute-numbered gutter, one functional blue that never decorates, and a monospace stamp that dates and files every block. No template ships that on purpose — this is order made visible, not slop dressed up as minimalism.
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #2757d6;
+  --color-on-primary: #ffffff;
+  --color-ink: #1a1d24;
+  --color-canvas: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-muted: #5b6270;
+  --color-hairline: #d5d8dd;
+  --color-grid: #e4e6ea;
+  --color-block: #14171d;
+  --font-display-xl: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-mono: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-numeral: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 40px;
+  --text-heading: 20px;
+  --text-body: 16px;
+  --text-mono: 13px;
+  --text-numeral: 128px;
+  --text-eyebrow: 12px;
+  --text-button: 14px;
+  --text-caption: 12px;
+  --tracking-display-xl: -1.8px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-mono: 0.2px;
+  --tracking-numeral: -4px;
+  --tracking-eyebrow: 2px;
+  --tracking-button: 0.4px;
+  --tracking-caption: 0.1px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-mono: 500;
+  --font-weight-numeral: 700;
+  --font-weight-eyebrow: 600;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#2757d6&quot;,
+        &quot;on-primary&quot;: &quot;#ffffff&quot;,
+        &quot;ink&quot;: &quot;#1a1d24&quot;,
+        &quot;canvas&quot;: &quot;#f4f5f7&quot;,
+        &quot;surface&quot;: &quot;#ffffff&quot;,
+        &quot;muted&quot;: &quot;#5b6270&quot;,
+        &quot;hairline&quot;: &quot;#d5d8dd&quot;,
+        &quot;grid&quot;: &quot;#e4e6ea&quot;,
+        &quot;block&quot;: &quot;#14171d&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;mono&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;numeral&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;72px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1.8px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;40px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.8px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;20px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;mono&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;numeral&quot;: [
+          &quot;128px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-4px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;2px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;48px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #2757d6;
+  --color-on-primary: #ffffff;
+  --color-ink: #1a1d24;
+  --color-canvas: #f4f5f7;
+  --color-surface: #ffffff;
+  --color-muted: #5b6270;
+  --color-hairline: #d5d8dd;
+  --color-grid: #e4e6ea;
+  --color-block: #14171d;
+  --font-display-xl: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-mono: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-numeral: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 40px;
+  --text-heading: 20px;
+  --text-body: 16px;
+  --text-mono: 13px;
+  --text-numeral: 128px;
+  --text-eyebrow: 12px;
+  --text-button: 14px;
+  --text-caption: 12px;
+  --tracking-display-xl: -1.8px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-mono: 0.2px;
+  --tracking-numeral: -4px;
+  --tracking-eyebrow: 2px;
+  --tracking-button: 0.4px;
+  --tracking-caption: 0.1px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-mono: 500;
+  --font-weight-numeral: 700;
+  --font-weight-eyebrow: 600;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Grid Bureau is Swiss institutional order pushed to its authoritarian extreme: a neutral grayscale field governed by exactly one functional certification blue (#2757d6), set in Inter with every figure spoken in monospace. Everything snaps to an 8px baseline grid that is left exposed, not hidden. The signature is a numbered statute gutter (§1.0 / §1.1) and a dark monospace filing stamp that registers each block like an official public record. Original system by HeiGe-Design.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.153,
+          0.341,
+          0.839
+        ],
+        &quot;hex&quot;: &quot;#2757d6&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.102,
+          0.114,
+          0.141
+        ],
+        &quot;hex&quot;: &quot;#1a1d24&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.957,
+          0.961,
+          0.969
+        ],
+        &quot;hex&quot;: &quot;#f4f5f7&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.357,
+          0.384,
+          0.439
+        ],
+        &quot;hex&quot;: &quot;#5b6270&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.835,
+          0.847,
+          0.867
+        ],
+        &quot;hex&quot;: &quot;#d5d8dd&quot;
+      }
+    },
+    &quot;grid&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.894,
+          0.902,
+          0.918
+        ],
+        &quot;hex&quot;: &quot;#e4e6ea&quot;
+      }
+    },
+    &quot;block&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.078,
+          0.09,
+          0.114
+        ],
+        &quot;hex&quot;: &quot;#14171d&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 48,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 2,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 72,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1.8,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 40,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.8,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 20,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;numeral&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 128,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, \&quot;SF Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Menlo\&quot;, \&quot;Consolas\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Helvetica\&quot;, \&quot;Arial\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 制表局（grid-bureau · 瑞士纪律）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `grid-bureau` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#2757d6` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Inter`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint grid-bureau` / 导出其它格式：`heige-design export grid-bureau --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 制表局 — 原创设定集，可商用。跑校验：<code>heige-design lint grid-bureau</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

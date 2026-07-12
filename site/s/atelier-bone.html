@@ -1,0 +1,990 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>象牙工坊 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 优雅编辑</div>
+<div class="hero"><div class="fam">优雅编辑</div><h1>象牙工坊<span class="badge">✓ lint 0 error</span></h1><div class="slug">atelier-bone · AtelierBone-design-system</div><p class="desc">A quiet-luxury editorial system set on bone-ivory. Charcoal ink carries every word; a single thread of antique gold is spent once per view and never twice. Thin high-contrast Cormorant display plays against wide-tracked uppercase Inter labels, hairline gold rules, and full-bleed whitespace. Its signature move is restraint made visible: one drawn gold line on the page, one gilded chapter folio in the deck.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#f3ede1;--ink:#33302b;--pri:#a98b4e;--onpri:#1e1c18;--acc:#a98b4e;--surf:#faf6ec;--muted:#6b655c;--line:#d9cfbd;--r:6px;--dff:"Cormorant Garamond", "Cormorant", Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Inter", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">象牙工坊</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#a98b4e"></i><i style="background:#1e1c18"></i><i style="background:#33302b"></i><i style="background:#f3ede1"></i><i style="background:#faf6ec"></i><i style="background:#6b655c"></i><i style="background:#d9cfbd"></i><i style="background:#221e18"></i></div>
+  <div class="swrap"><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">button-ghost</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">eyebrow-label</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">prose-block</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">card-image</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">pull-quote</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">folio-index</span></div>
+  </div>
+  <div class="card" style="--bg:#f3ede1;--ink:#33302b;--pri:#a98b4e;--onpri:#1e1c18;--acc:#a98b4e;--surf:#faf6ec;--muted:#6b655c;--line:#d9cfbd;--r:6px;--dff:"Cormorant Garamond", "Cormorant", Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Inter", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">象牙工坊</div></div>
+    <div class="swrap"><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#faf6ec;color:#33302b;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">The move that no template reproduces, because a template cannot show restraint — it can only add.
+
+### UI — 金线起笔 · The Drawn Gold Rule
+Beneath every `eyebrow-label` sits a **single 1px gold rule (`#a98b4e`), 48px wide**, and on scroll-into-view it *draws itself* from 0 to 48px in ~280ms (animating `width`/`transform` and `opacity` only — cheap, composited, `prefers-reduced-motion` renders it already-complete). It is the **only gold pixel in the viewport**. Everything else is ivory and charcoal. The signature is not the animation; it is the discipline of stopping there — one line, drawn once, and no second gold anywhere on screen. Copy the CSS and you still won't reproduce it, because the hard part is deleting the other four golds you wanted to add.
+
+### Deck — 金箔章序 · The Gilded Folio
+The `slide-section-divider`: a full-bleed espresso field holding **one giant thin Cormorant gold numeral*</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">### Do
+- **Spend the gold once.** One plaque, or one rule, or one folio numeral per view. Ration it like leaf.
+- **Let ivory do the work.** Widen the margins past comfortable; the empty column is the luxury.
+- **Pair the mismatch on purpose** — thin Cormorant serif directly above wide-tracked uppercase Inter. The tension is the brand.
+- **Lift with light and line** — brighter `surface` + hairline, never a shadow.
+- **Keep corners sharp** (0–2px). Bound-edge, not bubble.
+- **Go dark only in the footer, the divider, and the quote** — the espresso `panel` is a punctuation mark, not a mood.
+
+### Don't
+- **不碰紫蓝俗套渐变** — no `#667eea → #764ba2` or any of its cousins. This system has no gradient at all; a purple-blue hero would incinerate the entire proposition.
+- **不做居中卡片三件套** — no title + gray subtitle + three equal centered rounded cards. Layout is asymmetric and column-led; centered SaaS triads are banned.
+- **中文不用日文字体** — never render Simplified Chinese in a Japanese face (Mochiy, Zen Maru, etc.). Chinese resolves through Noto Serif SC / Songti SC (serif) or Noto Sans SC / PingFang SC (sans). No 豆腐块.
+- **不动画化阴影** — never animate `box-shadow` / `text-shadow`; this system has no shadows to animate anyway, and no `backdrop-filter`.
+- **Don't let gold become text on ivory.** It fails contrast and cheapens the leaf. Gold is a line, a plaque, a numeral on dark — never a paragraph.
+- **Do</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: AtelierBone-design-system
+description: &gt;-
+  A quiet-luxury editorial system set on bone-ivory. Charcoal ink carries every
+  word; a single thread of antique gold is spent once per view and never twice.
+  Thin high-contrast Cormorant display plays against wide-tracked uppercase Inter
+  labels, hairline gold rules, and full-bleed whitespace. Its signature move is
+  restraint made visible: one drawn gold line on the page, one gilded chapter
+  folio in the deck.
+
+colors:
+  primary: &quot;#a98b4e&quot;
+  on-primary: &quot;#1e1c18&quot;
+  ink: &quot;#33302b&quot;
+  canvas: &quot;#f3ede1&quot;
+  surface: &quot;#faf6ec&quot;
+  muted: &quot;#6b655c&quot;
+  hairline: &quot;#d9cfbd&quot;
+  panel: &quot;#221e18&quot;
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Cormorant Garamond&quot;, &quot;Cormorant&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;76px&quot;
+    fontWeight: 300
+    lineHeight: 1.02
+    letterSpacing: &quot;-0.5px&quot;
+  display-lg:
+    fontFamily: '&quot;Cormorant Garamond&quot;, &quot;Cormorant&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;52px&quot;
+    fontWeight: 300
+    lineHeight: 1.06
+    letterSpacing: &quot;-0.3px&quot;
+  heading:
+    fontFamily: '&quot;Cormorant Garamond&quot;, &quot;Cormorant&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;28px&quot;
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: &quot;0px&quot;
+  body:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;17px&quot;
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: &quot;0.1px&quot;
+  eyebrow:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;12px&quot;
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: &quot;2.4px&quot;
+  button:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;13px&quot;
+    fontWeight: 500
+    lineHeight: 1
+    letterSpacing: &quot;1.6px&quot;
+  caption:
+    fontFamily: '&quot;Inter&quot;, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;13px&quot;
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: &quot;0.3px&quot;
+  body-mono:
+    fontFamily: '&quot;IBM Plex Mono&quot;, &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: &quot;12px&quot;
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: &quot;0.5px&quot;
+
+rounded:
+  none: &quot;0px&quot;
+  sm: &quot;2px&quot;
+  md: &quot;6px&quot;
+  pill: &quot;9999px&quot;
+
+spacing:
+  xs: &quot;4px&quot;
+  sm: &quot;8px&quot;
+  md: &quot;16px&quot;
+  lg: &quot;24px&quot;
+  xl: &quot;40px&quot;
+  section: &quot;96px&quot;
+
+components:
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    padding: &quot;20px 40px&quot;
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;16px 32px&quot;
+  button-ghost:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;16px 32px&quot;
+  eyebrow-label:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  prose-block:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  card-image:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  pull-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+  folio-index:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  rule-hairline:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    padding: &quot;0px&quot;
+  tag-chip:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;8px 16px&quot;
+  footer:
+    backgroundColor: &quot;{colors.panel}&quot;
+    textColor: &quot;{colors.canvas}&quot;
+    typography: &quot;{typography.caption}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.panel}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.panel}&quot;
+    textColor: &quot;{colors.canvas}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Atelier Bone · 象牙工坊
+
+&gt; Quiet luxury is not the absence of decoration. It is decoration rationed to a single line of gold, and the discipline never to spend it twice.
+
+A HeiGe-Design system for galleries, fragrance houses, fine imprints, and any brand whose confidence is measured in what it leaves out. Built to run an interface (HeiGe-UI) and a keynote (HeiGe-PPT) from one set of tokens.
+
+---
+
+## Overview
+
+象牙工坊 is bone-ivory paper, charcoal ink, and one thread of antique gold. That is the whole palette, and the entire system is an argument for spending the gold as slowly as possible.
+
+The two colors that matter carry two different jobs. **Ivory (`#f3ede1`) is the room** — a warm, matte, slightly sun-aged white that never goes clinical. **Charcoal (`#33302b`) is the voice** — a soft near-black with a hint of brown that reads as ink on cotton paper, not text on a screen. Everything you read, every rule, every label lives in those two. The gold (`#a98b4e`) is not a color you use. It is a moment you save: one hairline, one plaque, one folio numeral per view.
+
+The typographic signature is a deliberate mismatch. **A very thin, high-contrast Cormorant serif** at display sizes — hairline strokes, dramatic thick-thin, the letterforms of an engraved invitation — sits directly above **wide-tracked uppercase Inter labels** at 2.4px of tracking. The serif whispers; the label stands at attention. The tension between the two is the personality: literary but exact, romantic but engineered.
+
+The rhythm is slow. Sections breathe at 96px. Headlines float in ivory with nothing crowding them. When something finally lands — the one stat, the one quote, the one CTA — the reader has been starved of incident just long enough to feel it.
+
+---
+
+## Colors
+
+Three families. No gradients, no tints beyond what is listed, no fourth hue.
+
+### Brand &amp; Accent
+- `primary` **`#a98b4e`** — Antique gold / 一缕暗金. The brand's entire chromatic identity. It appears as a foil plaque (primary button), as a 1px rule, and as a single display numeral. It is a **currency**: budget one gold gesture per screen. Never as body text on ivory (it fails legibility, and that failure is the point — gold is for surfaces and lines, not paragraphs).
+- `on-primary` **`#1e1c18`** — Espresso black, the engraved text that sits on the gold plaque. Contrast against gold ≈ 5.25:1.
+
+### Surface
+- `canvas` **`#f3ede1`** — Bone ivory. The default page. Warm, matte, aged.
+- `surface` **`#faf6ec`** — A half-shade brighter ivory. Cards lift by getting *lighter*, not by casting shadow. Paired with a hairline, that half-shade is the whole elevation story.
+- `panel` **`#221e18`** — Deep espresso. The rare dark act — footer, section dividers, the gilded folio, the dark quote slide. On panel the gold reads at 5.11:1 and ivory at 14.2:1, so both are legible; this is where gold is allowed to become text.
+- `hairline` **`#d9cfbd`** — A warm ivory line, one shade under canvas. The default divider. Structure without weight.
+
+### Text
+- `ink` **`#33302b`** — Charcoal. All prose, all headings on light. 11.3:1 on canvas.
+- `muted` **`#6b655c`** — Warm taupe for eyebrows, captions, and metadata. Tuned dark enough to clear 4.5:1 on both ivory and surface (4.95:1 / 5.34:1) — quiet does not mean unreadable.
+
+### Semantic
+This system has no success/error palette by design. Its domains — gallery, fragrance, print — do not dashboard. If a status is ever required, render it in `ink` with a worded label, never a red or green dot.
+
+---
+
+## Typography
+
+### Font Family
+- **Display / headings — Cormorant Garamond (thin, high-contrast serif).** Weight 300 at large sizes so the hairline strokes stay hairline. Stack ends in `Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`, so if the webfont fails to load the page degrades to a serious serif — and **Chinese resolves through Noto Serif SC / Songti SC**, never into a Japanese face. A Cormorant headline set in Simplified Chinese renders as a clean 宋体, matched in spirit.
+- **Labels / body / UI — Inter.** Neutral, engineered, the opposite of the serif. Stack ends in `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`.
+- **Metadata / folios — IBM Plex Mono.** Tabular numerals for page indices and spec rows. Stack ends in `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace`.
+
+**中文铁律**: 每条能承载中文的字体栈都以系统中文字体收尾（衬线走 Noto Serif SC / Songti SC，无衬线走 Noto Sans SC / PingFang SC）。断网、被墙、webfont 超时，中文都干净落地，绝不退成豆腐块，绝不用日文字体渲染简体。
+
+### Hierarchy
+| Role | Family | Size | Weight | Line | Tracking | Use |
+|---|---|---|---|---|---|---|
+| display-xl | Cormorant | 76px | 300 | 1.02 | -0.5px | Cover headline, hero, stat-hero numeral |
+| display-lg | Cormorant | 52px | 300 | 1.06 | -0.3px | Pull-quotes, stat figures, chapter numeral |
+| heading | Cormorant | 28px | 500 | 1.2 | 0 | Card and section titles |
+| body | Inter | 17px | 400 | 1.7 | 0.1px | Reading text, generous leading |
+| eyebrow | Inter | 12px | 500 | 1.4 | 2.4px | UPPERCASE kicker above every headline |
+| button | Inter | 13px | 500 | 1 | 1.6px | UPPERCASE plaque label |
+| caption | Inter | 13px | 400 | 1.5 | 0.3px | Figure captions, footer legal |
+| body-mono | IBM Plex Mono | 12px | 400 | 1.4 | 0.5px | Folios, index numbers, spec rows |
+
+### Principles
+- **Ratio is roughly 1 : 4.5** (body 17px → display-xl 76px). The jump is meant to feel almost too large; the whitespace absorbs it.
+- **The eyebrow is always uppercase Inter at 2.4px tracking, and it is always `muted`, never gold.** Gold on ivory would be illegible; the gold belongs to the rule *beneath* the eyebrow, not the letters.
+- Cormorant only earns its beauty above ~24px. Below that it thins out — keep small text in Inter.
+
+---
+
+## Layout
+
+### Spacing
+A 4-based scale: `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 96`. Sections are separated by 96px of nothing. This is not padding; it is pacing.
+
+### Grid &amp; Container
+- 12-column grid, but content rarely fills it. A single column of prose caps around 62–66 characters (limited in `em`/`px`, **never in `ch`** — `ch` is the width of a Latin `0` and would fold Chinese into orphans).
+- Asymmetry over centering. The signature editorial move: headline pinned to a left or offset column, the right two-thirds left empty on purpose. Empty is a design element here, not leftover space.
+
+### Whitespace philosophy
+Whitespace is the most expensive material in the palette, and 象牙工坊 spends it lavishly. The rule: **before every moment that matters, subtract.** A stat, a quote, a CTA should each arrive after a stretch of ivory that made you wait for it.
+
+---
+
+## Elevation &amp; Depth
+
+There are no drop shadows in this system. Luxury on paper does not float; it lies flat and is lit.
+
+| Layer | Technique |
+|---|---|
+| Base | `canvas` ivory |
+| Raised (cards) | `surface` (half-shade brighter) + 1px `hairline` border. That is the entire lift. |
+| Rule / divider | 1px `hairline`, or the signature 1px `primary` gold rule |
+| Dark act | `panel` espresso block, used sparingly for contrast punctuation |
+
+Depth comes from **value and line**, not blur. No `box-shadow` as a crutch, and — per production law — **no shadow is ever animated**. If a card must respond to hover, it shifts its border from `hairline` to `primary` gold or nudges 1px; it does not bloom a shadow.
+
+---
+
+## Shapes
+
+| Token | Value | Use |
+|---|---|---|
+| none | 0px | Buttons, stat blocks, dividers — the default. Sharp corners read as bound-edge, letterpress, gallery frame. |
+| sm | 2px | Cards. Barely softened, so it still feels like cut paper. |
+| md | 6px | Image containers and framed plates — the only elements allowed a visible curve. |
+| pill | 9999px | Only the tag-chip — a thin outlined capsule, the one rounded object, used as a deliberate contrast to all the sharp edges. |
+
+Geometry rule: **images are full-bleed or hard-edged rectangles.** No floating rounded photo cards. A picture either bleeds off the page or sits inside a hairline frame like a plate in an art book.
+
+---
+
+## Components
+
+- **nav-bar** — Ivory bar, `ink` wordmark, uppercase `eyebrow` links spaced wide. A single `hairline` under it. No fill, no shadow, no sticky glass.
+- **button-primary** — The gold foil plaque. `primary` gold fill, `on-primary` espresso label, sharp corners (`none`). This *is* the one gold gesture on most screens; do not place two per view.
+- **button-ghost** — Ivory ground, `ink` label, 1px `ink` outline, sharp corners. Every secondary action.
+- **eyebrow-label** — Uppercase `muted` kicker at 2.4px tracking, with a 1px gold rule drawn beneath it (see Signature Moment). The header unit of the entire system.
+- **card-feature** — `surface` panel, `heading` title in Cormorant, `sm` radius, hairline border. Lifts by lightness, not shadow.
+- **prose-block** — `body` Inter on `canvas`, 1.7 leading, narrow measure. Built for actual reading.
+- **card-image** — Hairline-framed figure on `surface`, `caption` in `muted` beneath. `md` radius.
+- **stat-block** — Big `display-lg` Cormorant figure in `ink`, unit label in `muted` caption, a gold hairline underscore. Sharp corners.
+- **pull-quote** — Oversized `display-lg` serif set in `ink`, floating in `section`-scale whitespace.
+- **folio-index** — `body-mono` page/index numerals (`01 — 12`) in `ink`. The quiet running-head of the deck and the doc.
+- **rule-hairline** — The 1px `hairline` divider element. The connective tissue of the whole layout.
+- **tag-chip** — Thin outlined `pill`, uppercase `muted` label. The single rounded object in the system.
+- **footer** — The dark act: `panel` espresso ground, ivory `caption` text, gold reserved for one rule or one link. Where the page finally goes dark.
+
+---
+
+## Presentation System
+
+象牙工坊 as a 16:9 deck is the same discipline at podium scale. One idea per slide, no bullet lists, no template chrome. The gold is rationed even harder here — **one gold gesture across an entire section**, so that when the gilded folio appears, it lands.
+
+- **Cover (`slide-cover`)** — Ivory field. Uppercase `eyebrow` kicker top-left with its gold hairline. A single `display-xl` Cormorant title, thin and enormous, pinned low-left with the right half of the frame left empty. The 黄金三秒: the reader knows within three seconds this is a house that trusts its own quiet. **视觉锤 = the lone thin gold rule under the eyebrow.**
+- **Section divider (`slide-section-divider`)** — The dark act. Full-bleed `panel` espresso. One giant thin gold `display-lg` numeral (`01`, `02`), a wide-tracked ivory chapter title, one horizontal gold hairline at the baseline. Nothing else. This is the deck's visual hammer (see below).
+- **Stat hero (`slide-stat-hero`)** — Ivory field, one colossal `display-xl` figure in `ink`, a `muted` unit label, a gold underscore. One number, whole slide. 一页一句话 rendered as 一页一个数字.
+- **Quote (`slide-quote`)** — Espresso `panel`, a single `display-lg` serif line in ivory, the attribution in gold `eyebrow`. The quote is allowed to be the only thing in the room.
+- **Closing (`slide-closing`)** — Back to ivory. One `display-lg` line of intent, one gold `button-primary` plaque. The single gold moment of the closing, so the last thing seen is the brand's one indulgence.
+
+Every slide obeys: **one subject, ivory margins wider than you think, gold spent once.**
+
+---
+
+## Signature Moment
+
+The move that no template reproduces, because a template cannot show restraint — it can only add.
+
+### UI — 金线起笔 · The Drawn Gold Rule
+Beneath every `eyebrow-label` sits a **single 1px gold rule (`#a98b4e`), 48px wide**, and on scroll-into-view it *draws itself* from 0 to 48px in ~280ms (animating `width`/`transform` and `opacity` only — cheap, composited, `prefers-reduced-motion` renders it already-complete). It is the **only gold pixel in the viewport**. Everything else is ivory and charcoal. The signature is not the animation; it is the discipline of stopping there — one line, drawn once, and no second gold anywhere on screen. Copy the CSS and you still won't reproduce it, because the hard part is deleting the other four golds you wanted to add.
+
+### Deck — 金箔章序 · The Gilded Folio
+The `slide-section-divider`: a full-bleed espresso field holding **one giant thin Cormorant gold numeral** (`01`) at roughly 40vh cap-height, tracked wide, floating in an ocean of dark whitespace, crossed by **one horizontal gold hairline** at its baseline and captioned by a single wide-tracked ivory chapter title. One numeral. One rule. One dark room. It is a page from a hand-bound catalogue raisonné, not a slide — and it works only because every slide around it was starved of gold to make it inevitable.
+
+---
+
+## Do's and Don'ts
+
+### Do
+- **Spend the gold once.** One plaque, or one rule, or one folio numeral per view. Ration it like leaf.
+- **Let ivory do the work.** Widen the margins past comfortable; the empty column is the luxury.
+- **Pair the mismatch on purpose** — thin Cormorant serif directly above wide-tracked uppercase Inter. The tension is the brand.
+- **Lift with light and line** — brighter `surface` + hairline, never a shadow.
+- **Keep corners sharp** (0–2px). Bound-edge, not bubble.
+- **Go dark only in the footer, the divider, and the quote** — the espresso `panel` is a punctuation mark, not a mood.
+
+### Don't
+- **不碰紫蓝俗套渐变** — no `#667eea → #764ba2` or any of its cousins. This system has no gradient at all; a purple-blue hero would incinerate the entire proposition.
+- **不做居中卡片三件套** — no title + gray subtitle + three equal centered rounded cards. Layout is asymmetric and column-led; centered SaaS triads are banned.
+- **中文不用日文字体** — never render Simplified Chinese in a Japanese face (Mochiy, Zen Maru, etc.). Chinese resolves through Noto Serif SC / Songti SC (serif) or Noto Sans SC / PingFang SC (sans). No 豆腐块.
+- **不动画化阴影** — never animate `box-shadow` / `text-shadow`; this system has no shadows to animate anyway, and no `backdrop-filter`.
+- **Don't let gold become text on ivory.** It fails contrast and cheapens the leaf. Gold is a line, a plaque, a numeral on dark — never a paragraph.
+- **Don't fill the whitespace.** If a stretch of ivory feels empty, it is finished.
+
+---
+
+## Responsive Behavior
+
+Mobile is re-set, not shrunk. The deck-scale drama is re-composed for a single narrow column.
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥1200px | Full asymmetric grid; headlines offset, right columns deliberately empty; display-xl at full 76px. |
+| 768–1199px | Two-column prose collapses to one; display scales via `clamp()`; section spacing eases from 96px toward 64px. |
+| ≤767px | One column. Headlines re-flow to short balanced lines (`text-wrap: balance`), each manually-broken line locked `white-space: nowrap` so **no single character or 标点 is ever orphaned**. Eyebrow, gold rule, headline stack vertically. The gilded folio numeral shrinks but keeps its ocean of margin — proportionally, mobile gets *more* whitespace, not less. |
+
+零孤字自检: 桌面与 ≤390px 窄屏各过一遍每个标题，确认 `scrollWidth == clientWidth`、无横向溢出、无孤字。中文限宽用 `em`/`px`，不用 `ch`。
+
+---
+
+## Anti-Slop Pledge
+
+Strip the name off this system and it is still unmistakably made by a person who chose to leave things out. The proof is negative: no gradient, no shadow, no centered card triad, no second gold. What remains — bone ivory, charcoal ink, thin engraved serif, one drawn line of leaf — could not fall out of a generator, because a generator adds and this system is defined by everything it refused to add. **象牙工坊 spends one thread of gold, and the discipline is the design.**
+
+— HeiGe-Design · MIT
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #a98b4e;
+  --color-on-primary: #1e1c18;
+  --color-ink: #33302b;
+  --color-canvas: #f3ede1;
+  --color-surface: #faf6ec;
+  --color-muted: #6b655c;
+  --color-hairline: #d9cfbd;
+  --color-panel: #221e18;
+  --font-display-xl: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 52px;
+  --text-heading: 28px;
+  --text-body: 17px;
+  --text-eyebrow: 12px;
+  --text-button: 13px;
+  --text-caption: 13px;
+  --text-body-mono: 12px;
+  --tracking-display-xl: -0.5px;
+  --tracking-display-lg: -0.3px;
+  --tracking-heading: 0px;
+  --tracking-body: 0.1px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-button: 1.6px;
+  --tracking-caption: 0.3px;
+  --tracking-body-mono: 0.5px;
+  --font-weight-display-xl: 300;
+  --font-weight-display-lg: 300;
+  --font-weight-heading: 500;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 500;
+  --font-weight-button: 500;
+  --font-weight-caption: 400;
+  --font-weight-body-mono: 400;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#a98b4e&quot;,
+        &quot;on-primary&quot;: &quot;#1e1c18&quot;,
+        &quot;ink&quot;: &quot;#33302b&quot;,
+        &quot;canvas&quot;: &quot;#f3ede1&quot;,
+        &quot;surface&quot;: &quot;#faf6ec&quot;,
+        &quot;muted&quot;: &quot;#6b655c&quot;,
+        &quot;hairline&quot;: &quot;#d9cfbd&quot;,
+        &quot;panel&quot;: &quot;#221e18&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;76px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;300&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;52px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;300&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;28px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.4px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1.6px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;2px&quot;,
+        &quot;md&quot;: &quot;6px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #a98b4e;
+  --color-on-primary: #1e1c18;
+  --color-ink: #33302b;
+  --color-canvas: #f3ede1;
+  --color-surface: #faf6ec;
+  --color-muted: #6b655c;
+  --color-hairline: #d9cfbd;
+  --color-panel: #221e18;
+  --font-display-xl: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 52px;
+  --text-heading: 28px;
+  --text-body: 17px;
+  --text-eyebrow: 12px;
+  --text-button: 13px;
+  --text-caption: 13px;
+  --text-body-mono: 12px;
+  --tracking-display-xl: -0.5px;
+  --tracking-display-lg: -0.3px;
+  --tracking-heading: 0px;
+  --tracking-body: 0.1px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-button: 1.6px;
+  --tracking-caption: 0.3px;
+  --tracking-body-mono: 0.5px;
+  --font-weight-display-xl: 300;
+  --font-weight-display-lg: 300;
+  --font-weight-heading: 500;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 500;
+  --font-weight-button: 500;
+  --font-weight-caption: 400;
+  --font-weight-body-mono: 400;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;A quiet-luxury editorial system set on bone-ivory. Charcoal ink carries every word; a single thread of antique gold is spent once per view and never twice. Thin high-contrast Cormorant display plays against wide-tracked uppercase Inter labels, hairline gold rules, and full-bleed whitespace. Its signature move is restraint made visible: one drawn gold line on the page, one gilded chapter folio in the deck.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.663,
+          0.545,
+          0.306
+        ],
+        &quot;hex&quot;: &quot;#a98b4e&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.118,
+          0.11,
+          0.094
+        ],
+        &quot;hex&quot;: &quot;#1e1c18&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.2,
+          0.188,
+          0.169
+        ],
+        &quot;hex&quot;: &quot;#33302b&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.953,
+          0.929,
+          0.882
+        ],
+        &quot;hex&quot;: &quot;#f3ede1&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.98,
+          0.965,
+          0.925
+        ],
+        &quot;hex&quot;: &quot;#faf6ec&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.42,
+          0.396,
+          0.361
+        ],
+        &quot;hex&quot;: &quot;#6b655c&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.851,
+          0.812,
+          0.741
+        ],
+        &quot;hex&quot;: &quot;#d9cfbd&quot;
+      }
+    },
+    &quot;panel&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.133,
+          0.118,
+          0.094
+        ],
+        &quot;hex&quot;: &quot;#221e18&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 2,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 76,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 300,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 52,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 300,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Cormorant\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 28,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1.6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 象牙工坊（atelier-bone · 优雅编辑）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `atelier-bone` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#a98b4e` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Cormorant Garamond`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint atelier-bone` / 导出其它格式：`heige-design export atelier-bone --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 象牙工坊 — 原创设定集，可商用。跑校验：<code>heige-design lint atelier-bone</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

@@ -1,0 +1,300 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Croftmark is a woodcut-warm system for organic agriculture, farm-to-table and market brands. Earth-brown ink presses onto a kraft-cream field, wheat-gold stamps the harvest, deep leaf-green lines the margins. Fraunces cuts old seed-catalogue serifs against rounded Nunito, so headlines read carved and copy reads hand-warmed. The signature is the perforated stamp edge and hand-set produce label: every card and cover looks like a crate stencil pressed onto paper, never a stock SaaS panel.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.541,
+          0.353,
+          0.169
+        ],
+        "hex": "#8a5a2b"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.976,
+          0.953,
+          0.886
+        ],
+        "hex": "#f9f3e2"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.18,
+          0.129,
+          0.078
+        ],
+        "hex": "#2e2114"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.957,
+          0.922,
+          0.851
+        ],
+        "hex": "#f4ebd9"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.984,
+          0.961,
+          0.906
+        ],
+        "hex": "#fbf5e7"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.443,
+          0.376,
+          0.247
+        ],
+        "hex": "#71603f"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.847,
+          0.78,
+          0.639
+        ],
+        "hex": "#d8c7a3"
+      }
+    },
+    "accent": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.878,
+          0.659,
+          0.231
+        ],
+        "hex": "#e0a83b"
+      }
+    },
+    "leaf": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.298,
+          0.416,
+          0.173
+        ],
+        "hex": "#4c6a2c"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 80,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 14,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Georgia\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 64,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -1.6,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Georgia\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 40,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Nunito\", \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 22,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Nunito\", \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 17,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "numeral": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Georgia\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 76,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -2,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Nunito\", \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 15,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": 0.4,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Nunito\", \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Nunito\", \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": 2.4,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

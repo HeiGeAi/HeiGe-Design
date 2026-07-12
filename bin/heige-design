@@ -1,0 +1,100 @@
+#!/usr/bin/env node
+// 能力12 统一 CLI：list / show / export / lint / diff / ingest / build / site。贯穿 HeiGe-Design 全部能力。
+import fs from 'node:fs';
+import path from 'node:path';
+import { execFileSync, spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(HERE, '..');
+const SYS = path.join(ROOT, 'systems');
+const BIN = path.join(ROOT, 'node_modules', '.bin', 'design.md');
+const S = (p) => path.join(ROOT, 'scripts', p);
+const [cmd, ...args] = process.argv.slice(2);
+const flag = (n) => { const i = args.indexOf('--' + n); return i >= 0 ? (args[i + 1] || true) : null; };
+const dm = (slug) => path.join(SYS, slug, 'DESIGN.md');
+const node = (script, a = []) => spawnSync(process.execPath, [S(script), ...a], { stdio: 'inherit' });
+const die = (m) => { console.error(m); process.exit(1); };
+
+function manifest() { return JSON.parse(fs.readFileSync(path.join(ROOT, 'manifest.json'), 'utf8')); }
+
+switch (cmd) {
+  case 'list': {
+    const fam = args[0];
+    const m = manifest().filter(s => !fam || s.family === fam);
+    console.log(`HeiGe·Design — ${m.length} 套${fam ? ' · ' + fam : ''}\n`);
+    let cur = '';
+    for (const s of m) {
+      if (s.family !== cur) { cur = s.family; console.log(`\n【${cur}】`); }
+      console.log(`  ${s.slug.padEnd(20)} ${s.cn.padEnd(8)} ${s.primary}`);
+    }
+    break;
+  }
+  case 'show': {
+    const slug = args[0] || die('用法: heige-design show <slug>');
+    if (!fs.existsSync(dm(slug))) die(`没有这套: ${slug}`);
+    const m = manifest().find(s => s.slug === slug) || {};
+    console.log(`${m.cn || slug} (${slug}) · ${m.family || ''}`);
+    console.log(`主色 ${m.primary} · ${m.dark ? '深色' : '浅色'} · 调色板 ${(m.palette || []).join(' ')}`);
+    console.log(`设定集: systems/${slug}/DESIGN.md`);
+    console.log(`导出:   systems/${slug}/exports/ (tailwind-v4/v3 · variables.css · tokens.dtcg.json · agent-prompt.md)`);
+    const flag = path.join(SYS, slug, 'flagship', 'page.html');
+    if (fs.existsSync(flag)) console.log(`旗舰:   systems/${slug}/flagship/ (page.html + deck.html)`);
+    break;
+  }
+  case 'export': {
+    const slug = args[0] || die('用法: heige-design export <slug> [--format tailwind-v4|tailwind-v3|css-vars|dtcg]');
+    const map = { 'tailwind-v4': 'tailwind-v4.css', 'tailwind-v3': 'tailwind-v3.json', 'css-vars': 'variables.css', 'dtcg': 'tokens.dtcg.json', 'prompt': 'agent-prompt.md' };
+    const fmt = flag('format');
+    const exdir = path.join(SYS, slug, 'exports');
+    if (!fs.existsSync(exdir)) node('export-tokens.mjs');
+    if (fmt && map[fmt]) process.stdout.write(fs.readFileSync(path.join(exdir, map[fmt]), 'utf8'));
+    else console.log('可用格式: ' + Object.keys(map).join(' / ') + `\n资产目录: systems/${slug}/exports/`);
+    break;
+  }
+  case 'lint': {
+    const t = args[0] || 'all';
+    if (t === 'all') node('validate.mjs');
+    else { if (!fs.existsSync(dm(t))) die(`没有这套: ${t}`); spawnSync(BIN, ['lint', dm(t)], { stdio: 'inherit' }); }
+    break;
+  }
+  case 'diff': {
+    const [a, b] = args;
+    if (!a || !b) die('用法: heige-design diff <slugA> <slugB>');
+    const fa = fs.existsSync(a) ? a : dm(a), fb = fs.existsSync(b) ? b : dm(b);
+    spawnSync(BIN, ['diff', fa, fb], { stdio: 'inherit' });
+    break;
+  }
+  case 'ingest': {
+    const url = args[0] || die('用法: heige-design ingest <url> [slug]');
+    node('ingest.mjs', [url, args[1]].filter(Boolean));
+    break;
+  }
+  case 'build': {
+    const slug = args[0] || die('用法: heige-design build <slug>  # 打印可直接粘给 coding agent 的提示词');
+    const p = path.join(SYS, slug, 'exports', 'agent-prompt.md');
+    if (!fs.existsSync(p)) node('export-tokens.mjs');
+    process.stdout.write(fs.readFileSync(p, 'utf8'));
+    break;
+  }
+  case 'site': case 'gallery': {
+    node('validate.mjs'); node('export-tokens.mjs');
+    node('build-gallery.mjs'); node('build-site.mjs');
+    console.log('\n站点已重建: site/index.html');
+    break;
+  }
+  default:
+    console.log(`HeiGe·Design CLI — 给 AI 的视觉设定集工具
+
+用法: heige-design <命令>
+  list [家族]              列出全部/某家族的系统
+  show <slug>              查看一套的详情与资产路径
+  export <slug> [--format] 导出 tailwind-v4|tailwind-v3|css-vars|dtcg|prompt
+  lint <slug|all>          官方 lint 校验（含 WCAG 对比度）
+  diff <slugA> <slugB>     对比两套的 token/文案差异
+  ingest <url> [slug]      从任意网站提取一份 DESIGN.md 草稿（自研，无付费API）
+  build <slug>             打印可直接粘给 coding agent 的生成提示词
+  site                     重建校验+导出+画廊+详情页
+
+50 套原创设定集，一份同时驱动界面与演示。署名 HeiGe · MIT。`);
+}

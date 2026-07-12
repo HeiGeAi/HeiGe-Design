@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>空山 · 节气茶室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif:wght@700;900&family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a17;
+    --on-primary:#f6f1e4;
+    --canvas:#f4f0e6;
+    --surface:#fbf8f0;
+    --muted:#6b655c;
+    --hairline:#d9d2c2;
+    --seal:#c8483a;
+
+    --r-sm:3px; --r-md:6px; --r-lg:14px; --r-pill:9999px;
+    --s-xs:6px; --s-sm:12px; --s-md:20px; --s-lg:32px; --s-xl:56px; --s-sec:96px;
+
+    --font-song:"Noto Serif SC","Songti SC","STSong",serif;
+    --font-kai:"LXGW WenKai","Kaiti SC","STKaiti",serif;
+    --font-body:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    --font-num:"Noto Serif","Noto Serif SC","Songti SC",serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--canvas);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.9;
+    letter-spacing:.2px;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+
+  .wrap{max-width:1160px;margin-inline:auto;padding-inline:clamp(20px,5vw,56px)}
+
+  /* ---------- shared type ---------- */
+  .eyebrow{
+    font-family:var(--font-kai);
+    font-size:14px;font-weight:400;line-height:1.4;letter-spacing:6px;
+    color:var(--muted);
+  }
+  .caption{font-family:var(--font-body);font-size:13px;line-height:1.6;letter-spacing:1.5px;color:var(--muted)}
+
+  /* ---------- seal (落款) ---------- */
+  .seal{
+    --seal-size:56px;
+    width:var(--seal-size);height:var(--seal-size);
+    background:var(--seal);color:var(--on-primary);
+    font-family:var(--font-song);font-weight:700;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    line-height:1;letter-spacing:0;
+    border-radius:0;
+    transform:rotate(-5deg);
+    box-shadow:inset 0 0 0 1px rgba(246,241,228,.5);
+    flex:none;user-select:none;
+  }
+  .seal span{font-size:calc(var(--seal-size) * .34)}
+  .seal--sm{--seal-size:30px}
+  .seal--sm span{font-size:18px}
+  .seal--hero{--seal-size:66px}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    font-family:var(--font-body);font-size:15px;font-weight:500;line-height:1;letter-spacing:3px;
+    padding:16px 34px;border-radius:var(--r-sm);border:1px solid transparent;cursor:pointer;
+    transition:background-color .25s ease,color .25s ease,border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--ink);color:var(--on-primary)}
+  .btn-primary:hover{background:#100e0c}
+  .btn-primary:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .btn-secondary{background:var(--surface);color:var(--ink);border-color:var(--hairline)}
+  .btn-secondary:hover{border-color:var(--ink)}
+  .btn-secondary:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .btn-on-ink{background:var(--on-primary);color:var(--ink)}
+  .btn-on-ink:hover{background:#fffaef}
+
+  /* ---------- nav ---------- */
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;gap:var(--s-lg);
+    padding:var(--s-md) 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav-brand{display:flex;align-items:center;gap:14px;font-family:var(--font-song);font-weight:700;font-size:22px;letter-spacing:2px}
+  .nav-links{display:flex;gap:var(--s-lg)}
+  .nav-links a{font-family:var(--font-kai);font-size:15px;letter-spacing:5px;color:var(--muted);transition:color .2s ease;padding-bottom:2px}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{padding:11px 24px}
+
+  /* ---------- hero (落墨 signature) ---------- */
+  .hero{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(260px,.82fr) 1.18fr;
+    align-items:stretch;
+    gap:var(--s-xl);
+    min-height:86vh;
+    padding-block:var(--s-xl) var(--s-sec);
+  }
+  .hero-left{display:flex;flex-direction:column;justify-content:space-between;padding-top:var(--s-lg)}
+  .hero-eyebrow{display:flex;align-items:center;gap:16px}
+  .hero-eyebrow .rule-v{width:2px;height:34px;background:var(--seal)}
+  .hero-lead{max-width:26em;color:#48433c;font-size:17px;line-height:1.9;margin-bottom:var(--s-lg)}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+  .hero-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:52vh}
+  .hero-stage::before{
+    /* faint paper halo where the ink bleeds */
+    content:"";position:absolute;inset:-6% -4%;
+    background:radial-gradient(60% 55% at 52% 48%, rgba(28,26,23,.06), rgba(28,26,23,0) 70%);
+    z-index:0;
+  }
+  .bloom{position:relative;z-index:1;width:min(100%,560px);height:auto;aspect-ratio:1/1}
+  .hero-title{
+    position:absolute;z-index:2;top:47%;left:50%;transform:translate(-50%,-50%);
+    font-family:var(--font-song);font-weight:900;
+    color:var(--on-primary);
+    font-size:clamp(3rem,8.4vw,5.5rem);
+    line-height:1.04;letter-spacing:1px;text-align:center;
+  }
+  .hero-title .line{display:block;white-space:nowrap}
+  .hero-stage .seal--hero{position:absolute;z-index:3;right:6%;bottom:8%}
+
+  /* entrance */
+  @keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .rise{opacity:0;animation:riseIn .9s cubic-bezier(.2,.7,.2,1) forwards}
+  .rise.d1{animation-delay:.05s}
+  .rise.d2{animation-delay:.18s}
+  .rise.d3{animation-delay:.32s}
+  .hero-title{animation-delay:.24s}
+
+  /* ---------- data strip ---------- */
+  .stats{
+    border-block:1px solid var(--hairline);
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .stat{padding:var(--s-xl) var(--s-lg);border-left:1px solid var(--hairline)}
+  .stat:first-child{border-left:0}
+  .stat-num{font-family:var(--font-num);font-weight:900;font-size:clamp(2.4rem,4.4vw,3.6rem);line-height:1;letter-spacing:-1px;color:var(--ink)}
+  .stat-label{margin-top:14px;font-size:13px;letter-spacing:1.2px;color:var(--muted);line-height:1.5}
+
+  /* ---------- section head ---------- */
+  .sec{padding-block:var(--s-sec)}
+  .sec-head{display:flex;align-items:center;gap:16px;margin-bottom:var(--s-xl)}
+  .sec-head .rule-v{width:2px;height:56px;background:var(--seal);flex:none}
+  .sec-kicker{font-family:var(--font-kai);font-size:14px;letter-spacing:6px;color:var(--muted);margin-bottom:10px}
+  .sec-title{font-family:var(--font-song);font-weight:900;font-size:clamp(2.4rem,5vw,3.75rem);line-height:1.1;letter-spacing:.5px}
+
+  /* ---------- features (editorial rows, not a triptych) ---------- */
+  .feat-row{
+    display:grid;grid-template-columns:200px 1fr 200px;align-items:center;gap:var(--s-xl);
+    padding-block:var(--s-xl);
+    border-top:1px solid var(--hairline);
+  }
+  .feat-row:last-child{border-bottom:1px solid var(--hairline)}
+  .feat-serial{
+    font-family:var(--font-song);font-weight:900;font-size:130px;line-height:1;
+    color:transparent;-webkit-text-stroke:1.5px var(--hairline);
+    letter-spacing:0;
+  }
+  .feat-body{max-width:30em}
+  .feat-body h3{font-family:var(--font-song);font-weight:700;font-size:30px;line-height:1.35;letter-spacing:.4px;margin-bottom:14px}
+  .feat-body p{color:#48433c;font-size:17px;line-height:1.9;max-width:28em}
+  .feat-aside{display:flex;justify-content:flex-end;align-items:center}
+  .feat-row:nth-child(even) .feat-serial{color:var(--ink);-webkit-text-stroke:0}
+  .feat-row:nth-child(even){background:var(--surface)}
+  .feat-row:nth-child(even) .feat-serial,
+  .feat-row:nth-child(even) .feat-body{position:relative}
+
+  /* ---------- pricing (middle featured = ink slab) ---------- */
+  .price-grid{display:grid;grid-template-columns:1fr 1.08fr 1fr;gap:var(--s-lg);align-items:stretch}
+  .price{
+    background:var(--surface);border:1px solid var(--hairline);border-radius:var(--r-md);
+    padding:var(--s-xl);display:flex;flex-direction:column;
+  }
+  .price--featured{
+    background:var(--ink);color:var(--on-primary);border:0;border-radius:var(--r-lg);
+    position:relative;padding-block:calc(var(--s-xl) + 14px);
+  }
+  .price--featured .seal{position:absolute;top:22px;right:22px;--seal-size:44px}
+  .price .tier{font-family:var(--font-kai);font-size:15px;letter-spacing:5px;color:var(--muted)}
+  .price--featured .tier{color:#c9c0ac}
+  .price .amount{font-family:var(--font-num);font-weight:900;font-size:56px;line-height:1;letter-spacing:-1px;margin-top:18px}
+  .price .amount small{font-family:var(--font-body);font-weight:400;font-size:15px;letter-spacing:2px;color:var(--muted);margin-left:8px}
+  .price--featured .amount small{color:#c9c0ac}
+  .price .plist{list-style:none;margin:var(--s-lg) 0 var(--s-xl);flex:1}
+  .price .plist li{font-size:15.5px;line-height:1.75;padding:9px 0;border-top:1px solid var(--hairline);color:#48433c}
+  .price--featured .plist li{border-top-color:rgba(246,241,228,.16);color:#e7dfcd}
+  .price .plist li:first-child{border-top:0}
+  .price .btn{width:100%}
+
+  /* ---------- CTA band (ink flood) ---------- */
+  .cta{background:var(--ink);color:var(--on-primary)}
+  .cta-inner{
+    display:grid;grid-template-columns:1fr auto;align-items:center;gap:var(--s-xl);
+    padding-block:var(--s-sec);position:relative;
+  }
+  .cta-line{font-family:var(--font-song);font-weight:900;font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.14;letter-spacing:.5px}
+  .cta-line .line{display:block;white-space:nowrap}
+  .cta-right{display:flex;align-items:center;gap:var(--s-lg)}
+
+  /* ---------- footer (ink slab) ---------- */
+  .footer{background:var(--ink);color:var(--canvas);border-top:1px solid rgba(246,241,228,.12)}
+  .footer-inner{padding-block:var(--s-sec);display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:var(--s-xl)}
+  .footer h4{font-family:var(--font-song);font-weight:700;font-size:24px;letter-spacing:2px;margin-bottom:16px}
+  .footer .f-tag{font-family:var(--font-kai);font-size:15px;letter-spacing:3px;color:#c9c0ac;line-height:1.9;max-width:22em}
+  .footer .f-col-title{font-family:var(--font-body);font-size:13px;letter-spacing:2px;color:#8c8577;margin-bottom:16px}
+  .footer nav a{display:block;font-size:15px;color:#e7dfcd;padding:6px 0;transition:color .2s ease}
+  .footer nav a:hover{color:#fff}
+  .footer-sign{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;gap:var(--s-lg)}
+  .footer-base{border-top:1px solid rgba(246,241,228,.12)}
+  .footer-base .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:24px}
+  .footer-base .caption{color:#8c8577}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1000px){
+    .footer-inner{grid-template-columns:1fr 1fr}
+    .footer-sign{grid-column:1 / -1;align-items:flex-start;flex-direction:row}
+  }
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;min-height:auto;gap:var(--s-lg);padding-block:var(--s-lg) var(--s-xl)}
+    .hero-left{order:2;padding-top:0}
+    .hero-stage{order:1;min-height:46vh;margin-top:var(--s-md)}
+    .hero-eyebrow{margin-bottom:var(--s-lg)}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(-n+2){border-top:0}
+    .stat:nth-child(odd){border-left:0}
+    .stat:nth-child(n+3){border-top:1px solid var(--hairline)}
+    .feat-row{grid-template-columns:1fr;gap:var(--s-md);text-align:left}
+    .feat-serial{font-size:88px}
+    .feat-aside{display:none}
+    .price-grid{grid-template-columns:1fr}
+    .price--featured{order:-1}
+    .cta-inner{grid-template-columns:1fr;gap:var(--s-lg)}
+  }
+  @media (max-width:560px){
+    .nav-links{display:none}
+    .hero-title{font-size:clamp(2.75rem,13vw,3.4rem)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .rise{animation:none;opacity:1;transform:none}
+    .hero-title{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="nav">
+    <a class="nav-brand" href="#top"><span class="seal seal--sm" aria-hidden="true"><span>空</span></span>空山</a>
+    <nav class="nav-links">
+      <a href="#tea">茶单</a>
+      <a href="#space">茶室</a>
+      <a href="#ware">器物</a>
+      <a href="#price">落座</a>
+    </nav>
+    <a class="btn btn-secondary nav-cta" href="#price">预约</a>
+  </header>
+</div>
+
+<!-- HERO · 落墨 signature moment -->
+<main id="top" class="wrap">
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow rise d1">
+        <span class="rule-v" aria-hidden="true"></span>
+        <span class="eyebrow">松烟一点 · 节气茶室</span>
+      </div>
+      <div>
+        <p class="hero-lead rise d3">城里开着灯的深夜太多，能坐下来空一会儿的地方太少。空山把每一间茶室的二分之一，留给不做任何事的时间。剩下的，交给一盏跟着节气走的茶。</p>
+        <div class="hero-cta rise d3">
+          <a class="btn btn-primary" href="#price">预约落座</a>
+          <a class="btn btn-secondary" href="#tea">看看茶单</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stage">
+      <svg class="bloom" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <filter id="inkedge" x="-35%" y="-35%" width="170%" height="170%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.011 0.015" numOctaves="3" seed="7" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="58" xChannelSelector="R" yChannelSelector="G" result="d"/>
+            <feGaussianBlur in="d" stdDeviation="5.5"/>
+          </filter>
+          <radialGradient id="inkcore" cx="50%" cy="47%" r="56%">
+            <stop offset="0%" stop-color="#1c1a17"/>
+            <stop offset="58%" stop-color="#1c1a17"/>
+            <stop offset="80%" stop-color="#221e1a" stop-opacity=".82"/>
+            <stop offset="100%" stop-color="#221e1a" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g filter="url(#inkedge)">
+          <ellipse cx="300" cy="292" rx="252" ry="232" fill="url(#inkcore)"/>
+          <ellipse cx="364" cy="214" rx="118" ry="104" fill="#1c1a17" opacity=".9"/>
+          <ellipse cx="224" cy="366" rx="126" ry="112" fill="#1c1a17" opacity=".85"/>
+          <ellipse cx="300" cy="300" rx="182" ry="172" fill="#1c1a17"/>
+        </g>
+      </svg>
+      <h1 class="hero-title">
+        <span class="line">给忙碌</span>
+        <span class="line">留一处白</span>
+      </h1>
+      <div class="seal seal--hero rise d3" aria-hidden="true"><span>空</span><span>山</span></div>
+    </div>
+  </section>
+</main>
+
+<!-- DATA STRIP -->
+<div class="wrap">
+  <section class="stats" id="tea">
+    <div class="stat">
+      <div class="stat-num">二十四</div>
+      <div class="stat-label">节气茶单 · 一岁二十四味</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">十二</div>
+      <div class="stat-label">城市静室 · 皆临水或近园</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">九成</div>
+      <div class="stat-label">空间留白 · 只坐三分之一</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">三千</div>
+      <div class="stat-label">常来的人 · 各有一张桌子</div>
+    </div>
+  </section>
+</div>
+
+<!-- FEATURES · editorial rows -->
+<div class="wrap">
+  <section class="sec" id="space">
+    <div class="sec-head">
+      <span class="rule-v" aria-hidden="true"></span>
+      <div>
+        <div class="sec-kicker">所提供</div>
+        <h2 class="sec-title">只做三件事</h2>
+      </div>
+    </div>
+
+    <div class="feat-row">
+      <div class="feat-serial" aria-hidden="true">壹</div>
+      <div class="feat-body">
+        <h3>节气茶单</h3>
+        <p>立春喝什么，霜降喝什么，我们按物候排好。一节气换一味茶，随手册寄到家，让日子重新有了节奏，而不是一整年喝一种解渴的水。</p>
+      </div>
+      <div class="feat-aside" aria-hidden="true"></div>
+    </div>
+
+    <div class="feat-row">
+      <div class="feat-serial" aria-hidden="true">贰</div>
+      <div class="feat-body">
+        <h3>一人一席</h3>
+        <p>城中的茶室不为热闹而开。每间都留出大片空地，为独自来的人守一张靠窗的桌子。你可以什么都不点，只坐着，把一段安静喝完再走。</p>
+      </div>
+      <div class="feat-aside" aria-hidden="true"><div class="seal" aria-hidden="true"><span>留</span><span>白</span></div></div>
+    </div>
+
+    <div class="feat-row">
+      <div class="feat-serial" aria-hidden="true">叁</div>
+      <div class="feat-body">
+        <h3>器物手作</h3>
+        <p>与十余位匠人长期合作，柴烧的杯、粗陶的壶、素麻的席。都是能天天用的物件，握在手里有分量、有温度，用久了会记得你的手。</p>
+      </div>
+      <div class="feat-aside" aria-hidden="true"></div>
+    </div>
+  </section>
+</div>
+
+<!-- PRICING · middle featured ink slab -->
+<div class="wrap">
+  <section class="sec" id="price">
+    <div class="sec-head">
+      <span class="rule-v" aria-hidden="true"></span>
+      <div>
+        <div class="sec-kicker">如何落座</div>
+        <h2 class="sec-title">三种坐法</h2>
+      </div>
+    </div>
+
+    <div class="price-grid">
+      <div class="price">
+        <div class="tier">散席</div>
+        <div class="amount">¥128<small>／单次</small></div>
+        <ul class="plist">
+          <li>单次落座，含当季一味茶</li>
+          <li>开放时段自由入座</li>
+          <li>不限时的一段安静</li>
+          <li>器物照常选购</li>
+        </ul>
+        <a class="btn btn-secondary" href="#">随时来坐</a>
+      </div>
+
+      <div class="price price--featured">
+        <div class="seal" aria-hidden="true"><span>常</span><span>客</span></div>
+        <div class="tier">常客</div>
+        <div class="amount">¥398<small>／每月</small></div>
+        <ul class="plist">
+          <li>每周一席，优先预约</li>
+          <li>节气茶单按月寄到家</li>
+          <li>会员专属静室时段</li>
+          <li>全线器物八折</li>
+          <li>可带一位客人同坐</li>
+        </ul>
+        <a class="btn btn-on-ink" href="#">成为常客</a>
+      </div>
+
+      <div class="price">
+        <div class="tier">知己</div>
+        <div class="amount">¥4800<small>／全年</small></div>
+        <ul class="plist">
+          <li>常客全部权益</li>
+          <li>私享茶室，可带三位客人</li>
+          <li>年度限定器物一套</li>
+          <li>专属司茶到席</li>
+        </ul>
+        <a class="btn btn-secondary" href="#">长久相伴</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CTA BAND · ink flood -->
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-line">
+        <span class="line">留一处白</span>
+        <span class="line">等你来坐</span>
+      </div>
+      <div class="cta-right">
+        <a class="btn btn-on-ink" href="#">预约落座</a>
+        <div class="seal" aria-hidden="true"><span>空</span><span>山</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER · ink slab -->
+<footer class="footer" id="about">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <h4>空山</h4>
+        <p class="f-tag">松烟一点，落于素纸。城中一间为你空着的茶室，跟着节气，慢慢喝完一年。</p>
+      </div>
+      <div>
+        <div class="f-col-title">走近</div>
+        <nav>
+          <a href="#tea">节气茶单</a>
+          <a href="#space">城市静室</a>
+          <a href="#ware">器物手作</a>
+        </nav>
+      </div>
+      <div>
+        <div class="f-col-title">联系</div>
+        <nav>
+          <a href="#">预约落座</a>
+          <a href="#">成为常客</a>
+          <a href="#">合作与器物</a>
+        </nav>
+      </div>
+      <div class="footer-sign">
+        <div class="seal seal--hero" aria-hidden="true"><span>空</span><span>山</span></div>
+        <span class="caption">松烟 · 一点朱砂</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <div class="wrap">
+      <span class="caption">© 空山节气茶室 · 本页人物、门店与数据均为虚构演示</span>
+      <span class="caption">HeiGe-Design · moxi-void</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

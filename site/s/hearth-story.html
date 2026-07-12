@@ -1,0 +1,1185 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>炉边 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 温暖人文</div>
+<div class="hero"><div class="fam">温暖人文</div><h1>炉边<span class="badge">✓ lint 0 error</span></h1><div class="slug">hearth-story · hearth-story-design-system</div><p class="desc">Hearth-Story is a warm humanist system for nonprofits, community groups and social enterprises — the light of a room lit by a low fire. A deep ember primary glows against warm oat paper and sand surfaces while charred-walnut ink carries long, readable stories. Fraunces serif sets emotional display headlines and Source Sans keeps body copy human and calm. The bright ember accent never touches text; it survives only as glow, brushed underlines and spark marks. The signature is a hand-brushed ember signoff and a before-and-after story turn that warms cool grief into firelight. Tactile, restrained, never corporate.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#f4ece0;--ink:#33251a;--pri:#ac4914;--onpri:#fdf6ec;--acc:#ac4914;--surf:#eadfcb;--muted:#7a6552;--line:#d8c9b2;--r:12px;--dff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Source Sans 3", "Source Sans Pro", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">炉边</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#ac4914"></i><i style="background:#fdf6ec"></i><i style="background:#33251a"></i><i style="background:#f4ece0"></i><i style="background:#eadfcb"></i><i style="background:#7a6552"></i><i style="background:#d8c9b2"></i><i style="background:#d2601a"></i></div>
+  <div class="swrap"><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">eyebrow-kicker</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">stat-label</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">footer</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">signature-line</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">divider-rule</span></div>
+  </div>
+  <div class="card" style="--bg:#f4ece0;--ink:#33251a;--pri:#ac4914;--onpri:#fdf6ec;--acc:#ac4914;--surf:#eadfcb;--muted:#7a6552;--line:#d8c9b2;--r:12px;--dff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Source Sans 3", "Source Sans Pro", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">炉边</div></div>
+    <div class="swrap"><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#eadfcb;color:#33251a;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two moments that a different template cannot reproduce.
+
+**UI signature — the Ember Signoff (余烬签名).** At the end of a story block sits a
+line of deep-ember handwriting (`signature` role) — a name, a thank-you, a promise
+— underscored by a **single hand-brushed bright-ember stroke** that is thick in the
+middle and dry at the ends, like a real brush lifting off. It is not a `border-bottom`
+rectangle; it is a drawn mark with an organic taper (SVG path or a masked
+`ember`→transparent gradient). It makes the page feel signed by a person, not
+generated by a CMS. Nobody reaches this by dropping in a component library.
+
+**Deck signature — the Story Turn (前后对比翻页).** One slide holds a before/after
+split. The &quot;before&quot; half is rendered cool and tired — the portrait desaturated,
+text in `muted` grey-brown, no glow. On transition, the &quot;after&quot; half **warms**:
+the same face gains col</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Let the deep ember carry all warm text; let the bright ember only glow, underline
+  and spark.
+- Build every layout around one large emotional image and one column of readable
+  story — asymmetric, human-scale.
+- Give sections a full 96px of silence; let the reader move between firelight and shadow.
+- End stories with the hand-brushed ember signoff.
+- Keep body copy in the humanist sans; keep feeling in the serif.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient** (`#667eea → #764ba2`) or any of its
+  family. This system's warmth dies the instant a cool gradient enters.
+- **Don't do the centred-card-three-column stack** — title, grey subtitle, three
+  equal rounded cards. That is the shape of every generated SaaS page; Hearth-Story
+  is a page you read, not a grid you scan.
+- **Don't render Chinese in Japanese fonts** (Mochiy, Zen Maru, etc.) — simplified
+  glyphs break into tofu. Chinese hand = LXGW WenKai; Chinese serif = Noto Serif SC.
+- **Don't animate shadows or glows.** The ember firelight is a static radial gradient;
+  animating `box-shadow` / `text-shadow` repaints every frame and kills scroll.
+- Don't set bright ember (`#d2601a`) as text — it never clears 4.5:1. It is flame, not ink.
+- Don't use grey/black shadows on the warm paper; shadows are warm brown or they look broken.</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: hearth-story-design-system
+description: &gt;-
+  Hearth-Story is a warm humanist system for nonprofits, community groups and
+  social enterprises — the light of a room lit by a low fire. A deep ember
+  primary glows against warm oat paper and sand surfaces while charred-walnut
+  ink carries long, readable stories. Fraunces serif sets emotional display
+  headlines and Source Sans keeps body copy human and calm. The bright ember
+  accent never touches text; it survives only as glow, brushed underlines and
+  spark marks. The signature is a hand-brushed ember signoff and a
+  before-and-after story turn that warms cool grief into firelight. Tactile,
+  restrained, never corporate.
+
+colors:
+  primary: &quot;#ac4914&quot;
+  on-primary: &quot;#fdf6ec&quot;
+  ink: &quot;#33251a&quot;
+  canvas: &quot;#f4ece0&quot;
+  surface: &quot;#eadfcb&quot;
+  muted: &quot;#7a6552&quot;
+  hairline: &quot;#d8c9b2&quot;
+  ember: &quot;#d2601a&quot;
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;60px&quot;
+    fontWeight: 600
+    lineHeight: 1.06
+    letterSpacing: &quot;-1px&quot;
+  display-lg:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;40px&quot;
+    fontWeight: 600
+    lineHeight: 1.12
+    letterSpacing: &quot;-0.4px&quot;
+  heading:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;25px&quot;
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: &quot;-0.1px&quot;
+  quote:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;34px&quot;
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: &quot;-0.2px&quot;
+  stat:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;88px&quot;
+    fontWeight: 600
+    lineHeight: 0.95
+    letterSpacing: &quot;-2px&quot;
+  subhead:
+    fontFamily: '&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;17px&quot;
+    fontWeight: 600
+    lineHeight: 1.45
+    letterSpacing: &quot;0px&quot;
+  body:
+    fontFamily: '&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;17px&quot;
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: &quot;0.1px&quot;
+  eyebrow:
+    fontFamily: '&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;12px&quot;
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: &quot;2.4px&quot;
+  button:
+    fontFamily: '&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;16px&quot;
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: &quot;0.4px&quot;
+  caption:
+    fontFamily: '&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;13px&quot;
+    fontWeight: 500
+    lineHeight: 1.5
+    letterSpacing: &quot;0.3px&quot;
+  signature:
+    fontFamily: '&quot;Caveat&quot;, &quot;LXGW WenKai&quot;, &quot;Noto Serif SC&quot;, &quot;Kaiti SC&quot;, cursive'
+    fontSize: &quot;32px&quot;
+    fontWeight: 500
+    lineHeight: 1.15
+    letterSpacing: &quot;0.5px&quot;
+
+rounded:
+  none: &quot;0px&quot;
+  sm: &quot;6px&quot;
+  md: &quot;12px&quot;
+  lg: &quot;20px&quot;
+  pill: &quot;9999px&quot;
+
+spacing:
+  xs: &quot;4px&quot;
+  sm: &quot;8px&quot;
+  md: &quot;16px&quot;
+  lg: &quot;24px&quot;
+  xl: &quot;40px&quot;
+  section: &quot;96px&quot;
+
+components:
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;14px 30px&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;14px 28px&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.subhead}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  eyebrow-kicker:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    padding: &quot;{spacing.xs} 0px&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.stat}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md}&quot;
+  stat-label:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    padding: &quot;{spacing.xs} 0px&quot;
+  footer:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.body}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  signature-line:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.signature}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  divider-rule:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    height: &quot;1px&quot;
+    width: &quot;100%&quot;
+  ember-underline:
+    backgroundColor: &quot;{colors.ember}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    height: &quot;3px&quot;
+    width: &quot;64px&quot;
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.stat}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.quote}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.signature}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Hearth-Story · 炉边
+
+A warm humanist design system for nonprofits, NGOs, community groups and social
+enterprises. The whole system is one physical idea: **a room lit by a low fire.**
+Paper and sand hold the light, charred walnut carries the words, and a single
+deep ember does all the glowing. It is built to make a stranger's story feel like
+it is being told across a table, not pitched from a stage.
+
+## Overview
+
+Hearth-Story runs on **two colours doing two jobs**. Deep ember (`#ac4914`) is the
+live coal — it is the brand, the buttons, the full-bleed divider pages, every
+warm accent that has to survive next to text. Bright ember (`#d2601a`) is the
+flame — it never touches a word. It exists only as glow, as a brushed underline,
+as a spark mark, as the halo behind a portrait. Keeping the flame off text is the
+discipline that keeps the system warm instead of loud.
+
+The type signature is a warm **serif display** (Fraunces) that leans into emotion
+on headlines and giant numerals, paired with a calm **humanist sans** (Source
+Sans) for body copy that stays readable across a 900-word field report. The
+rhythm is slow: generous 96px section breathing, one idea per screen, and a
+hand-brushed signature that lands at the end of a story like a real person signed
+it. Nothing here is centred-card-and-three-columns. The layout is a page you read,
+not a dashboard you scan.
+
+## Colors
+
+The palette is three real materials plus their light: warm paper, sand cloth,
+charred wood, and the ember that lights them.
+
+### Brand &amp; Accent
+- **primary `#ac4914`** — 余烬 / deep ember. The live coal. Brand, buttons,
+  divider and closing pages, giant stat numerals, the handwritten signoff. Deep
+  enough to carry cream text at 5.3:1 and to sit on paper as text at 4.8:1.
+- **ember `#d2601a`** — 火苗 / bright flame. **Decoration only, never text.** Used
+  as brushed underlines, the story-turn glow, spark dots, card top-edge, portrait
+  halo. On paper it reads at 3.3:1, which is fine for a graphic stroke and wrong
+  for a letter, so it never becomes one.
+
+### Surface
+- **canvas `#f4ece0`** — warm oat paper. The room's default light. Every page,
+  every reading surface.
+- **surface `#eadfcb`** — warm sand cloth. Cards, quiet panels, secondary blocks.
+  Derived from the seed sand `#e4d5bf`, nudged lighter so ink sits at 11:1.
+- **hairline `#d8c9b2`** — soft sand line. 1px dividers and quiet borders only.
+
+### Text
+- **ink `#33251a`** — charred walnut. Body and headings. A deep warm brown, never
+  pure black — black on paper reads cold and clinical, wrong for a hearth.
+- **muted `#7a6552`** — weathered taupe. Captions, stat labels, metadata. **Only
+  on canvas** (4.7:1); it drops below AA on sand, so it never labels a card.
+- **on-primary `#fdf6ec`** — hearth-cream. The warm off-white for text on ember
+  and on the dark footer. Warm, not paper-white, so cream on ember stays cozy.
+
+### Semantic (the story turn)
+Hearth-Story has no green-up / red-down. Its only semantic is emotional: the
+**before/after story contrast**. &quot;Before&quot; is rendered in `muted` at low warmth
+(cool, tired, grey-brown); &quot;after&quot; warms into `ink` on `canvas` with an `ember`
+glow rising. No extra tokens — the temperature does the meaning.
+
+## Typography
+
+**Font families**
+- **Display / headings / quotes / numerals — Fraunces**, a warm optical serif
+  with soft terminals that carries feeling at large sizes. Stack:
+  `&quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`.
+- **Body / UI / captions — Source Sans 3**, a humanist sans that stays calm and
+  legible in long paragraphs. Stack:
+  `&quot;Source Sans 3&quot;, &quot;Source Sans Pro&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`.
+- **Handwritten signature — Caveat**, with **LXGW WenKai (霞鹜文楷)** as the Chinese
+  hand. Stack: `&quot;Caveat&quot;, &quot;LXGW WenKai&quot;, &quot;Noto Serif SC&quot;, &quot;Kaiti SC&quot;, cursive`.
+
+**中文铁律**：每条中文字体栈末尾都带系统兜底（无衬线 `Noto Sans SC / PingFang SC / Microsoft YaHei`，衬线 `Noto Serif SC / Songti SC / STSong`）。手写签名的中文兜底是 **霞鹜文楷 LXGW WenKai**，一款中文楷体，**绝不用任何日文字体渲染中文**（简体会缺字变豆腐）。断网时拉丁展示字塌到系统 serif 而非 Times。
+
+**Hierarchy**
+
+| Role | Font | Size | Weight | Use |
+|---|---|---|---|---|
+| display-xl | Fraunces | 60 | 600 | Cover headline, one line |
+| display-lg | Fraunces | 40 | 600 | Divider chapter title, section head |
+| heading | Fraunces | 25 | 600 | Card / block title |
+| quote | Fraunces | 34 | 500 | Full-screen pull quote |
+| stat | Fraunces | 88 | 600 | Giant warm numeral |
+| subhead | Source Sans | 17 | 600 | Nav, card subtitle |
+| body | Source Sans | 17 | 400 | Paragraphs, field reports |
+| eyebrow | Source Sans | 12 | 700 | Uppercase kicker, +2.4 tracking |
+| button | Source Sans | 16 | 600 | Actions |
+| caption | Source Sans | 13 | 500 | Labels, metadata |
+| signature | Caveat / WenKai | 32 | 500 | Hand-brushed signoff |
+
+**Principles**
+- Display-to-body ratio is at least 1:3.5 (60 / 17). On stat pages it goes to
+  ~1:5 (88 / 17) — the number is allowed to be almost too big.
+- Serif for feeling, sans for facts. Never set a 900-word report in the serif.
+- Body line-height 1.7 — stories are read slowly, give the lines air.
+
+## Layout
+
+**Spacing** runs `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 96`. The 96px
+`section` gap is the load-bearing choice: it is the silence around a story. Cards
+breathe on `lg` (24), nav on `md/xl`, footer on `xl`.
+
+**Grid &amp; container** — a 12-column grid at 1200px max, but the reading measure is
+narrow: body text is capped at ~34em (never sized with `ch`, which under-widths
+Chinese and forces early wraps). Layouts are **asymmetric** — a large emotional
+image on one side, a column of text on the other — never a centred stack of equal
+cards.
+
+**Whitespace philosophy** — whitespace is grouped, not sprinkled. A dense story
+block is followed by a full `section` of quiet before the next. The eye should
+feel it move from firelight into shadow and back.
+
+## Elevation &amp; Depth
+
+Depth here is **material and light**, not floating glass.
+
+| Layer | Treatment |
+|---|---|
+| Page | Flat warm `canvas`, no shadow |
+| Card | `surface` on canvas, separated by `1px hairline` + a 3px `ember` top edge |
+| Raised | Soft warm shadow `0 8px 24px rgba(51,37,26,0.10)` — brown, never grey/black |
+| Firelight | Static radial `ember` glow behind portraits and on cover corners |
+
+The ember glow is a **static** `radial-gradient` (ember → transparent), never a
+`box-shadow` animation and never `backdrop-filter`. Shadows are warm brown
+(`rgba(51,37,26,…)`) because a grey shadow on warm paper reads like a bug.
+
+## Shapes
+
+| Token | Value | Use |
+|---|---|---|
+| none | 0 | Full-bleed slides, hairline rules |
+| sm | 6 | Tags, the signature underline plate |
+| md | 12 | Stat blocks, small panels |
+| lg | 20 | Cards, image frames |
+| pill | 9999 | Buttons |
+
+Corners are soft but not bubbly (20px on cards, not 40). **Images use organic
+framing**: portraits sit in a soft-cornered `lg` frame with one corner carrying
+the ember firelight glow, evoking a photo pinned to a warm wall — never a hard
+rectangle, never a perfect circle avatar grid.
+
+## Components
+
+- **button-primary** — deep ember fill, cream label, pill. The one loud element on
+  the page; used once per view. Cream-on-ember 5.3:1.
+- **button-secondary** — sand fill, ink label, pill, with a 1.5px bright-ember
+  outline (the flame as edge, not text). Ink-on-sand 11:1.
+- **nav-bar** — paper background, ink links, a single hairline underline. Quiet by
+  design; the brand mark is a small ember dot, not a logo lockup.
+- **card-feature** — sand card, ink title (serif) + body (sans), a 3px ember top
+  edge and a warm brown shadow. Labels stay ink, never muted (muted fails on sand).
+- **stat-block** — a giant ember numeral on paper (4.8:1) with a muted label below
+  (4.7:1). The number is the impact figure — lives served, trees planted, hours given.
+- **footer** — charred-walnut (ink) panel with cream text and sand-coloured
+  secondary lines. The room after the fire dims: dark, warm, calm.
+- **signature-line** — the handwritten signoff on paper, deep-ember script with a
+  hand-brushed bright-ember underline. See Signature Moment.
+
+## Presentation System
+
+Hearth-Story as a 16:9 deck follows **one page, one sentence · golden three
+seconds · one visual hammer.** The hammer is always **light and a face** — an
+ember glow and a human portrait. The deck is a fireside story told in five moves.
+
+- **Cover (`slide-cover`)** — warm paper, a large emotional portrait bleeding off
+  one edge with an ember firelight glow in the bottom corner, one serif line of
+  headline in ink, a tiny uppercase eyebrow. Three-second read: *warmth + a
+  person.* No logo wall.
+- **Section divider (`slide-section-divider`)** — full-bleed **deep ember** page,
+  a huge cream chapter numeral `01 / 02`, one short title. The screen going warm
+  edge-to-edge is the breath between chapters.
+- **Stat hero (`slide-stat-hero`)** — paper page, one **88px ember numeral** owning
+  the screen, a muted unit label, nothing else. The number is the promise kept.
+- **Quote (`slide-quote`)** — the intimate one: charred-walnut dark page, one cream
+  serif sentence in a beneficiary's own words, a giant faint ember quotation mark
+  behind it. The room dims so the voice carries.
+- **Closing (`slide-closing`)** — full ember page, a **handwritten cream signoff**
+  and one clear call to action (give / join / volunteer). It ends like a letter,
+  signed by hand.
+
+Visual-hammer rule: exactly one glowing ember element per slide. If a slide has
+two things glowing, one is wrong.
+
+## Signature Moment
+
+Two moments that a different template cannot reproduce.
+
+**UI signature — the Ember Signoff (余烬签名).** At the end of a story block sits a
+line of deep-ember handwriting (`signature` role) — a name, a thank-you, a promise
+— underscored by a **single hand-brushed bright-ember stroke** that is thick in the
+middle and dry at the ends, like a real brush lifting off. It is not a `border-bottom`
+rectangle; it is a drawn mark with an organic taper (SVG path or a masked
+`ember`→transparent gradient). It makes the page feel signed by a person, not
+generated by a CMS. Nobody reaches this by dropping in a component library.
+
+**Deck signature — the Story Turn (前后对比翻页).** One slide holds a before/after
+split. The &quot;before&quot; half is rendered cool and tired — the portrait desaturated,
+text in `muted` grey-brown, no glow. On transition, the &quot;after&quot; half **warms**:
+the same face gains colour, the copy shifts to `ink` on `canvas`, and an `ember`
+firelight glow rises from the bottom of the frame. It is the whole mission — cold
+situation warmed by the work — compressed into one temperature change across a
+page turn. The meaning lives in the shift from grey to firelight, not in a bullet.
+
+## Do's and Don'ts
+
+**Do**
+- Let the deep ember carry all warm text; let the bright ember only glow, underline
+  and spark.
+- Build every layout around one large emotional image and one column of readable
+  story — asymmetric, human-scale.
+- Give sections a full 96px of silence; let the reader move between firelight and shadow.
+- End stories with the hand-brushed ember signoff.
+- Keep body copy in the humanist sans; keep feeling in the serif.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient** (`#667eea → #764ba2`) or any of its
+  family. This system's warmth dies the instant a cool gradient enters.
+- **Don't do the centred-card-three-column stack** — title, grey subtitle, three
+  equal rounded cards. That is the shape of every generated SaaS page; Hearth-Story
+  is a page you read, not a grid you scan.
+- **Don't render Chinese in Japanese fonts** (Mochiy, Zen Maru, etc.) — simplified
+  glyphs break into tofu. Chinese hand = LXGW WenKai; Chinese serif = Noto Serif SC.
+- **Don't animate shadows or glows.** The ember firelight is a static radial gradient;
+  animating `box-shadow` / `text-shadow` repaints every frame and kills scroll.
+- Don't set bright ember (`#d2601a`) as text — it never clears 4.5:1. It is flame, not ink.
+- Don't use grey/black shadows on the warm paper; shadows are warm brown or they look broken.
+
+## Responsive Behavior
+
+| Breakpoint | Behaviour |
+|---|---|
+| ≥1200px | Asymmetric two-track: large image + narrow story column |
+| 768–1199px | Image moves above story, story keeps its ~34em measure |
+| ≤767px | Full re-compose: portrait becomes a top-bleed banner with the ember glow, story flows single-column, nav collapses to an ember dot + menu |
+
+Mobile is a **re-edited story**, not a squeezed desktop. On phones the cover
+portrait leads full-width, the headline drops to a `clamp()`-controlled serif that
+never orphans a single Chinese character on a 390px screen, and each headline line
+is locked with `white-space:nowrap` sized to its longest line. Chinese measures are
+capped in `em`/`px`, never `ch`. Every animation respects
+`@media (prefers-reduced-motion: reduce)` — the firelight glow simply stays lit.
+
+## Anti-Slop Pledge
+
+Strip the name off any Hearth-Story page and it still reads as made by a person who
+cared: the warmth comes from real materials and light, the ember is disciplined
+enough to only glow, the story is told across a table with a hand-brushed signature
+at the end. No purple gradient, no equal-card grid, no cold shadow, no tofu Chinese.
+If it doesn't feel like a room with a low fire in it, it isn't finished.
+
+— HeiGe-Design
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #ac4914;
+  --color-on-primary: #fdf6ec;
+  --color-ink: #33251a;
+  --color-canvas: #f4ece0;
+  --color-surface: #eadfcb;
+  --color-muted: #7a6552;
+  --color-hairline: #d8c9b2;
+  --color-ember: #d2601a;
+  --font-display-xl: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-quote: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-stat: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-subhead: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-signature: &quot;\&quot;Caveat\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Kaiti SC\&quot;, cursive&quot;;
+  --text-display-xl: 60px;
+  --text-display-lg: 40px;
+  --text-heading: 25px;
+  --text-quote: 34px;
+  --text-stat: 88px;
+  --text-subhead: 17px;
+  --text-body: 17px;
+  --text-eyebrow: 12px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --text-signature: 32px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.4px;
+  --tracking-heading: -0.1px;
+  --tracking-quote: -0.2px;
+  --tracking-stat: -2px;
+  --tracking-subhead: 0px;
+  --tracking-body: 0.1px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-button: 0.4px;
+  --tracking-caption: 0.3px;
+  --tracking-signature: 0.5px;
+  --font-weight-display-xl: 600;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-quote: 500;
+  --font-weight-stat: 600;
+  --font-weight-subhead: 600;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 700;
+  --font-weight-button: 600;
+  --font-weight-caption: 500;
+  --font-weight-signature: 500;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#ac4914&quot;,
+        &quot;on-primary&quot;: &quot;#fdf6ec&quot;,
+        &quot;ink&quot;: &quot;#33251a&quot;,
+        &quot;canvas&quot;: &quot;#f4ece0&quot;,
+        &quot;surface&quot;: &quot;#eadfcb&quot;,
+        &quot;muted&quot;: &quot;#7a6552&quot;,
+        &quot;hairline&quot;: &quot;#d8c9b2&quot;,
+        &quot;ember&quot;: &quot;#d2601a&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;quote&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;stat&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;subhead&quot;: [
+          &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;signature&quot;: [
+          &quot;\&quot;Caveat\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Kaiti SC\&quot;, cursive&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;60px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;40px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;25px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;quote&quot;: [
+          &quot;34px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;stat&quot;: [
+          &quot;88px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;subhead&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.4px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;signature&quot;: [
+          &quot;32px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;6px&quot;,
+        &quot;md&quot;: &quot;12px&quot;,
+        &quot;lg&quot;: &quot;20px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #ac4914;
+  --color-on-primary: #fdf6ec;
+  --color-ink: #33251a;
+  --color-canvas: #f4ece0;
+  --color-surface: #eadfcb;
+  --color-muted: #7a6552;
+  --color-hairline: #d8c9b2;
+  --color-ember: #d2601a;
+  --font-display-xl: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-quote: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-stat: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-subhead: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-signature: &quot;\&quot;Caveat\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Kaiti SC\&quot;, cursive&quot;;
+  --text-display-xl: 60px;
+  --text-display-lg: 40px;
+  --text-heading: 25px;
+  --text-quote: 34px;
+  --text-stat: 88px;
+  --text-subhead: 17px;
+  --text-body: 17px;
+  --text-eyebrow: 12px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --text-signature: 32px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.4px;
+  --tracking-heading: -0.1px;
+  --tracking-quote: -0.2px;
+  --tracking-stat: -2px;
+  --tracking-subhead: 0px;
+  --tracking-body: 0.1px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-button: 0.4px;
+  --tracking-caption: 0.3px;
+  --tracking-signature: 0.5px;
+  --font-weight-display-xl: 600;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-quote: 500;
+  --font-weight-stat: 600;
+  --font-weight-subhead: 600;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 700;
+  --font-weight-button: 600;
+  --font-weight-caption: 500;
+  --font-weight-signature: 500;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Hearth-Story is a warm humanist system for nonprofits, community groups and social enterprises — the light of a room lit by a low fire. A deep ember primary glows against warm oat paper and sand surfaces while charred-walnut ink carries long, readable stories. Fraunces serif sets emotional display headlines and Source Sans keeps body copy human and calm. The bright ember accent never touches text; it survives only as glow, brushed underlines and spark marks. The signature is a hand-brushed ember signoff and a before-and-after story turn that warms cool grief into firelight. Tactile, restrained, never corporate.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.675,
+          0.286,
+          0.078
+        ],
+        &quot;hex&quot;: &quot;#ac4914&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.992,
+          0.965,
+          0.925
+        ],
+        &quot;hex&quot;: &quot;#fdf6ec&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.2,
+          0.145,
+          0.102
+        ],
+        &quot;hex&quot;: &quot;#33251a&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.957,
+          0.925,
+          0.878
+        ],
+        &quot;hex&quot;: &quot;#f4ece0&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.918,
+          0.875,
+          0.796
+        ],
+        &quot;hex&quot;: &quot;#eadfcb&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.478,
+          0.396,
+          0.322
+        ],
+        &quot;hex&quot;: &quot;#7a6552&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.847,
+          0.788,
+          0.698
+        ],
+        &quot;hex&quot;: &quot;#d8c9b2&quot;
+      }
+    },
+    &quot;ember&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.824,
+          0.376,
+          0.102
+        ],
+        &quot;hex&quot;: &quot;#d2601a&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 12,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 20,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 60,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 40,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 25,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;quote&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 34,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;stat&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 88,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;subhead&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Source Sans 3\&quot;, \&quot;Source Sans Pro\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;signature&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Caveat\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Kaiti SC\&quot;, cursive&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 32,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 炉边（hearth-story · 温暖人文）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `hearth-story` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#ac4914` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Fraunces`，正文 `Source Sans 3`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint hearth-story` / 导出其它格式：`heige-design export hearth-story --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 炉边 — 原创设定集，可商用。跑校验：<code>heige-design lint hearth-story</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

@@ -1,0 +1,425 @@
+---
+version: alpha
+name: MoxiVoid-design-system
+description: >-
+  Moxi-Void is an Eastern ink-wash system for tea houses, art spaces, and
+  high-end cultural brands. One drop of pine-soot ink (#1c1a17) blooms across
+  rice-paper cream (#f4f0e6); near-black ink carries every mark while a single
+  cinnabar seal (#c8483a) is the only saturated note, used 一点 and never as a
+  wash. Heavy Noto Serif SC (思源宋体) Song headlines stand against airy Inter
+  body over vast negative space, with a stamped red 落款 as the recurring
+  gesture. The emptiness is the material; the seal is the signature.
+
+colors:
+  primary: "#1c1a17"
+  on-primary: "#f6f1e4"
+  ink: "#1c1a17"
+  canvas: "#f4f0e6"
+  surface: "#fbf8f0"
+  muted: "#6b655c"
+  hairline: "#d9d2c2"
+  seal-red: "#c8483a"
+
+typography:
+  display-xl:
+    fontFamily: '"Noto Serif SC", "Songti SC", "STSong", serif'
+    fontSize: 88px
+    fontWeight: 900
+    lineHeight: 1.04
+    letterSpacing: 1px
+  display-lg:
+    fontFamily: '"Noto Serif SC", "Songti SC", "STSong", serif'
+    fontSize: 60px
+    fontWeight: 900
+    lineHeight: 1.1
+    letterSpacing: 0.5px
+  heading:
+    fontFamily: '"Noto Serif SC", "Songti SC", "STSong", serif'
+    fontSize: 30px
+    fontWeight: 700
+    lineHeight: 1.35
+    letterSpacing: 0.4px
+  eyebrow:
+    fontFamily: '"LXGW WenKai", "Kaiti SC", "STKaiti", serif'
+    fontSize: 14px
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: 6px
+  quote:
+    fontFamily: '"LXGW WenKai", "Kaiti SC", "STKaiti", serif'
+    fontSize: 32px
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: 1px
+  body:
+    fontFamily: '"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif'
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.9
+    letterSpacing: 0.2px
+  numeral:
+    fontFamily: '"Noto Serif", "Noto Serif SC", "Songti SC", serif'
+    fontSize: 128px
+    fontWeight: 900
+    lineHeight: 1.0
+    letterSpacing: -2px
+  caption:
+    fontFamily: '"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif'
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: 1.5px
+  button:
+    fontFamily: '"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif'
+    fontSize: 15px
+    fontWeight: 500
+    lineHeight: 1.0
+    letterSpacing: 3px
+
+rounded:
+  none: 0px
+  sm: 3px
+  md: 6px
+  lg: 14px
+  pill: 9999px
+
+spacing:
+  xs: 6px
+  sm: 12px
+  md: 20px
+  lg: 32px
+  xl: 56px
+  section: 96px
+
+components:
+  button-primary:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.button}"
+    rounded: "{rounded.sm}"
+    padding: "{spacing.sm} {spacing.lg}"
+  button-secondary:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    typography: "{typography.button}"
+    rounded: "{rounded.sm}"
+    padding: "{spacing.sm} {spacing.lg}"
+  nav-bar:
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.ink}"
+    typography: "{typography.eyebrow}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.md} {spacing.xl}"
+  card-feature:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    typography: "{typography.heading}"
+    rounded: "{rounded.md}"
+    padding: "{spacing.xl}"
+  card-ink:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.body}"
+    rounded: "{rounded.lg}"
+    padding: "{spacing.xl}"
+  stat-block:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    typography: "{typography.numeral}"
+    rounded: "{rounded.lg}"
+    padding: "{spacing.lg}"
+  stat-label:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.muted}"
+    typography: "{typography.caption}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.xs} {spacing.sm}"
+  tag:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.muted}"
+    typography: "{typography.caption}"
+    rounded: "{rounded.pill}"
+    padding: "{spacing.xs} {spacing.md}"
+  rule-hairline:
+    backgroundColor: "{colors.hairline}"
+    rounded: "{rounded.none}"
+    height: 1px
+    width: 100%
+  seal-stamp:
+    backgroundColor: "{colors.seal-red}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.sm}"
+    height: 56px
+    width: 56px
+  footer:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.canvas}"
+    typography: "{typography.body}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.section} {spacing.xl}"
+  slide-cover:
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.ink}"
+    typography: "{typography.display-xl}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.section}"
+  slide-section-divider:
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.ink}"
+    typography: "{typography.display-lg}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.section}"
+  slide-stat-hero:
+    backgroundColor: "{colors.canvas}"
+    textColor: "{colors.ink}"
+    typography: "{typography.numeral}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.xl} {spacing.section}"
+  slide-quote:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    typography: "{typography.quote}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.section}"
+  slide-closing:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.display-lg}"
+    rounded: "{rounded.none}"
+    padding: "{spacing.section}"
+---
+
+# Moxi-Void · 水墨留白
+
+An Eastern ink-wash system for the slow trades — tea houses, art spaces, cultural
+institutions, and the decks that speak for them. It reads like a single sheet of
+宣纸 with one drop of ink allowed to bloom, and one red 落款 seal pressed into the
+corner to say: a person was here. Most of the page is empty on purpose. The
+emptiness is not missing content; it is the content.
+
+## Overview
+
+The mood is **东方留白** — unhurried, literate, confident enough to hand two-thirds
+of every surface back to the paper. The system runs on a two-role color logic and
+almost nothing else.
+
+- **松烟墨 ink `#1c1a17` is the brush.** A warm near-black with a breath of brown,
+  never `#000`. It carries every headline, every body run, and — inverted — it
+  becomes the wet-ink slab that a closing page or a footer floods with. One well
+  of ink does all the drawing.
+- **朱砂 cinnabar `#c8483a` is the seal.** It is used 一点 — a single stamped red
+  square in a corner, a hair-thin vertical rule, a lone opening mark before a
+  quote. It never fills a background, never gradients, never becomes text. The
+  moment there are two red things fighting, the restraint is gone.
+
+Everything else is three tones of paper: 宣纸 canvas `#f4f0e6`, a fresh silk
+surface `#fbf8f0`, and cream `#f6f1e4` reversed out of ink. The typographic
+signature is a **heavy Noto Serif SC (思源宋体) headline** set at manifesto scale
+over an **airy Inter body at 1.9 leading**, with an **LXGW WenKai (霞鹜文楷) kai
+eyebrow** tracked wide like a hand-brushed 眉题. Rhythm comes from air and line-
+height, never from color count.
+
+## Colors
+
+### Brand & Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#1c1a17` | 松烟墨 ink. Primary button fill, the inverted ink slab, the single stroke of the brand. Contrast of `on-primary` on it ≈ 15.5:1. |
+| `seal-red` | `#c8483a` | 朱砂 cinnabar. The stamped 落款 seal block, a 1px vertical rule, one opening mark. Decoration and fill only — never carries text, never washes a page. |
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#f4f0e6` | 宣纸 rice-paper cream. The page and every default slide. Warm, matte, never `#fff`. |
+| `surface` | `#fbf8f0` | A fresh silk sheet laid on the paper — one step *lighter* than canvas, so a card reads as a clean leaf placed on the ground, not a shadow box. |
+| `hairline` | `#d9d2c2` | 1px rules, card edges, the faint ledger lines. Decorative, never text. |
+
+### Text
+| Token | Hex | Role |
+|---|---|---|
+| `ink` | `#1c1a17` | Body and headlines on paper. Contrast on `canvas` ≈ 15.3:1. Doubles as the background of the inverted 墨块 card and footer. |
+| `on-primary` | `#f6f1e4` | Cream reversed out of ink — labels on ink fills, text on the wet-ink slab. Contrast on `ink` ≈ 15.5:1. |
+| `muted` | `#6b655c` | 淡墨 ash captions, meta, unit labels. Contrast on `canvas` ≈ 5.1:1 and on `surface` ≈ 5.4:1 — AA on paper, never mud. |
+
+**Contrast discipline.** Cinnabar on paper measures ≈ 3.8:1, which does not clear
+AA for text — so `seal-red` is **never** paired as text, in any component. It lives
+only as a fill (the seal block, the vertical rule) where no contrast pairing
+applies. Every text-bearing surface in the system is an ink↔paper pair (≈ 15:1) or
+`muted` on paper (≈ 5.1:1). That is why the palette can be this quiet and still
+pass AA everywhere the lint looks.
+
+## Typography
+
+### Font Family
+- **Song serif display (headlines, serials): `"Noto Serif SC", "Songti SC", "STSong", serif`.**
+  Heavy 思源宋体 is the voice — brush-weight verticals, high stroke contrast, the
+  literate authority of a carved title. If the webfont fails it falls to system
+  宋体 and still reads clean.
+- **Kai eyebrow / quote: `"LXGW WenKai", "Kaiti SC", "STKaiti", serif`.**
+  霞鹜文楷 gives the hand-brushed 楷体 cadence to kickers and pull-quotes — the human
+  hand next to the carved headline.
+- **Body / UI sans: `"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif`.**
+  Quiet, low-drama, keeps long reading airy on paper without competing with the Song title.
+- **Numeral: `"Noto Serif", "Noto Serif SC", "Songti SC", serif`.** Latin digits pick up
+  Noto Serif's contrast for the oversized stat figures; CJK numerals fall to 宋体.
+
+**中文铁律.** Every Chinese-bearing stack ends in a system CJK fallback (`Noto Sans SC / PingFang SC`
+for sans, `Noto Serif SC / Songti SC` for serif; `Kaiti SC` for kai). **Chinese is never
+rendered with a Japanese font** — no Zen / Mochiy / Klee families — because simplified glyphs
+would drop to tofu or show Japanese variants. Cut every webfont link and the page must still
+render clean 简体中文.
+
+### Hierarchy
+| Role | Size | Weight | Line-height | Tracking | Use |
+|---|---|---|---|---|---|
+| `display-xl` | 88px | 900 | 1.04 | 1px | Cover manifesto, one line per screen, reversed inside the ink bloom |
+| `display-lg` | 60px | 900 | 1.1 | 0.5px | Section title, void divider, closing line |
+| `heading` | 30px | 700 | 1.35 | 0.4px | Card / subsection titles |
+| `eyebrow` | 14px | 400 | 1.4 | 6px | Kai 眉题 kickers, nav, tracked wide |
+| `quote` | 32px | 400 | 1.7 | 1px | Pull-quotes, the golden-line slide |
+| `body` | 17px | 400 | 1.9 | 0.2px | Paragraphs, 疏朗 leading |
+| `numeral` | 128px | 900 | 1.0 | -2px | Stat figures, giant outline serials |
+| `caption` | 13px | 400 | 1.6 | 1.5px | Meta, footer, unit labels |
+| `button` | 15px | 500 | 1.0 | 3px | Buttons, tracked wide for restraint |
+
+### Principles
+- Size contrast is the drama: `display-xl` to `body` is ≈ 5:1. Make the Song title bigger than feels safe.
+- Hold body line-height at **1.9** — the 疏朗 breathing room is the whole point; never compress it to "fit".
+- Keep Chinese tracking gentle and positive at scale (the display roles use small +px tracking); tight negative tracking is reserved for latin numerals only.
+
+## Layout
+
+### Spacing
+A generous scale with an outsized `section` step so pages breathe like paper:
+`xs 6 · sm 12 · md 20 · lg 32 · xl 56 · section 96`. Vertical rhythm between blocks is
+`section`; inside a card it is `xl` — deliberately roomy, so a single card still feels like留白.
+
+### Grid & Container
+- A relaxed column grid where content rarely fills the width. Long text caps at ~30em measure
+  and is **left-aligned**, pushed toward the left third so the right column stays open for a seal,
+  an outline numeral, or nothing at all.
+- Max content width ~1160px; the reading column is much narrower. The asymmetry — text on the left,
+  air and one red seal on the right — is the composition.
+
+### Whitespace philosophy
+Whitespace here is 留白, not padding — it is the silence a brush leaves so the ink can be heard.
+Roughly two-thirds of every hero and divider is intentionally empty, and the space is **pooled**,
+never distributed evenly. Fill the page and you have painted over the only idea in the system.
+
+## Elevation & Depth
+
+Paper logic, not glow — this is a light system, so depth comes from tone and the bloom, never from light.
+
+| Layer | Treatment |
+|---|---|
+| Canvas | Flat `#f4f0e6` with an optional faint horizontal ledger line (`hairline` at ~30% opacity), static. |
+| Surface leaf | `#fbf8f0`, one step *lighter* than canvas, lifted by a 1px `hairline` edge — no drop shadow. |
+| Ink bloom | The one figurative element: a hand-inked wash rendered as **layered static `radial-gradient`s / a baked SVG**, its feathered edge pre-composited into the asset. |
+| Ink slab | The inverted 墨块 card and footer flood `#1c1a17`; the tonal jump from paper to ink *is* the depth. |
+
+**No glow, no `backdrop-filter`, no animated shadow.** The bloom's soft edge is baked into the asset,
+not produced by a live `filter: blur()`, so it never re-rasterizes on scroll. Nothing in this system pulses.
+
+## Shapes
+
+| Token | Value | Use |
+|---|---|---|
+| `none` | 0px | The seal block, rules, every slide — sharp paper edges are the default. |
+| `sm` | 3px | Buttons only — a barely-there softening, like a worn wood corner. |
+| `md` | 6px | Feature card leaf. |
+| `lg` | 14px | The inverted ink slab card and stat block, gently softened so the black reads as a stone, not a screen. |
+| `pill` | 9999px | Small kai tags and status dots only. |
+
+Images are rare. When they appear they are cropped to a **circle or an organic ink-bloom mask**,
+never a rounded rectangle. The **朱砂 seal square** and the **1px vertical cinnabar rule** are the
+signature graphic primitives — the only two marks allowed to be red.
+
+## Components
+
+- **button-primary** — ink fill, cream label, 3px corners, tracked-wide button type. The one place ink becomes a surface at UI scale. Hover deepens to a wetter black; focus adds a 2px ink ring, never a glow.
+- **button-secondary** — silk `surface` ground, ink label, a single `hairline` edge. Quiet until needed; often sits beneath a short cinnabar rule instead of shouting.
+- **nav-bar** — canvas ground, kai `eyebrow` links tracked to 6px, one hairline bottom rule, a small seal as the mark instead of a logo lockup.
+- **card-feature** — silk `surface` leaf, hairline edge, Song `heading` title, `md` corners, roomy `xl` inner padding. One card per idea, floated in air.
+- **card-ink (墨块)** — the inverted move: a wet-ink `#1c1a17` slab dropped onto the paper, cream `body` text, `lg` corners. Used once per page to anchor the composition, like a seal enlarged into a block.
+- **stat-block** — a 128px Song `numeral` in ink on silk, with a small `muted` unit beside it. The figure stays ink (AA-safe); the red touch, if any, is a seal in the corner, never the number.
+- **stat-label** — small `muted` caption on silk, the unit / meta beneath a figure.
+- **tag** — a small `pill` of silk with a `muted` kai caption and hairline edge, for category / 节气 labels.
+- **rule-hairline** — the 1px `hairline` bar: column lines, card edges, the faint ledger. The system's quiet connective tissue.
+- **seal-stamp (落款)** — a 56px **朱砂 square**, fill only, no text pairing in token space; in render it carries a reversed carved glyph. The recurring red gesture — see Signature Moment.
+- **footer** — the ink slab floods full-width: `#1c1a17` ground, canvas-cream text, wide margins, one small seal signing off. No link soup.
+
+## Presentation System
+
+The same tokens drive a 16:9 deck for a talk, a gallery walkthrough, a tea-brand keynote. This is a
+**breathing deck** — built on 一页一句话 / 黄金三秒 / 视觉锤, where the visual锤 is the ink bloom and the seal.
+
+- **Cover (`slide-cover`)** — paper frame, a kai `eyebrow` tracked wide in the top-left, then a single
+  hand-inked **bloom** low-right with the `display-xl` Song title reversed cream inside it, and a **朱砂 seal**
+  pressed into the bottom-right corner. 黄金三秒: paper, one drop of ink, one red seal — the whole tone lands before a word is read.
+- **Section divider (`slide-section-divider`)** — the void page. **90%+ empty 宣纸**, a giant **outline (stroke-only)
+  numeral** (一 / 二 / 三 or 01 / 02) sitting faint in the field, one **hair-thin vertical cinnabar rule**, and a small
+  seal. The `display-lg` title hangs low and left. The emptiness announces the chapter — one breath, then move on.
+- **Stat page (`slide-stat-hero`)** — a single 128px Song `numeral` in ink, oversized past comfort, one `muted` unit,
+  a seal in the corner. Everything else is paper air. One number, no dashboard.
+- **Quote page (`slide-quote`)** — a silk-surface leaf, one `quote` line in LXGW WenKai kai, opened by a **single
+  cinnabar mark** (「 or a short red rule) and closed by a seal. The hand-brushed line after a run of carved titles is the tonal turn — felt, not read.
+- **Closing (`slide-closing`)** — the ink finally floods. A full **`#1c1a17` ink slab**, one `display-lg` cream line,
+  an ink `button-primary` call to action, and a last seal. The paper has been drunk by the ink — 余味, then stop.
+
+The one-red-note rule is strict across the deck: at most one seal and, at most, one hair-thin rule per slide.
+Two reds and neither lands.
+
+## Signature Moment
+
+**UI — 落墨 (The Ink Drop & Seal).** The hero carries the site's *only* image: a single hand-inked **bloom**,
+rendered as layered static `radial-gradient`s (or a baked SVG) so its feathered 晕染 edge is real ink, not a CSS box.
+The `display-xl` Song headline is **reversed cream inside the darkest core of the bloom**, so the type literally sits
+*in the ink* while the rest of the page stays empty paper. Then a **朱砂 落款 seal** is pressed into the lower-right —
+a 56px red square with a reversed carved glyph, rotated a hair off-square like a real hand-stamp. Zero photographs
+anywhere on the site; the bloom and the seal are the entire visual vocabulary. You cannot get this by dropping content
+into a template — it requires composing the headline, the bloom, and the seal as one wet object on an empty sheet.
+
+**Deck — 留白过场 (The Void Divider).** Every section opens on a slide that is more than 90% empty rice-paper: a giant
+**stroke-only outline numeral** floating faint in the field, **one hair-thin vertical cinnabar rule**, one small seal,
+and the title hung low-left. No fill, no box, no chart — the near-total emptiness *is* the transition. The power is in
+how much paper you are willing to leave blank; change the template and the first instinct is to fill it, which kills the moment.
+
+## Do's and Don'ts
+
+**Do**
+- Keep cinnabar as a seal — one stamped square, one hair-thin rule, one opening mark. Ration it to 一点.
+- Let the heavy Song headline and the empty paper carry the design; treat 留白 as material, not a gap to fill.
+- Reverse the display headline *inside* the ink bloom, and sign each surface with a 落款 seal in the corner.
+- Left-align long text, pool whitespace toward one focal point, hold body leading at 1.9.
+
+**Don't**
+- **Don't touch the purple-blue cliché gradient (`#667eea → #764ba2`)** or any of its family. This system is warm paper, one ink, one seal — never a gradient wash.
+- **Don't build the centered card triptych** (title + gray subtitle + three equal rounded cards). This is an asymmetric, left-weighted, air-heavy composition.
+- **Don't render Chinese with a Japanese font.** 简体中文 uses Noto Serif SC / Noto Sans SC / LXGW WenKai with system CJK fallback, always.
+- **Don't animate shadows or the bloom**, and never add glow / `backdrop-filter`; the soft edge is baked into the asset, and depth here is paper-to-ink tone, not light.
+- Don't let cinnabar become a background, a gradient, or text; don't add a second accent color; don't fill the empty two-thirds.
+
+## Responsive Behavior
+
+| Breakpoint | Layout |
+|---|---|
+| ≥1160px | Full asymmetric composition; text left-third, ink bloom + seal in the open right; `display-xl` at 88px; dividers keep 90% air. |
+| 768–1159px | Reading column drifts toward center; the bloom shrinks but the seal stays crisp; `display-xl` ~60px. |
+| ≤767px | Single-column re-composition. The cover restacks line-by-line with the bloom moving *above* the headline and the seal to the top-right corner; the void divider keeps its emptiness but the outline numeral centers; the ink slab card goes full-width. |
+
+Mobile is a re-composition, not a shrink — and the 留白 ratio is defended, not sacrificed, at every width. Headlines use
+`clamp()` sized to the longest manually-broken line, and each line is locked with `white-space: nowrap` so the Song title
+never drops an orphan 字 or 标点 on a 390px screen. Chinese width limits use `em` / `px`, never `ch`. Verify zero orphans and
+no horizontal overflow (`scrollWidth == clientWidth`) on both desktop and ≤390px before shipping.
+
+## Anti-Slop Pledge
+
+Strip the brand name and this page still reads as made by a hand that cared: warm rice-paper left mostly empty on purpose,
+a single drop of pine-soot ink blooming with the headline reversed inside it, one 朱砂 seal pressed into the corner, heavy
+Noto Serif SC set at manifesto scale over deliberate silence. No purple gradient, no centered card triptych, no glow, no
+default font naked on the screen, no Japanese font faking Chinese. The restraint is the fingerprint — a pipeline reaches to
+fill the page; this system reaches to empty it, and lets one seal say a person was here.
+
+---
+
+*HeiGe-Design · moxi-void · MIT.*

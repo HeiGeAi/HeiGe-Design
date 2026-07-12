@@ -1,0 +1,266 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Rebar is an industrial construction-tech design system built on the order aesthetics of a work site. A poured concrete-gray field carries asphalt-black structural blocks, and one load-bearing caution orange is spent only where load actually transfers. Compressed stencil display type stamps giant component numbers while monospace annotations read like blueprint callouts. Sections are welded together by full-bleed 45-degree hazard-stripe dividers over a naked load-bearing grid. Hard offset shadows, zero blur, zero glow, sharp corners throughout. It looks engineered to carry weight, because it is. Signed HeiGe-Design.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.357,
+          0.122
+        ],
+        "hex": "#ff5b1f"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.09,
+          0.094,
+          0.102
+        ],
+        "hex": "#17181a"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.09,
+          0.094,
+          0.102
+        ],
+        "hex": "#17181a"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.722,
+          0.71,
+          0.678
+        ],
+        "hex": "#b8b5ad"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.851,
+          0.839,
+          0.804
+        ],
+        "hex": "#d9d6cd"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.235,
+          0.243,
+          0.255
+        ],
+        "hex": "#3c3e41"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.416,
+          0.408,
+          0.384
+        ],
+        "hex": "#6a6862"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 80,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Anton\", \"Archivo Black\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 96,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -1,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Anton\", \"Archivo Black\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 56,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Archivo Narrow\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 28,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 17,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "body-mono": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"IBM Plex Mono\", \"JetBrains Mono\", \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 15,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"IBM Plex Mono\", \"JetBrains Mono\", \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 2,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 16,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"IBM Plex Mono\", \"JetBrains Mono\", \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.3,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

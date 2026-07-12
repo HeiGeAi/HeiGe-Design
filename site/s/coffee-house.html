@@ -1,0 +1,1057 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>咖啡馆 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 温暖人文</div>
+<div class="hero"><div class="fam">温暖人文</div><h1>咖啡馆<span class="badge">✓ lint 0 error</span></h1><div class="slug">coffee-house · coffee-house-design-system</div><p class="desc">CoffeeHouse is a cozy, serif-forward warmth system for indie blogs, podcasts and small roasters. Its color logic is a single cup: espresso brown carries every heading and action, milk-foam cream holds the page, and a caramel drizzle marks only what matters. Fraunces gives a soft, slightly wonky display serif, Newsreader keeps long reading unhurried, and Caveat scribbles handwritten margin notes. The signature is a faint coffee-ring bleeding from a card corner and a hand-drawn caramel circle around a stat, like napkin math. Restrained, tactile, unmistakably hand-made.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#efe3d3;--ink:#3a2a20;--pri:#4a352a;--onpri:#f4ebda;--acc:#c17a35;--surf:#f7efe1;--muted:#6f5b48;--line:#dcccb6;--r:12px;--dff:Fraunces, Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:Newsreader, Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--mff:Fraunces, Georgia, "Noto Serif SC", "Songti SC", "STSong", serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">咖啡馆</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#4a352a"></i><i style="background:#f4ebda"></i><i style="background:#3a2a20"></i><i style="background:#efe3d3"></i><i style="background:#f7efe1"></i><i style="background:#6f5b48"></i><i style="background:#dcccb6"></i><i style="background:#c17a35"></i></div>
+  <div class="swrap"><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">card-note</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">prose-lead</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">article-paragraph</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">tag-pill</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">margin-note</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">caption-meta</span></div>
+  </div>
+  <div class="card" style="--bg:#efe3d3;--ink:#3a2a20;--pri:#4a352a;--onpri:#f4ebda;--acc:#c17a35;--surf:#f7efe1;--muted:#6f5b48;--line:#dcccb6;--r:12px;--dff:Fraunces, Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:Newsreader, Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--mff:Fraunces, Georgia, "Noto Serif SC", "Songti SC", "STSong", serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">咖啡馆</div></div>
+    <div class="swrap"><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#f7efe1;color:#3a2a20;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two moments a generic template physically cannot reproduce.
+
+**UI — 咖啡渍批注 (The Coffee-Ring Margin Note).** An article card with a translucent coffee-ring (layered `radial-gradient`, off-round, warm caramel) bleeding across its top-right corner as if a mug rested there overnight. From that corner a hand-drawn caramel arrow curves out into the right gutter to a **Caveat** handwritten note — &quot;这段是重点&quot; — sitting slightly rotated on a faint latte chip. The stain, the wobble of the arrow, the real felt-tip hand and the reserved margin gutter only exist together in this system. Swap the template and you lose the whole gesture.
+
+**Deck — 餐巾纸圈数 (The Napkin Circle).** On a roast stat slide, the hero number is set giant in crema, then encircled by a single imperfect hand-drawn caramel ellipse — the exact motion of circling a number on a napkin — with a scrawled &quot;记一下&quot; beside it. Th</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Keep espresso and roast for structure, spend caramel like it's expensive — one mark per view.
+- Let the right gutter breathe and fill it with handwriting, not more UI.
+- Set the reading column at 62–72 characters and trust the 96px section air.
+- Make the coffee-ring wobble; hand-draw underlines and circles so they read human.
+- Warm every shadow with roast rgba, keep them static.
+
+**Don't**
+- **No purple-blue cliché gradient** (`#667eea → #764ba2`) or any of its cousins — it is the AI-template ID card and the opposite of a café.
+- **No centered title + grey subtitle + three equal rounded cards** repeated down the page. Anchor content left, vary card weight, give one card the spotlight.
+- **Never render Chinese with a Japanese font** (Mochiy / Zen Maru / Yuji) — simplified glyphs tofu or turn Japanese. Chinese handwriting routes to LXGW WenKai / Kaiti SC / STKaiti.
+- **Never animate shadows or glows** — pulsing `box-shadow` repaints every frame and stutters the scroll.
+- Don't let the browns collapse into mud — keep foam bright and roast deep so the mid-tones stay clean.
+- Don't use caramel as body text or a link label; it fails small-text contrast on cream. Caramel is a mark, ink is a word.
+- Don't draw a perfect circle or a crisp border-bottom for the signatures — perfection kills the hand-made read.</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: coffee-house-design-system
+description: &quot;CoffeeHouse is a cozy, serif-forward warmth system for indie blogs, podcasts and small roasters. Its color logic is a single cup: espresso brown carries every heading and action, milk-foam cream holds the page, and a caramel drizzle marks only what matters. Fraunces gives a soft, slightly wonky display serif, Newsreader keeps long reading unhurried, and Caveat scribbles handwritten margin notes. The signature is a faint coffee-ring bleeding from a card corner and a hand-drawn caramel circle around a stat, like napkin math. Restrained, tactile, unmistakably hand-made.&quot;
+
+colors:
+  primary: &quot;#4a352a&quot;
+  on-primary: &quot;#f4ebda&quot;
+  ink: &quot;#3a2a20&quot;
+  canvas: &quot;#efe3d3&quot;
+  surface: &quot;#f7efe1&quot;
+  muted: &quot;#6f5b48&quot;
+  hairline: &quot;#dcccb6&quot;
+  accent: &quot;#c17a35&quot;
+  crema: &quot;#d7a869&quot;
+  roast: &quot;#2a1d15&quot;
+
+typography:
+  display-xl:
+    fontFamily: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 66px
+    fontWeight: 600
+    lineHeight: 1.02
+    letterSpacing: -1px
+  display:
+    fontFamily: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 42px
+    fontWeight: 600
+    lineHeight: 1.08
+    letterSpacing: -0.4px
+  heading:
+    fontFamily: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 27px
+    fontWeight: 600
+    lineHeight: 1.22
+    letterSpacing: -0.2px
+  lead:
+    fontFamily: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 21px
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: 0px
+  body:
+    fontFamily: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.75
+    letterSpacing: 0.1px
+  eyebrow:
+    fontFamily: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: 2.4px
+  annotation:
+    fontFamily: &quot;Caveat, \&quot;LXGW WenKai\&quot;, \&quot;Kaiti SC\&quot;, \&quot;STKaiti\&quot;, \&quot;Noto Serif SC\&quot;, cursive&quot;
+    fontSize: 23px
+    fontWeight: 500
+    lineHeight: 1.3
+    letterSpacing: 0.3px
+  caption:
+    fontFamily: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 14px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 0.2px
+  button:
+    fontFamily: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 16px
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: 0.3px
+
+rounded:
+  none: 0px
+  sm: 6px
+  md: 12px
+  lg: 20px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 96px
+
+components:
+  # —— UI 界面组件 ——
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.sm} {spacing.lg}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.sm} {spacing.lg}&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  card-note:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  prose-lead:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.lead}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.section}&quot;
+  article-paragraph:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm} {spacing.section}&quot;
+  tag-pill:
+    backgroundColor: &quot;{colors.crema}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  margin-note:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.annotation}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.sm} {spacing.md}&quot;
+  caption-meta:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  badge-accent:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.roast}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  divider-rule:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    height: 1px
+    width: 100%
+  footer:
+    backgroundColor: &quot;{colors.roast}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+  # —— slide 演示组件（16:9 演示版式）——
+  slide-cover:
+    backgroundColor: &quot;{colors.roast}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.roast}&quot;
+    textColor: &quot;{colors.crema}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.roast}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.lead}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# CoffeeHouse · 咖啡馆
+
+A cozy, serif-forward warmth system for people who write like they talk. Built for indie blogs, podcasts, tiny roasters and one-person brands where the page should feel like a corner table, not a dashboard. Signed HeiGe-Design.
+
+## Overview
+
+The whole system is one cup, poured on paper.
+
+**Espresso** (`#4a352a`) does the heavy work — every heading, every button, every dark block is roasted brown, never black. **Milk foam** (`#efe3d3`) is the page it all floats on: a warm oat cream that reads as daylight through a café window. Between them, a **caramel** drizzle (`#c17a35` / `#d7a869`) touches only what earns it — one underline, one circled number, one arrow to a margin note.
+
+The type carries the mood. **Fraunces** is a soft, faintly wonky display serif that looks hand-set; **Newsreader** keeps long paragraphs unhurried and legible; **Caveat** is a real felt-tip hand that scribbles in the margins. Nothing shouts. The rhythm is slow on purpose — generous line height, wide reading columns, big air between sections — so the one loud moment (a coffee-ring, a caramel circle) lands.
+
+Two roles, one soul: the same tokens set an article and drive a 16:9 deck. A CoffeeHouse slide is a café napkin blown up to fill a screen.
+
+## Colors
+
+Restraint is the whole trick. Two structural tones, one accent used twice, five quiet neutrals. Never let the browns turn to mud — keep the cream bright and the roast deep so the middle stays clean.
+
+### Brand &amp; Accent
+- **Espresso `#4a352a`** — `primary`. The brand voice. Buttons, section dividers, the darkest UI blocks. Warm, not black.
+- **Caramel `#c17a35`** — `accent`. Drizzle, not fill. Hand-drawn underlines, the arrow to a margin note, the circle around a stat, hairline highlights. Because caramel on cream fails small-text contrast, it is **never** body text or a link label — it is a mark, not a word.
+- **Crema `#d7a869`** — `crema`. The lighter foam of the caramel. Fills tag pills against dark ink (contrast 6.33:1) and carries the giant stat number on the roast slides (7.54:1).
+
+### Surface
+- **Milk foam `#efe3d3`** — `canvas`. The page. Warm oat daylight.
+- **Latte cream `#f7efe1`** — `surface`. Cards lift a half-shade lighter than the page, like foam settling above coffee.
+- **Roast `#2a1d15`** — `roast`. The near-black bottom of the cup. Deep slide covers, stat heroes, the footer.
+- **Foam line `#dcccb6`** — `hairline`. 1px separators, card edges. Barely there.
+
+### Text
+- **Roasted ink `#3a2a20`** — `ink`. Body and headings on light. Softer than black, easier on the eye over a long read.
+- **Milk coffee `#6f5b48`** — `muted`. Timestamps, bylines, captions. Passes AA on both canvas (5.08:1) and surface (5.63:1).
+- **Foam text `#f4ebda`** — `on-primary`. Reads on espresso and roast alike (9.67:1 / 13.81:1).
+
+### Semantic
+This system stays deliberately un-clinical. There is no green-up / red-down here; a cozy blog does not need a trading terminal's palette. When a status is truly needed, borrow **caramel** for &quot;note / new&quot; and **roast** for &quot;closed / archived&quot;, and keep it to a dot or a tag, never a banner.
+
+## Typography
+
+Cozy means warm serifs everywhere, plus a real hand in the margins. Three families, one clear job each.
+
+### Font Family
+- **Display &amp; UI serif — Fraunces**: `Fraunces, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`. Titles, headings, buttons, tracked eyebrows. Its soft terminals and slight wonk are the personality.
+- **Reading serif — Newsreader**: `Newsreader, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`. Lead paragraphs, body, captions. Unhurried and quiet under long text.
+- **Hand — Caveat**: `Caveat, &quot;LXGW WenKai&quot;, &quot;Kaiti SC&quot;, &quot;STKaiti&quot;, &quot;Noto Serif SC&quot;, cursive`. Margin notes, sign-offs, the human aside.
+
+### Chinese &amp; fallback rules (production iron law)
+- Every Latin webfont ends in a **system serif** fallback (`Georgia`) and a **Chinese serif** fallback (`&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;`), so a blocked `fonts.googleapis.com` degrades to a clean warm serif, not Times-collapse.
+- The handwriting stack routes Chinese to **LXGW WenKai → Kaiti SC → STKaiti** — all genuine Chinese kai faces. **Never a Japanese font** (Mochiy, Zen Maru, Yuji): simplified glyphs would go tofu or render as Japanese variants.
+- Self-check: kill the webfont links and every Chinese string must still render cleanly.
+
+### Hierarchy
+| Role | Family | Size | Weight | Line | Tracking | Use |
+|---|---|---|---|---|---|---|
+| display-xl | Fraunces | 66px | 600 | 1.02 | -1px | Cover title, hero stat |
+| display | Fraunces | 42px | 600 | 1.08 | -0.4px | Big quote, section numeral, stat |
+| heading | Fraunces | 27px | 600 | 1.22 | -0.2px | Card &amp; article titles |
+| lead | Newsreader | 21px | 400 | 1.6 | 0px | Opening paragraph, closing line |
+| body | Newsreader | 17px | 400 | 1.75 | 0.1px | Long-form reading |
+| eyebrow | Fraunces | 13px | 600 | 1.4 | 2.4px | Tracked uppercase kicker, tags, nav |
+| annotation | Caveat | 23px | 500 | 1.3 | 0.3px | Handwritten margin notes, sign-off |
+| caption | Newsreader | 14px | 400 | 1.5 | 0.2px | Meta, footer, timestamps |
+| button | Fraunces | 16px | 600 | 1 | 0.3px | Buttons |
+
+### Principles
+- **Contrast is 1:4 minimum.** display-xl to body is ~1:3.9 — push cover titles bigger with `clamp()` rather than shrinking the ceiling.
+- **Eyebrows are uppercase via tracking**, not a second typeface. Apply `text-transform: uppercase` and let the 2.4px letter-spacing do the coffee-menu work.
+- **Reading column stays 62–72 characters.** Limit width with `em`/`px`, never `ch` (a `ch` unit is far narrower than a Chinese glyph and forces early wraps / orphans).
+- **Zero orphans.** Manually broken titles get `white-space: nowrap` per line and a `clamp()` sized to the longest line so nothing strands a lone `的，` on the narrowest screen.
+
+## Layout
+
+Air is the luxury good here.
+
+### Spacing
+A 4px base scale: `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 96`. The jump to a **96px** section rhythm is what makes the page feel like a café, not a form.
+
+### Grid &amp; Container
+- Article: a single **680px** reading column, left-anchored, with a **~220px right margin gutter** reserved for handwritten `margin-note`s and `caption-meta`. The asymmetry is the layout — content left, human annotations riding the right edge.
+- Cards &amp; galleries: a 12-column grid at 1120px max width, but never three identical centered cards in a row (see Don'ts). Vary sizes; let one card be the loud one.
+- Slides: fixed 16:9, `section` padding, content pinned to a lower-left or left-center baseline so the top-right corner stays free for the coffee-ring watermark.
+
+### Whitespace philosophy
+Whitespace is silence between sentences, not filler in the corners. Stack it up before a quote or a stat so the loud moment has room to ring; keep it tight inside a paragraph so reading flows.
+
+## Elevation &amp; Depth
+
+Warm, soft, physical — paper and porcelain, never glass.
+
+| Layer | Treatment |
+|---|---|
+| Page | Flat milk-foam canvas, optional faint paper grain (static, ≤3% opacity) |
+| Card | `surface`, 1px `hairline` border, soft warm shadow `0 6px 20px rgba(74,53,42,0.10)` |
+| Popover / raised | Same warm shadow at `0 12px 32px rgba(74,53,42,0.16)`, still static |
+| Ring accent | The coffee-ring: a static `radial-gradient` stain, a depth cue, never a component |
+
+Depth rules: shadows are **warm-tinted** (roast rgba), never neutral grey — grey shadow on a warm page reads as a stock template instantly. Shadows are **never animated** (glowing/pulsing shadow repaints every frame and stutters scroll). No `backdrop-filter` — where a frosted look is wanted, use a semi-opaque cream fill. The coffee-ring is drawn with gradients so it costs nothing to scroll past.
+
+## Shapes
+
+Soft and hand-made, with one deliberately imperfect curve.
+
+- **Radius:** `none 0 · sm 6 · md 12 · lg 20 · pill 9999`. Cards land on `lg` (20px) — generous and friendly; buttons and tags go full `pill`; small marks use `sm`.
+- **Images:** cropped to soft `lg` corners, occasionally with a torn-paper mask on one edge for the zine feel.
+- **The coffee-ring:** an off-round ellipse, never a perfect circle. Its wobble is the point — a perfect circle reads as clip-art, a slightly ovular hand-drawn one reads as a mug that actually sat there.
+- **Underlines:** caramel marks are hand-drawn strokes (a subtly rotated, uneven bar), not crisp CSS `border-bottom`.
+
+## Components
+
+- **button-primary** — espresso fill, foam text, pill. The one confident action per view.
+- **button-secondary** — latte surface, ink text, caramel border. Quiet companion action.
+- **nav-bar** — cream bar, ink links in tracked eyebrow caps, single hairline底边. Reads like a café menu header.
+- **card-note** — latte card, ink heading, hairline edge, 20px radius. The home of a post, an episode, a note.
+- **prose-lead** — the oversized opening paragraph in Newsreader lead; sets the unhurried pace.
+- **article-paragraph** — body reading block inside the 680px column.
+- **tag-pill** — crema fill, dark ink caps. Category / topic chips.
+- **badge-accent** — solid caramel fill with roast text (4.75:1), pill. The one &quot;new / featured&quot; flag; the only place caramel is allowed to fill instead of drizzle.
+- **stat-block** — latte card, espresso number in display serif. A number that matters, framed softly.
+- **margin-note** — Caveat handwriting on a faint latte chip, tethered by a caramel arrow, riding the right gutter. The human voice in the margin.
+- **caption-meta** — milk-coffee muted captions: dates, bylines, read-time.
+- **divider-rule** — a 1px foam-line bar (`hairline`). The quiet separator between café-table sections.
+- **footer** — roast block, foam text, a caramel hairline on top. The bottom of the cup.
+
+## Presentation System
+
+A CoffeeHouse deck is café napkin math, blown up to 16:9. Every principle serves **one page, one sentence · golden three seconds · one visual hammer**. The visual hammer for the whole system is **the coffee-ring** — it appears on every heavy slide so the deck is recognizable from the back of a room.
+
+- **Cover (`slide-cover`)** — roast background, one Fraunces line in foam cream pinned lower-left, a faint caramel coffee-ring bleeding from the top-right corner, a Caveat episode/date scribble beneath. Three-second read: title + who's talking.
+- **Section divider (`slide-section-divider`)** — espresso field, a giant Fraunces chapter numeral (`01`, `02`) in foam, one short caramel rule under it. A palate cleanser, one word max.
+- **Stat hero (`slide-stat-hero`)** — roast field, the number set huge in **crema** and wrapped in a hand-drawn caramel circle (the napkin circle), unit in small caps, a Caveat &quot;记一下&quot; aside. One number owns the whole screen.
+- **Quote (`slide-quote`)** — flip to bright milk-foam canvas for contrast, one Fraunces pull-quote in ink with a caramel hand-underline, attribution in Caveat. The light slide in a dark deck — a deliberate breath.
+- **Closing (`slide-closing`)** — back to roast, a lead-size call to action in foam, a caramel-bordered button shape, and a handwritten sign-off (`— 下次见`). Ends warm, not with a logo wall.
+
+Rhythm across the deck: dark cover → dark divider → dark stat → **bright quote breath** → dark close. The single bright quote slide is the张弛 — without it the deck is one flat brown tone.
+
+## Signature Moment
+
+Two moments a generic template physically cannot reproduce.
+
+**UI — 咖啡渍批注 (The Coffee-Ring Margin Note).** An article card with a translucent coffee-ring (layered `radial-gradient`, off-round, warm caramel) bleeding across its top-right corner as if a mug rested there overnight. From that corner a hand-drawn caramel arrow curves out into the right gutter to a **Caveat** handwritten note — &quot;这段是重点&quot; — sitting slightly rotated on a faint latte chip. The stain, the wobble of the arrow, the real felt-tip hand and the reserved margin gutter only exist together in this system. Swap the template and you lose the whole gesture.
+
+**Deck — 餐巾纸圈数 (The Napkin Circle).** On a roast stat slide, the hero number is set giant in crema, then encircled by a single imperfect hand-drawn caramel ellipse — the exact motion of circling a number on a napkin — with a scrawled &quot;记一下&quot; beside it. The circle is deliberately un-closed and un-round. A perfect CSS ring is clip-art; this is a person reaching for a pen.
+
+## Do's and Don'ts
+
+**Do**
+- Keep espresso and roast for structure, spend caramel like it's expensive — one mark per view.
+- Let the right gutter breathe and fill it with handwriting, not more UI.
+- Set the reading column at 62–72 characters and trust the 96px section air.
+- Make the coffee-ring wobble; hand-draw underlines and circles so they read human.
+- Warm every shadow with roast rgba, keep them static.
+
+**Don't**
+- **No purple-blue cliché gradient** (`#667eea → #764ba2`) or any of its cousins — it is the AI-template ID card and the opposite of a café.
+- **No centered title + grey subtitle + three equal rounded cards** repeated down the page. Anchor content left, vary card weight, give one card the spotlight.
+- **Never render Chinese with a Japanese font** (Mochiy / Zen Maru / Yuji) — simplified glyphs tofu or turn Japanese. Chinese handwriting routes to LXGW WenKai / Kaiti SC / STKaiti.
+- **Never animate shadows or glows** — pulsing `box-shadow` repaints every frame and stutters the scroll.
+- Don't let the browns collapse into mud — keep foam bright and roast deep so the mid-tones stay clean.
+- Don't use caramel as body text or a link label; it fails small-text contrast on cream. Caramel is a mark, ink is a word.
+- Don't draw a perfect circle or a crisp border-bottom for the signatures — perfection kills the hand-made read.
+
+## Responsive Behavior
+
+Mobile is a re-pour, not a shrink.
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥1120px | Full layout: 680px reading column + reserved right gutter for margin notes |
+| 768–1119px | Reading column widens toward center; margin notes narrow but stay in gutter |
+| &lt;768px | **No gutter exists** — every `margin-note` re-flows inline directly under its paragraph as a caramel-bordered handwritten aside; nav collapses to a menu; stats stack single-column |
+| Slides | 16:9 → re-composed to 4:5 for phone reading: cover text drops to two lines with `clamp()`, the coffee-ring moves to bottom-right, the napkin circle re-scales to keep the number legible |
+
+Re-composition rules: on phones the handwriting becomes an **inline aside**, not a floating overlay (no room to float). Titles keep `white-space: nowrap` per manually broken line and `clamp()` so no orphan strands at ≤390px. Verify `scrollWidth == clientWidth` at 390px — the coffee-ring must be cropped by the viewport, never cause horizontal scroll. All motion respects `@media (prefers-reduced-motion: reduce)`.
+
+## Anti-Slop Pledge
+
+Strip the name off any CoffeeHouse page and you still see it: a warm oat cream page, roasted-brown serifs set with air to breathe, one caramel circle around the number that matters, and a real handwritten note in the margin. The coffee-ring bleeding from a card corner is a decision no template ships by default. This was poured by hand, and it shows — signed HeiGe-Design.
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #4a352a;
+  --color-on-primary: #f4ebda;
+  --color-ink: #3a2a20;
+  --color-canvas: #efe3d3;
+  --color-surface: #f7efe1;
+  --color-muted: #6f5b48;
+  --color-hairline: #dcccb6;
+  --color-accent: #c17a35;
+  --color-crema: #d7a869;
+  --color-roast: #2a1d15;
+  --font-display-xl: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-lead: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-eyebrow: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-annotation: &quot;Caveat, \&quot;LXGW WenKai\&quot;, \&quot;Kaiti SC\&quot;, \&quot;STKaiti\&quot;, \&quot;Noto Serif SC\&quot;, cursive&quot;;
+  --font-caption: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-button: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --text-display-xl: 66px;
+  --text-display: 42px;
+  --text-heading: 27px;
+  --text-lead: 21px;
+  --text-body: 17px;
+  --text-eyebrow: 13px;
+  --text-annotation: 23px;
+  --text-caption: 14px;
+  --text-button: 16px;
+  --tracking-display-xl: -1px;
+  --tracking-display: -0.4px;
+  --tracking-heading: -0.2px;
+  --tracking-lead: 0px;
+  --tracking-body: 0.1px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-annotation: 0.3px;
+  --tracking-caption: 0.2px;
+  --tracking-button: 0.3px;
+  --font-weight-display-xl: 600;
+  --font-weight-display: 600;
+  --font-weight-heading: 600;
+  --font-weight-lead: 400;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 600;
+  --font-weight-annotation: 500;
+  --font-weight-caption: 400;
+  --font-weight-button: 600;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#4a352a&quot;,
+        &quot;on-primary&quot;: &quot;#f4ebda&quot;,
+        &quot;ink&quot;: &quot;#3a2a20&quot;,
+        &quot;canvas&quot;: &quot;#efe3d3&quot;,
+        &quot;surface&quot;: &quot;#f7efe1&quot;,
+        &quot;muted&quot;: &quot;#6f5b48&quot;,
+        &quot;hairline&quot;: &quot;#dcccb6&quot;,
+        &quot;accent&quot;: &quot;#c17a35&quot;,
+        &quot;crema&quot;: &quot;#d7a869&quot;,
+        &quot;roast&quot;: &quot;#2a1d15&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display&quot;: [
+          &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;lead&quot;: [
+          &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;annotation&quot;: [
+          &quot;Caveat, \&quot;LXGW WenKai\&quot;, \&quot;Kaiti SC\&quot;, \&quot;STKaiti\&quot;, \&quot;Noto Serif SC\&quot;, cursive&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;66px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;display&quot;: [
+          &quot;42px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;27px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;lead&quot;: [
+          &quot;21px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;annotation&quot;: [
+          &quot;23px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;6px&quot;,
+        &quot;md&quot;: &quot;12px&quot;,
+        &quot;lg&quot;: &quot;20px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #4a352a;
+  --color-on-primary: #f4ebda;
+  --color-ink: #3a2a20;
+  --color-canvas: #efe3d3;
+  --color-surface: #f7efe1;
+  --color-muted: #6f5b48;
+  --color-hairline: #dcccb6;
+  --color-accent: #c17a35;
+  --color-crema: #d7a869;
+  --color-roast: #2a1d15;
+  --font-display-xl: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-lead: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-eyebrow: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-annotation: &quot;Caveat, \&quot;LXGW WenKai\&quot;, \&quot;Kaiti SC\&quot;, \&quot;STKaiti\&quot;, \&quot;Noto Serif SC\&quot;, cursive&quot;;
+  --font-caption: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-button: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --text-display-xl: 66px;
+  --text-display: 42px;
+  --text-heading: 27px;
+  --text-lead: 21px;
+  --text-body: 17px;
+  --text-eyebrow: 13px;
+  --text-annotation: 23px;
+  --text-caption: 14px;
+  --text-button: 16px;
+  --tracking-display-xl: -1px;
+  --tracking-display: -0.4px;
+  --tracking-heading: -0.2px;
+  --tracking-lead: 0px;
+  --tracking-body: 0.1px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-annotation: 0.3px;
+  --tracking-caption: 0.2px;
+  --tracking-button: 0.3px;
+  --font-weight-display-xl: 600;
+  --font-weight-display: 600;
+  --font-weight-heading: 600;
+  --font-weight-lead: 400;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 600;
+  --font-weight-annotation: 500;
+  --font-weight-caption: 400;
+  --font-weight-button: 600;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;CoffeeHouse is a cozy, serif-forward warmth system for indie blogs, podcasts and small roasters. Its color logic is a single cup: espresso brown carries every heading and action, milk-foam cream holds the page, and a caramel drizzle marks only what matters. Fraunces gives a soft, slightly wonky display serif, Newsreader keeps long reading unhurried, and Caveat scribbles handwritten margin notes. The signature is a faint coffee-ring bleeding from a card corner and a hand-drawn caramel circle around a stat, like napkin math. Restrained, tactile, unmistakably hand-made.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.29,
+          0.208,
+          0.165
+        ],
+        &quot;hex&quot;: &quot;#4a352a&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.957,
+          0.922,
+          0.855
+        ],
+        &quot;hex&quot;: &quot;#f4ebda&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.227,
+          0.165,
+          0.125
+        ],
+        &quot;hex&quot;: &quot;#3a2a20&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.937,
+          0.89,
+          0.827
+        ],
+        &quot;hex&quot;: &quot;#efe3d3&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.969,
+          0.937,
+          0.882
+        ],
+        &quot;hex&quot;: &quot;#f7efe1&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.435,
+          0.357,
+          0.282
+        ],
+        &quot;hex&quot;: &quot;#6f5b48&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.863,
+          0.8,
+          0.714
+        ],
+        &quot;hex&quot;: &quot;#dcccb6&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.757,
+          0.478,
+          0.208
+        ],
+        &quot;hex&quot;: &quot;#c17a35&quot;
+      }
+    },
+    &quot;crema&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.843,
+          0.659,
+          0.412
+        ],
+        &quot;hex&quot;: &quot;#d7a869&quot;
+      }
+    },
+    &quot;roast&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.165,
+          0.114,
+          0.082
+        ],
+        &quot;hex&quot;: &quot;#2a1d15&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 12,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 20,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 66,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 42,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 27,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;lead&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 21,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;annotation&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Caveat, \&quot;LXGW WenKai\&quot;, \&quot;Kaiti SC\&quot;, \&quot;STKaiti\&quot;, \&quot;Noto Serif SC\&quot;, cursive&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 23,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Newsreader, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Fraunces, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 咖啡馆（coffee-house · 温暖人文）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `coffee-house` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#4a352a` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Fraunces`，正文 `Newsreader`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint coffee-house` / 导出其它格式：`heige-design export coffee-house --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 咖啡馆 — 原创设定集，可商用。跑校验：<code>heige-design lint coffee-house</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

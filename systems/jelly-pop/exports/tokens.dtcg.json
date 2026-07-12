@@ -1,0 +1,306 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Jelly-Pop (果冻) is a translucent candy playground for kids' learning products. Bubblegum magenta leads, jelly teal and lemon accent, and every surface reads like a gummy you could squish. Fat rounded display (Baloo 2 / ZCOOL KuaiLe) with a Chinese system fallback, exaggerated 40px corners, and a wobble spring on tap. Signature move — two translucent blobs overlap and multiply into a third jelly hue, printing a see-through core behind giant numbers. Warm blackberry ink, no pure black, no purple-blue slop.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.839,
+          0.122,
+          0.463
+        ],
+        "hex": "#d61f76"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "hex": "#ffffff"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.18,
+          0.102,
+          0.212
+        ],
+        "hex": "#2e1a36"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.953,
+          0.976
+        ],
+        "hex": "#fff3f9"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "hex": "#ffffff"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.478,
+          0.361,
+          0.467
+        ],
+        "hex": "#7a5c77"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.965,
+          0.851,
+          0.914
+        ],
+        "hex": "#f6d9e9"
+      }
+    },
+    "accent-jelly": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.027,
+          0.769,
+          0.706
+        ],
+        "hex": "#07c4b4"
+      }
+    },
+    "accent-sun": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.8,
+          0.2
+        ],
+        "hex": "#ffcc33"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 28,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 10,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 18,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 28,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Baloo 2\", \"Fredoka\", \"ZCOOL KuaiLe\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 76,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -1,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Baloo 2\", \"Fredoka\", \"ZCOOL KuaiLe\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 52,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Baloo 2\", \"Fredoka\", \"ZCOOL KuaiLe\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 28,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Nunito\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif",
+        "fontSize": {
+          "value": 18,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.1,
+          "unit": "px"
+        }
+      }
+    },
+    "numeral": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Baloo 2\", \"Fredoka\", \"Noto Sans SC\", \"PingFang SC\", sans-serif",
+        "fontSize": {
+          "value": 112,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -2,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Baloo 2\", \"Fredoka\", \"Noto Sans SC\", \"PingFang SC\", sans-serif",
+        "fontSize": {
+          "value": 18,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Nunito\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 14,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Baloo 2\", \"Fredoka\", \"Noto Sans SC\", \"PingFang SC\", sans-serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 2,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

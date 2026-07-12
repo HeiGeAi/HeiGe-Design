@@ -1,0 +1,260 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "BRUT-SIGNAL is a protest-poster system built on the roughness of woodblock printing: press black, newsprint white, and one arterial blood red, nothing else. An ultra-heavy slab shouts in all caps while an ultra-black grotesque and monospaced press-marks carry the rest. Its signature is the hard red-black seam, two full-bleed planks butting at a cheap-press mis-registration, and slogans sized to fill the frame. Sharp corners, carved-grain texture, zero soft edges. For advocacy, events, manifestos, and any brand willing to take a stance.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.878,
+          0,
+          0
+        ],
+        "hex": "#e00000"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "hex": "#ffffff"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.078,
+          0.078,
+          0.078
+        ],
+        "hex": "#141414"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.957,
+          0.937,
+          0.89
+        ],
+        "hex": "#f4efe3"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.039,
+          0.039,
+          0.039
+        ],
+        "hex": "#0a0a0a"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.341,
+          0.325,
+          0.29
+        ],
+        "hex": "#57534a"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.843,
+          0.816,
+          0.761
+        ],
+        "hex": "#d7d0c2"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Alfa Slab One\", \"Zilla Slab\", \"Roboto Slab\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 104,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -1,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Alfa Slab One\", \"Zilla Slab\", \"Roboto Slab\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 62,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Archivo Black\", \"Helvetica Neue\", \"Arial Black\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 30,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Helvetica Neue\", Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 17,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "body-mono": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Mono\", \"JetBrains Mono\", ui-monospace, \"SFMono-Regular\", \"Noto Sans SC\", monospace",
+        "fontSize": {
+          "value": 15,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Helvetica Neue\", Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 14,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 1.5,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Helvetica Neue\", Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Mono\", \"JetBrains Mono\", ui-monospace, \"SFMono-Regular\", \"Noto Sans SC\", monospace",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 2.5,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

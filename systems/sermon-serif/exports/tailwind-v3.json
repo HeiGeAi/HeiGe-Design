@@ -1,0 +1,124 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#1a1a18",
+        "on-primary": "#faf7f2",
+        "ink": "#23201b",
+        "canvas": "#faf7f2",
+        "surface": "#f2ebde",
+        "muted": "#6c645a",
+        "hairline": "#ddd4c4",
+        "accent": "#935428"
+      },
+      "fontFamily": {
+        "display-xl": [
+          "\"Fraunces\", \"Fraunces 72pt\", Georgia, \"Noto Serif SC\", \"Songti SC\", serif"
+        ],
+        "display-lg": [
+          "\"Fraunces\", \"Fraunces 72pt\", Georgia, \"Noto Serif SC\", \"Songti SC\", serif"
+        ],
+        "heading": [
+          "\"Fraunces\", \"Fraunces 72pt\", Georgia, \"Noto Serif SC\", \"Songti SC\", serif"
+        ],
+        "lead": [
+          "\"Fraunces\", \"Fraunces 72pt\", Georgia, \"Noto Serif SC\", \"Songti SC\", serif"
+        ],
+        "body": [
+          "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "eyebrow": [
+          "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "caption": [
+          "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "button": [
+          "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "meta-mono": [
+          "\"IBM Plex Mono\", ui-monospace, \"SFMono-Regular\", \"Noto Sans SC\", monospace"
+        ]
+      },
+      "fontSize": {
+        "display-xl": [
+          "88px",
+          {
+            "letterSpacing": "-2px",
+            "fontWeight": "380"
+          }
+        ],
+        "display-lg": [
+          "54px",
+          {
+            "letterSpacing": "-1px",
+            "fontWeight": "400"
+          }
+        ],
+        "heading": [
+          "26px",
+          {
+            "letterSpacing": "-0.3px",
+            "fontWeight": "500"
+          }
+        ],
+        "lead": [
+          "22px",
+          {
+            "letterSpacing": "-0.2px",
+            "fontWeight": "400"
+          }
+        ],
+        "body": [
+          "17px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "400"
+          }
+        ],
+        "eyebrow": [
+          "12px",
+          {
+            "letterSpacing": "2.4px",
+            "fontWeight": "600"
+          }
+        ],
+        "caption": [
+          "13px",
+          {
+            "letterSpacing": "0.4px",
+            "fontWeight": "500"
+          }
+        ],
+        "button": [
+          "14px",
+          {
+            "letterSpacing": "0.6px",
+            "fontWeight": "600"
+          }
+        ],
+        "meta-mono": [
+          "13px",
+          {
+            "letterSpacing": "0.5px",
+            "fontWeight": "500"
+          }
+        ]
+      },
+      "borderRadius": {
+        "none": "0px",
+        "sm": "2px",
+        "md": "6px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "section": "80px"
+      }
+    }
+  }
+}

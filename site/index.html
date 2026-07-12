@@ -1,0 +1,360 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HeiGe·Design — 视觉设定集库</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+header{padding:52px 0 22px;border-bottom:1px solid var(--edge)}
+.ey{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--brand)}
+h1{margin:14px 0 6px;font-size:clamp(34px,5vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.lead{color:var(--dim);font-size:15.5px;line-height:1.7;max-width:840px}.lead b{color:var(--fg)}
+.stat{display:flex;gap:26px;margin-top:20px;font-family:"Space Mono",monospace;font-size:12.5px;color:var(--dim);flex-wrap:wrap}.stat b{color:var(--fg)}
+.bar{position:sticky;top:0;z-index:5;background:rgba(10,11,13,.9);border-bottom:1px solid var(--edge);padding:12px 0;margin-bottom:26px}
+.bar .wrap{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#q{flex:1;min-width:200px;background:var(--shell2);border:1px solid var(--edge);border-radius:10px;color:var(--fg);padding:9px 14px;font:inherit;font-size:14px}
+.chip{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:999px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.chip.on{background:var(--fg);color:#0a0b0d;border-color:var(--fg);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px;padding-bottom:80px}
+.tile{border-radius:15px;border:1px solid var(--edge);background:var(--bg);color:var(--ink);font-family:var(--bff);padding:20px;min-height:250px;display:flex;flex-direction:column;gap:14px;transition:transform .16s,box-shadow .16s}
+.tile:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(0,0,0,.45)}
+.tt{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.72}.tt .sl{font-family:var(--mff);opacity:.6}
+.sp{flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px}.sp .disp{font-family:var(--dff);font-size:42px;line-height:1.02;color:var(--ink)}.sp .lat{font-family:var(--mff);font-size:11px;color:var(--muted)}
+.pal{display:flex;height:24px;border-radius:7px;overflow:hidden;border:1px solid var(--line)}.pal i{flex:1}
+.mini{display:flex;justify-content:space-between;align-items:center}.mini .tag{font-family:var(--mff);font-size:10.5px;color:var(--muted)}
+.mini .btn{font-family:var(--bff);font-weight:600;font-size:12.5px;background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:7px 14px}
+.famhead{grid-column:1/-1;display:flex;gap:12px;align-items:baseline;margin:22px 0 2px;padding-top:12px;border-top:1px solid var(--edge)}
+.famhead h2{font-size:19px;font-weight:700;margin:0}.famhead .n{font-family:"Space Mono",monospace;font-size:12px;color:var(--dim)}
+.none{grid-column:1/-1;color:var(--dim);padding:40px 0;text-align:center}
+footer{border-top:1px solid var(--edge);padding:38px 0 64px;color:var(--dim);font-size:13px;line-height:1.7}footer b{color:var(--fg)}
+</style></head><body>
+<div class="wrap"><header>
+<div class="ey">HeiGe · Design System Atlas · 设计工具</div>
+<h1>视觉设定集库<span style="color:var(--brand)">.</span></h1>
+<p class="lead">50 套原创品牌设定集，一份 <b>DESIGN.md</b> 同时驱动界面与演示。兼容 Google design.md（全过 lint），内容 100% 原创，含独家 <b>东方新中式</b> 家族。点任意一套看详情：预览 / 调色板 / 组件 / Do-Don't / 五格式一键复制 / 旗舰全页。</p>
+<div class="stat"><span><b>50</b> 套</span><span><b>11</b> 家族</span><span><b>50/50</b> 0 lint error</span><span>五层导出</span><span>URL→DESIGN.md 提取</span><span>UI+Deck 融合</span></div>
+</header></div>
+<div class="bar"><div class="wrap"><input id="q" placeholder="搜索：中文名 / slug / 家族 / 颜色关键词…"><button class="chip on" data-mode="all">全部明暗</button><button class="chip" data-mode="light">浅色</button><button class="chip" data-mode="dark">深色</button></div>
+<div class="wrap" style="margin-top:10px"><button class="chip fam on" data-f="全部">全部</button><button class="chip fam " data-f="凶悍工业">凶悍工业</button><button class="chip fam " data-f="暗色科技">暗色科技</button><button class="chip fam " data-f="优雅编辑">优雅编辑</button><button class="chip fam " data-f="瑞士纪律">瑞士纪律</button><button class="chip fam " data-f="复古未来">复古未来</button><button class="chip fam " data-f="有机自然">有机自然</button><button class="chip fam " data-f="玩味玩具">玩味玩具</button><button class="chip fam " data-f="温暖人文">温暖人文</button><button class="chip fam " data-f="张扬极繁">张扬极繁</button><button class="chip fam " data-f="奢侈高定">奢侈高定</button><button class="chip fam " data-f="东方新中式">东方新中式</button></div></div>
+<div class="wrap"><div class="grid" id="grid">
+<div class="famhead" data-family="凶悍工业"><h2>凶悍工业</h2><span class="n">05 套</span></div>
+<a class="tile is-dark" href="s/forge-anvil.html" data-family="凶悍工业" data-mode="dark" data-kw="熔炉 forge-anvil 凶悍工业" style="--bg:#0c0d0e;--ink:#f5f6f3;--pri:#c8ff00;--onpri:#0c0d0e;--acc:#c8ff00;--surf:#17191b;--muted:#9a9d9f;--line:#313437;--r:2px;--dff:"Archivo Black", "Space Grotesk", "Helvetica Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Space Grotesk", "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"JetBrains Mono", "SFMono-Regular", ui-monospace, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>凶悍工业</span><span class="sl">forge-anvil</span></div>
+    <div class="sp"><div class="disp" style="font-weight:900;letter-spacing:-2.4px">熔炉</div><div class="lat">Ag forge</div></div>
+    <div class="pal"><i style="background:#c8ff00"></i><i style="background:#0c0d0e"></i><i style="background:#f5f6f3"></i><i style="background:#17191b"></i><i style="background:#9a9d9f"></i><i style="background:#313437"></i><i style="background:#ff5a1f"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/rebar-concrete.html" data-family="凶悍工业" data-mode="light" data-kw="钢筋 rebar-concrete 凶悍工业" style="--bg:#b8b5ad;--ink:#17181a;--pri:#ff5b1f;--onpri:#17181a;--acc:#ff5b1f;--surf:#d9d6cd;--muted:#3c3e41;--line:#6a6862;--r:2px;--dff:"Anton", "Archivo Black", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Archivo", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "JetBrains Mono", "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>凶悍工业</span><span class="sl">rebar-concrete</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1px">钢筋</div><div class="lat">Ag rebar</div></div>
+    <div class="pal"><i style="background:#ff5b1f"></i><i style="background:#17181a"></i><i style="background:#b8b5ad"></i><i style="background:#d9d6cd"></i><i style="background:#3c3e41"></i><i style="background:#6a6862"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/riot-press.html" data-family="凶悍工业" data-mode="light" data-kw="暴走印刷 riot-press 凶悍工业" style="--bg:#e7e4da;--ink:#14130f;--pri:#ffe600;--onpri:#0b0a06;--acc:#ffe600;--surf:#171610;--muted:#57564d;--line:#57564d;--r:2px;--dff:Anton, "Bebas Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:Archivo, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, "PingFang SC", monospace">
+    <div class="tt"><span>凶悍工业</span><span class="sl">riot-press</span></div>
+    <div class="sp"><div class="disp" style="font-weight:400;letter-spacing:-1px">暴走印刷</div><div class="lat">Ag riot</div></div>
+    <div class="pal"><i style="background:#ffe600"></i><i style="background:#0b0a06"></i><i style="background:#14130f"></i><i style="background:#e7e4da"></i><i style="background:#171610"></i><i style="background:#f2efe4"></i><i style="background:#57564d"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/ironclad-ledger.html" data-family="凶悍工业" data-mode="dark" data-kw="铁账 ironclad-ledger 凶悍工业" style="--bg:#1b1d20;--ink:#f5efe3;--pri:#b7410e;--onpri:#f5efe3;--acc:#b7410e;--surf:#26282c;--muted:#9a9ca1;--line:#3a3d42;--r:2px;--dff:"Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--bff:"Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"JetBrains Mono", "SFMono-Regular", ui-monospace, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>凶悍工业</span><span class="sl">ironclad-ledger</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:-2px">铁账</div><div class="lat">Ag ironclad</div></div>
+    <div class="pal"><i style="background:#b7410e"></i><i style="background:#f5efe3"></i><i style="background:#1b1d20"></i><i style="background:#26282c"></i><i style="background:#9a9ca1"></i><i style="background:#3a3d42"></i><i style="background:#3fb950"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/brut-signal.html" data-family="凶悍工业" data-mode="light" data-kw="呐喊 brut-signal 凶悍工业" style="--bg:#f4efe3;--ink:#141414;--pri:#e00000;--onpri:#ffffff;--acc:#e00000;--surf:#0a0a0a;--muted:#57534a;--line:#d7d0c2;--r:2px;--dff:"Alfa Slab One", "Zilla Slab", "Roboto Slab", "Noto Serif SC", "Songti SC", serif;--bff:"Archivo", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, "SFMono-Regular", "Noto Sans SC", monospace">
+    <div class="tt"><span>凶悍工业</span><span class="sl">brut-signal</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1px">呐喊</div><div class="lat">Ag brut</div></div>
+    <div class="pal"><i style="background:#e00000"></i><i style="background:#ffffff"></i><i style="background:#141414"></i><i style="background:#f4efe3"></i><i style="background:#0a0a0a"></i><i style="background:#57534a"></i><i style="background:#d7d0c2"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="暗色科技"><h2>暗色科技</h2><span class="n">06 套</span></div>
+<a class="tile is-dark" href="s/nocturne-teal.html" data-family="暗色科技" data-mode="dark" data-kw="深空电青 nocturne-teal 暗色科技" style="--bg:#08090d;--ink:#e9edf3;--pri:#2dd4bf;--onpri:#031815;--acc:#f6a35c;--surf:#0f1319;--muted:#8a94a4;--line:#20262f;--r:10px;--dff:'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;--bff:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;--mff:'JetBrains Mono', 'SF Mono', ui-monospace, 'Cascadia Code', 'Noto Sans SC', 'PingFang SC', monospace">
+    <div class="tt"><span>暗色科技</span><span class="sl">nocturne-teal</span></div>
+    <div class="sp"><div class="disp" style="font-weight:600;letter-spacing:-1.8px">深空电青</div><div class="lat">Ag nocturne</div></div>
+    <div class="pal"><i style="background:#2dd4bf"></i><i style="background:#031815"></i><i style="background:#e9edf3"></i><i style="background:#08090d"></i><i style="background:#0f1319"></i><i style="background:#8a94a4"></i><i style="background:#20262f"></i><i style="background:#5ff0dc"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/aurora-mesh.html" data-family="暗色科技" data-mode="dark" data-kw="极光 aurora-mesh 暗色科技" style="--bg:#0a0b12;--ink:#e6edf3;--pri:#34d399;--onpri:#06131f;--acc:#38bdf8;--surf:#12141d;--muted:#94a3b8;--line:#232838;--r:10px;--dff:"Space Grotesk", "Geist", -apple-system, BlinkMacSystemFont, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Geist", "Inter", -apple-system, BlinkMacSystemFont, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Geist Mono", "JetBrains Mono", "SF Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>暗色科技</span><span class="sl">aurora-mesh</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:-2px">极光</div><div class="lat">Ag aurora</div></div>
+    <div class="pal"><i style="background:#34d399"></i><i style="background:#06131f"></i><i style="background:#38bdf8"></i><i style="background:#7dd3fc"></i><i style="background:#e6edf3"></i><i style="background:#94a3b8"></i><i style="background:#0a0b12"></i><i style="background:#12141d"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/carbon-lime.html" data-family="暗色科技" data-mode="dark" data-kw="碳黑电绿 carbon-lime 暗色科技" style="--bg:#0a0a0a;--ink:#e8ece2;--pri:#b4ff39;--onpri:#0a0a0a;--acc:#6f8f2a;--surf:#131512;--muted:#868d7d;--line:#262a22;--r:4px;--dff:"Space Mono", "JetBrains Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", monospace;--bff:Inter, Geist, -apple-system, BlinkMacSystemFont, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"JetBrains Mono", "Space Mono", "SFMono-Regular", ui-monospace, Menlo, Consolas, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", monospace">
+    <div class="tt"><span>暗色科技</span><span class="sl">carbon-lime</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:-1px">碳黑电绿</div><div class="lat">Ag carbon</div></div>
+    <div class="pal"><i style="background:#b4ff39"></i><i style="background:#0a0a0a"></i><i style="background:#e8ece2"></i><i style="background:#131512"></i><i style="background:#868d7d"></i><i style="background:#262a22"></i><i style="background:#6f8f2a"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/midnight-trust.html" data-family="暗色科技" data-mode="dark" data-kw="午夜蓝 midnight-trust 暗色科技" style="--bg:#0b1018;--ink:#dde5f2;--pri:#5e8fff;--onpri:#08111d;--acc:#5e8fff;--surf:#0f1826;--muted:#8b98ad;--line:#1c2740;--r:8px;--dff:Inter, "SF Pro Display", "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:Inter, "SF Pro Text", "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"JetBrains Mono", "SF Mono", "Cascadia Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>暗色科技</span><span class="sl">midnight-trust</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:-1.6px">午夜蓝</div><div class="lat">Ag midnight</div></div>
+    <div class="pal"><i style="background:#5e8fff"></i><i style="background:#08111d"></i><i style="background:#dde5f2"></i><i style="background:#0b1018"></i><i style="background:#0f1826"></i><i style="background:#8b98ad"></i><i style="background:#1c2740"></i><i style="background:#38445c"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/obsidian-flux.html" data-family="暗色科技" data-mode="dark" data-kw="黑曜流光 obsidian-flux 暗色科技" style="--bg:#060608;--ink:#eceaf4;--pri:#7c5cff;--onpri:#050506;--acc:#9d84ff;--surf:#0f0e17;--muted:#8b899c;--line:#232130;--r:6px;--dff:Geist, Satoshi, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;--bff:Satoshi, Geist, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;--mff:'Geist Mono', 'JetBrains Mono', 'SFMono-Regular', ui-monospace, Menlo, monospace">
+    <div class="tt"><span>暗色科技</span><span class="sl">obsidian-flux</span></div>
+    <div class="sp"><div class="disp" style="font-weight:600;letter-spacing:-2.4px">黑曜流光</div><div class="lat">Ag obsidian</div></div>
+    <div class="pal"><i style="background:#7c5cff"></i><i style="background:#050506"></i><i style="background:#eceaf4"></i><i style="background:#060608"></i><i style="background:#0f0e17"></i><i style="background:#8b899c"></i><i style="background:#232130"></i><i style="background:#9d84ff"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/void-hud.html" data-family="暗色科技" data-mode="dark" data-kw="虚空仪表 void-hud 暗色科技" style="--bg:#0b0e11;--ink:#d7e5ec;--pri:#22d3ee;--onpri:#04181d;--acc:#22d3ee;--surf:#12171d;--muted:#8194a0;--line:#202a33;--r:6px;--dff:"Space Grotesk", "Inter", system-ui, -apple-system, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Inter", system-ui, -apple-system, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>暗色科技</span><span class="sl">void-hud</span></div>
+    <div class="sp"><div class="disp" style="font-weight:600;letter-spacing:-1.2px">虚空仪表</div><div class="lat">Ag void</div></div>
+    <div class="pal"><i style="background:#22d3ee"></i><i style="background:#04181d"></i><i style="background:#d7e5ec"></i><i style="background:#0b0e11"></i><i style="background:#12171d"></i><i style="background:#8194a0"></i><i style="background:#202a33"></i><i style="background:#ff8a24"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="优雅编辑"><h2>优雅编辑</h2><span class="n">05 套</span></div>
+<a class="tile " href="s/sermon-serif.html" data-family="优雅编辑" data-mode="light" data-kw="布道 sermon-serif 优雅编辑" style="--bg:#faf7f2;--ink:#23201b;--pri:#1a1a18;--onpri:#faf7f2;--acc:#935428;--surf:#f2ebde;--muted:#6c645a;--line:#ddd4c4;--r:6px;--dff:"Fraunces", "Fraunces 72pt", Georgia, "Noto Serif SC", "Songti SC", serif;--bff:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", ui-monospace, "SFMono-Regular", "Noto Sans SC", monospace">
+    <div class="tt"><span>优雅编辑</span><span class="sl">sermon-serif</span></div>
+    <div class="sp"><div class="disp" style="font-weight:380;letter-spacing:-2px">布道</div><div class="lat">Ag sermon</div></div>
+    <div class="pal"><i style="background:#1a1a18"></i><i style="background:#faf7f2"></i><i style="background:#23201b"></i><i style="background:#f2ebde"></i><i style="background:#6c645a"></i><i style="background:#ddd4c4"></i><i style="background:#935428"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/noir-vermilion.html" data-family="优雅编辑" data-mode="dark" data-kw="玄墨绛红 noir-vermilion 优雅编辑" style="--bg:#141210;--ink:#EDEAE3;--pri:#CE1432;--onpri:#F7F4ED;--acc:#CE1432;--surf:#1C1916;--muted:#9A9082;--line:#34302B;--r:2px;--dff:"Playfair Display", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Playfair Display", "Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>优雅编辑</span><span class="sl">noir-vermilion</span></div>
+    <div class="sp"><div class="disp" style="font-weight:600;letter-spacing:-0.5px">玄墨绛红</div><div class="lat">Ag noir</div></div>
+    <div class="pal"><i style="background:#CE1432"></i><i style="background:#F7F4ED"></i><i style="background:#EDEAE3"></i><i style="background:#141210"></i><i style="background:#1C1916"></i><i style="background:#9A9082"></i><i style="background:#34302B"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/broadsheet.html" data-family="优雅编辑" data-mode="light" data-kw="大报 broadsheet 优雅编辑" style="--bg:#f4f1ea;--ink:#1c1a16;--pri:#c0392b;--onpri:#faf8f3;--acc:#c0392b;--surf:#ece6d8;--muted:#5c554a;--line:#cdc6b8;--r:2px;--dff:"Newsreader", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Newsreader", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", "STSong", serif;--mff:"IBM Plex Mono", "SFMono-Regular", ui-monospace, Menlo, "Noto Sans SC", monospace">
+    <div class="tt"><span>优雅编辑</span><span class="sl">broadsheet</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-0.8px">大报</div><div class="lat">Ag broadsheet</div></div>
+    <div class="pal"><i style="background:#c0392b"></i><i style="background:#faf8f3"></i><i style="background:#1c1a16"></i><i style="background:#f4f1ea"></i><i style="background:#ece6d8"></i><i style="background:#5c554a"></i><i style="background:#cdc6b8"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/atelier-bone.html" data-family="优雅编辑" data-mode="light" data-kw="象牙工坊 atelier-bone 优雅编辑" style="--bg:#f3ede1;--ink:#33302b;--pri:#a98b4e;--onpri:#1e1c18;--acc:#a98b4e;--surf:#faf6ec;--muted:#6b655c;--line:#d9cfbd;--r:6px;--dff:"Cormorant Garamond", "Cormorant", Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Inter", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>优雅编辑</span><span class="sl">atelier-bone</span></div>
+    <div class="sp"><div class="disp" style="font-weight:300;letter-spacing:-0.5px">象牙工坊</div><div class="lat">Ag atelier</div></div>
+    <div class="pal"><i style="background:#a98b4e"></i><i style="background:#1e1c18"></i><i style="background:#33302b"></i><i style="background:#f3ede1"></i><i style="background:#faf6ec"></i><i style="background:#6b655c"></i><i style="background:#d9cfbd"></i><i style="background:#221e18"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/manifesto-ink.html" data-family="优雅编辑" data-mode="light" data-kw="墨宣言 manifesto-ink 优雅编辑" style="--bg:#f7f4ee;--ink:#1d1710;--pri:#15110a;--onpri:#faf7f1;--acc:#c42718;--surf:#efe8db;--muted:#6d6353;--line:#d8cfbe;--r:2px;--dff:"Fraunces", "Fraunces 72pt", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", serif;--bff:"Newsreader", Georgia, Cambria, "Noto Serif SC", "Songti SC", serif;--mff:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>优雅编辑</span><span class="sl">manifesto-ink</span></div>
+    <div class="sp"><div class="disp" style="font-weight:900;letter-spacing:-2px">墨宣言</div><div class="lat">Ag manifesto</div></div>
+    <div class="pal"><i style="background:#15110a"></i><i style="background:#faf7f1"></i><i style="background:#1d1710"></i><i style="background:#f7f4ee"></i><i style="background:#efe8db"></i><i style="background:#6d6353"></i><i style="background:#d8cfbe"></i><i style="background:#c42718"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="瑞士纪律"><h2>瑞士纪律</h2><span class="n">04 套</span></div>
+<a class="tile " href="s/helvetic-ledger.html" data-family="瑞士纪律" data-mode="light" data-kw="账本 helvetic-ledger 瑞士纪律" style="--bg:#f5f5f3;--ink:#141414;--pri:#d81f1a;--onpri:#ffffff;--acc:#d81f1a;--surf:#ffffff;--muted:#616160;--line:#dcdcd9;--r:2px;--dff:"Neue Haas Grotesk Display Pro", "Inter", "Helvetica Neue", Helvetica, Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Inter", "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "SFMono-Regular", ui-monospace, "JetBrains Mono", "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>瑞士纪律</span><span class="sl">helvetic-ledger</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1.8px">账本</div><div class="lat">Ag helvetic</div></div>
+    <div class="pal"><i style="background:#d81f1a"></i><i style="background:#ffffff"></i><i style="background:#141414"></i><i style="background:#f5f5f3"></i><i style="background:#616160"></i><i style="background:#dcdcd9"></i><i style="background:#efeeeb"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/grid-bureau.html" data-family="瑞士纪律" data-mode="light" data-kw="制表局 grid-bureau 瑞士纪律" style="--bg:#f4f5f7;--ink:#1a1d24;--pri:#2757d6;--onpri:#ffffff;--acc:#2757d6;--surf:#ffffff;--muted:#5b6270;--line:#d5d8dd;--r:2px;--dff:"Inter", "Helvetica Neue", "Helvetica", "Arial", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Inter", "Helvetica Neue", "Helvetica", "Arial", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "SFMono-Regular", "SF Mono", "JetBrains Mono", "Menlo", "Consolas", "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>瑞士纪律</span><span class="sl">grid-bureau</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1.8px">制表局</div><div class="lat">Ag grid</div></div>
+    <div class="pal"><i style="background:#2757d6"></i><i style="background:#ffffff"></i><i style="background:#1a1d24"></i><i style="background:#f4f5f7"></i><i style="background:#5b6270"></i><i style="background:#d5d8dd"></i><i style="background:#e4e6ea"></i><i style="background:#14171d"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/datum-signal.html" data-family="瑞士纪律" data-mode="light" data-kw="数点 datum-signal 瑞士纪律" style="--bg:#fbfbfa;--ink:#15171c;--pri:#1f4dff;--onpri:#ffffff;--acc:#1f4dff;--surf:#ffffff;--muted:#565c65;--line:#e6e6e4;--r:10px;--dff:"Inter", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--bff:"Inter", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"IBM Plex Mono", "JetBrains Mono", "SFMono-Regular", ui-monospace, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>瑞士纪律</span><span class="sl">datum-signal</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:-1.6px">数点</div><div class="lat">Ag datum</div></div>
+    <div class="pal"><i style="background:#1f4dff"></i><i style="background:#ffffff"></i><i style="background:#15171c"></i><i style="background:#fbfbfa"></i><i style="background:#565c65"></i><i style="background:#e6e6e4"></i><i style="background:#15803d"></i><i style="background:#c62828"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/akkurat-mono.html" data-family="瑞士纪律" data-mode="light" data-kw="精准等宽 akkurat-mono 瑞士纪律" style="--bg:#F7F7F5;--ink:#18191C;--pri:#0E4FE1;--onpri:#FFFFFF;--acc:#0E4FE1;--surf:#FFFFFF;--muted:#63656C;--line:#E3E3DF;--r:4px;--dff:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"JetBrains Mono", ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, "PingFang SC", "Noto Sans SC", monospace">
+    <div class="tt"><span>瑞士纪律</span><span class="sl">akkurat-mono</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:-1.8px">精准等宽</div><div class="lat">Ag akkurat</div></div>
+    <div class="pal"><i style="background:#0E4FE1"></i><i style="background:#FFFFFF"></i><i style="background:#18191C"></i><i style="background:#F7F7F5"></i><i style="background:#63656C"></i><i style="background:#E3E3DF"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="复古未来"><h2>复古未来</h2><span class="n">05 套</span></div>
+<a class="tile is-dark" href="s/synthwave-drive.html" data-family="复古未来" data-mode="dark" data-kw="合成波 synthwave-drive 复古未来" style="--bg:#17102b;--ink:#ece7ff;--pri:#ff2fb9;--onpri:#12061f;--acc:#2ff3ff;--surf:#241a49;--muted:#9a8fc4;--line:#34275f;--r:6px;--dff:"Chakra Petch", "Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"JetBrains Mono", "Space Mono", ui-monospace, SFMono-Regular, Menlo, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>复古未来</span><span class="sl">synthwave-drive</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:1px">合成波</div><div class="lat">Ag synthwave</div></div>
+    <div class="pal"><i style="background:#ff2fb9"></i><i style="background:#12061f"></i><i style="background:#ece7ff"></i><i style="background:#17102b"></i><i style="background:#241a49"></i><i style="background:#9a8fc4"></i><i style="background:#34275f"></i><i style="background:#2ff3ff"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/y2k-chrome.html" data-family="复古未来" data-mode="light" data-kw="千禧金属 y2k-chrome 复古未来" style="--bg:#ebedf5;--ink:#16172b;--pri:#4d5bff;--onpri:#ffffff;--acc:#ff86d0;--surf:#f6f7fb;--muted:#5a5d78;--line:#c9ccd4;--r:12px;--dff:"Baloo 2", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"DM Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", ui-monospace, "SFMono-Regular", "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>复古未来</span><span class="sl">y2k-chrome</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1.5px">千禧金属</div><div class="lat">Ag y2k</div></div>
+    <div class="pal"><i style="background:#4d5bff"></i><i style="background:#ffffff"></i><i style="background:#16172b"></i><i style="background:#ebedf5"></i><i style="background:#f6f7fb"></i><i style="background:#5a5d78"></i><i style="background:#c9ccd4"></i><i style="background:#ff86d0"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/arcade-crt.html" data-family="复古未来" data-mode="dark" data-kw="街机荧光 arcade-crt 复古未来" style="--bg:#060806;--ink:#cfffd8;--pri:#33ff66;--onpri:#041006;--acc:#ffb000;--surf:#0e150e;--muted:#6fae83;--line:#1c3a26;--r:10px;--dff:"Press Start 2P", "JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", monospace;--mff:"Press Start 2P", "JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif">
+    <div class="tt"><span>复古未来</span><span class="sl">arcade-crt</span></div>
+    <div class="sp"><div class="disp" style="font-weight:400;letter-spacing:0.5px">街机荧光</div><div class="lat">Ag arcade</div></div>
+    <div class="pal"><i style="background:#33ff66"></i><i style="background:#041006"></i><i style="background:#cfffd8"></i><i style="background:#060806"></i><i style="background:#0e150e"></i><i style="background:#6fae83"></i><i style="background:#1c3a26"></i><i style="background:#ffb000"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/vaporwave-marble.html" data-family="复古未来" data-mode="light" data-kw="蒸汽石膏 vaporwave-marble 复古未来" style="--bg:#f3ecf7;--ink:#2b1d3f;--pri:#ff5fb0;--onpri:#241832;--acc:#ff5fb0;--surf:#fbf7fd;--muted:#705c86;--line:#e4d6ef;--r:6px;--dff:"Playfair Display", Georgia, "Noto Serif SC", "Songti SC", serif;--bff:Inter, "Helvetica Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Playfair Display", Georgia, "Noto Serif SC", "Songti SC", serif">
+    <div class="tt"><span>复古未来</span><span class="sl">vaporwave-marble</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:2px">蒸汽石膏</div><div class="lat">Ag vaporwave</div></div>
+    <div class="pal"><i style="background:#ff5fb0"></i><i style="background:#241832"></i><i style="background:#2b1d3f"></i><i style="background:#f3ecf7"></i><i style="background:#fbf7fd"></i><i style="background:#705c86"></i><i style="background:#e4d6ef"></i><i style="background:#ff9ee5"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/cassette-futurism.html" data-family="复古未来" data-mode="light" data-kw="磁带未来 cassette-futurism 复古未来" style="--bg:#e8e0cf;--ink:#241f17;--pri:#d9662a;--onpri:#1c1710;--acc:#d9662a;--surf:#f1ebdc;--muted:#5e5544;--line:#c9bfa8;--r:7px;--dff:"Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--bff:"Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", ui-monospace, "SFMono-Regular", Menlo, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>复古未来</span><span class="sl">cassette-futurism</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:-1.4px">磁带未来</div><div class="lat">Ag cassette</div></div>
+    <div class="pal"><i style="background:#d9662a"></i><i style="background:#1c1710"></i><i style="background:#241f17"></i><i style="background:#e8e0cf"></i><i style="background:#f1ebdc"></i><i style="background:#5e5544"></i><i style="background:#c9bfa8"></i><i style="background:#ffb347"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="有机自然"><h2>有机自然</h2><span class="n">04 套</span></div>
+<a class="tile " href="s/clayfield.html" data-family="有机自然" data-mode="light" data-kw="陶土 clayfield 有机自然" style="--bg:#f2e9dc;--ink:#3a2e26;--pri:#a8482a;--onpri:#faf5ec;--acc:#a8482a;--surf:#fbf5ea;--muted:#6f5f52;--line:#e2d5c2;--r:16px;--dff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>有机自然</span><span class="sl">clayfield</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1.5px">陶土</div><div class="lat">Ag clayfield</div></div>
+    <div class="pal"><i style="background:#a8482a"></i><i style="background:#faf5ec"></i><i style="background:#3a2e26"></i><i style="background:#f2e9dc"></i><i style="background:#fbf5ea"></i><i style="background:#6f5f52"></i><i style="background:#e2d5c2"></i><i style="background:#c96f4a"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/morandi-still.html" data-family="有机自然" data-mode="light" data-kw="莫兰迪静物 morandi-still 有机自然" style="--bg:#E7E1D6;--ink:#3B3833;--pri:#55676B;--onpri:#F4F0E8;--acc:#B0857A;--surf:#F1ECE3;--muted:#695F52;--line:#D6CFC2;--r:12px;--dff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Mulish", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>有机自然</span><span class="sl">morandi-still</span></div>
+    <div class="sp"><div class="disp" style="font-weight:400;letter-spacing:-0.5px">莫兰迪静物</div><div class="lat">Ag morandi</div></div>
+    <div class="pal"><i style="background:#55676B"></i><i style="background:#F4F0E8"></i><i style="background:#3B3833"></i><i style="background:#E7E1D6"></i><i style="background:#F1ECE3"></i><i style="background:#695F52"></i><i style="background:#D6CFC2"></i><i style="background:#B0857A"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/linen-fold.html" data-family="有机自然" data-mode="light" data-kw="亚麻褶 linen-fold 有机自然" style="--bg:#e7ddc9;--ink:#2e2a20;--pri:#5c6b45;--onpri:#f6f1e7;--acc:#8f5333;--surf:#f3ecdd;--muted:#635b48;--line:#d6c9ae;--r:12px;--dff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Mulish", "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Spline Sans Mono", "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace">
+    <div class="tt"><span>有机自然</span><span class="sl">linen-fold</span></div>
+    <div class="sp"><div class="disp" style="font-weight:600;letter-spacing:-1px">亚麻褶</div><div class="lat">Ag linen</div></div>
+    <div class="pal"><i style="background:#5c6b45"></i><i style="background:#f6f1e7"></i><i style="background:#2e2a20"></i><i style="background:#e7ddc9"></i><i style="background:#f3ecdd"></i><i style="background:#635b48"></i><i style="background:#d6c9ae"></i><i style="background:#8f5333"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/harvest-warm.html" data-family="有机自然" data-mode="light" data-kw="丰收 harvest-warm 有机自然" style="--bg:#f4ebd9;--ink:#2e2114;--pri:#8a5a2b;--onpri:#f9f3e2;--acc:#e0a83b;--surf:#fbf5e7;--muted:#71603f;--line:#d8c7a3;--r:8px;--dff:"Fraunces", "Georgia", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Nunito", "Helvetica Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Fraunces", "Georgia", "Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>有机自然</span><span class="sl">harvest-warm</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1.6px">丰收</div><div class="lat">Ag harvest</div></div>
+    <div class="pal"><i style="background:#8a5a2b"></i><i style="background:#f9f3e2"></i><i style="background:#2e2114"></i><i style="background:#f4ebd9"></i><i style="background:#fbf5e7"></i><i style="background:#71603f"></i><i style="background:#d8c7a3"></i><i style="background:#e0a83b"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="玩味玩具"><h2>玩味玩具</h2><span class="n">04 套</span></div>
+<a class="tile " href="s/boing-candy.html" data-family="玩味玩具" data-mode="light" data-kw="弹跳糖 boing-candy 玩味玩具" style="--bg:#FFF6FB;--ink:#2E1A47;--pri:#FF5CA8;--onpri:#2E1A47;--acc:#33D9B2;--surf:#FFFFFF;--muted:#7A5C8E;--line:#F1D9E8;--r:18px;--dff:"Baloo 2", "Bagel Fat One", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;--mff:"Baloo 2", "Bagel Fat One", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif">
+    <div class="tt"><span>玩味玩具</span><span class="sl">boing-candy</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1.5px">弹跳糖</div><div class="lat">Ag boing</div></div>
+    <div class="pal"><i style="background:#FF5CA8"></i><i style="background:#2E1A47"></i><i style="background:#FFF6FB"></i><i style="background:#FFFFFF"></i><i style="background:#7A5C8E"></i><i style="background:#F1D9E8"></i><i style="background:#33D9B2"></i><i style="background:#FFD836"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/jelly-pop.html" data-family="玩味玩具" data-mode="light" data-kw="果冻 jelly-pop 玩味玩具" style="--bg:#FFF3F9;--ink:#2E1A36;--pri:#D61F76;--onpri:#FFFFFF;--acc:#D61F76;--surf:#FFFFFF;--muted:#7A5C77;--line:#F6D9E9;--r:18px;--dff:"Baloo 2", "Fredoka", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Baloo 2", "Fredoka", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif">
+    <div class="tt"><span>玩味玩具</span><span class="sl">jelly-pop</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1px">果冻</div><div class="lat">Ag jelly</div></div>
+    <div class="pal"><i style="background:#D61F76"></i><i style="background:#FFFFFF"></i><i style="background:#2E1A36"></i><i style="background:#FFF3F9"></i><i style="background:#7A5C77"></i><i style="background:#F6D9E9"></i><i style="background:#07C4B4"></i><i style="background:#FFCC33"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/sticker-club.html" data-family="玩味玩具" data-mode="light" data-kw="贴纸俱乐部 sticker-club 玩味玩具" style="--bg:#f5f1e6;--ink:#17171f;--pri:#2536e8;--onpri:#ffffff;--acc:#2536e8;--surf:#ffffff;--muted:#63625b;--line:#e4dfd0;--r:18px;--dff:"Fredoka", "Baloo 2", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "DM Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, "Noto Sans SC", monospace">
+    <div class="tt"><span>玩味玩具</span><span class="sl">sticker-club</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:-1.5px">贴纸俱乐部</div><div class="lat">Ag sticker</div></div>
+    <div class="pal"><i style="background:#2536e8"></i><i style="background:#ffffff"></i><i style="background:#17171f"></i><i style="background:#f5f1e6"></i><i style="background:#63625b"></i><i style="background:#e4dfd0"></i><i style="background:#ff3b3b"></i><i style="background:#ffd21e"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/doodle-note.html" data-family="玩味玩具" data-mode="light" data-kw="涂鸦本 doodle-note 玩味玩具" style="--bg:#faf7ee;--ink:#1e2a38;--pri:#1f3f73;--onpri:#fbf8ef;--acc:#f6e05e;--surf:#fffdf6;--muted:#5f5a50;--line:#d5dbe6;--r:12px;--dff:"Shantell Sans", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>玩味玩具</span><span class="sl">doodle-note</span></div>
+    <div class="sp"><div class="disp" style="font-weight:700;letter-spacing:-1px">涂鸦本</div><div class="lat">Ag doodle</div></div>
+    <div class="pal"><i style="background:#1f3f73"></i><i style="background:#fbf8ef"></i><i style="background:#1e2a38"></i><i style="background:#faf7ee"></i><i style="background:#fffdf6"></i><i style="background:#5f5a50"></i><i style="background:#d5dbe6"></i><i style="background:#f6e05e"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="温暖人文"><h2>温暖人文</h2><span class="n">04 套</span></div>
+<a class="tile " href="s/wenkai-warm.html" data-family="温暖人文" data-mode="light" data-kw="文楷暖 wenkai-warm 温暖人文" style="--bg:#efe7d6;--ink:#33291f;--pri:#b34f30;--onpri:#fbf4e6;--acc:#315b47;--surf:#f7f1e3;--muted:#6f5f4b;--line:#ddd2bc;--r:12px;--dff:"LXGW WenKai", "LXGW WenKai Screen", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Nunito", "Quicksand", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"LXGW WenKai", "LXGW WenKai Screen", "Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>温暖人文</span><span class="sl">wenkai-warm</span></div>
+    <div class="sp"><div class="disp" style="font-weight:400;letter-spacing:1px">文楷暖</div><div class="lat">Ag wenkai</div></div>
+    <div class="pal"><i style="background:#b34f30"></i><i style="background:#fbf4e6"></i><i style="background:#33291f"></i><i style="background:#efe7d6"></i><i style="background:#f7f1e3"></i><i style="background:#6f5f4b"></i><i style="background:#ddd2bc"></i><i style="background:#315b47"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/hearth-story.html" data-family="温暖人文" data-mode="light" data-kw="炉边 hearth-story 温暖人文" style="--bg:#f4ece0;--ink:#33251a;--pri:#ac4914;--onpri:#fdf6ec;--acc:#ac4914;--surf:#eadfcb;--muted:#7a6552;--line:#d8c9b2;--r:12px;--dff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Source Sans 3", "Source Sans Pro", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>温暖人文</span><span class="sl">hearth-story</span></div>
+    <div class="sp"><div class="disp" style="font-weight:600;letter-spacing:-1px">炉边</div><div class="lat">Ag hearth</div></div>
+    <div class="pal"><i style="background:#ac4914"></i><i style="background:#fdf6ec"></i><i style="background:#33251a"></i><i style="background:#f4ece0"></i><i style="background:#eadfcb"></i><i style="background:#7a6552"></i><i style="background:#d8c9b2"></i><i style="background:#d2601a"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/almanac-folk.html" data-family="温暖人文" data-mode="light" data-kw="民历 almanac-folk 温暖人文" style="--bg:#ead9b8;--ink:#2a1e12;--pri:#c23b22;--onpri:#fdf6e6;--acc:#3f6f52;--surf:#f4ecd6;--muted:#5f4f33;--line:#c8b083;--r:6px;--dff:"Fraunces", "Georgia", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"LXGW WenKai", "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--mff:"IBM Plex Mono", ui-monospace, "LXGW WenKai", "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>温暖人文</span><span class="sl">almanac-folk</span></div>
+    <div class="sp"><div class="disp" style="font-weight:600;letter-spacing:-1.5px">民历</div><div class="lat">Ag almanac</div></div>
+    <div class="pal"><i style="background:#c23b22"></i><i style="background:#fdf6e6"></i><i style="background:#2a1e12"></i><i style="background:#ead9b8"></i><i style="background:#f4ecd6"></i><i style="background:#5f4f33"></i><i style="background:#c8b083"></i><i style="background:#3f6f52"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/coffee-house.html" data-family="温暖人文" data-mode="light" data-kw="咖啡馆 coffee-house 温暖人文" style="--bg:#efe3d3;--ink:#3a2a20;--pri:#4a352a;--onpri:#f4ebda;--acc:#c17a35;--surf:#f7efe1;--muted:#6f5b48;--line:#dcccb6;--r:12px;--dff:Fraunces, Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:Newsreader, Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--mff:Fraunces, Georgia, "Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>温暖人文</span><span class="sl">coffee-house</span></div>
+    <div class="sp"><div class="disp" style="font-weight:600;letter-spacing:-1px">咖啡馆</div><div class="lat">Ag coffee</div></div>
+    <div class="pal"><i style="background:#4a352a"></i><i style="background:#f4ebda"></i><i style="background:#3a2a20"></i><i style="background:#efe3d3"></i><i style="background:#f7efe1"></i><i style="background:#6f5b48"></i><i style="background:#dcccb6"></i><i style="background:#c17a35"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="张扬极繁"><h2>张扬极繁</h2><span class="n">04 套</span></div>
+<a class="tile is-dark" href="s/soundwave-wrapped.html" data-family="张扬极繁" data-mode="dark" data-kw="声浪 soundwave-wrapped 张扬极繁" style="--bg:#0E0C14;--ink:#F7F4EC;--pri:#FF2D95;--onpri:#140F14;--acc:#FF2D95;--surf:#1B1826;--muted:#ADA8BC;--line:#2E2B3C;--r:6px;--dff:Anton, "Archivo Black", Impact, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:Inter, "Helvetica Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:Space Mono, "JetBrains Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>张扬极繁</span><span class="sl">soundwave-wrapped</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1px">声浪</div><div class="lat">Ag soundwave</div></div>
+    <div class="pal"><i style="background:#FF2D95"></i><i style="background:#140F14"></i><i style="background:#F7F4EC"></i><i style="background:#0E0C14"></i><i style="background:#1B1826"></i><i style="background:#ADA8BC"></i><i style="background:#2E2B3C"></i><i style="background:#FFE500"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/acg-stellar.html" data-family="张扬极繁" data-mode="light" data-kw="二次元星轨 acg-stellar 张扬极繁" style="--bg:#F4F5FB;--ink:#16122B;--pri:#FF1F8F;--onpri:#1A0F2E;--acc:#12E6FF;--surf:#FFFFFF;--muted:#5B5470;--line:#DAD8E8;--r:12px;--dff:"Archivo", "Arial Narrow", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"JetBrains Mono", "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>张扬极繁</span><span class="sl">acg-stellar</span></div>
+    <div class="sp"><div class="disp" style="font-weight:900;letter-spacing:-2px">二次元星轨</div><div class="lat">Ag acg</div></div>
+    <div class="pal"><i style="background:#FF1F8F"></i><i style="background:#1A0F2E"></i><i style="background:#16122B"></i><i style="background:#F4F5FB"></i><i style="background:#FFFFFF"></i><i style="background:#5B5470"></i><i style="background:#DAD8E8"></i><i style="background:#12E6FF"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/collage-riot.html" data-family="张扬极繁" data-mode="light" data-kw="拼贴暴动 collage-riot 张扬极繁" style="--bg:#EDE7D8;--ink:#17140F;--pri:#FF1F8E;--onpri:#0A0A0A;--acc:#00AEEF;--surf:#F7F2E8;--muted:#5E5749;--line:#26221B;--r:4px;--dff:"Anton", "Archivo Black", "Arial Narrow", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Space Grotesk", "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Space Mono", "JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", monospace">
+    <div class="tt"><span>张扬极繁</span><span class="sl">collage-riot</span></div>
+    <div class="sp"><div class="disp" style="font-weight:800;letter-spacing:-1.5px">拼贴暴动</div><div class="lat">Ag collage</div></div>
+    <div class="pal"><i style="background:#FF1F8E"></i><i style="background:#0A0A0A"></i><i style="background:#17140F"></i><i style="background:#EDE7D8"></i><i style="background:#F7F2E8"></i><i style="background:#5E5749"></i><i style="background:#26221B"></i><i style="background:#00AEEF"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/neon-market.html" data-family="张扬极繁" data-mode="dark" data-kw="霓虹夜市 neon-market 张扬极繁" style="--bg:#0d0b0f;--ink:#f7ede9;--pri:#ff2e4d;--onpri:#140b0d;--acc:#ff2e4d;--surf:#181419;--muted:#a89aa2;--line:#332b32;--r:8px;--dff:"Archivo Black", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Archivo", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, monospace">
+    <div class="tt"><span>张扬极繁</span><span class="sl">neon-market</span></div>
+    <div class="sp"><div class="disp" style="font-weight:900;letter-spacing:-1.5px">霓虹夜市</div><div class="lat">Ag neon</div></div>
+    <div class="pal"><i style="background:#ff2e4d"></i><i style="background:#140b0d"></i><i style="background:#f7ede9"></i><i style="background:#0d0b0f"></i><i style="background:#181419"></i><i style="background:#a89aa2"></i><i style="background:#332b32"></i><i style="background:#22e6e6"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="奢侈高定"><h2>奢侈高定</h2><span class="n">04 套</span></div>
+<a class="tile is-dark" href="s/onyx-gold.html" data-family="奢侈高定" data-mode="dark" data-kw="玄金 onyx-gold 奢侈高定" style="--bg:#060606;--ink:#ede6d3;--pri:#b8912e;--onpri:#060606;--acc:#e4c466;--surf:#100e0a;--muted:#a69b80;--line:#4a3d22;--r:4px;--dff:"Cormorant Garamond", "Cormorant", "Didot", "Bodoni MT", "Noto Serif SC", "Songti SC", serif;--bff:"Jost", "Futura", "Century Gothic", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Fragment Mono", "JetBrains Mono", "SFMono-Regular", ui-monospace, "Noto Sans SC", monospace">
+    <div class="tt"><span>奢侈高定</span><span class="sl">onyx-gold</span></div>
+    <div class="sp"><div class="disp" style="font-weight:500;letter-spacing:2px">玄金</div><div class="lat">Ag onyx</div></div>
+    <div class="pal"><i style="background:#b8912e"></i><i style="background:#060606"></i><i style="background:#ede6d3"></i><i style="background:#100e0a"></i><i style="background:#a69b80"></i><i style="background:#4a3d22"></i><i style="background:#e4c466"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/champagne-silk.html" data-family="奢侈高定" data-mode="light" data-kw="香槟丝绸 champagne-silk 奢侈高定" style="--bg:#f7f0e4;--ink:#2b2320;--pri:#e8d9be;--onpri:#241d1a;--acc:#d98a8a;--surf:#fdf8f0;--muted:#715d4b;--line:#e6d5b8;--r:8px;--dff:"Cormorant Garamond", "Cormorant", Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Jost", "Century Gothic", "Futura", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Cormorant Garamond", "Cormorant", Georgia, "Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>奢侈高定</span><span class="sl">champagne-silk</span></div>
+    <div class="sp"><div class="disp" style="font-weight:300;letter-spacing:0.4px">香槟丝绸</div><div class="lat">Ag champagne</div></div>
+    <div class="pal"><i style="background:#e8d9be"></i><i style="background:#241d1a"></i><i style="background:#2b2320"></i><i style="background:#f7f0e4"></i><i style="background:#fdf8f0"></i><i style="background:#715d4b"></i><i style="background:#e6d5b8"></i><i style="background:#d98a8a"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/monogram-noir.html" data-family="奢侈高定" data-mode="light" data-kw="字母黑 monogram-noir 奢侈高定" style="--bg:#EFE9DF;--ink:#1C1814;--pri:#111111;--onpri:#EFE9DF;--acc:#111111;--surf:#F5F0E7;--muted:#625B50;--line:#D8D0C2;--r:4px;--dff:"Bodoni Moda", Didot, "Bodoni 72", "Playfair Display", "Times New Roman", "Noto Serif SC", "Songti SC", serif;--bff:"Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", serif;--mff:"Bodoni Moda", Didot, "Bodoni 72", "Playfair Display", "Times New Roman", "Noto Serif SC", "Songti SC", serif">
+    <div class="tt"><span>奢侈高定</span><span class="sl">monogram-noir</span></div>
+    <div class="sp"><div class="disp" style="font-weight:500;letter-spacing:-1.5px">字母黑</div><div class="lat">Ag monogram</div></div>
+    <div class="pal"><i style="background:#111111"></i><i style="background:#EFE9DF"></i><i style="background:#1C1814"></i><i style="background:#F5F0E7"></i><i style="background:#625B50"></i><i style="background:#D8D0C2"></i><i style="background:#6E1423"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/marble-vein.html" data-family="奢侈高定" data-mode="light" data-kw="大理石纹 marble-vein 奢侈高定" style="--bg:#f0ede8;--ink:#2a2d33;--pri:#1f2228;--onpri:#f0ede8;--acc:#828b97;--surf:#f6f4ef;--muted:#5f636b;--line:#d8d3c9;--r:3px;--dff:"Cinzel", "Cormorant Garamond", Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Space Grotesk", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Noto Sans SC", "PingFang SC", monospace">
+    <div class="tt"><span>奢侈高定</span><span class="sl">marble-vein</span></div>
+    <div class="sp"><div class="disp" style="font-weight:400;letter-spacing:0.5px">大理石纹</div><div class="lat">Ag marble</div></div>
+    <div class="pal"><i style="background:#1f2228"></i><i style="background:#f0ede8"></i><i style="background:#2a2d33"></i><i style="background:#f6f4ef"></i><i style="background:#5f636b"></i><i style="background:#d8d3c9"></i><i style="background:#828b97"></i><i style="background:#181a1e"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="famhead" data-family="东方新中式"><h2>东方新中式</h2><span class="n">05 套</span></div>
+<a class="tile " href="s/moxi-void.html" data-family="东方新中式" data-mode="light" data-kw="水墨留白 moxi-void 东方新中式" style="--bg:#f4f0e6;--ink:#1c1a17;--pri:#1c1a17;--onpri:#f6f1e4;--acc:#c8483a;--surf:#fbf8f0;--muted:#6b655c;--line:#d9d2c2;--r:6px;--dff:"Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>东方新中式</span><span class="sl">moxi-void</span></div>
+    <div class="sp"><div class="disp" style="font-weight:900;letter-spacing:1px">水墨留白</div><div class="lat">Ag moxi</div></div>
+    <div class="pal"><i style="background:#1c1a17"></i><i style="background:#f6f1e4"></i><i style="background:#f4f0e6"></i><i style="background:#fbf8f0"></i><i style="background:#6b655c"></i><i style="background:#d9d2c2"></i><i style="background:#c8483a"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/gugong-red.html" data-family="东方新中式" data-mode="light" data-kw="故宫红金 gugong-red 东方新中式" style="--bg:#F3EAD6;--ink:#241A15;--pri:#9A2B2B;--onpri:#F5EFE1;--acc:#C9A227;--surf:#FBF6EA;--muted:#746351;--line:#D9C7A0;--r:6px;--dff:"Noto Serif SC", "Songti SC", "STSong", serif;--bff:Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>东方新中式</span><span class="sl">gugong-red</span></div>
+    <div class="sp"><div class="disp" style="font-weight:900;letter-spacing:2px">故宫红金</div><div class="lat">Ag gugong</div></div>
+    <div class="pal"><i style="background:#9A2B2B"></i><i style="background:#F5EFE1"></i><i style="background:#241A15"></i><i style="background:#F3EAD6"></i><i style="background:#FBF6EA"></i><i style="background:#746351"></i><i style="background:#D9C7A0"></i><i style="background:#C9A227"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/song-celadon.html" data-family="东方新中式" data-mode="light" data-kw="宋瓷极简 song-celadon 东方新中式" style="--bg:#f2f0ea;--ink:#2a322c;--pri:#a3b7a0;--onpri:#20272a;--acc:#a3b7a0;--surf:#f8f6f0;--muted:#586459;--line:#d3d8cc;--r:10px;--dff:"Cormorant Garamond", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Cormorant Garamond", "Noto Serif SC", "Songti SC", "STSong", serif">
+    <div class="tt"><span>东方新中式</span><span class="sl">song-celadon</span></div>
+    <div class="sp"><div class="disp" style="font-weight:300;letter-spacing:0.5px">宋瓷极简</div><div class="lat">Ag song</div></div>
+    <div class="pal"><i style="background:#a3b7a0"></i><i style="background:#20272a"></i><i style="background:#2a322c"></i><i style="background:#f2f0ea"></i><i style="background:#f8f6f0"></i><i style="background:#586459"></i><i style="background:#d3d8cc"></i><i style="background:#3f5d4e"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile is-dark" href="s/guochao-cyber.html" data-family="东方新中式" data-mode="dark" data-kw="赛博国潮 guochao-cyber 东方新中式" style="--bg:#0c0b0d;--ink:#f2ebdb;--pri:#d52823;--onpri:#fdf6ea;--acc:#2ff3ff;--surf:#171419;--muted:#9a9088;--line:#2a2530;--r:6px;--dff:"Ma Shan Zheng", "Noto Serif SC", "Songti SC", serif;--bff:"Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "JetBrains Mono", "SFMono-Regular", "Noto Sans SC", "PingFang SC", ui-monospace, monospace">
+    <div class="tt"><span>东方新中式</span><span class="sl">guochao-cyber</span></div>
+    <div class="sp"><div class="disp" style="font-weight:400;letter-spacing:-1px">赛博国潮</div><div class="lat">Ag guochao</div></div>
+    <div class="pal"><i style="background:#d52823"></i><i style="background:#fdf6ea"></i><i style="background:#f2ebdb"></i><i style="background:#0c0b0d"></i><i style="background:#171419"></i><i style="background:#9a9088"></i><i style="background:#2a2530"></i><i style="background:#2ff3ff"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<a class="tile " href="s/dunhuang-mineral.html" data-family="东方新中式" data-mode="light" data-kw="敦煌矿彩 dunhuang-mineral 东方新中式" style="--bg:#ece1cb;--ink:#2a2018;--pri:#2e6b8f;--onpri:#f6f1e4;--acc:#4a8b6f;--surf:#f4ebd8;--muted:#5f5540;--line:#d6c8a8;--r:8px;--dff:"Ma Shan Zheng", "LXGW WenKai", "KaiTi", "STKaiti", "Kaiti SC", "Noto Serif SC", "Songti SC", serif;--bff:"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Ma Shan Zheng", "LXGW WenKai", "KaiTi", "STKaiti", "Kaiti SC", "Noto Serif SC", "Songti SC", serif">
+    <div class="tt"><span>东方新中式</span><span class="sl">dunhuang-mineral</span></div>
+    <div class="sp"><div class="disp" style="font-weight:400;letter-spacing:2px">敦煌矿彩</div><div class="lat">Ag dunhuang</div></div>
+    <div class="pal"><i style="background:#2e6b8f"></i><i style="background:#f6f1e4"></i><i style="background:#2a2018"></i><i style="background:#ece1cb"></i><i style="background:#f4ebd8"></i><i style="background:#5f5540"></i><i style="background:#d6c8a8"></i><i style="background:#4a8b6f"></i></div>
+    <div class="mini"><span class="tag">✓ lint 0 error</span><span class="btn">查看 →</span></div>
+  </a>
+<div class="none" id="none" style="display:none">没有匹配的系统</div>
+</div></div>
+<div class="wrap"><footer><b>HeiGe·Design</b> — 给 AI 一张视觉角色卡。50 套原创设定集，覆盖西方设计正典 + 独家东方新中式。署名 HeiGe，MIT，无致谢。基于 HeiGe-UI / HeiGe-PPT 演化而来。</footer></div>
+<script>
+const grid=document.getElementById('grid'),q=document.getElementById('q'),none=document.getElementById('none');
+let curF='全部',curM='all';
+function apply(){const kw=q.value.trim().toLowerCase();let n=0;
+ grid.querySelectorAll('.tile').forEach(t=>{const okF=curF==='全部'||t.dataset.family===curF;const okM=curM==='all'||t.dataset.mode===curM;const okK=!kw||t.dataset.kw.includes(kw);const show=okF&&okM&&okK;t.style.display=show?'':'none';if(show)n++;});
+ grid.querySelectorAll('.famhead').forEach(h=>{const anyF=curF==='全部'||h.dataset.family===curF;h.style.display=anyF?'':'none';});
+ none.style.display=n?'none':'';}
+q.oninput=apply;
+document.querySelectorAll('.chip.fam').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip.fam').forEach(x=>x.classList.remove('on'));c.classList.add('on');curF=c.dataset.f;apply();});
+document.querySelectorAll('.chip[data-mode]').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip[data-mode]').forEach(x=>x.classList.remove('on'));c.classList.add('on');curM=c.dataset.mode;apply();});
+</script></body></html>

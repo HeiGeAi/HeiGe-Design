@@ -1,0 +1,114 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#a98b4e",
+        "on-primary": "#1e1c18",
+        "ink": "#33302b",
+        "canvas": "#f3ede1",
+        "surface": "#faf6ec",
+        "muted": "#6b655c",
+        "hairline": "#d9cfbd",
+        "panel": "#221e18"
+      },
+      "fontFamily": {
+        "display-xl": [
+          "\"Cormorant Garamond\", \"Cormorant\", Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "display-lg": [
+          "\"Cormorant Garamond\", \"Cormorant\", Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "heading": [
+          "\"Cormorant Garamond\", \"Cormorant\", Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "body": [
+          "\"Inter\", \"Helvetica Neue\", Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "eyebrow": [
+          "\"Inter\", \"Helvetica Neue\", Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "button": [
+          "\"Inter\", \"Helvetica Neue\", Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "caption": [
+          "\"Inter\", \"Helvetica Neue\", Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "body-mono": [
+          "\"IBM Plex Mono\", \"SFMono-Regular\", Menlo, Consolas, \"Noto Sans SC\", \"PingFang SC\", monospace"
+        ]
+      },
+      "fontSize": {
+        "display-xl": [
+          "76px",
+          {
+            "letterSpacing": "-0.5px",
+            "fontWeight": "300"
+          }
+        ],
+        "display-lg": [
+          "52px",
+          {
+            "letterSpacing": "-0.3px",
+            "fontWeight": "300"
+          }
+        ],
+        "heading": [
+          "28px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "500"
+          }
+        ],
+        "body": [
+          "17px",
+          {
+            "letterSpacing": "0.1px",
+            "fontWeight": "400"
+          }
+        ],
+        "eyebrow": [
+          "12px",
+          {
+            "letterSpacing": "2.4px",
+            "fontWeight": "500"
+          }
+        ],
+        "button": [
+          "13px",
+          {
+            "letterSpacing": "1.6px",
+            "fontWeight": "500"
+          }
+        ],
+        "caption": [
+          "13px",
+          {
+            "letterSpacing": "0.3px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-mono": [
+          "12px",
+          {
+            "letterSpacing": "0.5px",
+            "fontWeight": "400"
+          }
+        ]
+      },
+      "borderRadius": {
+        "none": "0px",
+        "sm": "2px",
+        "md": "6px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "section": "96px"
+      }
+    }
+  }
+}

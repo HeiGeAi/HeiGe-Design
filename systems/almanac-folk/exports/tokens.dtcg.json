@@ -1,0 +1,289 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Tongshu is a folk-almanac system for craft, heritage and regional-culture brands. Woodblock ink presses onto parchment; folk-red and pine-green are the only two inks, one auspicious, one warding. Fraunces cuts carved serifs, LXGW WenKai hand-warms the copy, IBM Plex Mono rules the date columns. The signature is a carved lace-meander border framing a tear-off almanac day-leaf: a 宜 / 忌 ledger, a lunar date, and a solar-term seal pressed askew in vermilion.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.761,
+          0.231,
+          0.133
+        ],
+        "hex": "#c23b22"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.992,
+          0.965,
+          0.902
+        ],
+        "hex": "#fdf6e6"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.165,
+          0.118,
+          0.071
+        ],
+        "hex": "#2a1e12"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.918,
+          0.851,
+          0.722
+        ],
+        "hex": "#ead9b8"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.957,
+          0.925,
+          0.839
+        ],
+        "hex": "#f4ecd6"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.373,
+          0.31,
+          0.2
+        ],
+        "hex": "#5f4f33"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.784,
+          0.69,
+          0.514
+        ],
+        "hex": "#c8b083"
+      }
+    },
+    "accent": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.247,
+          0.435,
+          0.322
+        ],
+        "hex": "#3f6f52"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 80,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 3,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 10,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Georgia\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 72,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -1.5,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Georgia\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 42,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Georgia\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 24,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"LXGW WenKai\", \"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 17,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.1,
+          "unit": "px"
+        }
+      }
+    },
+    "body-mono": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"IBM Plex Mono\", ui-monospace, \"LXGW WenKai\", \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 40,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": -0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"LXGW WenKai\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 16,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 0.3,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"LXGW WenKai\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"LXGW WenKai\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 3,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

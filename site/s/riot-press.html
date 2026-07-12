@@ -1,0 +1,1005 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>暴走印刷 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 凶悍工业</div>
+<div class="hero"><div class="fam">凶悍工业</div><h1>暴走印刷<span class="badge">✓ lint 0 error</span></h1><div class="slug">riot-press · RiotPress-design-system</div><p class="desc">RiotPress is an underground xerox-zine identity: hazard yellow #ffe600 slapped over photocopier black on gray copy-stock paper. Ultra-condensed all-caps display type stacks like flyposted headlines, mono stamps date every block, and crooked torn-tape labels carry the attitude. Hard offset shadows, zero radius, static half-tone grain. One token set drives both the 界面 and the 16:9 演示. No gradients, no soft corners, all bite.
+</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#e7e4da;--ink:#14130f;--pri:#ffe600;--onpri:#0b0a06;--acc:#ffe600;--surf:#171610;--muted:#57564d;--line:#57564d;--r:2px;--dff:Anton, "Bebas Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:Archivo, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">暴走印刷</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#ffe600"></i><i style="background:#0b0a06"></i><i style="background:#14130f"></i><i style="background:#e7e4da"></i><i style="background:#171610"></i><i style="background:#f2efe4"></i><i style="background:#57564d"></i></div>
+  <div class="swrap"><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">button-ghost</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">card-slab</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">tape-label</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">rubber-stamp</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">spec-row</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">meta-caption</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">footer</span></div>
+  </div>
+  <div class="card" style="--bg:#e7e4da;--ink:#14130f;--pri:#ffe600;--onpri:#0b0a06;--acc:#ffe600;--surf:#171610;--muted:#57564d;--line:#57564d;--r:2px;--dff:Anton, "Bebas Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:Archivo, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">暴走印刷</div></div>
+    <div class="swrap"><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#171610;color:#14130f;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two moments this system owns. Swap the template and they vanish.
+
+**UI — THE TAPED SLAP.**
+A hazard-yellow `tape-label` slapped across the top-left corner of a black `card-slab`, rotated **-2.5°**, with a **torn-edge mask** on both ends (irregular clip-path, not a straight cut) and a tight `2px 3px 0` hard shadow so it lifts off the slab like real gaffer tape. The whole card wears a static xerox half-tone grain at ~8% opacity. It looks like someone physically taped a label onto a photocopy — a warmth and wrongness no rounded-card template can fake.
+
+**Deck — THE HAZARD COVER (占屏狠话).**
+A single slide, **full-bleed `#ffe600`**, carrying **one** screen-filling black Anton sentence — the harsh line, broken by hand into stacked all-caps rows with zero orphans, tracking pulled tight so the words lock into a solid block. A strip of black-and-yellow hazard tape runs across the bottom bleed. No l</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Spend yellow like it's rationed — one shout per view, never two.
+- Break display headlines by hand and stack them tight; check every one at ≤390px for orphans.
+- Let the grid and the offset shadows show. Structure is the aesthetic.
+- Stamp every loud block with one deadpan mono line — date, code, edition.
+- Keep the xerox grain static and cheap-looking on purpose.
+
+**Don't**
+- **不碰紫蓝俗套渐变** (`#667eea → #764ba2` 及其全家桶). This system has no gradients at all — flat ink or flat yellow only.
+- **不做居中卡片三件套**: no row of three equal rounded cards under a centered title-and-subtitle. Slabs are asymmetric, taped, offset, ragged-left.
+- **中文绝不用日文字体渲染**: Chinese falls through to Noto Sans SC / PingFang SC / Microsoft YaHei, never Mochiy / Zen Maru.
+- **不动画化阴影 / 不发光**: shadows are hard and static, `6px 6px 0`. No blur, no glow, no `backdrop-filter`.
+- Don't round the corners, don't soften the contrast, don't let anything look polished.</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: RiotPress-design-system
+description: &gt;
+  RiotPress is an underground xerox-zine identity: hazard yellow #ffe600 slapped
+  over photocopier black on gray copy-stock paper. Ultra-condensed all-caps display
+  type stacks like flyposted headlines, mono stamps date every block, and crooked
+  torn-tape labels carry the attitude. Hard offset shadows, zero radius, static
+  half-tone grain. One token set drives both the 界面 and the 16:9 演示. No gradients,
+  no soft corners, all bite.
+
+colors:
+  primary: &quot;#ffe600&quot;
+  on-primary: &quot;#0b0a06&quot;
+  ink: &quot;#14130f&quot;
+  canvas: &quot;#e7e4da&quot;
+  surface: &quot;#171610&quot;
+  on-surface: &quot;#f2efe4&quot;
+  muted: &quot;#57564d&quot;
+
+typography:
+  display-mega:
+    fontFamily: 'Anton, &quot;Bebas Neue&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;112px&quot;
+    fontWeight: 400
+    lineHeight: 0.88
+    letterSpacing: &quot;-1px&quot;
+  display-xl:
+    fontFamily: 'Anton, &quot;Bebas Neue&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;72px&quot;
+    fontWeight: 400
+    lineHeight: 0.9
+    letterSpacing: &quot;-0.5px&quot;
+  display-lg:
+    fontFamily: '&quot;Bebas Neue&quot;, Anton, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;46px&quot;
+    fontWeight: 400
+    lineHeight: 0.96
+    letterSpacing: &quot;0.5px&quot;
+  heading:
+    fontFamily: 'Archivo, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: &quot;24px&quot;
+    fontWeight: 800
+    lineHeight: 1.15
+    letterSpacing: &quot;-0.2px&quot;
+  body:
+    fontFamily: 'Archivo, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: &quot;17px&quot;
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: &quot;0px&quot;
+  body-mono:
+    fontFamily: '&quot;Space Mono&quot;, &quot;JetBrains Mono&quot;, ui-monospace, &quot;PingFang SC&quot;, monospace'
+    fontSize: &quot;14px&quot;
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: &quot;0px&quot;
+  button:
+    fontFamily: '&quot;Bebas Neue&quot;, Anton, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;20px&quot;
+    fontWeight: 400
+    lineHeight: 1.0
+    letterSpacing: &quot;1.5px&quot;
+  caption:
+    fontFamily: '&quot;Space Mono&quot;, &quot;JetBrains Mono&quot;, ui-monospace, &quot;PingFang SC&quot;, monospace'
+    fontSize: &quot;12px&quot;
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: &quot;0.4px&quot;
+  eyebrow:
+    fontFamily: '&quot;Space Mono&quot;, &quot;JetBrains Mono&quot;, ui-monospace, &quot;PingFang SC&quot;, monospace'
+    fontSize: &quot;12px&quot;
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: &quot;3px&quot;
+
+rounded:
+  none: 0px
+  sm: 2px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 80px
+
+components:
+  # —— UI 界面组件 ——
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 16px 32px
+  button-ghost:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 16px 32px
+  nav-bar:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.on-surface}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 20px 40px
+  card-slab:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.on-surface}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 40px
+  stat-block:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-mega}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 32px 40px
+  tape-label:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: 6px 16px
+  rubber-stamp:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 18px 24px
+  spec-row:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 14px 0px
+  meta-caption:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 8px 0px
+  footer:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.on-surface}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 48px 40px
+  # —— slide 演示组件（16:9）——
+  slide-cover:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-mega}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 80px
+  slide-section-divider:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.on-surface}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 80px
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-mega}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 80px
+  slide-quote:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.on-surface}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 80px
+  slide-closing:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.on-surface}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 80px
+---
+
+# RiotPress · 暴走印刷
+
+&gt; A xerox-zine system for people who staple manifestos to lampposts. 地下丝网印刷厂的态度，一台复印机把黑咬进灰纸，一条警示黄拍在上面。Attitude first, polish never.
+
+## Overview
+
+RiotPress runs on three ingredients and no fourth: **photocopier black**, **hazard yellow**, and the **gray of cheap copy stock**. That is the whole discipline. Rhythm comes from scale and slam, never from adding another color.
+
+The two colors have fixed jobs and never trade places:
+
+- **Hazard yellow `#ffe600`** is the *shout*. It appears only on things that demand you stop — one word in a headline, a torn tape label, a single button, a full-bleed cover. Spend it like the last coin in your pocket.
+- **Photocopier black `#171610`** is the *ink*. It builds the heavy slabs, the rules, the offset shadows, the body of every word. It carries the weight so yellow can carry the meaning.
+
+Everything else sits on **copy-stock gray `#e7e4da`** — a warm, slightly dirtied paper tone that already looks run through a machine at 2 a.m.
+
+**Type is loud on purpose.** Ultra-condensed all-caps display (Anton / Bebas) stacks tight like flyposted headlines, three lines slammed together with nowhere to breathe. Underneath, a monospace stamps every block with a date, a code, an edition number, the way a real print shop marks a run. The tension between the screaming caps and the deadpan mono stamp *is* the voice.
+
+Pacing is punch, rest, punch. A black slab with white type, then bare gray paper, then one yellow line that fills the frame. No smooth fades. Corners are square. Shadows are hard. Nothing apologizes.
+
+## Colors
+
+Seven tokens. Every one is load-bearing, none is decoration.
+
+### Brand &amp; Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#ffe600` | Hazard yellow — the single shout. CTA, tape, cover, one word per headline. Never a background for reading text. |
+| `on-primary` | `#0b0a06` | Near-black stamped onto yellow. High-bite ink for tape labels and hazard covers. |
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#e7e4da` | Copy-stock gray. The default page. Warm, machine-dirtied, never pure white. |
+| `surface` | `#171610` | Photocopier black slab. Inverted panels, nav bar, cards, footer, most演示 backgrounds. |
+
+### Text
+| Token | Hex | Role |
+|---|---|---|
+| `ink` | `#14130f` | Body and headlines on the gray page. Near-black, faintly warm — reads like toner, not like pixels. |
+| `on-surface` | `#f2efe4` | Paper-white type sitting on the black slab. |
+| `muted` | `#57564d` | Copier-gray secondary text: timestamps, run codes, fine print. Only ever on `canvas`. |
+
+### Contrast ledger (WCAG AA, hand-checked)
+Every component that pairs text on a fill clears 4.5:1 with room to spare:
+
+- `ink` on `canvas` → ~14.7:1
+- `on-surface` on `surface` → ~15.7:1
+- `on-primary` on `primary` → ~15.6:1
+- `muted` on `canvas` → ~5.8:1
+
+There is no low-contrast pairing anywhere in this system, and there never should be. Punk is high contrast by definition.
+
+## Typography
+
+### Font Families
+- **Display (Latin caps):** `Anton` for the heaviest slabs, `Bebas Neue` for labels and buttons. Both are single-weight condensed uppercase — they *are* the flyposter.
+- **Body / heading:** `Archivo`, a stark grotesk that stays legible when set small under all that shouting.
+- **Mono (stamps):** `Space Mono` for dates, edition numbers, run codes, spec rows — the deadpan counterweight.
+
+### 中文铁律 (non-negotiable)
+Anton and Bebas carry **no Chinese glyphs**, so every display stack falls through to a system CJK face:
+
+```
+Anton, &quot;Bebas Neue&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif
+```
+
+- Chinese renders in **Noto Sans SC / PingFang SC / Microsoft YaHei** — heavy, condensed enough to hold the punk weight.
+- **绝不用日文字体**（Mochiy / Zen Maru 之类）渲染中文：简体会缺字变豆腐。
+- Webfont first (design intact when it loads), system CJK last (still clean when it doesn't). Swap the webfont URL for garbage and the page must still read.
+
+### Hierarchy
+| Role | Font | Size | Weight | Leading | Tracking | Use |
+|---|---|---|---|---|---|---|
+| `display-mega` | Anton | 112px | 400 | 0.88 | -1px | Cover slam, giant stat numeral |
+| `display-xl` | Anton | 72px | 400 | 0.9 | -0.5px | Section dividers, chapter numbers, closing |
+| `display-lg` | Bebas | 46px | 400 | 0.96 | 0.5px | Card titles, screen-filling quotes |
+| `heading` | Archivo | 24px | 800 | 1.15 | -0.2px | Nav wordmark, block titles |
+| `body` | Archivo | 17px | 400 | 1.6 | 0px | Paragraphs |
+| `body-mono` | Space Mono | 14px | 400 | 1.5 | 0px | Spec rows, structured data |
+| `button` | Bebas | 20px | 400 | 1.0 | 1.5px | Buttons (uppercase) |
+| `caption` | Space Mono | 12px | 400 | 1.4 | 0.4px | Tape labels, fine print |
+| `eyebrow` | Space Mono | 12px | 700 | 1.0 | 3px | Kickers, stamp text |
+
+### Principles
+- **Contrast is at least 1:6.** The 112px slam against 17px body reads like a shout next to a whisper. If the biggest thing on screen isn't uncomfortably big, make it bigger.
+- **All-caps display, tight leading.** Condensed uppercase wants to stack — set `line-height` under 1.0 and let three lines lock together as one block.
+- **Zero-orphan rule:** hand-broken display lines get `white-space:nowrap` per line, and `font-size` uses `clamp()` sized to the *longest* line so it survives ≤390px without dumping a single character onto its own row. Never use `ch` to width-limit Chinese — it orphans early.
+- **Mono is the anchor.** Every loud block carries one quiet mono stamp. The stamp keeps the shout from becoming noise.
+
+## Layout
+
+### Spacing
+An 8px-based scale: `xs 4 / sm 8 / md 16 / lg 24 / xl 40 / section 80`. Slabs get `xl`+ padding; stamps and tape get `xs`–`md`. Section rhythm on the page is `section` (80px), so blocks land like separate printed sheets pasted down.
+
+### Grid &amp; Container
+- A **bare 12-column grid** — and it shows. Grid lines are allowed to be visible hairline rules on the gray page; RiotPress does not hide its structure, it prints it.
+- Content max-width ~1200px, but display slabs **bleed to the edge**. A hazard headline that stops politely inside a margin is a dead headline.
+- Alignment is **hard left**, ragged right, like a typewriter draft. No centered columns of running text.
+
+### Whitespace
+Whitespace here is not calm, it is *pressure*. Big empty gray gaps exist so the next black slab hits harder. Group tightly, then leave a brutal void, then slam. Even density everywhere is the one thing this system cannot do.
+
+## Elevation &amp; Depth
+
+Depth is **physical, not soft**. Nothing floats on a blur.
+
+| Layer | Treatment |
+|---|---|
+| Page | Flat copy-stock gray with static half-tone grain |
+| Slab / card | Hard offset shadow `6px 6px 0 #171610` — no blur, no alpha, just displacement |
+| Tape / sticker | Sits *above* the slab, rotated, casting a tight `2px 3px 0` hard shadow |
+| Stamp | Ink pressed *into* the page — no shadow, slight rotation, faint edge noise |
+
+- **Xerox grain** is the signature texture: a tiled `feTurbulence` / half-tone PNG at ~6–10% opacity over the whole page, **static**. It reads as photocopied toner, not as a filter.
+- **Never** `backdrop-filter`. **Never** an animated shadow. Glow is not in this vocabulary at all — this is toner, not neon.
+
+## Shapes
+
+| Token | Value | Use |
+|---|---|---|
+| `none` | 0px | Everything structural. Buttons, cards, slabs, dividers — all square. |
+| `sm` | 2px | Tape labels only — the barely-there softness of a cut sticker corner. |
+| `pill` | 9999px | The round rubber stamp badge, and nothing else. |
+
+Geometry is torn and taped, not rounded. Image crops use **hard diagonal cuts** and **torn-paper masks**, never soft radii. A rounded card in RiotPress is a bug.
+
+## Components
+
+- **button-primary** — hazard-yellow block, black uppercase Bebas, square corners, hard offset shadow. The one thing on the page you're allowed to want.
+- **button-ghost** — gray fill, heavy 3px ink border, black uppercase label. Secondary action, still square, still loud.
+- **nav-bar** — a full black bar across the top, paper-white wordmark left, mono links right. It reads like a masthead stamped in ink.
+- **card-slab** — black slab, paper-white Bebas title, `6px 6px 0` hard shadow. Cards are pasted sheets, never floating panels.
+- **stat-block** — giant Anton numeral in ink on gray, mono unit-label stamped beneath. The number is meant to be almost too big for its box.
+- **tape-label** — yellow strip, black mono text, 2px corner, rotated crooked. The attitude carrier (see Signature Moment).
+- **rubber-stamp** — round badge, ink eyebrow text, pressed into the page with slight rotation. Editions, approvals, &quot;SIDE A&quot;.
+- **spec-row** — mono key/value row on gray with a heavy ink underline. The zine's index page.
+- **meta-caption** — muted copier-gray mono fine print. Dates, run codes, disclaimers.
+- **footer** — black slab, paper-white body, big mono edition stamp. The colophon of the print run.
+
+## Presentation System
+
+RiotPress collapses into a **16:9 deck** using the exact same tokens — a slide is just a slab that fills the frame. It obeys HeiGe-PPT's three laws:
+
+**一页一句话 (one line per slide).** No slide carries a paragraph. A slide is one headline slab, or one number, or one quote. If it needs bullet points, it's two slides.
+
+**黄金三秒 (first three seconds).** Every slide lands its meaning before the audience finishes reading. The hazard-yellow cover, the giant stat, the screen-filling quote — each is legible from the back row instantly.
+
+**视觉锤 (visual hammer).** The hammer is always the same: **one hazard-yellow element on a black-or-gray field**. One tape label, one word, one number in yellow. The audience remembers the yellow.
+
+| Slide | Component | Build |
+|---|---|---|
+| Cover | `slide-cover` | Full-bleed hazard yellow. One screen-filling black Anton line — the harsh line. A strip of hazard tape across the bottom edge. |
+| Section divider | `slide-section-divider` | Black slab. A giant yellow chapter number (`01`) bleeding off-frame, section title stamped small in mono beside it. |
+| Data / stat | `slide-stat-hero` | Gray page. One monstrous ink numeral, a yellow underline slashed beneath it, mono caption stamped below. |
+| Quote | `slide-quote` | Black slab. One Bebas quote filling the frame, a single word flipped to yellow. Attribution in mono. |
+| Closing | `slide-closing` | Black slab. The call to action in Anton, a yellow tape label slapped crooked over it saying what to do next. |
+
+Transitions are **hard cuts** — no dissolves, no slides-in. The deck should feel like flipping through a stapled zine, page slamming onto page.
+
+## Signature Moment
+
+Two moments this system owns. Swap the template and they vanish.
+
+**UI — THE TAPED SLAP.**
+A hazard-yellow `tape-label` slapped across the top-left corner of a black `card-slab`, rotated **-2.5°**, with a **torn-edge mask** on both ends (irregular clip-path, not a straight cut) and a tight `2px 3px 0` hard shadow so it lifts off the slab like real gaffer tape. The whole card wears a static xerox half-tone grain at ~8% opacity. It looks like someone physically taped a label onto a photocopy — a warmth and wrongness no rounded-card template can fake.
+
+**Deck — THE HAZARD COVER (占屏狠话).**
+A single slide, **full-bleed `#ffe600`**, carrying **one** screen-filling black Anton sentence — the harsh line, broken by hand into stacked all-caps rows with zero orphans, tracking pulled tight so the words lock into a solid block. A strip of black-and-yellow hazard tape runs across the bottom bleed. No logo, no subtitle, no room. Three seconds and it's burned in. That is the opening slam of every RiotPress deck.
+
+## Do's and Don'ts
+
+**Do**
+- Spend yellow like it's rationed — one shout per view, never two.
+- Break display headlines by hand and stack them tight; check every one at ≤390px for orphans.
+- Let the grid and the offset shadows show. Structure is the aesthetic.
+- Stamp every loud block with one deadpan mono line — date, code, edition.
+- Keep the xerox grain static and cheap-looking on purpose.
+
+**Don't**
+- **不碰紫蓝俗套渐变** (`#667eea → #764ba2` 及其全家桶). This system has no gradients at all — flat ink or flat yellow only.
+- **不做居中卡片三件套**: no row of three equal rounded cards under a centered title-and-subtitle. Slabs are asymmetric, taped, offset, ragged-left.
+- **中文绝不用日文字体渲染**: Chinese falls through to Noto Sans SC / PingFang SC / Microsoft YaHei, never Mochiy / Zen Maru.
+- **不动画化阴影 / 不发光**: shadows are hard and static, `6px 6px 0`. No blur, no glow, no `backdrop-filter`.
+- Don't round the corners, don't soften the contrast, don't let anything look polished.
+
+## Responsive Behavior
+
+| Breakpoint | Layout |
+|---|---|
+| ≥1200px | Full 12-col grid, bleed slabs, tape at full crook, 112px display |
+| 768–1199px | 6-col, display `clamp()` down to ~64px, shadows shorten to `4px 4px 0` |
+| ≤767px | Single column, headlines re-broken for the narrow measure, tape re-anchored top of block, display `clamp()` floor ~40px |
+
+Mobile is a **re-paste, not a shrink**. Headlines get new hand-breaks sized to the phone's width (never a scaled-down desktop line), the taped label moves from the card corner to a full-width strip across the top, and the offset shadow tightens so it never causes horizontal scroll. On every width: `scrollWidth === clientWidth`, zero orphans, zero overflow. All motion respects `prefers-reduced-motion: reduce`.
+
+## Anti-Slop Pledge
+
+Strip the name off any RiotPress page and it still reads as **made by a person with a grudge and a photocopier** — not squeezed out of a template. The proof is in the parts a generator never bothers with: the tape rotated a specific -2.5°, the torn clip-path edges, the mono stamp that dates the run, the hazard line hand-broken to sit orphan-free at 390px, the one coin of yellow spent on exactly one word. High contrast, hard shadows, real toner grain. If it ever looks safe, smooth, or centered, it isn't finished — it's been laundered.
+
+— HeiGe-Design · MIT
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #ffe600;
+  --color-on-primary: #0b0a06;
+  --color-ink: #14130f;
+  --color-canvas: #e7e4da;
+  --color-surface: #171610;
+  --color-on-surface: #f2efe4;
+  --color-muted: #57564d;
+  --font-display-mega: &quot;Anton, \&quot;Bebas Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-xl: &quot;Anton, \&quot;Bebas Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Bebas Neue\&quot;, Anton, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;Archivo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body: &quot;Archivo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Bebas Neue\&quot;, Anton, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-mega: 112px;
+  --text-display-xl: 72px;
+  --text-display-lg: 46px;
+  --text-heading: 24px;
+  --text-body: 17px;
+  --text-body-mono: 14px;
+  --text-button: 20px;
+  --text-caption: 12px;
+  --text-eyebrow: 12px;
+  --tracking-display-mega: -1px;
+  --tracking-display-xl: -0.5px;
+  --tracking-display-lg: 0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 1.5px;
+  --tracking-caption: 0.4px;
+  --tracking-eyebrow: 3px;
+  --font-weight-display-mega: 400;
+  --font-weight-display-xl: 400;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 800;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-button: 400;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#ffe600&quot;,
+        &quot;on-primary&quot;: &quot;#0b0a06&quot;,
+        &quot;ink&quot;: &quot;#14130f&quot;,
+        &quot;canvas&quot;: &quot;#e7e4da&quot;,
+        &quot;surface&quot;: &quot;#171610&quot;,
+        &quot;on-surface&quot;: &quot;#f2efe4&quot;,
+        &quot;muted&quot;: &quot;#57564d&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-mega&quot;: [
+          &quot;Anton, \&quot;Bebas Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-xl&quot;: [
+          &quot;Anton, \&quot;Bebas Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Bebas Neue\&quot;, Anton, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;Archivo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;Archivo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Bebas Neue\&quot;, Anton, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-mega&quot;: [
+          &quot;112px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;display-xl&quot;: [
+          &quot;72px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;46px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;24px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;20px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1.5px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;3px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;2px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;80px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #ffe600;
+  --color-on-primary: #0b0a06;
+  --color-ink: #14130f;
+  --color-canvas: #e7e4da;
+  --color-surface: #171610;
+  --color-on-surface: #f2efe4;
+  --color-muted: #57564d;
+  --font-display-mega: &quot;Anton, \&quot;Bebas Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-xl: &quot;Anton, \&quot;Bebas Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Bebas Neue\&quot;, Anton, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;Archivo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body: &quot;Archivo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Bebas Neue\&quot;, Anton, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-mega: 112px;
+  --text-display-xl: 72px;
+  --text-display-lg: 46px;
+  --text-heading: 24px;
+  --text-body: 17px;
+  --text-body-mono: 14px;
+  --text-button: 20px;
+  --text-caption: 12px;
+  --text-eyebrow: 12px;
+  --tracking-display-mega: -1px;
+  --tracking-display-xl: -0.5px;
+  --tracking-display-lg: 0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 1.5px;
+  --tracking-caption: 0.4px;
+  --tracking-eyebrow: 3px;
+  --font-weight-display-mega: 400;
+  --font-weight-display-xl: 400;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 800;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-button: 400;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;RiotPress is an underground xerox-zine identity: hazard yellow #ffe600 slapped over photocopier black on gray copy-stock paper. Ultra-condensed all-caps display type stacks like flyposted headlines, mono stamps date every block, and crooked torn-tape labels carry the attitude. Hard offset shadows, zero radius, static half-tone grain. One token set drives both the 界面 and the 16:9 演示. No gradients, no soft corners, all bite.\n&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.902,
+          0
+        ],
+        &quot;hex&quot;: &quot;#ffe600&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.043,
+          0.039,
+          0.024
+        ],
+        &quot;hex&quot;: &quot;#0b0a06&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.078,
+          0.075,
+          0.059
+        ],
+        &quot;hex&quot;: &quot;#14130f&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.906,
+          0.894,
+          0.855
+        ],
+        &quot;hex&quot;: &quot;#e7e4da&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.09,
+          0.086,
+          0.063
+        ],
+        &quot;hex&quot;: &quot;#171610&quot;
+      }
+    },
+    &quot;on-surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.949,
+          0.937,
+          0.894
+        ],
+        &quot;hex&quot;: &quot;#f2efe4&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.341,
+          0.337,
+          0.302
+        ],
+        &quot;hex&quot;: &quot;#57564d&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 80,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 2,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-mega&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Anton, \&quot;Bebas Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 112,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Anton, \&quot;Bebas Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 72,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Bebas Neue\&quot;, Anton, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 46,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Archivo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 24,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Archivo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Bebas Neue\&quot;, Anton, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 20,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 暴走印刷（riot-press · 凶悍工业）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `riot-press` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#ffe600` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Anton`，正文 `Archivo`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint riot-press` / 导出其它格式：`heige-design export riot-press --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 暴走印刷 — 原创设定集，可商用。跑校验：<code>heige-design lint riot-press</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

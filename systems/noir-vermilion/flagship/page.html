@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深稿书院 · 长文写作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#CE1432;
+    --primary-deep:#AC0F27;
+    --on-primary:#F7F4ED;
+    --ink:#EDEAE3;
+    --canvas:#141210;
+    --surface:#1C1916;
+    --muted:#9A9082;
+    --hairline:#34302B;
+
+    --serif-display:"Playfair Display","Noto Serif SC","Songti SC","STSong",serif;
+    --serif-sub:"Source Serif 4","Noto Serif SC","Songti SC","STSong",serif;
+    --numeral:"Playfair Display","Bodoni 72","Didot","GFS Didot",serif;
+    --sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+
+    --xs:4px; --sm:8px; --md:16px; --lg:24px; --xl:48px; --section:96px;
+    --edge:clamp(20px,5vw,64px);
+    --maxw:1200px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    font-family:var(--sans);
+    background-color:var(--canvas);
+    color:var(--ink);
+    line-height:1.75;
+    letter-spacing:.2px;
+    overflow-x:hidden;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(154,144,130,.035) 0 1px, transparent 1px 26px),
+      repeating-linear-gradient(-45deg, rgba(154,144,130,.035) 0 1px, transparent 1px 26px);
+    background-attachment:fixed;
+  }
+
+  ::selection{background:var(--primary);color:var(--on-primary)}
+
+  a{color:inherit;text-decoration:none}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--edge);padding-right:var(--edge)}
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:13px;font-weight:600;line-height:1.4;
+    letter-spacing:3px;text-transform:uppercase;
+    color:var(--muted);
+  }
+  .eyebrow .hot{color:var(--primary)}
+
+  /* the connective 8px vermilion short rule */
+  .rule-v{display:block;width:48px;height:8px;background:var(--primary)}
+  .rule-h{display:block;width:100%;height:1px;background:var(--hairline)}
+
+  /* ---------------- nav ---------------- */
+  nav.bar{
+    position:sticky;top:0;z-index:50;
+    background:rgba(20,18,16,.86);
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav-inner{
+    display:flex;align-items:center;gap:var(--lg);
+    padding-top:var(--md);padding-bottom:var(--md);
+  }
+  .brand{display:flex;align-items:baseline;gap:10px}
+  .brand .mark{font-family:var(--serif-display);font-weight:700;font-size:22px;letter-spacing:.5px}
+  .brand .lat{font-family:var(--numeral);font-style:italic;font-size:13px;color:var(--muted);letter-spacing:1px}
+  .nav-links{display:flex;gap:var(--lg);margin-left:auto}
+  .nav-links a{
+    font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+    color:var(--muted);transition:color .2s ease;
+  }
+  .nav-links a:hover{color:var(--ink)}
+  .live{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:5px 12px;border-radius:9999px;
+    background:var(--surface);border:1px solid var(--hairline);
+    font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--muted);
+  }
+  .dot{width:7px;height:7px;border-radius:9999px;background:var(--primary);animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+  .nav-cta{
+    font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.3px;
+    background:var(--primary);color:var(--on-primary);
+    padding:9px 20px;border-radius:2px;transition:background .2s ease;
+  }
+  .nav-cta:hover{background:var(--primary-deep)}
+  .nav-toggle{display:none}
+
+  /* ---------------- hero ---------------- */
+  header.hero{position:relative;overflow:hidden}
+  .hero-inner{
+    position:relative;z-index:2;
+    min-height:calc(100svh - 64px);
+    display:flex;flex-direction:column;justify-content:center;
+    padding-top:var(--section);padding-bottom:var(--section);
+  }
+  .hero-eyebrow{margin-bottom:var(--lg)}
+  .manifesto{
+    font-family:var(--serif-display);font-weight:600;
+    font-size:clamp(2.7rem,10.5vw,5.1rem);
+    line-height:1.06;letter-spacing:-.5px;
+    color:var(--ink);
+  }
+  .manifesto span{display:block;white-space:nowrap}
+  .manifesto .accent{color:var(--ink)}
+  .hero-inner .rule-v{margin:var(--lg) 0 var(--xl)}
+  .hero-sub{
+    max-width:30em;font-size:clamp(15px,2vw,17px);line-height:1.75;color:#cdc7bc;
+    margin-bottom:var(--xl);
+  }
+  .hero-actions{display:flex;align-items:flex-end;gap:var(--xl);flex-wrap:wrap}
+  .btn-primary{
+    font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.3px;
+    background:var(--primary);color:var(--on-primary);
+    padding:14px 30px;border-radius:2px;border:0;cursor:pointer;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:background .2s ease,transform .2s ease;
+  }
+  .btn-primary:hover{background:var(--primary-deep);transform:translateY(-1px)}
+  .btn-primary:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  /* button-secondary: sits under an 8px vermilion short rule, no border box */
+  .btn-secondary{
+    display:inline-flex;flex-direction:column;gap:10px;cursor:pointer;
+    background:none;border:0;padding:0;text-align:left;
+  }
+  .btn-secondary .bar{width:32px;height:8px;background:var(--primary);transition:width .25s ease}
+  .btn-secondary .lbl{
+    font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.3px;color:var(--ink);
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-secondary .lbl .arw{color:var(--primary);transition:transform .25s ease}
+  .btn-secondary:hover .bar{width:52px}
+  .btn-secondary:hover .lbl .arw{transform:translateX(5px)}
+  .btn-secondary:focus-visible{outline:2px solid var(--muted);outline-offset:4px}
+
+  /* ghost issue numeral in the open right column */
+  .hero-ghost{
+    position:absolute;z-index:1;pointer-events:none;user-select:none;
+    right:-4vw;top:50%;transform:translateY(-46%);
+    font-family:var(--numeral);font-weight:500;font-style:italic;
+    font-size:clamp(220px,40vw,540px);line-height:.8;
+    color:rgba(237,234,227,.035);
+  }
+
+  /* ---------------- stat bar ---------------- */
+  .statbar{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:var(--canvas)}
+  .stat-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+  }
+  .stat{
+    padding:var(--xl) var(--lg);
+    border-left:1px solid var(--hairline);
+  }
+  .stat:first-child{border-left:0;padding-left:0}
+  .stat .fig{
+    font-family:var(--numeral);font-weight:500;
+    font-size:clamp(56px,7vw,104px);line-height:1;letter-spacing:-2px;
+    color:var(--ink);display:flex;align-items:baseline;gap:6px;
+  }
+  .stat .unit{font-family:var(--serif-sub);font-size:clamp(18px,2.2vw,30px);font-weight:600;color:var(--primary);letter-spacing:0}
+  .stat .cap{margin-top:var(--md);font-size:13px;color:var(--muted);line-height:1.5;letter-spacing:.2px}
+
+  /* ---------------- section scaffolding ---------------- */
+  section.block{padding-top:var(--section);padding-bottom:var(--section)}
+  .sec-head{max-width:34em;margin-bottom:var(--xl)}
+  .sec-head .rule-v{margin-bottom:var(--lg)}
+  .sec-head h2{
+    font-family:var(--serif-display);font-weight:600;
+    font-size:clamp(30px,4.6vw,44px);line-height:1.14;letter-spacing:-.4px;color:var(--ink);
+    margin-top:var(--md);
+  }
+  .sec-head p{margin-top:var(--md);color:var(--muted);font-size:16px;max-width:30em}
+
+  /* ---------------- features (asymmetric editorial grid) ---------------- */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--md)}
+  .feat{
+    background:var(--surface);border:1px solid var(--hairline);
+    padding:var(--lg);position:relative;
+    display:flex;flex-direction:column;min-height:340px;
+  }
+  .feat .fbar{width:48px;height:8px;background:var(--primary);margin-bottom:var(--lg)}
+  .feat .num{
+    font-family:var(--numeral);font-weight:500;font-size:76px;line-height:.9;
+    letter-spacing:-2px;color:var(--ink);opacity:.9;
+  }
+  .feat h3{
+    font-family:var(--serif-sub);font-weight:600;font-size:24px;line-height:1.3;letter-spacing:-.2px;
+    color:var(--ink);margin-top:auto;padding-top:var(--lg);
+  }
+  .feat p{margin-top:var(--md);color:var(--muted);font-size:15px;line-height:1.7}
+  /* the middle column drops slightly — asymmetry, not a centered triptych */
+  .feat-grid .feat:nth-child(2){transform:translateY(var(--lg))}
+
+  /* ---------------- SIGNATURE: 手稿卡 manuscript insert ---------------- */
+  .manu-section{padding-top:var(--section);padding-bottom:var(--section)}
+  .manu-stage{position:relative;padding-top:70px}
+  .manu-card{
+    position:relative;
+    background:var(--ink);color:var(--canvas);
+    max-width:640px;
+    /* inset from the left so black canvas sits beside the card — the serial bleeds onto it */
+    margin-left:clamp(44px,9vw,140px);
+    /* deep top pad: the oversized serial lives in this cream margin, clear of the text */
+    padding:118px 52px 48px;
+    box-shadow:0 24px 60px rgba(0,0,0,.55);
+    border-radius:0;
+  }
+  /* the giant serial overflows the card's top-left corner: half on cream, half on black */
+  .manu-serial{
+    position:absolute;z-index:3;
+    top:-.52em;left:-.36em;
+    font-family:var(--numeral);font-weight:500;font-style:italic;
+    font-size:clamp(140px,18vw,224px);line-height:1;letter-spacing:-4px;
+    color:var(--primary);pointer-events:none;
+  }
+  /* 8px rule stitches the serial to the title */
+  .manu-rule{width:64px;height:8px;background:var(--primary);margin:-34px 0 var(--lg)}
+  .manu-card h3{
+    font-family:var(--serif-sub);font-weight:600;font-size:26px;line-height:1.3;letter-spacing:-.2px;
+    color:var(--canvas);
+  }
+  .manu-card .draft{
+    margin-top:var(--lg);font-family:var(--serif-sub);font-size:18px;line-height:1.9;color:#2a2622;
+    max-width:19em;
+  }
+  .manu-card .strike{color:#8a8378;text-decoration:line-through;text-decoration-color:var(--primary)}
+  /* red margin note, kept on cream (vermilion on #EDEAE3 ≈ 4.6:1, contrast-safe) */
+  .manu-note{
+    position:absolute;right:40px;top:150px;
+    width:152px;text-align:right;
+  }
+  .manu-note .tick{width:26px;height:6px;background:var(--primary);margin:0 0 8px auto}
+  .manu-note .who{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--primary)}
+  .manu-note .txt{font-family:var(--serif-display);font-style:italic;font-size:18px;line-height:1.4;color:var(--primary);margin-top:6px}
+  .manu-aside{
+    margin-top:var(--xl);max-width:26em;margin-left:auto;
+    color:var(--muted);font-size:15px;line-height:1.7;
+  }
+  .manu-aside .rule-v{margin-bottom:var(--md);margin-left:auto}
+
+  /* ---------------- pricing ---------------- */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--md);align-items:stretch}
+  .price{
+    background:var(--surface);border:1px solid var(--hairline);
+    padding:var(--lg);display:flex;flex-direction:column;
+  }
+  .price.feature{border-color:var(--primary);position:relative}
+  .price.feature::before{content:"";position:absolute;top:0;left:0;right:0;height:8px;background:var(--primary)}
+  .price .tag{display:inline-flex;align-items:center;gap:8px;
+    align-self:flex-start;padding:5px 12px;border-radius:9999px;background:var(--canvas);
+    font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--primary);
+    border:1px solid var(--hairline);margin-bottom:var(--md)}
+  .price h3{font-family:var(--serif-sub);font-weight:600;font-size:22px;color:var(--ink)}
+  .price .amt{font-family:var(--numeral);font-weight:500;font-size:60px;line-height:1;letter-spacing:-2px;color:var(--ink);margin-top:var(--md);display:flex;align-items:baseline;gap:6px}
+  .price .amt small{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--muted);letter-spacing:.5px}
+  .price .amt .cur{font-family:var(--serif-sub);font-size:26px;color:var(--muted)}
+  .price .desc{margin-top:var(--md);color:var(--muted);font-size:14px;line-height:1.6;min-height:2.4em}
+  .price ul{list-style:none;margin:var(--lg) 0;display:flex;flex-direction:column;gap:12px}
+  .price li{font-size:14px;color:#cdc7bc;line-height:1.5;display:flex;gap:10px}
+  .price li::before{content:"";flex:0 0 auto;width:14px;height:2px;background:var(--primary);margin-top:11px}
+  .price .foot{margin-top:auto;padding-top:var(--md)}
+  .price .buy{
+    width:100%;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.3px;
+    padding:13px;border-radius:2px;cursor:pointer;border:1px solid var(--hairline);
+    background:transparent;color:var(--ink);transition:border-color .2s ease,color .2s ease;
+  }
+  .price .buy:hover{border-color:var(--muted)}
+  .price .buy.solid{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+  .price .buy.solid:hover{background:var(--primary-deep);border-color:var(--primary-deep)}
+
+  /* ---------------- CTA band ---------------- */
+  .cta{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+  .cta-inner{
+    padding-top:var(--section);padding-bottom:var(--section);
+    display:flex;align-items:flex-end;justify-content:space-between;gap:var(--xl);flex-wrap:wrap;
+  }
+  .cta h2{
+    font-family:var(--serif-display);font-weight:600;
+    font-size:clamp(30px,4.6vw,46px);line-height:1.12;letter-spacing:-.4px;color:var(--ink);max-width:14em;
+  }
+  .cta .rule-v{margin-bottom:var(--lg)}
+  .cta-side{flex:0 0 auto}
+
+  /* ---------------- footer ---------------- */
+  footer{padding-top:var(--xl);padding-bottom:var(--xl)}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:var(--lg);padding-bottom:var(--xl)}
+  .foot-brand .mark{font-family:var(--serif-display);font-weight:700;font-size:24px}
+  .foot-brand p{margin-top:var(--md);color:var(--muted);font-size:14px;max-width:20em;line-height:1.7}
+  .foot-col h4{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:var(--md)}
+  .foot-col a{display:block;color:#cdc7bc;font-size:14px;padding:5px 0;transition:color .2s ease}
+  .foot-col a:hover{color:var(--primary)}
+  .foot-bottom{display:flex;justify-content:space-between;gap:var(--md);padding-top:var(--lg);flex-wrap:wrap}
+  .foot-bottom small{color:var(--muted);font-size:12px;letter-spacing:.4px}
+  .foot-bottom .lks{display:flex;gap:var(--lg)}
+  .foot-bottom .lks a{color:var(--muted);font-size:12px;letter-spacing:.4px}
+
+  /* reveal (JS-gated so content is never hidden without JS) */
+  .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .js .reveal.in{opacity:1;transform:none}
+
+  /* ---------------- responsive ---------------- */
+  @media(max-width:1000px){
+    .stat-grid{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(3){padding-left:0;border-left:0}
+    .stat{border-top:1px solid var(--hairline)}
+    .stat:nth-child(1),.stat:nth-child(2){border-top:0}
+    .feat-grid{grid-template-columns:1fr}
+    .feat-grid .feat:nth-child(2){transform:none}
+    .feat{min-height:0}
+    .price-grid{grid-template-columns:1fr}
+    .foot-top{grid-template-columns:1fr 1fr}
+    .manu-note{position:static;transform:none;max-width:none;margin-top:var(--lg)}
+    .manu-note .who,.manu-note .txt{color:var(--primary)}
+  }
+  @media(max-width:640px){
+    :root{--section:64px}
+    .nav-links,.live{display:none}
+    .hero-actions{gap:var(--lg)}
+    .stat-grid{grid-template-columns:1fr}
+    .stat{border-left:0;padding-left:0;border-top:1px solid var(--hairline)}
+    .stat:first-child{border-top:0}
+    .foot-top{grid-template-columns:1fr}
+    /* signature re-edit: serial overflows the TOP edge, not the side */
+    .manu-stage{padding-top:96px}
+    .manu-card{padding:44px 26px 40px;margin-left:0}
+    .manu-serial{left:24px;top:-.55em;font-size:clamp(120px,34vw,180px)}
+    .cta-inner{flex-direction:column;align-items:flex-start}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none !important;transition:none !important}
+    .js .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="bar">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#">
+      <span class="mark">深稿</span>
+      <span class="lat">Shēngǎo</span>
+    </a>
+    <div class="nav-links">
+      <a href="#method">方法</a>
+      <a href="#manuscript">手稿</a>
+      <a href="#price">会员</a>
+    </div>
+    <span class="live"><span class="dot"></span>第 12 期 · 招募中</span>
+    <a class="nav-cta" href="#price">开始写</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-ghost" aria-hidden="true">12</div>
+  <div class="wrap hero-inner">
+    <div class="hero-eyebrow eyebrow">深稿书院 · 长文写作 · <span class="hot">№ 12</span></div>
+    <h1 class="manifesto">
+      <span>慢下来，</span>
+      <span>把一件事，</span>
+      <span class="accent">写到底。</span>
+    </h1>
+    <span class="rule-v"></span>
+    <p class="hero-sub">深稿是一所写给深夜创作者的长文书院。不追热点，不凑字数，只教你把一个观点想透、写实、留得下来。一期十二节，主编逐段陪你改到能发表。</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="location.href='#price'">开始第一篇长文 <span aria-hidden="true">→</span></button>
+      <button class="btn-secondary" onclick="location.href='#method'">
+        <span class="bar"></span>
+        <span class="lbl">看教学方法 <span class="arw" aria-hidden="true">↗</span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- STAT BAR -->
+<div class="statbar">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat reveal">
+        <div class="fig">120<span class="unit">节</span></div>
+        <div class="cap">精读式主课，每节拆透一篇真实好文。</div>
+      </div>
+      <div class="stat reveal">
+        <div class="fig">36<span class="unit">位</span></div>
+        <div class="cap">驻院主编，红笔落在你的原稿上。</div>
+      </div>
+      <div class="stat reveal">
+        <div class="fig">92<span class="unit">%</span></div>
+        <div class="cap">入院学员在一期内写完并发表首篇长文。</div>
+      </div>
+      <div class="stat reveal">
+        <div class="fig">8<span class="unit">年</span></div>
+        <div class="cap">一线长文方法的沉淀，只留下经得起改的。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="block" id="method">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="rule-v"></span>
+      <div class="eyebrow">教学方法</div>
+      <h2>三件事，把你从<br>会写字，带到会写长文。</h2>
+      <p>不给模板，不发套路。我们只做三件被反复验证过的事，其余留给你自己的判断。</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feat reveal">
+        <span class="fbar"></span>
+        <span class="num">01</span>
+        <h3>解剖</h3>
+        <p>把公认的好文章拆到骨头，看清每一处停顿、每一次让步为什么成立。学会读，才配谈写。</p>
+      </article>
+      <article class="feat reveal">
+        <span class="fbar"></span>
+        <span class="num">02</span>
+        <h3>陪读</h3>
+        <p>驻院主编逐段批注，红笔直接落在你的原稿上。不是打分，是陪你把一段话改到没有废字。</p>
+      </article>
+      <article class="feat reveal">
+        <span class="fbar"></span>
+        <span class="num">03</span>
+        <h3>落地</h3>
+        <p>写完直通发表，长文有去处，不烂在草稿箱。你要的从来不是练笔，是被人读到。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE: 手稿卡 -->
+<section class="manu-section" id="manuscript">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:var(--lg)">
+      <span class="rule-v"></span>
+      <div class="eyebrow">手稿 · <span class="hot">第 01 号批注</span></div>
+      <h2>你的原稿，会被<br>当成一件作品对待。</h2>
+    </div>
+    <div class="manu-stage reveal">
+      <div class="manu-card">
+        <span class="manu-serial" aria-hidden="true">01</span>
+        <span class="manu-rule"></span>
+        <h3>改到第七稿的那一段</h3>
+        <p class="draft">她终于把开头那句解释删了。<span class="strike">因为读者其实并不关心你为什么要写，</span>留白比铺垫更诚实。一个观点站得住，是靠后面的证据，不是靠前面的道歉。所以这一段，只留下一句白描，然后让事实自己走上来。</p>
+        <div class="manu-note" aria-hidden="false">
+          <span class="tick"></span>
+          <div class="who">主编批注</div>
+          <div class="txt">别急着解释。</div>
+        </div>
+      </div>
+      <p class="manu-aside">
+        <span class="rule-v"></span>
+        每一篇进院的稿子，主编都会像对待一页手稿那样，逐段读、逐句划。红笔留在纸上，你能看见一句话是怎么从第一稿走到第七稿的。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="block" id="price">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="rule-v"></span>
+      <div class="eyebrow">加入方式</div>
+      <h2>三档，一样的红笔，<br>不一样的陪伴密度。</h2>
+    </div>
+    <div class="price-grid">
+      <div class="price reveal">
+        <h3>旁听</h3>
+        <div class="amt"><span class="cur">¥</span>0</div>
+        <p class="desc">先看我们怎么拆一篇好文，再决定要不要动笔。</p>
+        <ul>
+          <li>每周一堂公开拆解课</li>
+          <li>可读往期精选手稿</li>
+          <li>社区旁听,不限时长</li>
+        </ul>
+        <div class="foot"><button class="buy">免费开始</button></div>
+      </div>
+      <div class="price feature reveal">
+        <span class="tag"><span class="dot"></span>最多人选</span>
+        <h3>入院</h3>
+        <div class="amt"><span class="cur">¥</span>398<small>/ 期</small></div>
+        <p class="desc">一整期主课加主编陪读，写完第一篇能发表的长文。</p>
+        <ul>
+          <li>12 节精读主课全解锁</li>
+          <li>主编逐段批注两篇原稿</li>
+          <li>发表通道 + 首篇长文出版</li>
+          <li>同期学员互评圈</li>
+        </ul>
+        <div class="foot"><button class="buy solid">加入第 12 期</button></div>
+      </div>
+      <div class="price reveal">
+        <h3>驻院</h3>
+        <div class="amt"><span class="cur">¥</span>1980<small>/ 年</small></div>
+        <p class="desc">全年跟一位主编，把长文写作变成能复利的习惯。</p>
+        <ul>
+          <li>全年主课与新课持续解锁</li>
+          <li>一对一改稿,不限篇数</li>
+          <li>年度长文合集出版署名</li>
+          <li>驻院作者内部选题会</li>
+        </ul>
+        <div class="foot"><button class="buy">申请驻院</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="wrap cta-inner">
+    <div class="reveal">
+      <span class="rule-v"></span>
+      <h2>你已经想了很久，<br>该把它写下来了。</h2>
+    </div>
+    <div class="cta-side reveal">
+      <button class="btn-primary" onclick="location.href='#price'">加入第 12 期 <span aria-hidden="true">→</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="mark">深稿</div>
+        <p>一所写给深夜创作者的长文书院。慢一点，深一点，一篇就够。</p>
+      </div>
+      <div class="foot-col">
+        <h4>书院</h4>
+        <a href="#method">教学方法</a>
+        <a href="#manuscript">手稿批注</a>
+        <a href="#price">加入会员</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于</h4>
+        <a href="#">书院理念</a>
+        <a href="#">驻院主编</a>
+        <a href="#">往期作品</a>
+      </div>
+      <div class="foot-col">
+        <h4>联系</h4>
+        <a href="#">合作投稿</a>
+        <a href="#">加入我们</a>
+        <a href="#">常见问题</a>
+      </div>
+    </div>
+    <span class="rule-h"></span>
+    <div class="foot-bottom">
+      <small>© 玄年 深稿书院 · 本页为虚构演示，非真实品牌。</small>
+      <div class="lks">
+        <a href="#">隐私</a>
+        <a href="#">条款</a>
+        <a href="#">Design · Noir-Vermilion</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+    },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+
+</body>
+</html>

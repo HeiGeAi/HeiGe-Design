@@ -1,0 +1,916 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>呐喊 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 凶悍工业</div>
+<div class="hero"><div class="fam">凶悍工业</div><h1>呐喊<span class="badge">✓ lint 0 error</span></h1><div class="slug">brut-signal · BrutSignal-design-system</div><p class="desc">BRUT-SIGNAL is a protest-poster system built on the roughness of woodblock printing: press black, newsprint white, and one arterial blood red, nothing else. An ultra-heavy slab shouts in all caps while an ultra-black grotesque and monospaced press-marks carry the rest. Its signature is the hard red-black seam, two full-bleed planks butting at a cheap-press mis-registration, and slogans sized to fill the frame. Sharp corners, carved-grain texture, zero soft edges. For advocacy, events, manifestos, and any brand willing to take a stance.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#f4efe3;--ink:#141414;--pri:#e00000;--onpri:#ffffff;--acc:#e00000;--surf:#0a0a0a;--muted:#57534a;--line:#d7d0c2;--r:2px;--dff:"Alfa Slab One", "Zilla Slab", "Roboto Slab", "Noto Serif SC", "Songti SC", serif;--bff:"Archivo", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, "SFMono-Regular", "Noto Sans SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">呐喊</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#e00000"></i><i style="background:#ffffff"></i><i style="background:#141414"></i><i style="background:#f4efe3"></i><i style="background:#0a0a0a"></i><i style="background:#57534a"></i><i style="background:#d7d0c2"></i></div>
+  <div class="swrap"><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">button-outline</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">tag-stamp</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">card-manifesto</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">card-plank</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">meta-caption</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">rule-hairline</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">footer</span></div>
+  </div>
+  <div class="card" style="--bg:#f4efe3;--ink:#141414;--pri:#e00000;--onpri:#ffffff;--acc:#e00000;--surf:#0a0a0a;--muted:#57534a;--line:#d7d0c2;--r:2px;--dff:"Alfa Slab One", "Zilla Slab", "Roboto Slab", "Noto Serif SC", "Songti SC", serif;--bff:"Archivo", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, "SFMono-Regular", "Noto Sans SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">呐喊</div></div>
+    <div class="swrap"><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#0a0a0a;color:#141414;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">### UI 签名时刻 · The Riot Seam（撞色裂缝）
+满版**血红板**与**印刷黑板**在画面中央硬碰，两块之间**没有留白、没有描边**，只有一道生的竖直接缝，接缝处故意做 **3px 错位出血**，复刻廉价丝网印刷的套版没对准。一个巨型全大写 slab 口号**骑在接缝上**：压在红板一侧的字是纯白，压在黑板一侧的字是报纸白，词被那道缝一刀切开。木刻碳粉纹理用静态 CSS 横跨两板，接缝处纹理也跟着错位 3px。换任何模板都做不出这道**错位撞色缝**，因为它的记忆点恰恰是那 3px 印刷瑕疵被当成了设计。为可访问性，接缝大词旁挂一个视觉隐藏的完整语义标签兜底。
+
+### Deck 签名时刻 · The Full-Bleed Shout（满版呐喊）
+一整屏，一个词。血红 slab 主词放大到占满 90% 的 16:9 画框，压在报纸白上，一根**血红切割条**从画面一侧滑进来横穿主词底部，左下角一枚**等宽印刷厂钢印**（`PRESSED / 呐喊 / NO.____`）像海报角落的印记。整屏只有这一个词有资格存在，黄金三秒里它先声夺人，其余信息全部退成钢印小字。这一屏抹掉品牌名也一眼是抗议海报，不是通用模板。</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">### Do
+- **要红就红成一整面墙**，血红只做满版块和出血切割条，压纯白字。
+- **口号大到有点过分**，104px slab 全大写，一屏一句狠话。
+- **锐角到底 + 3px 实黑框 + 硬 offset 阴影**，诚实、粗粝、有攻击性。
+- **红黑撞色硬碰**，接缝处留那道 3px 错位，把印刷瑕疵当签名。
+- **中文用重宋 / 超重无衬线**，字体栈末尾必带系统兜底。
+
+### Don't
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2`）及其全家桶，这套只有红黑白三色，一滴渐变都不加。
+- **不做居中卡片三件套**（一行标题 + 一行灰副标 + 三个等宽圆角卡），改成红黑撞色分栏和硬左对齐。
+- **中文绝不用日文字体渲染**（Mochiy / Zen Maru 等），简体会缺字变豆腐，中文走 Noto Serif SC / Noto Sans SC。
+- **不动画化阴影**（`box-shadow` / `text-shadow` 逐帧发光重绘会掉帧），offset 阴影常亮不闪。
+- 不把血红当浅底上的正文红字（对比度不够），不给任何东西加通用 12px 圆角与柔光。</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: BrutSignal-design-system
+description: &quot;BRUT-SIGNAL is a protest-poster system built on the roughness of woodblock printing: press black, newsprint white, and one arterial blood red, nothing else. An ultra-heavy slab shouts in all caps while an ultra-black grotesque and monospaced press-marks carry the rest. Its signature is the hard red-black seam, two full-bleed planks butting at a cheap-press mis-registration, and slogans sized to fill the frame. Sharp corners, carved-grain texture, zero soft edges. For advocacy, events, manifestos, and any brand willing to take a stance.&quot;
+
+colors:
+  primary: &quot;#e00000&quot;
+  on-primary: &quot;#ffffff&quot;
+  ink: &quot;#141414&quot;
+  canvas: &quot;#f4efe3&quot;
+  surface: &quot;#0a0a0a&quot;
+  muted: &quot;#57534a&quot;
+  hairline: &quot;#d7d0c2&quot;
+
+typography:
+  display-xl:
+    fontFamily: &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+    fontSize: 104px
+    fontWeight: 800
+    lineHeight: 0.92
+    letterSpacing: &quot;-1px&quot;
+  display-lg:
+    fontFamily: &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+    fontSize: 62px
+    fontWeight: 800
+    lineHeight: 0.98
+    letterSpacing: &quot;-0.5px&quot;
+  heading:
+    fontFamily: &quot;\&quot;Archivo\&quot;, \&quot;Archivo Black\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Arial Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 30px
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: &quot;-0.2px&quot;
+  body:
+    fontFamily: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 17px
+    fontWeight: 500
+    lineHeight: 1.6
+    letterSpacing: &quot;0px&quot;
+  body-mono:
+    fontFamily: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+    fontSize: 15px
+    fontWeight: 700
+    lineHeight: 1.3
+    letterSpacing: &quot;0px&quot;
+  button:
+    fontFamily: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 14px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: &quot;1.5px&quot;
+  caption:
+    fontFamily: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 13px
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: &quot;0.2px&quot;
+  eyebrow:
+    fontFamily: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+    fontSize: 12px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: &quot;2.5px&quot;
+
+rounded:
+  none: 0px
+  sm: 2px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 48px
+  section: 96px
+
+components:
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm} {spacing.lg}&quot;
+  button-outline:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm} {spacing.lg}&quot;
+  tag-stamp:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  card-manifesto:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.canvas}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  card-plank:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  meta-caption:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm} {spacing.md}&quot;
+  rule-hairline:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  footer:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.canvas}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.canvas}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.canvas}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# BRUT-SIGNAL / 呐喊
+
+&gt; Woodblock-print protest poster, ported to a design system. Press black, newsprint white, one arterial red. Say it loud or do not say it.
+
+## Overview
+
+呐喊 是一套**抗议海报系统**。它的能量来自木刻版画的粗粝，和廉价印刷厂那种红黑撞在一起的直接。整套只用三种颜色：漆黑、报纸白、一道血红 `#e00000`。没有第四色，没有渐变，没有柔光。层级全靠版式和撞色拉开，颜色只负责喊。
+
+主色 `#e00000` 在这套里只做两件事：**当满版红块（上面压纯白字），或者当一道切割画面的血红边条**。它从不细声细气地当正文红字（那会掉到对比度红线以下），要红就红成一整面墙。
+
+字体走两条腿。标题用**木刻粗衬线**，一个 slab serif 砸满全屏，笔画厚到像刻出来的；辅助信息用**超重无衬线**和一行**等宽印记体**，像海报角落印刷厂盖的钢印。全大写，硬对齐，锐角到底。
+
+节奏是宣言式的：一屏一句狠话，中间大量黑白呼吸，红色只在最该炸的那一屏出现一次。安静，安静，然后一声呐喊。
+
+## Colors
+
+**三色极简，红黑撞色是唯一的戏。**
+
+### Brand &amp; Accent
+| Token | Hex | 角色 |
+|---|---|---|
+| `primary` | `#e00000` | 血红。满版红块 / 血红切割条 / 巨型序号底。只做背景与图形，压纯白字。 |
+| `on-primary` | `#ffffff` | 压在血红上的纯白字。红白对比约 5.04:1，稳过 AA。 |
+
+### Surface
+| Token | Hex | 角色 |
+|---|---|---|
+| `canvas` | `#f4efe3` | 报纸白。带一点暖灰的纸感底，不是刺眼纯白。 |
+| `surface` | `#0a0a0a` | 印刷黑。反转卡片、页脚、暗版演示页的底。近黑不纯黑，留一点油墨的厚度。 |
+
+### Text
+| Token | Hex | 角色 |
+|---|---|---|
+| `ink` | `#141414` | 报纸白上的正文与标题。约 16:1，狠黑。 |
+| `muted` | `#57534a` | 暖灰次要文字（署名、注脚、印记）。仅用于报纸白底，约 6.7:1。 |
+
+### Semantic / Structural
+| Token | Hex | 角色 |
+|---|---|---|
+| `hairline` | `#d7d0c2` | 报纸白底上的安静分栏细线。多数分隔用的是 3px 黑实线（引用 `ink`），细线只在需要克制时出现。 |
+
+**对比度自检（全部 ≥ 4.5:1）**：白字 / 血红 ≈ 5.04；`ink` / 报纸白 ≈ 16.0；报纸白 / 印刷黑 ≈ 17.3；`muted` / 报纸白 ≈ 6.7。血红从不作为文字色压在浅底上（那只有 4.3:1），要红字就把它放大成满版红块再压白字。
+
+## Typography
+
+### Font Family
+- **Display（呐喊标题）**：`Alfa Slab One` 打头，这是海报级的超重 slab serif，笔画厚得像木刻。断网或缺字时按栈降级 `Zilla Slab → Roboto Slab`，中文落到 `Noto Serif SC`（800 重）/ `Songti SC`，全程重衬线，绝不塌成 Times。
+- **Heading（超重无衬线）**：`Archivo` 800 重，硬朗方正的 grotesque，中文兜底 `Noto Sans SC / PingFang SC / Microsoft YaHei`。
+- **Body / Button / Caption**：`Archivo` 常规到 700，同一套无衬线，中文同上兜底。
+- **Mono（印记与数字）**：`Space Mono` 700，等宽体承载数据、单位、印刷厂钢印式 eyebrow，中文兜底 `Noto Sans SC`。
+
+**中文铁律**：能承载中文的每条字体栈末尾都带系统兜底（无衬线 `Noto Sans SC / PingFang SC / Microsoft YaHei`，衬线 `Noto Serif SC / Songti SC`）。**中文绝不用日文字体渲染**（Mochiy / Zen Maru 一类），简体会缺字变豆腐。字体栈按字形逐字降级：拉丁字母落 `Alfa Slab One` 的厚衬线，汉字落 `Noto Serif SC` 800 的重宋，两边都是重笔画，一致成立。
+
+### Hierarchy
+| Role | Font | Size | Weight | Tracking | 用途 |
+|---|---|---|---|---|---|
+| `display-xl` | Alfa Slab One | 104px | 800 | -1px | 满版呐喊口号 / 封面主词 |
+| `display-lg` | Alfa Slab One | 62px | 800 | -0.5px | 章节分隔 / 金句页 |
+| `heading` | Archivo | 30px | 800 | -0.2px | 卡片标题 / 收尾行动号召 |
+| `body` | Archivo | 17px | 500 | 0 | 正文 / 页脚 |
+| `body-mono` | Space Mono | 15px* | 700 | 0 | 数据、单位、tabular 数字（*巨型数据页由组件放大） |
+| `button` | Archivo | 14px | 700 | 1.5px | 按钮 / 标签 |
+| `caption` | Archivo | 13px | 500 | 0.2px | 署名 / 注脚 |
+| `eyebrow` | Space Mono | 12px | 700 | 2.5px | 印记式 kicker / 导航 |
+
+### Principles
+- **最大字与正文对比 ≥ 6:1**。104px 的呐喊压在 17px 的正文上，尺寸就是层级。
+- **全大写做标题**，配 slab serif 的厚衬线，出木刻海报的气。
+- **左对齐 / 硬网格对齐优先**，标题贴着页边或贴着红黑分栏的缝，不无脑居中。
+- eyebrow 用等宽体拉宽字距，像印刷厂在海报角落盖的一行钢印。
+
+## Layout
+
+### Spacing
+8 的倍数节拍：`xs 4 · sm 8 · md 16 · lg 24 · xl 48 · section 96`。呐喊靠留白制造张力，section 级的大留白把每句狠话隔开，让它单独站住。
+
+### Grid &amp; Container
+- **12 栏硬网格**，网格线允许**裸露**（在部分版面直接画出来当装饰），这是 brutalist 的诚实。
+- 内容主容器 `max-width` 用 `px`（约 1200px），中文限宽用 `em` 或 `px`，**绝不用 `ch`**（`ch` 是拉丁 0 的宽度，会让中文提前折行出孤字）。
+- 血红切割条常常**出血**到画布边缘，制造被红色撕开的分栏。
+
+### Whitespace 哲学
+留白在这套里是**火药引信**。大段黑白留白不是空，是在给下一屏的呐喊蓄力。均匀撒满每个缝隙的排版没有气口，这里刻意做出安静区和爆发区的落差。
+
+## Elevation &amp; Depth
+
+这套**不用柔和阴影**，深度靠**硬 offset 阴影**和**撞色分层**。
+
+| 层级 | 手法 |
+|---|---|
+| 0 底面 | 报纸白 / 印刷黑，允许静态碳粉噪点纹理 |
+| 1 卡片 | 3px 实黑边框 + 硬 offset 阴影 `6px 6px 0 #141414`（不模糊、不动画） |
+| 2 强调块 | 满版血红块，直接压在黑白之上，靠颜色跳出，不靠阴影 |
+| 3 印记 | 血红 / 黑色钢印贴片，轻微旋转，像盖上去的图章 |
+
+**深度铁律**：offset 阴影是常亮的实心色块，**绝不动画化 `box-shadow` / `text-shadow`**（逐帧重绘极贵、会掉帧）。木刻碳粉纹理用静态 CSS `repeating-linear-gradient`（如 `repeating-linear-gradient(0deg, transparent 0 2px, rgba(20,20,20,.045) 2px 3px)`）叠一层低透明度，**不用 `backdrop-filter`、不用 `filter:blur` 做位移动画**。
+
+## Shapes
+
+### Border Radius
+| Token | 值 | 用途 |
+|---|---|---|
+| `none` | 0px | 几乎一切。卡片、按钮、导航、页脚、演示页全是锐角。 |
+| `sm` | 2px | 只给钢印贴片一点点圆，模拟裁切纸边，别的地方不用。 |
+
+**锐角是这套的骨相。** 没有 pill，没有 12px 通用圆角。图片一律硬直角裁切或硬斜切，血红切割条是直线，不是弧线。
+
+## Components
+
+- **nav-bar**：报纸白底 + 底部 3px 实黑线，导航项用等宽 eyebrow 拉宽字距，像报头下面那行印刷信息。
+- **button-primary**：满版血红 + 纯白全大写字，锐角，hover 时整块位移 2px 露出黑色 offset 底（不淡入、不缩放）。
+- **button-outline**：报纸白底 + 3px 实黑框 + 黑字，hover 反相成黑底白字。
+- **tag-stamp**：血红钢印贴片压白字，`sm` 圆角，轻微旋转 -2°，像盖上去的图章。
+- **card-manifesto**：印刷黑反转卡，报纸白标题，一道血红短横在左上角起手。
+- **card-plank**：报纸白木板卡，3px 黑框 + 硬 offset 阴影，右上角一枚血红直角标签。
+- **stat-block**：**满版血红块 + 巨型纯白等宽数字**，单位用小号白字贴在数字肩上。数据在这套里必须红。
+- **meta-caption**：报纸白底上的暖灰注脚，署名与来源，等宽感克制。
+- **rule-hairline**：需要安静分隔时的报纸白细线；重分隔仍走 3px 黑实线。
+- **footer**：印刷黑整块页脚，报纸白正文，顶部一道 4px 血红出血条封顶。
+
+每个带文字的组件都做过对比度自检，最低的白字压血红也有约 5.04:1，全部过 AA。
+
+## Presentation System
+
+把 呐喊 做成 **16:9 演示**，一套抗议海报幻灯片。核心对齐 **一页一句话 · 黄金三秒 · 视觉锤**。
+
+- **封面 `slide-cover`**：报纸白底，一个**巨型黑色 slab 主词**几乎占满画面，一道血红切割条从右侧出血插进来，左下角等宽钢印一行（日期 / 场次 / 编号）。黄金三秒里最先落地的是那个词，其他全是配角。
+- **过渡 `slide-section-divider`**：满版**血红整屏** + 纯白巨型章节号 `01 / 02 / 03`，一句大写小标题贴在号码下缘。红屏本身就是节奏的重音，看到红就知道翻章了。
+- **数据 `slide-stat-hero`**：印刷黑底 + **报纸白巨型等宽数字**，单位用血红小字贴在数字右肩，一句话结论压在底部。视觉锤是那个大到过分的数字。
+- **金句 `slide-quote`**：印刷黑底，报纸白 slab 金句占屏，句首一枚血红的巨型引号当锚点，署名走等宽小字。
+- **收尾 `slide-closing`**：满版血红，纯白全大写行动号召，一个白描边按钮，一行等宽落款收干净。
+
+**视觉锤统一放在每屏唯一主角上**：封面是词、过渡是红屏与号码、数据是数字、金句是句子、收尾是号召。配角一律压到等宽小字，绝不抢戏。
+
+## Signature Moment
+
+### UI 签名时刻 · The Riot Seam（撞色裂缝）
+满版**血红板**与**印刷黑板**在画面中央硬碰，两块之间**没有留白、没有描边**，只有一道生的竖直接缝，接缝处故意做 **3px 错位出血**，复刻廉价丝网印刷的套版没对准。一个巨型全大写 slab 口号**骑在接缝上**：压在红板一侧的字是纯白，压在黑板一侧的字是报纸白，词被那道缝一刀切开。木刻碳粉纹理用静态 CSS 横跨两板，接缝处纹理也跟着错位 3px。换任何模板都做不出这道**错位撞色缝**，因为它的记忆点恰恰是那 3px 印刷瑕疵被当成了设计。为可访问性，接缝大词旁挂一个视觉隐藏的完整语义标签兜底。
+
+### Deck 签名时刻 · The Full-Bleed Shout（满版呐喊）
+一整屏，一个词。血红 slab 主词放大到占满 90% 的 16:9 画框，压在报纸白上，一根**血红切割条**从画面一侧滑进来横穿主词底部，左下角一枚**等宽印刷厂钢印**（`PRESSED / 呐喊 / NO.____`）像海报角落的印记。整屏只有这一个词有资格存在，黄金三秒里它先声夺人，其余信息全部退成钢印小字。这一屏抹掉品牌名也一眼是抗议海报，不是通用模板。
+
+## Do's and Don'ts
+
+### Do
+- **要红就红成一整面墙**，血红只做满版块和出血切割条，压纯白字。
+- **口号大到有点过分**，104px slab 全大写，一屏一句狠话。
+- **锐角到底 + 3px 实黑框 + 硬 offset 阴影**，诚实、粗粝、有攻击性。
+- **红黑撞色硬碰**，接缝处留那道 3px 错位，把印刷瑕疵当签名。
+- **中文用重宋 / 超重无衬线**，字体栈末尾必带系统兜底。
+
+### Don't
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2`）及其全家桶，这套只有红黑白三色，一滴渐变都不加。
+- **不做居中卡片三件套**（一行标题 + 一行灰副标 + 三个等宽圆角卡），改成红黑撞色分栏和硬左对齐。
+- **中文绝不用日文字体渲染**（Mochiy / Zen Maru 等），简体会缺字变豆腐，中文走 Noto Serif SC / Noto Sans SC。
+- **不动画化阴影**（`box-shadow` / `text-shadow` 逐帧发光重绘会掉帧），offset 阴影常亮不闪。
+- 不把血红当浅底上的正文红字（对比度不够），不给任何东西加通用 12px 圆角与柔光。
+
+## Responsive Behavior
+
+| 断点 | 布局 |
+|---|---|
+| ≥ 1200px | 红黑双板并置，竖直撞色缝居中，display-xl 满配 104px |
+| 768–1199px | 双板收窄，切割条角度变陡，display 用 `clamp()` 收到约 72px |
+| ≤ 767px | **撞色缝由竖转横**：红板压黑板上下堆叠，主词改为在横缝上下切分，钢印移到底部 |
+
+**移动端是重新编排，不是缩放。** 竖直撞色缝在窄屏没有意义，直接转成上下堆叠的横向撞色，口号跟着重新断行。手动断行的标题按最长一行收敛字号，每行 `white-space:nowrap` 锁整行，`clamp()` 保证最窄屏（≤390px）也放得下、不出孤字、不横向溢出。所有动画都能被 `@media (prefers-reduced-motion: reduce)` 关掉。
+
+## Anti-Slop Pledge
+
+抹掉 HeiGe-Design 的署名，呐喊 也一眼是**有人真刻出来的抗议海报**，不是流水线生成的模板。它的记忆点是那道 3px 错位的红黑撞色缝、大到过分的木刻口号、和只用三色却敢喊出声的克制。没有紫蓝渐变，没有居中卡片三件套，没有柔光圆角，没有一个 emoji 撑场面。字体加载失败也不崩，任何屏宽都不出孤字，滚动起来不掉帧。要么喊出声，要么别做这套。
+
+— HeiGe-Design · MIT
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #e00000;
+  --color-on-primary: #ffffff;
+  --color-ink: #141414;
+  --color-canvas: #f4efe3;
+  --color-surface: #0a0a0a;
+  --color-muted: #57534a;
+  --color-hairline: #d7d0c2;
+  --font-display-xl: &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Archivo\&quot;, \&quot;Archivo Black\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Arial Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --text-display-xl: 104px;
+  --text-display-lg: 62px;
+  --text-heading: 30px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-button: 14px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 1.5px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2.5px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 800;
+  --font-weight-body: 500;
+  --font-weight-body-mono: 700;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#e00000&quot;,
+        &quot;on-primary&quot;: &quot;#ffffff&quot;,
+        &quot;ink&quot;: &quot;#141414&quot;,
+        &quot;canvas&quot;: &quot;#f4efe3&quot;,
+        &quot;surface&quot;: &quot;#0a0a0a&quot;,
+        &quot;muted&quot;: &quot;#57534a&quot;,
+        &quot;hairline&quot;: &quot;#d7d0c2&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Archivo\&quot;, \&quot;Archivo Black\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Arial Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;104px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;62px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;30px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;2px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;48px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #e00000;
+  --color-on-primary: #ffffff;
+  --color-ink: #141414;
+  --color-canvas: #f4efe3;
+  --color-surface: #0a0a0a;
+  --color-muted: #57534a;
+  --color-hairline: #d7d0c2;
+  --font-display-xl: &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Archivo\&quot;, \&quot;Archivo Black\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Arial Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --text-display-xl: 104px;
+  --text-display-lg: 62px;
+  --text-heading: 30px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-button: 14px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 1.5px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2.5px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 800;
+  --font-weight-body: 500;
+  --font-weight-body-mono: 700;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;BRUT-SIGNAL is a protest-poster system built on the roughness of woodblock printing: press black, newsprint white, and one arterial blood red, nothing else. An ultra-heavy slab shouts in all caps while an ultra-black grotesque and monospaced press-marks carry the rest. Its signature is the hard red-black seam, two full-bleed planks butting at a cheap-press mis-registration, and slogans sized to fill the frame. Sharp corners, carved-grain texture, zero soft edges. For advocacy, events, manifestos, and any brand willing to take a stance.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.878,
+          0,
+          0
+        ],
+        &quot;hex&quot;: &quot;#e00000&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.078,
+          0.078,
+          0.078
+        ],
+        &quot;hex&quot;: &quot;#141414&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.957,
+          0.937,
+          0.89
+        ],
+        &quot;hex&quot;: &quot;#f4efe3&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.039,
+          0.039,
+          0.039
+        ],
+        &quot;hex&quot;: &quot;#0a0a0a&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.341,
+          0.325,
+          0.29
+        ],
+        &quot;hex&quot;: &quot;#57534a&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.843,
+          0.816,
+          0.761
+        ],
+        &quot;hex&quot;: &quot;#d7d0c2&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 48,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 2,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 104,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Alfa Slab One\&quot;, \&quot;Zilla Slab\&quot;, \&quot;Roboto Slab\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 62,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Archivo\&quot;, \&quot;Archivo Black\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Arial Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 30,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Archivo\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 呐喊（brut-signal · 凶悍工业）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `brut-signal` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#e00000` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Alfa Slab One`，正文 `Archivo`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint brut-signal` / 导出其它格式：`heige-design export brut-signal --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 呐喊 — 原创设定集，可商用。跑校验：<code>heige-design lint brut-signal</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

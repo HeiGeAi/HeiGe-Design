@@ -1,0 +1,955 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>街机荧光 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 复古未来</div>
+<div class="hero"><div class="fam">复古未来</div><h1>街机荧光<span class="badge">✓ lint 0 error</span></h1><div class="slug">arcade-crt · arcade-crt-design-system</div><p class="desc">A phosphor-green cathode-ray design system for indie games, retro hardware, and pixel art. Everything lives inside a simulated CRT tube — static scanlines, a barrel-vignette curve, and a steady green bloom on</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#060806;--ink:#cfffd8;--pri:#33ff66;--onpri:#041006;--acc:#ffb000;--surf:#0e150e;--muted:#6fae83;--line:#1c3a26;--r:10px;--dff:"Press Start 2P", "JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", monospace;--mff:"Press Start 2P", "JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">街机荧光</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#33ff66"></i><i style="background:#041006"></i><i style="background:#cfffd8"></i><i style="background:#060806"></i><i style="background:#0e150e"></i><i style="background:#6fae83"></i><i style="background:#1c3a26"></i><i style="background:#ffb000"></i></div>
+  <div class="swrap"><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">screen-frame</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">divider</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">input-terminal</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">coin-badge</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">status-dot</span></div>
+  </div>
+  <div class="card" style="--bg:#060806;--ink:#cfffd8;--pri:#33ff66;--onpri:#041006;--acc:#ffb000;--surf:#0e150e;--muted:#6fae83;--line:#1c3a26;--r:10px;--dff:"Press Start 2P", "JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", monospace;--mff:"Press Start 2P", "JetBrains Mono", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">街机荧光</div></div>
+    <div class="swrap"><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#0e150e;color:#cfffd8;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI signature — The Phosphor Tube.** The entire viewport *is* a cathode-ray tube, and it boots. On load a single bright horizontal line flashes at center and expands top-and-bottom to fill the screen (the classic CRT power-on), content resolves through a downward scanline sweep, and then the tube settles into its steady state: a fine static scanline grid over everything, a barrel-vignette pulling the four corners dark, a green phosphor bloom on every headline, and a **solid green block cursor blinking after the last word of the hero line** — the machine, waiting for input. Swap the palette or the fonts and this reads as arcade *immediately*; no template produces the power-on sweep + scanline + curvature + block cursor as one coherent object. (All static except the blink and the one-shot sweep; both `opacity`/`transform` only; both off under reduced-motion.)
+
+**Deck signature — INSERT CO</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Keep **green for the interface, amber for the numbers**. If you're reaching for a third color, you've lost the plot — change the blink rate instead.
+- Let **tube black do the framing**. One bright element per screen, surrounded by vignette dark.
+- Wrap real interfaces in the **screen-frame bezel** so it always reads as a monitor.
+- Use **uppercase pixel type for labels, clean mono for paragraphs, VT323 for every number.**
+- Keep bloom and scanlines **static**; earn motion only with the cursor blink and a one-shot power-on.
+
+**Don't**
+- **不碰紫蓝俗套渐变** (`#667eea → #764ba2` 及其全家桶). This system's soul is a single-hue phosphor; a purple-blue gradient is the exact opposite of everything here.
+- **不做居中卡片三件套** — no &quot;title + gray subtitle + three equal rounded cards&quot; grid. Layout is a left-locked HUD, not a centered SaaS template.
+- **中文绝不用日文字体** (Zen Maru / Mochiy 等). Pixel/terminal faces are Latin-only; Chinese must fall to `Noto Sans SC` / `PingFang SC`, never a Japanese face.
+- **不动画化阴影/辉光** — never animate `text-shadow` or `box-shadow`; bloom is a static, always-on glow. No `backdrop-filter`, no drop shadows on hover.
+- Don't round the pixels — content stays at `rounded.none`; only glass (`sm`) and the cabinet (`md`) round.
+- Don't use emoji as icons; draw a sprite or use a pixel glyph.</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: arcade-crt-design-system
+description: A phosphor-green cathode-ray design system for indie games, retro hardware, and pixel art. Everything lives inside a simulated CRT tube — static scanlines, a barrel-vignette curve, and a steady green bloom on #33ff66 — with amber #ffb000 as the second phosphor gun for score readouts and the INSERT COIN call to action. Pixel dot-matrix display type and VT323 terminal readouts sit on true arcade black. Sharp pixel edges everywhere; only the glass corners round. No animated glow, no purple gradients.
+
+colors:
+  primary: &quot;#33ff66&quot;
+  on-primary: &quot;#041006&quot;
+  ink: &quot;#cfffd8&quot;
+  canvas: &quot;#060806&quot;
+  surface: &quot;#0e150e&quot;
+  muted: &quot;#6fae83&quot;
+  hairline: &quot;#1c3a26&quot;
+  accent: &quot;#ffb000&quot;
+  on-accent: &quot;#1a0f00&quot;
+
+typography:
+  display-xl:
+    fontFamily: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 52px
+    fontWeight: 400
+    lineHeight: 1.25
+    letterSpacing: 0.5px
+  display-lg:
+    fontFamily: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 34px
+    fontWeight: 400
+    lineHeight: 1.3
+    letterSpacing: 0.5px
+  heading:
+    fontFamily: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;
+    fontSize: 20px
+    fontWeight: 700
+    lineHeight: 1.45
+    letterSpacing: 0px
+  body:
+    fontFamily: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;
+    fontSize: 15px
+    fontWeight: 400
+    lineHeight: 1.75
+    letterSpacing: 0px
+  readout:
+    fontFamily: &quot;\&quot;VT323\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;
+    fontSize: 44px
+    fontWeight: 400
+    lineHeight: 1.05
+    letterSpacing: 1px
+  button:
+    fontFamily: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 12px
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: 1px
+  caption:
+    fontFamily: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;
+    fontSize: 12px
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: 0.3px
+  eyebrow:
+    fontFamily: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 10px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 2px
+
+rounded:
+  none: 0px
+  sm: 3px
+  md: 10px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 48px
+  section: 96px
+
+components:
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm} {spacing.md}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.accent}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm} {spacing.md}&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  screen-frame:
+    backgroundColor: &quot;{colors.surface}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md}&quot;
+  divider:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    height: 2px
+  stat-block:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.accent}&quot;
+    typography: &quot;{typography.readout}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md}&quot;
+  input-terminal:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm} {spacing.md}&quot;
+  coin-badge:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.on-accent}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  status-dot:
+    backgroundColor: &quot;{colors.primary}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  footer:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg} {spacing.xl}&quot;
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.accent}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.accent}&quot;
+    typography: &quot;{typography.readout}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.on-accent}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Arcade-CRT · 街机荧光
+
+&gt; Cathode Arcade — a design system that boots instead of loading. Phosphor green on tube black, amber for the score, and a curved glass screen you can feel through the pixels.
+
+## Overview
+
+街机荧光 is not &quot;dark mode with a green accent.&quot; It is a **cathode-ray tube rendered in software**. Every surface is the inside of a 1985 arcade monitor: true tube black at the back, a fine horizontal scanline grid laid over everything, a slow barrel curve pulling the corners into shadow, and text that does not sit on the screen so much as **glow out of it**.
+
+Two phosphors run the whole show. **Phosphor green `#33ff66`** is the electron gun — it draws the interface, the cursor, the &quot;PLAYER 1&quot; state, the thing your eye is meant to land on. **Amber `#ffb000`** is the second gun, reserved for one job: **numbers that matter** — the score, the timer, the credit count, and the single &quot;INSERT COIN&quot; call to action. Green tells you where you are; amber tells you what it costs. Nothing else is colored. Discipline is the aesthetic.
+
+The type is deliberately low-resolution. Pixel dot-matrix (`Press Start 2P`) for the words that shout, VT323 terminal readouts for the numbers that count, and a clean monospace for the paragraphs a human actually reads. Rhythm comes from **one loud pixel headline, then a wall of quiet mono**, not from stacking colors. The signature is the screen itself: scanlines, curvature, bloom, and a blinking block cursor that never stops waiting for input.
+
+## Colors
+
+### Brand &amp; Accent
+- **`primary` `#33ff66`** — phosphor green, the P1 electron gun. Primary buttons, the block cursor, active/PLAYER-1 states, headline glow, the on-screen &quot;ready&quot; signal. Bright enough that on tube black it reads at ~14.8:1 as text and ~14.4:1 as a fill under near-black ink.
+- **`accent` `#ffb000`** — amber phosphor, the second gun. Score readouts, timers, credit counters, warnings, and the INSERT COIN CTA. Never decorative — amber always means *a number or a coin*.
+- **`on-primary` `#041006`** — near-black tube-green, the text laid on top of a solid green fill. ~14.4:1 on `primary`.
+- **`on-accent` `#1a0f00`** — near-black amber-brown, the text laid on top of a solid amber fill. ~10.6:1 on `accent`.
+
+### Surface
+- **`canvas` `#060806`** — true arcade black, faintly green-warmed (a live tube is never pure #000). The back of every screen.
+- **`surface` `#0e150e`** — a hair lifted from canvas: the bezel interior, cards, nav, the raised inside of the monitor housing.
+- **`hairline` `#1c3a26`** — dim green, one scanline dark. All 1px borders, dividers, and the scanline overlay tint. Never used for text.
+
+### Text
+- **`ink` `#cfffd8`** — phosphor-white, a green-tinted off-white for body copy and card text. ~16.8:1 on `surface`, ~17.9:1 on `canvas`. This is what long paragraphs are printed in — bright but not the saturated green, so a screen of text never buzzes.
+- **`muted` `#6fae83`** — dimmed phosphor for captions, footer, timestamps, and &quot;CREDIT 00&quot; fine print. ~7.6:1 on `canvas`.
+
+### Semantic
+No red, no third hue. On a real arcade board &quot;danger&quot; was amber flashing faster, and &quot;clear&quot; was green — so **state is carried by the two phosphors plus blink rate**, not by adding colors. This is the constraint that keeps the system unmistakable.
+
+## Typography
+
+### Font Family
+- **Display / buttons / eyebrow — `Press Start 2P`.** The canonical pixel dot-matrix face. It is Latin + numerals only, so it carries the arcade words — `GAME START`, `HIGH SCORE`, `STAGE 02`, `1UP` — and the digits. **It has no CJK glyphs**, so any Chinese in a display string falls through to `Noto Sans SC` / `PingFang SC` automatically. Design intent: **headlines lead in Latin/number, Chinese is carried by `heading` and `body`.**
+- **Readout — `VT323`.** A glowing single-weight terminal face. This is the amber number: score, timer, big stat. Monospace, so digits never jitter as they tick.
+- **Heading &amp; body — `JetBrains Mono`.** A clean, humane monospace for Chinese-and-Latin running text. `heading` at weight 700, `body` at 400. When the string is Chinese, it renders in `Noto Sans SC` (700 headings come out genuinely bold, not faux-bold).
+
+**中文兜底铁律.** Every stack that can carry Chinese ends in `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;`. **中文绝不用日文字体渲染**（Zen Maru / Mochiy 等一律禁用，简体会缺字变豆腐）. Pixel and terminal faces are all Latin-only by design; the CJK fallback does the heavy lifting for Chinese and never breaks if a webfont times out.
+
+### Hierarchy
+| Role | Font | Size | Weight | Use |
+|---|---|---|---|---|
+| display-xl | Press Start 2P | 52px | 400 | Title screen, cover headline |
+| display-lg | Press Start 2P | 34px | 400 | Section titles, quote screen, closing |
+| heading | JetBrains Mono | 20px / 700 | 700 | Card titles, nav wordmark, Chinese headers |
+| body | JetBrains Mono | 15px | 400 | Paragraphs, list copy, input text |
+| readout | VT323 | 44px | 400 | Amber score / stat / timer numbers |
+| button | Press Start 2P | 12px | 400 | Arcade menu buttons, all-caps |
+| caption | JetBrains Mono | 12px | 400 | Footer, fine print, credits |
+| eyebrow | Press Start 2P | 10px | 400 | `1UP` / `PLAYER 1` micro-labels, +2px tracking |
+
+### Principles
+- **Contrast is brutal on purpose.** display-xl at 52px against 15px body is a &gt;3:1 size jump; on a cover the pixel headline should feel *slightly too big*.
+- **Pixel type is always uppercase.** Lowercase in `Press Start 2P` is cramped; buttons and eyebrows are `text-transform: uppercase`.
+- **Line-height is generous for pixels.** Dot-matrix glyphs need air — display lines never drop below 1.25, body sits at 1.75 so a mono wall stays readable.
+- **Numbers are amber, always VT323.** A number in green is a bug.
+
+## Layout
+
+### Spacing
+An 8px base ladder: `xs 4 / sm 8 / md 16 / lg 24 / xl 48 / section 96`. The tube grid is rigid — everything snaps to it, like a HUD laid over a game field. `section 96` is the vertical gap between full &quot;screens.&quot;
+
+### Grid &amp; Container
+- **12-column HUD grid**, but the interface is framed like a game screen: a persistent top nav-bar (score/state HUD), the play-field content, and a bottom footer (`CREDIT 00`, controls legend).
+- Content max-width ~1120px, but the **screen-frame** (bezel) wraps it so the &quot;monitor&quot; never spans edge-to-edge on wide displays — there is always a strip of cabinet-dark around the glass.
+- Alignment is **left and grid-locked**, never centered soup. The HUD reads left-to-right like `1UP  SCORE 004200  HI 019800`.
+
+### Whitespace
+Negative space here is **tube black doing work** — the dark corners of the barrel vignette, the gap between a loud pixel headline and the mono paragraph below. Do not fill the void with cards; let the black frame the glow. One bright thing per screen, surrounded by dark.
+
+## Elevation &amp; Depth
+
+There is no material elevation — a CRT is flat glass. Depth is **optical, not physical**:
+
+| Layer | Technique |
+|---|---|
+| Screen field | `canvas` flat black |
+| Panel / card | `surface`, +1px `hairline` border, `rounded.sm` glass corner |
+| Bezel housing | `screen-frame`: 3px `hairline` border, `rounded.md`, sits *around* the glass |
+| Scanlines | static `repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,.35) 2px 3px)` overlay, pointer-events none |
+| Barrel vignette | static `radial-gradient(ellipse at center, transparent 58%, rgba(0,0,0,.55) 100%)` |
+| Phosphor bloom | static `text-shadow: 0 0 6px rgba(51,255,102,.55)` on green, `0 0 6px rgba(255,176,0,.45)` on amber |
+
+**Performance铁律.** Bloom is a *static* text-shadow — **never animated** (per-frame shadow repaint kills scroll). Scanlines and vignette are static gradients, not `backdrop-filter`. The only motion is the cursor blink (opacity step) and, optionally, a one-shot power-on sweep. All motion is `transform`/`opacity` only and dies under `prefers-reduced-motion: reduce`.
+
+## Shapes
+
+- **`none` 0px is the default.** Buttons, inputs, stat blocks, nav, HUD, every slide — sharp pixel edges. The content is drawn by an electron gun on a raster; it cannot have soft corners.
+- **`sm` 3px** — the *glass* corner. Cards and the cover screen get a whisper of radius because the CRT tube's face is slightly rounded. This is the only place a UI element rounds.
+- **`md` 10px** — the *cabinet* corner, used solely on `screen-frame`, the plastic bezel around the glass.
+- **`pill` 9999px** — reserved for the `status-dot` power LED and nothing else.
+- Images and figures are hard-cropped rectangles, ideally posterized / dithered to read as low-color sprites. Avatars are square, never circles — a sprite is a grid of pixels.
+
+## Components
+
+- **button-primary** — the green &quot;START&quot; key. Solid `primary`, near-black label, zero radius. On press it inverts (fill goes `canvas`, text goes `primary`) and the block cursor flicks. This is the one truly bright fill on a screen.
+- **button-secondary** — amber-outlined &quot;OPTIONS.&quot; `surface` fill, 2px `accent` border, amber label (~10:1). Ghost-quiet until hovered, when the border thickens to a full amber fill preview.
+- **nav-bar** — the top HUD strip. `surface`, 1px `hairline` bottom edge, `heading` wordmark on the left, live `status-dot` + `SCORE`/`HI` readouts on the right. Fixed, never scrolls away — the HUD is always on.
+- **card-feature** — a screen panel. `surface`, hairline border, 3px glass corner, `body` copy. Title in `heading`, optional amber `readout` figure. Hover raises the phosphor bloom on its border, not a drop shadow.
+- **screen-frame** — the cabinet bezel: a 3px `hairline` border + `rounded.md`, wrapping a block of glass content. Use it around heroes and demo screens so the interface always reads as *a monitor*, not a webpage.
+- **divider** — a single `hairline` scanline rule, 2px tall, sharp. Separates HUD rows and list items; it *is* one dark scanline made structural.
+- **stat-block** — a HUD tile: tiny green `eyebrow` label + giant amber `readout` number on flat `canvas`. `042 100`, `99 FPS`, `03:12`. Digits are VT323 so they tick without reflow.
+- **input-terminal** — command line. `canvas` field, hairline border, `body` mono text, and a **solid green block caret** that blinks. Placeholder in `muted`. Focus thickens the border and lights the caret.
+- **coin-badge** — a solid amber chip, `eyebrow` label in near-black: `INSERT COIN`, `+1 UP`, `NEW`. The only place amber becomes a fill in the UI.
+- **status-dot** — the pill power LED, solid green with a static bloom. Green = online, and it may blink slowly for &quot;waiting.&quot;
+- **footer** — `CREDIT 00 — PRESS START` bar. `canvas`, hairline top, `muted` `caption`, controls legend on the right.
+
+## Presentation System
+
+街机荧光 as a 16:9 deck is an **arcade attract-mode sequence**. One screen, one message, HUD always present. 对齐 HeiGe-PPT 的一页一句话 / 黄金三秒 / 视觉锤：
+
+- **Cover (`slide-cover`)** — the title screen. Big `display-xl` pixel title in phosphor-white, a green `PRESS START` blinking below, `1UP` / `HI-SCORE` HUD in the top corners. **黄金三秒**：the scanlines + a one-shot power-on sweep make the audience feel the tube warm up before the first word lands. Chinese subtitle rides in `heading`, Latin/number title in pixels.
+- **Section divider (`slide-section-divider`)** — `STAGE 01` / `STAGE 02` in amber `display-lg`, dead-center of black, with a horizontal scanline-wipe transition. This is the level-select beat between chapters.
+- **Stat hero (`slide-stat-hero`)** — one enormous amber `readout` number filling the screen: `+312%`, `48ms`, `1,000,000`. A small green `eyebrow` caption underneath. **视觉锤 = the score.** The number ticks up from 0 on entry (VT323, count-to-target-then-stop, no rAF left running).
+- **Quote (`slide-quote`)** — a single line in phosphor-green `display-lg`, occupying the screen with a blinking block cursor at the end of the sentence, as if the machine just finished typing it. Everything else is void.
+- **Closing (`slide-closing`)** — the signature. See below.
+
+Deck rhythm: warm-up cover → alternating quiet content screens and loud amber stat-heroes → one green quote for the turn → the amber INSERT COIN close. Every screen keeps the HUD, so the whole deck feels like one continuous play session, not slides.
+
+## Signature Moment
+
+**UI signature — The Phosphor Tube.** The entire viewport *is* a cathode-ray tube, and it boots. On load a single bright horizontal line flashes at center and expands top-and-bottom to fill the screen (the classic CRT power-on), content resolves through a downward scanline sweep, and then the tube settles into its steady state: a fine static scanline grid over everything, a barrel-vignette pulling the four corners dark, a green phosphor bloom on every headline, and a **solid green block cursor blinking after the last word of the hero line** — the machine, waiting for input. Swap the palette or the fonts and this reads as arcade *immediately*; no template produces the power-on sweep + scanline + curvature + block cursor as one coherent object. (All static except the blink and the one-shot sweep; both `opacity`/`transform` only; both off under reduced-motion.)
+
+**Deck signature — INSERT COIN close.** The final slide is a **full-bleed amber phosphor screen**. Giant pixel `GAME OVER` holds for a beat, then flips to `INSERT COIN TO CONTINUE`, blinking on a steady half-second cadence, with a live `CREDIT 01` VT323 readout counting in the bottom corner and the scanlines still rolling over the amber. It is the single most recognizable ending in the medium, rebuilt as a call to action — the audience's muscle memory tells them exactly what to do next.
+
+## Do's and Don'ts
+
+**Do**
+- Keep **green for the interface, amber for the numbers**. If you're reaching for a third color, you've lost the plot — change the blink rate instead.
+- Let **tube black do the framing**. One bright element per screen, surrounded by vignette dark.
+- Wrap real interfaces in the **screen-frame bezel** so it always reads as a monitor.
+- Use **uppercase pixel type for labels, clean mono for paragraphs, VT323 for every number.**
+- Keep bloom and scanlines **static**; earn motion only with the cursor blink and a one-shot power-on.
+
+**Don't**
+- **不碰紫蓝俗套渐变** (`#667eea → #764ba2` 及其全家桶). This system's soul is a single-hue phosphor; a purple-blue gradient is the exact opposite of everything here.
+- **不做居中卡片三件套** — no &quot;title + gray subtitle + three equal rounded cards&quot; grid. Layout is a left-locked HUD, not a centered SaaS template.
+- **中文绝不用日文字体** (Zen Maru / Mochiy 等). Pixel/terminal faces are Latin-only; Chinese must fall to `Noto Sans SC` / `PingFang SC`, never a Japanese face.
+- **不动画化阴影/辉光** — never animate `text-shadow` or `box-shadow`; bloom is a static, always-on glow. No `backdrop-filter`, no drop shadows on hover.
+- Don't round the pixels — content stays at `rounded.none`; only glass (`sm`) and the cabinet (`md`) round.
+- Don't use emoji as icons; draw a sprite or use a pixel glyph.
+
+## Responsive Behavior
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥1120px | Full HUD: nav-bar with score + HI + status-dot, bezel-framed content, footer legend. |
+| 768–1119px | HUD compresses — `HI-SCORE` drops, `SCORE` and `status-dot` stay. Two-column card grids collapse to one. |
+| ≤767px | **Re-authored, not scaled.** The screen becomes a portrait handheld: nav shrinks to wordmark + status-dot, the score readout moves into a sticky bottom HUD (`CREDIT` + primary action), stat-heroes stack full-width, `display-xl` steps down via `clamp(28px, 9vw, 52px)`. |
+
+**零孤字铁律.** Pixel headlines are hand-broken with `white-space: nowrap` per line and sized with `clamp()` so the longest line still fits at ≤390px — a dot-matrix orphan (`的，` alone on a line) is unforgivable at this resolution. Chinese line-limits use `em`/`px`, never `ch`. Verify no horizontal overflow (`scrollWidth == clientWidth`) on desktop and narrow before shipping.
+
+**字体可靠性.** `Press Start 2P` / `VT323` load from webfont but every stack falls to system mono + `Noto Sans SC`; kill the font links and the page stays clean pixel-mono with readable Chinese — it never collapses to Times.
+
+## Anti-Slop Pledge
+
+Strip the name off this file and it is still, unmistakably, a hand-built cathode-ray world — you can feel the tube warm up, count the scanlines, and watch the block cursor wait for a coin. Two phosphors, one curved screen, zero purple gradients. Not a template with a green tint; a machine that boots.
+
+— HeiGe-Design
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #33ff66;
+  --color-on-primary: #041006;
+  --color-ink: #cfffd8;
+  --color-canvas: #060806;
+  --color-surface: #0e150e;
+  --color-muted: #6fae83;
+  --color-hairline: #1c3a26;
+  --color-accent: #ffb000;
+  --color-on-accent: #1a0f00;
+  --font-display-xl: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;;
+  --font-body: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;;
+  --font-readout: &quot;\&quot;VT323\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 52px;
+  --text-display-lg: 34px;
+  --text-heading: 20px;
+  --text-body: 15px;
+  --text-readout: 44px;
+  --text-button: 12px;
+  --text-caption: 12px;
+  --text-eyebrow: 10px;
+  --tracking-display-xl: 0.5px;
+  --tracking-display-lg: 0.5px;
+  --tracking-heading: 0px;
+  --tracking-body: 0px;
+  --tracking-readout: 1px;
+  --tracking-button: 1px;
+  --tracking-caption: 0.3px;
+  --tracking-eyebrow: 2px;
+  --font-weight-display-xl: 400;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-readout: 400;
+  --font-weight-button: 400;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 400;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 10px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#33ff66&quot;,
+        &quot;on-primary&quot;: &quot;#041006&quot;,
+        &quot;ink&quot;: &quot;#cfffd8&quot;,
+        &quot;canvas&quot;: &quot;#060806&quot;,
+        &quot;surface&quot;: &quot;#0e150e&quot;,
+        &quot;muted&quot;: &quot;#6fae83&quot;,
+        &quot;hairline&quot;: &quot;#1c3a26&quot;,
+        &quot;accent&quot;: &quot;#ffb000&quot;,
+        &quot;on-accent&quot;: &quot;#1a0f00&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;
+        ],
+        &quot;readout&quot;: [
+          &quot;\&quot;VT323\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;52px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;34px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;20px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;readout&quot;: [
+          &quot;44px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;10px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;3px&quot;,
+        &quot;md&quot;: &quot;10px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;48px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #33ff66;
+  --color-on-primary: #041006;
+  --color-ink: #cfffd8;
+  --color-canvas: #060806;
+  --color-surface: #0e150e;
+  --color-muted: #6fae83;
+  --color-hairline: #1c3a26;
+  --color-accent: #ffb000;
+  --color-on-accent: #1a0f00;
+  --font-display-xl: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;;
+  --font-body: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;;
+  --font-readout: &quot;\&quot;VT323\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 52px;
+  --text-display-lg: 34px;
+  --text-heading: 20px;
+  --text-body: 15px;
+  --text-readout: 44px;
+  --text-button: 12px;
+  --text-caption: 12px;
+  --text-eyebrow: 10px;
+  --tracking-display-xl: 0.5px;
+  --tracking-display-lg: 0.5px;
+  --tracking-heading: 0px;
+  --tracking-body: 0px;
+  --tracking-readout: 1px;
+  --tracking-button: 1px;
+  --tracking-caption: 0.3px;
+  --tracking-eyebrow: 2px;
+  --font-weight-display-xl: 400;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-readout: 400;
+  --font-weight-button: 400;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 400;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 10px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;A phosphor-green cathode-ray design system for indie games, retro hardware, and pixel art. Everything lives inside a simulated CRT tube — static scanlines, a barrel-vignette curve, and a steady green bloom on&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.2,
+          1,
+          0.4
+        ],
+        &quot;hex&quot;: &quot;#33ff66&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.016,
+          0.063,
+          0.024
+        ],
+        &quot;hex&quot;: &quot;#041006&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.812,
+          1,
+          0.847
+        ],
+        &quot;hex&quot;: &quot;#cfffd8&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.024,
+          0.031,
+          0.024
+        ],
+        &quot;hex&quot;: &quot;#060806&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.055,
+          0.082,
+          0.055
+        ],
+        &quot;hex&quot;: &quot;#0e150e&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.435,
+          0.682,
+          0.514
+        ],
+        &quot;hex&quot;: &quot;#6fae83&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.11,
+          0.227,
+          0.149
+        ],
+        &quot;hex&quot;: &quot;#1c3a26&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.69,
+          0
+        ],
+        &quot;hex&quot;: &quot;#ffb000&quot;
+      }
+    },
+    &quot;on-accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.102,
+          0.059,
+          0
+        ],
+        &quot;hex&quot;: &quot;#1a0f00&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 48,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 3,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 10,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 52,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 34,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 20,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;readout&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;VT323\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 44,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Press Start 2P\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 10,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 街机荧光（arcade-crt · 复古未来）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `arcade-crt` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#33ff66` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Press Start 2P`，正文 `JetBrains Mono`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint arcade-crt` / 导出其它格式：`heige-design export arcade-crt --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 街机荧光 — 原创设定集，可商用。跑校验：<code>heige-design lint arcade-crt</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

@@ -1,0 +1,949 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>蒸汽石膏 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 复古未来</div>
+<div class="hero"><div class="fam">复古未来</div><h1>蒸汽石膏<span class="badge">✓ lint 0 error</span></h1><div class="slug">vaporwave-marble · gesso-design-system</div><p class="desc">GESSO (Zhengqi Shigao) is a vaporwave-marble system that fractures classical plaster busts through a rose-to-cyan vapor gradient (#ff9ee5 to #8ad9ff) laid on plaster white. A hot-rose primary (#ff5fb0) drives CTAs while a deep grape ink and a twilight night ground the palette. Display type is an all-caps high-contrast serif carved like an inscription on a plinth, labeled by wide-tracked mono numerals; Chinese always falls back to Noto Serif SC, never Japanese fonts. Signatures: a dislocated column grid slicing a duotone statue, and a twilight vapor-horizon section divider. Sharp marble frames, pill candy buttons, gallery whitespace.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#f3ecf7;--ink:#2b1d3f;--pri:#ff5fb0;--onpri:#241832;--acc:#ff5fb0;--surf:#fbf7fd;--muted:#705c86;--line:#e4d6ef;--r:6px;--dff:"Playfair Display", Georgia, "Noto Serif SC", "Songti SC", serif;--bff:Inter, "Helvetica Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Playfair Display", Georgia, "Noto Serif SC", "Songti SC", serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">蒸汽石膏</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#ff5fb0"></i><i style="background:#241832"></i><i style="background:#2b1d3f"></i><i style="background:#f3ecf7"></i><i style="background:#fbf7fd"></i><i style="background:#705c86"></i><i style="background:#e4d6ef"></i><i style="background:#ff9ee5"></i></div>
+  <div class="swrap"><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">tag-chip</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">tag-cyan</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">section-title</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">caption-muted</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">rule-hairline</span></div>
+  </div>
+  <div class="card" style="--bg:#f3ecf7;--ink:#2b1d3f;--pri:#ff5fb0;--onpri:#241832;--acc:#ff5fb0;--surf:#fbf7fd;--muted:#705c86;--line:#e4d6ef;--r:6px;--dff:"Playfair Display", Georgia, "Noto Serif SC", "Songti SC", serif;--bff:Inter, "Helvetica Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Playfair Display", Georgia, "Noto Serif SC", "Songti SC", serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">蒸汽石膏</div></div>
+    <div class="swrap"><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#fbf7fd;color:#2b1d3f;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two moments that another template cannot reproduce.
+
+**UI — 错位石膏胸像 (The Dislocated Bust).** A classical plaster bust is duotoned into the vapor gradient (rose highlights, cyan shadows), then sliced into a 5-column grid. Alternating columns are nudged vertically by 12–20px against a 1px lilac gutter, and one slice is tinted the full rose→cyan gradient at 100%. The result: a marble statue fractured through a pastel sunset — nostalgia rendered deliberately, beautifully wrong. Static by default; if it animates, only the column `transform: translateY` shifts on scroll (compositor-cheap), never blur or shadow.
+
+**Deck — 蒸汽地平线过渡页 (The Vapor-Horizon Divider).** On a twilight-night section slide, a single monumental serif numeral stands where a monument would; behind it, one horizontal **rose-to-cyan horizon line** marks a sunset, and a faint perspective grid recedes to a vanishing point. One num</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Give one plaster bust 96px of void and let it be sculpture.
+- Duotone every image into the rose→cyan vapor gradient; keep photography monochrome-underneath.
+- Set display in ALL-CAPS serif with generous tracking, like a plinth inscription.
+- Break the grid on exactly one element per view — the deliberate dislocation.
+- Reserve hot rose `#ff5fb0` for the single thing you want clicked.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient `#667eea → #764ba2`** or any of its family. Our gradient is rose→cyan, and it is not negotiable.
+- **Don't build the centered-card trio** (title + grey subtitle + three equal rounded cards repeated down the page). Use the dislocated grid and the gallery plinth instead.
+- **Don't render Chinese with a Japanese font** (Mochiy, Zen Maru). Chinese falls to Noto Serif SC / Songti SC or Noto Sans SC — never Japanese, or simplified glyphs tofu out.
+- **Don't animate shadows or glow** (per-frame repaint kills scroll). Depth is stone, hairline, and static gradient.
+- Don't round the marble frames to a uniform 8px; keep the 0px-vs-pill tension.
+- Don't let hot rose spread into decoration; the moment it is everywhere, it means nothing.
+
+---</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: gesso-design-system
+description: &quot;GESSO (Zhengqi Shigao) is a vaporwave-marble system that fractures classical plaster busts through a rose-to-cyan vapor gradient (#ff9ee5 to #8ad9ff) laid on plaster white. A hot-rose primary (#ff5fb0) drives CTAs while a deep grape ink and a twilight night ground the palette. Display type is an all-caps high-contrast serif carved like an inscription on a plinth, labeled by wide-tracked mono numerals; Chinese always falls back to Noto Serif SC, never Japanese fonts. Signatures: a dislocated column grid slicing a duotone statue, and a twilight vapor-horizon section divider. Sharp marble frames, pill candy buttons, gallery whitespace.&quot;
+
+colors:
+  primary: &quot;#ff5fb0&quot;
+  on-primary: &quot;#241832&quot;
+  ink: &quot;#2b1d3f&quot;
+  canvas: &quot;#f3ecf7&quot;
+  surface: &quot;#fbf7fd&quot;
+  muted: &quot;#705c86&quot;
+  hairline: &quot;#e4d6ef&quot;
+  accent-rose: &quot;#ff9ee5&quot;
+  accent-cyan: &quot;#8ad9ff&quot;
+  twilight: &quot;#1c1230&quot;
+
+typography:
+  display-xl:
+    fontFamily: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+    fontSize: 78px
+    fontWeight: 800
+    lineHeight: 1.02
+    letterSpacing: 2px
+  display-lg:
+    fontFamily: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+    fontSize: 50px
+    fontWeight: 700
+    lineHeight: 1.08
+    letterSpacing: 1px
+  heading:
+    fontFamily: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+    fontSize: 27px
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: 0.2px
+  body:
+    fontFamily: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.72
+    letterSpacing: 0px
+  eyebrow:
+    fontFamily: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+    fontSize: 12px
+    fontWeight: 700
+    lineHeight: 1.4
+    letterSpacing: 3.5px
+  button:
+    fontFamily: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+    fontSize: 14px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: 2px
+  numeral:
+    fontFamily: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+    fontSize: 66px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: -1px
+  caption:
+    fontFamily: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.55
+    letterSpacing: 0.3px
+
+rounded:
+  none: 0px
+  sm: 3px
+  md: 6px
+  lg: 14px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 96px
+
+components:
+  button-primary: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.sm} {spacing.lg}&quot; }
+  button-secondary: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;{spacing.sm} {spacing.lg}&quot; }
+  tag-chip: { backgroundColor: &quot;{colors.accent-rose}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.eyebrow}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.xs} {spacing.sm}&quot; }
+  tag-cyan: { backgroundColor: &quot;{colors.accent-cyan}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.eyebrow}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.xs} {spacing.sm}&quot; }
+  nav-bar: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.eyebrow}&quot;, padding: &quot;{spacing.md} {spacing.xl}&quot; }
+  section-title: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.heading}&quot;, padding: &quot;{spacing.md}&quot; }
+  card-feature: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.body}&quot;, rounded: &quot;{rounded.lg}&quot;, padding: &quot;{spacing.xl}&quot; }
+  stat-block: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.numeral}&quot;, rounded: &quot;{rounded.md}&quot;, padding: &quot;{spacing.lg}&quot; }
+  caption-muted: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.muted}&quot;, typography: &quot;{typography.caption}&quot;, padding: &quot;{spacing.sm}&quot; }
+  rule-hairline: { backgroundColor: &quot;{colors.hairline}&quot;, height: 1px, width: 100% }
+  footer: { backgroundColor: &quot;{colors.twilight}&quot;, textColor: &quot;{colors.surface}&quot;, typography: &quot;{typography.caption}&quot;, padding: &quot;{spacing.section} {spacing.xl}&quot; }
+  slide-cover: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-xl}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-section-divider: { backgroundColor: &quot;{colors.twilight}&quot;, textColor: &quot;{colors.accent-rose}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-stat-hero: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.numeral}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-quote: { backgroundColor: &quot;{colors.twilight}&quot;, textColor: &quot;{colors.surface}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-closing: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+---
+
+# GESSO · 蒸汽石膏
+
+A vaporwave-marble design system by HeiGe-Design. Classical plaster meets a rose-to-cyan vapor gradient. Sculpture in stone, fractured through a sunset.
+
+&gt; Brand: **GESSO / 蒸汽石膏**. Fictional house, 100% original. Industries: art, trend content, music visuals, exhibitions.
+
+---
+
+## Overview
+
+GESSO takes the one image vaporwave is built on — a Greco-Roman plaster bust — and treats it as a design primitive. The bust sits on a sharp plaster plinth (zero radius, gallery-hard), while the whole page bathes in a **rose-to-cyan vapor gradient** that runs `#ff9ee5 → #8ad9ff`. Two temperatures do all the work: a warm pastel rose and a cool pastel cyan, meeting at a plaster-white horizon.
+
+The palette runs two roles. **Hot rose `#ff5fb0`** is the primary — it appears only where you must act (a CTA pill, a closing slide), so the pink never goes soft or decorative. **Deep grape ink `#2b1d3f`** carries every word; vaporwave never uses pure black, so text is a bruised aubergine, and the darkest ground is a **twilight night `#1c1230`** for divider slides and the footer.
+
+Type is the signature carrier. Display is an **all-caps high-contrast serif** set like an inscription chiseled into a plinth — wide-tracked, monumental, restrained. It is labeled and numbered by a **wide-tracked mono** (the retro-computing counterpoint), and read in a clean humanist sans. The rhythm is a gallery: hard marble frames, monumental whitespace, one duotone statue that stops you, then air.
+
+---
+
+## Colors
+
+Node: two pastel temperatures, one hot accent, one bruised ink, one night. Nothing else. Color never explains hierarchy — size and space do.
+
+### Brand &amp; Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#ff5fb0` | Hot vapor rose. CTAs and the closing slide only. The one saturated moment. |
+| `accent-rose` | `#ff9ee5` | Pastel rose — warm end of the vapor gradient, tags, duotone highlights. |
+| `accent-cyan` | `#8ad9ff` | Pastel cyan — cool end of the vapor gradient, stat units, footer links. |
+
+The **vapor gradient** `linear-gradient(115deg, #ff9ee5, #8ad9ff)` is the house motif. It fills the statue duotone, the horizon line, and hairline dividers. It is a rose-to-cyan gradient — explicitly not the banned `#667eea → #764ba2` purple-blue.
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#f3ecf7` | Plaster white, faint lilac cast. Page ground and cover slide. |
+| `surface` | `#fbf7fd` | Brighter plaster. Cards, stat blocks. |
+| `twilight` | `#1c1230` | Vaporwave night. Divider slides, quote slides, footer. |
+| `hairline` | `#e4d6ef` | Pale lilac 1px rule. Frames and gutters. |
+
+### Text
+| Token | Hex | On | Contrast |
+|---|---|---|---|
+| `ink` | `#2b1d3f` | canvas / surface | 13.4 – 14.6:1 |
+| `on-primary` | `#241832` | primary `#ff5fb0` | 6.0:1 |
+| `muted` | `#705c86` | surface | 5.5:1 |
+| `surface` (as text) | `#fbf7fd` | twilight | 16.7:1 |
+| `accent-rose` (as text) | `#ff9ee5` | twilight | 9.6:1 |
+
+Every text-on-fill pair clears WCAG AA (≥ 4.5:1). Deep grape ink lives on plaster; light plaster and pastel rose live on twilight. Mid-tone-on-mid-tone never happens.
+
+---
+
+## Typography
+
+### Font families
+- **Display / heading — Playfair Display** (high-contrast Didone serif), set ALL CAPS with positive tracking so it reads as a carved inscription. Stack: `&quot;Playfair Display&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif`. Latin falls to Georgia, **Chinese falls to Noto Serif SC / Songti SC — never a Japanese serif** (simplified glyphs would tofu out).
+- **Labels &amp; numerals — Space Mono**, wide-tracked. Eyebrows, buttons, and every statistic. Retro-computing counterpoint to the marble. Stack: `&quot;Space Mono&quot;, &quot;SFMono-Regular&quot;, ui-monospace, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace`.
+- **Body — Inter**, for legible long-form. Stack: `Inter, &quot;Helvetica Neue&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`.
+
+Webfonts load first to preserve the design; if `fonts.googleapis.com` is blocked or slow, the system CJK fallback keeps Chinese clean and readable. No family in this system renders Chinese with a Japanese font.
+
+### Hierarchy
+| Role | Family | Size | Weight | Leading | Tracking |
+|---|---|---|---|---|---|
+| `display-xl` | Playfair (caps) | 78 | 800 | 1.02 | 2px |
+| `display-lg` | Playfair (caps) | 50 | 700 | 1.08 | 1px |
+| `heading` | Playfair | 27 | 600 | 1.3 | 0.2px |
+| `body` | Inter | 17 | 400 | 1.72 | 0 |
+| `eyebrow` | Space Mono (caps) | 12 | 700 | 1.4 | 3.5px |
+| `button` | Space Mono (caps) | 14 | 700 | 1 | 2px |
+| `numeral` | Space Mono | 66 | 700 | 1 | -1px |
+| `caption` | Inter | 13 | 400 | 1.55 | 0.3px |
+
+### Principles
+- Display-to-body ratio is 78:17 ≈ **4.6:1** — the marble inscription must dwarf the prose.
+- Serif is uppercase Latin; Chinese has no case, so a Chinese display line sets in Noto Serif SC at the same weight and tracking, staying monumental without faux-caps.
+- Mono numerals are tabular — statistics align to the pixel like a readout.
+
+---
+
+## Layout
+
+### Spacing
+4 · 8 · 16 · 24 · 40 · **96**. The jump to a 96px section gap is deliberate: gallery air between exhibits. Modules are dense inside, then separated by a full breath.
+
+### Grid &amp; Container
+A **12-column grid** with a max content width around 1200px, but the signature is a **dislocated grid**: the statue and its plinth break the column baseline — one block is nudged 12–24px off the shared line, one hairline gutter widened. Vaporwave is nostalgia rendered slightly wrong; the misalignment is the point, applied to exactly one element per view, never the whole layout.
+
+### Whitespace
+Whitespace is the plinth. A single bust on plaster with 96px of surrounding void reads as sculpture; the same bust crowded reads as a stock photo. Negative space is load-bearing.
+
+---
+
+## Elevation &amp; Depth
+
+Marble does not float. Depth comes from **stone and hairline, not soft drop-shadow.**
+
+| Layer | Treatment |
+|---|---|
+| Ground | `canvas` / `twilight`, flat |
+| Plinth / card | `surface` with a 1px `hairline` frame, sharp corners |
+| Statue | duotone image on a hard-edged block, offset from the grid |
+| Night section | `twilight` field, the vapor-horizon line as the only light |
+
+Decorative depth is the **vapor gradient and a perspective grid** receding to a vanishing point — a flat, retro pseudo-3D horizon. No `backdrop-filter` (it repaints every scroll frame); frosted panels are faked with a semi-opaque solid over `surface`. Shadows, if any, are static and hard, never animated (glow repaint is a frame killer).
+
+---
+
+## Shapes
+
+| Token | Value | Use |
+|---|---|---|
+| `none` | 0px | Slides, image frames, plinths — marble is cut, not rounded |
+| `sm` | 3px | Secondary buttons, small controls |
+| `md` | 6px | Stat panels |
+| `lg` | 14px | Feature cards |
+| `pill` | 9999px | Primary CTA and tag chips |
+
+The tension is intentional: **hard marble frames (0px) against candy pill buttons (9999px).** The stone is austere; the one thing you click is soft and pink. That contrast is the whole personality — do not homogenize it into uniform 8px corners.
+
+Images are duotoned into the vapor gradient (rose highlights, cyan shadows) and cropped to hard rectangles, then sliced by the dislocated column grid.
+
+---
+
+## Components
+
+- **button-primary** — hot-rose `#ff5fb0` pill, deep-grape label in mono caps. 6.0:1. The only saturated pink surface; use once per view.
+- **button-secondary** — plaster ghost with a 1px `hairline` frame, ink mono caps, 3px corners. The quiet, structural sibling.
+- **tag-chip** / **tag-cyan** — pastel-rose and pastel-cyan pills, ink eyebrow (8.4:1 and 10:1). The &quot;aesthetic&quot; labels — a genre, a year, a coordinate — warm and cool variants of the same chip.
+- **nav-bar** — plaster ground, ink wordmark, mono-caps links, closed by a `rule-hairline` underline. Reads like a museum header band.
+- **section-title** — serif `heading` on plaster, the inscription that opens a block.
+- **card-feature** — brightest plaster panel, 14px corners, framed by `hairline`; serif heading, sans body, `caption-muted` for the mauve metadata line. One duotone statue thumbnail allowed per card.
+- **stat-block** — plaster panel, monumental mono numeral in ink, a rose datum tick drawn with `accent-rose`.
+- **rule-hairline** — the pale-lilac 1px divider itself, the system's only line.
+- **footer** — twilight night, plaster text, cyan links (drawn from `accent-cyan`), 96px of air above. The page sets like the sun.
+
+Slide components below.
+
+---
+
+## Presentation System
+
+16:9, one idea per slide. The deck obeys **一页一句话（one line per slide）· 黄金三秒（own the first three seconds）· 视觉锤（one visual hammer）**. The hammer is always the same object: the plaster bust, the vapor gradient, or a single monumental serif line.
+
+- **slide-cover** — plaster ground, a duotone bust offset by the dislocated grid on the right two-thirds, an ALL-CAPS serif title carved on the left plinth, one mono eyebrow overhead. Three seconds: statue + gradient + inscription, nothing else. This is the identity.
+- **slide-section-divider** — twilight night, filled by a single monumental serif numeral (`01`, `02`) in hot rose, with the **vapor-horizon line** (rose→cyan) and a faint perspective grid receding behind it. The transition breath.
+- **slide-stat-hero** — plaster ground, one enormous mono numeral in ink, its unit in cyan, a rose datum tick beneath. The number is the hammer; the room is empty.
+- **slide-quote** — twilight night, one serif line set large in plaster white, wrapped in gallery void. A pull-quote on a museum wall.
+- **slide-closing** — the payoff: full hot-rose `#ff5fb0` field, a serif call-to-action in deep grape, one mono URL line. The pink you have withheld all deck finally floods the frame.
+
+Rhythm across the deck: plaster (calm) → twilight (drama) → plaster (data) → twilight (voice) → rose (release). Grounds alternate temperature so no two consecutive slides share a mood.
+
+---
+
+## Signature Moment
+
+Two moments that another template cannot reproduce.
+
+**UI — 错位石膏胸像 (The Dislocated Bust).** A classical plaster bust is duotoned into the vapor gradient (rose highlights, cyan shadows), then sliced into a 5-column grid. Alternating columns are nudged vertically by 12–20px against a 1px lilac gutter, and one slice is tinted the full rose→cyan gradient at 100%. The result: a marble statue fractured through a pastel sunset — nostalgia rendered deliberately, beautifully wrong. Static by default; if it animates, only the column `transform: translateY` shifts on scroll (compositor-cheap), never blur or shadow.
+
+**Deck — 蒸汽地平线过渡页 (The Vapor-Horizon Divider).** On a twilight-night section slide, a single monumental serif numeral stands where a monument would; behind it, one horizontal **rose-to-cyan horizon line** marks a sunset, and a faint perspective grid recedes to a vanishing point. One number, one horizon, one gradient, total dark around it. No other divider system looks like this.
+
+---
+
+## Do's and Don'ts
+
+**Do**
+- Give one plaster bust 96px of void and let it be sculpture.
+- Duotone every image into the rose→cyan vapor gradient; keep photography monochrome-underneath.
+- Set display in ALL-CAPS serif with generous tracking, like a plinth inscription.
+- Break the grid on exactly one element per view — the deliberate dislocation.
+- Reserve hot rose `#ff5fb0` for the single thing you want clicked.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient `#667eea → #764ba2`** or any of its family. Our gradient is rose→cyan, and it is not negotiable.
+- **Don't build the centered-card trio** (title + grey subtitle + three equal rounded cards repeated down the page). Use the dislocated grid and the gallery plinth instead.
+- **Don't render Chinese with a Japanese font** (Mochiy, Zen Maru). Chinese falls to Noto Serif SC / Songti SC or Noto Sans SC — never Japanese, or simplified glyphs tofu out.
+- **Don't animate shadows or glow** (per-frame repaint kills scroll). Depth is stone, hairline, and static gradient.
+- Don't round the marble frames to a uniform 8px; keep the 0px-vs-pill tension.
+- Don't let hot rose spread into decoration; the moment it is everywhere, it means nothing.
+
+---
+
+## Responsive Behavior
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥ 1200px | 12-col dislocated grid; bust and plinth side by side; 96px section air |
+| 768–1199px | Bust drops above its inscription; grid slice count reduces 5 → 3; section air 64px |
+| ≤ 767px | Single column, re-composed as a scroll of plinths; the bust is full-bleed and centered on its own screen; slides restack as vertical cards |
+
+Mobile is a **re-edit, not a shrink.** The dislocated grid narrows from 5 slices to 3 so the offset stays legible rather than turning to noise. Display type uses `clamp()` and each hand-broken line is locked `white-space: nowrap`, converging on the longest line so no single Chinese character or punctuation mark ever strands to its own row (zero orphans, down to a 390px screen). Chinese width limits use `em`/`px`, never `ch`.
+
+---
+
+## Anti-Slop Pledge
+
+Strip the name off this page and it still reads as made by hand: a plaster bust fractured through a rose-to-cyan sunset, carved-serif inscriptions on gallery void, one pink pill you were saving. No purple-blue slop gradient, no centered-card trio, no naked system font, no Japanese glyphs standing in for Chinese, no animated glow. Every text-on-fill pair clears AA, every font stack survives a dead CDN, and no title strands an orphan at any width. If it looks like a template, it isn't this one.
+
+*HeiGe-Design · MIT.*
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #ff5fb0;
+  --color-on-primary: #241832;
+  --color-ink: #2b1d3f;
+  --color-canvas: #f3ecf7;
+  --color-surface: #fbf7fd;
+  --color-muted: #705c86;
+  --color-hairline: #e4d6ef;
+  --color-accent-rose: #ff9ee5;
+  --color-accent-cyan: #8ad9ff;
+  --color-twilight: #1c1230;
+  --font-display-xl: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-body: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-numeral: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-caption: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 78px;
+  --text-display-lg: 50px;
+  --text-heading: 27px;
+  --text-body: 17px;
+  --text-eyebrow: 12px;
+  --text-button: 14px;
+  --text-numeral: 66px;
+  --text-caption: 13px;
+  --tracking-display-xl: 2px;
+  --tracking-display-lg: 1px;
+  --tracking-heading: 0.2px;
+  --tracking-body: 0px;
+  --tracking-eyebrow: 3.5px;
+  --tracking-button: 2px;
+  --tracking-numeral: -1px;
+  --tracking-caption: 0.3px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 700;
+  --font-weight-button: 700;
+  --font-weight-numeral: 700;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#ff5fb0&quot;,
+        &quot;on-primary&quot;: &quot;#241832&quot;,
+        &quot;ink&quot;: &quot;#2b1d3f&quot;,
+        &quot;canvas&quot;: &quot;#f3ecf7&quot;,
+        &quot;surface&quot;: &quot;#fbf7fd&quot;,
+        &quot;muted&quot;: &quot;#705c86&quot;,
+        &quot;hairline&quot;: &quot;#e4d6ef&quot;,
+        &quot;accent-rose&quot;: &quot;#ff9ee5&quot;,
+        &quot;accent-cyan&quot;: &quot;#8ad9ff&quot;,
+        &quot;twilight&quot;: &quot;#1c1230&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;numeral&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;78px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;50px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;27px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;3.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;numeral&quot;: [
+          &quot;66px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;3px&quot;,
+        &quot;md&quot;: &quot;6px&quot;,
+        &quot;lg&quot;: &quot;14px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #ff5fb0;
+  --color-on-primary: #241832;
+  --color-ink: #2b1d3f;
+  --color-canvas: #f3ecf7;
+  --color-surface: #fbf7fd;
+  --color-muted: #705c86;
+  --color-hairline: #e4d6ef;
+  --color-accent-rose: #ff9ee5;
+  --color-accent-cyan: #8ad9ff;
+  --color-twilight: #1c1230;
+  --font-display-xl: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-body: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-numeral: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-caption: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 78px;
+  --text-display-lg: 50px;
+  --text-heading: 27px;
+  --text-body: 17px;
+  --text-eyebrow: 12px;
+  --text-button: 14px;
+  --text-numeral: 66px;
+  --text-caption: 13px;
+  --tracking-display-xl: 2px;
+  --tracking-display-lg: 1px;
+  --tracking-heading: 0.2px;
+  --tracking-body: 0px;
+  --tracking-eyebrow: 3.5px;
+  --tracking-button: 2px;
+  --tracking-numeral: -1px;
+  --tracking-caption: 0.3px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 700;
+  --font-weight-button: 700;
+  --font-weight-numeral: 700;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;GESSO (Zhengqi Shigao) is a vaporwave-marble system that fractures classical plaster busts through a rose-to-cyan vapor gradient (#ff9ee5 to #8ad9ff) laid on plaster white. A hot-rose primary (#ff5fb0) drives CTAs while a deep grape ink and a twilight night ground the palette. Display type is an all-caps high-contrast serif carved like an inscription on a plinth, labeled by wide-tracked mono numerals; Chinese always falls back to Noto Serif SC, never Japanese fonts. Signatures: a dislocated column grid slicing a duotone statue, and a twilight vapor-horizon section divider. Sharp marble frames, pill candy buttons, gallery whitespace.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.373,
+          0.69
+        ],
+        &quot;hex&quot;: &quot;#ff5fb0&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.141,
+          0.094,
+          0.196
+        ],
+        &quot;hex&quot;: &quot;#241832&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.169,
+          0.114,
+          0.247
+        ],
+        &quot;hex&quot;: &quot;#2b1d3f&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.953,
+          0.925,
+          0.969
+        ],
+        &quot;hex&quot;: &quot;#f3ecf7&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.984,
+          0.969,
+          0.992
+        ],
+        &quot;hex&quot;: &quot;#fbf7fd&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.439,
+          0.361,
+          0.525
+        ],
+        &quot;hex&quot;: &quot;#705c86&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.894,
+          0.839,
+          0.937
+        ],
+        &quot;hex&quot;: &quot;#e4d6ef&quot;
+      }
+    },
+    &quot;accent-rose&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.62,
+          0.898
+        ],
+        &quot;hex&quot;: &quot;#ff9ee5&quot;
+      }
+    },
+    &quot;accent-cyan&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.541,
+          0.851,
+          1
+        ],
+        &quot;hex&quot;: &quot;#8ad9ff&quot;
+      }
+    },
+    &quot;twilight&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.11,
+          0.071,
+          0.188
+        ],
+        &quot;hex&quot;: &quot;#1c1230&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 3,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 14,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 78,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 50,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Playfair Display\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 27,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 3.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;numeral&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;SFMono-Regular\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 66,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 蒸汽石膏（vaporwave-marble · 复古未来）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `vaporwave-marble` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#ff5fb0` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Playfair Display`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint vaporwave-marble` / 导出其它格式：`heige-design export vaporwave-marble --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 蒸汽石膏 — 原创设定集，可商用。跑校验：<code>heige-design lint vaporwave-marble</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

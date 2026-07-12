@@ -1,0 +1,995 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>极光 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 暗色科技</div>
+<div class="hero"><div class="fam">暗色科技</div><h1>极光<span class="badge">✓ lint 0 error</span></h1><div class="slug">aurora-mesh · AuroraMesh-design-system</div><p class="desc">Aurora Mesh (极光) is a machine-learning platform identity for the dark-tech era. A midnight-black canvas #0a0b12 is crossed by one drifting aurora ribbon that flows from aurora green #34d399 into sky blue #38bdf8. Type is engineered: Space Grotesk display cut into gradient text, Geist for body, Geist Mono for tabular metrics. The signature is a dark glass card whose 1px edge catches the aurora light drifting behind it. Glow is radial only, never blurred, never animated.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#0a0b12;--ink:#e6edf3;--pri:#34d399;--onpri:#06131f;--acc:#38bdf8;--surf:#12141d;--muted:#94a3b8;--line:#232838;--r:10px;--dff:"Space Grotesk", "Geist", -apple-system, BlinkMacSystemFont, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Geist", "Inter", -apple-system, BlinkMacSystemFont, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Geist Mono", "JetBrains Mono", "SF Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">极光</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#34d399"></i><i style="background:#06131f"></i><i style="background:#38bdf8"></i><i style="background:#7dd3fc"></i><i style="background:#e6edf3"></i><i style="background:#94a3b8"></i><i style="background:#0a0b12"></i><i style="background:#12141d"></i></div>
+  <div class="swrap"><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">badge-live</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">eyebrow-kicker</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">card-glass</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">footer</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">divider</span></div>
+  </div>
+  <div class="card" style="--bg:#0a0b12;--ink:#e6edf3;--pri:#34d399;--onpri:#06131f;--acc:#38bdf8;--surf:#12141d;--muted:#94a3b8;--line:#232838;--r:10px;--dff:"Space Grotesk", "Geist", -apple-system, BlinkMacSystemFont, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Geist", "Inter", -apple-system, BlinkMacSystemFont, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Geist Mono", "JetBrains Mono", "SF Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">极光</div></div>
+    <div class="swrap"><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#12141d;color:#e6edf3;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">换个模板绝对做不出来的两个时刻，一个给界面，一个给演示。
+
+**UI 签名 · 极光玻璃棱台（Aurora Glass Ledge）**
+首屏一片午夜黑，背后一条极光 `radial-gradient` 从青绿流向天蓝，缓缓漂移（只动 `opacity`，不动位移）。前景浮一张深色玻璃卡：`rgba(255,255,255,.04)` 半透底，**1px `glow` 微光边**——这条边不是描边色，是采样了背后极光的高光，卡漂到哪，边就被那一段极光点亮到哪。标题用 gradient text 把同一条极光切进字里。玻璃、微光边、字内渐变三者共享同一条极光，这种&quot;光穿透层级&quot;的一致性，是堆模板做不出来的。
+
+**Deck 签名 · 极光地平线巨数（Aurora Horizon Stat）**
+一页纯黑，正中一个巨型数字用 display-xl 渲成青绿→天蓝 gradient text，页面顶部一道极光像地平线的晨曦横贯而过，其余全是黑。一个数、一条极光、满屏留黑。观众三秒内只会记住这一个数字和那道光。它的力量全来自克制——敢把整页让给一个数字，才压得出这种冲击。</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">### Do
+- 一整片午夜黑做底，一条极光做主角，其余让给黑。
+- 极光永远是青绿→天蓝的渐变，两色成对出现。
+- 主色只点在真正重要处：主按钮、关键指标、封面标题。
+- 玻璃卡用半透明纯色 + 1px 微光边，靠光分层不靠投影。
+- 数字全走 mono tabular，刷新不跳动。
+- 辉光用静态 `box-shadow` / `radial-gradient`，常亮不闪。
+
+### Don't
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2` 及其全家桶），那是 AI 界面的身份证，本套的极光是青绿→天蓝，方向与气质完全不同。
+- **不做居中卡片三件套**：标题 + 灰副标 + 三个等宽圆角卡整页重复，这是流水线感的源头。本套靠留黑与单点发光排节奏。
+- **中文绝不用日文字体渲染**（Mochiy / Zen Maru 等），简体缺字变豆腐；中文一律 Noto Sans SC / PingFang SC 系统兜底。
+- **不动画化阴影 / 辉光**（`box-shadow`、`text-shadow` 逐帧重绘极贵会掉帧），发光要动就只动 `opacity`。
+- 不用 `backdrop-filter` 做毛玻璃，滚动重绘卡顿，用半透明纯色替代。
+- 不让极光泛滥成满屏彩色噪点，一屏只留一处成为主角。</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: AuroraMesh-design-system
+description: &gt;-
+  Aurora Mesh (极光) is a machine-learning platform identity for the dark-tech era.
+  A midnight-black canvas #0a0b12 is crossed by one drifting aurora ribbon that flows
+  from aurora green #34d399 into sky blue #38bdf8. Type is engineered: Space Grotesk
+  display cut into gradient text, Geist for body, Geist Mono for tabular metrics.
+  The signature is a dark glass card whose 1px edge catches the aurora light drifting
+  behind it. Glow is radial only, never blurred, never animated.
+
+colors:
+  primary: &quot;#34d399&quot;
+  on-primary: &quot;#06131f&quot;
+  accent: &quot;#38bdf8&quot;
+  glow: &quot;#7dd3fc&quot;
+  ink: &quot;#e6edf3&quot;
+  muted: &quot;#94a3b8&quot;
+  canvas: &quot;#0a0b12&quot;
+  surface: &quot;#12141d&quot;
+  hairline: &quot;#232838&quot;
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Geist&quot;, -apple-system, BlinkMacSystemFont, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 72px
+    fontWeight: 700
+    lineHeight: 1.02
+    letterSpacing: -2px
+  display-lg:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Geist&quot;, -apple-system, BlinkMacSystemFont, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 46px
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: -1px
+  heading:
+    fontFamily: '&quot;Geist&quot;, &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 22px
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: -0.2px
+  body:
+    fontFamily: '&quot;Geist&quot;, &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.65
+    letterSpacing: 0px
+  body-mono:
+    fontFamily: '&quot;Geist Mono&quot;, &quot;JetBrains Mono&quot;, &quot;SF Mono&quot;, ui-monospace, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 32px
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: -0.5px
+  eyebrow:
+    fontFamily: '&quot;Geist Mono&quot;, &quot;JetBrains Mono&quot;, &quot;SF Mono&quot;, ui-monospace, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: 2.5px
+  button:
+    fontFamily: '&quot;Geist&quot;, &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 15px
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: 0.2px
+  caption:
+    fontFamily: '&quot;Geist&quot;, &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 0.1px
+
+rounded:
+  none: 0px
+  sm: 6px
+  md: 10px
+  lg: 16px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 28px
+  xl: 48px
+  section: 96px
+
+components:
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 14px 26px
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.accent}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 14px 26px
+  badge-live:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  eyebrow-kicker:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md}&quot;
+  card-glass:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md}&quot;
+  footer:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  divider:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    height: 1px
+  link-aurora:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.glow}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Aurora Mesh · 极光
+
+&gt; ML 平台的暗色宣言。午夜黑上一条流动的极光，从青绿滑向天蓝，其余全部让给黑。
+
+## Overview
+
+极光（Aurora Mesh）是暗色科技家族里冲击力最强的一套，专为机器学习平台、数据科学产品、生成式 AI 界面而生。整套系统只讲一件事：在一整片午夜黑 `#0a0b12` 上，让一条极光缓缓流过。
+
+主色承担两个角色。**极光青绿 `#34d399` 是能量的落点**：按钮、指标、被点亮的关键数字，只有真正重要的东西才配拿到它。**天蓝 `#38bdf8` 是极光的另一端**，和青绿组成那条 `linear-gradient(120deg, {colors.primary}, {colors.accent})` 的光带，绝不单独当填充色乱用，它永远在渐变里出现。两色之外全是黑与灰，节奏靠留黑和字号拉开，不靠堆色。
+
+字体是工程化的三层：Space Grotesk 做 display，被切成 gradient text；Geist 承载正文与界面；Geist Mono 撑起 tabular 指标。中文栈末尾一律压 Noto Sans SC / PingFang SC 系统兜底，断网也不塌。
+
+整体节奏是**大面积留黑 + 单点发光**。一屏只允许一处极光成为主角，配角全部压回黑里呼吸。发光只用 `radial-gradient` 和静态 `box-shadow`，永远不模糊、不逐帧动。
+
+## Colors
+
+### Brand &amp; Accent
+| Token | Hex | 角色 |
+|---|---|---|
+| primary | `#34d399` | 极光青绿。能量落点：主按钮、关键指标、被点亮的数字。克制使用 |
+| accent | `#38bdf8` | 天蓝。极光的另一端，只在渐变光带与次级强调里出现 |
+| glow | `#7dd3fc` | 微光边。玻璃卡 1px 边、极光地平线的高光，比 accent 更亮更薄 |
+| on-primary | `#06131f` | 极深午夜蓝黑。压在青绿或天蓝上的文字，保证 9:1 以上对比 |
+
+### Surface
+| Token | Hex | 角色 |
+|---|---|---|
+| canvas | `#0a0b12` | 午夜黑页面底。所有极光都从这里升起 |
+| surface | `#12141d` | 深色玻璃卡面。比 canvas 抬高一档，作为浮层 |
+| hairline | `#232838` | 1px 冷灰分隔线与常规卡边，不发光时用它 |
+
+### Text
+| Token | Hex | 角色 | 对比度 vs canvas |
+|---|---|---|---|
+| ink | `#e6edf3` | 正文与标题。冷白，不用纯白 | 16.6:1 |
+| muted | `#94a3b8` | 次要文字、eyebrow、脚注 | 7.6:1 |
+
+### Semantic
+青绿本身就是&quot;运行中 / 成功 / 收敛&quot;的语义色，天蓝是&quot;信息 / 链接 / 进行中&quot;。系统不引入额外红黄，需要告警时用 `on-primary` 深底反白提示，保持整套黑绿蓝的克制。所有文字色对深底对比度 ≥ 7:1，组件层对比度全部 ≥ 8:1，越过 WCAG AA 一大截。
+
+## Typography
+
+### Font Family
+- **Display / Gradient text** — Space Grotesk，几何工程感强，字腔宽，切成 gradient text 时笔画够粗接得住渐变。
+- **UI / Body** — Geist，中性、屏幕友好，17px 正文行高 1.65 保证暗色下可读。
+- **Metrics / Kicker** — Geist Mono，tabular 数字对齐，指标不跳动；eyebrow 全大写 + 2.5px 字距做工程标签。
+- **中文兜底铁律**：每条栈末尾都压 `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;`（无衬线）。**中文绝不用日文字体渲染**（Mochiy / Zen Maru 等），简体会缺字变豆腐。拉丁 display 也补 `-apple-system` 系统兜底，断网不塌成 Times。
+
+### Hierarchy
+| Role | Font | Size | Weight | Tracking | 用途 |
+|---|---|---|---|---|---|
+| display-xl | Space Grotesk | 72px | 700 | -2px | 首屏 gradient text 标题、数据页巨号 |
+| display-lg | Space Grotesk | 46px | 600 | -1px | 章节过渡号、金句、收尾行动句 |
+| heading | Geist | 22px | 600 | -0.2px | 卡片标题、模块小标 |
+| body | Geist | 17px | 400 | 0 | 正文、导航项 |
+| body-mono | Geist Mono | 32px | 600 | -0.5px | tabular 指标数字 |
+| eyebrow | Geist Mono | 13px | 600 | 2.5px | 全大写 kicker、live 徽标 |
+| button | Geist | 15px | 600 | 0.2px | 按钮标签 |
+| caption | Geist | 13px | 400 | 0.1px | 脚注、时间戳、图注 |
+
+### Principles
+- 最大字与正文对比 72:17 ≈ 4.2:1，标题敢大到有点过分，才压得住整片黑。
+- gradient text 只用在 display-xl / display-lg，正文永远纯 ink，渐变泛滥就廉价。
+- 数字全部走 mono tabular，仪表盘刷新时位数不抖动。
+- 全部左对齐或网格对齐，拒绝无脑居中。
+
+## Layout
+
+### Spacing
+8 基准的六档：`xs 4 / sm 8 / md 16 / lg 28 / xl 48 / section 96`。模块内用 md/lg，模块间用 xl，整屏之间用 section 96px 拉开呼吸。极光需要大留黑，宁可空，不填满。
+
+### Grid &amp; Container
+12 栏，gutter 24px，桌面容器上限 1200px。演示态锁 16:9（1280×720 基准）。极光光带斜穿网格，内容严格贴网格对齐，制造&quot;有序内容漂浮在无序光晕之上&quot;的张力。
+
+### Whitespace
+留白是黑的呼吸，不是缝隙填充。每屏定一个主角后，四周留出至少 section 级黑场，让那一处极光独自发亮。反面就是 AI slop 的均匀密度，从头到尾一个调子。
+
+## Elevation &amp; Depth
+
+暗色系不用投影堆叠，用**光**分层。
+
+| 层级 | 手法 |
+|---|---|
+| 底层 canvas | 纯午夜黑，一到两处 `radial-gradient` 极光光晕铺底，opacity 克制 |
+| 浮层 surface | 深色玻璃卡，`background: rgba(255,255,255,.04)` 半透白 + 1px `glow` 微光边 |
+| 强调层 | 主按钮 / 关键指标带静态青绿 `box-shadow: 0 0 40px rgba(52,211,153,.28)` 常亮辉光 |
+
+### 深度铁律
+- **辉光只用 `box-shadow` 和 `radial-gradient`**，常亮不闪。
+- **绝不用 `backdrop-filter`**：滚动时持续重绘会掉帧，玻璃感用半透明纯色 + 1px 微光边替代。
+- **绝不动画化 `box-shadow` / `text-shadow`**：逐帧重绘极贵。要&quot;活&quot;就动 `transform` / `opacity`。
+- 模糊装饰层（极光 blob）一律静止，最多动 `opacity`，绝不给它加位移或缩放动画。
+
+## Shapes
+
+### Border Radius
+| Token | 值 | 用途 |
+|---|---|---|
+| none | 0px | 全屏演示页、footer，硬边收束 |
+| sm | 6px | eyebrow 标签、小 tag |
+| md | 10px | 指标块、导航容器 |
+| lg | 16px | 玻璃卡、feature 卡 |
+| pill | 9999px | 按钮、live 徽标 |
+
+### 图形几何
+极光光晕是唯一的有机形：超大 `radial-gradient` 椭圆斜置，边缘极软。除此之外全走直角与克制圆角，硬朗工程感与柔软极光形成对撞。图片统一 16px 圆角深色描边，嵌进玻璃卡里像一块被点亮的面板。
+
+## Components
+
+- **button-primary** — 青绿实底 + `on-primary` 深字（对比 9.7:1），pill 形，静态青绿辉光。整页只出现一次，是唯一的能量落点。
+- **button-secondary** — surface 底 + accent 天蓝字（对比 8.5:1）+ hairline 边，pill 形。次级动作，不发光。
+- **badge-live** — accent 实底 + `on-primary` 字（对比 8.6:1），pill 形，配 eyebrow 全大写 `● LIVE`，标运行态。
+- **eyebrow-kicker** — canvas 底 + muted 字，全大写 2.5px 字距的工程 kicker，压在大标题上方。
+- **nav-bar** — 顶栏，canvas 底 + hairline 底边，滚动后不加毛玻璃，只加 hairline 描边强化边界。
+- **card-glass**（签名组件）— surface 半透底 + ink 字 + **1px `glow` 微光边**，浮在极光光晕上，边缘采样背后的极光色。
+- **card-feature** — surface 底 + hairline 边 + heading 标题，常规内容卡，不发光，把注意力让给玻璃卡。
+- **stat-block** — surface 底 + 青绿 mono 指标（对比 9.5:1），tabular 数字，仪表盘的基本单元。
+- **footer** — canvas 底 + hairline 顶边 + muted caption，直角收束，不留装饰。
+- **divider** — 1px hairline 细线，pill 端头，模块之间的冷灰分隔，不发光时的分层手段。
+- **link-aurora** — canvas 底 + glow 微光字，行内极光高亮链接，把&quot;可点、进行中&quot;的语义交给那道亮蓝。
+
+&gt; 说明：`hairline` 与 `glow` 在实现层还承担 CSS `border-color`（card 常规边用 hairline，玻璃卡 1px 微光边用 glow），design.md 组件 schema 不表达边框，故在 token 里以 `divider` / `link-aurora` 锚定它们的语义。
+
+## Presentation System
+
+把这套做成 16:9 keynote，核心是**一页一句话 + 黄金三秒 + 视觉锤**。视觉锤就是那条极光光带，每一页都从午夜黑里升起，位置和强度决定这页的情绪。
+
+- **封面页 slide-cover** — 纯午夜黑，一条极光从右上斜射铺底。标题走 display-xl gradient text（青绿→天蓝），左对齐压在下三分之一。上方一行 eyebrow kicker。黄金三秒立住&quot;这是一个会发光的 ML 平台&quot;。
+- **过渡页 slide-section-divider** — 极黑场，左侧一个巨号 `01 / 02`（青绿 display-lg），右侧一行章节名。极光收成一道细带从编号后掠过。给强模块之间留呼吸。
+- **数据页 slide-stat-hero** — 全页只有一个数字：display-xl 巨号 gradient text，下方 mono 单位与一行注解。顶部一道极光地平线横贯。视觉锤最强的一屏，放在节奏高点。
+- **金句页 slide-quote** — 占屏一句话，display-lg ink 白字，`text-wrap: balance` 均衡断行避免孤字。极光退成背景极淡的一抹，让文字独大。
+- **收尾页 slide-closing** — 回到深黑，一句行动号召（display-lg）+ 一个青绿 button-primary。极光在按钮背后聚成一团静态辉光，把视线收到 CTA 上，干脆收束不拖泥。
+
+版式纪律：正文永远左对齐贴网格，只有巨型数字和封面标题允许成为全屏主角。每页问一遍&quot;这屏主角是谁&quot;，答不出唯一答案就重排。
+
+## Signature Moment
+
+换个模板绝对做不出来的两个时刻，一个给界面，一个给演示。
+
+**UI 签名 · 极光玻璃棱台（Aurora Glass Ledge）**
+首屏一片午夜黑，背后一条极光 `radial-gradient` 从青绿流向天蓝，缓缓漂移（只动 `opacity`，不动位移）。前景浮一张深色玻璃卡：`rgba(255,255,255,.04)` 半透底，**1px `glow` 微光边**——这条边不是描边色，是采样了背后极光的高光，卡漂到哪，边就被那一段极光点亮到哪。标题用 gradient text 把同一条极光切进字里。玻璃、微光边、字内渐变三者共享同一条极光，这种&quot;光穿透层级&quot;的一致性，是堆模板做不出来的。
+
+**Deck 签名 · 极光地平线巨数（Aurora Horizon Stat）**
+一页纯黑，正中一个巨型数字用 display-xl 渲成青绿→天蓝 gradient text，页面顶部一道极光像地平线的晨曦横贯而过，其余全是黑。一个数、一条极光、满屏留黑。观众三秒内只会记住这一个数字和那道光。它的力量全来自克制——敢把整页让给一个数字，才压得出这种冲击。
+
+## Do's and Don'ts
+
+### Do
+- 一整片午夜黑做底，一条极光做主角，其余让给黑。
+- 极光永远是青绿→天蓝的渐变，两色成对出现。
+- 主色只点在真正重要处：主按钮、关键指标、封面标题。
+- 玻璃卡用半透明纯色 + 1px 微光边，靠光分层不靠投影。
+- 数字全走 mono tabular，刷新不跳动。
+- 辉光用静态 `box-shadow` / `radial-gradient`，常亮不闪。
+
+### Don't
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2` 及其全家桶），那是 AI 界面的身份证，本套的极光是青绿→天蓝，方向与气质完全不同。
+- **不做居中卡片三件套**：标题 + 灰副标 + 三个等宽圆角卡整页重复，这是流水线感的源头。本套靠留黑与单点发光排节奏。
+- **中文绝不用日文字体渲染**（Mochiy / Zen Maru 等），简体缺字变豆腐；中文一律 Noto Sans SC / PingFang SC 系统兜底。
+- **不动画化阴影 / 辉光**（`box-shadow`、`text-shadow` 逐帧重绘极贵会掉帧），发光要动就只动 `opacity`。
+- 不用 `backdrop-filter` 做毛玻璃，滚动重绘卡顿，用半透明纯色替代。
+- 不让极光泛滥成满屏彩色噪点，一屏只留一处成为主角。
+
+## Responsive Behavior
+
+移动端是重新编排的另一段叙事，不是桌面缩一缩。
+
+| 断点 | 策略 |
+|---|---|
+| ≥1200px | 12 栏，极光斜穿全幅，玻璃卡与内容并列 |
+| 768–1199px | 8 栏，极光收窄为一道竖向光带，卡片改上下堆叠 |
+| ≤767px | 单栏，极光移到首屏顶部一道横向光晕；display-xl 用 `clamp(40px, 11vw, 72px)` 收敛，按最长行加 `white-space: nowrap` 锁行防孤字 |
+
+零孤字铁律：手动断行的大标题按最长行收字号，`clamp()` 保证 ≤390px 也放得下，绝不把单字或标点甩到独立一行。中文限宽用 `em` / `px`，不用 `ch`（`ch` 按拉丁数字宽度会让中文提前折行出孤字）。所有极光动画都能被 `@media (prefers-reduced-motion: reduce)` 一键关停。
+
+## Anti-Slop Pledge
+
+抹掉品牌名，这套依然一眼看得出是人用心排的：一整片午夜黑上，一条从青绿流向天蓝的极光，一张 1px 微光边采样了背后光色的玻璃卡，一个敢占满全屏的 gradient text 巨数。没有紫蓝烂渐变，没有居中三件套，没有逐帧发光的性能陷阱。它有一个换模板绝对复制不出的签名时刻，也扛得住断网、窄屏、reduce-motion 三重生产考验。这不是流水线生成的，是有人认真让一片黑发了一次光。
+
+— HeiGe-Design · MIT
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #34d399;
+  --color-on-primary: #06131f;
+  --color-accent: #38bdf8;
+  --color-glow: #7dd3fc;
+  --color-ink: #e6edf3;
+  --color-muted: #94a3b8;
+  --color-canvas: #0a0b12;
+  --color-surface: #12141d;
+  --color-hairline: #232838;
+  --font-display-xl: &quot;\&quot;Space Grotesk\&quot;, \&quot;Geist\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Space Grotesk\&quot;, \&quot;Geist\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Geist Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;Geist Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 46px;
+  --text-heading: 22px;
+  --text-body: 17px;
+  --text-body-mono: 32px;
+  --text-eyebrow: 13px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --tracking-display-xl: -2px;
+  --tracking-display-lg: -1px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: -0.5px;
+  --tracking-eyebrow: 2.5px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.1px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 600;
+  --font-weight-eyebrow: 600;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 28px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#34d399&quot;,
+        &quot;on-primary&quot;: &quot;#06131f&quot;,
+        &quot;accent&quot;: &quot;#38bdf8&quot;,
+        &quot;glow&quot;: &quot;#7dd3fc&quot;,
+        &quot;ink&quot;: &quot;#e6edf3&quot;,
+        &quot;muted&quot;: &quot;#94a3b8&quot;,
+        &quot;canvas&quot;: &quot;#0a0b12&quot;,
+        &quot;surface&quot;: &quot;#12141d&quot;,
+        &quot;hairline&quot;: &quot;#232838&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Geist\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Geist\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;Geist Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Geist Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;72px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;46px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;22px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;32px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.5px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;6px&quot;,
+        &quot;md&quot;: &quot;10px&quot;,
+        &quot;lg&quot;: &quot;16px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;28px&quot;,
+        &quot;xl&quot;: &quot;48px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #34d399;
+  --color-on-primary: #06131f;
+  --color-accent: #38bdf8;
+  --color-glow: #7dd3fc;
+  --color-ink: #e6edf3;
+  --color-muted: #94a3b8;
+  --color-canvas: #0a0b12;
+  --color-surface: #12141d;
+  --color-hairline: #232838;
+  --font-display-xl: &quot;\&quot;Space Grotesk\&quot;, \&quot;Geist\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Space Grotesk\&quot;, \&quot;Geist\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Geist Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;Geist Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 46px;
+  --text-heading: 22px;
+  --text-body: 17px;
+  --text-body-mono: 32px;
+  --text-eyebrow: 13px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --tracking-display-xl: -2px;
+  --tracking-display-lg: -1px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: -0.5px;
+  --tracking-eyebrow: 2.5px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.1px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 600;
+  --font-weight-eyebrow: 600;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 28px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Aurora Mesh (极光) is a machine-learning platform identity for the dark-tech era. A midnight-black canvas #0a0b12 is crossed by one drifting aurora ribbon that flows from aurora green #34d399 into sky blue #38bdf8. Type is engineered: Space Grotesk display cut into gradient text, Geist for body, Geist Mono for tabular metrics. The signature is a dark glass card whose 1px edge catches the aurora light drifting behind it. Glow is radial only, never blurred, never animated.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.204,
+          0.827,
+          0.6
+        ],
+        &quot;hex&quot;: &quot;#34d399&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.024,
+          0.075,
+          0.122
+        ],
+        &quot;hex&quot;: &quot;#06131f&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.22,
+          0.741,
+          0.973
+        ],
+        &quot;hex&quot;: &quot;#38bdf8&quot;
+      }
+    },
+    &quot;glow&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.49,
+          0.827,
+          0.988
+        ],
+        &quot;hex&quot;: &quot;#7dd3fc&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.902,
+          0.929,
+          0.953
+        ],
+        &quot;hex&quot;: &quot;#e6edf3&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.58,
+          0.639,
+          0.722
+        ],
+        &quot;hex&quot;: &quot;#94a3b8&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.039,
+          0.043,
+          0.071
+        ],
+        &quot;hex&quot;: &quot;#0a0b12&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.071,
+          0.078,
+          0.114
+        ],
+        &quot;hex&quot;: &quot;#12141d&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.137,
+          0.157,
+          0.22
+        ],
+        &quot;hex&quot;: &quot;#232838&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 28,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 48,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 10,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Geist\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 72,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Geist\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 46,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 22,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Geist Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 32,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Geist Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Geist\&quot;, \&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 极光（aurora-mesh · 暗色科技）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `aurora-mesh` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#34d399` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Space Grotesk`，正文 `Geist`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint aurora-mesh` / 导出其它格式：`heige-design export aurora-mesh --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 极光 — 原创设定集，可商用。跑校验：<code>heige-design lint aurora-mesh</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

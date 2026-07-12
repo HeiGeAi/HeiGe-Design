@@ -1,0 +1,311 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "GESSO (Zhengqi Shigao) is a vaporwave-marble system that fractures classical plaster busts through a rose-to-cyan vapor gradient (#ff9ee5 to #8ad9ff) laid on plaster white. A hot-rose primary (#ff5fb0) drives CTAs while a deep grape ink and a twilight night ground the palette. Display type is an all-caps high-contrast serif carved like an inscription on a plinth, labeled by wide-tracked mono numerals; Chinese always falls back to Noto Serif SC, never Japanese fonts. Signatures: a dislocated column grid slicing a duotone statue, and a twilight vapor-horizon section divider. Sharp marble frames, pill candy buttons, gallery whitespace.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.373,
+          0.69
+        ],
+        "hex": "#ff5fb0"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.141,
+          0.094,
+          0.196
+        ],
+        "hex": "#241832"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.169,
+          0.114,
+          0.247
+        ],
+        "hex": "#2b1d3f"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.953,
+          0.925,
+          0.969
+        ],
+        "hex": "#f3ecf7"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.984,
+          0.969,
+          0.992
+        ],
+        "hex": "#fbf7fd"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.439,
+          0.361,
+          0.525
+        ],
+        "hex": "#705c86"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.894,
+          0.839,
+          0.937
+        ],
+        "hex": "#e4d6ef"
+      }
+    },
+    "accent-rose": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.62,
+          0.898
+        ],
+        "hex": "#ff9ee5"
+      }
+    },
+    "accent-cyan": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.541,
+          0.851,
+          1
+        ],
+        "hex": "#8ad9ff"
+      }
+    },
+    "twilight": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.11,
+          0.071,
+          0.188
+        ],
+        "hex": "#1c1230"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 3,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 14,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Playfair Display\", Georgia, \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 78,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": 2,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Playfair Display\", Georgia, \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 50,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Playfair Display\", Georgia, \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 27,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Inter, \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 17,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Mono\", \"SFMono-Regular\", ui-monospace, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 3.5,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Mono\", \"SFMono-Regular\", ui-monospace, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 14,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 2,
+          "unit": "px"
+        }
+      }
+    },
+    "numeral": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Mono\", \"SFMono-Regular\", ui-monospace, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 66,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -1,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Inter, \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.3,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

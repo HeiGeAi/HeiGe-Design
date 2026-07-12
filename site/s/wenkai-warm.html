@@ -1,0 +1,1095 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>文楷暖 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 温暖人文</div>
+<div class="hero"><div class="fam">温暖人文</div><h1>文楷暖<span class="badge">✓ lint 0 error</span></h1><div class="slug">wenkai-warm · WenkaiWarm-design-system</div><p class="desc">WenKai-Warm is a humanist storytelling system for education, courses, and public-benefit sharing. It sets LXGW WenKai, a warm calligraphic kai typeface, at giant scale on oatmeal paper (#efe7d6) so headlines read like a handwritten note rather than a slide. Baked terracotta (#b34f30) is the single voice for emphasis and full-bleed dividers; a deep ink-green seals each heartfelt line like a stamp. Rounded Nunito carries the body. The signature is a hand-drawn organic underline plus a small seal on one closing sentence: sincerity you can feel, never a template.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#efe7d6;--ink:#33291f;--pri:#b34f30;--onpri:#fbf4e6;--acc:#315b47;--surf:#f7f1e3;--muted:#6f5f4b;--line:#ddd2bc;--r:12px;--dff:"LXGW WenKai", "LXGW WenKai Screen", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Nunito", "Quicksand", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"LXGW WenKai", "LXGW WenKai Screen", "Noto Serif SC", "Songti SC", "STSong", serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">文楷暖</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#b34f30"></i><i style="background:#fbf4e6"></i><i style="background:#33291f"></i><i style="background:#efe7d6"></i><i style="background:#f7f1e3"></i><i style="background:#6f5f4b"></i><i style="background:#ddd2bc"></i><i style="background:#315b47"></i></div>
+  <div class="swrap"><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">kicker-chip</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">callout-quote</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">divider</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">link-inline</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">metadata-line</span></div>
+  </div>
+  <div class="card" style="--bg:#efe7d6;--ink:#33291f;--pri:#b34f30;--onpri:#fbf4e6;--acc:#315b47;--surf:#f7f1e3;--muted:#6f5f4b;--line:#ddd2bc;--r:12px;--dff:"LXGW WenKai", "LXGW WenKai Screen", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Nunito", "Quicksand", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"LXGW WenKai", "LXGW WenKai Screen", "Noto Serif SC", "Songti SC", "STSong", serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">文楷暖</div></div>
+    <div class="swrap"><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#f7f1e3;color:#33291f;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two things this system does that a template cannot.
+
+**UI signature — 手绘有机下划线 + 墨绿印章落款.** A single WenKai keyword in the
+hero gets a **hand-drawn terracotta underline**: an SVG path with a real wobble
+and a tapered brush end, animated once with `stroke-dashoffset` as if inked in
+front of you, then still. Beside the sentence sits a **small ink-green seal** —
+a carved-square chop with a one-character mark. The underline is never a
+straight CSS `border-bottom`; the seal is never an emoji. Together they turn a
+web headline into something signed by a hand.
+
+**Deck signature — 走心金句页 (the heartfelt-line page).** One slide, one WenKai
+sentence, a field of oatmeal around it. A **torn-paper 情绪图位** — a single warm
+photo or illustration in an irregular paper mask — leans in from one side; an
+**organic terracotta brush stroke** pools under the phrase you want remembered;
+the **ink-green seal** stamps</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Give WenKai room to be huge and stay at 400 weight — size is the emphasis.
+- Keep terracotta as the *only* voice: one underline, one number, one divider
+  per beat. If everything is terracotta, nothing is.
+- Let the ink-green seal arrive small and late, as a closing mark.
+- Left-align and offset. Write from a margin like a real note.
+- Cluster whitespace so one sentence gets silence around it.
+- Warm-tint every shadow (`rgba(80,50,30,…)`); keep grain and torn edges static.
+
+**Don't**
+- **Don't touch the purple-blue cliché gradient** (`#667eea → #764ba2`) or any
+  of its family. This system is paper and clay; that gradient is neither.
+- **Don't build the centered card triptych** — one centered title, one gray
+  subtitle, three equal rounded cards repeated down the page. Offset, vary
+  weight, and let one card be the hero.
+- **Don't render Chinese with a Japanese face** (Mochiy, Zen Maru, any JP kana
+  font). Simplified glyphs break. Chinese fallbacks are Noto Serif/Sans SC,
+  Songti SC, PingFang SC only.
+- **Don't animate shadows or glows.** Warmth is static; motion is reserved for
+  the one-shot underline draw.
+- Don't faux-bold giant WenKai. Don't use pure `#000` or stark `#fff`. Don't
+  add a second accent color to &quot;brighten it up.&quot; Don't center-limit Chinese with `ch`.
+
+---</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: WenkaiWarm-design-system
+description: &gt;-
+  WenKai-Warm is a humanist storytelling system for education, courses, and
+  public-benefit sharing. It sets LXGW WenKai, a warm calligraphic kai typeface,
+  at giant scale on oatmeal paper (#efe7d6) so headlines read like a handwritten
+  note rather than a slide. Baked terracotta (#b34f30) is the single voice for
+  emphasis and full-bleed dividers; a deep ink-green seals each heartfelt line
+  like a stamp. Rounded Nunito carries the body. The signature is a hand-drawn
+  organic underline plus a small seal on one closing sentence: sincerity you can
+  feel, never a template.
+
+colors:
+  primary: &quot;#b34f30&quot;      # 陶土红 baked terracotta — emphasis, dividers, one voice only
+  on-primary: &quot;#fbf4e6&quot;   # warm cream — text on terracotta and ink surfaces
+  ink: &quot;#33291f&quot;          # 墨褐 espresso brown — body text, never pure black
+  canvas: &quot;#efe7d6&quot;       # 燕麦纸 oatmeal paper — the page ground
+  surface: &quot;#f7f1e3&quot;      # lighter cream — cards, quiet panels
+  muted: &quot;#6f5f4b&quot;        # 胡桃褐 walnut taupe — secondary text, captions
+  hairline: &quot;#ddd2bc&quot;     # warm tan — 1px separators
+  accent: &quot;#315b47&quot;       # 墨绿 ink green — the seal, inline links, restraint accent
+
+typography:
+  display-xl:
+    fontFamily: '&quot;LXGW WenKai&quot;, &quot;LXGW WenKai Screen&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;84px&quot;
+    fontWeight: 400
+    lineHeight: 1.2
+    letterSpacing: &quot;1px&quot;
+  display-lg:
+    fontFamily: '&quot;LXGW WenKai&quot;, &quot;LXGW WenKai Screen&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;56px&quot;
+    fontWeight: 400
+    lineHeight: 1.25
+    letterSpacing: &quot;0.5px&quot;
+  heading:
+    fontFamily: '&quot;LXGW WenKai&quot;, &quot;LXGW WenKai Screen&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;22px&quot;
+    fontWeight: 700
+    lineHeight: 1.35
+    letterSpacing: &quot;0px&quot;
+  body:
+    fontFamily: '&quot;Nunito&quot;, &quot;Quicksand&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: &quot;17px&quot;
+    fontWeight: 400
+    lineHeight: 1.8
+    letterSpacing: &quot;0.2px&quot;
+  numeral:
+    fontFamily: '&quot;Nunito&quot;, &quot;Quicksand&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;72px&quot;
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: &quot;-0.5px&quot;
+  button:
+    fontFamily: '&quot;Nunito&quot;, &quot;Quicksand&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;16px&quot;
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: &quot;0.5px&quot;
+  caption:
+    fontFamily: '&quot;Nunito&quot;, &quot;Quicksand&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;13px&quot;
+    fontWeight: 500
+    lineHeight: 1.6
+    letterSpacing: &quot;0.2px&quot;
+  eyebrow:
+    fontFamily: '&quot;Nunito&quot;, &quot;Quicksand&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;12px&quot;
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: &quot;2px&quot;
+
+rounded:
+  none: &quot;0px&quot;
+  sm: &quot;6px&quot;
+  md: &quot;12px&quot;
+  lg: &quot;20px&quot;
+  pill: &quot;9999px&quot;
+
+spacing:
+  xs: &quot;4px&quot;
+  sm: &quot;8px&quot;
+  md: &quot;16px&quot;
+  lg: &quot;24px&quot;
+  xl: &quot;40px&quot;
+  section: &quot;96px&quot;
+
+components:
+  # —— UI 界面组件 ——
+  nav-bar: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.heading}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.md} {spacing.xl}&quot; }
+  button-primary: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.md} {spacing.xl}&quot; }
+  button-secondary: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.primary}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.md} {spacing.xl}&quot; }
+  kicker-chip: { backgroundColor: &quot;{colors.accent}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.eyebrow}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.xs} {spacing.md}&quot; }
+  card-feature: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.body}&quot;, rounded: &quot;{rounded.lg}&quot;, padding: &quot;{spacing.xl}&quot; }
+  stat-block: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.primary}&quot;, typography: &quot;{typography.numeral}&quot;, rounded: &quot;{rounded.md}&quot;, padding: &quot;{spacing.lg}&quot; }
+  callout-quote: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.body}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;{spacing.lg}&quot; }
+  divider: { backgroundColor: &quot;{colors.hairline}&quot;, height: &quot;1px&quot;, width: &quot;100%&quot; }
+  link-inline: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.accent}&quot;, typography: &quot;{typography.body}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.xs}&quot; }
+  metadata-line: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.muted}&quot;, typography: &quot;{typography.caption}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.xs} {spacing.sm}&quot; }
+  footer: { backgroundColor: &quot;{colors.ink}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.caption}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section} {spacing.xl}&quot; }
+  # —— slide 演示组件（16:9 融合层）——
+  slide-cover: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-xl}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-section-divider: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-stat-hero: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.primary}&quot;, typography: &quot;{typography.numeral}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-quote: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-xl}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-closing: { backgroundColor: &quot;{colors.ink}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+---
+
+# WenKai-Warm · 文楷暖
+
+A warm humanist system for people who teach, share, and try to move someone.
+Built around one belief: **a page can sound like a person.** So it hands the
+biggest words on screen to LXGW WenKai — a calligraphic kai face with visible
+brush warmth — and lets terracotta and an ink-green seal do the rest.
+
+---
+
+## Overview
+
+文楷暖 is the voice you use when the goal is not to impress but to be believed.
+Its home is course landing pages, teacher decks, non-profit stories, and any
+&quot;let me tell you what I learned&quot; moment.
+
+The whole system runs on **two roles for two colors**:
+
+- **陶土红 terracotta `#b34f30` is the single voice.** It never decorates. It
+  underlines the one word that matters, fills a divider when the story turns a
+  corner, and prints the number you want remembered. If terracotta shows up,
+  something is being emphasized on purpose.
+- **墨绿 ink-green `#315b47` is the seal.** It appears small and late — a stamp
+  after a heartfelt sentence, the color of an inline link, the mark that says
+  &quot;signed, sincerely.&quot; Restraint is the point.
+
+Everything else is warm paper and warm ink. **燕麦纸 oatmeal `#efe7d6`** is the
+ground; **墨褐 espresso `#33291f`** is the reading ink (never pure black, which
+would feel cold against paper). The rhythm is slow: big calligraphic lines,
+generous line-height, one idea per screen, and real negative space so a single
+sentence can land.
+
+Typographic signature: **WenKai at 400 weight, enormous.** The warmth lives in
+the strokes, not in bold. Body and interface run on **Nunito**, a rounded
+humanist sans, so buttons and captions feel soft-shouldered instead of clinical.
+
+---
+
+## Colors
+
+Discipline: one primary, one accent, warm neutrals. Never let a second bright
+color into the room.
+
+### Brand &amp; Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#b34f30` | 陶土红 baked terracotta. Emphasis only: underlines, dividers, key numbers, primary buttons. Deepened from the terracotta seed so cream text on it clears WCAG AA (4.7:1). |
+| `accent` | `#315b47` | 墨绿 ink-green. The seal, inline links, quiet secondary marks. Small and late — a stamp, not a fill. |
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#efe7d6` | 燕麦纸 oatmeal paper. The page ground for everything. |
+| `surface` | `#f7f1e3` | Lighter cream. Cards, callouts, quiet panels lifted a half-step off the paper. |
+| `hairline` | `#ddd2bc` | Warm tan. 1px separators and card borders — a whisper, not a rule. |
+
+### Text
+| Token | Hex | Role |
+|---|---|---|
+| `ink` | `#33291f` | 墨褐 espresso. Body and headings. Warm dark, never `#000`. Reads 11.6:1 on canvas. |
+| `muted` | `#6f5f4b` | 胡桃褐 walnut taupe. Captions, metadata, timestamps. 5.0:1 on canvas — supportive, still legible. |
+| `on-primary` | `#fbf4e6` | Warm cream. Text on terracotta and on ink footers/closings. Not stark white; keeps the warmth even in reverse. |
+
+### Semantic
+This is a storytelling system, not a dashboard. It carries no green-up / red-down
+delta pair by design — terracotta already owns emphasis, and inventing a second
+signal color would break the two-color vow. Data pages express change through
+size and a single terracotta highlight, described in Presentation System.
+
+**Contrast, hand-checked (AA ≥ 4.5:1 for every text-on-fill pairing):**
+ink/canvas 11.6 · ink/surface 12.6 · muted/canvas 5.0 · on-primary/primary 4.7 ·
+on-primary/accent 7.1 · on-primary/ink 13.0 · primary/surface 4.6 · accent/canvas 6.3.
+
+---
+
+## Typography
+
+### Font Family
+
+**Display + Heading — LXGW WenKai (霞鹜文楷).** An open-source kai typeface with
+the warmth of a brush pen. This is the identity. Stack:
+
+```
+&quot;LXGW WenKai&quot;, &quot;LXGW WenKai Screen&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif
+```
+
+WenKai loads first (keeps the design); if the webfont fails, the stack falls to
+**Chinese serif system faces — Noto Serif SC / Songti SC / STSong** — so the
+page degrades to a dignified song face, never to Times, never to tofu.
+
+**Body + Interface — Nunito.** A rounded humanist sans that keeps buttons and
+captions friendly. Stack:
+
+```
+&quot;Nunito&quot;, &quot;Quicksand&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif
+```
+
+**中文铁律:** every Chinese-bearing stack ends in a Chinese system fallback
+(Noto Sans/Serif SC, PingFang SC, Songti SC). **Chinese is never rendered with a
+Japanese face** (no Mochiy, no Zen Maru) — simplified glyphs would drop to tofu
+or morph into Japanese variants. The Hiragino Sans GB fallback is the Simplified
+Chinese cut, deliberately chosen over any JP face.
+
+### Hierarchy
+| Role | Font | Size | Weight | Line | Use |
+|---|---|---|---|---|---|
+| display-xl | WenKai | 84px | 400 | 1.2 | Cover title, the 金句 page |
+| display-lg | WenKai | 56px | 400 | 1.25 | Section dividers, closing line |
+| heading | WenKai | 22px | 700 | 1.35 | Card titles, nav brand |
+| body | Nunito | 17px | 400 | 1.8 | Paragraphs, list copy |
+| numeral | Nunito | 72px | 700 | 1.0 | Stat numbers (tabular-nums) |
+| button | Nunito | 16px | 700 | 1.0 | Buttons, CTAs |
+| caption | Nunito | 13px | 500 | 1.6 | Metadata, footer |
+| eyebrow | Nunito | 12px | 700 | 1.2 | Kicker chips, uppercase labels, `letter-spacing: 2px` |
+
+### Principles
+- **Warmth from strokes, not weight.** Display WenKai stays at **400** even at
+  84px. Never faux-bold a giant WenKai title — synthesized bold thickens the
+  calligraphic strokes into mud. Emphasis comes from *size and terracotta*, not
+  heavier weight.
+- **Body breathes at 1.8.** Chinese reading wants more leading than Latin;
+  captions still hold 1.6. Nothing is cramped.
+- **Numbers only in Nunito with `font-variant-numeric: tabular-nums lining-nums`**
+  so stat rows align to the pixel. WenKai never sets tabular data.
+- **Max-to-body ratio ~5:1** (84 vs 17). The biggest line is allowed to feel a
+  little too big — that is where the warmth lives.
+- Never limit Chinese line width with `ch` (it is the Latin `0` width and will
+  fold Chinese early into orphans). Limit with `em` / `px`.
+
+---
+
+## Layout
+
+### Spacing
+A 4px-based scale — `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 96`. Cards
+breathe at `xl` padding; sections separate at `section` (96px), because a warm
+story needs room between beats.
+
+### Grid &amp; Container
+- Reading measure caps at **68ch-equivalent set in `em` (~34em)** for long copy,
+  so a paragraph never runs library-wide.
+- A relaxed **12-column grid** with wide gutters. Content prefers to sit
+  **left-aligned or offset**, not dead-center — a handwritten note is written
+  from a margin, not centered on the page.
+- The 金句 and cover pages ignore the grid entirely: one sentence, freely placed
+  in a field of paper.
+
+### Whitespace philosophy
+Whitespace here is **silence around a sentence**, not padding. It clusters —
+lavish air before a heartfelt line, tighter grouping inside a card — so the eye
+knows where to slow down. Even density everywhere would kill the feeling; the
+page must have quiet passages and one loud one.
+
+---
+
+## Elevation &amp; Depth
+
+No hard offset shadows, no glow, no glass. This is paper, and paper lifts gently.
+
+| Level | Use | Treatment |
+|---|---|---|
+| 0 · flush | Page body on canvas | Nothing. It is the paper. |
+| 1 · resting | Cards, stat blocks | `surface` fill + 1px `hairline` + a soft **warm-tinted** shadow: `0 2px 10px rgba(80,50,30,.10)`. |
+| 2 · lifted | Popovers, active card | `surface` + `0 8px 26px rgba(80,50,30,.14)`. Slightly warmer, slightly deeper. |
+| 3 · overlay | Modals, sheets | `surface` + `0 20px 60px rgba(60,40,25,.20)` + canvas scrim at 60%. |
+
+Decorative depth comes from **material, not blur**: a faint paper grain on the
+canvas (a low-opacity noise texture, static), a torn-paper edge on image slots,
+and the hand-drawn underline sitting *behind* text like ink soaking through.
+Shadows are **warm brown**, never neutral gray — a gray shadow on oatmeal reads
+as dirt. **No `backdrop-filter`, no animated shadows** (both violate the
+performance floor).
+
+---
+
+## Shapes
+
+### Border radius
+| Token | Value | Use |
+|---|---|---|
+| none | 0px | Full-bleed slides, dividers, nav, footer, hairline rules |
+| sm | 6px | Callout quotes, small tags |
+| md | 12px | Stat blocks, inputs |
+| lg | 20px | Feature cards — soft, hand-cut corners |
+| pill | 9999px | Buttons, chips |
+
+### Geometry
+- **Images live in organic masks**, not rectangles: a torn-paper edge or a soft
+  rounded-blob crop. The 情绪图位 (emotional image slot) is deliberately
+  imperfect on one edge, as if pasted into a notebook.
+- **The underline is a drawn path, not a border.** It is an SVG stroke with a
+  slight wobble and a tapered end — clearly a hand, not a rule. This single
+  irregular shape is the system's fingerprint.
+- The **seal** is a small rounded-square ink-green stamp with a one-character
+  or two-character carved mark, sitting off the baseline like a real chop.
+
+---
+
+## Components
+
+- **nav-bar** — Canvas ground, ink WenKai wordmark left, quiet Nunito links,
+  a 1px hairline underneath. No shadow; it belongs to the paper.
+- **button-primary** — Terracotta pill, cream label. The one loud action per
+  view. Hover: darken 6% and lift 1px. Focus: 2px ink-green ring offset 2px.
+- **button-secondary** — Cream surface, terracotta label and 1px terracotta
+  hairline border. The quieter sibling.
+- **kicker-chip** — Ink-green pill with cream uppercase eyebrow. Labels a
+  section (&quot;第 03 讲&quot;, &quot;PUBLIC BENEFIT&quot;) without shouting.
+- **card-feature** — Surface panel, `lg` corners, hairline border, soft warm
+  shadow. WenKai heading, Nunito body. Left-aligned, never centered.
+- **stat-block** — Surface panel with a giant terracotta Nunito numeral over a
+  muted caption. Tabular-nums keep columns honest.
+- **callout-quote** — Surface panel with a 3px terracotta left rule and a `sm`
+  corner. For a pulled sentence inside body copy.
+- **divider** — A 1px hairline rule, full width. The only border this system
+  draws, and it whispers.
+- **link-inline** — Ink-green text with a hand-drawn underline on hover. The
+  seal color, used inline.
+- **metadata-line** — Muted caption for dates, lengths, authorship (&quot;12 讲 · 更新于四月&quot;).
+- **footer** — Espresso ink ground, cream text, warm and low-key, closing the
+  page like the back cover of a booklet.
+
+All UI components reference tokens only; nothing hardcodes a hex. Borders
+(nav-bar's hairline underline, card-feature's hairline frame, button-secondary's
+terracotta outline, callout-quote's terracotta rule) are applied at the CSS
+layer against `hairline` / `primary` — the design.md schema carries no border
+sub-token, so the token stays the single source and the border reads from it.
+
+---
+
+## Presentation System
+
+文楷暖 as a 16:9 deck is a fireside talk, not a pitch. It obeys three laws.
+
+**一页一句话 (one sentence per slide).** Every slide carries a single WenKai
+line and, at most, one Nunito support caption. If a slide needs two thoughts,
+it is two slides. The 金句 page is the extreme of this rule.
+
+**黄金三秒 (the first three seconds).** The **cover** must radiate warmth
+instantly: oatmeal field, one huge WenKai title left-offset, a single
+hand-drawn terracotta underline swiping under the key word, and the ink-green
+seal in the lower corner. Three seconds in, a stranger should feel &quot;this person
+is talking *to me*.&quot;
+
+**视觉锤 (the visual hammer).** One motif repeats on every slide and becomes the
+deck's memory: **the hand-drawn terracotta underline + the ink-green seal.**
+Wherever a word matters, it gets the underline; wherever a thought closes, it
+gets the seal. That pairing, plus the full-bleed terracotta divider, is what the
+audience remembers.
+
+| Slide | Component | Layout |
+|---|---|---|
+| Cover | `slide-cover` | Oatmeal. Giant WenKai title, left-offset. One terracotta hand-drawn underline. Seal lower-right. Speaker/course in muted caption. |
+| Section divider | `slide-section-divider` | **Full-bleed terracotta.** Cream WenKai chapter label + huge cream number. The color turn signals &quot;new chapter&quot; — the deck's boldest beat. |
+| Data | `slide-stat-hero` | Cream surface. One enormous terracotta numeral, ink label beneath, a single terracotta highlight on the word that matters. No chart clutter — the number *is* the slide. |
+| 金句 (signature) | `slide-quote` | Oatmeal, mostly empty. One heartfelt WenKai sentence. A torn-paper 情绪图位 photo offset to one side, an organic terracotta brush stroke under the key phrase, ink-green seal in the corner. This is the emotional peak. |
+| Closing | `slide-closing` | Espresso ink ground, cream WenKai line, one terracotta pill CTA. A warm dark close, like the room's lights coming down after a good talk. |
+
+Rhythm across the deck: **light → terracotta jolt (divider) → light data → quiet
+金句 peak → warm dark close.** Contrast of density and color, never one flat tone.
+
+---
+
+## Signature Moment
+
+Two things this system does that a template cannot.
+
+**UI signature — 手绘有机下划线 + 墨绿印章落款.** A single WenKai keyword in the
+hero gets a **hand-drawn terracotta underline**: an SVG path with a real wobble
+and a tapered brush end, animated once with `stroke-dashoffset` as if inked in
+front of you, then still. Beside the sentence sits a **small ink-green seal** —
+a carved-square chop with a one-character mark. The underline is never a
+straight CSS `border-bottom`; the seal is never an emoji. Together they turn a
+web headline into something signed by a hand.
+
+**Deck signature — 走心金句页 (the heartfelt-line page).** One slide, one WenKai
+sentence, a field of oatmeal around it. A **torn-paper 情绪图位** — a single warm
+photo or illustration in an irregular paper mask — leans in from one side; an
+**organic terracotta brush stroke** pools under the phrase you want remembered;
+the **ink-green seal** stamps the corner like a signature at the end of a letter.
+Nothing moves, nothing sells. It is the page an audience screenshots. Swap the
+words and it is still unmistakably *this* system.
+
+---
+
+## Do's and Don'ts
+
+**Do**
+- Give WenKai room to be huge and stay at 400 weight — size is the emphasis.
+- Keep terracotta as the *only* voice: one underline, one number, one divider
+  per beat. If everything is terracotta, nothing is.
+- Let the ink-green seal arrive small and late, as a closing mark.
+- Left-align and offset. Write from a margin like a real note.
+- Cluster whitespace so one sentence gets silence around it.
+- Warm-tint every shadow (`rgba(80,50,30,…)`); keep grain and torn edges static.
+
+**Don't**
+- **Don't touch the purple-blue cliché gradient** (`#667eea → #764ba2`) or any
+  of its family. This system is paper and clay; that gradient is neither.
+- **Don't build the centered card triptych** — one centered title, one gray
+  subtitle, three equal rounded cards repeated down the page. Offset, vary
+  weight, and let one card be the hero.
+- **Don't render Chinese with a Japanese face** (Mochiy, Zen Maru, any JP kana
+  font). Simplified glyphs break. Chinese fallbacks are Noto Serif/Sans SC,
+  Songti SC, PingFang SC only.
+- **Don't animate shadows or glows.** Warmth is static; motion is reserved for
+  the one-shot underline draw.
+- Don't faux-bold giant WenKai. Don't use pure `#000` or stark `#fff`. Don't
+  add a second accent color to &quot;brighten it up.&quot; Don't center-limit Chinese with `ch`.
+
+---
+
+## Responsive Behavior
+
+Mobile is a **re-composition**, not a shrink of the desktop.
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥ 1200px | Full grid. Offset covers, side-by-side 情绪图位 and text. |
+| 768–1199px | Grid collapses to a single column; image slot moves above the sentence; section padding eases to 64px. |
+| ≤ 767px | The 金句 page restacks vertically: image slot on top (still torn-paper), WenKai line below, seal recentered under it. Nav collapses to wordmark + menu. Section padding 40px. |
+
+**Fluid type + zero orphans (production floor).**
+- Display sizes use `clamp()` so the longest hand-broken line fits at ≤390px:
+  e.g. `clamp(40px, 8.5vw, 84px)`.
+- Each manually broken headline line gets `white-space: nowrap`, and the block
+  is sized to the **longest** line so no single character or 标点 is ever flung
+  onto its own row.
+- Centered multi-line copy uses `text-wrap: balance`.
+- Verify on desktop and at ≤390px: `scrollWidth === clientWidth`, every headline
+  orphan-free.
+
+**Motion floor.** The underline draw animates `stroke-dashoffset` once and stops;
+no `requestAnimationFrame` loops, no animated `filter`/shadow. Everything is
+wrapped in `@media (prefers-reduced-motion: reduce)` to render fully drawn and
+static.
+
+---
+
+## Anti-Slop Pledge
+
+Cover the brand name and this page still reads as made by a person who cared:
+WenKai's brush strokes at 400 weight, a lone terracotta underline drawn by hand,
+one ink-green seal stamped like a signature, warm paper with real silence around
+the sentence that matters. No purple-blue gradient, no centered card triptych,
+no tofu Chinese, no emoji icons, no &quot;赋能一站式&quot; filler. If it looks like it came
+off a template, it isn't this system.
+
+*Signed, HeiGe-Design. MIT.*
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #b34f30;
+  --color-on-primary: #fbf4e6;
+  --color-ink: #33291f;
+  --color-canvas: #efe7d6;
+  --color-surface: #f7f1e3;
+  --color-muted: #6f5f4b;
+  --color-hairline: #ddd2bc;
+  --color-accent: #315b47;
+  --font-display-xl: &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-numeral: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 84px;
+  --text-display-lg: 56px;
+  --text-heading: 22px;
+  --text-body: 17px;
+  --text-numeral: 72px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: 1px;
+  --tracking-display-lg: 0.5px;
+  --tracking-heading: 0px;
+  --tracking-body: 0.2px;
+  --tracking-numeral: -0.5px;
+  --tracking-button: 0.5px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2px;
+  --font-weight-display-xl: 400;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-numeral: 700;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#b34f30&quot;,
+        &quot;on-primary&quot;: &quot;#fbf4e6&quot;,
+        &quot;ink&quot;: &quot;#33291f&quot;,
+        &quot;canvas&quot;: &quot;#efe7d6&quot;,
+        &quot;surface&quot;: &quot;#f7f1e3&quot;,
+        &quot;muted&quot;: &quot;#6f5f4b&quot;,
+        &quot;hairline&quot;: &quot;#ddd2bc&quot;,
+        &quot;accent&quot;: &quot;#315b47&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;numeral&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;84px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;56px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;22px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;numeral&quot;: [
+          &quot;72px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;6px&quot;,
+        &quot;md&quot;: &quot;12px&quot;,
+        &quot;lg&quot;: &quot;20px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #b34f30;
+  --color-on-primary: #fbf4e6;
+  --color-ink: #33291f;
+  --color-canvas: #efe7d6;
+  --color-surface: #f7f1e3;
+  --color-muted: #6f5f4b;
+  --color-hairline: #ddd2bc;
+  --color-accent: #315b47;
+  --font-display-xl: &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-numeral: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 84px;
+  --text-display-lg: 56px;
+  --text-heading: 22px;
+  --text-body: 17px;
+  --text-numeral: 72px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: 1px;
+  --tracking-display-lg: 0.5px;
+  --tracking-heading: 0px;
+  --tracking-body: 0.2px;
+  --tracking-numeral: -0.5px;
+  --tracking-button: 0.5px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2px;
+  --font-weight-display-xl: 400;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-numeral: 700;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;WenKai-Warm is a humanist storytelling system for education, courses, and public-benefit sharing. It sets LXGW WenKai, a warm calligraphic kai typeface, at giant scale on oatmeal paper (#efe7d6) so headlines read like a handwritten note rather than a slide. Baked terracotta (#b34f30) is the single voice for emphasis and full-bleed dividers; a deep ink-green seals each heartfelt line like a stamp. Rounded Nunito carries the body. The signature is a hand-drawn organic underline plus a small seal on one closing sentence: sincerity you can feel, never a template.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.702,
+          0.31,
+          0.188
+        ],
+        &quot;hex&quot;: &quot;#b34f30&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.984,
+          0.957,
+          0.902
+        ],
+        &quot;hex&quot;: &quot;#fbf4e6&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.2,
+          0.161,
+          0.122
+        ],
+        &quot;hex&quot;: &quot;#33291f&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.937,
+          0.906,
+          0.839
+        ],
+        &quot;hex&quot;: &quot;#efe7d6&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.969,
+          0.945,
+          0.89
+        ],
+        &quot;hex&quot;: &quot;#f7f1e3&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.435,
+          0.373,
+          0.294
+        ],
+        &quot;hex&quot;: &quot;#6f5f4b&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.867,
+          0.824,
+          0.737
+        ],
+        &quot;hex&quot;: &quot;#ddd2bc&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.192,
+          0.357,
+          0.278
+        ],
+        &quot;hex&quot;: &quot;#315b47&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 12,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 20,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 84,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 56,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;LXGW WenKai\&quot;, \&quot;LXGW WenKai Screen\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 22,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;numeral&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 72,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Quicksand\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 文楷暖（wenkai-warm · 温暖人文）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `wenkai-warm` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#b34f30` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `LXGW WenKai`，正文 `Nunito`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint wenkai-warm` / 导出其它格式：`heige-design export wenkai-warm --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 文楷暖 — 原创设定集，可商用。跑校验：<code>heige-design lint wenkai-warm</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

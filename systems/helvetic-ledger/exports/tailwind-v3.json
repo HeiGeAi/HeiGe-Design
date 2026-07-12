@@ -1,0 +1,123 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#d81f1a",
+        "on-primary": "#ffffff",
+        "ink": "#141414",
+        "canvas": "#f5f5f3",
+        "surface": "#ffffff",
+        "muted": "#616160",
+        "hairline": "#dcdcd9",
+        "subtle": "#efeeeb"
+      },
+      "fontFamily": {
+        "display-xl": [
+          "\"Neue Haas Grotesk Display Pro\", \"Inter\", \"Helvetica Neue\", Helvetica, Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "display-lg": [
+          "\"Neue Haas Grotesk Display Pro\", \"Inter\", \"Helvetica Neue\", Helvetica, Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "heading": [
+          "\"Neue Haas Grotesk Display Pro\", \"Inter\", \"Helvetica Neue\", Helvetica, Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "body": [
+          "\"Inter\", \"Neue Haas Grotesk Text Pro\", \"Helvetica Neue\", Helvetica, Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "body-mono": [
+          "\"IBM Plex Mono\", \"SFMono-Regular\", ui-monospace, \"JetBrains Mono\", \"Noto Sans SC\", \"PingFang SC\", monospace"
+        ],
+        "stat-figure": [
+          "\"IBM Plex Mono\", \"SFMono-Regular\", ui-monospace, \"JetBrains Mono\", \"Noto Sans SC\", \"PingFang SC\", monospace"
+        ],
+        "eyebrow": [
+          "\"Inter\", \"Neue Haas Grotesk Text Pro\", \"Helvetica Neue\", Helvetica, Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "button": [
+          "\"Inter\", \"Neue Haas Grotesk Text Pro\", \"Helvetica Neue\", Helvetica, Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "caption": [
+          "\"Inter\", \"Neue Haas Grotesk Text Pro\", \"Helvetica Neue\", Helvetica, Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ]
+      },
+      "fontSize": {
+        "display-xl": [
+          "64px",
+          {
+            "letterSpacing": "-1.8px",
+            "fontWeight": "800"
+          }
+        ],
+        "display-lg": [
+          "40px",
+          {
+            "letterSpacing": "-0.8px",
+            "fontWeight": "700"
+          }
+        ],
+        "heading": [
+          "22px",
+          {
+            "letterSpacing": "-0.2px",
+            "fontWeight": "600"
+          }
+        ],
+        "body": [
+          "16px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-mono": [
+          "15px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "500"
+          }
+        ],
+        "stat-figure": [
+          "56px",
+          {
+            "letterSpacing": "-1.2px",
+            "fontWeight": "600"
+          }
+        ],
+        "eyebrow": [
+          "12px",
+          {
+            "letterSpacing": "2px",
+            "fontWeight": "600"
+          }
+        ],
+        "button": [
+          "14px",
+          {
+            "letterSpacing": "0.4px",
+            "fontWeight": "600"
+          }
+        ],
+        "caption": [
+          "13px",
+          {
+            "letterSpacing": "0.2px",
+            "fontWeight": "400"
+          }
+        ]
+      },
+      "borderRadius": {
+        "none": "0px",
+        "sm": "2px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "48px",
+        "section": "96px"
+      }
+    }
+  }
+}

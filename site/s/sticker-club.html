@@ -1,0 +1,990 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>贴纸俱乐部 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 玩味玩具</div>
+<div class="hero"><div class="fam">玩味玩具</div><h1>贴纸俱乐部<span class="badge">✓ lint 0 error</span></h1><div class="slug">sticker-club · sticker-club-design-system</div><p class="desc">A loud, die-cut community aesthetic built on a three-primary clash of cobalt, cherry red and sunshine yellow slapped onto warm scrapbook cream. Every surface is a peel-and-stick sticker with a thick white die-cut border, a hard black keyline and a blunt offset shadow, tilted a few degrees like it was pressed on by hand. Chunky rounded display type (Fredoka) with enamel-pin badge labels. The signature move is the peel, collage walls where stickers un-rotate and lift on touch. By HeiGe-Design.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#f5f1e6;--ink:#17171f;--pri:#2536e8;--onpri:#ffffff;--acc:#2536e8;--surf:#ffffff;--muted:#63625b;--line:#e4dfd0;--r:18px;--dff:"Fredoka", "Baloo 2", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "DM Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, "Noto Sans SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">贴纸俱乐部</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#2536e8"></i><i style="background:#ffffff"></i><i style="background:#17171f"></i><i style="background:#f5f1e6"></i><i style="background:#63625b"></i><i style="background:#e4dfd0"></i><i style="background:#ff3b3b"></i><i style="background:#ffd21e"></i></div>
+  <div class="swrap"><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">sticker</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">badge-medal</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">pill-tag</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">count-meta</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">footer</span></div>
+  </div>
+  <div class="card" style="--bg:#f5f1e6;--ink:#17171f;--pri:#2536e8;--onpri:#ffffff;--acc:#2536e8;--surf:#ffffff;--muted:#63625b;--line:#e4dfd0;--r:18px;--dff:"Fredoka", "Baloo 2", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "DM Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, "Noto Sans SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">贴纸俱乐部</div></div>
+    <div class="swrap"><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#ffffff;color:#17171f;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**The one thing a swapped template cannot fake.** Written down, one for UI and one for deck:
+
+**UI — The Peel-Wall (撕拉贴纸墙).** A collage where every card is a die-cut sticker: 6px white ring, black keyline, hard ink offset shadow, each rotated a random −6° to +6°, overlapping with real z-index depth. On hover/touch a sticker **peels**: it rotates back to a clean 0°, lifts (translate up-left), its hard shadow grows from `6px` to `12px` offset — as if you're catching a fingernail under the edge and pulling it off the table. Animate `transform` and `box-shadow`-offset via a single spring; nothing blurs, nothing repaints expensively. Un-touched, the wall looks hand-pressed and alive; touched, each sticker snaps to attention. No generic card grid reproduces the tilt-plus-peel — it requires the die-cut ring, the keyline, and the physics together.
+
+**Deck — The Badge-Stamp Cover (集章开场).** The op</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Give every sticker the full recipe: white die-cut ring + black keyline + hard offset shadow + a few degrees of tilt. Miss one and it stops being a sticker.
+- Keep the three primaries flat and clashing. Cobalt leads, red and yellow accent, black keylines everywhere.
+- Break the grid only in the collage. Keep nav, copy, and footer left-aligned and orderly so the mess reads as intentional.
+- Let one hero sticker win each screen — bigger, tilted more, shadowed harder.
+- End Chinese font stacks with Noto Sans SC / PingFang SC; use ZCOOL KuaiLe for the rounded Chinese display.
+
+**Don't**
+- **Don't touch the purple-blue cliché gradient (`#667eea → #764ba2`)** or any of its family. This system is flat primaries and hard shadows — zero soft gradients.
+- **Don't fall into the centered card trio** — one title, one gray subtitle, three equal rounded cards repeating down the page. The wall must overlap, tilt, and pick a hero.
+- **Don't render Chinese with a Japanese font** (Mochiy Pop, Zen Maru). Simplified glyphs break. Rounded Chinese = ZCOOL KuaiLe + 思源系.
+- **Don't animate the shadow's blur or use soft `0 4px 6px` shadows.** Depth is a static hard offset. Animate only `transform` and shadow *offset* on the peel, nothing that repaints or blurs per frame.
+- Don't put white text on cherry red or yellow — always black ink on those two.
+- Don't let stickers sit at a perfect 0° at res</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: sticker-club-design-system
+description: &quot;A loud, die-cut community aesthetic built on a three-primary clash of cobalt, cherry red and sunshine yellow slapped onto warm scrapbook cream. Every surface is a peel-and-stick sticker with a thick white die-cut border, a hard black keyline and a blunt offset shadow, tilted a few degrees like it was pressed on by hand. Chunky rounded display type (Fredoka) with enamel-pin badge labels. The signature move is the peel, collage walls where stickers un-rotate and lift on touch. By HeiGe-Design.&quot;
+
+colors:
+  primary: &quot;#2536e8&quot;
+  on-primary: &quot;#ffffff&quot;
+  ink: &quot;#17171f&quot;
+  canvas: &quot;#f5f1e6&quot;
+  surface: &quot;#ffffff&quot;
+  muted: &quot;#63625b&quot;
+  hairline: &quot;#e4dfd0&quot;
+  accent-red: &quot;#ff3b3b&quot;
+  accent-yellow: &quot;#ffd21e&quot;
+
+typography:
+  display-xl:
+    fontFamily: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 76px
+    fontWeight: 700
+    lineHeight: 0.98
+    letterSpacing: &quot;-1.5px&quot;
+  display-lg:
+    fontFamily: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 52px
+    fontWeight: 700
+    lineHeight: 1.02
+    letterSpacing: &quot;-0.8px&quot;
+  heading:
+    fontFamily: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 26px
+    fontWeight: 600
+    lineHeight: 1.15
+    letterSpacing: &quot;-0.2px&quot;
+  body:
+    fontFamily: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: &quot;0px&quot;
+  body-mono:
+    fontFamily: &quot;\&quot;Space Mono\&quot;, \&quot;DM Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, SFMono-Regular, \&quot;Noto Sans SC\&quot;, monospace&quot;
+    fontSize: 40px
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: &quot;0.5px&quot;
+  button:
+    fontFamily: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 17px
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: &quot;0.2px&quot;
+  caption:
+    fontFamily: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: &quot;0.3px&quot;
+  eyebrow:
+    fontFamily: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 13px
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: &quot;1.5px&quot;
+
+rounded:
+  none: 0px
+  sm: 10px
+  md: 18px
+  lg: 28px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 80px
+
+components:
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 14px 28px
+  button-secondary:
+    backgroundColor: &quot;{colors.accent-yellow}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 14px 28px
+  sticker:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md}&quot;
+  badge-medal:
+    backgroundColor: &quot;{colors.accent-red}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 8px 16px
+  pill-tag:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: 20px 24px
+  count-meta:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    padding: 16px 32px
+  footer:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.canvas}&quot;
+    typography: &quot;{typography.body}&quot;
+    padding: 40px 32px
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 80px
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.accent-yellow}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    padding: 80px
+  slide-closing:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: 80px
+---
+
+# 贴纸俱乐部 · Sticker Club
+
+A HeiGe-Design system for community, social and check-in products. Loud, tactile, hand-pressed. Every element is a die-cut sticker slapped onto a scrapbook page — and the whole thing lives or dies on one detail: the thick white outline and the tilt.
+
+---
+
+## Overview
+
+贴纸俱乐部 is what a community feels like when it is full. Not a clean grid of avatars, but a **wall covered in peel-and-stick stickers** — overlapping, rotated, each one earned. The visual language is deliberately maximal-but-controlled: three flat primary colors clashing on warm cream, every shape wrapped in a chunky white die-cut border and a hard black keyline, dropped with a blunt offset shadow so it reads as a real object sitting *on* the page.
+
+The palette runs on a **three-primary clash**. Cobalt `#2536e8` is the club — it does buttons, links, active states, the one color you trust. Cherry red `#ff3b3b` and sunshine yellow `#ffd21e` are the accents: they are badges, pins, highlights, the loud bits. Black is not a color here, it is the **keyline** — the 2–3px outline every sticker gets, the same black that die-cutting machines print. Cream `#f5f1e6` is the scrapbook page the stickers stick to; it is warm on purpose so the white die-cut borders actually pop instead of vanishing into a white void.
+
+Type is chunky and round. Fredoka carries every headline — a geometric rounded display that reads like a badge stamp, not a corporate sans. Numbers get a monospace (Space Mono) so member counts and streak counters look like a mechanical odometer clicking up. The rhythm is: **loud sticker → breathe → louder sticker.** Never an even field of same-size cards. There is always one hero sticker, tilted a little more, shadowed a little harder, that your eye lands on first.
+
+Two-color logic in one line: **cobalt is the club, black is the die-cut, everything else is a sticker you collected.**
+
+---
+
+## Colors
+
+### Brand &amp; Accent
+- **Cobalt `#2536e8`** — primary. The club color. Primary buttons, active links, the hard shadow behind hero stats, the one solid-color slide. White text on cobalt clears 7.5:1, so it is safe as a fill anywhere.
+- **Cherry Red `#ff3b3b`** — accent. Enamel-pin badges, medals, &quot;new&quot; flags, the loud rotated sticker in a collage. Always paired with **black ink text** (5.0:1), never white — white on this red fails AA and looks cheap.
+- **Sunshine Yellow `#ffd21e`** — accent. Highlighter energy: secondary buttons, quote slides, streak highlights. Always black ink text (12.3:1). This is the closest thing to a physical highlighter marker; use it to shout, sparingly.
+
+### Surface
+- **Cream `#f5f1e6`** — canvas. The scrapbook page. Warm off-white so white die-cut borders read as borders, not gaps.
+- **White `#ffffff`** — surface. The face of every sticker and the 6px die-cut ring around it.
+- **Hairline `#e4dfd0`** — 1–2px structural line under the nav and in the footer. Never carries text.
+
+### Text
+- **Ink `#17171f`** — near-black, the keyline and all body copy. Never pure `#000`; a hair of blue-black keeps it from buzzing.
+- **Muted `#63625b`** — captions, member IDs, timestamps. Clears 5.4:1 on cream and 6.1:1 on white. Only ever sits on light surfaces, never on the dark footer.
+- **On-primary `#ffffff`** — text on cobalt and on ink.
+
+### Semantic
+This system stays deliberately lean: red *is* the alert/new color, yellow *is* the highlight/reward color, cobalt *is* the primary/link color. No extra success-green or warning-orange — that would break the three-primary discipline. If you need &quot;done,&quot; give it a yellow star badge, not a new hue.
+
+---
+
+## Typography
+
+### Font Family
+- **Display / headings / eyebrow / buttons — Fredoka** (with Baloo 2 as the second choice). Geometric, rounded, chunky. Reads like a badge stamp. Full stack:
+  `&quot;Fredoka&quot;, &quot;Baloo 2&quot;, &quot;ZCOOL KuaiLe&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`
+- **Body / caption — Nunito.** Rounded but calm enough for paragraphs.
+  `&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif`
+- **Numbers — Space Mono.** Odometer feel for counts, streaks, member IDs.
+  `&quot;Space Mono&quot;, &quot;DM Mono&quot;, &quot;JetBrains Mono&quot;, ui-monospace, SFMono-Regular, &quot;Noto Sans SC&quot;, monospace`
+
+**Chinese rule (hard):** Fredoka / Nunito / Baloo carry no Chinese glyphs, so Chinese falls through to **ZCOOL KuaiLe** (rounded, playful, matches the mood) and then system **Noto Sans SC / PingFang SC / Microsoft YaHei**. Every Chinese-capable stack ends in a system font so nothing turns to tofu when the webfont fails to load. **Never render Chinese with a Japanese rounded font** (Mochiy Pop, Zen Maru) — simplified glyphs drop out or come back as the wrong variant. 俏皮圆体只走 ZCOOL KuaiLe + 思源系兜底。
+
+### Hierarchy
+| Role | Size | Weight | Line height | Tracking | Use |
+|---|---|---|---|---|---|
+| display-xl | 76px | 700 | 0.98 | -1.5px | Cover title, quote slide |
+| display-lg | 52px | 700 | 1.02 | -0.8px | Section dividers, closing CTA |
+| heading | 26px | 600 | 1.15 | -0.2px | Sticker &amp; card titles |
+| body | 17px | 400 | 1.6 | 0 | Paragraphs, footer |
+| body-mono | 40px | 700 | 1.0 | 0.5px | Stat numbers, streak counts |
+| button | 17px | 700 | 1.0 | 0.2px | All buttons |
+| caption | 13px | 600 | 1.4 | 0.3px | Meta, IDs, timestamps |
+| eyebrow | 13px | 700 | 1.0 | 1.5px | Badge labels, nav, tags (UPPERCASE) |
+
+### Principles
+- **Max-to-body contrast is 76:17 ≈ 4.5:1.** The hero word is allowed to feel almost too big. That is the point.
+- Eyebrow labels are the only uppercase, wide-tracked type — they are the sticker's printed caption (&quot;MEMBER · 0042&quot;, &quot;DAY 30&quot;).
+- Numbers are always monospace so a counter clicking from 0341 to 0342 doesn't shift width.
+
+---
+
+## Layout
+
+### Spacing
+An 8-based scale: `xs 4 / sm 8 / md 16 / lg 24 / xl 40 / section 80`. Stickers keep generous internal padding (`lg` = 24px) so the white die-cut ring never crowds the text. Section rhythm is `section` (80px) between blocks so a loud collage always gets air after it.
+
+### Grid &amp; Container
+- Content max-width ~1120px, but the sticker wall **breaks the grid on purpose** — stickers overlap, hang off the column edge, and rotate. Alignment is felt, not pixel-locked.
+- The rest of the page (nav, footer, body copy) is strictly left-aligned on a clean grid. Discipline everywhere *except* the collage, so the collage reads as the deliberate loud moment.
+
+### Whitespace
+Cream negative space is the &quot;table&quot; the stickers sit on. Never fill it edge to edge. One dense sticker wall, then a wide calm band of cream with a single left-aligned line. The breathing is what keeps maximalism from becoming noise.
+
+---
+
+## Elevation &amp; Depth
+
+Depth here is **physical, not soft**. No blur. A sticker sits on the page, so it casts a hard blunt shadow with zero blur radius.
+
+| Layer | Treatment |
+|---|---|
+| Page (cream) | Flat, no shadow |
+| Tag / pill | 2px ink keyline, no shadow — printed flat |
+| Card | 3px keyline + `5px 5px 0 {ink}` hard offset |
+| Sticker (hero) | 6px white die-cut ring + `6px 6px 0 {ink}` |
+| Stat block | 3px keyline + `5px 5px 0 {cobalt}` (colored shadow = it's electric) |
+
+**Rules:** shadows are static `Npx Npx 0` offsets, never animated (animating box-shadow repaints every frame — banned by the production checklist). Never `backdrop-filter`. Never a soft `0 4px 6px rgba(0,0,0,.1)` — that is the generic AI shadow and it makes stickers look like flat web cards instead of physical objects. Depth = keyline + white ring + hard offset. That's the whole system.
+
+---
+
+## Shapes
+
+| Token | Value | Use |
+|---|---|---|
+| none | 0px | Full-bleed color slide (section divider) |
+| sm | 10px | Stat blocks, tight chips |
+| md | 18px | Feature cards |
+| lg | 28px | Stickers (the die-cut rounded corner) |
+| pill | 9999px | Buttons, badges, tags |
+
+- Stickers use `lg` (28px) rounded corners — the rounded-rect die-cut shape.
+- Badges and buttons are full pills — enamel-pin and gummy-button silhouettes.
+- Images are masked into rounded-rect stickers with the same 6px white ring, not bare rectangles. A raw photo with sharp corners breaks the metaphor.
+- Rotation is part of the shape language: stickers live at −6° to +6°, never at a perfect 0° until you touch them.
+
+---
+
+## Components
+
+- **button-primary** — cobalt fill, white text, black keyline, hard offset shadow, pill. On press it &quot;presses down&quot;: translate to the shadow and shrink the shadow to 0 (transform only). This is the gummy-button feel.
+- **button-secondary** — yellow fill, black text, same keyline + shadow. The loud alternative CTA.
+- **sticker** — the signature object. White face, 6px white die-cut ring, black keyline implied by the ring edge, hard ink shadow, rotated −3°. Holds a title + collected content.
+- **card-feature** — calmer sticker for content grids: 3px keyline, `md` corners, hard shadow, sits at 0° (cards behave; stickers misbehave).
+- **badge-medal** — cherry-red enamel pin, black text, rotated −6°, tiny hard shadow. The reward object. Dropped onto covers and profiles.
+- **pill-tag** — flat soft-grey (hairline) chip with a 2px ink keyline, uppercase eyebrow text. Topics, interests, &quot;#day30&quot;. The one quiet chip so the loud red/yellow badges stay the reward.
+- **stat-block** — white block, mono number, **cobalt** hard shadow to signal it's a live count.
+- **count-meta** — muted caption on cream for IDs and timestamps (&quot;MEMBER · 0042&quot;).
+- **nav-bar** — cream, uppercase eyebrow links, 2px hairline underline. The one calm, orderly strip.
+- **footer** — ink black band, cream text — the page flips to a dark sticker sheet backing at the very bottom.
+
+---
+
+## Presentation System
+
+16:9 decks follow **one line per slide → hero in the golden 3 seconds → one visual hammer.** The hammer for this system is always the **die-cut sticker with the hard offset shadow.**
+
+- **Cover (`slide-cover`)** — cream page. The title lives *inside* one giant tilted white sticker with the 6px ring and hard shadow, and 3–4 enamel-pin badges are scattered around it at random angles. Reads in 3 seconds as &quot;a wall someone just finished decorating.&quot; This is the check-in / 打卡 wall.
+- **Section divider (`slide-section-divider`)** — full-bleed cobalt, no rounding, white oversized number + one word. A hard flat color-block to reset the eye after a busy collage. The only slide with zero stickers — the deliberate exhale.
+- **Stat hero (`slide-stat-hero`)** — cream, one monster monospace number (member count, streak, day) sitting in a stat-block with a **cobalt hard shadow**, unit label small beside it. One number, nothing else.
+- **Quote (`slide-quote`)** — the whole slide *is* a yellow highlighter sticker, tilted −2°, one big black sentence. Screen-filling. The highlighter marker made literal.
+- **Closing (`slide-closing`)** — ink-black slide, cream headline, one cobalt primary button &quot;加入俱乐部 / Join the club.&quot; Dark backing sheet, one gummy button to peel and press.
+
+Visual hammer placement: cover and quote carry it hardest; the section divider withholds it entirely so its return on the next slide lands.
+
+---
+
+## Signature Moment
+
+**The one thing a swapped template cannot fake.** Written down, one for UI and one for deck:
+
+**UI — The Peel-Wall (撕拉贴纸墙).** A collage where every card is a die-cut sticker: 6px white ring, black keyline, hard ink offset shadow, each rotated a random −6° to +6°, overlapping with real z-index depth. On hover/touch a sticker **peels**: it rotates back to a clean 0°, lifts (translate up-left), its hard shadow grows from `6px` to `12px` offset — as if you're catching a fingernail under the edge and pulling it off the table. Animate `transform` and `box-shadow`-offset via a single spring; nothing blurs, nothing repaints expensively. Un-touched, the wall looks hand-pressed and alive; touched, each sticker snaps to attention. No generic card grid reproduces the tilt-plus-peel — it requires the die-cut ring, the keyline, and the physics together.
+
+**Deck — The Badge-Stamp Cover (集章开场).** The opening slide is a check-in wall: the talk title set inside one oversized tilted white sticker with the hard shadow, and around it 4–6 cherry-red and yellow enamel-pin **badges** land at random angles, each with its own tiny hard shadow, like stamps just pressed into a punch-card. It says &quot;this is a club, and you're about to collect&quot; before a single word is read.
+
+---
+
+## Do's and Don'ts
+
+**Do**
+- Give every sticker the full recipe: white die-cut ring + black keyline + hard offset shadow + a few degrees of tilt. Miss one and it stops being a sticker.
+- Keep the three primaries flat and clashing. Cobalt leads, red and yellow accent, black keylines everywhere.
+- Break the grid only in the collage. Keep nav, copy, and footer left-aligned and orderly so the mess reads as intentional.
+- Let one hero sticker win each screen — bigger, tilted more, shadowed harder.
+- End Chinese font stacks with Noto Sans SC / PingFang SC; use ZCOOL KuaiLe for the rounded Chinese display.
+
+**Don't**
+- **Don't touch the purple-blue cliché gradient (`#667eea → #764ba2`)** or any of its family. This system is flat primaries and hard shadows — zero soft gradients.
+- **Don't fall into the centered card trio** — one title, one gray subtitle, three equal rounded cards repeating down the page. The wall must overlap, tilt, and pick a hero.
+- **Don't render Chinese with a Japanese font** (Mochiy Pop, Zen Maru). Simplified glyphs break. Rounded Chinese = ZCOOL KuaiLe + 思源系.
+- **Don't animate the shadow's blur or use soft `0 4px 6px` shadows.** Depth is a static hard offset. Animate only `transform` and shadow *offset* on the peel, nothing that repaints or blurs per frame.
+- Don't put white text on cherry red or yellow — always black ink on those two.
+- Don't let stickers sit at a perfect 0° at rest — the resting tilt is the whole personality.
+
+---
+
+## Responsive Behavior
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥1024px | Full overlapping sticker wall, real z-index collage, stickers hang off column edges |
+| 640–1023px | Wall relaxes to a loose 2-column stagger; stickers keep tilt but reduce overlap; hero sticker stays oversized |
+| ≤639px | **Re-composed, not shrunk:** stickers stack into a single vertical peel-stack, alternating tilt left/right down the column; badges collapse into a horizontal scroll strip; cover sticker goes full-width with the title re-flowed |
+
+Mobile is a different arrangement of the same objects, not the desktop wall scaled down. Titles use `clamp()` and each hand-broken line gets `white-space: nowrap` so no single character orphans onto its own line at ≤390px. Chinese width limits use `em`/`px`, never `ch`. All motion (peel, press, tilt) is gated behind `@media (prefers-reduced-motion: reduce)` — reduced-motion users get the same wall, statically tilted, no peel.
+
+---
+
+## Anti-Slop Pledge
+
+Strip the brand name off and this is still, unmistakably, a **hand-pressed sticker wall**: warm cream page, three flat primaries clashing, every object wrapped in a white die-cut ring and a hard black keyline, each one tilted a few degrees and casting a blunt offset shadow — and when you touch it, it peels. No soft gradients, no even card grids, no generic drop shadows, no tofu Chinese. It could only have been made by someone who decided a community should *feel like a wall you earned your spot on* — not generated by a template. Signed, HeiGe-Design.
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #2536e8;
+  --color-on-primary: #ffffff;
+  --color-ink: #17171f;
+  --color-canvas: #f5f1e6;
+  --color-surface: #ffffff;
+  --color-muted: #63625b;
+  --color-hairline: #e4dfd0;
+  --color-accent-red: #ff3b3b;
+  --color-accent-yellow: #ffd21e;
+  --font-display-xl: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, \&quot;DM Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, SFMono-Regular, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 52px;
+  --text-heading: 26px;
+  --text-body: 17px;
+  --text-body-mono: 40px;
+  --text-button: 17px;
+  --text-caption: 13px;
+  --text-eyebrow: 13px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0.5px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.3px;
+  --tracking-eyebrow: 1.5px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 700;
+  --font-weight-button: 700;
+  --font-weight-caption: 600;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#2536e8&quot;,
+        &quot;on-primary&quot;: &quot;#ffffff&quot;,
+        &quot;ink&quot;: &quot;#17171f&quot;,
+        &quot;canvas&quot;: &quot;#f5f1e6&quot;,
+        &quot;surface&quot;: &quot;#ffffff&quot;,
+        &quot;muted&quot;: &quot;#63625b&quot;,
+        &quot;hairline&quot;: &quot;#e4dfd0&quot;,
+        &quot;accent-red&quot;: &quot;#ff3b3b&quot;,
+        &quot;accent-yellow&quot;: &quot;#ffd21e&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;DM Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, SFMono-Regular, \&quot;Noto Sans SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;76px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;52px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.8px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;26px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;40px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;10px&quot;,
+        &quot;md&quot;: &quot;18px&quot;,
+        &quot;lg&quot;: &quot;28px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;80px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #2536e8;
+  --color-on-primary: #ffffff;
+  --color-ink: #17171f;
+  --color-canvas: #f5f1e6;
+  --color-surface: #ffffff;
+  --color-muted: #63625b;
+  --color-hairline: #e4dfd0;
+  --color-accent-red: #ff3b3b;
+  --color-accent-yellow: #ffd21e;
+  --font-display-xl: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, \&quot;DM Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, SFMono-Regular, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 52px;
+  --text-heading: 26px;
+  --text-body: 17px;
+  --text-body-mono: 40px;
+  --text-button: 17px;
+  --text-caption: 13px;
+  --text-eyebrow: 13px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0.5px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.3px;
+  --tracking-eyebrow: 1.5px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 700;
+  --font-weight-button: 700;
+  --font-weight-caption: 600;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;A loud, die-cut community aesthetic built on a three-primary clash of cobalt, cherry red and sunshine yellow slapped onto warm scrapbook cream. Every surface is a peel-and-stick sticker with a thick white die-cut border, a hard black keyline and a blunt offset shadow, tilted a few degrees like it was pressed on by hand. Chunky rounded display type (Fredoka) with enamel-pin badge labels. The signature move is the peel, collage walls where stickers un-rotate and lift on touch. By HeiGe-Design.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.145,
+          0.212,
+          0.91
+        ],
+        &quot;hex&quot;: &quot;#2536e8&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.09,
+          0.09,
+          0.122
+        ],
+        &quot;hex&quot;: &quot;#17171f&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.961,
+          0.945,
+          0.902
+        ],
+        &quot;hex&quot;: &quot;#f5f1e6&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.388,
+          0.384,
+          0.357
+        ],
+        &quot;hex&quot;: &quot;#63625b&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.894,
+          0.875,
+          0.816
+        ],
+        &quot;hex&quot;: &quot;#e4dfd0&quot;
+      }
+    },
+    &quot;accent-red&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.231,
+          0.231
+        ],
+        &quot;hex&quot;: &quot;#ff3b3b&quot;
+      }
+    },
+    &quot;accent-yellow&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.824,
+          0.118
+        ],
+        &quot;hex&quot;: &quot;#ffd21e&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 80,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 10,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 18,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 28,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 76,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 52,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.8,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 26,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;DM Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, SFMono-Regular, \&quot;Noto Sans SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 40,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fredoka\&quot;, \&quot;Baloo 2\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 贴纸俱乐部（sticker-club · 玩味玩具）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `sticker-club` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#2536e8` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Fredoka`，正文 `Nunito`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint sticker-club` / 导出其它格式：`heige-design export sticker-club --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 贴纸俱乐部 — 原创设定集，可商用。跑校验：<code>heige-design lint sticker-club</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

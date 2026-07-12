@@ -1,0 +1,290 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "The masthead grandeur of longform print, rebuilt for the screen. A single high-contrast serif carries every headline; a lone masthead red (#c0392b) cuts one rule across an ink-on-newsprint page. Columns are real columns, the lede opens on a four-line drop cap, and hairline rules do the work that cards and shadows do elsewhere. No pills, no glow, no gradients. It reads like an edition went to press, not like a template rendered. By HeiGe-Design.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.753,
+          0.224,
+          0.169
+        ],
+        "hex": "#c0392b"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.98,
+          0.973,
+          0.953
+        ],
+        "hex": "#faf8f3"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.11,
+          0.102,
+          0.086
+        ],
+        "hex": "#1c1a16"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.957,
+          0.945,
+          0.918
+        ],
+        "hex": "#f4f1ea"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.925,
+          0.902,
+          0.847
+        ],
+        "hex": "#ece6d8"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.361,
+          0.333,
+          0.29
+        ],
+        "hex": "#5c554a"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.804,
+          0.776,
+          0.722
+        ],
+        "hex": "#cdc6b8"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "masthead": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Playfair Display\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 72,
+          "unit": "px"
+        },
+        "fontWeight": 900,
+        "letterSpacing": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    },
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Newsreader\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 56,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -0.8,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Newsreader\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 36,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -0.4,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Newsreader\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 22,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "lede": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Newsreader\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 20,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Newsreader\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 17,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.1,
+          "unit": "px"
+        }
+      }
+    },
+    "body-mono": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"IBM Plex Mono\", \"SFMono-Regular\", ui-monospace, Menlo, \"Noto Sans SC\", monospace",
+        "fontSize": {
+          "value": 15,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Helvetica Neue\", Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 2,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Helvetica Neue\", Arial, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 14,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Newsreader\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.1,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>空山 · 节气茶室 · 演示</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif:wght@700;900&family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a17;
+    --on-primary:#f6f1e4;
+    --canvas:#f4f0e6;
+    --surface:#fbf8f0;
+    --muted:#6b655c;
+    --hairline:#d9d2c2;
+    --seal:#c8483a;
+
+    --font-song:"Noto Serif SC","Songti SC","STSong",serif;
+    --font-kai:"LXGW WenKai","Kaiti SC","STKaiti",serif;
+    --font-body:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    --font-num:"Noto Serif","Noto Serif SC","Songti SC",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:#0f0e0c;
+    color:var(--ink);
+    font-family:var(--font-body);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* 16:9 stage */
+  .stage{
+    position:relative;
+    width:min(94vw, calc(94vh * 16 / 9));
+    height:min(94vh, calc(94vw * 9 / 16));
+    box-shadow:0 30px 90px rgba(0,0,0,.55);
+    overflow:hidden;
+    background:var(--canvas);
+  }
+
+  .slide{
+    position:absolute;inset:0;
+    opacity:0;visibility:hidden;
+    transition:opacity .55s ease;
+    padding:6.2% 7%;
+  }
+  .slide.active{opacity:1;visibility:visible}
+
+  /* shared marks */
+  .seal{
+    --seal-size:58px;
+    width:var(--seal-size);height:var(--seal-size);
+    background:var(--seal);color:var(--on-primary);
+    font-family:var(--font-song);font-weight:700;line-height:1;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    transform:rotate(-5deg);
+    box-shadow:inset 0 0 0 1px rgba(246,241,228,.5);
+    user-select:none;
+  }
+  .seal span{font-size:calc(var(--seal-size) * .34)}
+  .eyebrow{font-family:var(--font-kai);font-size:clamp(12px,1.35vw,17px);letter-spacing:6px;color:var(--muted)}
+  .rule-v{width:2px;background:var(--seal)}
+
+  /* ---------- 1. COVER ---------- */
+  .s-cover{background:var(--canvas)}
+  .cover-eyebrow{position:absolute;top:8%;left:7%;display:flex;align-items:center;gap:14px}
+  .cover-eyebrow .rule-v{height:clamp(22px,2.4vw,34px)}
+  .cover-stage{position:absolute;right:4%;bottom:6%;width:64%;height:82%;display:flex;align-items:center;justify-content:center}
+  .cover-stage .bloom{position:absolute;width:100%;height:auto;aspect-ratio:1/1}
+  .cover-title{
+    position:relative;z-index:2;
+    font-family:var(--font-song);font-weight:900;color:var(--on-primary);
+    font-size:clamp(2.6rem,7.4vw,6rem);line-height:1.04;letter-spacing:1px;text-align:center;
+  }
+  .cover-title .line{display:block;white-space:nowrap}
+  .cover-seal{position:absolute;right:7%;bottom:9%;z-index:3;--seal-size:clamp(46px,5.4vw,72px)}
+  .cover-foot{position:absolute;left:7%;bottom:8%;font-family:var(--font-body);font-size:clamp(11px,1.15vw,14px);letter-spacing:2px;color:var(--muted)}
+
+  /* ---------- 2. VOID DIVIDER (留白过场 signature) ---------- */
+  .s-divider{background:var(--canvas)}
+  .divider-num{
+    position:absolute;top:50%;left:56%;transform:translate(-50%,-52%);
+    font-family:var(--font-song);font-weight:900;
+    font-size:clamp(11rem,34vw,26rem);line-height:1;
+    color:transparent;-webkit-text-stroke:2px var(--hairline);
+    user-select:none;
+  }
+  .divider-rule{position:absolute;left:16%;top:26%;height:48%;width:2px;background:var(--seal)}
+  .divider-seal{position:absolute;left:14.4%;top:20%;--seal-size:clamp(34px,3.6vw,48px)}
+  .divider-title{position:absolute;left:7%;bottom:12%;max-width:60%}
+  .divider-kicker{font-family:var(--font-kai);font-size:clamp(12px,1.4vw,18px);letter-spacing:6px;color:var(--muted);margin-bottom:14px}
+  .divider-title h2{font-family:var(--font-song);font-weight:900;font-size:clamp(2.2rem,5vw,4rem);line-height:1.1;letter-spacing:.5px}
+  .divider-title h2 .line{display:block;white-space:nowrap}
+
+  /* ---------- 3. STAT HERO ---------- */
+  .s-stat{background:var(--canvas);display:flex;flex-direction:column;justify-content:center}
+  .s-stat .eyebrow{margin-bottom:2.2vw}
+  .stat-huge{font-family:var(--font-num);font-weight:900;font-size:clamp(7rem,22vw,17rem);line-height:.92;letter-spacing:-4px;color:var(--ink)}
+  .stat-unit{font-family:var(--font-song);font-weight:400;font-size:clamp(1.1rem,2.4vw,1.9rem);color:var(--muted);margin-top:1.4vw;letter-spacing:2px}
+  .s-stat .seal{position:absolute;right:7%;bottom:10%;--seal-size:clamp(40px,4.4vw,58px)}
+
+  /* ---------- ARGUMENT slides ---------- */
+  .s-arg{background:var(--canvas);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:4%}
+  .arg-hammer{position:relative;display:flex;align-items:center;justify-content:center;height:100%}
+  .arg-char{
+    font-family:var(--font-song);font-weight:900;color:var(--ink);
+    font-size:clamp(9rem,26vw,22rem);line-height:.9;letter-spacing:0;
+  }
+  .arg-char.outline{color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .arg-body{display:flex;flex-direction:column;justify-content:center}
+  .arg-index{font-family:var(--font-kai);font-size:clamp(12px,1.4vw,18px);letter-spacing:6px;color:var(--muted);margin-bottom:2vw}
+  .arg-line{font-family:var(--font-song);font-weight:900;font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.16;letter-spacing:.5px}
+  .arg-line .line{display:block;white-space:nowrap}
+  .arg-sub{font-family:var(--font-body);font-size:clamp(13px,1.35vw,17px);line-height:1.9;color:#48433c;margin-top:2vw;max-width:24em}
+  .s-arg .seal{position:absolute;right:7%;bottom:9%;--seal-size:clamp(38px,4vw,54px)}
+  /* argument 3: small bloom hammer instead of a giant character */
+  .arg-hammer .bloom-wrap{position:relative;width:78%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+  .arg-hammer .bloom-wrap .bloom{position:absolute;width:100%;height:auto;aspect-ratio:1/1}
+  .arg-hammer .bloom-wrap .bchar{position:relative;z-index:2;font-family:var(--font-song);font-weight:900;color:var(--on-primary);font-size:clamp(4.5rem,13vw,10rem);line-height:1}
+
+  /* ---------- QUOTE (金句) ---------- */
+  .s-quote{background:var(--surface);display:flex;flex-direction:column;justify-content:center}
+  .quote-mark{font-family:var(--font-song);color:var(--seal);font-size:clamp(3rem,6vw,5rem);line-height:.6;height:.5em;margin-bottom:1.4vw}
+  .quote-body{font-family:var(--font-kai);font-weight:400;font-size:clamp(1.9rem,4.4vw,3.4rem);line-height:1.7;letter-spacing:1px;color:var(--ink)}
+  .quote-body .line{display:block;white-space:nowrap}
+  .quote-foot{display:flex;align-items:center;gap:18px;margin-top:3vw}
+  .quote-foot .seal{--seal-size:clamp(38px,4vw,52px)}
+  .quote-foot .caption{font-family:var(--font-body);font-size:clamp(12px,1.2vw,14px);letter-spacing:2px;color:var(--muted)}
+
+  /* ---------- CLOSING (收尾) ---------- */
+  .s-closing{background:var(--ink);color:var(--on-primary);display:flex;flex-direction:column;justify-content:center}
+  .s-closing .eyebrow{color:#c9c0ac;margin-bottom:2.4vw}
+  .closing-line{font-family:var(--font-song);font-weight:900;font-size:clamp(2.4rem,5.6vw,4.4rem);line-height:1.12;letter-spacing:.5px}
+  .closing-line .line{display:block;white-space:nowrap}
+  .closing-cta{margin-top:3.4vw;display:flex;align-items:center;gap:2vw}
+  .btn-on-ink{
+    display:inline-flex;align-items:center;justify-content:center;
+    background:var(--on-primary);color:var(--ink);
+    font-family:var(--font-body);font-size:clamp(13px,1.3vw,15px);font-weight:500;letter-spacing:3px;
+    padding:16px 34px;border-radius:3px;white-space:nowrap;
+  }
+  .s-closing .seal{position:absolute;right:7%;bottom:10%;--seal-size:clamp(42px,4.6vw,60px);box-shadow:inset 0 0 0 1px rgba(246,241,228,.6)}
+
+  /* ---------- deck chrome ---------- */
+  .hud{position:fixed;z-index:50;bottom:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:16px;color:#7d766a;font-family:var(--font-body);font-size:12px;letter-spacing:2px}
+  .hud .dots{display:flex;gap:8px}
+  .hud .dot{width:6px;height:6px;border-radius:9999px;background:#3a362f;transition:background .25s ease,transform .25s ease}
+  .hud .dot.on{background:var(--seal);transform:scale(1.35)}
+  .arrow{position:fixed;z-index:50;top:50%;transform:translateY(-50%);width:44px;height:44px;border:0;background:transparent;color:#5a5449;cursor:pointer;font-size:26px;line-height:1;transition:color .2s ease}
+  .arrow:hover{color:#b7ad99}
+  .arrow.prev{left:14px}
+  .arrow.next{right:14px}
+  .counter{font-variant-numeric:tabular-nums}
+
+  @media (prefers-reduced-motion:reduce){
+    .slide{transition:none}
+    .hud .dot{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="stage" id="stage">
+
+  <!-- 1 · COVER -->
+  <section class="slide s-cover active">
+    <div class="cover-eyebrow">
+      <span class="rule-v" aria-hidden="true"></span>
+      <span class="eyebrow">空山 · 节气茶室</span>
+    </div>
+    <div class="cover-stage">
+      <svg class="bloom" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <filter id="ink1" x="-35%" y="-35%" width="170%" height="170%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.011 0.015" numOctaves="3" seed="7" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="58" xChannelSelector="R" yChannelSelector="G" result="d"/>
+            <feGaussianBlur in="d" stdDeviation="5.5"/>
+          </filter>
+          <radialGradient id="core1" cx="50%" cy="47%" r="56%">
+            <stop offset="0%" stop-color="#1c1a17"/>
+            <stop offset="58%" stop-color="#1c1a17"/>
+            <stop offset="80%" stop-color="#221e1a" stop-opacity=".82"/>
+            <stop offset="100%" stop-color="#221e1a" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g filter="url(#ink1)">
+          <ellipse cx="300" cy="292" rx="252" ry="232" fill="url(#core1)"/>
+          <ellipse cx="364" cy="214" rx="118" ry="104" fill="#1c1a17" opacity=".9"/>
+          <ellipse cx="224" cy="366" rx="126" ry="112" fill="#1c1a17" opacity=".85"/>
+          <ellipse cx="300" cy="300" rx="182" ry="172" fill="#1c1a17"/>
+        </g>
+      </svg>
+      <h1 class="cover-title">
+        <span class="line">给忙碌</span>
+        <span class="line">留一处白</span>
+      </h1>
+      <div class="cover-seal seal" aria-hidden="true"><span>空</span><span>山</span></div>
+    </div>
+    <div class="cover-foot">一场关于留白的分享 · 二〇二五</div>
+  </section>
+
+  <!-- 2 · VOID DIVIDER (signature) -->
+  <section class="slide s-divider">
+    <div class="divider-num" aria-hidden="true">壹</div>
+    <div class="divider-seal seal" aria-hidden="true"><span>留</span><span>白</span></div>
+    <div class="divider-rule" aria-hidden="true"></div>
+    <div class="divider-title">
+      <div class="divider-kicker">过场 · 一</div>
+      <h2>
+        <span class="line">先说，</span>
+        <span class="line">为什么是留白</span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- 3 · STAT HERO -->
+  <section class="slide s-stat">
+    <div class="eyebrow">一年的味道</div>
+    <div class="stat-huge">二十四</div>
+    <div class="stat-unit">一岁二十四节气，一节气，一味茶</div>
+    <div class="seal" aria-hidden="true"><span>节</span><span>气</span></div>
+  </section>
+
+  <!-- 4 · ARGUMENT 1 -->
+  <section class="slide s-arg">
+    <div class="arg-hammer"><div class="arg-char">慢</div></div>
+    <div class="arg-body">
+      <div class="arg-index">论 · 一</div>
+      <div class="arg-line">
+        <span class="line">慢，</span>
+        <span class="line">才尝得出味道</span>
+      </div>
+      <p class="arg-sub">水要等它凉到该凉的温度，茶要等它舒展开。快，只喝得到解渴；慢下来，才喝得到这一口茶本来的样子。</p>
+    </div>
+    <div class="seal" aria-hidden="true"><span>慢</span></div>
+  </section>
+
+  <!-- 5 · ARGUMENT 2 -->
+  <section class="slide s-arg">
+    <div class="arg-hammer"><div class="arg-char outline">空</div></div>
+    <div class="arg-body">
+      <div class="arg-index">论 · 二</div>
+      <div class="arg-line">
+        <span class="line">空，</span>
+        <span class="line">才容得下一个人</span>
+      </div>
+      <p class="arg-sub">屋子塞满了，人就没了位置。我们把每间茶室的三分之二留成空地，是为了让来的人，能安心地什么都不做。</p>
+    </div>
+    <div class="seal" aria-hidden="true"><span>空</span></div>
+  </section>
+
+  <!-- 6 · ARGUMENT 3 (small-bloom hammer) -->
+  <section class="slide s-arg">
+    <div class="arg-hammer">
+      <div class="bloom-wrap">
+        <svg class="bloom" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <filter id="ink2" x="-35%" y="-35%" width="170%" height="170%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.012 0.016" numOctaves="3" seed="12" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="52" xChannelSelector="R" yChannelSelector="G" result="d"/>
+              <feGaussianBlur in="d" stdDeviation="5"/>
+            </filter>
+          </defs>
+          <g filter="url(#ink2)">
+            <ellipse cx="300" cy="300" rx="238" ry="220" fill="#1c1a17"/>
+            <ellipse cx="360" cy="228" rx="110" ry="98" fill="#1c1a17" opacity=".9"/>
+            <ellipse cx="236" cy="368" rx="118" ry="104" fill="#1c1a17" opacity=".85"/>
+          </g>
+        </svg>
+        <span class="bchar">候</span>
+      </div>
+    </div>
+    <div class="arg-body">
+      <div class="arg-index">论 · 三</div>
+      <div class="arg-line">
+        <span class="line">候，</span>
+        <span class="line">一节气等一味茶</span>
+      </div>
+      <p class="arg-sub">谷雨的茶不会提前到，霜降的茶也不会留到冬天。跟着节气喝，是把等待重新还给生活，让每一味都刚好赶上它的时令。</p>
+    </div>
+    <div class="seal" aria-hidden="true"><span>候</span></div>
+  </section>
+
+  <!-- 7 · QUOTE (金句) -->
+  <section class="slide s-quote">
+    <div class="quote-mark" aria-hidden="true">「</div>
+    <div class="quote-body">
+      <span class="line">把自己空出来，</span>
+      <span class="line">才盛得下一盏茶。</span>
+    </div>
+    <div class="quote-foot">
+      <div class="seal" aria-hidden="true"><span>空</span><span>山</span></div>
+      <span class="caption">空山 · 茶室手记</span>
+    </div>
+  </section>
+
+  <!-- 8 · CLOSING (收尾) -->
+  <section class="slide s-closing">
+    <div class="eyebrow">最后</div>
+    <div class="closing-line">
+      <span class="line">空山，</span>
+      <span class="line">为你留着一处白</span>
+    </div>
+    <div class="closing-cta">
+      <a class="btn-on-ink" href="#">预约落座</a>
+    </div>
+    <div class="seal" aria-hidden="true"><span>空</span><span>山</span></div>
+  </section>
+
+</div>
+
+<button class="arrow prev" id="prev" aria-label="上一页">‹</button>
+<button class="arrow next" id="next" aria-label="下一页">›</button>
+<div class="hud">
+  <span class="counter" id="counter">01 / 08</span>
+  <span class="dots" id="dots" aria-hidden="true"></span>
+</div>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var counter = document.getElementById('counter');
+  var dotsWrap = document.getElementById('dots');
+  var i = 0;
+
+  slides.forEach(function(_, n){
+    var d = document.createElement('span');
+    d.className = 'dot' + (n === 0 ? ' on' : '');
+    dotsWrap.appendChild(d);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+
+  function show(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s, k){ s.classList.toggle('active', k === i); });
+    dots.forEach(function(d, k){ d.classList.toggle('on', k === i); });
+    counter.textContent = pad(i + 1) + ' / ' + pad(slides.length);
+  }
+  function next(){ show(i + 1); }
+  function prev(){ show(i - 1); }
+
+  document.addEventListener('keydown', function(e){
+    if(['ArrowRight','ArrowDown','PageDown',' '].indexOf(e.key) > -1){ e.preventDefault(); next(); }
+    else if(['ArrowLeft','ArrowUp','PageUp'].indexOf(e.key) > -1){ e.preventDefault(); prev(); }
+    else if(e.key === 'Home'){ e.preventDefault(); show(0); }
+    else if(e.key === 'End'){ e.preventDefault(); show(slides.length - 1); }
+  });
+  document.getElementById('next').addEventListener('click', next);
+  document.getElementById('prev').addEventListener('click', prev);
+  document.getElementById('stage').addEventListener('click', function(e){
+    if(e.target.closest('a,button')) return;
+    var r = this.getBoundingClientRect();
+    if(e.clientX - r.left < r.width * 0.32) prev(); else next();
+  });
+
+  show(0);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "A cold acid-cyan HUD for multi-agent orchestration consoles. Near-black canvas, a single #22d3ee cyan that only ever means \"live\", and an amber caution accent that only ever means \"attention\". Titles run in a geometric sans; every status, metric, and timestamp lives in tabular monospace. The signature is the reticle: corner brackets and a breathing dot-matrix instead of boxes and shadows.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.133,
+          0.827,
+          0.933
+        ],
+        "hex": "#22d3ee"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.016,
+          0.094,
+          0.114
+        ],
+        "hex": "#04181d"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.843,
+          0.898,
+          0.925
+        ],
+        "hex": "#d7e5ec"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.043,
+          0.055,
+          0.067
+        ],
+        "hex": "#0b0e11"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.071,
+          0.09,
+          0.114
+        ],
+        "hex": "#12171d"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.506,
+          0.58,
+          0.627
+        ],
+        "hex": "#8194a0"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.125,
+          0.165,
+          0.2
+        ],
+        "hex": "#202a33"
+      }
+    },
+    "alert": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.541,
+          0.141
+        ],
+        "hex": "#ff8a24"
+      }
+    },
+    "on-alert": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.102,
+          0.055,
+          0.008
+        ],
+        "hex": "#1a0e02"
+      }
+    },
+    "critical": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.302,
+          0.369
+        ],
+        "hex": "#ff4d5e"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 80,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "xs": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 3,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Grotesk\", \"Inter\", system-ui, -apple-system, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 64,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -1.2,
+          "unit": "px"
+        }
+      }
+    },
+    "display": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Grotesk\", \"Inter\", system-ui, -apple-system, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 40,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -0.6,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Grotesk\", \"Inter\", system-ui, -apple-system, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 22,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Inter\", system-ui, -apple-system, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 16,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "em"
+        }
+      }
+    },
+    "mono": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"JetBrains Mono\", ui-monospace, \"SFMono-Regular\", Menlo, Consolas, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "metric": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"JetBrains Mono\", ui-monospace, \"SFMono-Regular\", Menlo, Consolas, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 88,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -2,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"JetBrains Mono\", ui-monospace, \"SFMono-Regular\", Menlo, Consolas, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 2.6,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"JetBrains Mono\", ui-monospace, \"SFMono-Regular\", Menlo, Consolas, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 1.4,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"JetBrains Mono\", ui-monospace, \"SFMono-Regular\", Menlo, Consolas, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.4,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

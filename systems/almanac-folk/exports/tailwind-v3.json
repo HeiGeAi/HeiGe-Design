@@ -1,0 +1,115 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#c23b22",
+        "on-primary": "#fdf6e6",
+        "ink": "#2a1e12",
+        "canvas": "#ead9b8",
+        "surface": "#f4ecd6",
+        "muted": "#5f4f33",
+        "hairline": "#c8b083",
+        "accent": "#3f6f52"
+      },
+      "fontFamily": {
+        "display-xl": [
+          "\"Fraunces\", \"Georgia\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "display-lg": [
+          "\"Fraunces\", \"Georgia\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "heading": [
+          "\"Fraunces\", \"Georgia\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "body": [
+          "\"LXGW WenKai\", \"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "body-mono": [
+          "\"IBM Plex Mono\", ui-monospace, \"LXGW WenKai\", \"Noto Sans SC\", \"PingFang SC\", monospace"
+        ],
+        "button": [
+          "\"Fraunces\", \"LXGW WenKai\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "caption": [
+          "\"LXGW WenKai\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "eyebrow": [
+          "\"Fraunces\", \"LXGW WenKai\", \"Noto Serif SC\", \"Songti SC\", serif"
+        ]
+      },
+      "fontSize": {
+        "display-xl": [
+          "72px",
+          {
+            "letterSpacing": "-1.5px",
+            "fontWeight": "600"
+          }
+        ],
+        "display-lg": [
+          "42px",
+          {
+            "letterSpacing": "-0.5px",
+            "fontWeight": "600"
+          }
+        ],
+        "heading": [
+          "24px",
+          {
+            "letterSpacing": "-0.2px",
+            "fontWeight": "600"
+          }
+        ],
+        "body": [
+          "17px",
+          {
+            "letterSpacing": "0.1px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-mono": [
+          "40px",
+          {
+            "letterSpacing": "-0.5px",
+            "fontWeight": "500"
+          }
+        ],
+        "button": [
+          "16px",
+          {
+            "letterSpacing": "0.3px",
+            "fontWeight": "600"
+          }
+        ],
+        "caption": [
+          "13px",
+          {
+            "letterSpacing": "0.2px",
+            "fontWeight": "400"
+          }
+        ],
+        "eyebrow": [
+          "13px",
+          {
+            "letterSpacing": "3px",
+            "fontWeight": "500"
+          }
+        ]
+      },
+      "borderRadius": {
+        "none": "0px",
+        "sm": "3px",
+        "md": "6px",
+        "lg": "10px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "section": "80px"
+      }
+    }
+  }
+}

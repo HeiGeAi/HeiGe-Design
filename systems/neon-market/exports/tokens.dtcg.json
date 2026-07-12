@@ -1,0 +1,311 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "NEON MARKET is a maximalist night-market signage system. A deep-night canvas gets ignited by four neon accents: signage red, lantern amber, tube cyan and magenta, stacked dense and slightly askew like an alley of glowing signboards. Heavy Archivo Black meets a Monoton neon-tube script and Space Mono price tags. The signature move is a wall of self-glowing stall signs that ignite on load. No purple gradients, no centered card trio.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.18,
+          0.302
+        ],
+        "hex": "#ff2e4d"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.078,
+          0.043,
+          0.051
+        ],
+        "hex": "#140b0d"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.969,
+          0.929,
+          0.914
+        ],
+        "hex": "#f7ede9"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.051,
+          0.043,
+          0.059
+        ],
+        "hex": "#0d0b0f"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.094,
+          0.078,
+          0.098
+        ],
+        "hex": "#181419"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.659,
+          0.604,
+          0.635
+        ],
+        "hex": "#a89aa2"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.2,
+          0.169,
+          0.196
+        ],
+        "hex": "#332b32"
+      }
+    },
+    "accent-cyan": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.133,
+          0.902,
+          0.902
+        ],
+        "hex": "#22e6e6"
+      }
+    },
+    "accent-lantern": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.761,
+          0.122
+        ],
+        "hex": "#ffc21f"
+      }
+    },
+    "accent-pink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          0.361,
+          0.784
+        ],
+        "hex": "#ff5cc8"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 88,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 14,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo Black\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 76,
+          "unit": "px"
+        },
+        "fontWeight": 900,
+        "letterSpacing": {
+          "value": -1.5,
+          "unit": "px"
+        }
+      }
+    },
+    "display-neon": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Monoton\", \"Ma Shan Zheng\", \"Noto Sans SC\", \"PingFang SC\", cursive",
+        "fontSize": {
+          "value": 56,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 30,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -0.3,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 17,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "body-mono": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Mono\", \"JetBrains Mono\", ui-monospace, monospace",
+        "fontSize": {
+          "value": 20,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Noto Sans SC\", \"PingFang SC\", sans-serif",
+        "fontSize": {
+          "value": 15,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": 0.6,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Archivo\", \"Noto Sans SC\", \"PingFang SC\", sans-serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Space Mono\", \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 2.4,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

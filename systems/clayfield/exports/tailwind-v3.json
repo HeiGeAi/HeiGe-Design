@@ -1,0 +1,126 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#a8482a",
+        "on-primary": "#faf5ec",
+        "ink": "#3a2e26",
+        "canvas": "#f2e9dc",
+        "surface": "#fbf5ea",
+        "muted": "#6f5f52",
+        "hairline": "#e2d5c2",
+        "clay": "#c96f4a",
+        "sage": "#9caf88"
+      },
+      "fontFamily": {
+        "eyebrow": [
+          "\"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "display-xl": [
+          "\"Nunito\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif"
+        ],
+        "display": [
+          "\"Nunito\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif"
+        ],
+        "heading": [
+          "\"Nunito\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif"
+        ],
+        "body": [
+          "\"Nunito\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif"
+        ],
+        "quote": [
+          "\"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "figure": [
+          "\"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "button": [
+          "\"Nunito\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif"
+        ],
+        "caption": [
+          "\"Nunito\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif"
+        ]
+      },
+      "fontSize": {
+        "eyebrow": [
+          "13px",
+          {
+            "letterSpacing": "2.5px",
+            "fontWeight": "600"
+          }
+        ],
+        "display-xl": [
+          "72px",
+          {
+            "letterSpacing": "-1.5px",
+            "fontWeight": "800"
+          }
+        ],
+        "display": [
+          "44px",
+          {
+            "letterSpacing": "-0.6px",
+            "fontWeight": "800"
+          }
+        ],
+        "heading": [
+          "24px",
+          {
+            "letterSpacing": "-0.2px",
+            "fontWeight": "700"
+          }
+        ],
+        "body": [
+          "17px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "400"
+          }
+        ],
+        "quote": [
+          "30px",
+          {
+            "letterSpacing": "-0.2px",
+            "fontWeight": "400"
+          }
+        ],
+        "figure": [
+          "88px",
+          {
+            "letterSpacing": "-2px",
+            "fontWeight": "600"
+          }
+        ],
+        "button": [
+          "16px",
+          {
+            "letterSpacing": "0.3px",
+            "fontWeight": "700"
+          }
+        ],
+        "caption": [
+          "14px",
+          {
+            "letterSpacing": "0.2px",
+            "fontWeight": "500"
+          }
+        ]
+      },
+      "borderRadius": {
+        "sm": "8px",
+        "md": "16px",
+        "lg": "28px",
+        "xl": "44px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "section": "96px"
+      }
+    }
+  }
+}

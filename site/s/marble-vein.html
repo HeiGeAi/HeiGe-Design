@@ -1,0 +1,1013 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>大理石纹 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 奢侈高定</div>
+<div class="hero"><div class="fam">奢侈高定</div><h1>大理石纹<span class="badge">✓ lint 0 error</span></h1><div class="slug">marble-vein · MarbleVein-design-system</div><p class="desc">An architectural luxury system quarried from a single slab. Warm Carrara white (#f0ede8) is the field, onyx charcoal is the ink, and one cool slate vein is spent like a fault line — a drawn crack, never text. Cinzel Roman inscriptional capitals stand over a Space Grotesk drafting sans and IBM Plex Mono dimension callouts, so the type reads carved rather than typeset. The signature move is one real irregular vein that becomes the layout's structural spine, registered to a faint facade grid. One token set drives both an interface and a 16:9 keynote. Sharp corners, no gradient, depth by stone value and a single hairline.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#f0ede8;--ink:#2a2d33;--pri:#1f2228;--onpri:#f0ede8;--acc:#828b97;--surf:#f6f4ef;--muted:#5f636b;--line:#d8d3c9;--r:3px;--dff:"Cinzel", "Cormorant Garamond", Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Space Grotesk", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">大理石纹</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#1f2228"></i><i style="background:#f0ede8"></i><i style="background:#2a2d33"></i><i style="background:#f6f4ef"></i><i style="background:#5f636b"></i><i style="background:#d8d3c9"></i><i style="background:#828b97"></i><i style="background:#181a1e"></i></div>
+  <div class="swrap"><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">button-ghost</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">eyebrow-label</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">prose-block</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">card-image</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">dimension-note</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">tag-chip</span></div>
+  </div>
+  <div class="card" style="--bg:#f0ede8;--ink:#2a2d33;--pri:#1f2228;--onpri:#f0ede8;--acc:#828b97;--surf:#f6f4ef;--muted:#5f636b;--line:#d8d3c9;--r:3px;--dff:"Cinzel", "Cormorant Garamond", Georgia, "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Space Grotesk", "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">大理石纹</div></div>
+    <div class="swrap"><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#f6f4ef;color:#2a2d33;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two moments this system can do that no template reproduces, because both require the vein and the grid to be authored as one object — a generator can add a divider, but it cannot make the crack *be* the structure.
+
+### UI — 石脉承重 · The Load-Bearing Vein
+The layout's central gutter is a **single irregular slate vein (`#828b97`)**, a real hand-authored SVG path — not a straight rule — running top to bottom down the spine of the page. It is the structural line the whole composition registers to: the Cinzel inscription butts flush to its left, the full-bleed stone plate butts flush to its right, every hairline joint meets it like a slab seam, and the eyebrow seams are short branches off it. On load it reveals **once** by a Carrara-white mask wiping down its length via `transform` only (a single composited pass; `prefers-reduced-motion` renders it already-cut) — the effect of a blade opening t</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">### Do
+- **Draw the vein once.** One irregular slate line per composition — a spine, a seam, or a numeral's fault. Ration it like a fault in real stone.
+- **Register everything to the grid and the vein.** Inscription flush left of the vein, plate flush right, joints meeting at true slab seams. Pixel alignment is the luxury.
+- **Carve, don't type.** Cinzel caps for the monument, Space Grotesk for the drafting label, Plex Mono for the measured dimension. Keep the three voices distinct.
+- **Lift with stone value and joint** — a brighter honed slab plus one hairline, never a shadow.
+- **Keep corners cut** (0–3px). Blade-edge, not bubble.
+- **Go dark only in the footer, the divider, and the quote** — the Nero slab is a punctuation mark, not a mood.
+- **Let the white corridor run long** before the one stat, the one quote, the one CTA.
+
+### Don't
+- **不碰紫蓝俗套渐变** — no `#667eea → #764ba2` or any of its family. This system has no gradient at all; a purple-blue hero would shatter the whole quarry proposition. Stone is one honed value, lit — never a synthetic wash.
+- **不做居中卡片三件套** — no title + grey subtitle + three equal centered rounded cards repeated down the page. This is an asymmetric facade grid registered to a vein, not a SaaS landing template.
+- **中文不用日文字体** — never render Simplified Chinese in a Japanese face (Mochiy, Zen Maru, etc.); 简体缺字变豆腐块。Chinese resolves through Noto Serif SC </div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: MarbleVein-design-system
+description: &gt;-
+  An architectural luxury system quarried from a single slab. Warm Carrara white
+  (#f0ede8) is the field, onyx charcoal is the ink, and one cool slate vein is
+  spent like a fault line — a drawn crack, never text. Cinzel Roman inscriptional
+  capitals stand over a Space Grotesk drafting sans and IBM Plex Mono dimension
+  callouts, so the type reads carved rather than typeset. The signature move is
+  one real irregular vein that becomes the layout's structural spine, registered
+  to a faint facade grid. One token set drives both an interface and a 16:9
+  keynote. Sharp corners, no gradient, depth by stone value and a single hairline.
+
+colors:
+  primary: &quot;#1f2228&quot;      # onyx — the vein at its deepest; brand ink, primary button, closing slab
+  on-primary: &quot;#f0ede8&quot;   # Carrara white set on onyx; never on a light surface
+  ink: &quot;#2a2d33&quot;          # quarry charcoal for body and headings, warm-cool near-black, never #000
+  canvas: &quot;#f0ede8&quot;       # Carrara white — the marble field, the default page
+  surface: &quot;#f6f4ef&quot;      # honed slab, a half-shade brighter; cards lift by lightness, not shadow
+  muted: &quot;#5f636b&quot;        # slate label for eyebrows, captions, dimensions; held above 5:1
+  hairline: &quot;#d8d3c9&quot;     # warm joint line, the 1px stone seam; the only structural rule
+  accent: &quot;#828b97&quot;       # the slate vein — a drawn line and a mark on dark, never body text on white
+  panel: &quot;#181a1e&quot;        # Nero, the deep onyx slab; footer, dividers, quote — the dark act
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Cinzel&quot;, &quot;Cormorant Garamond&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;84px&quot;
+    fontWeight: 400
+    lineHeight: 1.06
+    letterSpacing: &quot;0.5px&quot;
+  display-lg:
+    fontFamily: '&quot;Cinzel&quot;, &quot;Cormorant Garamond&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;50px&quot;
+    fontWeight: 400
+    lineHeight: 1.12
+    letterSpacing: &quot;1px&quot;
+  heading:
+    fontFamily: '&quot;Cinzel&quot;, &quot;Cormorant Garamond&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: &quot;23px&quot;
+    fontWeight: 500
+    lineHeight: 1.32
+    letterSpacing: &quot;1.4px&quot;
+  body:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;16px&quot;
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: &quot;0px&quot;
+  eyebrow:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;12px&quot;
+    fontWeight: 500
+    lineHeight: 1.3
+    letterSpacing: &quot;3px&quot;
+  button:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;13px&quot;
+    fontWeight: 500
+    lineHeight: 1
+    letterSpacing: &quot;1.6px&quot;
+  caption:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: &quot;13px&quot;
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: &quot;0.2px&quot;
+  body-mono:
+    fontFamily: '&quot;IBM Plex Mono&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: &quot;12px&quot;
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: &quot;0.4px&quot;
+
+rounded:
+  none: &quot;0px&quot;
+  sm: &quot;3px&quot;
+  pill: &quot;9999px&quot;
+
+spacing:
+  xs: &quot;4px&quot;
+  sm: &quot;8px&quot;
+  md: &quot;16px&quot;
+  lg: &quot;24px&quot;
+  xl: &quot;40px&quot;
+  section: &quot;96px&quot;
+
+components:
+  # —— UI 界面组件 ——
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;16px 34px&quot;
+  button-ghost:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;16px 34px&quot;
+  eyebrow-label:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  prose-block:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    padding: &quot;{spacing.md}&quot;
+  card-image:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  dimension-note:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  tag-chip:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  vein-rule:
+    backgroundColor: &quot;{colors.accent}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;0px&quot;
+  hairline-rule:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    padding: &quot;0px&quot;
+  footer:
+    backgroundColor: &quot;{colors.panel}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.caption}&quot;
+    padding: &quot;{spacing.section}&quot;
+  # —— slide 演示组件（16:9 融合 HeiGe-PPT）——
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.panel}&quot;
+    textColor: &quot;{colors.accent}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.panel}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Marble-Vein · 大理石纹
+
+&gt; 石头不设计，石头是被剖开的。A slab is not composed. It is cut, and where the blade meets the vein, the whole page decides its structure.
+
+Marble-Vein is the house language of a fictional architecture-and-stone atelier — the kind that clads a private museum, a hillside residence, a flagship in a single continuous slab. It behaves like honed marble under raking light: a cold, patient white field; one deep onyx ink; and a single grey vein that runs through everything and carries the weight. One token set drives both the interface (HeiGe-UI) and the 16:9 keynote (HeiGe-PPT).
+
+---
+
+## Overview
+
+The gestalt is **一整块被剖开的石头** — one quarried slab, honed flat, lit hard. No gloss, no bevel, no product-shot drama. A warm Carrara white (`#f0ede8`) is the stone; a near-black onyx is the ink cut into it; and the whole system is an argument that a single vein, drawn once, can do the work of an entire layout grid.
+
+**The two roles of the stone.** The white and the onyx are not &quot;background and text&quot; — they are **field and blade**. Carrara white (`#f0ede8`) is warm, matte, faintly aged, the surface you read *across*, never a clinical screen-white. Onyx (`#1f2228`) is the cut: brand buttons, the closing slab, the deepest inscription. Everything legible lives between the field and the blade. Between them runs the third actor.
+
+**The vein is not a color you use. It is a line you draw once.** The slate vein (`#828b97`) is spent the way a fault runs through stone — irregular, structural, unrepeatable. It appears as one drawn crack down the layout spine, one horizontal seam under an inscription, one giant numeral on a dark slab. It is cool grey-blue against the warm white, so field and vein are always in quiet tension. It never becomes body text on white — a vein is a line, not a paragraph.
+
+**The typographic signature is carved, not set.** Cinzel — Roman inscriptional capitals descended from letters chiseled into monuments — sets every headline in stone-cut majuscule. Under it sits Space Grotesk, a drafting-instrument grotesque that reads like the annotation on an architectural elevation, and IBM Plex Mono for the dimension callouts (`3600 mm`, `N 01`, `A-A'`). The result: titles that look quarried, labels that look drafted, numbers that look measured.
+
+**Rhythm is slow and architectural.** Sections breathe at 96px. Content registers to a facade grid and to the vein. Big Cinzel inscription → long white silence → one mono dimension → a full-bleed stone plate → silence. When the one stat or the one quote finally lands, the reader has been walked down a long marble corridor to reach it.
+
+---
+
+## Colors
+
+A monochrome quarry. White field, onyx blade, slate vein — plus one warm seam and two working greys. No gradient, no tint beyond what is listed, no fourth hue. The discipline is that the *entire* chromatic identity is the temperature difference between a warm white and a cool vein.
+
+### Brand &amp; Accent
+- **`primary` `#1f2228` — Onyx.** The vein at its darkest value, pulled solid. The brand ink: primary buttons, the closing slab, the deepest cut. This is the color the atelier *is*. Marble white on it clears **13.6:1**.
+- **`on-primary` `#f0ede8` — Carrara on Onyx.** Only ever set on `primary` or `panel`. The inscription that survives on the dark slab.
+- **`accent` `#828b97` — Slate Vein.** The signature. A cool grey-blue spent like a geological fault: one drawn vein per composition, one seam, one giant section numeral on dark. On onyx it reads at **5.05:1** — legible as a mark and a numeral. On the white field it sits near 3:1, so it is **forbidden as body text on light** by design: a vein is a line and a plane, never running copy. That refusal is the brand.
+
+### Surface
+- **`canvas` `#f0ede8` — Carrara White.** The default slab. Warm, honed, matte. The field everything is cut into.
+- **`surface` `#f6f4ef` — Honed Slab.** Exactly a half-shade brighter than canvas. Cards, plates, and stat plinths lift by getting *lighter under the light*, closed with a hairline seam — depth by stone value, never by shadow.
+- **`hairline` `#d8d3c9` — Joint Line.** The warm 1px seam, one tone under canvas. The only structural rule in the system: column dividers, card keylines, the mast line under the nav. It is the mortar joint between slabs.
+- **`panel` `#181a1e` — Nero.** The deepest onyx, below primary. The rare dark act — footer, section dividers, the quote slide. On Nero, Carrara white reads at **14.9:1** and the slate vein at **5.05:1**, so the vein is finally allowed to become a numeral and a mark.
+
+### Text
+- **`ink` `#2a2d33` — Quarry Charcoal.** All body, all headings on light. A warm-cool near-black, never `#000` — pure black on warm marble reads colder than the stone wants and vibrates at large sizes. **11.8:1** on canvas, **12.5:1** on surface.
+- **`muted` `#5f636b` — Slate Label.** Eyebrows, captions, dimension callouts, second-tier metadata. Tuned dark enough to clear **5.16:1 on canvas** and **5.48:1 on surface** — quiet is not the same as unreadable, and even a dimension line must be legible.
+
+### Semantic
+This is an architecture-and-stone system, not a dashboard. There is no success-green or error-red — the domains (residence, museum, quarry, cladding spec) do not blink status. If a state must be shown, it is shown in `ink` or `muted`, in words, or as a single change in the vein. Emphasis is carried by **size, value, and the vein**, never by adding a hue.
+
+---
+
+## Typography
+
+Two families and a mono do everything: a chiseled Roman capital for anything meant to be monumental, a drafting grotesque for anything meant to be built, a mono for anything meant to be measured.
+
+### Font Family
+- **Display / headings — Cinzel.** Roman inscriptional capitals, the letterforms of stone monuments. Uppercase by design, so the &quot;细衬线大写 / thin serif uppercase&quot; brief is native, not forced. Set at 400 so the cut stays fine. Stack: `&quot;Cinzel&quot;, &quot;Cormorant Garamond&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`. If the webfont fails the page degrades to a serious serif, and **Chinese resolves through Noto Serif SC / Songti SC** — a clean 宋体 with matching monumental gravity, never a Japanese face. A Cinzel headline typed in Simplified Chinese renders as engraved 宋体, in spirit with the carved Latin caps.
+- **Body / labels / UI — Space Grotesk.** A drafting-instrument grotesque: technical, precise, faintly mechanical — the annotation voice of an architectural elevation. Stack: `&quot;Space Grotesk&quot;, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`. Chinese resolves through Noto Sans SC / PingFang SC.
+- **Dimensions / folios — IBM Plex Mono.** Tabular numerals for measurements, grid references, and page indices — the dimension callouts of the drawing. Stack: `&quot;IBM Plex Mono&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace`.
+
+**中文铁律.** 每条能承载中文的字体栈都以系统中文字体收尾（衬线走 Noto Serif SC / Songti SC，无衬线走 Noto Sans SC / PingFang SC）。断网、被墙、webfont 超时，中文都干净落地，绝不退成豆腐块，**绝不用日文字体渲染简体**（Mochiy / Zen Maru 等在简体下缺字变豆腐）。拉丁展示体 Cinzel 后紧跟 Cormorant Garamond / Georgia，保证 webfont 加载失败时刻字气质仍在。
+
+### Hierarchy
+| Role | Family | Size | Weight | Line | Tracking | Use |
+|---|---|---|---|---|---|---|
+| display-xl | Cinzel | 84px | 400 | 1.06 | 0.5px | Cover inscription, hero, stat-hero numeral |
+| display-lg | Cinzel | 50px | 400 | 1.12 | 1px | Pull-quote, stat figure, section numeral, closing |
+| heading | Cinzel | 23px | 500 | 1.32 | 1.4px | Card and subsection titles, carved small caps |
+| body | Space Grotesk | 16px | 400 | 1.7 | 0px | Reading text, spec prose |
+| eyebrow | Space Grotesk | 12px | 500 | 1.3 | 3px | UPPERCASE kicker above every inscription |
+| button | Space Grotesk | 13px | 500 | 1 | 1.6px | UPPERCASE action label |
+| caption | Space Grotesk | 13px | 400 | 1.5 | 0.2px | Figure captions, footer legal |
+| body-mono | IBM Plex Mono | 12px | 400 | 1.5 | 0.4px | Dimension callouts, grid refs, folios |
+
+### Principles
+- **Ratio is roughly 1 : 5.2** (body 16px → display-xl 84px). The jump should feel monumental; the white corridor absorbs it.
+- **Cinzel is caps-only, and that is the point.** Do not fake lowercase, do not track it tight — carved capitals want air. Positive tracking scales *down* as size scales up (3px at eyebrow, 0.5px at 84px).
+- **The eyebrow is always Space Grotesk uppercase at 3px, always `muted`, never `accent`.** The vein belongs to the *seam beneath* the eyebrow, not to the letters.
+- **Left-aligned inscription, never centered display.** Carved capitals hang to a grid edge or to the vein; centered Cinzel reads as a wedding invitation, not a facade.
+- **零孤字.** Hand-broken inscription lines carry `white-space: nowrap`, sized by the longest line with `clamp()` so the widest caps line still fits a ≤390px screen. Centered prose uses `text-wrap: balance`. Chinese measure is limited in `em`, **never `ch`** (ch is a Latin `0` and folds Chinese into orphans).
+
+---
+
+## Layout
+
+### Spacing
+A 4-based scale: `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 96`. Sections are separated by 96px of white marble. That gap is not padding — it is the corridor you walk before the next room.
+
+### Grid &amp; Container
+- **12-column facade grid.** The layout is an elevation drawing: a strict column grid, hairline joints visible where slabs meet, content registered to the grid the way stone panels register to a curtain wall. Alignment is to the pixel; a misaligned joint reads as a badly cut slab.
+- **The vein is a column.** The signature structural move: **the layout's central gutter is the marble vein itself**, and everything hangs off it — the inscription butts to its left, the full-bleed plate butts to its right (see Signature Moment). The grid and the vein are composed as one object.
+- **Reading measure ~60–64 characters**, capped in `em`/`px`, never `ch`. Body is a spec column, not a banner.
+- **Dimension callouts live in the margin** in mono, baseline-aligned, like the measurements running along the edge of a drawing (`3600`, `A-A'`, `N 01`).
+
+### Whitespace philosophy
+White marble is the most expensive material in the palette, and Marble-Vein spends it in slabs, not sprinkles. The rule: **before every moment that matters, subtract a room.** A stat, a quote, a CTA each arrives after a stretch of empty stone that made you walk to reach it. A screen with one inscription and nothing else is not empty — it is a finished facade.
+
+---
+
+## Elevation &amp; Depth
+
+**Depth by stone value and joint, not by shadow.** Honed marble does not float; it lies flat and is lit. This system earns hierarchy the way a stone wall does.
+
+| Layer | Technique |
+|---|---|
+| Base | `canvas` Carrara white |
+| Raised (cards, plates, plinths) | `surface` honed slab, a half-shade brighter, closed with a 1px `hairline` joint |
+| Rule / seam | 1px `hairline` joint, or the signature slate `accent` vein |
+| Dark act | `panel` Nero slab — depth by inversion, the room going to stone-dark |
+
+**Rules of depth.**
+- **No drop shadows.** No `box-shadow: 0 4px 6px rgba(0,0,0,.1)`. A card is held by a lighter slab tone and a hairline joint. If it must answer to hover, it shifts its joint from `hairline` to `accent` vein, or nudges 1px — it never blooms a shadow.
+- **No glow, no `backdrop-filter`.** This is stone; there is nothing to blur behind it, and per production law nothing that repaints every scroll frame.
+- **Never animate a shadow, a seam, or the vein's shadow.** Depth is cut once and stated. Transitions move `opacity` and `transform` only, and everything answers to `prefers-reduced-motion`.
+
+---
+
+## Shapes
+
+### Border Radius
+| Token | Value | Use |
+|---|---|---|
+| none | 0px | The default. Buttons, plates, plinths, the vein, dividers — stone is cut with a blade, and a cut edge is square. |
+| sm | 3px | Feature cards only — a single honed-edge softening, the one place a corner is eased. |
+| pill | 9999px | The tag-chip alone — a thin outlined capsule, the deliberate rounded exception against a system of blade-cut edges. |
+
+Sharp is the law. The eye should feel a cut edge, not a cushion.
+
+### Figure geometry
+- **Images are full-bleed stone plates or hard-cropped rectangles**, square corners, one desaturated honed treatment so a photograph of a slab reads as part of the wall, not a floating card. This is the &quot;石材质感大图 / stone-texture large image&quot;: a full-height marble plate that butts directly against the vein.
+- **The plate butts the vein, it does not float away from it.** One plate per view registers to the layout spine; its cut edge sits flush to the vein like two slabs meeting at a book-matched seam.
+
+---
+
+## Components
+
+- **nav-bar** — Carrara bar, `ink` wordmark, uppercase `eyebrow` links spaced at 3px, closed underneath by a single `hairline` joint. No fill, no shadow, no sticky glass.
+- **button-primary** — The onyx cut. `primary` fill, `on-primary` Carrara label, square corners (`none`). The one solid dark object on most screens; do not place two per view.
+- **button-ghost** — Carrara ground, `ink` label, 1px `ink` outline, square corners. Every secondary action.
+- **eyebrow-label** — Uppercase `muted` kicker at 3px tracking with a slate `accent` seam drawn beneath it (see Signature Moment). The header unit of the whole system.
+- **card-feature** — `surface` honed slab, Cinzel `heading` in carved caps, `sm` radius, hairline joint. Lifts by lightness, not shadow.
+- **prose-block** — `body` Space Grotesk on `canvas`, 1.7 leading, spec-column measure. Built for actual reading.
+- **card-image** — Square-cut stone plate on `surface`, `caption` in `muted` beneath. Full-bleed or hairline-joined; no rounded photo card.
+- **stat-block** — Big `display-lg` Cinzel figure in `ink`, unit set in `muted`, a slate `accent` vein drawn as its underscore. Square plinth.
+- **dimension-note** — `body-mono` measurement in `muted` (`H 3600 mm`, `GRID A-A'`), hung in the margin like a drafting callout. The system's quiet running-mark.
+- **tag-chip** — Thin outlined `pill`, uppercase `muted` label. The single rounded object in a blade-cut system.
+- **vein-rule** — The slate `accent` line itself, `none` radius. The signature element: an irregular drawn vein used as a divider, an underscore, or the layout spine. Line only — it never carries text.
+- **hairline-rule** — The 1px `hairline` joint. The mortar seam that structures every slab.
+- **footer** — The dark act: `panel` Nero ground, Carrara `caption` text, one vein or one link as the only mark. Where the wall finally goes to stone-dark.
+
+---
+
+## Presentation System
+
+Marble-Vein as a 16:9 deck is the same slab at podium scale — **一页一句话，黄金三秒，视觉锤**. One inscription per slide, no bullet lists, no template chrome. The vein is rationed even harder here: **one vein per section**, so when the slab splits it lands. The visual hammer of this system is not an image — it is **one grey vein cutting one stone field, with a carved capital beside it.**
+
+- **Cover (`slide-cover`)** — Carrara field. An uppercase `eyebrow` kicker top-left over its slate seam; a single `display-xl` Cinzel inscription, enormous, hung to the left grid edge; the right two-thirds left as bare marble; a mono `dimension-note` anchoring the bottom margin like a drawing's title block. 黄金三秒: three seconds in, the audience knows this is a house that builds in stone. **视觉锤 = the lone slate seam under the eyebrow, the only non-monochrome mark on the slab.**
+- **Section divider (`slide-section-divider`)** — The dark act and the deck's hammer. Full-bleed `panel` Nero. One continuous slate `accent` vein crosses the entire frame at an irregular angle; a giant `display-lg` Cinzel numeral (`I`, `II`, `III`) in slate straddles it; a wide-tracked Carrara chapter title sits at the baseline. One vein, one numeral, one dark slab (see below).
+- **Stat hero (`slide-stat-hero`)** — Carrara field, one colossal `display-xl` figure in `ink`, its unit in `muted`, a slate vein drawn as the underscore. One number, whole slab. 一页一句话 rendered as 一页一个数字.
+- **Quote (`slide-quote`)** — Nero `panel`, a single `display-lg` Cinzel line in Carrara white, the attribution in a slate `eyebrow`. The sentence is allowed to be the only thing carved into the room.
+- **Closing (`slide-closing`)** — Onyx `primary` slab. One `display-lg` line of intent in Carrara, one square button echoed as a Carrara keyline, the atelier mark and a mono folio as a title block. The deck shuts like a quarry gate, not a slide trailing off.
+
+**Pacing across the deck:** cover (still white) → divider (the slab splits, a breath in the dark) → content spreads (inscription + stone plate registered to the vein) → stat hero (the peak) → quote (the dark silence after) → closing (the gate shuts). The peak is placed on purpose; nothing after it competes.
+
+---
+
+## Signature Moment
+
+Two moments this system can do that no template reproduces, because both require the vein and the grid to be authored as one object — a generator can add a divider, but it cannot make the crack *be* the structure.
+
+### UI — 石脉承重 · The Load-Bearing Vein
+The layout's central gutter is a **single irregular slate vein (`#828b97`)**, a real hand-authored SVG path — not a straight rule — running top to bottom down the spine of the page. It is the structural line the whole composition registers to: the Cinzel inscription butts flush to its left, the full-bleed stone plate butts flush to its right, every hairline joint meets it like a slab seam, and the eyebrow seams are short branches off it. On load it reveals **once** by a Carrara-white mask wiping down its length via `transform` only (a single composited pass; `prefers-reduced-motion` renders it already-cut) — the effect of a blade opening the stone. The signature is not the reveal; it is that the crack *is* the grid. Copy the CSS and you still can't reproduce it, because the hard part is composing one irregular path so that the type, the plate, and the joints all belong to it. Delete the vein and the page has no spine.
+
+### Deck — 石脉分章 · The Slab Split
+The `slide-section-divider`: a full-bleed Nero field split edge-to-edge by **one continuous slate vein** at an irregular geological angle. A single giant thin Cinzel numeral (`II`) in slate straddles the vein so the crack appears to run *through* the letterform, like a fault through a monument; a wide-tracked Carrara chapter title sits at the baseline; a faint facade grid registers behind. One vein, one carved numeral, one dark slab, nothing else. It is a book-matched marble panel with a chapter cut into it — and it works only because every slide around it was starved of the vein to make the split inevitable.
+
+---
+
+## Do's and Don'ts
+
+### Do
+- **Draw the vein once.** One irregular slate line per composition — a spine, a seam, or a numeral's fault. Ration it like a fault in real stone.
+- **Register everything to the grid and the vein.** Inscription flush left of the vein, plate flush right, joints meeting at true slab seams. Pixel alignment is the luxury.
+- **Carve, don't type.** Cinzel caps for the monument, Space Grotesk for the drafting label, Plex Mono for the measured dimension. Keep the three voices distinct.
+- **Lift with stone value and joint** — a brighter honed slab plus one hairline, never a shadow.
+- **Keep corners cut** (0–3px). Blade-edge, not bubble.
+- **Go dark only in the footer, the divider, and the quote** — the Nero slab is a punctuation mark, not a mood.
+- **Let the white corridor run long** before the one stat, the one quote, the one CTA.
+
+### Don't
+- **不碰紫蓝俗套渐变** — no `#667eea → #764ba2` or any of its family. This system has no gradient at all; a purple-blue hero would shatter the whole quarry proposition. Stone is one honed value, lit — never a synthetic wash.
+- **不做居中卡片三件套** — no title + grey subtitle + three equal centered rounded cards repeated down the page. This is an asymmetric facade grid registered to a vein, not a SaaS landing template.
+- **中文不用日文字体** — never render Simplified Chinese in a Japanese face (Mochiy, Zen Maru, etc.); 简体缺字变豆腐块。Chinese resolves through Noto Serif SC / Songti SC (serif) or Noto Sans SC / PingFang SC (sans).
+- **不动画化阴影** — never animate `box-shadow` / `text-shadow`; this system has no shadows to animate, no `backdrop-filter`, and no glow. The only motion is one `transform`/`opacity` vein-reveal.
+- **Don't let the vein become body text on white.** It fails contrast at ~3:1 and cheapens the mark. The vein is a line, a plane, a numeral on dark — never a paragraph.
+- **Don't fill the white.** If a stretch of marble feels empty, the facade is finished.
+- **Don't round the corners or bevel the stone.** Marble in this system is honed flat and cut square; softness reads as fake.
+
+---
+
+## Responsive Behavior
+
+Mobile is a **re-cut of the facade**, not a shrunk desktop. The vein is re-drawn for a single narrow slab, and the drama is re-composed, not scaled down.
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥1200px | Full 12-col facade grid; the vein runs the central spine; inscription butts left, stone plate butts right; dimension callouts hang in the margin; display-xl at full 84px. |
+| 768–1199px | Grid eases to 8 columns; the plate drops below its paragraph keeping its hairline joint; the vein migrates to a side seam; folios move inline with the eyebrow; display scales via `clamp()`; section spacing eases from 96px toward 64px. |
+| ≤767px | Single slab. The vein becomes a short horizontal fault between blocks (the spine can't run a narrow column honestly, so it doesn't fake it). The inscription re-flows to short balanced lines (`text-wrap: balance`), each hand-broken line locked `white-space: nowrap` so **no single character or 标点 is ever orphaned**. Eyebrow, slate seam, and inscription stack vertically; dimension callouts move to a footer title block. |
+
+- **The inscription always fits.** Its `display-xl` size is driven by `clamp()` against the longest `nowrap` caps line, checked at 390px, so it never overflows and never orphans.
+- **Measure over columns.** On small screens the reading measure is preserved in `em`; the slab gets taller, never tighter.
+- **零孤字自检**: 桌面与 ≤390px 窄屏各过一遍每个标题，确认 `scrollWidth == clientWidth`、无横向溢出、无孤字。中文限宽用 `em`/`px`，不用 `ch`。
+
+---
+
+## Anti-Slop Pledge
+
+Strip the atelier name off any screen of Marble-Vein and it still reads as something a person cut by hand: one warm slab of Carrara white, one onyx blade, one grey vein spent like a real fault, capitals carved rather than typeset, and white space treated as the most expensive stone in the yard. The proof is negative — no gradient, no drop shadow, no centered card trio, no second vein, no rounded bubble. What remains could not fall out of a generator, because a generator adds a divider where this system *cuts a structural crack and hangs the whole layout off it.* Delete the vein and the page loses its spine; that dependency is the design.
+
+*Marble-Vein — HeiGe-Design. Original fictional system. MIT.*
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #1f2228;
+  --color-on-primary: #f0ede8;
+  --color-ink: #2a2d33;
+  --color-canvas: #f0ede8;
+  --color-surface: #f6f4ef;
+  --color-muted: #5f636b;
+  --color-hairline: #d8d3c9;
+  --color-accent: #828b97;
+  --color-panel: #181a1e;
+  --font-display-xl: &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 84px;
+  --text-display-lg: 50px;
+  --text-heading: 23px;
+  --text-body: 16px;
+  --text-eyebrow: 12px;
+  --text-button: 13px;
+  --text-caption: 13px;
+  --text-body-mono: 12px;
+  --tracking-display-xl: 0.5px;
+  --tracking-display-lg: 1px;
+  --tracking-heading: 1.4px;
+  --tracking-body: 0px;
+  --tracking-eyebrow: 3px;
+  --tracking-button: 1.6px;
+  --tracking-caption: 0.2px;
+  --tracking-body-mono: 0.4px;
+  --font-weight-display-xl: 400;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 500;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 500;
+  --font-weight-button: 500;
+  --font-weight-caption: 400;
+  --font-weight-body-mono: 400;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#1f2228&quot;,
+        &quot;on-primary&quot;: &quot;#f0ede8&quot;,
+        &quot;ink&quot;: &quot;#2a2d33&quot;,
+        &quot;canvas&quot;: &quot;#f0ede8&quot;,
+        &quot;surface&quot;: &quot;#f6f4ef&quot;,
+        &quot;muted&quot;: &quot;#5f636b&quot;,
+        &quot;hairline&quot;: &quot;#d8d3c9&quot;,
+        &quot;accent&quot;: &quot;#828b97&quot;,
+        &quot;panel&quot;: &quot;#181a1e&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;84px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;50px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;23px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1.4px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;3px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1.6px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;3px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #1f2228;
+  --color-on-primary: #f0ede8;
+  --color-ink: #2a2d33;
+  --color-canvas: #f0ede8;
+  --color-surface: #f6f4ef;
+  --color-muted: #5f636b;
+  --color-hairline: #d8d3c9;
+  --color-accent: #828b97;
+  --color-panel: #181a1e;
+  --font-display-xl: &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 84px;
+  --text-display-lg: 50px;
+  --text-heading: 23px;
+  --text-body: 16px;
+  --text-eyebrow: 12px;
+  --text-button: 13px;
+  --text-caption: 13px;
+  --text-body-mono: 12px;
+  --tracking-display-xl: 0.5px;
+  --tracking-display-lg: 1px;
+  --tracking-heading: 1.4px;
+  --tracking-body: 0px;
+  --tracking-eyebrow: 3px;
+  --tracking-button: 1.6px;
+  --tracking-caption: 0.2px;
+  --tracking-body-mono: 0.4px;
+  --font-weight-display-xl: 400;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 500;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 500;
+  --font-weight-button: 500;
+  --font-weight-caption: 400;
+  --font-weight-body-mono: 400;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;An architectural luxury system quarried from a single slab. Warm Carrara white (#f0ede8) is the field, onyx charcoal is the ink, and one cool slate vein is spent like a fault line — a drawn crack, never text. Cinzel Roman inscriptional capitals stand over a Space Grotesk drafting sans and IBM Plex Mono dimension callouts, so the type reads carved rather than typeset. The signature move is one real irregular vein that becomes the layout's structural spine, registered to a faint facade grid. One token set drives both an interface and a 16:9 keynote. Sharp corners, no gradient, depth by stone value and a single hairline.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.122,
+          0.133,
+          0.157
+        ],
+        &quot;hex&quot;: &quot;#1f2228&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.941,
+          0.929,
+          0.91
+        ],
+        &quot;hex&quot;: &quot;#f0ede8&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.165,
+          0.176,
+          0.2
+        ],
+        &quot;hex&quot;: &quot;#2a2d33&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.941,
+          0.929,
+          0.91
+        ],
+        &quot;hex&quot;: &quot;#f0ede8&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.965,
+          0.957,
+          0.937
+        ],
+        &quot;hex&quot;: &quot;#f6f4ef&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.373,
+          0.388,
+          0.42
+        ],
+        &quot;hex&quot;: &quot;#5f636b&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.847,
+          0.827,
+          0.788
+        ],
+        &quot;hex&quot;: &quot;#d8d3c9&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.51,
+          0.545,
+          0.592
+        ],
+        &quot;hex&quot;: &quot;#828b97&quot;
+      }
+    },
+    &quot;panel&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.094,
+          0.102,
+          0.118
+        ],
+        &quot;hex&quot;: &quot;#181a1e&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 3,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 84,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 50,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cinzel\&quot;, \&quot;Cormorant Garamond\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 23,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1.6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Helvetica Neue\&quot;, Arial, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 大理石纹（marble-vein · 奢侈高定）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `marble-vein` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#1f2228` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Cinzel`，正文 `Space Grotesk`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint marble-vein` / 导出其它格式：`heige-design export marble-vein --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 大理石纹 — 原创设定集，可商用。跑校验：<code>heige-design lint marble-vein</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

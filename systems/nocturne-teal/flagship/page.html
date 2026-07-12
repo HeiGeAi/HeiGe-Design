@@ -1,0 +1,438 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aphelion · 自主智能体的控制平面</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#2dd4bf; --on-primary:#031815; --ink:#e9edf3; --canvas:#08090d;
+    --surface:#0f1319; --muted:#8a94a4; --hairline:#20262f; --glow:#5ff0dc; --accent:#f6a35c;
+    --sans:'Geist','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif;
+    --body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif;
+    --mono:'JetBrains Mono','SF Mono',ui-monospace,'Cascadia Code','Noto Sans SC','PingFang SC',monospace;
+    --xs:4px; --sm:8px; --md:16px; --lg:24px; --xl:40px; --section:96px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--canvas); color:var(--ink); font-family:var(--body);
+    font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility; overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(45,212,191,.28);color:var(--ink)}
+
+  /* faint hairline grid — texture, never a table */
+  .grid-floor{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(32,38,47,.55) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(32,38,47,.55) 1px,transparent 1px);
+    background-size:48px 48px;
+    -webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000,transparent 78%);
+            mask-image:radial-gradient(120% 90% at 50% 0%,#000,transparent 78%);
+    opacity:.5;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 var(--xl);position:relative;z-index:1}
+
+  /* ——— kickers / mono ——— */
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted);
+  }
+  .mono{font-family:var(--mono)}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ——— nav ——— */
+  nav{
+    position:sticky; top:0; z-index:20; background:rgba(15,19,25,.86);
+    border-bottom:1px solid var(--hairline);
+  }
+  @supports not (backdrop-filter:none){ nav{background:var(--surface)} }
+  .nav-in{
+    max-width:1120px; margin:0 auto; padding:var(--md) var(--xl);
+    display:flex; align-items:center; gap:var(--xl);
+  }
+  .brand{font-family:var(--sans); font-weight:600; letter-spacing:-.3px; font-size:18px; color:var(--ink)}
+  .brand b{color:var(--primary)}
+  .nav-links{display:flex; gap:28px; margin-left:8px}
+  .nav-links a{font-family:var(--mono); font-size:12px; letter-spacing:1.6px; text-transform:uppercase; color:var(--muted); transition:color .18s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-right{margin-left:auto; display:flex; align-items:center; gap:var(--md)}
+  .badge-live{
+    display:inline-flex; align-items:center; gap:7px; padding:5px 11px;
+    border-radius:9999px; background:var(--surface); border:1px solid var(--hairline);
+    font-family:var(--mono); font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--primary);
+  }
+  .badge-live .dot-static{width:6px;height:6px;border-radius:50%;background:var(--primary);box-shadow:0 0 8px rgba(45,212,191,.8)}
+  .badge-alert{
+    display:inline-flex; align-items:center; gap:7px; padding:5px 11px;
+    border-radius:9999px; background:var(--surface); border:1px solid rgba(246,163,92,.35);
+    font-family:var(--mono); font-size:11px; letter-spacing:1.6px; text-transform:uppercase; color:var(--accent);
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:9px; cursor:pointer;
+    font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:.2px;
+    border-radius:9999px; padding:10px 22px; border:1px solid transparent;
+    transition:transform .18s ease, background .18s, border-color .18s, color .18s;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--primary); color:var(--on-primary); box-shadow:0 0 40px rgba(45,212,191,.35)}
+  .btn-primary:hover{background:#3ee0cc; transform:translateY(-1px)}
+  .btn-secondary{background:var(--surface); color:var(--ink); border-color:var(--hairline)}
+  .btn-secondary:hover{border-color:#33404d}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--hairline)}
+  .btn-ghost:hover{border-color:#33404d}
+  .btn .arw{font-family:var(--mono);font-weight:500}
+
+  /* ——— HERO · The Beacon ——— */
+  .hero{position:relative; overflow:hidden; padding:120px 0 108px}
+  .hero-atmos{
+    position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:radial-gradient(60% 55% at 88% -6%, rgba(45,212,191,.16), rgba(45,212,191,.04) 46%, transparent 68%);
+  }
+  /* the diagonal light shaft */
+  .beam{
+    position:absolute; top:-42%; right:11%; width:26%; height:190%; z-index:0; pointer-events:none;
+    transform:rotate(27deg); transform-origin:top center;
+    background:linear-gradient(90deg, transparent, rgba(95,240,220,.045) 40%, rgba(95,240,220,.16) 50%, rgba(95,240,220,.045) 60%, transparent);
+    -webkit-mask-image:linear-gradient(180deg, transparent, #000 16%, #000 66%, transparent);
+            mask-image:linear-gradient(180deg, transparent, #000 16%, #000 66%, transparent);
+  }
+  .hero-in{position:relative; z-index:2; max-width:760px}
+  .hero-kicker{display:inline-flex; align-items:center; gap:9px; margin-bottom:var(--lg)}
+  .hero-kicker .k{font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted)}
+  .hero-kicker .sep{color:var(--hairline)}
+  .hero-kicker .v{font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--primary)}
+  h1.hero-title{
+    font-family:var(--sans); font-weight:600; font-size:clamp(46px,8.4vw,80px);
+    line-height:1.02; letter-spacing:-1.8px; color:var(--ink);
+  }
+  h1.hero-title .line{display:block; white-space:nowrap}
+  h1.hero-title .gw{color:var(--glow); text-shadow:0 0 34px rgba(95,240,220,.45)}
+  .hero-zh{
+    font-family:var(--sans); font-weight:600; font-size:clamp(17px,2.4vw,21px);
+    letter-spacing:.4px; color:var(--ink); margin-top:var(--lg);
+  }
+  .hero-sub{color:var(--muted); font-size:16px; line-height:1.7; margin-top:14px; max-width:466px}
+  .hero-actions{display:flex; align-items:center; gap:var(--md); margin-top:var(--xl); flex-wrap:wrap; position:relative}
+  /* landing halo — exactly one object lit: the primary CTA */
+  .cta-halo{position:absolute; left:-26px; top:50%; width:230px; height:230px; transform:translateY(-50%); z-index:0; pointer-events:none;
+    background:radial-gradient(50% 50% at 50% 50%, rgba(45,212,191,.30), rgba(45,212,191,.08) 46%, transparent 72%);}
+  .hero-actions .btn{position:relative; z-index:1}
+  .hero-live{
+    display:inline-flex; align-items:center; gap:9px; margin-top:26px;
+    font-family:var(--mono); font-size:12px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted);
+  }
+  .hero-live b{color:var(--primary); font-weight:500}
+  /* the single breathing dot */
+  .dot-breathe{position:relative; width:9px; height:9px; border-radius:50%; background:var(--glow); box-shadow:0 0 10px rgba(95,240,220,.9)}
+  .dot-breathe::after{content:""; position:absolute; inset:-6px; border-radius:50%; border:1.5px solid var(--primary); animation:breathe 2.6s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.25; transform:scale(.7)}50%{opacity:.9; transform:scale(1.15)}}
+  .hero-note{font-family:var(--mono); font-size:13px; color:var(--muted); letter-spacing:.1px; margin-top:16px}
+
+  /* ——— stat strip ——— */
+  .stats{border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); background:linear-gradient(var(--surface),var(--surface)); background:rgba(15,19,25,.4)}
+  .stats-in{max-width:1120px; margin:0 auto; padding:0 var(--xl); display:grid; grid-template-columns:repeat(4,1fr)}
+  .stat{padding:var(--xl) var(--lg); border-left:1px solid var(--hairline)}
+  .stat:first-child{border-left:none; padding-left:0}
+  .stat .num{font-family:var(--mono); font-weight:500; font-size:34px; letter-spacing:-.5px; color:var(--primary); font-variant-numeric:tabular-nums}
+  .stat .num .u{color:var(--muted); font-size:20px; margin-left:2px}
+  .stat .lab{font-family:var(--mono); font-size:12px; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted); margin-top:10px}
+
+  /* ——— section shell ——— */
+  section.band{padding:var(--section) 0; position:relative}
+  .sec-head{max-width:720px; margin-bottom:56px}
+  .sec-head .eyebrow{display:block; margin-bottom:16px}
+  .sec-head h2{font-family:var(--sans); font-weight:600; font-size:clamp(30px,4.4vw,44px); line-height:1.08; letter-spacing:-1px; color:var(--ink)}
+  .sec-head p{color:var(--muted); margin-top:16px; max-width:520px}
+
+  /* feature cards */
+  .features{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--lg)}
+  .card{
+    background:var(--surface); border:1px solid var(--hairline); border-radius:16px; padding:var(--lg);
+    display:flex; flex-direction:column; min-height:262px; transition:border-color .2s, transform .2s;
+  }
+  .card:hover{border-color:#2c3947; transform:translateY(-3px)}
+  .card .idx{font-family:var(--mono); font-size:12px; letter-spacing:2px; color:var(--primary)}
+  .card .gm{
+    width:38px;height:38px;border-radius:10px;border:1px solid var(--hairline);background:var(--canvas);
+    display:grid;place-items:center;margin-top:18px;
+  }
+  .card .gm svg{width:19px;height:19px;stroke:var(--primary);fill:none;stroke-width:1.6}
+  .card h3{font-family:var(--sans); font-weight:600; font-size:20px; letter-spacing:-.2px; color:var(--ink); margin-top:20px}
+  .card p{color:var(--muted); font-size:15px; line-height:1.6; margin-top:12px}
+  .card .foot{margin-top:auto; padding-top:18px; display:flex; align-items:center; gap:10px}
+  .card .kv{font-family:var(--mono); font-size:12px; letter-spacing:1px; color:var(--muted)}
+  .card .kv b{color:var(--primary); font-weight:500}
+  .card.alert .gm svg{stroke:var(--accent)}
+  .card.alert .idx{color:var(--accent)}
+
+  /* pricing */
+  .price-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--lg); align-items:stretch}
+  .plan{
+    position:relative; background:var(--surface); border:1px solid var(--hairline); border-radius:16px; padding:30px 26px;
+    display:flex; flex-direction:column;
+  }
+  .plan.feat{border-color:rgba(45,212,191,.55); box-shadow:0 0 60px rgba(45,212,191,.14); transform:translateY(-10px)}
+  .plan .tier{font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted)}
+  .plan.feat .tier{color:var(--primary)}
+  .plan .rec{
+    position:absolute; top:-11px; left:26px; padding:4px 11px; border-radius:9999px;
+    background:var(--primary); color:var(--on-primary); font-family:var(--mono); font-size:11px; letter-spacing:1.4px; text-transform:uppercase; font-weight:500;
+    box-shadow:0 0 26px rgba(45,212,191,.5);
+  }
+  .plan .price{margin-top:20px; display:flex; align-items:baseline; gap:6px}
+  .plan .price .n{font-family:var(--sans); font-weight:600; font-size:46px; letter-spacing:-1.6px; color:var(--ink)}
+  .plan .price .per{font-family:var(--mono); font-size:13px; color:var(--muted); letter-spacing:.5px}
+  .plan .desc{color:var(--muted); font-size:14px; margin-top:12px; min-height:40px}
+  .plan ul{list-style:none; margin:22px 0 26px; display:flex; flex-direction:column; gap:13px}
+  .plan li{position:relative; padding-left:24px; font-size:14.5px; color:var(--ink)}
+  .plan li::before{content:""; position:absolute; left:0; top:8px; width:11px; height:11px; border-radius:50%; border:1.5px solid var(--primary)}
+  .plan li.dim{color:var(--muted)}
+  .plan li.dim::before{border-color:var(--hairline)}
+  .plan .btn{width:100%; justify-content:center; margin-top:auto}
+  .plan .fineprint{font-family:var(--mono); font-size:11px; color:var(--muted); letter-spacing:.5px; margin-top:14px; text-align:center}
+
+  /* CTA band */
+  .cta-band{position:relative; overflow:hidden; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline)}
+  .cta-band .atmos{position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(50% 120% at 50% 120%, rgba(45,212,191,.18), transparent 62%);}
+  .cta-in{max-width:900px; margin:0 auto; padding:var(--section) var(--xl); text-align:center; position:relative; z-index:1}
+  .cta-in .eyebrow{margin-bottom:18px}
+  .cta-in h2{font-family:var(--sans); font-weight:600; font-size:clamp(30px,4.6vw,46px); line-height:1.1; letter-spacing:-1px; color:var(--ink); text-wrap:balance}
+  .cta-in .zh{color:var(--muted); margin-top:16px}
+  .cta-in .row{display:flex; justify-content:center; gap:var(--md); margin-top:34px; flex-wrap:wrap; position:relative}
+  .cta-in .halo{position:absolute; left:50%; top:50%; width:280px; height:220px; transform:translate(-50%,-50%); pointer-events:none;
+    background:radial-gradient(50% 50% at 50% 50%, rgba(45,212,191,.28), transparent 70%)}
+  .cta-in .btn{position:relative; z-index:1}
+
+  /* footer */
+  footer{background:var(--canvas); border-top:1px solid var(--hairline)}
+  .foot-in{max-width:1120px; margin:0 auto; padding:64px var(--xl) 48px}
+  .foot-top{display:flex; gap:var(--xl); flex-wrap:wrap; justify-content:space-between}
+  .foot-brand{max-width:280px}
+  .foot-brand .brand{font-size:18px}
+  .foot-brand p{font-family:var(--mono); font-size:12.5px; color:var(--muted); line-height:1.6; margin-top:14px; letter-spacing:.2px}
+  .foot-cols{display:flex; gap:64px; flex-wrap:wrap}
+  .foot-col h4{font-family:var(--mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:16px}
+  .foot-col a{display:block; font-size:14px; color:var(--ink); margin-bottom:11px; opacity:.82; transition:opacity .18s, color .18s}
+  .foot-col a:hover{opacity:1; color:var(--primary)}
+  .foot-bar{margin-top:56px; padding-top:24px; border-top:1px solid var(--hairline); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px}
+  .foot-bar span{font-family:var(--mono); font-size:12px; color:var(--muted); letter-spacing:.4px}
+  .foot-bar .sig b{color:var(--primary); font-weight:500}
+
+  /* ——— responsive ——— */
+  @media (max-width:1000px){
+    .features,.price-grid{grid-template-columns:1fr 1fr}
+    .plan.feat{transform:none}
+    .stats-in{grid-template-columns:1fr 1fr}
+    .stat{border-top:1px solid var(--hairline)}
+    .stat:first-child,.stat:nth-child(2){border-top:none}
+    .stat:nth-child(odd){padding-left:0}
+    .stat:nth-child(even){border-left:1px solid var(--hairline)}
+  }
+  @media (max-width:720px){
+    .wrap,.nav-in,.stats-in,.foot-in{padding-left:22px;padding-right:22px}
+    .nav-links{display:none}
+    .hero{padding:84px 0 76px}
+    .beam{right:-6%; width:44%; transform:rotate(18deg)}
+    .features,.price-grid{grid-template-columns:1fr}
+    .stats-in{grid-template-columns:1fr 1fr}
+    section.band{padding:72px 0}
+    h1.hero-title .line{white-space:normal}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important; transition:none!important}
+  }
+</style>
+
+<div class="grid-floor"></div>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">APHE<b>·</b>LION</div>
+    <div class="nav-links">
+      <a href="#">平台</a><a href="#">运行时</a><a href="#">定价</a><a href="#">文档</a>
+    </div>
+    <div class="nav-right">
+      <span class="badge-live"><span class="dot-static"></span>Systems Nominal</span>
+      <a class="btn btn-primary" href="#">启动控制台 <span class="arw">↗</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ——— HERO · The Beacon ——— -->
+<header class="hero">
+  <div class="hero-atmos"></div>
+  <div class="beam"></div>
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="hero-kicker">
+        <span class="k">Agent Orchestration</span><span class="sep">/</span><span class="v">Runtime v4</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="line">Runs while</span>
+        <span class="line">you <span class="gw">sleep.</span></span>
+      </h1>
+      <p class="hero-zh">自主智能体舰队的控制平面</p>
+      <p class="hero-sub">把调度、观测和熔断收进一个深空黑操作台。凌晨三点的告警，Aphelion 替你接住，天亮时留一份可回放的时间轴。</p>
+
+      <div class="hero-actions">
+        <span class="cta-halo"></span>
+        <a class="btn btn-primary" href="#">启动控制台 <span class="arw">↗</span></a>
+        <a class="btn btn-secondary" href="#">查看实时状态</a>
+      </div>
+      <div class="hero-live">
+        <span class="dot-breathe"></span><b>1,284</b>&nbsp;agents in flight · all green
+      </div>
+      <p class="hero-note">无需信用卡 · 5 分钟接入现有集群 · 私有部署可选</p>
+    </div>
+  </div>
+</header>
+
+<!-- ——— stat strip ——— -->
+<div class="stats">
+  <div class="stats-in">
+    <div class="stat"><div class="num tnum">99.98<span class="u">%</span></div><div class="lab">Uptime · 12mo</div></div>
+    <div class="stat"><div class="num tnum">42<span class="u">ms</span></div><div class="lab">p50 dispatch</div></div>
+    <div class="stat"><div class="num tnum">18.4<span class="u">B</span></div><div class="lab">Tasks routed</div></div>
+    <div class="stat"><div class="num tnum">0<span class="u">分</span></div><div class="lab">值夜班的人</div></div>
+  </div>
+</div>
+
+<!-- ——— features ——— -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">// What runs the fleet</span>
+      <h2>一个操作台，管住上千个智能体。</h2>
+      <p>声明式拓扑、全链路回放、预算内的自动熔断。你只需要在早上看一眼时间轴。</p>
+    </div>
+    <div class="features">
+      <div class="card">
+        <span class="idx">01</span>
+        <div class="gm"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4 6.6 15.8M12 7.4l5.4 8.4"/></svg></div>
+        <h3>编排引擎</h3>
+        <p>把上千个智能体当成一个进程来调度。声明式拓扑，毫秒级重排，节点漂移自动收敛。</p>
+        <div class="foot"><span class="kv">RESCHEDULE&nbsp;<b>&lt;12ms</b></span></div>
+      </div>
+      <div class="card">
+        <span class="idx">02</span>
+        <div class="gm"><svg viewBox="0 0 24 24"><path d="M3 12h4l2 5 4-13 2 8h6"/></svg></div>
+        <h3>全链路观测</h3>
+        <p>每一次工具调用、每一段推理、每一分 token，都落在同一条时间轴上，随时倒带到出错的那一帧。</p>
+        <div class="foot"><span class="kv">REPLAY&nbsp;<b>100%</b>&nbsp;traces</span></div>
+      </div>
+      <div class="card alert">
+        <span class="idx">03</span>
+        <div class="gm"><svg viewBox="0 0 24 24"><path d="M12 3 3 20h18L12 3z"/><path d="M12 10v4M12 17v.5"/></svg></div>
+        <h3>自动熔断</h3>
+        <p>预算或延迟一越界，自动降级、隔离、回滚。异常留在沙盒里，而不是留在你的睡眠里。</p>
+        <div class="foot"><span class="badge-alert">Budget guard · armed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ——— pricing ——— -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">// Pricing</span>
+      <h2>按舰队规模付费，不按焦虑付费。</h2>
+      <p>从一个人的实验，到跨机房的生产集群，同一个控制台一路带你走。</p>
+    </div>
+    <div class="price-grid">
+      <div class="plan">
+        <div class="tier">Solo</div>
+        <div class="price"><span class="n">$0</span><span class="per">/ 永久</span></div>
+        <div class="desc">给一个人的深夜实验。</div>
+        <ul>
+          <li>1 个 workspace</li>
+          <li>50 个并发 agent</li>
+          <li>7 天时间轴回放</li>
+          <li class="dim">社区支持</li>
+        </ul>
+        <a class="btn btn-secondary" href="#">免费开始</a>
+        <div class="fineprint">no card required</div>
+      </div>
+
+      <div class="plan feat">
+        <div class="rec">推荐</div>
+        <div class="tier">Scale</div>
+        <div class="price"><span class="n">$99</span><span class="per">/ 月 · 每席</span></div>
+        <div class="desc">给一支跑生产的小队。</div>
+        <ul>
+          <li>无限 workspace</li>
+          <li>2,000 个并发 agent</li>
+          <li>90 天全链路回放</li>
+          <li>熔断与预算护栏</li>
+          <li>值班加急通道</li>
+        </ul>
+        <a class="btn btn-primary" href="#">启动 Scale <span class="arw">↗</span></a>
+        <div class="fineprint">14 天免费试用</div>
+      </div>
+
+      <div class="plan">
+        <div class="tier">Enterprise</div>
+        <div class="price"><span class="n">定制</span></div>
+        <div class="desc">给跨机房的舰队司令部。</div>
+        <ul>
+          <li>私有部署 / 自托管</li>
+          <li>无限并发 agent</li>
+          <li>SSO 与审计留痕</li>
+          <li>专属 SLA 99.99%</li>
+        </ul>
+        <a class="btn btn-ghost" href="#">联系我们</a>
+        <div class="fineprint">on-prem ready</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ——— CTA band ——— -->
+<section class="cta-band">
+  <div class="atmos"></div>
+  <div class="cta-in">
+    <span class="eyebrow">// Ready when you're asleep</span>
+    <h2>把值夜班的活，交给 Aphelion。</h2>
+    <p class="zh">今晚接上一个集群，明早读一条时间轴，就这么简单。</p>
+    <div class="row">
+      <span class="halo"></span>
+      <a class="btn btn-primary" href="#">启动控制台 <span class="arw">↗</span></a>
+      <a class="btn btn-secondary" href="#">预约演示</a>
+    </div>
+  </div>
+</section>
+
+<!-- ——— footer ——— -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">APHE<b>·</b>LION</div>
+        <p>The control plane for autonomous agents. 深空黑负责沉默，电青负责发光。</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Product</h4>
+          <a href="#">编排引擎</a><a href="#">观测台</a><a href="#">熔断策略</a><a href="#">Changelog</a>
+        </div>
+        <div class="foot-col">
+          <h4>Developers</h4>
+          <a href="#">文档</a><a href="#">API</a><a href="#">CLI</a><a href="#">状态页</a>
+        </div>
+        <div class="foot-col">
+          <h4>Company</h4>
+          <a href="#">关于</a><a href="#">安全</a><a href="#">联系</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 Aphelion Labs · 深空电青</span>
+      <span class="sig">Designed by <b>HeiGe-Design</b> · nocturne-teal</span>
+    </div>
+  </div>
+</footer>

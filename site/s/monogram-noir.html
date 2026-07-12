@@ -1,0 +1,970 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>字母黑 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 奢侈高定</div>
+<div class="hero"><div class="fam">奢侈高定</div><h1>字母黑<span class="badge">✓ lint 0 error / 6w</span></h1><div class="slug">monogram-noir · MonogramNoir-design-system</div><p class="desc">MonogramNoir is a couture house system — ivory type on true noir, disciplined by a single oxblood-wine accent used once per view. A Bodoni-cut didone carries the masthead and an oversized interlocked monogram, while a wide-tracked geometric sans handles maison labels. Its signature is a repeated monogram motif ghosted across a couture module grid with one full-bleed image breaking the frame. Extreme negative space, sharp edges, slow fades. Built by HeiGe-Design.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#EFE9DF;--ink:#1C1814;--pri:#111111;--onpri:#EFE9DF;--acc:#111111;--surf:#F5F0E7;--muted:#625B50;--line:#D8D0C2;--r:4px;--dff:"Bodoni Moda", Didot, "Bodoni 72", "Playfair Display", "Times New Roman", "Noto Serif SC", "Songti SC", serif;--bff:"Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", serif;--mff:"Bodoni Moda", Didot, "Bodoni 72", "Playfair Display", "Times New Roman", "Noto Serif SC", "Songti SC", serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">字母黑</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#111111"></i><i style="background:#EFE9DF"></i><i style="background:#1C1814"></i><i style="background:#F5F0E7"></i><i style="background:#625B50"></i><i style="background:#D8D0C2"></i><i style="background:#6E1423"></i></div>
+  <div class="swrap"><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">brand-monogram</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">card-collection</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">card-lookbook</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">seal-maison</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">tag-season</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">input-newsletter</span></div>
+  </div>
+  <div class="card" style="--bg:#EFE9DF;--ink:#1C1814;--pri:#111111;--onpri:#EFE9DF;--acc:#111111;--surf:#F5F0E7;--muted:#625B50;--line:#D8D0C2;--r:4px;--dff:"Bodoni Moda", Didot, "Bodoni 72", "Playfair Display", "Times New Roman", "Noto Serif SC", "Songti SC", serif;--bff:"Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", "Noto Serif SC", "Songti SC", serif;--mff:"Bodoni Moda", Didot, "Bodoni 72", "Playfair Display", "Times New Roman", "Noto Serif SC", "Songti SC", serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">字母黑</div></div>
+    <div class="swrap"><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#F5F0E7;color:#1C1814;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI 签名时刻 · The Monogram Watermark Grid（字母水印网格）**
+一整屏象牙页，交错的 Bodoni 首字母组合被放到占满版心的尺度，压成 6% 墨色的幽灵水印铺在背景；水印之上覆一层可见的高定 12 列裁片网格，一张 3:4 的出血大图从右侧撕出版面、压断网格线；页边留白里，同一个字母组合缩小成 24px 沿基线重复成一条母题带。母题重复 + 高定栅格 + 出血大图三件事同时发生，换个模板绝对复制不出这一屏。
+
+**Deck 签名时刻 · The Wax Seal Reveal（封蜡显影）**
+封面真黑幕布静置两秒，只有一个巨号交错字母组合缓慢淡入；到第三秒，下三分之一处一枚圆形酒红封蜡印以极轻的静态压印阴影浮现，象牙宽字距的时装屋名同时淡入蜡印之下。纯黑幕布上唯一的一点酒红，就是整场演示的视觉锤。动效只用 opacity 淡入，尊重 prefers-reduced-motion，不动画化阴影。
+
+---</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- 让一句话独占一整屏，负空间越狠气场越足。
+- 酒红一屏只用一次，压成封蜡、序号或一个标点。
+- 主体全部直角，圆只留给那一枚封蜡印。
+- 大字大到有点过分，monogram 与正文拉到 11:1。
+- 分层用 hairline 与明度断层，不用阴影堆叠。
+- 中文落思源宋体 / 宋体兜底，报头走 Bodoni didone。
+
+**Don't**
+- 不碰紫蓝俗套渐变（`#667eea → #764ba2`）及其全家桶，这套只有黑、象牙、酒红。
+- 不做居中卡片三件套（一行标题 + 一行灰副标 + 三个等宽圆角卡整页重复）。这套靠出血大图与不对称裁片网格立骨架。
+- 中文绝不用日文字体（Mochiy、Zen Maru 等）渲染，简体会缺字变豆腐。
+- 不动画化阴影 / text-shadow，封蜡的压印感是静态的，常亮不闪。
+- 不加第二个强调色，多一色这套就散。
+- 不用 emoji 当图标，时装屋只认字母组合与封蜡印。
+
+---</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: MonogramNoir-design-system
+description: MonogramNoir is a couture house system — ivory type on true noir, disciplined by a single oxblood-wine accent used once per view. A Bodoni-cut didone carries the masthead and an oversized interlocked monogram, while a wide-tracked geometric sans handles maison labels. Its signature is a repeated monogram motif ghosted across a couture module grid with one full-bleed image breaking the frame. Extreme negative space, sharp edges, slow fades. Built by HeiGe-Design.
+
+colors:
+  primary: &quot;#111111&quot;
+  on-primary: &quot;#EFE9DF&quot;
+  ink: &quot;#1C1814&quot;
+  canvas: &quot;#EFE9DF&quot;
+  surface: &quot;#F5F0E7&quot;
+  muted: &quot;#625B50&quot;
+  hairline: &quot;#D8D0C2&quot;
+  wine: &quot;#6E1423&quot;
+
+typography:
+  monogram:
+    fontFamily: '&quot;Bodoni Moda&quot;, Didot, &quot;Bodoni 72&quot;, &quot;Playfair Display&quot;, &quot;Times New Roman&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 200px
+    fontWeight: 700
+    lineHeight: 0.9
+    letterSpacing: -4px
+  display-xl:
+    fontFamily: '&quot;Bodoni Moda&quot;, Didot, &quot;Bodoni 72&quot;, &quot;Playfair Display&quot;, &quot;Times New Roman&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 76px
+    fontWeight: 500
+    lineHeight: 1.02
+    letterSpacing: -1.5px
+  display-lg:
+    fontFamily: '&quot;Bodoni Moda&quot;, Didot, &quot;Bodoni 72&quot;, &quot;Playfair Display&quot;, &quot;Times New Roman&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 48px
+    fontWeight: 500
+    lineHeight: 1.08
+    letterSpacing: -0.8px
+  heading:
+    fontFamily: '&quot;Bodoni Moda&quot;, Didot, &quot;Bodoni 72&quot;, &quot;Playfair Display&quot;, &quot;Times New Roman&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 24px
+    fontWeight: 600
+    lineHeight: 1.25
+    letterSpacing: -0.2px
+  body:
+    fontFamily: '&quot;Cormorant Garamond&quot;, &quot;EB Garamond&quot;, Georgia, &quot;Times New Roman&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 18px
+    fontWeight: 500
+    lineHeight: 1.75
+    letterSpacing: 0.1px
+  body-mono:
+    fontFamily: '&quot;Bodoni Moda&quot;, Didot, &quot;Bodoni 72&quot;, &quot;Playfair Display&quot;, &quot;Times New Roman&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 20px
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: 0.5px
+  button:
+    fontFamily: '&quot;Jost&quot;, Futura, &quot;Century Gothic&quot;, &quot;Helvetica Neue&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 500
+    lineHeight: 1
+    letterSpacing: 2.5px
+  caption:
+    fontFamily: '&quot;Jost&quot;, Futura, &quot;Century Gothic&quot;, &quot;Helvetica Neue&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 0.3px
+  eyebrow:
+    fontFamily: '&quot;Jost&quot;, Futura, &quot;Century Gothic&quot;, &quot;Helvetica Neue&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 12px
+    fontWeight: 500
+    lineHeight: 1
+    letterSpacing: 3.5px
+
+rounded:
+  none: 0px
+  sm: 2px
+  md: 4px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 32px
+  xl: 64px
+  section: 120px
+
+components:
+  brand-monogram: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.monogram}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  nav-bar: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, borderColor: &quot;{colors.hairline}&quot;, typography: &quot;{typography.eyebrow}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.lg} {spacing.xl}&quot; }
+  card-collection: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, borderColor: &quot;{colors.hairline}&quot;, typography: &quot;{typography.heading}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.xl}&quot; }
+  card-lookbook: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.body}&quot;, rounded: &quot;{rounded.md}&quot;, padding: &quot;{spacing.lg}&quot; }
+  button-primary: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.sm} {spacing.xl}&quot; }
+  button-secondary: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.wine}&quot;, borderColor: &quot;{colors.wine}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.sm} {spacing.xl}&quot; }
+  stat-block: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.body-mono}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.lg}&quot; }
+  seal-maison: { backgroundColor: &quot;{colors.wine}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.eyebrow}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.md}&quot; }
+  tag-season: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.muted}&quot;, borderColor: &quot;{colors.hairline}&quot;, typography: &quot;{typography.caption}&quot;, rounded: &quot;{rounded.md}&quot;, padding: &quot;{spacing.xs} {spacing.sm}&quot; }
+  input-newsletter: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, borderColor: &quot;{colors.hairline}&quot;, typography: &quot;{typography.caption}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;{spacing.sm} {spacing.md}&quot; }
+  footer: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, borderColor: &quot;{colors.hairline}&quot;, typography: &quot;{typography.caption}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section} {spacing.xl}&quot; }
+  slide-cover: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.display-xl}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-section-divider: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-stat-hero: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.body-mono}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-quote: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-closing: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.xl} {spacing.section}&quot; }
+---
+
+# MonogramNoir · 字母黑
+
+一座只有三种材料的时装屋：真黑、象牙、一封酒红蜡印。别的都靠留白和网格撑起来。
+
+---
+
+## Overview
+
+字母黑是一套时装屋语言。它把品牌收缩成一个交错的衬线字母，反复压在象牙纸与真黑幕布之间，用高定裁片网格排布，让一张出血大图撕开画面。
+
+主色只有两个角色。**真黑 `#111111` 是幕布与权威**，落地为按钮、页脚、封面幕布；**象牙 `#EFE9DF` 是纸与呼吸**，承载全部正文与大面积负空间。酒红 `#6E1423` 是第三种材料，一屏只用一次，压成封蜡印、章节序号、金句里那一个标点。
+
+字体签名是一记 Bodoni 高对比衬线。巨号首字母组合当报头，细体大写做展示行，几何无衬线拉宽字距做时装屋标签。中文落到思源宋体兜底，绝不用日文字体渲染。
+
+节奏是慢的。大留白铺垫，一次爆发，缓慢淡入，戛然收束。这套的气场来自克制，不来自堆料。
+
+---
+
+## Colors
+
+三色一网格，节奏靠版式不靠堆色。
+
+**Brand &amp; Accent**
+| Token | Hex | 用途 |
+|---|---|---|
+| primary | `#111111` | 真黑幕布，按钮、页脚、封面与金句幕布的底 |
+| wine | `#6E1423` | 酒红封蜡，唯一强调色，一屏只出现一次 |
+
+**Surface**
+| Token | Hex | 用途 |
+|---|---|---|
+| canvas | `#EFE9DF` | 象牙纸，页面底与大面积负空间 |
+| surface | `#F5F0E7` | 抬升一档的暖象牙，藏品卡与输入框 |
+| hairline | `#D8D0C2` | 1px 暖分隔线，代替阴影承担分层 |
+
+**Text**
+| Token | Hex | 用途 |
+|---|---|---|
+| ink | `#1C1814` | 暖近黑正文，落在象牙上（对 canvas 约 14.6:1） |
+| on-primary | `#EFE9DF` | 象牙字，落在真黑与酒红上（对 primary 约 15.6:1） |
+| muted | `#625B50` | 暖褐灰次要文字与标签（对 canvas 约 5.55:1） |
+
+**Semantic**
+这套克制到不设涨跌红绿。酒红是全系统唯一强调，任何需要被记住的一点都交给它：封蜡印、章节大序号、金句里的引号。绝不做第二个强调色，多一色就散。
+
+对比全部手核过 WCAG AA：最紧的一对是 muted 落在象牙上 5.55:1，仍然过线；其余正文对底均在 14:1 以上。
+
+---
+
+## Typography
+
+**Font Family**
+
+- 衬线报头（monogram / display / heading / body-mono）：`&quot;Bodoni Moda&quot;, Didot, &quot;Bodoni 72&quot;, &quot;Playfair Display&quot;, &quot;Times New Roman&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif`。Bodoni 系高对比 didone，粗细笔画反差就是这套的时装味。断网塌回系统衬线仍立得住，中文兜底走思源宋体与宋体。
+- 正文衬线（body）：`&quot;Cormorant Garamond&quot;, &quot;EB Garamond&quot;, Georgia, ..., &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif`。少量正文用细腻过渡衬线读，克制且优雅。
+- 时装屋标签（button / caption / eyebrow）：`&quot;Jost&quot;, Futura, &quot;Century Gothic&quot;, &quot;Helvetica Neue&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`。几何无衬线大写拉宽字距，做导航与眉标。
+
+中文铁律：所有能承载中文的字体栈末尾都挂系统兜底，衬线走 Noto Serif SC / Songti SC，无衬线走 Noto Sans SC / PingFang SC。中文绝不用日文字体（Mochiy、Zen Maru 等）渲染，简体会缺字变豆腐块。
+
+**Hierarchy**
+
+| Role | Font | Size | Weight | Tracking | 用途 |
+|---|---|---|---|---|---|
+| monogram | Bodoni Moda | 200px | 700 | -4px | 交错首字母组合，报头与水印母题 |
+| display-xl | Bodoni Moda | 76px | 500 | -1.5px | 封面与首屏时装屋名 |
+| display-lg | Bodoni Moda | 48px | 500 | -0.8px | 章节标题、金句、收尾行 |
+| heading | Bodoni Moda | 24px | 600 | -0.2px | 藏品卡标题 |
+| body | Cormorant Garamond | 18px | 500 | 0.1px | 正文与图注，行距 1.75 |
+| body-mono | Bodoni Moda | 20px | 500 | 0.5px | 数据与价格，走 tabular 等宽衬线数字 |
+| button | Jost | 13px | 500 | 2.5px | 按钮大写标签 |
+| caption | Jost | 13px | 400 | 0.3px | 说明、标签、页脚 |
+| eyebrow | Jost | 12px | 500 | 3.5px | 眉标与导航，maison 级宽字距 |
+
+**Principles**
+- 最大字与正文差距拉到 11:1（monogram 200 对 body 18），大字大到有点过分，才是高定。
+- 展示行走衬线，标签走无衬线拉宽字距，两种材料泾渭分明。
+- 数字统一走 body-mono 的 Bodoni tabular lining figures，对齐整齐，衬线数字本身就是签名。
+- 全大写只给短标签与序号，正文标题保持大小写混排，才有报头气派。
+
+---
+
+## Layout
+
+**Spacing**
+| Token | Value | 用途 |
+|---|---|---|
+| xs | 4px | 标签内边、序号与字之间 |
+| sm | 8px | 按钮竖向内边、输入框内边 |
+| md | 16px | 封蜡印内边、字段横向内边 |
+| lg | 32px | 卡片图注区、导航竖向内边 |
+| xl | 64px | 藏品卡内边、按钮横向内边 |
+| section | 120px | 版块间距、页脚与所有幻灯片内边 |
+
+**Grid &amp; Container**
+高定裁片网格：桌面 12 列，列间距宽（gutter ≥ 32px），左右外边距大（≥ 120px），像样衣的裁片一样对齐到每一条基线。内容容器最宽 1280px，但正文列绝不铺满，锁在 640px 以内保持编辑感。中文限宽用 em 或 px，绝不用 ch。
+
+**Whitespace**
+留白是主料不是缝隙。版块之间留一整屏的空，让一句话独占视野。负空间越狠，那一封酒红蜡印越响。宁可少放一件展品，也要给主角留出气场。
+
+---
+
+## Elevation &amp; Depth
+
+这套不是暗色科技系，不用辉光，不堆阴影。分层靠三样：
+
+1. **明度断层**：真黑幕布与象牙纸之间的巨大明度差本身就是最强的层级。
+2. **Hairline**：`#D8D0C2` 的 1px 暖线代替卡片阴影，划分区块，克制而精确。
+3. **单级压印**：只有封蜡印（seal-maison）允许一层极轻的静态阴影，模拟蜡被压进纸的物理感，`0 1px 2px rgba(17,17,17,.18)`，常亮不闪。
+
+不动画化阴影（发光逐帧重绘极贵，且这套本就不该闪）。不使用 backdrop-filter（滚动持续重绘）。深度来自材质与留白，不来自模糊。
+
+---
+
+## Shapes
+
+**Border Radius**
+| Token | Value | 用途 |
+|---|---|---|
+| none | 0px | 主体全部直角：按钮、卡片、导航、页脚、全部幻灯片 |
+| sm | 2px | 输入框，几乎察觉不到的软化 |
+| md | 4px | 藏品图卡与季度标签，唯一允许的一点圆 |
+| pill | 9999px | 圆形封蜡印与状态点 |
+
+高定语言是锋利的，主体一律直角。圆只出现在封蜡印这一处圆形，与整套的直线形成一次反差。
+
+**图片几何**
+出血矩形，无圆角，画幅锁 1:1 与 3:4 两种时装拍摄比例。大图从版心撕向页面边缘出血，是这套的呼吸点。图片不描边，让它自己撞进象牙留白。
+
+---
+
+## Components
+
+**brand-monogram** — 交错首字母组合的报头与水印母题。象牙底、真黑字、200px Bodoni，直角，四周 section 级留白。既做页头 logo，也做背景水印。
+
+**nav-bar** — 时装屋顶栏。象牙底、真黑眉标字、底部一条 hairline。导航项全大写、宽字距，靠间距不靠分隔符排布。
+
+**card-collection** — 藏品网格卡。抬升象牙面、真黑标题、hairline 描边、直角、xl 内边。卡内标题走 heading，说明走 body，克制到只有文字与一条线。
+
+**card-lookbook** — 出血图卡。真黑幕布托一张出血大图，下方象牙字图注走 body。这是把大图撕进网格的载体，md 圆角是全套唯一一点软化。
+
+**button-primary** — 真黑直角实心按钮，象牙大写标签，横向 xl 内边。像时装屋门牌一样沉。
+
+**button-secondary** — 酒红描边幽灵按钮，象牙底、酒红字、酒红边、直角。全套唯一让强调色现身于交互的地方。
+
+**stat-block** — 时装屋数字（创立年份、匠人数、成衣件数）。象牙底、真黑 Bodoni tabular 数字，配 muted 眉标单位。
+
+**seal-maison** — 圆形酒红封蜡印，象牙字、pill 圆、单级静态压印阴影。全系统唯一的圆，也是唯一让酒红成为主角的一次。
+
+**tag-season** — 季度与系列小标签。象牙底、muted 字、hairline 边、md 圆、极小内边。
+
+**input-newsletter** — 页脚订阅字段。抬升象牙面、真黑字、hairline 边、sm 圆。
+
+**footer** — 时装屋页脚。真黑幕布、象牙字、顶部一条 hairline、section 级上下留白。把整页收进一片黑里，像谢幕。
+
+---
+
+## Presentation System
+
+同一套 token 直接驱动 16:9 演示。原则对齐：一页一句话、黄金三秒、视觉锤。视觉锤固定两件：交错的 Bodoni 首字母组合 + 那封酒红蜡印。
+
+- **封面（slide-cover）**：真黑幕布，正中一个 200px 交错字母组合，下三分之一压一封酒红封蜡印，时装屋名走 display-xl 象牙大写，缓慢淡入。黄金三秒里只让人看见字母与那一点酒红。
+- **过渡页（slide-section-divider）**：翻成象牙底，制造黑白节奏断层。章节号用酒红 Bodoni 大序号（01 / 02），标题走 display-lg 真黑。全场只有过渡页翻白，节奏才有起伏。
+- **数据页（slide-stat-hero）**：象牙底，一个巨号 Bodoni tabular 数字独占版心，单位走 eyebrow 宽字距 muted，数字底下一道酒红短横当视觉锤。一页只讲一个数。
+- **金句页（slide-quote）**：真黑幕布，一句细体 display-lg 象牙字占满屏，开头一个酒红引号。一页一句话在这里做到极致，四周全是黑留白。
+- **收尾页（slide-closing）**：真黑幕布，一句 display-lg 行动号召，配一枚酒红封蜡印与 button 大写标签，像时装屋谢幕落款。
+
+一句话一屏，主角只有一个，酒红一场只准红三次：封面蜡印、数据短横、收尾落款。
+
+---
+
+## Signature Moment
+
+**UI 签名时刻 · The Monogram Watermark Grid（字母水印网格）**
+一整屏象牙页，交错的 Bodoni 首字母组合被放到占满版心的尺度，压成 6% 墨色的幽灵水印铺在背景；水印之上覆一层可见的高定 12 列裁片网格，一张 3:4 的出血大图从右侧撕出版面、压断网格线；页边留白里，同一个字母组合缩小成 24px 沿基线重复成一条母题带。母题重复 + 高定栅格 + 出血大图三件事同时发生，换个模板绝对复制不出这一屏。
+
+**Deck 签名时刻 · The Wax Seal Reveal（封蜡显影）**
+封面真黑幕布静置两秒，只有一个巨号交错字母组合缓慢淡入；到第三秒，下三分之一处一枚圆形酒红封蜡印以极轻的静态压印阴影浮现，象牙宽字距的时装屋名同时淡入蜡印之下。纯黑幕布上唯一的一点酒红，就是整场演示的视觉锤。动效只用 opacity 淡入，尊重 prefers-reduced-motion，不动画化阴影。
+
+---
+
+## Do's and Don'ts
+
+**Do**
+- 让一句话独占一整屏，负空间越狠气场越足。
+- 酒红一屏只用一次，压成封蜡、序号或一个标点。
+- 主体全部直角，圆只留给那一枚封蜡印。
+- 大字大到有点过分，monogram 与正文拉到 11:1。
+- 分层用 hairline 与明度断层，不用阴影堆叠。
+- 中文落思源宋体 / 宋体兜底，报头走 Bodoni didone。
+
+**Don't**
+- 不碰紫蓝俗套渐变（`#667eea → #764ba2`）及其全家桶，这套只有黑、象牙、酒红。
+- 不做居中卡片三件套（一行标题 + 一行灰副标 + 三个等宽圆角卡整页重复）。这套靠出血大图与不对称裁片网格立骨架。
+- 中文绝不用日文字体（Mochiy、Zen Maru 等）渲染，简体会缺字变豆腐。
+- 不动画化阴影 / text-shadow，封蜡的压印感是静态的，常亮不闪。
+- 不加第二个强调色，多一色这套就散。
+- 不用 emoji 当图标，时装屋只认字母组合与封蜡印。
+
+---
+
+## Responsive Behavior
+
+移动端是重新编排的另一段叙事，不是桌面端缩一缩。
+
+| 断点 | 布局 |
+|---|---|
+| ≥ 1024px | 12 列高定网格，出血大图占 5–7 列并撕出右缘，字母水印铺满背景 |
+| 640–1023px | 收成 8 列，出血图移到版块顶部通栏，水印字母缩小 |
+| ≤ 639px | 单列叙事，字母水印缩为右上角一枚角标，出血图顶部通栏，导航折进抽屉 |
+
+折叠策略：手机上放弃背景水印铺满，改成角标母题，保住象牙留白与那封酒红蜡印这两个识别点。标题按最长一行用 clamp() 收字号，每行 white-space:nowrap 锁整行，窄屏（≤390px）逐屏自检无孤字、无横向溢出。中文限宽用 em / px，绝不用 ch。
+
+---
+
+## Anti-Slop Pledge
+
+抹掉时装屋名，这一页仍一眼看得出是有人用手排的：真黑与象牙的明度断层、Bodoni 报头的粗细反差、一封只出现一次的酒红蜡印、被出血大图撕断的裁片网格。它不是流水线吐出来的通用 SaaS 模板，是一座只用三种材料、把克制做到极致的时装屋。
+
+Built by HeiGe-Design · MIT.
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #111111;
+  --color-on-primary: #efe9df;
+  --color-ink: #1c1814;
+  --color-canvas: #efe9df;
+  --color-surface: #f5f0e7;
+  --color-muted: #625b50;
+  --color-hairline: #d8d0c2;
+  --color-wine: #6e1423;
+  --font-monogram: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-xl: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;EB Garamond\&quot;, Georgia, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-body-mono: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-button: &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-monogram: 200px;
+  --text-display-xl: 76px;
+  --text-display-lg: 48px;
+  --text-heading: 24px;
+  --text-body: 18px;
+  --text-body-mono: 20px;
+  --text-button: 13px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-monogram: -4px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0.1px;
+  --tracking-body-mono: 0.5px;
+  --tracking-button: 2.5px;
+  --tracking-caption: 0.3px;
+  --tracking-eyebrow: 3.5px;
+  --font-weight-monogram: 700;
+  --font-weight-display-xl: 500;
+  --font-weight-display-lg: 500;
+  --font-weight-heading: 600;
+  --font-weight-body: 500;
+  --font-weight-body-mono: 500;
+  --font-weight-button: 500;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 500;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+  --spacing-section: 120px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#111111&quot;,
+        &quot;on-primary&quot;: &quot;#efe9df&quot;,
+        &quot;ink&quot;: &quot;#1c1814&quot;,
+        &quot;canvas&quot;: &quot;#efe9df&quot;,
+        &quot;surface&quot;: &quot;#f5f0e7&quot;,
+        &quot;muted&quot;: &quot;#625b50&quot;,
+        &quot;hairline&quot;: &quot;#d8d0c2&quot;,
+        &quot;wine&quot;: &quot;#6e1423&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;monogram&quot;: [
+          &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Cormorant Garamond\&quot;, \&quot;EB Garamond\&quot;, Georgia, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;monogram&quot;: [
+          &quot;200px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-4px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;display-xl&quot;: [
+          &quot;76px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1.5px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;48px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.8px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;24px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;18px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;20px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.5px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;3.5px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;2px&quot;,
+        &quot;md&quot;: &quot;4px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;32px&quot;,
+        &quot;xl&quot;: &quot;64px&quot;,
+        &quot;section&quot;: &quot;120px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #111111;
+  --color-on-primary: #efe9df;
+  --color-ink: #1c1814;
+  --color-canvas: #efe9df;
+  --color-surface: #f5f0e7;
+  --color-muted: #625b50;
+  --color-hairline: #d8d0c2;
+  --color-wine: #6e1423;
+  --font-monogram: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-xl: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;EB Garamond\&quot;, Georgia, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-body-mono: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-button: &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-monogram: 200px;
+  --text-display-xl: 76px;
+  --text-display-lg: 48px;
+  --text-heading: 24px;
+  --text-body: 18px;
+  --text-body-mono: 20px;
+  --text-button: 13px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-monogram: -4px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0.1px;
+  --tracking-body-mono: 0.5px;
+  --tracking-button: 2.5px;
+  --tracking-caption: 0.3px;
+  --tracking-eyebrow: 3.5px;
+  --font-weight-monogram: 700;
+  --font-weight-display-xl: 500;
+  --font-weight-display-lg: 500;
+  --font-weight-heading: 600;
+  --font-weight-body: 500;
+  --font-weight-body-mono: 500;
+  --font-weight-button: 500;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 500;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+  --spacing-section: 120px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;MonogramNoir is a couture house system — ivory type on true noir, disciplined by a single oxblood-wine accent used once per view. A Bodoni-cut didone carries the masthead and an oversized interlocked monogram, while a wide-tracked geometric sans handles maison labels. Its signature is a repeated monogram motif ghosted across a couture module grid with one full-bleed image breaking the frame. Extreme negative space, sharp edges, slow fades. Built by HeiGe-Design.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.067,
+          0.067,
+          0.067
+        ],
+        &quot;hex&quot;: &quot;#111111&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.937,
+          0.914,
+          0.875
+        ],
+        &quot;hex&quot;: &quot;#efe9df&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.11,
+          0.094,
+          0.078
+        ],
+        &quot;hex&quot;: &quot;#1c1814&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.937,
+          0.914,
+          0.875
+        ],
+        &quot;hex&quot;: &quot;#efe9df&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.961,
+          0.941,
+          0.906
+        ],
+        &quot;hex&quot;: &quot;#f5f0e7&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.384,
+          0.357,
+          0.314
+        ],
+        &quot;hex&quot;: &quot;#625b50&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.847,
+          0.816,
+          0.761
+        ],
+        &quot;hex&quot;: &quot;#d8d0c2&quot;
+      }
+    },
+    &quot;wine&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.431,
+          0.078,
+          0.137
+        ],
+        &quot;hex&quot;: &quot;#6e1423&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 32,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 64,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 120,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 2,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;monogram&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 200,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 76,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 48,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.8,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 24,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;EB Garamond\&quot;, Georgia, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 18,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Bodoni Moda\&quot;, Didot, \&quot;Bodoni 72\&quot;, \&quot;Playfair Display\&quot;, \&quot;Times New Roman\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 20,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Jost\&quot;, Futura, \&quot;Century Gothic\&quot;, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 3.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 字母黑（monogram-noir · 奢侈高定）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `monogram-noir` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#111111` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Bodoni Moda`，正文 `Cormorant Garamond`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint monogram-noir` / 导出其它格式：`heige-design export monogram-noir --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 字母黑 — 原创设定集，可商用。跑校验：<code>heige-design lint monogram-noir</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

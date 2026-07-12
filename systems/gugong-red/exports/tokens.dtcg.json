@@ -1,0 +1,299 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Neo-Oriental heritage system founded on the deep oxblood of a palace wall (#9A2B2B), edged in bright imperial gold and grounded by dai-blue roof shadow. Heavy Song-serif titles stand vertically like an unrolled handscroll while a cinnabar seal breaks a hairline gold lattice frame as the signing stamp. Sharp zero-radius blocks, wide silk-paper whitespace, and high-contrast Didot-style numerals carry archival serials. Built for museums, cultural heritage, premium heritage craft, and archival collections. Ceremonial, restrained, unmistakably imperial, never a template. Signed HeiGe-Design.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.604,
+          0.169,
+          0.169
+        ],
+        "hex": "#9a2b2b"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.961,
+          0.937,
+          0.882
+        ],
+        "hex": "#f5efe1"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.141,
+          0.102,
+          0.082
+        ],
+        "hex": "#241a15"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.953,
+          0.918,
+          0.839
+        ],
+        "hex": "#f3ead6"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.984,
+          0.965,
+          0.918
+        ],
+        "hex": "#fbf6ea"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.455,
+          0.388,
+          0.318
+        ],
+        "hex": "#746351"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.851,
+          0.78,
+          0.627
+        ],
+        "hex": "#d9c7a0"
+      }
+    },
+    "gold": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.788,
+          0.635,
+          0.153
+        ],
+        "hex": "#c9a227"
+      }
+    },
+    "dai": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.18,
+          0.227,
+          0.29
+        ],
+        "hex": "#2e3a4a"
+      }
+    },
+    "seal": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.745,
+          0.212,
+          0.149
+        ],
+        "hex": "#be3626"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 80,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "xs": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 72,
+          "unit": "px"
+        },
+        "fontWeight": 900,
+        "letterSpacing": {
+          "value": 2,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 44,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 24,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif",
+        "fontSize": {
+          "value": 16,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "numeral": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Playfair Display\", \"Didot\", \"Bodoni MT\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 96,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -1,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 15,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 1.5,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 4,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.3,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

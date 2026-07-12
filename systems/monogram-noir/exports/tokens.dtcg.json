@@ -1,0 +1,298 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "MonogramNoir is a couture house system — ivory type on true noir, disciplined by a single oxblood-wine accent used once per view. A Bodoni-cut didone carries the masthead and an oversized interlocked monogram, while a wide-tracked geometric sans handles maison labels. Its signature is a repeated monogram motif ghosted across a couture module grid with one full-bleed image breaking the frame. Extreme negative space, sharp edges, slow fades. Built by HeiGe-Design.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.067,
+          0.067,
+          0.067
+        ],
+        "hex": "#111111"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.937,
+          0.914,
+          0.875
+        ],
+        "hex": "#efe9df"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.11,
+          0.094,
+          0.078
+        ],
+        "hex": "#1c1814"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.937,
+          0.914,
+          0.875
+        ],
+        "hex": "#efe9df"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.961,
+          0.941,
+          0.906
+        ],
+        "hex": "#f5f0e7"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.384,
+          0.357,
+          0.314
+        ],
+        "hex": "#625b50"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.847,
+          0.816,
+          0.761
+        ],
+        "hex": "#d8d0c2"
+      }
+    },
+    "wine": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.431,
+          0.078,
+          0.137
+        ],
+        "hex": "#6e1423"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 64,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 120,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "monogram": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Bodoni Moda\", Didot, \"Bodoni 72\", \"Playfair Display\", \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 200,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -4,
+          "unit": "px"
+        }
+      }
+    },
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Bodoni Moda\", Didot, \"Bodoni 72\", \"Playfair Display\", \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 76,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": -1.5,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Bodoni Moda\", Didot, \"Bodoni 72\", \"Playfair Display\", \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 48,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": -0.8,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Bodoni Moda\", Didot, \"Bodoni 72\", \"Playfair Display\", \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 24,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Cormorant Garamond\", \"EB Garamond\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 18,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.1,
+          "unit": "px"
+        }
+      }
+    },
+    "body-mono": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Bodoni Moda\", Didot, \"Bodoni 72\", \"Playfair Display\", \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 20,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Jost\", Futura, \"Century Gothic\", \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 2.5,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Jost\", Futura, \"Century Gothic\", \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.3,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Jost\", Futura, \"Century Gothic\", \"Helvetica Neue\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 3.5,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

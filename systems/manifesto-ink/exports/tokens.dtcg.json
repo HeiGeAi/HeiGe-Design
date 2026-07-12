@@ -1,0 +1,292 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Redline is the home turf of an opinion columnist. A heavy Fraunces serif is slammed in warm-black onto warm ivory paper, and a single cinnabar red is rationed for one weapon only: the hand-drawn underline that marks the sentence you are meant to remember. Running prose is set in a reading serif; datelines, folios, and buttons are set in mono, like the machinery of the press. Stark rectangles, almost no rounding, one argument per screen. Chinese falls back to Noto Serif SC / Songti SC, never a Japanese face.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.082,
+          0.067,
+          0.039
+        ],
+        "hex": "#15110a"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.98,
+          0.969,
+          0.945
+        ],
+        "hex": "#faf7f1"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.114,
+          0.09,
+          0.063
+        ],
+        "hex": "#1d1710"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.969,
+          0.957,
+          0.933
+        ],
+        "hex": "#f7f4ee"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.937,
+          0.91,
+          0.859
+        ],
+        "hex": "#efe8db"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.427,
+          0.388,
+          0.325
+        ],
+        "hex": "#6d6353"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.847,
+          0.812,
+          0.745
+        ],
+        "hex": "#d8cfbe"
+      }
+    },
+    "accent": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.769,
+          0.153,
+          0.094
+        ],
+        "hex": "#c42718"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Fraunces 72pt\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 96,
+          "unit": "px"
+        },
+        "fontWeight": 900,
+        "letterSpacing": {
+          "value": -2,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Fraunces 72pt\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 60,
+          "unit": "px"
+        },
+        "fontWeight": 800,
+        "letterSpacing": {
+          "value": -1,
+          "unit": "px"
+        }
+      }
+    },
+    "pull-quote": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Fraunces 72pt\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 42,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -0.4,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Fraunces\", \"Fraunces 72pt\", Georgia, \"Times New Roman\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 27,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": -0.3,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Newsreader\", Georgia, Cambria, \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 20,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "body-mono": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"IBM Plex Mono\", ui-monospace, \"SFMono-Regular\", Menlo, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 16,
+          "unit": "px"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"IBM Plex Mono\", ui-monospace, \"SFMono-Regular\", Menlo, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 2.5,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"IBM Plex Mono\", ui-monospace, \"SFMono-Regular\", Menlo, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.4,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"IBM Plex Mono\", ui-monospace, \"SFMono-Regular\", Menlo, \"Noto Sans SC\", \"PingFang SC\", monospace",
+        "fontSize": {
+          "value": 14,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 1.6,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

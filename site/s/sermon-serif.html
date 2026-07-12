@@ -1,0 +1,966 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>布道 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 优雅编辑</div>
+<div class="hero"><div class="fam">优雅编辑</div><h1>布道<span class="badge">✓ lint 0 error</span></h1><div class="slug">sermon-serif · sermon-serif-design-system</div><p class="desc">House style of a fictional editorial design studio where the serif itself is the argument. Warm paper (#faf7f2) carries a warm near-black ink and one restrained ochre; a light optical serif sets giant ragged-right pull-quotes against clean grotesque body text, with hanging mono folios and text that wraps around a single figure. Column grids, deep negative space, no gradients. One token set drives both a portfolio site and a 16:9 keynote. Ochre is used like a signature — once per view, never as fill.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#faf7f2;--ink:#23201b;--pri:#1a1a18;--onpri:#faf7f2;--acc:#935428;--surf:#f2ebde;--muted:#6c645a;--line:#ddd4c4;--r:6px;--dff:"Fraunces", "Fraunces 72pt", Georgia, "Noto Serif SC", "Songti SC", serif;--bff:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", ui-monospace, "SFMono-Regular", "Noto Sans SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">布道</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#1a1a18"></i><i style="background:#faf7f2"></i><i style="background:#23201b"></i><i style="background:#f2ebde"></i><i style="background:#6c645a"></i><i style="background:#ddd4c4"></i><i style="background:#935428"></i></div>
+  <div class="swrap"><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">body-block</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">lead-paragraph</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">figure-caption</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">image-frame</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">tag-pill</span></div>
+  </div>
+  <div class="card" style="--bg:#faf7f2;--ink:#23201b;--pri:#1a1a18;--onpri:#faf7f2;--acc:#935428;--surf:#f2ebde;--muted:#6c645a;--line:#ddd4c4;--r:6px;--dff:"Fraunces", "Fraunces 72pt", Georgia, "Noto Serif SC", "Songti SC", serif;--bff:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", ui-monospace, "SFMono-Regular", "Noto Sans SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">布道</div></div>
+    <div class="swrap"><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#f2ebde;color:#23201b;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two moments this system can do that a template cannot.
+
+**UI — “The Sermon Fold.”** The opening screen of a portfolio: one oversized light-serif sentence (`display-xl`, fluid to ~11vw) set ragged-right across the column grid, while the studio's manifesto body copy wraps — via real `shape-outside` on the figure's silhouette, not a rectangle — around a single duotone photograph floated into columns 8–12. An ochre drop cap opens the manifesto; a mono folio hangs alone in the outer margin. No hero image behind text, no button trio. The layout *is* a printed spread, and the wrap only works because the figure, the measure, and the serif were composed together. Swap any one and it collapses.
+
+**Deck — “The One-Line Homily.”** A 16:9 quote slide where a single belief, set in giant light serif, fills the entire frame ragged-right. The only ink besides the sentence is one ochre quotation mark hung</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Give the homily a whole screen. One sentence, ragged-right, real silence around it.
+- Wrap body text around one duotone figure with `shape-outside`; let the silhouette, not a box, cut the column.
+- Spend the ochre once per view — drop cap, or one rule, or one mark. Then stop.
+- Build hierarchy from size and space; hang folios and marks in the margin like a bound book.
+- Keep corners square; let the one feature card be the only soft object.
+
+**Don't**
+- **Don't touch the purple-blue AI gradient** (`#667eea → #764ba2`) or any of its family. This system has no background gradients at all — paper is paper.
+- **Don't do the centered card trio** — one title, one grey subtitle, three equal rounded cards repeated down the page. This is an asymmetric column monograph, not a SaaS landing template.
+- **中文绝不用日文字体渲染** (Mochiy / Zen Maru 等)；简体缺字变豆腐，中文一律走 Noto Serif SC / Songti SC / Noto Sans SC / PingFang SC 兜底。
+- **Don't animate the shadow or the rule.** Depth here is stated in paper tone and one hairline; there are no drop shadows to fade and no glow to pulse.
+- Don't justify or center the display serif, don't set the body full-page width, don't add a second accent color.
+
+---</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: sermon-serif-design-system
+description: &gt;-
+  House style of a fictional editorial design studio where the serif itself is
+  the argument. Warm paper (#faf7f2) carries a warm near-black ink and one
+  restrained ochre; a light optical serif sets giant ragged-right pull-quotes
+  against clean grotesque body text, with hanging mono folios and text that
+  wraps around a single figure. Column grids, deep negative space, no gradients.
+  One token set drives both a portfolio site and a 16:9 keynote. Ochre is used
+  like a signature — once per view, never as fill.
+
+colors:
+  primary: &quot;#1a1a18&quot;      # manifesto ink — the brand's defining serif black; covers, buttons
+  on-primary: &quot;#faf7f2&quot;   # paper set on ink
+  ink: &quot;#23201b&quot;          # warm reading black for body and headings (never pure #000)
+  canvas: &quot;#faf7f2&quot;       # page paper, warm off-white
+  surface: &quot;#f2ebde&quot;      # deeper ivory card face, one paper-tone below canvas
+  muted: &quot;#6c645a&quot;        # secondary text, captions, folios
+  hairline: &quot;#ddd4c4&quot;     # 1px warm rule; the only structural line in the system
+  accent: &quot;#935428&quot;       # restrained ochre — drop cap, one rule, one mark; never a background fill
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Fraunces 72pt&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 88px
+    fontWeight: 380
+    lineHeight: 1.02
+    letterSpacing: -2px
+  display-lg:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Fraunces 72pt&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 54px
+    fontWeight: 400
+    lineHeight: 1.08
+    letterSpacing: -1px
+  heading:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Fraunces 72pt&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 26px
+    fontWeight: 500
+    lineHeight: 1.25
+    letterSpacing: -0.3px
+  lead:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Fraunces 72pt&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 22px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: -0.2px
+  body:
+    fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: 0px
+  eyebrow:
+    fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 12px
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: 2.4px
+  caption:
+    fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 500
+    lineHeight: 1.45
+    letterSpacing: 0.4px
+  button:
+    fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 14px
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: 0.6px
+  meta-mono:
+    fontFamily: '&quot;IBM Plex Mono&quot;, ui-monospace, &quot;SFMono-Regular&quot;, &quot;Noto Sans SC&quot;, monospace'
+    fontSize: 13px
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: 0.5px
+
+rounded:
+  none: 0px
+  sm: 2px
+  md: 6px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 80px
+
+components:
+  # —— UI 界面组件 ——
+  button-primary: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;14px 28px&quot; }
+  button-secondary: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;14px 28px&quot; }
+  nav-bar: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.eyebrow}&quot;, padding: &quot;{spacing.md} {spacing.xl}&quot; }
+  card-feature: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.heading}&quot;, rounded: &quot;{rounded.md}&quot;, padding: &quot;{spacing.lg}&quot; }
+  stat-block: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.xl}&quot; }
+  body-block: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.body}&quot;, padding: &quot;{spacing.md}&quot; }
+  lead-paragraph: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.lead}&quot;, padding: &quot;{spacing.md}&quot; }
+  figure-caption: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.muted}&quot;, typography: &quot;{typography.caption}&quot;, padding: &quot;{spacing.sm}&quot; }
+  image-frame: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.muted}&quot;, typography: &quot;{typography.caption}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.sm}&quot; }
+  tag-pill: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.accent}&quot;, typography: &quot;{typography.eyebrow}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.xs} {spacing.md}&quot; }
+  meta-folio: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.muted}&quot;, typography: &quot;{typography.meta-mono}&quot;, padding: &quot;{spacing.xs}&quot; }
+  footer: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.caption}&quot;, padding: &quot;{spacing.section}&quot; }
+  hairline-rule: { backgroundColor: &quot;{colors.hairline}&quot;, height: &quot;1px&quot;, width: &quot;100%&quot; }
+  # —— slide 演示组件（16:9 融合 HeiGe-PPT）——
+  slide-cover: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-section-divider: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-stat-hero: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-xl}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-quote: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-xl}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-closing: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+---
+
+# Sermon-Serif · 布道
+
+&gt; 衬线即宣言。The serif is not decoration on the argument. It is the argument.
+
+Sermon-Serif is the house style of a fictional editorial design studio. It behaves like a bound monograph: warm paper, a warm near-black ink, one restrained ochre, and a light optical serif large enough to be read as a statement of belief rather than a headline. Everything else — grids, folios, rules — steps back so the type can preach.
+
+---
+
+## Overview
+
+The gestalt is **a studio monograph, printed once, kept forever.** No screen chrome, no gloss. A single sheet of warm paper (`#faf7f2`) holds a warm ink (`#23201b`) and gets structured by hairlines, not boxes.
+
+**The two roles of the brand black.** The near-black plays display and reading at once: at 88px it is a *homily* — a light-weight serif sentence ragged-right across a column grid, the loudest thing on the page without ever raising its voice; at 17px it is patient body copy with a 1.7 line height. Same ink, two temperaments.
+
+**The signature move.** One oversized serif pull-quote, body text wrapping (`shape-outside`) around a single duotone figure, and a lot of deliberate emptiness. The ochre appears exactly once per view — a drop cap, a rule, a hung quotation mark — and never as a filled panel.
+
+**Rhythm.** Slow. Big serif → long silence → small mono folio → figure → silence. The page breathes on purpose. If two loud things sit on one screen, one of them is wrong.
+
+---
+
+## Colors
+
+A four-value palette. Paper, ink, one deeper ivory, one ochre. Everything structural is drawn with a single hairline.
+
+### Brand &amp; Accent
+- **`primary` `#1a1a18` — Manifesto Ink.** The brand's defining black. Covers, primary buttons, closing slides, footer. This is the color the studio *is*.
+- **`on-primary` `#faf7f2` — Paper on Ink.** Only ever set on `primary`. Contrast 16.3:1.
+- **`accent` `#935428` — Ochre.** Earth-pigment ochre used with monastic restraint: the drop cap of a lead paragraph, one 1px rule under a kicker, the hung quotation mark, a stat unit, a tag border. Never a background, never two ochre things in one view. On paper it clears 5.5:1; on ivory 5.0:1 — legible as text, which is the point.
+
+### Surface
+- **`canvas` `#faf7f2` — Warm Paper.** The default sheet. Off-white with a trace of warmth so the page never reads as clinical screen-white.
+- **`surface` `#f2ebde` — Ivory.** Exactly one paper-tone deeper than canvas. Feature cards, quote slides, stat plinths, and figure mats sit on it — depth by paper temperature, not by shadow.
+- **`hairline` `#ddd4c4` — Warm Rule.** The one structural line. 1px, warm, quiet. Column dividers, card keylines, the mast rule under the nav.
+
+### Text
+- **`ink` `#23201b` — Reading Black.** Body, headings, giant serif. Warm near-black, never `#000` — a true black on warm paper vibrates and reads colder than the studio wants.
+- **`muted` `#6c645a` — Secondary.** Captions, folios, metadata, second-tier labels. 5.4:1 on paper, held above AA so nothing in this system is decorative-only text you can't read.
+
+### Semantic
+This is an editorial system, not a dashboard — there is no success-green or error-red. Emphasis is carried by **size, weight, and space**, never by adding a color. If a state must be shown, it is shown in ochre or in muted, and in words.
+
+---
+
+## Typography
+
+Two families do everything: a light optical serif for anything meant to be believed, a clean grotesque for anything meant to be used. A mono handles folios and metadata like a printer's marks.
+
+### Font Family
+- **Serif display — Fraunces.** Optical, characterful, a little wonky at large sizes. Set light (380–400) and huge; this is the voice of the studio.
+  Stack: `&quot;Fraunces&quot;, &quot;Fraunces 72pt&quot;, Georgia, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif`
+- **Body sans — Inter.** Neutral, quiet, high-legibility grotesque that gets out of the serif's way.
+  Stack: `&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`
+- **Metadata mono — IBM Plex Mono.** Folios, run-marks, index numbers.
+  Stack: `&quot;IBM Plex Mono&quot;, ui-monospace, &quot;SFMono-Regular&quot;, &quot;Noto Sans SC&quot;, monospace`
+
+**中文铁律.** 中文标题走 `Noto Serif SC` / `Songti SC` 兜底，中文正文走 `Noto Sans SC` / `PingFang SC` 兜底，栈末尾恒有系统字体，断网也不塌成 Times。**中文绝不用日文字体渲染**（Mochiy / Zen Maru 等在简体下缺字变豆腐块）。拉丁展示字体 Fraunces 后紧跟 Georgia，保证 webfont 加载失败时衬线气质仍在。
+
+### Hierarchy
+
+| Role | Family | Size | Weight | Line | Tracking | Use |
+|---|---|---|---|---|---|---|
+| display-xl | Fraunces | 88px | 380 | 1.02 | -2px | The homily / pull-quote / hero stat |
+| display-lg | Fraunces | 54px | 400 | 1.08 | -1px | Cover title, section title, closing |
+| heading | Fraunces | 26px | 500 | 1.25 | -0.3px | Card and subsection titles |
+| lead | Fraunces | 22px | 400 | 1.5 | -0.2px | Intro paragraph with ochre drop cap |
+| body | Inter | 17px | 400 | 1.7 | 0 | Reading text |
+| eyebrow | Inter | 12px | 600 | 1 | 2.4px | Kicker, all-caps, above a rule |
+| caption | Inter | 13px | 500 | 1.45 | 0.4px | Figure captions, footer |
+| button | Inter | 14px | 600 | 1 | 0.6px | Actions |
+| meta-mono | IBM Plex Mono | 13px | 500 | 1.2 | 0.5px | Folios, index, run-marks |
+
+### Principles
+- **Contrast is at least 1:5.** 88px against 17px. When the homily lands, the body must feel like a whisper next to it.
+- **Ragged-right, never justified, never centered display.** The homily hangs to a left edge and lets its right edge breathe. Centered serif is greeting-card, not studio.
+- **Optical size matters.** Fraunces at 88px wants -2px tracking; at 17px the body wants 0. Never track the display loose or the body tight.
+- **Zero orphans.** Hand-broken display lines carry `white-space:nowrap`, sized by the longest line with `clamp()`; centered prose uses `text-wrap:balance`. Chinese width is limited in `em`, never `ch`.
+
+---
+
+## Layout
+
+### Spacing
+A 4-based scale — `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 80`. Section rhythm is `80px` and up; this system would rather waste a screen of paper than crowd two ideas.
+
+### Grid &amp; Container
+- **12-column editorial grid, but used asymmetrically.** Text lives in columns 1–7; a floated figure takes 8–12. The homily can break the grid and hang off the left margin.
+- **Reading measure ~64ch equivalent, set in `em`.** Body never runs the full page width — a monograph column, not a banner.
+- **Hanging folios and marks** live in the outer margin in mono, aligned to the baseline, like page numbers in a bound book.
+
+### Whitespace philosophy
+Negative space is the studio's most expensive material. It is spent in large blocks between ideas, not sprinkled evenly. A screen with one sentence and nothing else is not empty — it is finished.
+
+---
+
+## Elevation &amp; Depth
+
+**Depth by paper, not by shadow.** This is a light editorial system; it earns hierarchy the way print does.
+
+| Level | Method |
+|---|---|
+| Base | `canvas` paper |
+| Raised | `surface` ivory, one tone deeper, closed with a `hairline` keyline |
+| Floated figure | duotone image on `surface` mat, thin ink keyline, sits into the text column via `shape-outside` |
+| Divider slide | `primary` ink field — depth by inversion, not layering |
+
+**Rules of depth.**
+- **No drop shadows.** No `box-shadow: 0 4px 6px rgba(0,0,0,.1)`. Cards are held by a hairline and a paper-tone shift.
+- **No glow, no `backdrop-filter`.** This is a paper system; there is nothing to blur behind.
+- **Never animate a shadow or a rule.** Depth is stated, not performed. Transitions move `opacity` and `transform` only, and everything answers to `prefers-reduced-motion`.
+
+---
+
+## Shapes
+
+### Border Radius
+| Token | Value | Use |
+|---|---|---|
+| none | 0px | Covers, images, quote slides, stat plinths — the default; paper has square corners |
+| sm | 2px | Buttons — barely there |
+| md | 6px | Feature cards only, one soft object per view |
+| pill | 9999px | Category tag, the single rounded exception |
+
+Sharp is the rule. The eye should feel edges, not cushions.
+
+### Figure geometry
+- Images run **full-bleed or hard-cropped to the grid**, square corners, one duotone treatment (ink + paper) so photographs read as part of the type block.
+- Exactly **one figure per view** floats into the text with `shape-outside`; text wraps its true silhouette, not a bounding box.
+
+---
+
+## Components
+
+- **button-primary** — ink field, paper label, 2px radius. The studio's only loud button. Used once per view.
+- **button-secondary** — paper, ink label, a 1px ochre keyline. The quiet action; the ochre border is the accent's whole appearance here.
+- **nav-bar** — paper, ink links in eyebrow caps, closed underneath by a single hairline mast rule. No logo lockup fights the type.
+- **card-feature** — ivory face, hairline keyline, 6px corner (the one soft object), serif heading over sans body.
+- **stat-block** — ivory plinth, square, a display-lg serif number carried by an eyebrow label; no icon.
+- **body-block / lead-paragraph** — the reading column. Lead opens with an ochre drop cap two lines deep; body follows at 1.7 line height.
+- **figure-caption / image-frame** — muted mono-adjacent caption hung below a square, hairline-matted duotone image.
+- **tag-pill** — the single pill in the system: ochre label, ochre keyline, ivory fill. Category marker only.
+- **meta-folio** — mono page number and run-mark in the margin, muted, baseline-aligned.
+- **footer** — the one inverted UI surface: ink field, paper caption text, closed by a hairline. The book's colophon.
+
+---
+
+## Presentation System
+
+One token set, run at 16:9. The deck is the monograph projected — **一页一句话，黄金三秒，视觉锤**. The visual hammer of this system is not an image; it is **the light serif sentence plus the single ochre mark.** Three seconds in, the audience should feel they are reading a first edition, not watching slides.
+
+- **Cover (`slide-cover`)** — paper field. A `display-lg` serif title hangs to the left third, an eyebrow kicker sits above a 1px ochre rule, a mono folio anchors the bottom margin. Deep silence on the right. No subtitle stacked under a centered title.
+- **Section divider (`slide-section-divider`)** — the one inversion: ink field, paper serif section title, a giant ochre section number set in the margin as the hammer. Depth by flipping the page black, not by adding layers.
+- **Stat hero (`slide-stat-hero`)** — paper field, one `display-xl` number ragged-left filling the frame, its unit and label small in ochre and muted beneath a hairline. One number, one screen. 黄金三秒 belongs to the figure.
+- **Quote (`slide-quote`)** — ivory field. A single sentence in `display-xl` light serif, ragged-right, filling the frame; the only color is one hung ochre quotation mark in the left margin. This is 一页一句话 in its purest form.
+- **Closing (`slide-closing`)** — ink field, paper serif call to action, one `button-primary` echoed as a paper keyline, the studio mark and mono folio as colophon. Ends like a book closing, not a slide trailing off.
+
+**Pacing across the deck:** cover (still) → divider (inversion, a breath) → three content spreads (figure + wrapped text) → stat hero (the peak) → quote (the silence after) → closing (the shut cover). The peak is placed on purpose; nothing after it competes.
+
+---
+
+## Signature Moment
+
+Two moments this system can do that a template cannot.
+
+**UI — “The Sermon Fold.”** The opening screen of a portfolio: one oversized light-serif sentence (`display-xl`, fluid to ~11vw) set ragged-right across the column grid, while the studio's manifesto body copy wraps — via real `shape-outside` on the figure's silhouette, not a rectangle — around a single duotone photograph floated into columns 8–12. An ochre drop cap opens the manifesto; a mono folio hangs alone in the outer margin. No hero image behind text, no button trio. The layout *is* a printed spread, and the wrap only works because the figure, the measure, and the serif were composed together. Swap any one and it collapses.
+
+**Deck — “The One-Line Homily.”** A 16:9 quote slide where a single belief, set in giant light serif, fills the entire frame ragged-right. The only ink besides the sentence is one ochre quotation mark hung into the left margin and a mono folio bottom-right. No logo, no accent bar, no build. It holds for one long beat. The audience reads a sentence the size of a wall and remembers it — the whole slide is the visual hammer.
+
+---
+
+## Do's and Don'ts
+
+**Do**
+- Give the homily a whole screen. One sentence, ragged-right, real silence around it.
+- Wrap body text around one duotone figure with `shape-outside`; let the silhouette, not a box, cut the column.
+- Spend the ochre once per view — drop cap, or one rule, or one mark. Then stop.
+- Build hierarchy from size and space; hang folios and marks in the margin like a bound book.
+- Keep corners square; let the one feature card be the only soft object.
+
+**Don't**
+- **Don't touch the purple-blue AI gradient** (`#667eea → #764ba2`) or any of its family. This system has no background gradients at all — paper is paper.
+- **Don't do the centered card trio** — one title, one grey subtitle, three equal rounded cards repeated down the page. This is an asymmetric column monograph, not a SaaS landing template.
+- **中文绝不用日文字体渲染** (Mochiy / Zen Maru 等)；简体缺字变豆腐，中文一律走 Noto Serif SC / Songti SC / Noto Sans SC / PingFang SC 兜底。
+- **Don't animate the shadow or the rule.** Depth here is stated in paper tone and one hairline; there are no drop shadows to fade and no glow to pulse.
+- Don't justify or center the display serif, don't set the body full-page width, don't add a second accent color.
+
+---
+
+## Responsive Behavior
+
+Mobile is a **re-composition of the spread**, not a shrunk desktop.
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥1200px | Full 12-col spread; homily can hang off the left margin; figure floats 8–12 with `shape-outside`; folios in the outer margin |
+| 768–1199px | 8-col; figure drops below its paragraph, keeps its hairline mat; folios move inline with the eyebrow |
+| ≤767px | Single column. The wrap is abandoned — figure goes full-bleed between text blocks. Homily re-sizes via `clamp()` on the longest hand-broken line so no single character orphans on a ≤390px screen. Margin folios move to a footer run-mark. |
+
+- **The homily always fits.** Its `display-xl` size is driven by `clamp()` against the longest `nowrap` line, checked at 390px, so it never overflows and never orphans.
+- **Measure over columns.** On small screens the reading measure is preserved in `em`; the page gets taller, never tighter.
+- **The wrap degrades honestly.** When there isn't room for a real `shape-outside`, the text does not fake a wrap around a box — the figure simply becomes a full-width plate.
+
+---
+
+## Anti-Slop Pledge
+
+Strip the studio name off any screen of Sermon-Serif and it still reads as something a person set by hand: one warm paper, one warm ink, one ochre spent like a signature, a serif large enough to be believed, and empty space treated as the most expensive material on the page. No stock gradient, no card trio, no drop-shadow filler — only type, paper, and a rule. If it could have come off a template, it isn't finished.
+
+*Sermon-Serif — HeiGe-Design. Original fictional system. MIT.*
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #1a1a18;
+  --color-on-primary: #faf7f2;
+  --color-ink: #23201b;
+  --color-canvas: #faf7f2;
+  --color-surface: #f2ebde;
+  --color-muted: #6c645a;
+  --color-hairline: #ddd4c4;
+  --color-accent: #935428;
+  --font-display-xl: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-lead: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-meta-mono: &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --text-display-xl: 88px;
+  --text-display-lg: 54px;
+  --text-heading: 26px;
+  --text-lead: 22px;
+  --text-body: 17px;
+  --text-eyebrow: 12px;
+  --text-caption: 13px;
+  --text-button: 14px;
+  --text-meta-mono: 13px;
+  --tracking-display-xl: -2px;
+  --tracking-display-lg: -1px;
+  --tracking-heading: -0.3px;
+  --tracking-lead: -0.2px;
+  --tracking-body: 0px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-caption: 0.4px;
+  --tracking-button: 0.6px;
+  --tracking-meta-mono: 0.5px;
+  --font-weight-display-xl: 380;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 500;
+  --font-weight-lead: 400;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 600;
+  --font-weight-caption: 500;
+  --font-weight-button: 600;
+  --font-weight-meta-mono: 500;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#1a1a18&quot;,
+        &quot;on-primary&quot;: &quot;#faf7f2&quot;,
+        &quot;ink&quot;: &quot;#23201b&quot;,
+        &quot;canvas&quot;: &quot;#faf7f2&quot;,
+        &quot;surface&quot;: &quot;#f2ebde&quot;,
+        &quot;muted&quot;: &quot;#6c645a&quot;,
+        &quot;hairline&quot;: &quot;#ddd4c4&quot;,
+        &quot;accent&quot;: &quot;#935428&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;lead&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;meta-mono&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;88px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-2px&quot;,
+            &quot;fontWeight&quot;: &quot;380&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;54px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;26px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;lead&quot;: [
+          &quot;22px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.6px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;meta-mono&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;2px&quot;,
+        &quot;md&quot;: &quot;6px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;80px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #1a1a18;
+  --color-on-primary: #faf7f2;
+  --color-ink: #23201b;
+  --color-canvas: #faf7f2;
+  --color-surface: #f2ebde;
+  --color-muted: #6c645a;
+  --color-hairline: #ddd4c4;
+  --color-accent: #935428;
+  --font-display-xl: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-lead: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-meta-mono: &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --text-display-xl: 88px;
+  --text-display-lg: 54px;
+  --text-heading: 26px;
+  --text-lead: 22px;
+  --text-body: 17px;
+  --text-eyebrow: 12px;
+  --text-caption: 13px;
+  --text-button: 14px;
+  --text-meta-mono: 13px;
+  --tracking-display-xl: -2px;
+  --tracking-display-lg: -1px;
+  --tracking-heading: -0.3px;
+  --tracking-lead: -0.2px;
+  --tracking-body: 0px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-caption: 0.4px;
+  --tracking-button: 0.6px;
+  --tracking-meta-mono: 0.5px;
+  --font-weight-display-xl: 380;
+  --font-weight-display-lg: 400;
+  --font-weight-heading: 500;
+  --font-weight-lead: 400;
+  --font-weight-body: 400;
+  --font-weight-eyebrow: 600;
+  --font-weight-caption: 500;
+  --font-weight-button: 600;
+  --font-weight-meta-mono: 500;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;House style of a fictional editorial design studio where the serif itself is the argument. Warm paper (#faf7f2) carries a warm near-black ink and one restrained ochre; a light optical serif sets giant ragged-right pull-quotes against clean grotesque body text, with hanging mono folios and text that wraps around a single figure. Column grids, deep negative space, no gradients. One token set drives both a portfolio site and a 16:9 keynote. Ochre is used like a signature — once per view, never as fill.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.102,
+          0.102,
+          0.094
+        ],
+        &quot;hex&quot;: &quot;#1a1a18&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.98,
+          0.969,
+          0.949
+        ],
+        &quot;hex&quot;: &quot;#faf7f2&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.137,
+          0.125,
+          0.106
+        ],
+        &quot;hex&quot;: &quot;#23201b&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.98,
+          0.969,
+          0.949
+        ],
+        &quot;hex&quot;: &quot;#faf7f2&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.949,
+          0.922,
+          0.871
+        ],
+        &quot;hex&quot;: &quot;#f2ebde&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.424,
+          0.392,
+          0.353
+        ],
+        &quot;hex&quot;: &quot;#6c645a&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.867,
+          0.831,
+          0.769
+        ],
+        &quot;hex&quot;: &quot;#ddd4c4&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.576,
+          0.329,
+          0.157
+        ],
+        &quot;hex&quot;: &quot;#935428&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 80,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 2,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 88,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 380,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 54,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 26,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;lead&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Fraunces 72pt\&quot;, Georgia, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 22,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;meta-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 布道（sermon-serif · 优雅编辑）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `sermon-serif` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#1a1a18` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Fraunces`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint sermon-serif` / 导出其它格式：`heige-design export sermon-serif --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 布道 — 原创设定集，可商用。跑校验：<code>heige-design lint sermon-serif</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

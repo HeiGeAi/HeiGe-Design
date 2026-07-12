@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+.playwright-mcp/
+*.log
+npm-debug.log*
+.env
+.env.*
+scripts/package-lock.json

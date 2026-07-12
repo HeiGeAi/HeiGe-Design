@@ -1,0 +1,997 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>故宫红金 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 东方新中式</div>
+<div class="hero"><div class="fam">东方新中式</div><h1>故宫红金<span class="badge">✓ lint 0 error / 13w</span></h1><div class="slug">gugong-red · GugongRed-design-system</div><p class="desc">Neo-Oriental heritage system founded on the deep oxblood of a palace wall (#9A2B2B), edged in bright imperial gold and grounded by dai-blue roof shadow. Heavy Song-serif titles stand vertically like an unrolled handscroll while a cinnabar seal breaks a hairline gold lattice frame as the signing stamp. Sharp zero-radius blocks, wide silk-paper whitespace, and high-contrast Didot-style numerals carry archival serials. Built for museums, cultural heritage, premium heritage craft, and archival collections. Ceremonial, restrained, unmistakably imperial, never a template. Signed HeiGe-Design.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#F3EAD6;--ink:#241A15;--pri:#9A2B2B;--onpri:#F5EFE1;--acc:#C9A227;--surf:#FBF6EA;--muted:#746351;--line:#D9C7A0;--r:6px;--dff:"Noto Serif SC", "Songti SC", "STSong", serif;--bff:Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Noto Serif SC", "Songti SC", "STSong", serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">故宫红金</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#9A2B2B"></i><i style="background:#F5EFE1"></i><i style="background:#241A15"></i><i style="background:#F3EAD6"></i><i style="background:#FBF6EA"></i><i style="background:#746351"></i><i style="background:#D9C7A0"></i><i style="background:#C9A227"></i></div>
+  <div class="swrap"><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">button-ghost</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">card-lattice</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">seal-mark</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">collection-tag</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">footer</span></div>
+  </div>
+  <div class="card" style="--bg:#F3EAD6;--ink:#241A15;--pri:#9A2B2B;--onpri:#F5EFE1;--acc:#C9A227;--surf:#FBF6EA;--muted:#746351;--line:#D9C7A0;--r:6px;--dff:"Noto Serif SC", "Songti SC", "STSong", serif;--bff:Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Noto Serif SC", "Songti SC", "STSong", serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">故宫红金</div></div>
+    <div class="swrap"><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI 签名：朱印破界（The Seal That Breaks the Frame）。** 每个主 CTA 与英雄卡片都裹一圈 1px 明金窗棂勾边，右上角实压一方朱印，**印章故意越过金线框几个像素、盖在框线之上**，像手工钤印时压出了边。印里两个绢白反白字。这一处&quot;印 &gt; 金线 &gt; 红墙&quot;的三层实体叠压，是换任何模板都做不出来的手感。
+
+```css
+/* 窗棂金线框 + 朱印破界 */
+.lattice{
+  position:relative; padding:24px; background:#FBF6EA;
+  border:1px solid #C9A227;               /* 金线勾边 */
+  background-image:                        /* 窗棂方格纹 */
+    repeating-linear-gradient(0deg,transparent 0 47px,#D9C7A0 47px 48px),
+    repeating-linear-gradient(90deg,transparent 0 47px,#D9C7A0 47px 48px);
+}
+.lattice::after{                           /* 朱印越过金线框 */
+  content:&quot;藏&quot;; position:absolute; top:-14px; right:-14px;
+  width:44px; height:44px; display:grid; place-items:center;
+  background:#BE3626; color:#F5EFE1; border:2px solid #C9A227;
+  font-family:&quot;Noto Serif SC&quot;,&quot;Songti SC&quot;,serif; border-radius:2px;
+}
+```
+
+**Deck 签名：竖排开卷（V</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- 主色克制：宫墙红压场，明金只勾边和落款，黛蓝托底，三色各司其职。
+- 竖排立骨：主标题竖排楷宋，横细竖粗即气派，一页一句话。
+- 方到底：零圆角块面、金线勾边、朱印叠压，实体分层不靠阴影。
+- 留白当主角：一屏一句竖字加一方印，也比塞满强。
+- 一页一印：朱印是落款，钤在收束处点睛。
+
+**Don't**
+- **不碰紫蓝俗套渐变（`#667eea → #764ba2`）及其全家桶**，那是 AI 界面的身份证，与宫墙气质天生互斥。
+- **不做居中卡片三件套**（一行标题 + 一行灰副标 + 三个等宽圆角卡整页重复），这套靠竖排与叠压立气，不靠模板栅格。
+- **中文绝不用日文字体（Mochiy / Zen Maru 等）渲染**，简体会缺字变豆腐；要中文展示体就用思源宋 / Songti SC。
+- **不动画化阴影 / box-shadow**（逐帧重绘极贵），本系统本就不靠阴影，靠金线与朱印。
+- 不给窗棂卡片加圆角，宫门是方的，圆角一上就散气。
+- 不把整屏铺满金色，金是点睛的勾边与印，不是底色，满金即俗。
+- 不用假书法滤镜或描边字冒充楷宋，要碑刻感就选真的重字重宋体。
+- 不让朱印乱盖三四方，一页一印，印是落款不是贴纸。</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: GugongRed-design-system
+description: &gt;-
+  Neo-Oriental heritage system founded on the deep oxblood of a palace wall
+  (#9A2B2B), edged in bright imperial gold and grounded by dai-blue roof shadow.
+  Heavy Song-serif titles stand vertically like an unrolled handscroll while a
+  cinnabar seal breaks a hairline gold lattice frame as the signing stamp. Sharp
+  zero-radius blocks, wide silk-paper whitespace, and high-contrast Didot-style
+  numerals carry archival serials. Built for museums, cultural heritage, premium
+  heritage craft, and archival collections. Ceremonial, restrained, unmistakably
+  imperial, never a template. Signed HeiGe-Design.
+
+colors:
+  primary: &quot;#9A2B2B&quot;      # 宫墙红 palace-wall oxblood, the dominant field
+  on-primary: &quot;#F5EFE1&quot;   # 绢白 silk ivory, text on red / dai
+  ink: &quot;#241A15&quot;          # 漆黑 lacquer near-black, body text
+  canvas: &quot;#F3EAD6&quot;       # 旧绢 aged silk paper, page ground
+  surface: &quot;#FBF6EA&quot;      # 素笺 pale card ground
+  muted: &quot;#746351&quot;        # 古铜 aged bronze, secondary text
+  hairline: &quot;#D9C7A0&quot;     # 描边浅金 faint gold-dust divider
+  gold: &quot;#C9A227&quot;         # 明金 imperial gold, outline &amp; decoration only
+  dai: &quot;#2E3A4A&quot;          # 黛蓝 roof-tile shadow, dark divider field
+  seal: &quot;#BE3626&quot;         # 朱印 cinnabar seal ground
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 72px
+    fontWeight: 900
+    lineHeight: 1.08
+    letterSpacing: 2px
+  display-lg:
+    fontFamily: '&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 44px
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: 1px
+  heading:
+    fontFamily: '&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 24px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: 0.5px
+  body:
+    fontFamily: 'Inter, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: 1.8
+    letterSpacing: 0.2px
+  numeral:
+    fontFamily: '&quot;Playfair Display&quot;, &quot;Didot&quot;, &quot;Bodoni MT&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 96px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: &quot;-1px&quot;
+  button:
+    fontFamily: 'Inter, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 15px
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: 1.5px
+  eyebrow:
+    fontFamily: 'Inter, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 12px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: 4px
+  caption:
+    fontFamily: 'Inter, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: 0.3px
+
+rounded:
+  none: 0px
+  xs: 2px
+  sm: 6px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 80px
+
+components:
+  # —— UI 界面组件 ——
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    borderColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    borderColor: &quot;{colors.gold}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;14px 32px&quot;
+  button-ghost:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    borderColor: &quot;{colors.primary}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;14px 32px&quot;
+  card-lattice:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    borderColor: &quot;{colors.gold}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    borderColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  seal-mark:
+    backgroundColor: &quot;{colors.seal}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.heading}&quot;
+    borderColor: &quot;{colors.gold}&quot;
+    rounded: &quot;{rounded.xs}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  collection-tag:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    borderColor: &quot;{colors.gold}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  footer:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    borderColor: &quot;{colors.gold}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  # —— slide 演示组件（16:9 演示版式）——
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    borderColor: &quot;{colors.gold}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.dai}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    borderColor: &quot;{colors.gold}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.dai}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    borderColor: &quot;{colors.gold}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    borderColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    borderColor: &quot;{colors.gold}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# 故宫红金 · GugongRed
+
+宫墙气派做成一套设计系统。深宫墙红压住整个画面，明金只走勾边和落款，黛蓝当屋檐的阴影托底。楷宋大字竖着排，像一卷慢慢展开的手卷，最后盖一方朱印收尾。这套的骨相是博物院的：庄重、克制、有典藏感，绝不喧哗。
+
+## Overview
+
+这套系统的气质来自宫墙与典藏，不是喜庆红包那种红。**主色是宫墙红 `#9A2B2B`，一种压得很深的氧化血红**，它承担两个角色：大面积时是&quot;墙&quot;，小面积时是&quot;字&quot;。在浅色绢纸底上，它是最有分量的正文强调色；在深色页里，它整块拉成一堵墙，让绢白大字站上去。
+
+明金 `#C9A227` 是这套的纪律线，**只做金线勾边、印章外框、极小的编号标签，绝不当底色**。金一旦铺满就俗，金只有点在关键处才贵。黛蓝 `#2E3A4A` 是第三个声部，取自屋檐琉璃在阴影里的沉色，用来做过渡页和数据页的深色场，给红金一个冷静的托底。
+
+节奏靠三样东西撑：**竖排的楷宋大字、方到底的零圆角块面、大面积的绢纸留白**。字体本身就是设计，Song serif 的横细竖粗自带碑刻感，不需要再加装饰。
+
+## Colors
+
+### Brand &amp; Accent
+- **宫墙红 primary `#9A2B2B`** — 主色。深氧化红，做红墙场、红按钮、红字强调。浅底上是 6.4:1 的强对比正文色，深底上是压场的墙。
+- **明金 gold `#C9A227`** — 纪律色。只走 1px 金线勾边、印框、编号标签外框。**永不作为正文字色**（金字在任何底上对比都不足），永不作为底色。
+- **黛蓝 dai `#2E3A4A`** — 冷托底。做过渡页、数据页的深色场，让红金有呼吸的间隔。绢白字在其上 10:1，稳。
+- **朱印 seal `#BE3626`** — 落款色。比宫墙红更亮更橘的一点朱砂，只出现在方印里，一页一印。绢白印文在其上 4.9:1。
+
+### Surface
+- **旧绢 canvas `#F3EAD6`** — 页面底，做旧的暖绢纸，不用纯白。
+- **素笺 surface `#FBF6EA`** — 卡片面，比底色亮一档，靠明度差分层，不靠阴影。
+
+### Text
+- **漆黑 ink `#241A15`** — 正文。暖调近黑，不用纯黑，避免数码刺眼。绢底上 14:1。
+- **古铜 muted `#746351`** — 次要文字、图注、页脚。绢底上 4.8:1，压得下去又读得清。
+- **绢白 on-primary `#F5EFE1`** — 红墙与黛蓝上的反白字与印文。
+
+### Line
+- **描边浅金 hairline `#D9C7A0`** — 1px 分隔线与卡片默认边，比明金更淡，是金的&quot;影子&quot;，用于不该抢戏的分隔。
+
+对比度自检（WCAG AA，均 ≥ 4.5:1）：绢白/宫墙红 6.6，宫墙红/绢纸 6.4，漆黑/绢纸 14.2，绢白/朱印 4.9，古铜/绢纸 4.8，绢白/黛蓝 10.1，宫墙红/素笺 7.1。
+
+## Typography
+
+**Font Family**
+- 大标题与标题：`&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`。重字重的思源宋做碑刻感竖排大字，横细竖粗即气派，末尾必带 Songti SC / STSong 系统兜底，断网也不塌成 Times。
+- 正文与按钮：`Inter, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`。宋做骨、无衬线做肉，正文用干净人文无衬线换取长文可读，兜底到苹方 / 雅黑。
+- 序号与数据：`&quot;Playfair Display&quot;, &quot;Didot&quot;, &quot;Bodoni MT&quot;, &quot;Songti SC&quot;, serif`。高对比拉丁衬线做巨号典藏编号 01 / 02，末尾兜底 Songti SC 防缺字。
+
+**中文铁律**：所有中文栈末尾都带系统兜底；**中文绝不用日文字体（Mochiy / Zen Maru 等）渲染**，简体会缺字变豆腐。要竖排就用 `writing-mode: vertical-rl` 排真中文，不用图片假字。
+
+**Hierarchy**
+
+| Role | 用途 | Size / Weight | 关键 |
+|---|---|---|---|
+| display-xl | 封面竖排主标题 | 72 / 900 | 一页一句，竖排 |
+| display-lg | 金句页 / 收尾大字 | 44 / 700 | 占屏一句 |
+| heading | 卡片标题 / 导航 / 印文 | 24 / 600 | 宋体骨 |
+| body | 正文 | 16 / 400，行高 1.8 | 无衬线，宽行距透气 |
+| numeral | 典藏编号 / 巨型数据 | 96 / 700 | 拉丁高对比衬线 |
+| button | 按钮 | 15 / 600，字距 1.5 | 宽字距压得住 |
+| eyebrow | 馆藏标签 / 眉题 | 12 / 600，字距 4 | 全大写宽字距 |
+| caption | 图注 / 页脚 | 13 / 400 | 古铜色，退居次位 |
+
+**Principles**：最大字与正文至少 1:4（72 对 16）。标题竖排时逐字断，横排时靠 `text-wrap: balance` 均衡分行，绝不把单字或标点甩成孤行。中文限宽用 `em` / `px`，不用 `ch`（`ch` 是拉丁 0 宽，会让中文提前折行出孤字）。
+
+## Layout
+
+**Spacing** 取 4 / 8 / 16 / 24 / 40 / 80 的六档节奏，section 之间用 80 拉开呼吸，模块内用 16 / 24 收紧。留白不是均匀撒满，是像手卷的空段：一段密的碑文后面，必给一段大空。
+
+**Grid &amp; Container**：桌面 12 栏，最大内容宽 1180px 居中。**版心刻意偏右三分**，给竖排主标题留出右侧一整列&quot;界行&quot;（手卷的分行竖线），左下角放小字眉题与英文，模拟展卷的视线动线。
+
+**Whitespace 哲学**：绢纸留白是主角之一。宁可一屏只放一句竖排大字加一方印，也不把信息塞满。密与空的对比，就是这套的呼吸。
+
+## Elevation &amp; Depth
+
+**这套不靠阴影分层，靠金线与叠压。** 卡片默认只有 1px 金线勾边（hairline / gold），层级差用底色明度（canvas → surface 亮一档）表达，不加 drop-shadow。
+
+真正的&quot;深度&quot;来自签名叠压：**朱印盖在金线框之上、金线框盖在红墙之上**，三层实体叠压制造纸面的物理厚度感，比任何模糊阴影都真。
+
+深色页（红墙、黛蓝）**不加辉光、不加 `backdrop-filter`**。要发光就静态，本系统压根不需要发光。**不动画化任何 `box-shadow` / `text-shadow`**（逐帧重绘极贵），呼吸感靠留白节奏，不靠闪。
+
+## Shapes
+
+**Border Radius 全线归零**：宫门是方的，`rounded.none` 是默认，方块面才立得住气。仅两个例外：朱印方章取 `xs` 2px（印石的极轻倒角），馆藏小标签取 `sm` 6px。圆角一多，宫气就散。
+
+**窗棂母题**：核心几何是隔扇窗棂的方格网，用重复线性渐变画 1px 金线格纹当装饰底或卡片框，四角配回纹 / 云纹短线收口。
+
+**图片几何**：文物图走严格矩形出血或团扇圆光（正圆裁切）二选一，配 1px 金线勾边。不用无意义的斜切与不规则 blob，那不是宫墙的语言。
+
+## Components
+
+- **nav-bar**：绢纸底，宋体馆名，底部 1px 描边浅金。方正，无阴影。
+- **button-primary**：红墙底，绢白字，**外围 1px 明金勾边**（金线勾边签名），零圆角。宽字距把字撑开。
+- **button-ghost**：绢纸底，宫墙红字，红边框，零圆角。次级动作。
+- **card-lattice**：素笺底，漆黑正文，**金线窗棂框**，零圆角。承载文物说明与图文。
+- **stat-block**：素笺底，巨号拉丁序号做典藏编号，顶部描边浅金线分节。
+- **seal-mark**：朱印底，绢白反白印文，金框，2px 微倒角。一页一印，是落款不是贴纸。
+- **collection-tag**：素笺底，宫墙红眉题，金边小圆角，做&quot;馆藏 · No.031&quot;这类标签。
+- **footer**：绢纸底，古铜次要字，顶部 1px 明金线收口。
+
+## Presentation System
+
+做成 16:9 演示时，对齐 HeiGe-PPT 的 **一页一句话 + 黄金三秒 + 视觉锤**。这套的视觉锤写死是三件套的叠压：**红墙场 + 金线窗棂框 + 一方朱印**。观众三秒内看到红墙压场、金线勾边、朱印落款，就知道这是典藏级的东西。
+
+- **封面 slide-cover**：绢纸底，右三分竖排 72px 宋体主标题，左侧一道竖金线当界行，左下角横排英文眉题，竖列末端盖一方朱印。整屏就一句话，那句话就是竖排大字。
+- **过渡页 slide-section-divider**：整屏黛蓝，左上角巨号拉丁章节号（金色描边），右侧竖排小标题，金线收边。冷色留白给眼睛一个换气。
+- **数据页 slide-stat-hero**：黛蓝场，中央一个 96px 拉丁巨数（金），下方绢白小字标单位与出处。一屏一个数，别塞第二个。
+- **金句页 slide-quote**：绢纸底，居中偏上一句 44px 宫墙红宋体大字，下方一道描边浅金短线，右下角一方小朱印落款。占屏一句，狠。
+- **收尾页 slide-closing**：整屏红墙，绢白 44px 行动号召，底部金线，正中盖一方大朱印收卷。红墙盖章 = 闭幕。
+
+## Signature Moment
+
+**UI 签名：朱印破界（The Seal That Breaks the Frame）。** 每个主 CTA 与英雄卡片都裹一圈 1px 明金窗棂勾边，右上角实压一方朱印，**印章故意越过金线框几个像素、盖在框线之上**，像手工钤印时压出了边。印里两个绢白反白字。这一处&quot;印 &gt; 金线 &gt; 红墙&quot;的三层实体叠压，是换任何模板都做不出来的手感。
+
+```css
+/* 窗棂金线框 + 朱印破界 */
+.lattice{
+  position:relative; padding:24px; background:#FBF6EA;
+  border:1px solid #C9A227;               /* 金线勾边 */
+  background-image:                        /* 窗棂方格纹 */
+    repeating-linear-gradient(0deg,transparent 0 47px,#D9C7A0 47px 48px),
+    repeating-linear-gradient(90deg,transparent 0 47px,#D9C7A0 47px 48px);
+}
+.lattice::after{                           /* 朱印越过金线框 */
+  content:&quot;藏&quot;; position:absolute; top:-14px; right:-14px;
+  width:44px; height:44px; display:grid; place-items:center;
+  background:#BE3626; color:#F5EFE1; border:2px solid #C9A227;
+  font-family:&quot;Noto Serif SC&quot;,&quot;Songti SC&quot;,serif; border-radius:2px;
+}
+```
+
+**Deck 签名：竖排开卷（Vertical Title Unrolls）。** 封面主标题用 `writing-mode: vertical-rl` 竖排成一列大号宋字，右侧起排、自上而下，左边一道细金线当手卷的界行，横排英文眉题小小地缩在左下，竖列尽头落一方朱印。整页读起来像展开一段手卷，那一列竖字就是这页唯一的一句话。
+
+```css
+.scroll-title{
+  writing-mode:vertical-rl; text-orientation:upright;
+  font-family:&quot;Noto Serif SC&quot;,&quot;Songti SC&quot;,&quot;STSong&quot;,serif;
+  font-weight:900; font-size:clamp(40px,7vw,72px);
+  border-right:2px solid #C9A227;          /* 界行金线 */
+  padding-right:28px; color:#241A15;
+}
+```
+
+## Do's and Don'ts
+
+**Do**
+- 主色克制：宫墙红压场，明金只勾边和落款，黛蓝托底，三色各司其职。
+- 竖排立骨：主标题竖排楷宋，横细竖粗即气派，一页一句话。
+- 方到底：零圆角块面、金线勾边、朱印叠压，实体分层不靠阴影。
+- 留白当主角：一屏一句竖字加一方印，也比塞满强。
+- 一页一印：朱印是落款，钤在收束处点睛。
+
+**Don't**
+- **不碰紫蓝俗套渐变（`#667eea → #764ba2`）及其全家桶**，那是 AI 界面的身份证，与宫墙气质天生互斥。
+- **不做居中卡片三件套**（一行标题 + 一行灰副标 + 三个等宽圆角卡整页重复），这套靠竖排与叠压立气，不靠模板栅格。
+- **中文绝不用日文字体（Mochiy / Zen Maru 等）渲染**，简体会缺字变豆腐；要中文展示体就用思源宋 / Songti SC。
+- **不动画化阴影 / box-shadow**（逐帧重绘极贵），本系统本就不靠阴影，靠金线与朱印。
+- 不给窗棂卡片加圆角，宫门是方的，圆角一上就散气。
+- 不把整屏铺满金色，金是点睛的勾边与印，不是底色，满金即俗。
+- 不用假书法滤镜或描边字冒充楷宋，要碑刻感就选真的重字重宋体。
+- 不让朱印乱盖三四方，一页一印，印是落款不是贴纸。
+
+## Responsive Behavior
+
+| 断点 | 布局 |
+|---|---|
+| ≥ 1024px | 12 栏，版心偏右，竖排主标题占右侧界行列 |
+| 768–1023px | 8 栏，竖排标题保留但收窄字号 clamp |
+| ≤ 767px | 单列重排，**竖排转横排** |
+
+移动端是**重新编排**，不是桌面缩一缩。窄屏下竖排主标题改回 `writing-mode: horizontal-tb` 横排（竖排在 390px 会高到爆屏），章节巨号移到标题上方，窗棂格纹底简化为单条金线，朱印从&quot;破界叠压&quot;改为标题下方独立钤盖。出货前在桌面与 ≤ 390px 各扫一遍：无孤字、无横向溢出（`scrollWidth == clientWidth`）。所有动画走 `@media (prefers-reduced-motion: reduce)` 可一键关停，只动 `transform` / `opacity`。
+
+## Anti-Slop Pledge
+
+抹掉品牌名，这套依然一眼是用心做的：**深宫墙红压场、明金只走勾边、竖排楷宋像展开的手卷、一方朱印越过金线框实压落款**。它有宫墙的方正与典藏的克制，不是任何流水线套模板能生成的那种&quot;现代简约&quot;安全废话。署名 HeiGe-Design。
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #9a2b2b;
+  --color-on-primary: #f5efe1;
+  --color-ink: #241a15;
+  --color-canvas: #f3ead6;
+  --color-surface: #fbf6ea;
+  --color-muted: #746351;
+  --color-hairline: #d9c7a0;
+  --color-gold: #c9a227;
+  --color-dai: #2e3a4a;
+  --color-seal: #be3626;
+  --font-display-xl: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-numeral: &quot;\&quot;Playfair Display\&quot;, \&quot;Didot\&quot;, \&quot;Bodoni MT\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-button: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 44px;
+  --text-heading: 24px;
+  --text-body: 16px;
+  --text-numeral: 96px;
+  --text-button: 15px;
+  --text-eyebrow: 12px;
+  --text-caption: 13px;
+  --tracking-display-xl: 2px;
+  --tracking-display-lg: 1px;
+  --tracking-heading: 0.5px;
+  --tracking-body: 0.2px;
+  --tracking-numeral: -1px;
+  --tracking-button: 1.5px;
+  --tracking-eyebrow: 4px;
+  --tracking-caption: 0.3px;
+  --font-weight-display-xl: 900;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-numeral: 700;
+  --font-weight-button: 600;
+  --font-weight-eyebrow: 600;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 6px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#9a2b2b&quot;,
+        &quot;on-primary&quot;: &quot;#f5efe1&quot;,
+        &quot;ink&quot;: &quot;#241a15&quot;,
+        &quot;canvas&quot;: &quot;#f3ead6&quot;,
+        &quot;surface&quot;: &quot;#fbf6ea&quot;,
+        &quot;muted&quot;: &quot;#746351&quot;,
+        &quot;hairline&quot;: &quot;#d9c7a0&quot;,
+        &quot;gold&quot;: &quot;#c9a227&quot;,
+        &quot;dai&quot;: &quot;#2e3a4a&quot;,
+        &quot;seal&quot;: &quot;#be3626&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;numeral&quot;: [
+          &quot;\&quot;Playfair Display\&quot;, \&quot;Didot\&quot;, \&quot;Bodoni MT\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;72px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2px&quot;,
+            &quot;fontWeight&quot;: &quot;900&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;44px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;24px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;numeral&quot;: [
+          &quot;96px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1.5px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;xs&quot;: &quot;2px&quot;,
+        &quot;sm&quot;: &quot;6px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;80px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #9a2b2b;
+  --color-on-primary: #f5efe1;
+  --color-ink: #241a15;
+  --color-canvas: #f3ead6;
+  --color-surface: #fbf6ea;
+  --color-muted: #746351;
+  --color-hairline: #d9c7a0;
+  --color-gold: #c9a227;
+  --color-dai: #2e3a4a;
+  --color-seal: #be3626;
+  --font-display-xl: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-numeral: &quot;\&quot;Playfair Display\&quot;, \&quot;Didot\&quot;, \&quot;Bodoni MT\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --font-button: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 44px;
+  --text-heading: 24px;
+  --text-body: 16px;
+  --text-numeral: 96px;
+  --text-button: 15px;
+  --text-eyebrow: 12px;
+  --text-caption: 13px;
+  --tracking-display-xl: 2px;
+  --tracking-display-lg: 1px;
+  --tracking-heading: 0.5px;
+  --tracking-body: 0.2px;
+  --tracking-numeral: -1px;
+  --tracking-button: 1.5px;
+  --tracking-eyebrow: 4px;
+  --tracking-caption: 0.3px;
+  --font-weight-display-xl: 900;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-numeral: 700;
+  --font-weight-button: 600;
+  --font-weight-eyebrow: 600;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 6px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Neo-Oriental heritage system founded on the deep oxblood of a palace wall (#9A2B2B), edged in bright imperial gold and grounded by dai-blue roof shadow. Heavy Song-serif titles stand vertically like an unrolled handscroll while a cinnabar seal breaks a hairline gold lattice frame as the signing stamp. Sharp zero-radius blocks, wide silk-paper whitespace, and high-contrast Didot-style numerals carry archival serials. Built for museums, cultural heritage, premium heritage craft, and archival collections. Ceremonial, restrained, unmistakably imperial, never a template. Signed HeiGe-Design.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.604,
+          0.169,
+          0.169
+        ],
+        &quot;hex&quot;: &quot;#9a2b2b&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.961,
+          0.937,
+          0.882
+        ],
+        &quot;hex&quot;: &quot;#f5efe1&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.141,
+          0.102,
+          0.082
+        ],
+        &quot;hex&quot;: &quot;#241a15&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.953,
+          0.918,
+          0.839
+        ],
+        &quot;hex&quot;: &quot;#f3ead6&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.984,
+          0.965,
+          0.918
+        ],
+        &quot;hex&quot;: &quot;#fbf6ea&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.455,
+          0.388,
+          0.318
+        ],
+        &quot;hex&quot;: &quot;#746351&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.851,
+          0.78,
+          0.627
+        ],
+        &quot;hex&quot;: &quot;#d9c7a0&quot;
+      }
+    },
+    &quot;gold&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.788,
+          0.635,
+          0.153
+        ],
+        &quot;hex&quot;: &quot;#c9a227&quot;
+      }
+    },
+    &quot;dai&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.18,
+          0.227,
+          0.29
+        ],
+        &quot;hex&quot;: &quot;#2e3a4a&quot;
+      }
+    },
+    &quot;seal&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.745,
+          0.212,
+          0.149
+        ],
+        &quot;hex&quot;: &quot;#be3626&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 80,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 2,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 72,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 900,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 44,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 24,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;numeral&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Playfair Display\&quot;, \&quot;Didot\&quot;, \&quot;Bodoni MT\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 96,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 故宫红金（gugong-red · 东方新中式）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `gugong-red` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#9A2B2B` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Noto Serif SC`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint gugong-red` / 导出其它格式：`heige-design export gugong-red --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 故宫红金 — 原创设定集，可商用。跑校验：<code>heige-design lint gugong-red</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

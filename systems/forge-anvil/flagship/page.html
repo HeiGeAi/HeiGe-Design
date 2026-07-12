@@ -1,0 +1,468 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QUENCH · 贴金属跑的边缘运行时</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  /* ============ FORGE-ANVIL · COLDFORGE tokens ============ */
+  :root{
+    --primary:#c8ff00;      /* acid green — voltage */
+    --on-primary:#0c0d0e;
+    --ink:#f5f6f3;
+    --canvas:#0c0d0e;       /* iron black bed */
+    --surface:#17191b;
+    --muted:#9a9d9f;
+    --hairline:#313437;
+    --molten:#ff5a1f;       /* forge heat */
+
+    --f-display:'Archivo Black','Space Grotesk','Helvetica Neue','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+    --f-lg:'Space Grotesk','Archivo','Helvetica Neue','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+    --f-body:'Space Grotesk','Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+    --f-mono:'JetBrains Mono','SFMono-Regular',ui-monospace,'Noto Sans SC','PingFang SC',monospace;
+
+    --sp-xs:4px;--sp-sm:8px;--sp-md:16px;--sp-lg:24px;--sp-xl:48px;--sp-sec:96px;
+    --max:1200px;
+    --offset-black:6px 6px 0 #000000;
+    --offset-acid:6px 6px 0 var(--primary);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--canvas);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-size:17px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--primary);color:var(--on-primary)}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;width:100%}
+  .mono{font-family:var(--f-mono)}
+  .kick{
+    font-family:var(--f-mono);font-size:13px;font-weight:600;
+    letter-spacing:2px;color:var(--primary);text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .led{
+    width:8px;height:8px;border-radius:9999px;background:var(--molten);
+    box-shadow:0 0 8px var(--molten),0 0 2px var(--molten);
+    animation:led 1.9s ease-in-out infinite;flex:0 0 auto;
+  }
+  @keyframes led{0%,100%{opacity:1}50%{opacity:.32}}
+
+  /* ============ buttons ============ */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--f-body);font-size:15px;font-weight:700;letter-spacing:.6px;
+    padding:16px 32px;border:2px solid transparent;border-radius:0;
+    cursor:pointer;line-height:1;user-select:none;
+    transition:transform .07s linear,box-shadow .07s linear,background .12s;
+  }
+  .btn-primary{background:var(--primary);color:var(--on-primary);box-shadow:var(--offset-black);border-color:var(--primary)}
+  .btn-primary:hover{box-shadow:8px 8px 0 #000}
+  .btn-primary:active{transform:translate(6px,6px);box-shadow:0 0 0 #000}
+  /* ——— voltage stamp signature ——— */
+  .btn-stamp{background:var(--canvas);color:var(--ink);border-color:var(--primary);box-shadow:var(--offset-acid)}
+  .btn-stamp:hover{box-shadow:8px 8px 0 var(--primary)}
+  .btn-stamp:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--primary)}
+  .btn .arw{color:var(--primary);font-family:var(--f-mono);font-weight:700}
+  .btn-primary .arw{color:var(--on-primary)}
+
+  /* ============ NAV ============ */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(12,13,14,.92);
+    border-bottom:2px solid var(--hairline);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .stampmark{
+    width:26px;height:26px;background:var(--primary);color:var(--on-primary);
+    display:grid;place-items:center;font-family:var(--f-display);font-size:16px;
+    box-shadow:3px 3px 0 #000;
+  }
+  .brand b{font-family:var(--f-lg);font-weight:700;font-size:19px;letter-spacing:-.5px}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{font-family:var(--f-mono);font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.5px;transition:color .12s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a.on{color:var(--primary)}
+  .nav-cta{display:flex;align-items:center;gap:18px}
+  .nav-cta .ghost{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+  .nav-cta .ghost:hover{color:var(--ink)}
+  .nav-btn{padding:11px 22px;font-size:13px}
+
+  /* ============ HERO — cold-start manifesto ============ */
+  .hero{position:relative;overflow:hidden;border-bottom:2px solid var(--hairline)}
+  .hero-bed{
+    position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(to right,transparent,transparent calc((100% - 2px)/12 - 1px),var(--hairline) calc((100% - 2px)/12 - 1px),var(--hairline) calc((100% - 2px)/12));
+    opacity:.28;pointer-events:none;
+  }
+  .hero-glow{
+    position:absolute;left:-8%;top:8%;width:620px;height:620px;pointer-events:none;
+    background:radial-gradient(circle,rgba(200,255,0,.14),rgba(200,255,0,0) 62%);
+  }
+  .ruler-top{
+    position:relative;z-index:2;display:flex;justify-content:space-between;
+    padding:12px 24px 10px;border-bottom:1px solid var(--hairline);
+    font-family:var(--f-mono);font-size:11px;letter-spacing:1.5px;color:var(--muted);
+  }
+  .ruler-top span:nth-child(1){color:var(--primary)}
+  .hero-body{position:relative;z-index:2;display:flex;gap:0;min-height:calc(100vh - 68px - 40px)}
+  .ruler-left{
+    flex:0 0 54px;display:flex;flex-direction:column;justify-content:space-between;
+    padding:48px 0;border-right:1px solid var(--hairline);
+    font-family:var(--f-mono);font-size:11px;letter-spacing:1px;color:var(--muted);
+    align-items:center;
+  }
+  .ruler-left span{writing-mode:vertical-rl;transform:rotate(180deg)}
+  .hero-main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:64px 40px 64px 56px}
+  .manifesto{
+    font-family:var(--f-display);font-weight:900;
+    font-size:clamp(46px,11.5vw,132px);line-height:.9;letter-spacing:-3px;
+    color:var(--ink);margin:26px 0 0;
+  }
+  .manifesto span{display:block;white-space:nowrap}
+  .manifesto .lit{color:var(--primary)}
+  .hero-sub{
+    max-width:33em;margin-top:30px;color:var(--muted);font-size:18px;line-height:1.6;
+  }
+  .hero-sub b{color:var(--ink);font-weight:700}
+  .hero-actions{display:flex;gap:22px;flex-wrap:wrap;margin-top:40px;align-items:center}
+  .term{
+    margin-top:38px;max-width:520px;background:var(--surface);
+    border:2px solid var(--hairline);box-shadow:var(--offset-black);
+    font-family:var(--f-mono);font-size:13px;
+  }
+  .term-bar{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-bottom:1px solid var(--hairline);color:var(--muted)}
+  .term-dots{display:flex;gap:6px}
+  .term-dots i{width:9px;height:9px;border-radius:9999px;background:var(--hairline);display:block}
+  .term-body{padding:16px 16px 18px;line-height:1.9}
+  .term-body .p{color:var(--primary)}
+  .term-body .c{color:var(--ink)}
+  .term-body .run{color:var(--molten);display:inline-flex;align-items:center;gap:8px}
+  .term-body .run i{width:7px;height:7px;border-radius:9999px;background:var(--molten);box-shadow:0 0 7px var(--molten);animation:led 1.4s ease-in-out infinite}
+  .hero-corner{
+    position:absolute;right:20px;bottom:14px;z-index:2;
+    font-family:var(--f-mono);font-size:11px;letter-spacing:1px;color:var(--muted);
+  }
+
+  /* ============ STAT BAR ============ */
+  .statbar{background:var(--canvas);border-bottom:2px solid var(--hairline)}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:34px 28px;border-left:1px solid var(--hairline);position:relative}
+  .stat:first-child{border-left:none}
+  .stat::before{content:"";position:absolute;left:0;top:34px;bottom:34px;width:4px;background:var(--primary)}
+  .stat:first-child::before{left:0}
+  .stat .num{font-family:var(--f-mono);font-weight:700;font-size:clamp(38px,4.4vw,58px);line-height:1;letter-spacing:-2px;color:var(--primary)}
+  .stat .lab{font-family:var(--f-mono);font-size:12px;letter-spacing:1px;color:var(--muted);margin-top:12px}
+
+  /* ============ SECTION SHELL ============ */
+  section.block{padding:var(--sp-sec) 0}
+  .sec-head{max-width:640px;margin-bottom:56px}
+  .sec-head h2{font-family:var(--f-lg);font-weight:700;font-size:clamp(34px,4.6vw,52px);line-height:1.02;letter-spacing:-1.2px;margin:18px 0 0}
+  .sec-head p{color:var(--muted);margin-top:18px;font-size:18px}
+  .sec-head .lit{color:var(--primary)}
+
+  /* ============ FEATURES ============ */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .fcard{
+    background:var(--surface);border:2px solid var(--hairline);
+    box-shadow:var(--offset-black);padding:32px;position:relative;
+    transition:transform .12s,box-shadow .12s,border-color .12s;
+  }
+  .fcard:hover{border-color:var(--primary);box-shadow:8px 8px 0 #000;transform:translate(-2px,-2px)}
+  .fcard .idx{font-family:var(--f-mono);font-weight:700;font-size:13px;letter-spacing:2px;color:var(--primary)}
+  .fcard h3{font-family:var(--f-lg);font-weight:700;font-size:24px;letter-spacing:-.5px;margin:18px 0 12px}
+  .fcard p{color:var(--muted);font-size:16px;line-height:1.6}
+  .fcard .spec{margin-top:22px;padding-top:18px;border-top:1px solid var(--hairline);font-family:var(--f-mono);font-size:12.5px;color:var(--ink);letter-spacing:.3px}
+  .fcard .spec b{color:var(--primary);font-weight:700}
+
+  /* ============ PRICING ============ */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+  .pcard{
+    background:var(--surface);border:2px solid var(--hairline);
+    box-shadow:var(--offset-black);padding:36px 32px 34px;display:flex;flex-direction:column;
+    position:relative;
+  }
+  .pcard.feat{
+    border-color:var(--primary);box-shadow:8px 8px 0 var(--primary);
+    transform:translateY(-14px);
+  }
+  .pcard .tag{
+    position:absolute;top:-2px;right:-2px;background:var(--primary);color:var(--on-primary);
+    font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:1.5px;padding:6px 12px;
+  }
+  .pcard .plan{font-family:var(--f-display);font-size:20px;letter-spacing:0;color:var(--ink)}
+  .pcard .plan.acid{color:var(--primary)}
+  .pcard .for{font-family:var(--f-mono);font-size:12px;color:var(--muted);letter-spacing:.5px;margin-top:8px}
+  .pcard .price{display:flex;align-items:baseline;gap:8px;margin:26px 0 6px}
+  .pcard .price .n{font-family:var(--f-mono);font-weight:700;font-size:52px;line-height:1;letter-spacing:-2px;color:var(--ink)}
+  .pcard.feat .price .n{color:var(--primary)}
+  .pcard .price .u{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+  .plist{list-style:none;margin:24px 0 30px;display:flex;flex-direction:column;gap:13px}
+  .plist li{display:flex;gap:12px;font-size:15px;color:var(--ink);line-height:1.4}
+  .plist li .ck{font-family:var(--f-mono);color:var(--primary);font-weight:700;flex:0 0 auto}
+  .plist li.off{color:var(--muted)}
+  .plist li.off .ck{color:var(--hairline)}
+  .pcard .btn{width:100%;justify-content:center;margin-top:auto}
+
+  /* ============ CTA ============ */
+  .cta{border-top:2px solid var(--hairline);border-bottom:2px solid var(--hairline);position:relative;overflow:hidden}
+  .cta-glow{position:absolute;right:-6%;top:-40%;width:560px;height:560px;background:radial-gradient(circle,rgba(200,255,0,.12),rgba(200,255,0,0) 62%);pointer-events:none}
+  .cta-in{position:relative;z-index:2;padding:88px 0;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .cta-in h2{font-family:var(--f-display);font-weight:900;font-size:clamp(34px,5vw,64px);line-height:.98;letter-spacing:-2px;max-width:14em}
+  .cta-in h2 .lit{color:var(--primary)}
+  .cta-right{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+  .cta-right .note{font-family:var(--f-mono);font-size:12px;color:var(--muted);letter-spacing:.5px}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--canvas);padding:64px 0 40px}
+  .foot-top{display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap;padding-bottom:44px;border-bottom:1px solid var(--hairline)}
+  .foot-brand{max-width:300px}
+  .foot-brand .brand{margin-bottom:16px}
+  .foot-brand p{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);line-height:1.7}
+  .foot-cols{display:flex;gap:64px;flex-wrap:wrap}
+  .fcol h4{font-family:var(--f-mono);font-size:12px;letter-spacing:2px;color:var(--primary);margin-bottom:16px}
+  .fcol a{display:block;font-family:var(--f-mono);font-size:13px;color:var(--muted);margin-bottom:11px;transition:color .12s}
+  .fcol a:hover{color:var(--ink)}
+  .foot-bot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:26px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.5px;color:var(--muted)}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:1000px){
+    .nav-links{display:none}
+    .stat-grid{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(3){border-left:none}
+    .stat:nth-child(n+3){border-top:1px solid var(--hairline)}
+    .feat-grid,.price-grid{grid-template-columns:1fr}
+    .pcard.feat{transform:none}
+    .ruler-left{display:none}
+    .hero-main{padding:52px 24px}
+  }
+  @media(max-width:560px){
+    .stat-grid{grid-template-columns:1fr}
+    .stat{border-left:none}
+    .stat:not(:first-child){border-top:1px solid var(--hairline)}
+    .manifesto{letter-spacing:-1.5px}
+    .hero-body{min-height:auto}
+    .term{max-width:100%}
+    .cta-in{padding:64px 0}
+    .btn{padding:14px 24px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important;scroll-behavior:auto}
+    .fcard{transition:none}
+  }
+</style>
+
+<!-- ==================== NAV ==================== -->
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand">
+      <div class="stampmark">Q</div>
+      <b>QUENCH</b>
+    </div>
+    <div class="nav-links">
+      <a href="#" class="on">运行时</a>
+      <a href="#feat">边缘</a>
+      <a href="#price">定价</a>
+      <a href="#">文档</a>
+      <a href="#">GITHUB</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#" class="ghost">登录</a>
+      <a href="#" class="btn btn-primary nav-btn">部署 <span class="arw">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="hero-bed"></div>
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="ruler-top mono">
+      <span>X01</span><span>X02</span><span>X03</span><span>X04</span><span>X05</span>
+      <span>X06</span><span>X07</span><span>X08</span><span>X09</span><span>X10</span>
+      <span>X11</span><span>X12</span>
+    </div>
+    <div class="hero-body">
+      <div class="ruler-left mono">
+        <span>BED · 00</span>
+        <span>QUENCH RUNTIME</span>
+        <span>REV 04 · 2026</span>
+      </div>
+      <div class="hero-main">
+        <span class="kick"><i class="led"></i>[ SYSTEM ONLINE ]</span>
+        <h1 class="manifesto">
+          <span>RUN AT</span>
+          <span class="lit">THE METAL.</span>
+        </h1>
+        <p class="hero-sub">淬火是贴着裸金属跑的边缘运行时。<b>快照恢复，零冷启动</b>，一条命令把你的代码铺到全球 300 个节点，永不睡去。</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">开始锻造 <span class="arw">→</span></a>
+          <a href="#" class="btn btn-stamp">看基准测试</a>
+        </div>
+        <div class="term">
+          <div class="term-bar">
+            <div class="term-dots"><i></i><i></i><i></i></div>
+            <span>quench · edge deploy</span>
+          </div>
+          <div class="term-body">
+            <div><span class="p">$</span> <span class="c">quench deploy --edge --regions all</span></div>
+            <div><span class="run"><i></i>正在锻造 · 铺向 300 节点 · 340ms</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-corner mono">X:1200 · Y:820 · GRID 12</div>
+</header>
+
+<!-- ==================== STAT BAR ==================== -->
+<section class="statbar">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat"><div class="num">0ms</div><div class="lab">冷启动延迟</div></div>
+      <div class="stat"><div class="num">300+</div><div class="lab">全球边缘节点</div></div>
+      <div class="stat"><div class="num">12ms</div><div class="lab">P99 全球延迟</div></div>
+      <div class="stat"><div class="num">99.99%</div><div class="lab">在线率 SLA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FEATURES ==================== -->
+<section class="block" id="feat">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick"><i class="led"></i>[ 03 · 核心构造 ]</span>
+      <h2>为什么它的冷启动<br>能压到 <span class="lit">整整 0 毫秒</span></h2>
+      <p>不是把容器预热，是根本没有容器要热。三样东西让它开机即满速。</p>
+    </div>
+    <div class="feat-grid">
+      <div class="fcard">
+        <div class="idx">01</div>
+        <h3>快照恢复</h3>
+        <p>进程被冻成微秒级可还原的快照，实例从不真正睡去，请求进来直接接住，没有那段等它爬起来的空窗。</p>
+        <div class="spec">RESTORE <b>&lt; 900µs</b> · 内存态整存整取</div>
+      </div>
+      <div class="fcard">
+        <div class="idx">02</div>
+        <h3>贴金属调度</h3>
+        <p>绕过一整层容器抽象，代码直接落到裸金属上跑。少一层，就少一次调度、少一次拷贝、少一次等待。</p>
+        <div class="spec">BARE-METAL <b>0 层容器</b> · 调度器写在内核旁</div>
+      </div>
+      <div class="fcard">
+        <div class="idx">03</div>
+        <h3>一条命令上线</h3>
+        <p>一行 <span class="mono">quench deploy</span> 把你的服务铺满全球边缘，回滚也是一行。基础设施该像开关，不该像考试。</p>
+        <div class="spec">DEPLOY <b>340ms</b> · 全球一次铺开</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PRICING ==================== -->
+<section class="block" id="price" style="border-top:2px solid var(--hairline)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick"><i class="led"></i>[ 定价 · 按节点计 ]</span>
+      <h2>三档功率，<span class="lit">按你要的火力上</span></h2>
+      <p>从个人开源到跑热的生产集群。没有隐藏项，没有虚位坐席费。</p>
+    </div>
+    <div class="price-grid">
+      <div class="pcard">
+        <div class="plan">FORGE</div>
+        <div class="for">个人与开源项目</div>
+        <div class="price"><span class="n">$0</span><span class="u">/ 永久免费</span></div>
+        <ul class="plist">
+          <li><span class="ck">+</span>2 个边缘节点</li>
+          <li><span class="ck">+</span>零冷启动运行时</li>
+          <li><span class="ck">+</span>社区支持</li>
+          <li class="off"><span class="ck">×</span>自定义区域</li>
+          <li class="off"><span class="ck">×</span>SLA 保障</li>
+        </ul>
+        <a href="#" class="btn btn-stamp">免费开始</a>
+      </div>
+
+      <div class="pcard feat">
+        <div class="tag">推荐</div>
+        <div class="plan acid">METAL</div>
+        <div class="for">生产团队 · 跑热主力</div>
+        <div class="price"><span class="n">$29</span><span class="u">/ 每节点 / 月</span></div>
+        <ul class="plist">
+          <li><span class="ck">+</span>无限边缘节点</li>
+          <li><span class="ck">+</span>全球 300 节点铺开</li>
+          <li><span class="ck">+</span>12ms P99 延迟保障</li>
+          <li><span class="ck">+</span>快照秒级回滚</li>
+          <li><span class="ck">+</span>99.99% 在线 SLA</li>
+        </ul>
+        <a href="#" class="btn btn-primary">开始锻造 <span class="arw">→</span></a>
+      </div>
+
+      <div class="pcard">
+        <div class="plan">FURNACE</div>
+        <div class="for">企业 · 私有金属</div>
+        <div class="price"><span class="n">面议</span></div>
+        <ul class="plist">
+          <li><span class="ck">+</span>专属裸金属集群</li>
+          <li><span class="ck">+</span>私有区域与合规</li>
+          <li><span class="ck">+</span>专线接入</li>
+          <li><span class="ck">+</span>7×24 工程支持</li>
+          <li><span class="ck">+</span>定制 SLA</li>
+        </ul>
+        <a href="#" class="btn btn-stamp">联系我们</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta">
+  <div class="cta-glow"></div>
+  <div class="wrap cta-in">
+    <h2>别再为<span class="lit">冷启动</span>买单。</h2>
+    <div class="cta-right">
+      <a href="#" class="btn btn-primary">开始锻造 <span class="arw">→</span></a>
+      <span class="note">$ quench deploy · 无需信用卡</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">
+          <div class="stampmark">Q</div>
+          <b>QUENCH</b>
+        </div>
+        <p>贴着金属跑的边缘运行时。<br>冷启动为 0，一条命令铺满全球。</p>
+      </div>
+      <div class="foot-cols">
+        <div class="fcol">
+          <h4>产品</h4>
+          <a href="#">运行时</a><a href="#">边缘网络</a><a href="#">快照恢复</a><a href="#">定价</a>
+        </div>
+        <div class="fcol">
+          <h4>开发者</h4>
+          <a href="#">文档</a><a href="#">CLI 参考</a><a href="#">基准测试</a><a href="#">状态页</a>
+        </div>
+        <div class="fcol">
+          <h4>公司</h4>
+          <a href="#">关于</a><a href="#">博客</a><a href="#">招聘</a><a href="#">联系</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 QUENCH RUNTIME · 虚构演示品牌 · 由 HeiGe-Design 锻造</span>
+      <span>BED 00 · GRID 12 · REV 04 · MIT</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>啵啵 Poppo · 会弹会跳的习惯 App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Bagel+Fat+One&family=Nunito:wght@400;500;600;700;800&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#FF5CA8; --on-primary:#2E1A47; --ink:#2E1A47;
+  --canvas:#FFF6FB; --surface:#FFFFFF; --muted:#7A5C8E;
+  --hairline:#F1D9E8; --accent:#33D9B2; --accent-2:#FFD836;
+  --primary-dark:#C81C68; --lemon-dark:#E0B800; --mint-dark:#1FB89A; --grape-dark:#20113a;
+  --r-sm:10px; --r-md:18px; --r-lg:28px; --r-xl:44px; --r-pill:9999px;
+  --s-xs:4px; --s-sm:8px; --s-md:16px; --s-lg:24px; --s-xl:40px; --s-section:80px;
+  --font-display:"Baloo 2","Bagel Fat One","ZCOOL KuaiLe","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-heading:"Baloo 2","ZCOOL KuaiLe","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-body:"Nunito","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --font-numeric:"Baloo 2","Bagel Fat One","Nunito","PingFang SC","Noto Sans SC",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body); font-size:17px; font-weight:500; line-height:1.62; letter-spacing:.1px;
+  color:var(--ink); background:var(--canvas);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  font-synthesis:none; overflow-x:hidden;
+}
+.cjk-display{font-synthesis:none}
+a{color:inherit}
+img{max-width:100%}
+::selection{background:var(--accent-2);color:var(--ink)}
+
+/* ---- shared type ---- */
+.eyebrow{
+  font-family:var(--font-body); font-size:13px; font-weight:800; line-height:1; letter-spacing:1.5px;
+  text-transform:uppercase; display:inline-block;
+  background:var(--accent-2); color:var(--ink);
+  border-radius:var(--r-sm); padding:6px 12px;
+}
+.display-xl{font-family:var(--font-display); font-weight:800; line-height:1.0; letter-spacing:-1.5px}
+.display-lg{font-family:var(--font-display); font-weight:800; line-height:1.06; letter-spacing:-1px}
+.heading{font-family:var(--font-heading); font-weight:700; font-size:26px; line-height:1.18; letter-spacing:-.3px}
+.muted{color:var(--muted)}
+.numeric{font-family:var(--font-numeric); font-weight:800; line-height:.94; letter-spacing:-2px; font-synthesis:none}
+
+/* ---- buttons ---- */
+.btn{
+  font-family:var(--font-body); font-weight:700; font-size:17px; letter-spacing:.2px; line-height:1;
+  border:none; cursor:pointer; border-radius:var(--r-pill);
+  padding:18px 40px; display:inline-flex; align-items:center; gap:10px;
+  text-decoration:none; white-space:nowrap;
+  transition:transform .13s cubic-bezier(.34,1.56,.64,1);
+}
+.btn svg{display:block}
+.btn-primary{background:var(--primary); color:var(--on-primary); box-shadow:0 6px 0 var(--primary-dark)}
+.btn-primary:hover{transform:translateY(-2px) scale(1.03)}
+.btn-primary:active{transform:translateY(6px); box-shadow:0 0 0 var(--primary-dark)}
+.btn-secondary{background:var(--accent); color:var(--ink); box-shadow:0 6px 0 var(--mint-dark)}
+.btn-secondary:hover{transform:translateY(-2px) scale(1.03)}
+.btn-secondary:active{transform:translateY(6px); box-shadow:0 0 0 var(--mint-dark)}
+.btn-ghost{background:var(--surface); color:var(--ink); box-shadow:0 4px 0 var(--hairline); border:2px solid var(--hairline)}
+.btn-ghost:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--primary); outline-offset:4px}
+
+/* ---- chips ---- */
+.chip{
+  font-family:var(--font-body); font-size:13px; font-weight:600; line-height:1.45; letter-spacing:.2px;
+  background:var(--surface); color:var(--ink); border:2px solid var(--hairline);
+  border-radius:var(--r-pill); padding:5px 16px; display:inline-flex; align-items:center; gap:6px;
+}
+
+/* ---- layout ---- */
+.wrap{max-width:1120px; margin:0 auto; padding:0 24px; position:relative}
+.section{padding:var(--s-section) 0}
+
+/* ---- background gumballs ---- */
+.gumball{position:absolute; border-radius:50%; z-index:0; pointer-events:none}
+
+/* ============ NAV ============ */
+.nav-outer{position:sticky; top:0; z-index:60; padding:18px 24px; pointer-events:none}
+.nav{
+  pointer-events:auto;
+  max-width:1120px; margin:0 auto;
+  background:var(--canvas); border:2px solid var(--hairline);
+  border-radius:var(--r-pill); padding:12px 14px 12px 22px;
+  display:flex; align-items:center; gap:24px;
+  box-shadow:0 6px 0 var(--hairline);
+}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--font-heading); font-weight:700; font-size:22px; letter-spacing:-.3px; text-decoration:none}
+.brand .mark{width:30px; height:30px; flex:none}
+.nav-links{display:flex; gap:6px; margin-left:auto}
+.nav-links a{
+  text-decoration:none; font-family:var(--font-body); font-weight:700; font-size:15px;
+  color:var(--ink); padding:9px 16px; border-radius:var(--r-pill); transition:background .15s, transform .13s cubic-bezier(.34,1.56,.64,1);
+}
+.nav-links a:hover{background:#FDEBF4; transform:translateY(-1px)}
+.nav-cta{padding:12px 26px; font-size:15px}
+.nav-burger{display:none}
+
+/* ============ HERO ============ */
+.hero{position:relative; padding-top:36px; overflow:hidden}
+.hero-grid{display:grid; grid-template-columns:1.02fr .98fr; gap:40px; align-items:center; position:relative; z-index:2}
+.hero-copy .eyebrow{margin-bottom:22px}
+.hero-title{
+  font-family:var(--font-display); font-weight:800; letter-spacing:-1.5px; line-height:1.0;
+  font-size:clamp(46px,8.4vw,80px); color:var(--ink); margin-bottom:24px; font-synthesis:none;
+}
+.hero-title .ln{display:block; white-space:nowrap}
+.hero-title .pink{color:var(--primary)}
+.hero-title .drop{
+  display:inline-block; background:var(--accent-2); color:var(--ink);
+  border-radius:50% 50% 44% 44%/62% 62% 38% 38%; padding:0 .28em .06em; box-shadow:0 8px 0 var(--lemon-dark);
+}
+.hero-sub{font-size:19px; line-height:1.6; color:var(--muted); max-width:19em; margin-bottom:34px}
+.hero-actions{display:flex; gap:16px; flex-wrap:wrap; align-items:center}
+.hero-trust{display:flex; align-items:center; gap:14px; margin-top:26px; flex-wrap:wrap}
+.stars{display:flex; gap:3px}
+.stars svg{width:18px; height:18px}
+.trust-txt{font-size:14px; color:var(--muted); font-weight:600}
+
+/* hero stage: fanned card stack + dispenser + Bibo */
+.hero-stage{position:relative; height:520px}
+.dispenser{position:absolute; left:-6px; top:8px; display:flex; flex-direction:column; gap:16px; z-index:1}
+.gball{width:52px; height:52px; border-radius:50%; box-shadow:0 5px 0 rgba(46,26,71,.14)}
+.gball.p{background:var(--primary)} .gball.m{background:var(--accent)} .gball.l{background:var(--accent-2)}
+.gball.p2{background:#FF8DC2}
+
+.cardstack{position:absolute; right:0; top:24px; width:340px; height:460px; z-index:3}
+.hcard{
+  position:absolute; width:300px; left:20px;
+  background:var(--surface); border:2px solid var(--hairline); border-radius:var(--r-xl);
+  padding:22px 24px; box-shadow:0 12px 0 var(--hairline);
+  transform-origin:bottom center; opacity:0;
+  animation:boing-in .9s cubic-bezier(.22,1,.36,1) forwards;
+}
+.hcard .row{display:flex; align-items:center; gap:14px}
+.hcard .gd{width:46px; height:46px; flex:none}
+.hcard .h{font-family:var(--font-heading); font-weight:700; font-size:19px; letter-spacing:-.3px}
+.hcard .meta{font-size:13px; color:var(--muted); font-weight:600; margin-top:2px}
+.hcard .count{margin-left:auto; font-family:var(--font-numeric); font-weight:800; font-size:30px; letter-spacing:-1px; color:var(--primary); font-synthesis:none}
+.hcard .bar{height:12px; border-radius:var(--r-pill); background:#F5E6F0; margin-top:16px; overflow:hidden}
+.hcard .bar > i{display:block; height:100%; border-radius:var(--r-pill)}
+.hcard.c1{top:0; --rot:-6deg; z-index:3; animation-delay:.05s; transform:rotate(-6deg)}
+.hcard.c2{top:150px; --rot:3deg; z-index:2; animation-delay:.22s; transform:rotate(3deg)}
+.hcard.c3{top:300px; --rot:-2.5deg; z-index:1; animation-delay:.39s; transform:rotate(-2.5deg)}
+.hcard:hover{transform:rotate(0deg) translateY(-6px); z-index:9; transition:transform .2s cubic-bezier(.34,1.56,.64,1)}
+
+.bibo-hero{position:absolute; right:-10px; bottom:-8px; z-index:4; width:120px; animation:bibo-bob 2.6s ease-in-out infinite}
+.bibo-hero .b{animation:bibo-drop .9s cubic-bezier(.22,1,.36,1) .55s both}
+
+@keyframes boing-in{
+  0%{opacity:0; transform:translateY(-140px) rotate(var(--rot,0deg)) scaleY(1.16) scaleX(.9)}
+  52%{opacity:1; transform:translateY(0) rotate(var(--rot,0deg)) scaleY(.9) scaleX(1.08)}
+  70%{transform:translateY(-16px) rotate(var(--rot,0deg)) scaleY(1.06) scaleX(.97)}
+  86%{transform:translateY(0) rotate(var(--rot,0deg)) scaleY(.98) scaleX(1.01)}
+  100%{opacity:1; transform:translateY(0) rotate(var(--rot,0deg)) scaleY(1) scaleX(1)}
+}
+@keyframes bibo-drop{
+  0%{opacity:0; transform:translateY(-70px) scaleY(1.12) scaleX(.9)}
+  60%{opacity:1; transform:translateY(0) scaleY(.82) scaleX(1.12)}
+  80%{transform:translateY(-10px) scaleY(1.05) scaleX(.96)}
+  100%{opacity:1; transform:translateY(0) scaleY(1) scaleX(1)}
+}
+@keyframes bibo-bob{0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)}}
+
+/* ============ STAT BAR ============ */
+.statbar{background:var(--ink); border-radius:var(--r-xl); padding:44px 40px; position:relative; overflow:hidden}
+.statbar-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; position:relative; z-index:2}
+.stat{
+  background:var(--accent); color:var(--ink); border-radius:var(--r-lg);
+  padding:26px 24px; box-shadow:0 10px 0 var(--mint-dark); text-align:left;
+}
+.stat:nth-child(2){background:var(--accent-2); box-shadow:0 10px 0 var(--lemon-dark)}
+.stat:nth-child(3){background:var(--primary); box-shadow:0 10px 0 var(--primary-dark)}
+.stat:nth-child(4){background:#FF8DC2; box-shadow:0 10px 0 var(--primary-dark)}
+.stat .n{font-family:var(--font-numeric); font-weight:800; font-size:clamp(46px,5vw,62px); letter-spacing:-2px; line-height:.94; font-synthesis:none}
+.stat .n small{font-size:.4em; letter-spacing:-.5px}
+.stat .lb{font-size:14px; font-weight:700; margin-top:8px; letter-spacing:.1px}
+
+/* ============ FEATURES ============ */
+.sec-head{max-width:640px; margin-bottom:52px}
+.sec-head .eyebrow{margin-bottom:18px}
+.sec-head h2{font-family:var(--font-display); font-weight:800; font-size:clamp(38px,5.4vw,54px); letter-spacing:-1px; line-height:1.06; font-synthesis:none}
+.sec-head p{color:var(--muted); font-size:18px; margin-top:16px; max-width:30em}
+.feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px}
+.feat{
+  background:var(--surface); border:2px solid var(--hairline); border-radius:var(--r-xl);
+  padding:36px 32px; box-shadow:0 12px 0 var(--hairline);
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1);
+}
+.feat:nth-child(1){transform:rotate(-2.5deg)}
+.feat:nth-child(2){transform:rotate(1.5deg) translateY(18px)}
+.feat:nth-child(3){transform:rotate(-1deg)}
+.feat:hover{transform:rotate(0) translateY(-8px)}
+.feat .ic{width:76px; height:76px; border-radius:24px; display:flex; align-items:center; justify-content:center; margin-bottom:22px}
+.feat:nth-child(1) .ic{background:#FFE0EF; box-shadow:0 6px 0 var(--hairline)}
+.feat:nth-child(2) .ic{background:#D7F7EE; box-shadow:0 6px 0 var(--mint-dark)}
+.feat:nth-child(3) .ic{background:#FFF3BF; box-shadow:0 6px 0 var(--lemon-dark)}
+.feat h3{font-family:var(--font-heading); font-weight:700; font-size:24px; letter-spacing:-.3px; margin-bottom:12px}
+.feat p{color:var(--muted); font-size:16px; line-height:1.6}
+.feat .tag{margin-top:20px}
+
+/* ============ PRICING ============ */
+.pricing{background:var(--canvas)}
+.price-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; align-items:end}
+.plan{
+  background:var(--surface); border:2px solid var(--hairline); border-radius:var(--r-xl);
+  padding:36px 32px; box-shadow:0 12px 0 var(--hairline); position:relative;
+}
+.plan.tilt-l{transform:rotate(-1.5deg)}
+.plan.tilt-r{transform:rotate(1.5deg)}
+.plan .pname{font-family:var(--font-heading); font-weight:700; font-size:22px; letter-spacing:-.3px}
+.plan .pdesc{color:var(--muted); font-size:15px; margin-top:6px; min-height:44px}
+.plan .price{display:flex; align-items:baseline; gap:6px; margin:20px 0 8px}
+.plan .price .amt{font-family:var(--font-numeric); font-weight:800; font-size:64px; letter-spacing:-2px; line-height:.9; font-synthesis:none}
+.plan .price .cur{font-family:var(--font-numeric); font-weight:800; font-size:30px}
+.plan .price .per{color:var(--muted); font-size:15px; font-weight:600}
+.plist{list-style:none; margin:24px 0 28px; display:flex; flex-direction:column; gap:13px}
+.plist li{display:flex; align-items:flex-start; gap:10px; font-size:15.5px; font-weight:600; color:var(--ink)}
+.plist li svg{flex:none; margin-top:2px}
+.plan .btn{width:100%; justify-content:center}
+.plan.featured{
+  background:var(--primary); color:var(--on-primary); border:none;
+  box-shadow:0 16px 0 var(--primary-dark); transform:translateY(-24px) scale(1.02); z-index:3;
+}
+.plan.featured .pdesc{color:#4a2a63}
+.plan.featured .plist li{color:var(--on-primary)}
+.plan.featured .price .per{color:#4a2a63}
+.pop{
+  position:absolute; top:-16px; left:50%; transform:translateX(-50%) rotate(-3deg);
+  background:var(--accent-2); color:var(--ink); box-shadow:0 5px 0 var(--lemon-dark);
+}
+
+/* ============ CTA BAND ============ */
+.cta{position:relative; overflow:hidden; padding:0}
+.cta-band{
+  background:var(--primary); border-radius:var(--r-xl); padding:64px 56px;
+  display:flex; align-items:center; gap:40px; justify-content:space-between; flex-wrap:wrap;
+  box-shadow:0 16px 0 var(--primary-dark); position:relative; overflow:hidden;
+}
+.cta-band h2{font-family:var(--font-display); font-weight:800; font-size:clamp(34px,4.8vw,52px); letter-spacing:-1px; line-height:1.05; color:var(--on-primary); position:relative; z-index:2; font-synthesis:none}
+.cta-band p{color:#4a2a63; font-weight:700; margin-top:12px; font-size:17px; position:relative; z-index:2}
+.cta-actions{display:flex; gap:14px; flex-wrap:wrap; position:relative; z-index:2}
+.cta .btn-ghost{background:var(--canvas); border-color:var(--canvas); box-shadow:0 4px 0 var(--primary-dark)}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--ink); color:var(--canvas); border-radius:var(--r-xl) var(--r-xl) 0 0; padding:64px 0 40px; margin-top:0; position:relative; overflow:hidden}
+.footer .wrap{position:relative; z-index:2}
+.foot-top{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px; padding-bottom:44px; border-bottom:2px solid rgba(255,246,251,.12)}
+.foot-brand .brand{color:var(--canvas)}
+.foot-brand p{color:#c9b8dc; font-size:15px; margin-top:16px; max-width:20em; line-height:1.6}
+.foot-col h4{font-family:var(--font-heading); font-size:15px; font-weight:700; letter-spacing:.4px; margin-bottom:16px; color:var(--accent-2)}
+.foot-col a{display:block; text-decoration:none; color:#c9b8dc; font-size:15px; font-weight:600; padding:6px 0; transition:color .15s, transform .13s cubic-bezier(.34,1.56,.64,1)}
+.foot-col a:hover{color:var(--accent); transform:translateX(3px)}
+.foot-bot{display:flex; align-items:center; justify-content:space-between; padding-top:28px; flex-wrap:wrap; gap:16px}
+.foot-bot .cp{font-size:13px; color:#9c88b3; font-weight:600}
+.foot-sig{font-size:13px; color:#9c88b3; font-weight:700; display:flex; align-items:center; gap:8px}
+.foot-sig b{color:var(--accent-2)}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1119px){
+  .hero-grid{grid-template-columns:1fr; gap:24px}
+  .hero-sub{max-width:26em}
+  .hero-stage{height:400px; margin-top:10px}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .feat:nth-child(3){grid-column:1 / -1; max-width:520px; margin:0 auto}
+  .statbar-grid{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:767px){
+  .section{padding:56px 0}
+  .nav-links{display:none}
+  .nav-burger{display:inline-flex; margin-left:auto}
+  .nav-cta{display:none}
+  .hero-title{font-size:clamp(44px,13vw,66px)}
+  .hero-sub{font-size:17px}
+  .hero-stage{height:auto; display:flex; flex-direction:column; gap:16px; margin-top:6px}
+  .dispenser{position:static; flex-direction:row; justify-content:center; gap:14px; margin-bottom:6px}
+  .gball{width:44px; height:44px}
+  .cardstack{position:static; width:100%; height:auto; display:flex; flex-direction:column; gap:16px}
+  .hcard{position:static !important; width:100%; left:0; transform:rotate(0) !important}
+  .hcard.c1,.hcard.c2,.hcard.c3{transform:rotate(0) !important}
+  .bibo-hero{position:static; align-self:center; width:100px}
+  .feat-grid{grid-template-columns:1fr}
+  .feat:nth-child(n){transform:rotate(0)}
+  .feat:nth-child(2){transform:rotate(0)}
+  .statbar{padding:28px 22px}
+  .statbar-grid{grid-template-columns:1fr 1fr; gap:14px}
+  .price-grid{grid-template-columns:1fr; gap:20px}
+  .plan,.plan.tilt-l,.plan.tilt-r{transform:rotate(0)}
+  .plan.featured{transform:translateY(0) scale(1)}
+  .cta-band{padding:44px 30px; text-align:center; justify-content:center}
+  .cta-actions{justify-content:center}
+  .foot-top{grid-template-columns:1fr 1fr; gap:24px}
+  .btn{padding:16px 32px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .hcard{animation:fade-in .5s ease forwards}
+  .bibo-hero{animation:none}
+  .bibo-hero .b{animation:fade-in .5s ease .3s both}
+  @keyframes boing-in{}
+}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<div class="nav-outer">
+  <nav class="nav">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 3C11 3 4 13 4 24a16 16 0 0 0 32 0C36 13 29 3 20 3Z" fill="#FF5CA8"/>
+        <path d="M20 3C11 3 4 13 4 24a16 16 0 0 0 16 16Z" fill="#FF8DC2"/>
+        <circle cx="15" cy="22" r="2.6" fill="#2E1A47"/><circle cx="25" cy="22" r="2.6" fill="#2E1A47"/>
+        <path d="M15 28c2 2.6 8 2.6 10 0" stroke="#2E1A47" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      </svg>
+      啵啵 Poppo
+    </a>
+    <div class="nav-links">
+      <a href="#how">玩法</a>
+      <a href="#pricing">定价</a>
+      <a href="#story">故事</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#pricing">免费开跳</a>
+    <button class="btn btn-primary nav-cta nav-burger" aria-label="打开菜单">开跳</button>
+  </nav>
+</div>
+
+<!-- ============ HERO ============ -->
+<header id="top" class="hero section">
+  <span class="gumball" style="width:120px;height:120px;background:#FFE0EF;left:-40px;top:60px"></span>
+  <span class="gumball" style="width:70px;height:70px;background:var(--accent);right:6%;top:20px;box-shadow:0 8px 0 var(--mint-dark)"></span>
+  <span class="gumball" style="width:26px;height:26px;background:var(--accent-2);left:46%;top:8px"></span>
+  <span class="gumball" style="width:40px;height:40px;background:#FF8DC2;right:2%;bottom:-10px"></span>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">HABITS · BUT MAKE IT CANDY</span>
+        <h1 class="hero-title">
+          <span class="ln">坚持这件事</span>
+          <span class="ln">本来可以<span class="drop">很甜</span></span>
+        </h1>
+        <p class="hero-sub">啵啵是一款会弹会跳的习惯 App。你完成一件小事，它掉给你一颗糖；一年下来，你会攒出满满一整罐。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pricing">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-9" stroke="#2E1A47" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            免费开跳
+          </a>
+          <a class="btn btn-secondary" href="#how">看它怎么弹</a>
+        </div>
+        <div class="hero-trust">
+          <div class="stars" aria-label="4.9 星">
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.5 5.5 6 .6-4.5 4 1.3 5.9L10 14.9 4.7 17l1.3-5.9-4.5-4 6-.6z" fill="#FFD836" stroke="#E0B800" stroke-width="1"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.5 5.5 6 .6-4.5 4 1.3 5.9L10 14.9 4.7 17l1.3-5.9-4.5-4 6-.6z" fill="#FFD836" stroke="#E0B800" stroke-width="1"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.5 5.5 6 .6-4.5 4 1.3 5.9L10 14.9 4.7 17l1.3-5.9-4.5-4 6-.6z" fill="#FFD836" stroke="#E0B800" stroke-width="1"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.5 5.5 6 .6-4.5 4 1.3 5.9L10 14.9 4.7 17l1.3-5.9-4.5-4 6-.6z" fill="#FFD836" stroke="#E0B800" stroke-width="1"/></svg>
+            <svg viewBox="0 0 20 20"><path d="M10 1l2.5 5.5 6 .6-4.5 4 1.3 5.9L10 14.9 4.7 17l1.3-5.9-4.5-4 6-.6z" fill="#FFD836" stroke="#E0B800" stroke-width="1"/></svg>
+          </div>
+          <span class="trust-txt">4.9 星 · 62 万人正在跳</span>
+        </div>
+      </div>
+
+      <div class="hero-stage" aria-hidden="true">
+        <div class="dispenser">
+          <span class="gball p"></span>
+          <span class="gball m"></span>
+          <span class="gball l"></span>
+          <span class="gball p2"></span>
+        </div>
+        <div class="cardstack">
+          <article class="hcard c1">
+            <div class="row">
+              <svg class="gd" viewBox="0 0 46 46"><path d="M23 4C15 4 9 13 9 23a14 14 0 0 0 28 0C37 13 31 4 23 4Z" fill="#33D9B2"/><path d="M23 4C15 4 9 13 9 23a14 14 0 0 0 14 14Z" fill="#5FE6C6"/></svg>
+              <div><div class="h">喝一杯水</div><div class="meta">今天第 6 杯 · 保持中</div></div>
+              <div class="count">+1</div>
+            </div>
+            <div class="bar"><i style="width:82%;background:var(--accent)"></i></div>
+          </article>
+          <article class="hcard c2">
+            <div class="row">
+              <svg class="gd" viewBox="0 0 46 46"><path d="M23 4C15 4 9 13 9 23a14 14 0 0 0 28 0C37 13 31 4 23 4Z" fill="#FF5CA8"/><path d="M23 4C15 4 9 13 9 23a14 14 0 0 0 14 14Z" fill="#FF8DC2"/></svg>
+              <div><div class="h">读 10 页书</div><div class="meta">连跳 24 天</div></div>
+              <div class="count">+1</div>
+            </div>
+            <div class="bar"><i style="width:64%;background:var(--primary)"></i></div>
+          </article>
+          <article class="hcard c3">
+            <div class="row">
+              <svg class="gd" viewBox="0 0 46 46"><path d="M23 4C15 4 9 13 9 23a14 14 0 0 0 28 0C37 13 31 4 23 4Z" fill="#FFD836"/><path d="M23 4C15 4 9 13 9 23a14 14 0 0 0 14 14Z" fill="#FFE785"/></svg>
+              <div><div class="h">冥想 5 分钟</div><div class="meta">攒到第 108 颗糖</div></div>
+              <div class="count">+1</div>
+            </div>
+            <div class="bar"><i style="width:41%;background:var(--accent-2)"></i></div>
+          </article>
+        </div>
+        <div class="bibo-hero">
+          <div class="b">
+            <svg viewBox="0 0 120 130" width="120" aria-hidden="true">
+              <ellipse cx="60" cy="122" rx="34" ry="7" fill="#2E1A47" opacity=".08"/>
+              <path d="M60 8C36 8 20 34 20 66c0 28 18 46 40 46s40-18 40-46C100 34 84 8 60 8Z" fill="#FF5CA8"/>
+              <path d="M60 8C36 8 20 34 20 66c0 28 18 46 40 46Z" fill="#FF8DC2"/>
+              <ellipse cx="46" cy="62" rx="6.5" ry="7.5" fill="#2E1A47"/>
+              <ellipse cx="74" cy="62" rx="6.5" ry="7.5" fill="#2E1A47"/>
+              <circle cx="48" cy="59.5" r="2" fill="#fff"/><circle cx="76" cy="59.5" r="2" fill="#fff"/>
+              <circle cx="38" cy="76" r="7" fill="#FFD836" opacity=".8"/>
+              <circle cx="82" cy="76" r="7" fill="#FFD836" opacity=".8"/>
+              <path d="M50 80c4 5 16 5 20 0" stroke="#2E1A47" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ STAT BAR ============ -->
+<section class="section" style="padding-top:24px">
+  <div class="wrap">
+    <div class="statbar">
+      <span class="gumball" style="width:180px;height:180px;background:rgba(255,92,168,.14);right:-40px;top:-50px"></span>
+      <span class="gumball" style="width:100px;height:100px;background:rgba(51,217,178,.12);left:30%;bottom:-50px"></span>
+      <div class="statbar-grid">
+        <div class="stat"><div class="n">230<small>万</small></div><div class="lb">颗糖被摇下来</div></div>
+        <div class="stat"><div class="n">94<small>%</small></div><div class="lb">第 7 天还在跳</div></div>
+        <div class="stat"><div class="n">18<small>秒</small></div><div class="lb">平均一次打卡</div></div>
+        <div class="stat"><div class="n">4.9<small>★</small></div><div class="lb">应用商店评分</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="how" class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">怎么玩</span>
+      <h2>打卡不给红勾，给你一颗糖</h2>
+      <p>红勾是任务，糖是奖励。啵啵把每天的坚持从一件苦差事，翻译成一场看得见、摸得着、越攒越上头的集糖游戏。</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feat">
+        <div class="ic">
+          <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 4C14 4 10 11 10 18a10 10 0 0 0 20 0C30 11 26 4 20 4Z" fill="#FF5CA8"/>
+            <path d="M20 4C14 4 10 11 10 18a10 10 0 0 0 10 10Z" fill="#FF8DC2"/>
+            <path d="M20 30v6M14 33l-1 4M26 33l1 4" stroke="#2E1A47" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>掉糖机制</h3>
+        <p>完成一件小事，屏幕上就真的掉下来一颗糖，弹一下、滚两圈、落进你的罐子。多巴胺不是画饼，是当场兑现。</p>
+        <span class="chip tag">即时反馈</span>
+      </article>
+      <article class="feat">
+        <div class="ic">
+          <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M6 30c6-10 10-14 14-14s8 4 14 14" stroke="#1FB89A" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-dasharray="1 5"/>
+            <circle cx="20" cy="13" r="8" fill="#33D9B2"/>
+            <path d="M20 5a8 8 0 0 0 0 16Z" fill="#5FE6C6"/>
+          </svg>
+        </div>
+        <h3>弹跳提醒</h3>
+        <p>提醒不再板着脸催你。到点了，Bibo 会在锁屏上蹦一下，蹦得很傻，你就笑着把它做了。温柔，但赖不掉。</p>
+        <span class="chip tag">不催不烦</span>
+      </article>
+      <article class="feat">
+        <div class="ic">
+          <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+            <rect x="9" y="14" width="22" height="21" rx="7" fill="#FFD836"/>
+            <rect x="9" y="14" width="22" height="21" rx="7" fill="none" stroke="#E0B800" stroke-width="2"/>
+            <rect x="13" y="9" width="14" height="6" rx="3" fill="#FF5CA8"/>
+            <circle cx="16" cy="24" r="3" fill="#FF5CA8"/><circle cx="24" cy="22" r="3" fill="#33D9B2"/><circle cx="21" cy="29" r="3" fill="#2E1A47"/>
+          </svg>
+        </div>
+        <h3>糖果罐统计</h3>
+        <p>不是冷冰冰的折线图。你的坚持攒成一整罐五颜六色的糖，越满越好看。一眼看到自己走了多远，比任何数字都上头。</p>
+        <span class="chip tag">看得见的坚持</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing" class="section pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">选糖</span>
+      <h2>先尝一颗，甜了再续</h2>
+      <p>没有免费试用套路，没有到期偷偷扣费。免费版够你跳很久，想要无限的糖再上罐。</p>
+    </div>
+    <div class="price-grid">
+      <article class="plan tilt-l">
+        <div class="pname">尝一颗</div>
+        <div class="pdesc">给刚想养个习惯的你</div>
+        <div class="price"><span class="cur">¥</span><span class="amt">0</span><span class="per">/ 永久</span></div>
+        <ul class="plist">
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#33D9B2" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>同时养 3 个习惯</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#33D9B2" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>每天掉糖 + 基础糖罐</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#33D9B2" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>连跳天数记录</li>
+        </ul>
+        <a class="btn btn-ghost" href="#top">免费开跳</a>
+      </article>
+
+      <article class="plan featured">
+        <span class="eyebrow pop">最多人选</span>
+        <div class="pname">糖果罐</div>
+        <div class="pdesc">给认真想坚持一整年的你</div>
+        <div class="price"><span class="cur">¥</span><span class="amt">18</span><span class="per">/ 月</span></div>
+        <ul class="plist">
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#2E1A47" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>无限习惯，随便养</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#2E1A47" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>弹跳提醒 + 智能补糖</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#2E1A47" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>糖果罐年度回顾</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#2E1A47" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Bibo 全程陪跳</li>
+        </ul>
+        <a class="btn btn-secondary" href="#top">上罐，开跳</a>
+      </article>
+
+      <article class="plan tilt-r">
+        <div class="pname">全家桶</div>
+        <div class="pdesc">给一家人一起攒糖的你</div>
+        <div class="price"><span class="cur">¥</span><span class="amt">168</span><span class="per">/ 年</span></div>
+        <ul class="plist">
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#33D9B2" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>糖果罐全部功能</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#33D9B2" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>最多 6 人共享大糖罐</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#33D9B2" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>定制糖皮 + 专属 Bibo 皮肤</li>
+        </ul>
+        <a class="btn btn-ghost" href="#top">全家一起跳</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section id="story" class="section cta">
+  <div class="wrap">
+    <div class="cta-band">
+      <span class="gumball" style="width:160px;height:160px;background:rgba(46,26,71,.10);right:-30px;bottom:-60px"></span>
+      <span class="gumball" style="width:60px;height:60px;background:var(--accent-2);left:44%;top:-20px;box-shadow:0 6px 0 var(--lemon-dark)"></span>
+      <div>
+        <h2>今天，先掉第一颗糖</h2>
+        <p>坚持不用一开始就很猛，先甜一下就好。</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-ghost" href="#top">免费开跳</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <span class="gumball" style="width:140px;height:140px;background:rgba(255,92,168,.14);left:-40px;top:-40px"></span>
+  <span class="gumball" style="width:80px;height:80px;background:rgba(51,217,178,.12);right:8%;bottom:20px"></span>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 3C11 3 4 13 4 24a16 16 0 0 0 32 0C36 13 29 3 20 3Z" fill="#FF5CA8"/>
+            <path d="M20 3C11 3 4 13 4 24a16 16 0 0 0 16 16Z" fill="#FF8DC2"/>
+            <circle cx="15" cy="22" r="2.6" fill="#2E1A47"/><circle cx="25" cy="22" r="2.6" fill="#2E1A47"/>
+            <path d="M15 28c2 2.6 8 2.6 10 0" stroke="#2E1A47" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          </svg>
+          啵啵 Poppo
+        </a>
+        <p>把每天的坚持，做成一颗一颗掉下来的糖。会弹、会跳、会认字的习惯 App。</p>
+      </div>
+      <div class="foot-col">
+        <h4>产品</h4>
+        <a href="#how">怎么玩</a>
+        <a href="#pricing">定价</a>
+        <a href="#top">下载 App</a>
+        <a href="#top">更新日志</a>
+      </div>
+      <div class="foot-col">
+        <h4>糖罐之外</h4>
+        <a href="#top">habit 博客</a>
+        <a href="#top">Bibo 表情包</a>
+        <a href="#top">帮助中心</a>
+      </div>
+      <div class="foot-col">
+        <h4>联系</h4>
+        <a href="#top">加入我们</a>
+        <a href="#top">商务合作</a>
+        <a href="#top">给 Bibo 提意见</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span class="cp">© 2026 啵啵 Poppo · 虚构演示产品，仅用于设计展示</span>
+      <span class="foot-sig">Crafted with a bounce · <b>HeiGe-Design</b></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

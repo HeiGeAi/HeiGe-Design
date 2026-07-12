@@ -1,0 +1,968 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>宋瓷极简 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 东方新中式</div>
+<div class="hero"><div class="fam">东方新中式</div><h1>宋瓷极简<span class="badge">✓ lint 0 error</span></h1><div class="slug">song-celadon · SongCeladon-design-system</div><p class="desc">Song-Celadon is an extreme-restraint system for tea ware, slow craft and Eastern minimalist brands. One glaze — 青瓷 powder-celadon (#a3b7a0) — is the whole identity, laid over a 白瓷 porcelain page (#f2f0ea) and written in 松烟墨 pine-soot ink. Depth comes from a deeper 梅子青 celadon for bands and from an ice-crackle (冰裂纹) lattice of 1px hairlines, never from shadow or glow. A thin Cormorant / Noto Serif SC 宋体 sets airy headlines; a quiet Inter sans carries the body. No red, no second hue, no gradient wash except the one slow glaze-pool fade. Emptiness is the material.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#f2f0ea;--ink:#2a322c;--pri:#a3b7a0;--onpri:#20272a;--acc:#a3b7a0;--surf:#f8f6f0;--muted:#586459;--line:#d3d8cc;--r:10px;--dff:"Cormorant Garamond", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Cormorant Garamond", "Noto Serif SC", "Songti SC", "STSong", serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">宋瓷极简</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#a3b7a0"></i><i style="background:#20272a"></i><i style="background:#2a322c"></i><i style="background:#f2f0ea"></i><i style="background:#f8f6f0"></i><i style="background:#586459"></i><i style="background:#d3d8cc"></i><i style="background:#3f5d4e"></i></div>
+  <div class="swrap"><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">button-ghost</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">eyebrow-tag</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">figure-caption</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">vessel-frame</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">footer</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">hairline-rule</span></div>
+  </div>
+  <div class="card" style="--bg:#f2f0ea;--ink:#2a322c;--pri:#a3b7a0;--onpri:#20272a;--acc:#a3b7a0;--surf:#f8f6f0;--muted:#586459;--line:#d3d8cc;--r:10px;--dff:"Cormorant Garamond", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Cormorant Garamond", "Noto Serif SC", "Songti SC", "STSong", serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">宋瓷极简</div></div>
+    <div class="swrap"><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#f8f6f0;color:#2a322c;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI — 冰裂釉面 (The Ice-Crackle Glaze Surface).** A hero or feature surface is filled with a soft celadon glaze (a single slow `#a3b7a0` → kiln-white pool fade) and overlaid with an irregular lattice of **real 1px hairlines** — the 冰裂纹 / 开片 of a Song Guan-ware vessel. Each crack is a different length at a slightly off-grid angle, the network denser toward the edges and sparse in the center; the headline sits in the largest crack-free cell, in ink, like glaze pooled clear over a name. The lattice **bleeds a few pixels past the panel edge onto the porcelain canvas**, so the glaze reads as a fired ceramic skin rather than a green rectangle. Drop this into a generic template and you get a flat celadon box; the crackle only exists because the crack network was hand-placed as part of the layout, not painted on as a texture image.
+
+**Deck — 釉色渐层过渡页 (The Glaze-Pool Divider).** Every section opens o</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Own exactly one hue. Let celadon rest — as glaze fills, chips, and the crackle skin — and let ink and porcelain do the rest.
+- Treat whitespace as the primary material; pool two-thirds of every hero into emptiness so one thin 宋体 line lands.
+- Keep display weights at 300 and body leading at 1.85; make things bigger, never heavier.
+- Use the 1px hairline as both the divider and, tiled, the 冰裂纹 crackle — the system's one texture.
+- Set ink on the pale celadon chip; reach for `glaze-deep` whenever a ground needs porcelain text.
+
+**Don't**
+- **Don't touch the purple-blue cliché gradient (`#667eea → #764ba2`)** or any of its family. The only gradient here is the single celadon glaze-pool fade — a warm ceramic observation, never a synthetic wash.
+- **Don't build the centered card triptych** (title + grey subtitle + three equal rounded cards, repeated). This is an asymmetric, left-weighted, mostly-empty grid.
+- **Don't render Chinese with a Japanese font.** 简体中文 uses Noto Serif SC / Noto Sans SC with system CJK fallback, always — 细宋 is the whole point, tofu ruins it.
+- **Don't animate shadows or add glow / `backdrop-filter`.** Depth here is ceramic tone and static crackle, not light. A card is a whiter glaze, not a floating object.
+- Don't put white text on the pale celadon (it fails contrast), don't add a red seal or gold or any second accent, and don't tighten the 留白 to fit </div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: SongCeladon-design-system
+description: &gt;-
+  Song-Celadon is an extreme-restraint system for tea ware, slow craft and
+  Eastern minimalist brands. One glaze — 青瓷 powder-celadon (#a3b7a0) — is the
+  whole identity, laid over a 白瓷 porcelain page (#f2f0ea) and written in
+  松烟墨 pine-soot ink. Depth comes from a deeper 梅子青 celadon for bands and
+  from an ice-crackle (冰裂纹) lattice of 1px hairlines, never from shadow or
+  glow. A thin Cormorant / Noto Serif SC 宋体 sets airy headlines; a quiet
+  Inter sans carries the body. No red, no second hue, no gradient wash except
+  the one slow glaze-pool fade. Emptiness is the material.
+
+colors:
+  primary: &quot;#a3b7a0&quot;       # 青瓷 Powder Celadon — the whole identity, glaze fills &amp; chips
+  on-primary: &quot;#20272a&quot;    # 松烟墨 ink set on the celadon glaze
+  ink: &quot;#2a322c&quot;           # body &amp; headline ink, a cool green-grey, never pure black
+  canvas: &quot;#f2f0ea&quot;        # 白瓷 Porcelain — the page ground
+  surface: &quot;#f8f6f0&quot;       # 窑白 Kiln-White — card face, a hair brighter than canvas
+  muted: &quot;#586459&quot;         # 灰青 muted celadon-grey, secondary text on both grounds
+  hairline: &quot;#d3d8cc&quot;      # 冰裂 crackle line — 1px dividers &amp; the ice-crack lattice
+  glaze-deep: &quot;#3f5d4e&quot;    # 梅子青 Deep Celadon — dark bands, dividers, inline links
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Cormorant Garamond&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 72px
+    fontWeight: 300
+    lineHeight: 1.12
+    letterSpacing: 0.5px
+  display-lg:
+    fontFamily: '&quot;Cormorant Garamond&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 42px
+    fontWeight: 300
+    lineHeight: 1.2
+    letterSpacing: 0.4px
+  heading:
+    fontFamily: '&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 23px
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: 0px
+  body:
+    fontFamily: '&quot;Inter&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.85
+    letterSpacing: 0.2px
+  numeral:
+    fontFamily: '&quot;Cormorant Garamond&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 108px
+    fontWeight: 300
+    lineHeight: 1.0
+    letterSpacing: -1px
+  eyebrow:
+    fontFamily: '&quot;Inter&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 12px
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: 4px
+  button:
+    fontFamily: '&quot;Inter&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 15px
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: 0.4px
+  caption:
+    fontFamily: '&quot;Inter&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: 0.2px
+
+rounded:
+  none: 0px
+  sm: 3px
+  md: 10px
+  lg: 20px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 10px
+  md: 18px
+  lg: 32px
+  xl: 64px
+  section: 128px
+
+components:
+  # —— UI 界面组件 ——
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-ghost:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  eyebrow-tag:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  figure-caption:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  vessel-frame:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  footer:
+    backgroundColor: &quot;{colors.glaze-deep}&quot;
+    textColor: &quot;{colors.surface}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+  # —— 极细装饰基元（单色，无文字）——
+  hairline-rule:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    height: 1px
+    width: 100%
+  glaze-mark:
+    backgroundColor: &quot;{colors.primary}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    height: 3px
+    width: 40px
+  # —— slide 演示组件（HeiGe-PPT 融合，16:9）——
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.glaze-deep}&quot;
+    textColor: &quot;{colors.surface}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.glaze-deep}&quot;
+    textColor: &quot;{colors.surface}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+---
+
+# Song-Celadon · 宋瓷极简
+
+A system for brands that sell calm — a tea studio, a single-origin ceramicist, an Eastern-minimalist lifestyle house, the kind of slow product that earns trust by refusing to shout. It reads like one celadon bowl set on a bare table in raking morning light: a single glaze color, a lot of porcelain, and a hairline crack running under the glaze that you only notice on the second look.
+
+## Overview
+
+The mood is **宋代美学的极简克制** — Song-dynasty restraint, where luxury is what you leave out. The entire system runs on a two-role color logic, and it deliberately owns only one hue.
+
+- **青瓷 celadon `#a3b7a0` is the glaze.** It is the whole brand identity and it is used *quietly* — as a soft glaze fill behind a headline, as the primary chip carrying ink lettering, as the pooled fade on a divider. It is a pale, grey-green celadon (粉青), so the working text on it is **ink, not white** — a fired-glaze tile brushed with calligraphy, never a saturated web button.
+- **松烟墨 ink `#2a322c` is the brush.** Everything reads as ink on porcelain: a cool green-grey black, never `#000`, so it sits on the page like pine-soot on paper rather than pixels on a screen.
+
+Everything else is porcelain (`#f2f0ea` canvas, `#f8f6f0` surface), one **梅子青 deep-celadon** (`#3f5d4e`) for the few dark bands that need porcelain text, and a crackle hairline. There is **no red seal, no gold, no second accent** — that absence is the point, and it is exactly what separates 宋瓷极简 from the redder Eastern systems in this library. Rhythm comes from vast negative space and one thin 宋体 headline, not from color count. If you reach for a second hue, you have already left the Song.
+
+## Colors
+
+### Brand &amp; Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#a3b7a0` | 青瓷 powder-celadon. The glaze: soft fills, the ice-crackle panel, the primary chip (carries ink text), the glaze-mark bar. Used at rest, never as a loud CTA slab. |
+| `on-primary` | `#20272a` | Deepest 松烟墨 ink set on the celadon chip. Contrast on `primary` ≈ 7.1:1 — ink on glaze, calligraphy on porcelain. |
+| `glaze-deep` | `#3f5d4e` | 梅子青 deep celadon. The only dark ground: footer band, section dividers, closing slide, inline links. Depth without leaving the celadon family. |
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#f2f0ea` | 白瓷 porcelain — the page and every default slide. A warm off-white, never `#fff`. |
+| `surface` | `#f8f6f0` | 窑白 kiln-white — card face, a hair brighter than canvas so a card lifts by tone, not shadow. |
+| `hairline` | `#d3d8cc` | 冰裂 crackle line. Every 1px divider and the ice-crackle lattice. Decorative and structural, never text. |
+
+### Text
+| Token | Hex | Role |
+|---|---|---|
+| `ink` | `#2a322c` | 松烟墨. Body and headlines on porcelain. Contrast on `canvas` ≈ 11.6:1. Cool green-grey, tuned to the glaze. |
+| `muted` | `#586459` | 灰青 muted celadon-grey. Captions, tags, meta. Contrast on `canvas` ≈ 5.4:1 — still AA, still legible, never mud. |
+
+**Contrast discipline.** Because celadon is a *pale* glaze, it never carries white text — that pairing measures ≈ 2.1:1 and is banned. On the celadon chip the text is always ink (7.1:1). When a design needs a dark panel with porcelain text, it uses `glaze-deep`, where kiln-white sits at ≈ 6.7:1. Deep celadon as an inline link on porcelain measures ≈ 6.4:1. Every pairing in the system clears WCAG AA for body copy, no exceptions.
+
+## Typography
+
+### Font Family
+- **Serif display (headlines): `&quot;Cormorant Garamond&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`, weight 300.** Latin glyphs pick up Cormorant's thin, high-contrast stroke; Chinese glyphs fall to **Noto Serif SC (思源宋体)** at a light weight — a genuine thin 宋体, the &quot;细宋&quot; the Song demands. Airy, elegant, almost fragile at scale.
+- **Subhead serif: `&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`, weight 500.** A quieter, slightly firmer 宋体 for card and section titles.
+- **Numeral serif: same Cormorant / Noto Serif SC stack, weight 300.** Big thin figures for stats — elegant Didone-adjacent numerals, deliberately *not* a techy mono. Restraint reads even in the数字.
+- **Body / UI sans: `&quot;Inter&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif`.** Low-drama, wide-leading, keeps long reading calm beneath the serif.
+
+**中文铁律.** Every Chinese-bearing stack ends in a system CJK fallback (`Noto Serif SC / Songti SC / STSong` for serif, `Noto Sans SC / PingFang SC / Microsoft YaHei` for sans). **Chinese is never rendered with a Japanese font** (no Zen / Mochiy / Kosugi families) — simplified glyphs would drop to tofu or show Japanese variants. Cut every webfont link and the page must still render clean 简体 宋体 and 黑体. Never limit a Chinese measure with `ch`.
+
+### Hierarchy
+| Role | Size | Weight | Line-height | Tracking | Use |
+|---|---|---|---|---|---|
+| `display-xl` | 72px | 300 | 1.12 | 0.5px | Cover headline, one thin 宋体 line per screen |
+| `display-lg` | 42px | 300 | 1.20 | 0.4px | Section titles, quote page, closing |
+| `heading` | 23px | 500 | 1.40 | 0px | Card / subsection titles |
+| `body` | 17px | 400 | 1.85 | 0.2px | Paragraphs, very generous leading |
+| `numeral` | 108px | 300 | 1.00 | -1px | Stat figures, thin celadon numerals |
+| `eyebrow` | 12px | 500 | 1.40 | 4px | Kickers, nav, tags — widely tracked |
+| `button` | 15px | 500 | 1.20 | 0.4px | Buttons |
+| `caption` | 13px | 400 | 1.60 | 0.2px | Captions, meta, figure notes |
+
+### Principles
+- **Thin is the signature.** Display weights stay at 300; the drama is size and air, not boldness. The largest headline to body ratio is ~4:1 — make the big thing bigger before you make anything heavier.
+- **Body leading is sacred at 1.85.** The line-height *is* the Song whitespace, applied to text. Do not tighten it to fit more copy; cut copy instead.
+- **Tracking is tuned per script.** Positive tracking opens the airy latin headlines and the eyebrow labels; it is kept off long Chinese runs at scale so 宋体 stays 疏朗 (open) without looking spaced-out.
+
+## Layout
+
+### Spacing
+An asymmetric scale with a deliberately huge `section` step so pages breathe: `xs 4 · sm 10 · md 18 · lg 32 · xl 64 · section 128`. Vertical rhythm between blocks is `section` (128px is not a typo — it is the point). Inside a card it drops to `lg`. The jump from `xl` to `section` is intentionally violent: dense content, then a long exhale.
+
+### Grid &amp; Container
+- A quiet 12-column grid that content **refuses to fill**. Long-form text caps at ~34em and is left-aligned, pulled toward the left third so the right two-thirds stay open porcelain — room for one glaze panel, one numeral, or nothing.
+- Max content width ~1180px; the reading column is far narrower. The asymmetry, and the emptiness it protects, is the composition.
+
+### Whitespace philosophy
+This is a 留白 system before it is a color system. Whitespace is not the gap between elements — it is the primary material, the way porcelain is the material of a celadon bowl. Roughly two-thirds of every hero is intentionally empty. Never distribute space evenly to &quot;balance&quot; a layout; **pool it**, so the single glaze mark and the single ink line land in a field of silence.
+
+## Elevation &amp; Depth
+
+Depth is ceramic, not luminous. Nothing glows.
+
+| Layer | Treatment |
+|---|---|
+| Canvas | Flat porcelain `#f2f0ea`. Optionally a barely-there paper tooth (hairline at ~2% as a static, non-repeating noise), never a moving texture. |
+| Surface card | Kiln-white `#f8f6f0` lifted by tone plus a 1px `hairline` edge. No drop shadow — a card is a slightly whiter glaze, not a floating object. |
+| Glaze panel | The celadon fill reads as a fired skin via the ice-crackle hairline lattice and one slow glaze-pool gradient, not via shadow. |
+| Deep band | `glaze-deep` footer / divider — depth is the tonal drop from porcelain to 梅子青, full stop. |
+
+**No glow, no `backdrop-filter`, no animated shadow.** If a surface needs to feel &quot;under glaze,&quot; it uses a static gradient and static hairlines. Any celadon gradient is a slow, single-direction pool fade — one gradient in the whole system — never a purple-blue wash and never animated.
+
+## Shapes
+
+| Token | Value | Use |
+|---|---|---|
+| `none` | 0px | Slides, stat blocks, nav, every hairline. The austere Song-Guan default. |
+| `sm` | 3px | Buttons — a barely-there softening, the ground edge of a glazed tile. |
+| `md` | 10px | Feature cards — one gentle curve, the shoulder of a bowl. |
+| `lg` | 20px | The vessel-frame image mask — the single generous porcelain curve in the system. |
+| `pill` | 9999px | Eyebrow tags and the glaze-mark bar — the 水滴 (water-drop) lozenge. |
+
+Images are masked to the **vessel-frame** — a single soft-cornered rectangle recalling a celadon plate — or run full-bleed to a column edge. The **1px hairline** is the system's core graphic primitive: as a straight divider it is 极细分割; assembled into an irregular lattice it becomes 冰裂纹, the crackle glaze (see Signature Moment).
+
+## Components
+
+- **button-primary** — a celadon `#a3b7a0` glaze chip carrying **ink** lettering, 3px corners. The identity color as a tactile tile, not a shouting slab. Hover deepens the glaze a step toward 梅子青; focus draws a 1px ink ring at a 2px offset.
+- **button-ghost** — kiln-white ground, ink label, sitting under a short `glaze-mark` bar instead of a box border. Quiet until needed.
+- **nav-bar** — porcelain ground, ink links set in tracked `eyebrow`, one 1px hairline bottom rule. No logo-lockup clutter, no fill.
+- **card-feature** — kiln-white panel, 1px hairline edge, 10px corners, a 宋体 `heading` title over generous `xl` inner padding. Lifts by tone, never by shadow.
+- **eyebrow-tag** — a small kiln-white pill with muted, widely-tracked label text. Chapter / category markers.
+- **stat-block** — a thin 108px celadon-serif figure over kiln-white, one 1px hairline above it, a muted unit beside. One number, a lot of air.
+- **figure-caption** — muted `caption` on porcelain, set tight under an image; the only text allowed small.
+- **vessel-frame** — the 20px soft-cornered image mask, kiln-white matte, holding a plate/photograph like porcelain in a hand; an optional muted caption sits inside.
+- **footer** — a 梅子青 `glaze-deep` band with kiln-white `body` text — the one deep tonal drop that closes a page, wide margins, no link soup.
+- **hairline-rule** — the 1px `hairline` divider bar; straight dividers and, tiled irregularly, the crackle lattice.
+- **glaze-mark** — a 3px × 40px celadon lozenge that underlines a heading or anchors a button-ghost; the system's small connective stroke.
+
+## Presentation System
+
+The same tokens drive a 16:9 deck. This is a **contemplative deck** — one breath per slide, built on 一页一句话 / 黄金三秒 / 视觉锤, tuned toward stillness rather than punch.
+
+- **Cover (`slide-cover`)** — porcelain frame, a tiny tracked `eyebrow` top-left, then a single thin `display-xl` 宋体 line placed low and left, with a soft celadon glaze panel breathing in the upper-right negative space. 黄金三秒: before a word is read, the viewer feels *quiet, Eastern, glaze* — one hue, mostly empty.
+- **Section divider (`slide-section-divider`)** — the visual hammer, and the deck's signature (below). A single slow vertical **glaze-pool gradient** from kiln-white at the top to celadon at the bottom, one 宋体 title set on the glaze &quot;waterline,&quot; a giant faint numeral submerged in the celadon like a shadow under glaze. On `glaze-deep` variants the title runs kiln-white.
+- **Stat page (`slide-stat-hero`)** — one 108px thin celadon-serif figure, oversized past comfort, a 1px hairline underline and a muted unit. Everything else is porcelain air. One number, never a dashboard.
+- **Quote page (`slide-quote`)** — a single `display-lg` 宋体 line floating in a full field of porcelain, left-aligned, vertically centered, with one short celadon `glaze-mark` beneath. After a run of denser slides, the sudden emptiness is the 视觉锤 — silence used as impact.
+- **Closing (`slide-closing`)** — the one 梅子青 deep-celadon slide, one kiln-white `display-lg` line and a celadon `button-primary`. The tonal drop signs off. 余味, then stop.
+
+The one-gradient rule is strict: the glaze-pool fade appears **only** on the section divider. Use it twice and it stops reading as glaze and starts reading as decoration.
+
+## Signature Moment
+
+**UI — 冰裂釉面 (The Ice-Crackle Glaze Surface).** A hero or feature surface is filled with a soft celadon glaze (a single slow `#a3b7a0` → kiln-white pool fade) and overlaid with an irregular lattice of **real 1px hairlines** — the 冰裂纹 / 开片 of a Song Guan-ware vessel. Each crack is a different length at a slightly off-grid angle, the network denser toward the edges and sparse in the center; the headline sits in the largest crack-free cell, in ink, like glaze pooled clear over a name. The lattice **bleeds a few pixels past the panel edge onto the porcelain canvas**, so the glaze reads as a fired ceramic skin rather than a green rectangle. Drop this into a generic template and you get a flat celadon box; the crackle only exists because the crack network was hand-placed as part of the layout, not painted on as a texture image.
+
+**Deck — 釉色渐层过渡页 (The Glaze-Pool Divider).** Every section opens on a single vertical gradient that fades from kiln-white porcelain at the top to powder-celadon at the bottom — the exact tonal pooling of a dip-glazed bowl where the glaze runs thicker toward the foot. The stop is placed **asymmetrically, at the &quot;waterline&quot;** two-thirds down, not at the middle, and a giant thin numeral sits submerged in the celadon like a shadow read through glaze, with one 宋体 title on the waterline itself. That off-center pooled fade is the moment: a generic linear gradient centers its stop and looks like a UI; the celadon waterline is a ceramic observation no template reaches for.
+
+## Do's and Don'ts
+
+**Do**
+- Own exactly one hue. Let celadon rest — as glaze fills, chips, and the crackle skin — and let ink and porcelain do the rest.
+- Treat whitespace as the primary material; pool two-thirds of every hero into emptiness so one thin 宋体 line lands.
+- Keep display weights at 300 and body leading at 1.85; make things bigger, never heavier.
+- Use the 1px hairline as both the divider and, tiled, the 冰裂纹 crackle — the system's one texture.
+- Set ink on the pale celadon chip; reach for `glaze-deep` whenever a ground needs porcelain text.
+
+**Don't**
+- **Don't touch the purple-blue cliché gradient (`#667eea → #764ba2`)** or any of its family. The only gradient here is the single celadon glaze-pool fade — a warm ceramic observation, never a synthetic wash.
+- **Don't build the centered card triptych** (title + grey subtitle + three equal rounded cards, repeated). This is an asymmetric, left-weighted, mostly-empty grid.
+- **Don't render Chinese with a Japanese font.** 简体中文 uses Noto Serif SC / Noto Sans SC with system CJK fallback, always — 细宋 is the whole point, tofu ruins it.
+- **Don't animate shadows or add glow / `backdrop-filter`.** Depth here is ceramic tone and static crackle, not light. A card is a whiter glaze, not a floating object.
+- Don't put white text on the pale celadon (it fails contrast), don't add a red seal or gold or any second accent, and don't tighten the 留白 to fit more content.
+
+## Responsive Behavior
+
+| Breakpoint | Layout |
+|---|---|
+| ≥1200px | Full asymmetric grid; celadon glaze panel and numeral live in the open right two-thirds; `display-xl` at 72px; crackle lattice at full density. |
+| 768–1199px | Reading column widens toward center-left; the glaze panel moves below the headline; `display-xl` ~54px; crackle thins. |
+| ≤767px | Single-column re-composition. The cover headline restacks line-by-line low on the screen, the glaze panel becomes a full-width band *above* the text, the crackle lattice simplifies to a few structural cracks so it reads at small size, the vessel-frame goes edge-to-edge. |
+
+Mobile is a re-edit, not a shrink. Headlines use `clamp()` sized to the longest manually-broken line, each locked with `white-space: nowrap` so the thin 宋体 never drops an orphan 字 or a lone 标点 on a 390px screen. Chinese measures are limited in `em` / `px`, never `ch`. Verify zero orphans and `scrollWidth == clientWidth` on both desktop and ≤390px before shipping. All motion — the glaze fade, any fade-in — is gated behind `@media (prefers-reduced-motion: reduce)`.
+
+## Anti-Slop Pledge
+
+Strip the brand name and this page still reads as made by a hand that cared: one celadon glaze held at rest, a porcelain field mostly left empty, a thin 宋体 line placed low and left, and a network of 1px cracks running under the glaze that only surfaces on the second look. No purple gradient, no centered card triptych, no glow, no default font naked on the screen, no red or gold reached for to &quot;add interest.&quot; The restraint is the fingerprint — a pipeline adds; 宋瓷极简 removes, until only the glaze, the ink, and the silence are left.
+
+---
+
+*HeiGe-Design · song-celadon · MIT.*
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #a3b7a0;
+  --color-on-primary: #20272a;
+  --color-ink: #2a322c;
+  --color-canvas: #f2f0ea;
+  --color-surface: #f8f6f0;
+  --color-muted: #586459;
+  --color-hairline: #d3d8cc;
+  --color-glaze-deep: #3f5d4e;
+  --font-display-xl: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-numeral: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-eyebrow: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 42px;
+  --text-heading: 23px;
+  --text-body: 17px;
+  --text-numeral: 108px;
+  --text-eyebrow: 12px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --tracking-display-xl: 0.5px;
+  --tracking-display-lg: 0.4px;
+  --tracking-heading: 0px;
+  --tracking-body: 0.2px;
+  --tracking-numeral: -1px;
+  --tracking-eyebrow: 4px;
+  --tracking-button: 0.4px;
+  --tracking-caption: 0.2px;
+  --font-weight-display-xl: 300;
+  --font-weight-display-lg: 300;
+  --font-weight-heading: 500;
+  --font-weight-body: 400;
+  --font-weight-numeral: 300;
+  --font-weight-eyebrow: 500;
+  --font-weight-button: 500;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 10px;
+  --spacing-md: 18px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+  --spacing-section: 128px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#a3b7a0&quot;,
+        &quot;on-primary&quot;: &quot;#20272a&quot;,
+        &quot;ink&quot;: &quot;#2a322c&quot;,
+        &quot;canvas&quot;: &quot;#f2f0ea&quot;,
+        &quot;surface&quot;: &quot;#f8f6f0&quot;,
+        &quot;muted&quot;: &quot;#586459&quot;,
+        &quot;hairline&quot;: &quot;#d3d8cc&quot;,
+        &quot;glaze-deep&quot;: &quot;#3f5d4e&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;numeral&quot;: [
+          &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;72px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;300&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;42px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;300&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;23px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;numeral&quot;: [
+          &quot;108px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;300&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;4px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;3px&quot;,
+        &quot;md&quot;: &quot;10px&quot;,
+        &quot;lg&quot;: &quot;20px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;10px&quot;,
+        &quot;md&quot;: &quot;18px&quot;,
+        &quot;lg&quot;: &quot;32px&quot;,
+        &quot;xl&quot;: &quot;64px&quot;,
+        &quot;section&quot;: &quot;128px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #a3b7a0;
+  --color-on-primary: #20272a;
+  --color-ink: #2a322c;
+  --color-canvas: #f2f0ea;
+  --color-surface: #f8f6f0;
+  --color-muted: #586459;
+  --color-hairline: #d3d8cc;
+  --color-glaze-deep: #3f5d4e;
+  --font-display-xl: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-numeral: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-eyebrow: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 42px;
+  --text-heading: 23px;
+  --text-body: 17px;
+  --text-numeral: 108px;
+  --text-eyebrow: 12px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --tracking-display-xl: 0.5px;
+  --tracking-display-lg: 0.4px;
+  --tracking-heading: 0px;
+  --tracking-body: 0.2px;
+  --tracking-numeral: -1px;
+  --tracking-eyebrow: 4px;
+  --tracking-button: 0.4px;
+  --tracking-caption: 0.2px;
+  --font-weight-display-xl: 300;
+  --font-weight-display-lg: 300;
+  --font-weight-heading: 500;
+  --font-weight-body: 400;
+  --font-weight-numeral: 300;
+  --font-weight-eyebrow: 500;
+  --font-weight-button: 500;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 10px;
+  --spacing-md: 18px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+  --spacing-section: 128px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Song-Celadon is an extreme-restraint system for tea ware, slow craft and Eastern minimalist brands. One glaze — 青瓷 powder-celadon (#a3b7a0) — is the whole identity, laid over a 白瓷 porcelain page (#f2f0ea) and written in 松烟墨 pine-soot ink. Depth comes from a deeper 梅子青 celadon for bands and from an ice-crackle (冰裂纹) lattice of 1px hairlines, never from shadow or glow. A thin Cormorant / Noto Serif SC 宋体 sets airy headlines; a quiet Inter sans carries the body. No red, no second hue, no gradient wash except the one slow glaze-pool fade. Emptiness is the material.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.639,
+          0.718,
+          0.627
+        ],
+        &quot;hex&quot;: &quot;#a3b7a0&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.125,
+          0.153,
+          0.165
+        ],
+        &quot;hex&quot;: &quot;#20272a&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.165,
+          0.196,
+          0.173
+        ],
+        &quot;hex&quot;: &quot;#2a322c&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.949,
+          0.941,
+          0.918
+        ],
+        &quot;hex&quot;: &quot;#f2f0ea&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.973,
+          0.965,
+          0.941
+        ],
+        &quot;hex&quot;: &quot;#f8f6f0&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.345,
+          0.392,
+          0.349
+        ],
+        &quot;hex&quot;: &quot;#586459&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.827,
+          0.847,
+          0.8
+        ],
+        &quot;hex&quot;: &quot;#d3d8cc&quot;
+      }
+    },
+    &quot;glaze-deep&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.247,
+          0.365,
+          0.306
+        ],
+        &quot;hex&quot;: &quot;#3f5d4e&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 10,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 18,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 32,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 64,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 128,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 3,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 10,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 20,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 72,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 300,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 42,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 300,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 23,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;numeral&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Cormorant Garamond\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 108,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 300,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 宋瓷极简（song-celadon · 东方新中式）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `song-celadon` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#a3b7a0` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Cormorant Garamond`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint song-celadon` / 导出其它格式：`heige-design export song-celadon --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 宋瓷极简 — 原创设定集，可商用。跑校验：<code>heige-design lint song-celadon</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

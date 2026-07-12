@@ -1,0 +1,984 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>声浪 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 张扬极繁</div>
+<div class="hero"><div class="fam">张扬极繁</div><h1>声浪<span class="badge">✓ lint 0 error</span></h1><div class="slug">soundwave-wrapped · soundwave-design-system</div><p class="desc">Soundwave (声浪) is a maximalist year-in-review system for music and campaign recaps, loud on purpose. Fluorescent pink</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#0E0C14;--ink:#F7F4EC;--pri:#FF2D95;--onpri:#140F14;--acc:#FF2D95;--surf:#1B1826;--muted:#ADA8BC;--line:#2E2B3C;--r:6px;--dff:Anton, "Archivo Black", Impact, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:Inter, "Helvetica Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:Space Mono, "JetBrains Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">声浪</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#FF2D95"></i><i style="background:#140F14"></i><i style="background:#F7F4EC"></i><i style="background:#0E0C14"></i><i style="background:#1B1826"></i><i style="background:#ADA8BC"></i><i style="background:#2E2B3C"></i><i style="background:#FFE500"></i></div>
+  <div class="swrap"><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">button-volt</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">button-ghost</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">tag-chip</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">data-collage-tile</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">equalizer-bars</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">hairline-rule</span></div>
+  </div>
+  <div class="card" style="--bg:#0E0C14;--ink:#F7F4EC;--pri:#FF2D95;--onpri:#140F14;--acc:#FF2D95;--surf:#1B1826;--muted:#ADA8BC;--line:#2E2B3C;--r:6px;--dff:Anton, "Archivo Black", Impact, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:Inter, "Helvetica Neue", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:Space Mono, "JetBrains Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">声浪</div></div>
+    <div class="swrap"><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#1B1826;color:#F7F4EC;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI 签名时刻 · The Live Equalizer（活波形）**
+主视觉下方一排 24 条竖直波形条，以荧光粉 / 电黄 / 电蓝三色交替平涂，锚定底边。它只靠 `transform: scaleY` 逐条起伏跳动（合成器友好、不重排、不重绘），像一段正在播放的声浪，给年度数据当&quot;心跳&quot;。hover 或滚动进场时活起来，到位后冻结成一段静态波形。`prefers-reduced-motion` 下直接给一段冻结波形，不跳。换个模板做不出这条&quot;会呼吸的数据心跳&quot;。
+
+**Deck 签名时刻 · The Wrapped Reveal（爆数一屏）**
+`slide-stat-hero` 上，电黄整版铺满，一个 Anton 巨号数字（如 `47,213`）以 scale + opacity 爆入，落在一条从左出血到右的冻结波形基线上，单位用 Space Mono 小字压角。一屏只有一个数字、一种颜色、一记锤 —— 黄金三秒里让人只记住这一个数。这是&quot;年度盘点&quot;最想让人截图转发的那一屏。</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- 让一个数字大到冒犯，四周留足呼吸，一屏一个主角。
+- 三支撞色平涂并置，靠颜色重量和整版出血制造层级。
+- 信息墙用不规则跨列拼贴，配旋转贴纸标签，挤而有网格纪律。
+- 波形与阴影一律静态或只动 `transform`，`prefers-reduced-motion` 一键停。
+- 每条字体栈压中文系统兜底，断网不塌。
+
+**Don't**
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2` 及其全家桶），三色永远平涂不互调。
+- **不做居中卡片三件套**（标题 + 灰副标 + 三等宽圆角卡整页重复）。
+- **中文绝不用日文字体**（Mochiy / Zen Maru 等）渲染，简体会缺字变豆腐。
+- **不动画化阴影 / 发光**，不用 `backdrop-filter`，不挂常驻 rAF 循环。
+- 别把巨号数字缩成温吞小字，那就丢了这套的全部气场。</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: soundwave-design-system
+description: Soundwave (声浪) is a maximalist year-in-review system for music and campaign recaps, loud on purpose. Fluorescent pink #FF2D95 leads while electric-yellow volt and cobalt blue clash on a concert near-black, deliberately dodging the purple-blue cliché. Anton condensed caps collide with Space Grotesk and Space Mono for a three-font, oversized-numeral personality. The signature is a transform-only equalizer bar row plus a full-bleed color-panel wrapped reveal where a giant number bursts in. One token set drives both a live interface and a 16:9 deck.
+
+colors:
+  primary: &quot;#FF2D95&quot;
+  on-primary: &quot;#140F14&quot;
+  ink: &quot;#F7F4EC&quot;
+  canvas: &quot;#0E0C14&quot;
+  surface: &quot;#1B1826&quot;
+  muted: &quot;#ADA8BC&quot;
+  hairline: &quot;#2E2B3C&quot;
+  volt: &quot;#FFE500&quot;
+  cobalt: &quot;#1E4DFF&quot;
+
+typography:
+  display-xl:
+    fontFamily: 'Anton, &quot;Archivo Black&quot;, Impact, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 120px
+    fontWeight: 800
+    lineHeight: 0.92
+    letterSpacing: -1px
+  display-lg:
+    fontFamily: 'Anton, &quot;Archivo Black&quot;, Impact, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 64px
+    fontWeight: 800
+    lineHeight: 0.98
+    letterSpacing: -0.5px
+  heading:
+    fontFamily: 'Space Grotesk, Inter, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 30px
+    fontWeight: 700
+    lineHeight: 1.12
+    letterSpacing: -0.2px
+  eyebrow:
+    fontFamily: 'Space Mono, &quot;JetBrains Mono&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, ui-monospace, monospace'
+    fontSize: 13px
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: 2.5px
+  body:
+    fontFamily: 'Inter, &quot;Helvetica Neue&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.62
+    letterSpacing: 0px
+  body-mono:
+    fontFamily: 'Space Mono, &quot;JetBrains Mono&quot;, ui-monospace, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 15px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 0.2px
+  button:
+    fontFamily: 'Space Grotesk, Inter, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, sans-serif'
+    fontSize: 15px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: 0.4px
+  caption:
+    fontFamily: 'Inter, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 500
+    lineHeight: 1.45
+    letterSpacing: 0.3px
+
+rounded:
+  none: 0px
+  sm: 3px
+  md: 6px
+  lg: 14px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 80px
+
+components:
+  # —— UI 界面组件 ——
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-volt:
+    backgroundColor: &quot;{colors.volt}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-ghost:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  tag-chip:
+    backgroundColor: &quot;{colors.volt}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  data-collage-tile:
+    backgroundColor: &quot;{colors.cobalt}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  equalizer-bars:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  hairline-rule:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    height: 1px
+  footer:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  # —— slide 演示组件（16:9，融合 HeiGe-PPT）——
+  slide-cover:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.cobalt}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.volt}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# 声浪 Soundwave · Design System
+
+&gt; 一年的声音，摊开成一面会跳动的信息墙。Maximalist, loud, data-drunk. 这是给音乐年度盘点、活动战报、娱乐年报做的一套设定集：数字要大到冒犯，颜色要撞到打架，节奏要像副歌。署名 HeiGe-Design。
+
+## Overview
+
+声浪 是张扬极繁家族里最吵的那一套。它的气质是**数据狂欢**：把用户一年的收听、一场活动的战果，翻译成一堵满是巨型数字、彩色面板、跳动波形的信息墙，热闹、年轻、拒绝含蓄。
+
+主色是荧光粉 `#FF2D95`，它只干两件事：一是当封面和收尾整版铺满的**能量底**，二是当行动按钮的**唯一焦点**。两个撞色辅助分工明确 —— 电黄 `#FFE500` 承载&quot;高光数据&quot;（那个最想让人截图的数字），电蓝 `#1E4DFF` 承载&quot;分章与分类&quot;（把信息墙切成板块）。三色一律高饱和平涂，绝不互相调和成渐变，更绝不滑向紫蓝俗套。中性靠一块 concert near-black `#0E0C14`，让霓虹三色在黑上炸开。
+
+字体是**三体混搭**的故意打架：Anton 压缩黑体做占屏巨号（数字的主场），Space Grotesk 做有棱角的标题，Space Mono 做数据标签和 kicker。节奏靠彩色整版面板的轮转推进，一屏一个主角、一屏一种颜色，像专辑的曲目切换。
+
+## Colors
+
+### Brand &amp; Accent
+| Token | Hex | 角色 |
+|---|---|---|
+| `primary` | `#FF2D95` | 荧光粉。能量底 + 唯一 CTA 焦点，克制到只出现在封面 / 收尾 / 主按钮 |
+| `volt` | `#FFE500` | 电黄。高光数据面板，那个要被截图的数字铺在它上面 |
+| `cobalt` | `#1E4DFF` | 电蓝。分章面板与数据分类，把信息墙切板块。这是一支硬电蓝，不是紫蓝 |
+
+三色互为撞色，永远平涂并置，永远不做互相过渡的渐变。
+
+### Surface
+| Token | Hex | 角色 |
+|---|---|---|
+| `canvas` | `#0E0C14` | Concert near-black，页面底，让霓虹三色炸开 |
+| `surface` | `#1B1826` | 抬高的深色卡面，承载 stat / feature 卡 |
+| `hairline` | `#2E2B3C` | 1px 分隔线与卡片描边，在黑上极低调 |
+
+### Text
+| Token | Hex | 角色 |
+|---|---|---|
+| `ink` | `#F7F4EC` | 骨白正文与标题，铺在深底上（17.7:1） |
+| `on-primary` | `#140F14` | 富黑，铺在粉 / 黄这类亮面板上的文字 |
+| `muted` | `#ADA8BC` | 次要文字、单位、脚注（surface 上 7.56:1） |
+
+### Semantic
+声浪没有传统的 up/down 语义色，它的语义压在三支撞色的**面板角色**上：粉=能量与召唤，黄=高光数据，蓝=分章与分类。读者靠颜色就知道这一屏是&quot;喊话&quot;还是&quot;报数&quot;。所有前景/背景配对均已过 WCAG AA：`on-primary` on `primary` 5.47:1，`on-primary` on `volt` 14.85:1，`ink` on `cobalt` 5.36:1，`ink` on `canvas` 17.7:1，`muted` on `surface` 7.56:1。
+
+## Typography
+
+### Font Family
+三体故意打架，各司其职：
+- **Display（巨号数字与标题）**：`Anton` 压缩黑体，专治占屏数字。拉丁字形由 Anton 渲染，中文自动落到 `Noto Sans SC` 的重字重，断网塌底到 `Archivo Black / Impact`，再到系统。
+- **Heading（有棱角标题）**：`Space Grotesk`。
+- **Body（正文）**：`Inter`。
+- **Mono（数据标签 / kicker / 单位）**：`Space Mono`，等宽的怪脾气正好配数据狂欢。
+
+**中文铁律**：每条 font stack 末尾都压 `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;`（衬线场景用 `Noto Serif SC / Songti SC`）。**中文绝不用日文字体渲染**，简体会缺字变豆腐。webfont 放最前保设计，系统字体兜底保不崩。
+
+### Hierarchy
+| Role | Size | Weight | Line | Tracking | 用途 |
+|---|---|---|---|---|---|
+| display-xl | 120px | 800 | 0.92 | -1px | 封面标题、wrapped 巨号数字 |
+| display-lg | 64px | 800 | 0.98 | -0.5px | 章号、stat 卡数字、金句 |
+| heading | 30px | 700 | 1.12 | -0.2px | 卡片标题、板块名 |
+| eyebrow | 13px | 700 | 1.2 | 2.5px | 全大写 kicker、导航、标签 |
+| body | 17px | 400 | 1.62 | 0px | 正文段落 |
+| body-mono | 15px | 400 | 1.5 | 0.2px | 数据标签、单位、脚注数字 |
+| button | 15px | 700 | 1 | 0.4px | 按钮、收尾 CTA |
+| caption | 13px | 500 | 1.45 | 0.3px | 脚注、图注 |
+
+### Principles
+- 最大字与正文对比 120:17 ≈ 7:1，远超 1:4。巨号就要大到有点过分。
+- 三体混搭是设计，不是失手：一屏里 Anton 数字 + Space Grotesk 标题 + Space Mono 标签同时在场，靠字重和字距拉开层级。
+- 数字永远用等宽或 Anton，绝不让金额 / 分钟数抖动。
+
+## Layout
+
+### Spacing
+4 / 8 / 16 / 24 / 40 / 80 的六档尺度。密集堆叠是这套的性格，但堆叠里要有网格纪律 —— 挤，不等于乱。
+
+### Grid &amp; Container
+- 桌面 12 栅格，信息墙用不规则跨列（3+5+4、6+6、8+4）制造拼贴错落，而不是三等分。
+- 内容最大宽 1200px，但彩色面板一律**出血到视口边**，颜色顶到屏幕才够狂。
+- 中文限宽用 `em / px`，绝不用 `ch`（`ch` 按拉丁 0 宽算，会让中文提前折行出孤字）。
+
+### Whitespace
+留白在这套里是稀缺品，只在两处出现：巨号数字四周的**呼吸区**，和彩色面板之间的**硬切黑缝**。信息墙可以挤，但主角数字周围必须空出来，否则狂欢变噪音。
+
+## Elevation &amp; Depth
+
+| 层级 | 手法 |
+|---|---|
+| 底 | canvas 平铺，无阴影 |
+| 卡片 | surface + 1px hairline 描边，靠色块而非投影抬起 |
+| 强调 | 彩色面板直接压在黑底上，用**颜色的重量**制造层级 |
+| 焦点 | 巨号数字 + 静态硬投影（offset 不模糊，贴纸感） |
+
+深度靠**颜色权重和平面叠压**，不靠柔和阴影堆。装饰性深度就是&quot;贴纸叠贴纸&quot;的拼贴感：旋转 -3° 到 3° 的标签、错位压边的面板。**发光 / 阴影一律静态**，绝不逐帧动画化（发光重绘极贵）。不用 `backdrop-filter`。
+
+## Shapes
+
+### Border Radius
+| Token | Value | 用途 |
+|---|---|---|
+| none | 0px | 彩色面板、stat 卡、slide 全部硬边 |
+| sm | 3px | 波形条 |
+| md | 6px | feature 卡 |
+| lg | 14px | 数据拼贴块 |
+| pill | 9999px | 按钮、贴纸标签 |
+
+圆角是**故意的混用**：面板与卡片硬切（none/md），按钮与标签滚圆（pill）。硬边的板块 + 滚圆的贴纸并置，是这套拼贴语言的一部分，不是不统一。
+
+### 图形 / 图片几何
+图片走硬边满出血或方块裁切，叠上旋转的贴纸标签与波形条。绝不用柔角大圆卡把图裹成通用 SaaS 的样子。
+
+## Components
+
+- **nav-bar** — canvas 底 + hairline 下边线，左品牌右 eyebrow 导航，克制不抢戏。
+- **button-primary** — 荧光粉 pill，富黑字，全站唯一主焦点。
+- **button-volt** — 电黄 pill，用于&quot;看我的年度报告&quot;这类高兴奋 CTA。
+- **button-ghost** — 透明 pill + hairline 描边，次级动作。
+- **tag-chip** — 电黄贴纸标签，全大写 mono，可旋转小角度，撒在信息墙上。
+- **card-feature** — surface 卡 + hairline 描边，heading + body，承载文字型内容。
+- **stat-block** — 硬边 surface 卡，display-lg 巨号（可染 volt / primary）+ body-mono 标签，信息墙的基本单元。
+- **data-collage-tile** — 电蓝出血块，body-mono 数据 + 巨号，用来切分类板块。
+- **equalizer-bars** — 签名组件，一排竖条以三色平涂，靠 `transform: scaleY` 跳动（见 Signature Moment）。
+- **hairline-rule** — 1px `hairline` 细线，卡片描边与分节，在黑上极低调。
+- **footer** — surface 底，muted 文字，署名与元信息。
+
+slide 组件见下一节。
+
+## Presentation System
+
+声浪做成 16:9 演示时，是一张**彩色整版面板轮转**的专辑：一页一句话、黄金三秒、一记视觉锤。视觉锤永远是那个**占屏巨号数字 + 贯穿底边的波形基线**。
+
+| 版式 | 组件 | 排法 |
+|---|---|---|
+| 封面 | `slide-cover` | 荧光粉出血整版，Anton 巨号标题压富黑字，底边一道波形。开场三秒立住&quot;这是年度狂欢&quot;。 |
+| 过渡 | `slide-section-divider` | 电蓝出血整版，超大章号 `01 / 02`（volt）+ eyebrow 板块名。颜色一换观众就知道翻篇了。 |
+| 数据 | `slide-stat-hero` | 电黄出血整版，一个巨号数字爆入 + Space Mono 单位。一页只报一个数，这是全场高潮。 |
+| 金句 | `slide-quote` | 黑底整版，display-lg 一句歌词 / 一句结论，四周大留白呼吸。狂欢里的一次静场。 |
+| 收尾 | `slide-closing` | 荧光粉出血整版，一句召唤 + button CTA + 波形收束。 |
+
+节奏设计：粉 → 蓝 → 黄 → 黑 → 粉 的色块轮转本身就是 pacing。强数据页（黄）后面必跟一页金句黑场做张弛，不让观众从头嗨到尾变麻木。
+
+## Signature Moment
+
+**UI 签名时刻 · The Live Equalizer（活波形）**
+主视觉下方一排 24 条竖直波形条，以荧光粉 / 电黄 / 电蓝三色交替平涂，锚定底边。它只靠 `transform: scaleY` 逐条起伏跳动（合成器友好、不重排、不重绘），像一段正在播放的声浪，给年度数据当&quot;心跳&quot;。hover 或滚动进场时活起来，到位后冻结成一段静态波形。`prefers-reduced-motion` 下直接给一段冻结波形，不跳。换个模板做不出这条&quot;会呼吸的数据心跳&quot;。
+
+**Deck 签名时刻 · The Wrapped Reveal（爆数一屏）**
+`slide-stat-hero` 上，电黄整版铺满，一个 Anton 巨号数字（如 `47,213`）以 scale + opacity 爆入，落在一条从左出血到右的冻结波形基线上，单位用 Space Mono 小字压角。一屏只有一个数字、一种颜色、一记锤 —— 黄金三秒里让人只记住这一个数。这是&quot;年度盘点&quot;最想让人截图转发的那一屏。
+
+## Do's and Don'ts
+
+**Do**
+- 让一个数字大到冒犯，四周留足呼吸，一屏一个主角。
+- 三支撞色平涂并置，靠颜色重量和整版出血制造层级。
+- 信息墙用不规则跨列拼贴，配旋转贴纸标签，挤而有网格纪律。
+- 波形与阴影一律静态或只动 `transform`，`prefers-reduced-motion` 一键停。
+- 每条字体栈压中文系统兜底，断网不塌。
+
+**Don't**
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2` 及其全家桶），三色永远平涂不互调。
+- **不做居中卡片三件套**（标题 + 灰副标 + 三等宽圆角卡整页重复）。
+- **中文绝不用日文字体**（Mochiy / Zen Maru 等）渲染，简体会缺字变豆腐。
+- **不动画化阴影 / 发光**，不用 `backdrop-filter`，不挂常驻 rAF 循环。
+- 别把巨号数字缩成温吞小字，那就丢了这套的全部气场。
+
+## Responsive Behavior
+
+| 断点 | 编排 |
+|---|---|
+| ≥1200px | 12 栅格信息墙，不规则跨列拼贴，波形 24 条 |
+| 768–1199px | 收成 6 栅格，面板两两堆叠，波形降到 16 条 |
+| ≤767px | 信息墙**重新编排**为纵向色块序列，一屏一面板一数字，波形降到 10 条 |
+
+移动端是把信息墙**重新编排成竖向翻页的色块流**，不是把桌面拼贴等比缩小。巨号数字用 `clamp()` 控制，保证最长那行在 ≤390px 也放得下、不出孤字、不横向溢出。手动断行的标题每行锁 `nowrap`，按最长行收字号。
+
+## Anti-Slop Pledge
+
+抹掉品牌名，这一页仍能一眼看出是用心做的：三支撞色平涂在 concert-black 上炸开，Anton 巨号压着一条会跳的波形，三体字故意打架却各归各位 —— 没有紫蓝渐变、没有居中三卡、没有 emoji 撑场。这是一套有主角、有高潮、有签名心跳的声浪，不是流水线吐出来的通用模板。
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #ff2d95;
+  --color-on-primary: #140f14;
+  --color-ink: #f7f4ec;
+  --color-canvas: #0e0c14;
+  --color-surface: #1b1826;
+  --color-muted: #ada8bc;
+  --color-hairline: #2e2b3c;
+  --color-volt: #ffe500;
+  --color-cobalt: #1e4dff;
+  --font-display-xl: &quot;Anton, \&quot;Archivo Black\&quot;, Impact, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;Anton, \&quot;Archivo Black\&quot;, Impact, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;Space Grotesk, Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;Space Mono, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, ui-monospace, monospace&quot;;
+  --font-body: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;Space Mono, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;Space Grotesk, Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;;
+  --font-caption: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 120px;
+  --text-display-lg: 64px;
+  --text-heading: 30px;
+  --text-eyebrow: 13px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-eyebrow: 2.5px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0.2px;
+  --tracking-button: 0.4px;
+  --tracking-caption: 0.3px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 700;
+  --font-weight-eyebrow: 700;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#ff2d95&quot;,
+        &quot;on-primary&quot;: &quot;#140f14&quot;,
+        &quot;ink&quot;: &quot;#f7f4ec&quot;,
+        &quot;canvas&quot;: &quot;#0e0c14&quot;,
+        &quot;surface&quot;: &quot;#1b1826&quot;,
+        &quot;muted&quot;: &quot;#ada8bc&quot;,
+        &quot;hairline&quot;: &quot;#2e2b3c&quot;,
+        &quot;volt&quot;: &quot;#ffe500&quot;,
+        &quot;cobalt&quot;: &quot;#1e4dff&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;Anton, \&quot;Archivo Black\&quot;, Impact, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;Anton, \&quot;Archivo Black\&quot;, Impact, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;Space Grotesk, Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;Space Mono, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, ui-monospace, monospace&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;Space Mono, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;Space Grotesk, Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;120px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;64px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;30px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;3px&quot;,
+        &quot;md&quot;: &quot;6px&quot;,
+        &quot;lg&quot;: &quot;14px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;80px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #ff2d95;
+  --color-on-primary: #140f14;
+  --color-ink: #f7f4ec;
+  --color-canvas: #0e0c14;
+  --color-surface: #1b1826;
+  --color-muted: #ada8bc;
+  --color-hairline: #2e2b3c;
+  --color-volt: #ffe500;
+  --color-cobalt: #1e4dff;
+  --font-display-xl: &quot;Anton, \&quot;Archivo Black\&quot;, Impact, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;Anton, \&quot;Archivo Black\&quot;, Impact, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;Space Grotesk, Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;Space Mono, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, ui-monospace, monospace&quot;;
+  --font-body: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;Space Mono, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;Space Grotesk, Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;;
+  --font-caption: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 120px;
+  --text-display-lg: 64px;
+  --text-heading: 30px;
+  --text-eyebrow: 13px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-eyebrow: 2.5px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0.2px;
+  --tracking-button: 0.4px;
+  --tracking-caption: 0.3px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 700;
+  --font-weight-eyebrow: 700;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Soundwave (声浪) is a maximalist year-in-review system for music and campaign recaps, loud on purpose. Fluorescent pink&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.176,
+          0.584
+        ],
+        &quot;hex&quot;: &quot;#ff2d95&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.078,
+          0.059,
+          0.078
+        ],
+        &quot;hex&quot;: &quot;#140f14&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.969,
+          0.957,
+          0.925
+        ],
+        &quot;hex&quot;: &quot;#f7f4ec&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.055,
+          0.047,
+          0.078
+        ],
+        &quot;hex&quot;: &quot;#0e0c14&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.106,
+          0.094,
+          0.149
+        ],
+        &quot;hex&quot;: &quot;#1b1826&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.678,
+          0.659,
+          0.737
+        ],
+        &quot;hex&quot;: &quot;#ada8bc&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.18,
+          0.169,
+          0.235
+        ],
+        &quot;hex&quot;: &quot;#2e2b3c&quot;
+      }
+    },
+    &quot;volt&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.898,
+          0
+        ],
+        &quot;hex&quot;: &quot;#ffe500&quot;
+      }
+    },
+    &quot;cobalt&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.118,
+          0.302,
+          1
+        ],
+        &quot;hex&quot;: &quot;#1e4dff&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 80,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 3,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 14,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Anton, \&quot;Archivo Black\&quot;, Impact, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 120,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Anton, \&quot;Archivo Black\&quot;, Impact, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 64,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Space Grotesk, Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 30,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Space Mono, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, ui-monospace, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;Helvetica Neue\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Space Mono, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Space Grotesk, Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 声浪（soundwave-wrapped · 张扬极繁）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `soundwave-wrapped` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#FF2D95` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Anton`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint soundwave-wrapped` / 导出其它格式：`heige-design export soundwave-wrapped --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 声浪 — 原创设定集，可商用。跑校验：<code>heige-design lint soundwave-wrapped</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

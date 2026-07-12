@@ -1,0 +1,962 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>民历 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 温暖人文</div>
+<div class="hero"><div class="fam">温暖人文</div><h1>民历<span class="badge">✓ lint 0 error</span></h1><div class="slug">almanac-folk · Tongshu-design-system</div><p class="desc">Tongshu is a folk-almanac system for craft, heritage and regional-culture brands. Woodblock ink presses onto parchment; folk-red and pine-green are the only two inks, one auspicious, one warding. Fraunces cuts carved serifs, LXGW WenKai hand-warms the copy, IBM Plex Mono rules the date columns. The signature is a carved lace-meander border framing a tear-off almanac day-leaf: a 宜 / 忌 ledger, a lunar date, and a solar-term seal pressed askew in vermilion.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#ead9b8;--ink:#2a1e12;--pri:#c23b22;--onpri:#fdf6e6;--acc:#3f6f52;--surf:#f4ecd6;--muted:#5f4f33;--line:#c8b083;--r:6px;--dff:"Fraunces", "Georgia", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"LXGW WenKai", "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--mff:"IBM Plex Mono", ui-monospace, "LXGW WenKai", "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">民历</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#c23b22"></i><i style="background:#fdf6e6"></i><i style="background:#2a1e12"></i><i style="background:#ead9b8"></i><i style="background:#f4ecd6"></i><i style="background:#5f4f33"></i><i style="background:#c8b083"></i><i style="background:#3f6f52"></i></div>
+  <div class="swrap"><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">solar-term-badge</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">tag-yi</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">card-dayleaf</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">ledger-row</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">meta-label</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">divider-rule</span></div>
+  </div>
+  <div class="card" style="--bg:#ead9b8;--ink:#2a1e12;--pri:#c23b22;--onpri:#fdf6e6;--acc:#3f6f52;--surf:#f4ecd6;--muted:#5f4f33;--line:#c8b083;--r:6px;--dff:"Fraunces", "Georgia", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"LXGW WenKai", "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--mff:"IBM Plex Mono", ui-monospace, "LXGW WenKai", "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">民历</div></div>
+    <div class="swrap"><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#f4ecd6;color:#2a1e12;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">换个模板绝对做不出来的两个签名时刻，写死：
+
+- **UI 签名 · 通书日页卡（宜忌日历）**：卡片四边是真刻出来的木刻回纹花边（`repeating-linear-gradient` 走出万字锦骨、边角碎口把羊皮纸底透出），卡面正中公历大数字与农历「四月初九 · 立夏」等宽双列对齐，下半张分「宜」「忌」两栏，宜项挂民间红小标、忌项挂松绿小标，右上角压一枚 -4° 歪、错位 2px 的「通书堂印」红朱印，套印故意没对准。整张卡像从墙上黄历撕下来的一页，不是一块 SaaS 面板。
+- **Deck 签名 · 节气过场页**：过渡页整屏民间红，一侧竖排当日节气二字（立夏 / 霜降），字距拉到刻在梁上；正中超大 Fraunces 章节号套一圈出血到画面外的奶油回纹花边框，右下一枚奶油朱印盖住页角，把整页压成一张寄出的节气帖。红底、竖节气、歪朱印三件套一出，这页只可能是民历。</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- 红绿各归各位：红管「宜」与主动，绿管「忌」与页边，同框只让一个当家。
+- 日期一律 IBM Plex Mono 等宽，公历农历双列对齐才是黄历的骨。
+- 朱印一律歪 -4°、错位 2px，手盖的失准就是灵魂。
+- 木刻纹样单色描线（红或绿），保刻痕感。
+- 节气眉批字距拉到 +3，像刻在门楣上的横批。
+
+**Don't**
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2` 及全家桶），那是 AI 界面的身份证，和老黄历毫无关系。
+- **不做居中卡片三件套**（一标题 + 一灰副标 + 三等宽圆角卡整页复读），这套走通书翻页错落 + 宜忌双栏 + 左对齐。
+- **中文不用日文字体**渲染（Mochiy / Zen Maru 等），简体缺字变豆腐，中文只走霞鹜文楷 / Noto Serif SC / 思源系。
+- **不动画化阴影 / text-shadow**，回纹与套印都是静态压印，滚动不掉帧。
+- 不拿红字绿字压羊皮纸浅底（隐形字），红绿只做背景配奶油字。
+- 不用照片级渲染的物候图，会杀掉整套的木刻手作感。</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: Tongshu-design-system
+description: &gt;-
+  Tongshu is a folk-almanac system for craft, heritage and regional-culture
+  brands. Woodblock ink presses onto parchment; folk-red and pine-green are the
+  only two inks, one auspicious, one warding. Fraunces cuts carved serifs, LXGW
+  WenKai hand-warms the copy, IBM Plex Mono rules the date columns. The signature
+  is a carved lace-meander border framing a tear-off almanac day-leaf: a 宜 / 忌
+  ledger, a lunar date, and a solar-term seal pressed askew in vermilion.
+
+colors:
+  primary: &quot;#c23b22&quot;       # 民间红 folk-red · 宜-column ink &amp; seal, fill-only, cream on top
+  on-primary: &quot;#fdf6e6&quot;    # warm rice-cream set on red or green fields
+  ink: &quot;#2a1e12&quot;           # woodblock brown-black, body text (never pure black)
+  canvas: &quot;#ead9b8&quot;        # 羊皮纸 parchment, the page the whole almanac is printed on
+  surface: &quot;#f4ecd6&quot;       # rice-paper card, one shade above canvas
+  muted: &quot;#5f4f33&quot;         # aged-catalpa brown for captions, dates, secondary text
+  hairline: &quot;#c8b083&quot;      # 1px carved rule / woodblock line
+  accent: &quot;#3f6f52&quot;        # 松绿 pine-green · 忌-column &amp; margins, fill-only, cream on top
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Georgia&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 72px
+    fontWeight: 600
+    lineHeight: 1.04
+    letterSpacing: -1.5px
+  display-lg:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Georgia&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 42px
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: -0.5px
+  heading:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Georgia&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 24px
+    fontWeight: 600
+    lineHeight: 1.28
+    letterSpacing: -0.2px
+  body:
+    fontFamily: '&quot;LXGW WenKai&quot;, &quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.78
+    letterSpacing: 0.1px
+  body-mono:
+    fontFamily: '&quot;IBM Plex Mono&quot;, ui-monospace, &quot;LXGW WenKai&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 40px
+    fontWeight: 500
+    lineHeight: 1.0
+    letterSpacing: -0.5px
+  button:
+    fontFamily: '&quot;Fraunces&quot;, &quot;LXGW WenKai&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 16px
+    fontWeight: 600
+    lineHeight: 1.0
+    letterSpacing: 0.3px
+  caption:
+    fontFamily: '&quot;LXGW WenKai&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 0.2px
+  eyebrow:
+    fontFamily: '&quot;Fraunces&quot;, &quot;LXGW WenKai&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif'
+    fontSize: 13px
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: 3px
+
+rounded:
+  none: 0px
+  sm: 3px
+  md: 6px
+  lg: 10px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 80px
+
+components:
+  # —— UI 界面组件 ——
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.sm} {spacing.lg}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.sm} {spacing.lg}&quot;
+  solar-term-badge:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  tag-yi:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  card-dayleaf:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  ledger-row:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    padding: &quot;{spacing.md}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  meta-label:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  divider-rule:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+  footer:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.body}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  # —— slide 演示组件（16:9 版式）——
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Tongshu · 民历
+
+一套照着老黄历刻出来的设计系统。它不像 App，像墙上撕下来的一张通书日页：羊皮纸底、木刻回纹花边、当中一栏红字写「宜」，一栏绿字写「忌」，角上盖一枚没对准的朱印，眉头一行小字是当日节气。做手工艺、非遗、地方品牌、文创的，用它。
+
+## Overview
+
+Tongshu 的气场来自**刻版房而非设计软件**。整套系统假设自己被印在一张羊皮纸上，图案都是木刻版压上去的：花边是刻的，标题是刻的，印是盖的，节气是压的。
+
+系统只有两种墨，各司一职，这是老黄历的规矩。**民间红 `#c23b22` 是「宜」墨**：吉事、当日、行动号召、朱印落款，全走这一抹红。**松绿 `#3f6f52` 是「忌」墨**：禁忌栏、页边、收尾页那道沉下去的绿。红主动，绿守静，一屏之内红绿各归各位，绝不打架。两色都**只做底、只配奶油字**，从不拿红字绿字压浅纸（红压米是隐形字），这是配方的铁律。
+
+字体签名是**刻与写的对撞**。标题走 Fraunces，那种高对比、微微歪扭的老衬线，像木刻刀在梨木上走出来的笔画；正文走霞鹜文楷，手写楷的暖，像毛笔在通书内页上抄下来的。一刻一写，刚好是「版」与「人」的关系。日期与计数交给 IBM Plex Mono，等宽对齐，专治黄历那种公历农历双列排。
+
+节奏是**节气式**的：一节紧（宜忌清单、日期、密排的项目），一节松（一句金句、一片留白、一枚朱印），像二十四节气一样一张一弛往下走，绝不从头到尾一个密度。
+
+## Colors
+
+两墨配方，红绿各一职，节奏靠版式不靠堆色。
+
+### Brand &amp; Accent
+- `#c23b22` **民间红 primary** — 「宜」的朱墨，全系统最主动的一抹。用作主按钮、当日标、朱印、过渡页整屏。它偏亮，**只做背景配奶油字**（奶油压红 4.9:1），绝不拿红字压羊皮纸（3.8:1 的隐形字）。红是重音，一屏最多响两次。
+- `#3f6f52` **松绿 accent** — 「忌」的守墨，也是页边线的墨。比嫩叶更沉，为的是能背奶油字（5.4:1）。用作次按钮、禁忌栏、收尾页整屏、木刻纹样的描线。绿永远比红安静一档。
+
+### Surface
+- `#ead9b8` **canvas** — 羊皮纸，全系统印在它上面，暖到发旧。
+- `#f4ecd6` **surface** — 米纸卡面，比 canvas 高一阶，日页浮起半毫米。
+- `#c8b083` **hairline** — 刻痕线色，做 1px 分隔与回纹花边的骨。
+
+### Text
+- `#2a1e12` **ink** — 木刻墨的褐黑，正文色。不用纯黑（纯黑压在暖纸上像塑料贴纸）。在羊皮纸上 11.7:1，在米纸上 13.8:1。
+- `#5f4f33` **muted** — 陈梓木褐，做节气眉批、图注、批次日期。在羊皮纸上 5.7:1，在米纸上 6.7:1，够格当次要文字。
+- `#fdf6e6` **on-primary** — 压在红/绿/墨底上的暖米字，红上 4.9:1，绿上 5.4:1，墨上 15:1。
+
+节奏原则：**红绿不同框争主**。同一模块里红当家就让绿退到边线，绿当家就让红缩成一枚小印。谁都想说话 = AI 撞色 slop，这里拒绝。
+
+## Typography
+
+### Font Family
+- **展示 / 标题 / 数字标题：Fraunces** — 高对比老式衬线，带光学尺寸的通书刻版气。中文兜底 `&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`，断网也是干净宋体，绝不塌成 Times。
+- **正文 / 图注：LXGW WenKai 霞鹜文楷** — 手写楷的暖，抄经体的呼吸感，正文读起来像黄历内页手抄。中文栈自带，末尾挂 `&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, serif` 系统兜底。
+- **日期 / 计数：IBM Plex Mono** — 等宽，专治公历农历双列对齐、宜忌条数、页码。兜底 `ui-monospace, &quot;Noto Sans SC&quot;, monospace`。
+- **中文铁律**：三条能承载中文的字栈末尾都挂了系统兜底，简体永不缺字。**中文绝不用日文字体渲染**（Mochiy / Zen Maru 那一挂），简体会缺字变豆腐、或显成日文异体。要暖楷就走霞鹜文楷 / 思源系。
+
+### Hierarchy
+| role | family | size / weight | 用途 |
+|---|---|---|---|
+| display-xl | Fraunces | 72 / 600 | 封面主宣言，一屏一句 |
+| display-lg | Fraunces | 42 / 600 | 过渡页 / 金句 / 收尾 |
+| heading | Fraunces | 24 / 600 | 日页标题、卡片标题、导航品牌字 |
+| body | 霞鹜文楷 | 17 / 400 | 正文，行高 1.78 给它喘气 |
+| body-mono | IBM Plex Mono | 40 / 500 | 公历农历大日期、收成计数（等宽对齐最稳） |
+| button | Fraunces | 16 / 600 | 按钮，字距 +0.3 |
+| caption | 霞鹜文楷 | 13 / 400 | 图注、节气批注、日期戳 |
+| eyebrow | Fraunces | 13 / 500 | 节气眉批小标，字距 +3 拉开如刻在梁上 |
+
+### Principles
+- **最大字与正文 ≥ 1:4**：display-xl 72 对 body 17，封面标题敢大到有点过分。
+- **日期一律 body-mono 等宽**：「二〇二六 · 立夏 · 四月初九」公历农历并排时，等宽才对得齐，这是黄历的骨。
+- **eyebrow 永远拉开字距**：节气二字（立夏 / 霜降）字距 +3，像刻在门楣横梁上的一行小字。
+- 手动断行标题按最长行收字号，配 `text-wrap:balance`，窄屏 ≤390px 零孤字。**中文限宽用 `em` 不用 `ch`**（ch 是拉丁数字宽度，会让中文提前折行出孤字）。
+
+## Layout
+
+### Spacing
+4 / 8 / 16 / 24 / 40 / 80 的六阶节气尺。section 80px 是节与节之间那道沟，模块之间必须留这道沟，不许挤成一坨。
+
+### Grid &amp; Container
+- 桌面 12 列，gutter 24，最大内容宽 1120px，两侧留羊皮纸边，像通书的装订天头地脚。
+- **裸露的回纹骨线**：栏与栏之间偶尔露一道 `#c8b083` 刻痕线，提醒你这是印出来的，不是渲染的。
+- 日页按**通书翻页**码放：不追求等高，允许当日页大、旁日页小，像一本翻开的历书左右两页不对称。
+
+### Whitespace
+留白是**天头地脚不是填充**。大留白只出现在模块之间那道 80px 沟、封面四周的装订边；模块内部（宜忌栏、节气表）反而信息密实。均匀撒白 = AI slop，这里拒绝。
+
+## Elevation &amp; Depth
+
+深度靠**压印和纸感**，不靠悬浮阴影。
+
+| 层 | 手法 |
+|---|---|
+| 纸底 | 静态羊皮纸颗粒（SVG feTurbulence 一次性铺底，不动画） |
+| 卡片 | 极浅硬 offset 阴影 `2px 3px 0 rgba(42,30,18,.12)`，硬边不模糊，像纸叠在纸上 |
+| 朱印 | 轻微套印失准：印相对卡片旋转 -4°、错位 2px，制造手盖的「没对准」 |
+| 花边 | 木刻回纹边用 `repeating-linear-gradient` 刻出，边角一圈碎口把 canvas 底色透出来 |
+
+**禁 backdrop-filter，禁动画化阴影 / text-shadow**。要「浮」就用硬 offset 常亮阴影，滚动不重绘、不掉帧。
+
+## Shapes
+
+| token | 值 | 用途 |
+|---|---|---|
+| none | 0 | 过渡页 / 封面，硬边如裁纸刀 |
+| sm | 3 | 日页、数据块、宜标，几乎不倒角，保刻版方正 |
+| md | 6 | 主次按钮，像一枚压上的木牌 |
+| lg | 10 | 金句暗页的内框，微微收角 |
+| pill | 9999 | 节气圆牌、圆形朱印、刻痕分隔 |
+
+图片走**回纹花边裁切**：主图外框是一圈木刻回纹（meander 万字锦），四角刻碎口。木刻纹样（缠枝、莲花、云头、节气物候）永远单色红或绿描线，绝不用照片级渲染，保刻痕感。
+
+## Components
+
+- **nav-bar** — 羊皮纸底，品牌字用 Fraunces heading，底部一道 `divider-rule` 刻痕线收口。左品牌右导航，不居中。
+- **button-primary** — 民间红底奶油字，rounded md，像一枚盖上去的朱牌，hover 时 offset 阴影加深 1px（不做位移动画）。
+- **button-secondary** — 松绿底奶油字，rounded md，「忌」的守色也能当次动作。
+- **solar-term-badge** — 米纸底陈褐字胶囊，节气眉批（「立夏 · 万物并秀」），字距 +3。
+- **tag-yi** — 民间红小标，宜事标签（「宜 · 开市」），盖在日页当日项左侧。红底奶油字 4.9:1。
+- **card-dayleaf** — 通书日页卡（签名件）：米纸面 + 四周木刻回纹花边 + 右上角一枚 -4° 歪的朱印，内含公历农历双列 + 宜忌两栏。标题 heading，正文 body。
+- **ledger-row** — 宜忌一行：羊皮纸底，左「宜」右「忌」双栏，宜项挂红小标、忌项挂绿小标，行间一道刻痕线。
+- **stat-block** — 物候计数块：IBM Plex Mono 大等宽数字（墨色）+ caption 单位（如「第 47 候」），下方刻痕线收口。
+- **meta-label** — 陈褐小注（农历日期、批次号、物候候应），像通书页脚的小字。
+- **divider-rule** — 刻痕分隔，1px 线，节与节之间的沟标。
+- **footer** — 整块木刻墨底，奶油字，像日页翻到最后压在深色底板上，收在这道地脚线上。
+
+## Presentation System
+
+做成 16:9 演示时，对齐 HeiGe-PPT 的**一页一句话 / 黄金三秒 / 视觉锤**。
+
+**视觉锤**：木刻回纹花边框 + 一枚 -4° 歪的红朱印 + 眉头一行拉开字距的节气小标。三样只要出现一样，三秒内就认出「这是民历那套」。
+
+- **封面 slide-cover**：羊皮纸满屏，上下两道木刻回纹花边横带夹住画面，一句 Fraunces 巨号宣言左对齐压在下三分之一，右上角一枚歪着的红朱印，眉头一行节气小标。黄金三秒立住「老黄历」的气。
+- **过渡页 slide-section-divider**：整屏民间红，超大 Fraunces 章节号（壹 / 贰 或 01 / 02）盖在正中，号外套一圈奶油色回纹花边，一侧竖排当日节气 + 一枚奶油朱印。硬边 none，红得像撕开的封面。
+- **数据页 slide-stat-hero**：羊皮纸底，一个 IBM Plex Mono 的墨色大等宽数字占据视觉高点（公历农历双列对齐），松绿只做数字下方一道短守线。一屏一个数，别堆。
+- **金句页 slide-quote**：木刻墨底暗页（掌灯夜读），一句 Fraunces 奶油引言占屏，内框微收 lg 角，左下一枚红引号朱印。整场里唯一的暗页，给节奏一个深呼吸。
+- **收尾页 slide-closing**：回到松绿整屏（「忌」的守色收场，沉得住），一句行动号召 + 一枚奶油 CTA 印，下方一道回纹花边地脚，收得干脆，像合上一本通书。
+
+节奏：封面(松) → 数据(密) → 金句·暗页(松) → 宜忌清单(密) → 收尾(松)，节气交替，绝不匀速。
+
+## Signature Moment
+
+换个模板绝对做不出来的两个签名时刻，写死：
+
+- **UI 签名 · 通书日页卡（宜忌日历）**：卡片四边是真刻出来的木刻回纹花边（`repeating-linear-gradient` 走出万字锦骨、边角碎口把羊皮纸底透出），卡面正中公历大数字与农历「四月初九 · 立夏」等宽双列对齐，下半张分「宜」「忌」两栏，宜项挂民间红小标、忌项挂松绿小标，右上角压一枚 -4° 歪、错位 2px 的「通书堂印」红朱印，套印故意没对准。整张卡像从墙上黄历撕下来的一页，不是一块 SaaS 面板。
+- **Deck 签名 · 节气过场页**：过渡页整屏民间红，一侧竖排当日节气二字（立夏 / 霜降），字距拉到刻在梁上；正中超大 Fraunces 章节号套一圈出血到画面外的奶油回纹花边框，右下一枚奶油朱印盖住页角，把整页压成一张寄出的节气帖。红底、竖节气、歪朱印三件套一出，这页只可能是民历。
+
+## Do's and Don'ts
+
+**Do**
+- 红绿各归各位：红管「宜」与主动，绿管「忌」与页边，同框只让一个当家。
+- 日期一律 IBM Plex Mono 等宽，公历农历双列对齐才是黄历的骨。
+- 朱印一律歪 -4°、错位 2px，手盖的失准就是灵魂。
+- 木刻纹样单色描线（红或绿），保刻痕感。
+- 节气眉批字距拉到 +3，像刻在门楣上的横批。
+
+**Don't**
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2` 及全家桶），那是 AI 界面的身份证，和老黄历毫无关系。
+- **不做居中卡片三件套**（一标题 + 一灰副标 + 三等宽圆角卡整页复读），这套走通书翻页错落 + 宜忌双栏 + 左对齐。
+- **中文不用日文字体**渲染（Mochiy / Zen Maru 等），简体缺字变豆腐，中文只走霞鹜文楷 / Noto Serif SC / 思源系。
+- **不动画化阴影 / text-shadow**，回纹与套印都是静态压印，滚动不掉帧。
+- 不拿红字绿字压羊皮纸浅底（隐形字），红绿只做背景配奶油字。
+- 不用照片级渲染的物候图，会杀掉整套的木刻手作感。
+
+## Responsive Behavior
+
+| 断点 | 编排 |
+|---|---|
+| ≥1120px | 12 列，通书左右两页错落，装订天头地脚，回纹骨线可见，宜忌并排双栏 |
+| 768–1119px | 8 列，日页两列，回纹花边保留，朱印缩到角标，宜忌仍双栏 |
+| ≤767px | 单列纵向历书：日页顺序码放，宜忌由并排双栏折成上宜下忌两段，过渡页章节号缩到 40px 但回纹框保留，骨线转为整屏横向节气沟 |
+
+移动端是**把通书重新装订成巾箱小本**，不是把桌面版等比缩小。封面巨号标题在窄屏按最长行收字号（`clamp()`），回纹花边的刻齿间距随宽度重算，任何屏宽零孤字、零横向溢出（`scrollWidth == clientWidth`）。所有动画可被 `prefers-reduced-motion: reduce` 一键关停。
+
+## Anti-Slop Pledge
+
+抹掉 Tongshu 这个名字，这套仍一眼是人手刻出来的：回纹花边是真刻的碎口，朱印是真歪的，红只管「宜」、绿只管「忌」，公历农历是等宽双列对齐不是随便码的数字。它闻起来像羊皮纸和松烟墨，像墙上撕下来的一张老黄历，不像流水线吐出来的又一个圆角卡片模板。
+
+Signed, HeiGe-Design.
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #c23b22;
+  --color-on-primary: #fdf6e6;
+  --color-ink: #2a1e12;
+  --color-canvas: #ead9b8;
+  --color-surface: #f4ecd6;
+  --color-muted: #5f4f33;
+  --color-hairline: #c8b083;
+  --color-accent: #3f6f52;
+  --font-display-xl: &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;LXGW WenKai\&quot;, \&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body-mono: &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;LXGW WenKai\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Fraunces\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-caption: &quot;\&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-eyebrow: &quot;\&quot;Fraunces\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 42px;
+  --text-heading: 24px;
+  --text-body: 17px;
+  --text-body-mono: 40px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --text-eyebrow: 13px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0.1px;
+  --tracking-body-mono: -0.5px;
+  --tracking-button: 0.3px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 3px;
+  --font-weight-display-xl: 600;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 500;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#c23b22&quot;,
+        &quot;on-primary&quot;: &quot;#fdf6e6&quot;,
+        &quot;ink&quot;: &quot;#2a1e12&quot;,
+        &quot;canvas&quot;: &quot;#ead9b8&quot;,
+        &quot;surface&quot;: &quot;#f4ecd6&quot;,
+        &quot;muted&quot;: &quot;#5f4f33&quot;,
+        &quot;hairline&quot;: &quot;#c8b083&quot;,
+        &quot;accent&quot;: &quot;#3f6f52&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;LXGW WenKai\&quot;, \&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;LXGW WenKai\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;72px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1.5px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;42px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;24px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;40px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;3px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;3px&quot;,
+        &quot;md&quot;: &quot;6px&quot;,
+        &quot;lg&quot;: &quot;10px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;80px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #c23b22;
+  --color-on-primary: #fdf6e6;
+  --color-ink: #2a1e12;
+  --color-canvas: #ead9b8;
+  --color-surface: #f4ecd6;
+  --color-muted: #5f4f33;
+  --color-hairline: #c8b083;
+  --color-accent: #3f6f52;
+  --font-display-xl: &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;LXGW WenKai\&quot;, \&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body-mono: &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;LXGW WenKai\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Fraunces\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-caption: &quot;\&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-eyebrow: &quot;\&quot;Fraunces\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;;
+  --text-display-xl: 72px;
+  --text-display-lg: 42px;
+  --text-heading: 24px;
+  --text-body: 17px;
+  --text-body-mono: 40px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --text-eyebrow: 13px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0.1px;
+  --tracking-body-mono: -0.5px;
+  --tracking-button: 0.3px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 3px;
+  --font-weight-display-xl: 600;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 500;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Tongshu is a folk-almanac system for craft, heritage and regional-culture brands. Woodblock ink presses onto parchment; folk-red and pine-green are the only two inks, one auspicious, one warding. Fraunces cuts carved serifs, LXGW WenKai hand-warms the copy, IBM Plex Mono rules the date columns. The signature is a carved lace-meander border framing a tear-off almanac day-leaf: a 宜 / 忌 ledger, a lunar date, and a solar-term seal pressed askew in vermilion.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.761,
+          0.231,
+          0.133
+        ],
+        &quot;hex&quot;: &quot;#c23b22&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.992,
+          0.965,
+          0.902
+        ],
+        &quot;hex&quot;: &quot;#fdf6e6&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.165,
+          0.118,
+          0.071
+        ],
+        &quot;hex&quot;: &quot;#2a1e12&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.918,
+          0.851,
+          0.722
+        ],
+        &quot;hex&quot;: &quot;#ead9b8&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.957,
+          0.925,
+          0.839
+        ],
+        &quot;hex&quot;: &quot;#f4ecd6&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.373,
+          0.31,
+          0.2
+        ],
+        &quot;hex&quot;: &quot;#5f4f33&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.784,
+          0.69,
+          0.514
+        ],
+        &quot;hex&quot;: &quot;#c8b083&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.247,
+          0.435,
+          0.322
+        ],
+        &quot;hex&quot;: &quot;#3f6f52&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 80,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 3,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 10,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 72,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 42,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Georgia\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 24,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;LXGW WenKai\&quot;, \&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;LXGW WenKai\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 40,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 民历（almanac-folk · 温暖人文）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `almanac-folk` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#c23b22` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Fraunces`，正文 `LXGW WenKai`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint almanac-folk` / 导出其它格式：`heige-design export almanac-folk --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 民历 — 原创设定集，可商用。跑校验：<code>heige-design lint almanac-folk</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

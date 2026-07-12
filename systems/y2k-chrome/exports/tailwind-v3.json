@@ -1,0 +1,117 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#4d5bff",
+        "on-primary": "#ffffff",
+        "ink": "#16172b",
+        "canvas": "#ebedf5",
+        "surface": "#f6f7fb",
+        "muted": "#5a5d78",
+        "hairline": "#c9ccd4",
+        "accent": "#ff86d0",
+        "on-accent": "#2b1024"
+      },
+      "fontFamily": {
+        "display-xl": [
+          "\"Baloo 2\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "display-lg": [
+          "\"Baloo 2\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "heading": [
+          "\"Baloo 2\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "body": [
+          "\"DM Sans\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif"
+        ],
+        "body-mono": [
+          "\"Space Mono\", ui-monospace, \"SFMono-Regular\", \"Noto Sans SC\", \"PingFang SC\", monospace"
+        ],
+        "button": [
+          "\"Baloo 2\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "caption": [
+          "\"DM Sans\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "eyebrow": [
+          "\"Space Mono\", ui-monospace, \"SFMono-Regular\", \"Noto Sans SC\", \"PingFang SC\", monospace"
+        ]
+      },
+      "fontSize": {
+        "display-xl": [
+          "76px",
+          {
+            "letterSpacing": "-1.5px",
+            "fontWeight": "800"
+          }
+        ],
+        "display-lg": [
+          "52px",
+          {
+            "letterSpacing": "-1px",
+            "fontWeight": "800"
+          }
+        ],
+        "heading": [
+          "30px",
+          {
+            "letterSpacing": "-0.4px",
+            "fontWeight": "700"
+          }
+        ],
+        "body": [
+          "17px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-mono": [
+          "15px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "400"
+          }
+        ],
+        "button": [
+          "16px",
+          {
+            "letterSpacing": "0.2px",
+            "fontWeight": "700"
+          }
+        ],
+        "caption": [
+          "13px",
+          {
+            "letterSpacing": "0.2px",
+            "fontWeight": "500"
+          }
+        ],
+        "eyebrow": [
+          "12px",
+          {
+            "letterSpacing": "2.5px",
+            "fontWeight": "700"
+          }
+        ]
+      },
+      "borderRadius": {
+        "none": "0px",
+        "sm": "6px",
+        "md": "12px",
+        "lg": "20px",
+        "xl": "32px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "section": "80px"
+      }
+    }
+  }
+}

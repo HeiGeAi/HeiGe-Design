@@ -1,0 +1,1061 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>磁带未来 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 复古未来</div>
+<div class="hero"><div class="fam">复古未来</div><h1>磁带未来<span class="badge">✓ lint 0 error</span></h1><div class="slug">cassette-futurism · Ferrite-design-system</div><p class="desc">Cassette-futurism system for FERRITE, a fictional hardware house that imagines the future the way 1979 did: molded beige plastic lit by a single amber readout. Chassis orange #d9662a runs the physical push-buttons; amber #ffb347 is caged inside dark readout windows and never touches the beige. Space Grotesk stamps the faceplate legends, Space Mono drives the seven-segment counters. The signature move is the power-on readout, where oversized amber digits breathe over an engraved beige panel.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#e8e0cf;--ink:#241f17;--pri:#d9662a;--onpri:#1c1710;--acc:#d9662a;--surf:#f1ebdc;--muted:#5e5544;--line:#c9bfa8;--r:7px;--dff:"Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--bff:"Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", ui-monospace, "SFMono-Regular", Menlo, "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">磁带未来</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#d9662a"></i><i style="background:#1c1710"></i><i style="background:#241f17"></i><i style="background:#e8e0cf"></i><i style="background:#f1ebdc"></i><i style="background:#5e5544"></i><i style="background:#c9bfa8"></i><i style="background:#ffb347"></i></div>
+  <div class="swrap"><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">led-indicator</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">eyebrow-tag</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">spec-label</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">divider-groove</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">footer</span></div>
+  </div>
+  <div class="card" style="--bg:#e8e0cf;--ink:#241f17;--pri:#d9662a;--onpri:#1c1710;--acc:#d9662a;--surf:#f1ebdc;--muted:#5e5544;--line:#c9bfa8;--r:7px;--dff:"Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--bff:"Space Grotesk", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", ui-monospace, "SFMono-Regular", Menlo, "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">磁带未来</div></div>
+    <div class="swrap"><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#f1ebdc;color:#241f17;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**换个模板绝对做不出来的那一个动作。**
+
+- **UI signature — The Power-On Readout.** A rectangular window is *cut into* the
+  beige panel (inner shadow bevel + hairline top edge), its glass warm-black, and
+  an oversized amber seven-segment number counts up on load to its real value —
+  tabular so it never jitters, static glow so it never drops a frame, arriving and
+  stopping (no perpetual `requestAnimationFrame`). Beside it, a real physical
+  push-button and a pill LED that clicks to steady amber. It is unmistakable
+  because it needs all five ingredients at once: the recessed beige bezel, the
+  warm-black inset glass, the seven-segment/mono digits, the tabular count-to-value,
+  and the always-on amber halo. Swap any one and it stops being hardware.
+- **Deck signature — The Faceplate Cover.** The title slide *is* a machine's front
+  panel: a cream chassis field, one inset amber readout window booting the</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Keep amber strictly inside dark readout glass; let it be the one light source.
+- Ration orange to physical buttons, transport keys, and printed stickers only.
+- Make buttons feel pressable — raised with a hard bottom offset, translating down
+  on press. Skeuomorphism is the point here, not a sin.
+- Use tabular-nums for every readout so counters never shift width.
+- Let the beige breathe; the empty faceplate is the design, not a canvas to fill.
+- Separate panels with a single molded hairline groove, top to bottom.
+
+**Don't**
+- **不碰紫蓝俗套渐变** — no `#667eea → #764ba2` or any of that pastel purple-blue
+  wash. This system is warm plastic and amber glass, full stop.
+- **不做居中卡片三件套** — no &quot;centered title + grey subtitle + three equal
+  rounded cards&quot; filler. Content stacks as horizontal machine panels, aligned to
+  the grid, not floated in the center.
+- **中文绝不用日文字体** — never render Chinese in Mochiy / Zen Maru / any Japanese
+  webfont; always fall back to Noto Sans SC / PingFang SC. Simplified glyphs
+  turn to tofu otherwise.
+- **不动画化阴影** — never animate `box-shadow` / `text-shadow`; the amber glow is
+  static. Animate `opacity` for a blink, never re-render the shadow per frame.
+- Don't put amber text on the beige — a lamp in daylight is invisible, and the
+  contrast fails. Amber lives on `readout` only.
+- Don't reach for glassmorphism or `backdrop-filter`; the glass </div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: Ferrite-design-system
+description: &gt;-
+  Cassette-futurism system for FERRITE, a fictional hardware house that
+  imagines the future the way 1979 did: molded beige plastic lit by a single
+  amber readout. Chassis orange #d9662a runs the physical push-buttons; amber
+  #ffb347 is caged inside dark readout windows and never touches the beige.
+  Space Grotesk stamps the faceplate legends, Space Mono drives the seven-segment
+  counters. The signature move is the power-on readout, where oversized amber
+  digits breathe over an engraved beige panel.
+
+colors:
+  primary: &quot;#d9662a&quot;      # 机箱橙 chassis orange — physical button plastic, the one loud color
+  on-primary: &quot;#1c1710&quot;   # engraved dark legend printed onto the orange button
+  ink: &quot;#241f17&quot;          # warm near-black body text on beige (never pure #000)
+  canvas: &quot;#e8e0cf&quot;       # 米色 beige chassis panel — the page is a faceplate
+  surface: &quot;#f1ebdc&quot;      # raised cream sub-panel / card
+  muted: &quot;#5e5544&quot;        # engraved secondary label, spec-sheet grey-brown
+  hairline: &quot;#c9bfa8&quot;     # 1px molded groove between panels
+  amber: &quot;#ffb347&quot;        # 琥珀 amber seven-segment readout — only ever on dark
+  readout: &quot;#141009&quot;      # near-black display glass behind the amber digits
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 76px
+    fontWeight: 700
+    lineHeight: 1.02
+    letterSpacing: -1.4px
+  display-lg:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 46px
+    fontWeight: 600
+    lineHeight: 1.08
+    letterSpacing: -0.6px
+  heading:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 22px
+    fontWeight: 600
+    lineHeight: 1.25
+    letterSpacing: 0px
+  body:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.62
+    letterSpacing: 0.1px
+  body-mono:
+    fontFamily: '&quot;Space Mono&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 18px
+    fontWeight: 500
+    lineHeight: 1.3
+    letterSpacing: 0.6px
+  button:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 14px
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: 1.6px
+  caption:
+    fontFamily: '&quot;Space Grotesk&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 0.2px
+  eyebrow:
+    fontFamily: '&quot;Space Mono&quot;, ui-monospace, &quot;SFMono-Regular&quot;, Menlo, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 12px
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: 3px
+
+rounded:
+  none: 0px
+  sm: 3px
+  md: 7px
+  lg: 12px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 88px
+
+components:
+  # —— UI 界面组件 ——
+  button-primary: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.md}&quot;, padding: &quot;{spacing.sm} {spacing.xl}&quot; }
+  button-secondary: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.md}&quot;, padding: &quot;{spacing.sm} {spacing.xl}&quot; }
+  led-indicator: { backgroundColor: &quot;{colors.readout}&quot;, textColor: &quot;{colors.amber}&quot;, typography: &quot;{typography.body-mono}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.xs} {spacing.sm}&quot; }
+  eyebrow-tag: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.eyebrow}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;{spacing.xs} {spacing.sm}&quot; }
+  spec-label: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.muted}&quot;, typography: &quot;{typography.caption}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;{spacing.sm} {spacing.md}&quot; }
+  divider-groove: { backgroundColor: &quot;{colors.hairline}&quot;, rounded: &quot;{rounded.pill}&quot;, height: 2px, width: 100% }
+  card-feature: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.heading}&quot;, rounded: &quot;{rounded.lg}&quot;, padding: &quot;{spacing.lg}&quot; }
+  stat-block: { backgroundColor: &quot;{colors.readout}&quot;, textColor: &quot;{colors.amber}&quot;, typography: &quot;{typography.body-mono}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;{spacing.lg}&quot; }
+  nav-bar: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.heading}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.md} {spacing.lg}&quot; }
+  footer: { backgroundColor: &quot;{colors.readout}&quot;, textColor: &quot;{colors.canvas}&quot;, typography: &quot;{typography.body}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.xl}&quot; }
+  # —— slide 演示组件（融合 HeiGe-PPT · 16:9）——
+  slide-cover: { backgroundColor: &quot;{colors.readout}&quot;, textColor: &quot;{colors.amber}&quot;, typography: &quot;{typography.display-xl}&quot;, rounded: &quot;{rounded.lg}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-section-divider: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.display-xl}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-stat-hero: { backgroundColor: &quot;{colors.readout}&quot;, textColor: &quot;{colors.amber}&quot;, typography: &quot;{typography.body-mono}&quot;, rounded: &quot;{rounded.md}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-quote: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-lg}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-closing: { backgroundColor: &quot;{colors.readout}&quot;, textColor: &quot;{colors.canvas}&quot;, typography: &quot;{typography.body}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.section}&quot; }
+---
+
+# FERRITE · 磁带未来 (cassette-futurism)
+
+&gt; A design system for hardware that never shipped, from a future that already
+&gt; feels like a memory. Beige plastic, one orange button, one amber readout.
+&gt; Signed HeiGe-Design.
+
+## Overview
+
+FERRITE is the imagined 1979 vision of tomorrow: a desk-sized machine cased in
+warm molded plastic, its intelligence proven only by a single amber window that
+glows when you flip the switch. The whole system runs on a strict material
+contract, and that contract is the entire personality.
+
+The two colors have fixed, non-negotiable jobs. **Chassis orange `#d9662a` is
+plastic** — it is the color of the physical push-button, the model-number
+sticker, the transport key. It lives in the light, on the beige. **Amber
+`#ffb347` is light** — it is the readout, the seven-segment glow, and it is
+**caged behind the dark glass of a display window and nowhere else.** Amber
+never sits on beige, because a lamp on a wall in daylight is not a lamp. That one
+rule keeps the system honest and keeps it from ever looking like a flat pastel
+poster.
+
+Type is a two-instrument band from the same family. **Space Grotesk** stamps the
+faceplate — square, industrial, legend-like, set in wide-tracked caps for the
+screen-printed labels. **Space Mono** runs the numbers — the tape counters, the
+level meters, the seven-segment readouts — always tabular so digits never wobble.
+
+Rhythm is mechanical. The page is a stack of engraved panels separated by 1px
+molded grooves; you read it top to bottom the way you'd scan a control surface,
+label then control then readout. The high point of any layout is always the same
+gesture: a dark readout window cut into the beige, breathing amber.
+
+## Colors
+
+Palette discipline: one beige world (the chassis) and one dark world (the glass).
+Orange is the only loud color and it is rationed. Amber is a light source, not a
+fill.
+
+### Brand &amp; Accent
+- `primary` **#d9662a** 机箱橙 — chassis orange. Physical buttons, transport
+  keys, the model-number sticker. One saturated color, used sparingly. The rest
+  of the loudness comes from layout, not from more hues.
+- `amber` **#ffb347** 琥珀 — the seven-segment readout glow. **Only ever rendered
+  on `readout` dark glass.** This is the visual hammer of the whole system.
+
+### Surface
+- `canvas` **#e8e0cf** 米色 — the beige faceplate. The page itself is a piece of
+  hardware.
+- `surface` **#f1ebdc** — a raised cream sub-panel, one notch lighter than the
+  chassis, for cards and control clusters.
+- `readout` **#141009** — near-black display glass. The window the amber lives
+  behind. Warm-black, never a cold blue-black.
+- `hairline` **#c9bfa8** — the molded groove that separates two beige panels. 1px,
+  the color of a shadow line in plastic.
+
+### Text
+- `ink` **#241f17** — warm near-black body text on beige. Never pure `#000`;
+  plastic doesn't print in absolute black.
+- `on-primary` **#1c1710** — the dark engraved legend printed onto the orange
+  button. Contrast on orange ≈ **5.0:1** (AA pass). Deliberately dark, not white:
+  molded buttons carry recessed dark legends, not painted white ones.
+- `muted` **#5e5544** — the small spec-sheet label, the secondary annotation.
+  Contrast on beige ≈ **5.6:1**.
+
+### Semantic
+- Amber on readout is the &quot;powered / live / measured value&quot; state — contrast
+  ≈ **10.7:1**, extremely legible, and the glow reads as ON.
+- Orange is &quot;actuate this&quot; — every primary action is a physical button you press.
+- There is no separate success-green / error-red. In cassette-futurism a fault is
+  a **blinking amber**, a healthy value is a **steady amber**. Semantics live in
+  the readout's behavior, not in adding new hues.
+
+All textColor + backgroundColor component pairs clear WCAG AA (≥ 4.5:1):
+ink/beige ≈ 12.5, ink/cream ≈ 13.8, on-primary/orange ≈ 5.0, muted/cream ≈ 6.2,
+amber/readout ≈ 10.7, canvas/readout ≈ 14.5.
+
+## Typography
+
+**Font family.** Space Grotesk (faceplate legends, all headings) + Space Mono
+(readouts, counters, model numbers, eyebrow tags). Both are Latin-only and carry
+zero risk of CJK substitution.
+
+**中文铁律.** Every stack that can carry Chinese ends in a Simplified-Chinese
+system fallback: `..., &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;,
+&quot;Hiragino Sans GB&quot;, sans-serif` for the sans roles. **中文绝不用日文字体渲染**
+（不上 Mochiy / Zen Maru 这类，简体会缺字掉豆腐）。The Latin display fonts also
+fall back to a system sans/mono, so a blocked webfont degrades to a clean
+industrial face instead of collapsing to Times.
+
+**Hierarchy.**
+
+| Role | Font | Size / Weight | Tracking | Job |
+|---|---|---|---|---|
+| display-xl | Space Grotesk | 76 / 700 | -1.4px | Cover title, section number — faceplate stamp |
+| display-lg | Space Grotesk | 46 / 600 | -0.6px | Quote slide, big statement |
+| heading | Space Grotesk | 22 / 600 | 0px | Card title, nav brand, panel label |
+| body | Space Grotesk | 17 / 400 | 0.1px | Running text, spec paragraphs |
+| body-mono | Space Mono | 18 / 500 | 0.6px | Seven-segment readouts, counters, amber digits |
+| button | Space Grotesk | 14 / 700 | 1.6px | Button legend, wide-tracked caps |
+| caption | Space Grotesk | 13 / 400 | 0.2px | Fine print, spec-row labels |
+| eyebrow | Space Mono | 12 / 700 | 3px | Screen-printed sticker labels, &quot;CH-01&quot; tags |
+
+**Principles.**
+- Faceplate legends (eyebrow, button) are **UPPERCASE with wide tracking** — they
+  are screen-printed, not typeset.
+- Readout digits are **always `font-variant-numeric: tabular-nums`** so a counter
+  ticking 099 → 100 never shifts width. This is not optional in a readout system.
+- Display-to-body ratio is roughly 4.5:1 (76 vs 17) — the faceplate title is
+  meant to be almost comically large, the way a machine's product name is silk-
+  screened bigger than anything else on the box.
+
+## Layout
+
+**Spacing.** A 4px base scale — xs 4 / sm 8 / md 16 / lg 24 / xl 40 / section 88.
+Panels butt against each other with a single hairline groove; the 88px section
+step is the gap between major control clusters.
+
+**Grid &amp; container.** A 12-column grid capped at 1200px, but the mental model is
+a **rack of horizontal panels**. Content stacks into full-width strips —
+label strip, control strip, readout strip — each a distinct plastic panel. Inside
+a panel, controls align to an 8px sub-grid so buttons and readouts line up like
+they were injection-molded into position.
+
+**Whitespace philosophy.** Beige negative space is the plastic body of the
+machine, and it is generous — the readout earns its drama by being the one dark
+cutout in a calm cream field. Do not fill the beige with decoration; the empty
+faceplate is the design. Density belongs *inside* the readout window (dense amber
+data), not spread across the chassis.
+
+## Elevation &amp; Depth
+
+Depth here is **physical, molded depth** — never glassmorphism, never a soft
+drop-shadow floating a card in space. Two moves only:
+
+1. **Recessed (readout windows, inset fields).** The display glass sits *below*
+   the faceplate. Achieve with an inner shadow: `inset 0 2px 5px rgba(0,0,0,.55)`
+   plus a 1px `hairline` top edge acting as the machined bevel. The amber then
+   glows *up* out of the recess.
+2. **Raised (buttons, keys).** Push-buttons sit *above* the panel. A 1px light
+   top edge (a hair lighter than `surface`) + a hard, un-blurred bottom offset
+   shadow `0 3px 0 rgba(20,16,9,.45)` gives the plastic its thickness and a real
+   pressable feel (press state removes the offset and translates down 2px).
+
+**Amber glow.** The readout's glow is a **static** `box-shadow` /
+`text-shadow` — `0 0 12px rgba(255,179,71,.45)`, always on, never animated frame
+by frame (animating shadow is a scroll-killer and the checklist forbids it). A
+steady glow reads as &quot;powered&quot;; if you must signal a fault, toggle `opacity`
+between two states, never re-render the shadow.
+
+No `backdrop-filter` anywhere — the readout is opaque warm-black glass, not a
+frosted blur.
+
+## Shapes
+
+| Token | Value | Use |
+|---|---|---|
+| none | 0px | Readout window bezels, section dividers, faceplate edges |
+| sm | 3px | Inset readout fields, sticker tags — tight machined corners |
+| md | 7px | Push-buttons, controls — chunky injection-molded plastic |
+| lg | 12px | Chassis cards / sub-panels — the softer body radius |
+| pill | 9999px | Status LEDs, toggle tracks, the little live indicator |
+
+**Geometry &amp; imagery.** Two radius families coexist on purpose: **plastic is
+soft** (buttons md, panels lg — molded corners), **glass is hard** (readouts sm,
+bezels none — cut screens). Decorative motifs are molded ridges (a set of 3–4
+parallel hairlines, like the grip texture on a tape deck), the seven-segment
+digit grid, and the recessed rectangular readout window. Images, when present,
+sit inside a beveled panel like a component slotted into the chassis, never
+bleeding edge-to-edge with a fashion-magazine crop.
+
+## Components
+
+- **button-primary** — the actuate key. Orange plastic, dark engraved legend
+  (5.0:1), md radius, raised with a hard bottom-offset shadow; press translates
+  down 2px and drops the offset. This is the only orange interactive element.
+- **button-secondary** — a cream panel key with a hairline machined edge and ink
+  legend. Same physical press behavior, quieter.
+- **led-indicator** — a pill of dark readout glass with a single amber value/state
+  inside (`● LIVE`, `REC`, `88`). The smallest unit of the system.
+- **eyebrow-tag** — a screen-printed orange sticker with a wide-tracked mono
+  legend (`CH-01`, `MODEL 88`). Sits on the beige, since it's printed plastic,
+  not light.
+- **spec-label** — a recessed cream spec-row: muted caption on surface (6.2:1),
+  for the fine print / parameter names beside their readout values.
+- **divider-groove** — the molded hairline that separates two beige panels: a
+  full-width 2px bar of `hairline`, the machined seam of the chassis.
+- **card-feature** — a raised cream sub-panel with hairline bevel, lg radius,
+  ink heading. A module bolted onto the chassis.
+- **stat-block** — the hero unit: a recessed readout window, amber body-mono
+  value on warm-black glass (10.7:1), sm radius, static amber glow. Pair a big
+  tabular number with a small unit tag.
+- **nav-bar** — the top faceplate strip: beige, ink brand in Space Grotesk, a 1px
+  hairline groove along the bottom, square corners. A row of controls, not a
+  floating pill.
+- **footer** — the machine's back panel: warm-black readout glass, cream text,
+  square, holding the model number, a mono serial string, and the HeiGe-Design
+  signature.
+
+## Presentation System
+
+FERRITE decks are 16:9 **control surfaces**, not slides. Each one obeys HeiGe-PPT
+discipline: **one screen, one sentence; the golden 3 seconds; a single visual
+hammer.** The hammer is always the same object — **the amber readout window** —
+so a viewer can flip through the deck and feel a machine powering through its
+states.
+
+- **Cover (slide-cover).** The deck opens *powered on*. A beige faceplate frames
+  one large inset readout window; the title lives inside the glass as amber
+  display-xl (10.7:1), like a boot screen. A screen-printed orange model-number
+  tag sits top-left, a row of physical buttons runs along the bottom edge. Golden
+  3 seconds: the dark window on the cream body says &quot;this is hardware&quot; instantly.
+- **Section divider (slide-section-divider).** Full-bleed **orange plastic** —
+  the whole slide becomes one giant button. A huge dark chapter number
+  (`02`) engraved as on-primary display-xl (5.0:1), one wide-tracked mono label
+  beneath. The color flip from beige to solid orange is the chapter break.
+- **Stat / data (slide-stat-hero).** Warm-black readout glass fills the frame.
+  One oversized amber seven-segment number (tabular, static glow), its unit as a
+  small tag, one caption line. One number per slide — the readout is the point.
+- **Quote (slide-quote).** Back to the calm beige faceplate. One sentence in ink
+  display-lg, left-aligned, floated in generous molded whitespace, with a single
+  orange square bullet as the only mark. The chassis breathes between two lit
+  screens.
+- **Closing (slide-closing).** The machine at rest: warm-black glass, cream text,
+  one steady amber `● READY` led-indicator, and a single orange primary button as
+  the call to action. Powered down to one clear next move.
+
+Cadence across a deck: beige → orange → black → beige → black. Calm plastic,
+loud button, lit glass, breathe, act. That alternation is the rhythm.
+
+## Signature Moment
+
+**换个模板绝对做不出来的那一个动作。**
+
+- **UI signature — The Power-On Readout.** A rectangular window is *cut into* the
+  beige panel (inner shadow bevel + hairline top edge), its glass warm-black, and
+  an oversized amber seven-segment number counts up on load to its real value —
+  tabular so it never jitters, static glow so it never drops a frame, arriving and
+  stopping (no perpetual `requestAnimationFrame`). Beside it, a real physical
+  push-button and a pill LED that clicks to steady amber. It is unmistakable
+  because it needs all five ingredients at once: the recessed beige bezel, the
+  warm-black inset glass, the seven-segment/mono digits, the tabular count-to-value,
+  and the always-on amber halo. Swap any one and it stops being hardware.
+- **Deck signature — The Faceplate Cover.** The title slide *is* a machine's front
+  panel: a cream chassis field, one inset amber readout window booting the title
+  like a startup screen, a screen-printed orange model-number sticker in the
+  corner, and a channel-strip of physical buttons molded along the bottom edge.
+  No other template opens a deck as a piece of powered-on hardware.
+
+## Do's and Don'ts
+
+**Do**
+- Keep amber strictly inside dark readout glass; let it be the one light source.
+- Ration orange to physical buttons, transport keys, and printed stickers only.
+- Make buttons feel pressable — raised with a hard bottom offset, translating down
+  on press. Skeuomorphism is the point here, not a sin.
+- Use tabular-nums for every readout so counters never shift width.
+- Let the beige breathe; the empty faceplate is the design, not a canvas to fill.
+- Separate panels with a single molded hairline groove, top to bottom.
+
+**Don't**
+- **不碰紫蓝俗套渐变** — no `#667eea → #764ba2` or any of that pastel purple-blue
+  wash. This system is warm plastic and amber glass, full stop.
+- **不做居中卡片三件套** — no &quot;centered title + grey subtitle + three equal
+  rounded cards&quot; filler. Content stacks as horizontal machine panels, aligned to
+  the grid, not floated in the center.
+- **中文绝不用日文字体** — never render Chinese in Mochiy / Zen Maru / any Japanese
+  webfont; always fall back to Noto Sans SC / PingFang SC. Simplified glyphs
+  turn to tofu otherwise.
+- **不动画化阴影** — never animate `box-shadow` / `text-shadow`; the amber glow is
+  static. Animate `opacity` for a blink, never re-render the shadow per frame.
+- Don't put amber text on the beige — a lamp in daylight is invisible, and the
+  contrast fails. Amber lives on `readout` only.
+- Don't reach for glassmorphism or `backdrop-filter`; the glass here is opaque
+  warm-black, and blur kills scroll performance.
+
+## Responsive Behavior
+
+| Breakpoint | Layout |
+|---|---|
+| ≥ 1024px | Full rack: horizontal panels, readout window and controls side by side, 12-col grid capped 1200px |
+| 768–1023px | Panels compress; readout window goes full-width above its controls |
+| ≤ 767px | Single vertical stack of full-width modules; button strip becomes a fixed bottom control bar |
+
+Mobile is a **re-mount, not a shrink.** The desktop rack (side-by-side panels)
+re-lays out into a vertical column of stacked modules, exactly like the same
+components re-seated into a smaller chassis. The readout window becomes a
+full-width strip so the amber digits stay legible; the physical buttons collapse
+into a bottom bar you thumb like a tape transport. Titles use `clamp()` sized to
+their longest un-broken line with `white-space:nowrap` per line so no character is
+ever orphaned onto its own row, and no title overflows a 390px screen. Chinese
+width limits use `em`, never `ch`. Every motion — the count-up, the LED blink —
+is disabled under `@media (prefers-reduced-motion: reduce)`.
+
+## Anti-Slop Pledge
+
+Strip the FERRITE name off any screen and it still reads as built, not generated:
+warm beige plastic with exactly one orange button and one amber readout caged in
+dark glass, panels bevelled with real molded depth, digits ticking in tabular
+mono behind a steady amber halo. No purple-blue gradient, no three centered
+cards, no floating soft shadows, no emoji standing in for icons. It looks like a
+machine someone imagined in 1979 and cared enough to actually mold — a
+first-principles material system, not a template with the colors swapped.
+
+_Signed HeiGe-Design · MIT._
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #d9662a;
+  --color-on-primary: #1c1710;
+  --color-ink: #241f17;
+  --color-canvas: #e8e0cf;
+  --color-surface: #f1ebdc;
+  --color-muted: #5e5544;
+  --color-hairline: #c9bfa8;
+  --color-amber: #ffb347;
+  --color-readout: #141009;
+  --font-display-xl: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 46px;
+  --text-heading: 22px;
+  --text-body: 17px;
+  --text-body-mono: 18px;
+  --text-button: 14px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: -1.4px;
+  --tracking-display-lg: -0.6px;
+  --tracking-heading: 0px;
+  --tracking-body: 0.1px;
+  --tracking-body-mono: 0.6px;
+  --tracking-button: 1.6px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 3px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-button: 700;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 7px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 88px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#d9662a&quot;,
+        &quot;on-primary&quot;: &quot;#1c1710&quot;,
+        &quot;ink&quot;: &quot;#241f17&quot;,
+        &quot;canvas&quot;: &quot;#e8e0cf&quot;,
+        &quot;surface&quot;: &quot;#f1ebdc&quot;,
+        &quot;muted&quot;: &quot;#5e5544&quot;,
+        &quot;hairline&quot;: &quot;#c9bfa8&quot;,
+        &quot;amber&quot;: &quot;#ffb347&quot;,
+        &quot;readout&quot;: &quot;#141009&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;76px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1.4px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;46px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.6px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;22px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;18px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.6px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1.6px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;3px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;3px&quot;,
+        &quot;md&quot;: &quot;7px&quot;,
+        &quot;lg&quot;: &quot;12px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;88px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #d9662a;
+  --color-on-primary: #1c1710;
+  --color-ink: #241f17;
+  --color-canvas: #e8e0cf;
+  --color-surface: #f1ebdc;
+  --color-muted: #5e5544;
+  --color-hairline: #c9bfa8;
+  --color-amber: #ffb347;
+  --color-readout: #141009;
+  --font-display-xl: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 46px;
+  --text-heading: 22px;
+  --text-body: 17px;
+  --text-body-mono: 18px;
+  --text-button: 14px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: -1.4px;
+  --tracking-display-lg: -0.6px;
+  --tracking-heading: 0px;
+  --tracking-body: 0.1px;
+  --tracking-body-mono: 0.6px;
+  --tracking-button: 1.6px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 3px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-button: 700;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 3px;
+  --radius-md: 7px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 88px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Cassette-futurism system for FERRITE, a fictional hardware house that imagines the future the way 1979 did: molded beige plastic lit by a single amber readout. Chassis orange #d9662a runs the physical push-buttons; amber #ffb347 is caged inside dark readout windows and never touches the beige. Space Grotesk stamps the faceplate legends, Space Mono drives the seven-segment counters. The signature move is the power-on readout, where oversized amber digits breathe over an engraved beige panel.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.851,
+          0.4,
+          0.165
+        ],
+        &quot;hex&quot;: &quot;#d9662a&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.11,
+          0.09,
+          0.063
+        ],
+        &quot;hex&quot;: &quot;#1c1710&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.141,
+          0.122,
+          0.09
+        ],
+        &quot;hex&quot;: &quot;#241f17&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.91,
+          0.878,
+          0.812
+        ],
+        &quot;hex&quot;: &quot;#e8e0cf&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.945,
+          0.922,
+          0.863
+        ],
+        &quot;hex&quot;: &quot;#f1ebdc&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.369,
+          0.333,
+          0.267
+        ],
+        &quot;hex&quot;: &quot;#5e5544&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.788,
+          0.749,
+          0.659
+        ],
+        &quot;hex&quot;: &quot;#c9bfa8&quot;
+      }
+    },
+    &quot;amber&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.702,
+          0.278
+        ],
+        &quot;hex&quot;: &quot;#ffb347&quot;
+      }
+    },
+    &quot;readout&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.078,
+          0.063,
+          0.035
+        ],
+        &quot;hex&quot;: &quot;#141009&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 88,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 3,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 7,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 12,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 76,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 46,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 22,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 18,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1.6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Grotesk\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, Menlo, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 磁带未来（cassette-futurism · 复古未来）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `cassette-futurism` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#d9662a` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Space Grotesk`，正文 `Space Grotesk`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint cassette-futurism` / 导出其它格式：`heige-design export cassette-futurism --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 磁带未来 — 原创设定集，可商用。跑校验：<code>heige-design lint cassette-futurism</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

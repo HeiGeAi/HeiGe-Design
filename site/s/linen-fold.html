@@ -1,0 +1,939 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>亚麻褶 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 有机自然</div>
+<div class="hero"><div class="fam">有机自然</div><h1>亚麻褶<span class="badge">✓ lint 0 error</span></h1><div class="slug">linen-fold · LinenFold-design-system</div><p class="desc">A sustainable natural-beauty system grounded in oatmeal linen, deep sage green, and a terracotta clay accent. Humanist Fraunces serif carries the craft; a handwritten kicker adds a human hand. The signature is physical, not digital — procedurally torn deckle paper edges, single-stroke botanical line drawings, and a woven linen texture ground. Never straight machine cuts, never gloss, never gradients.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#e7ddc9;--ink:#2e2a20;--pri:#5c6b45;--onpri:#f6f1e7;--acc:#8f5333;--surf:#f3ecdd;--muted:#635b48;--line:#d6c9ae;--r:12px;--dff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Mulish", "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Spline Sans Mono", "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">亚麻褶</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#5c6b45"></i><i style="background:#f6f1e7"></i><i style="background:#2e2a20"></i><i style="background:#e7ddc9"></i><i style="background:#f3ecdd"></i><i style="background:#635b48"></i><i style="background:#d6c9ae"></i><i style="background:#8f5333"></i></div>
+  <div class="swrap"><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">footer</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">chip-botanical</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">figure-caption</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">divider-fiber</span></div>
+  </div>
+  <div class="card" style="--bg:#e7ddc9;--ink:#2e2a20;--pri:#5c6b45;--onpri:#f6f1e7;--acc:#8f5333;--surf:#f3ecdd;--muted:#635b48;--line:#d6c9ae;--r:12px;--dff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;--bff:"Mulish", "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Spline Sans Mono", "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">亚麻褶</div></div>
+    <div class="swrap"><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#f3ecdd;color:#2e2a20;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI signature — the Deckle Edge + self-drawing sprig.** Content bands never part on a straight line or a lazy wave. They separate on a **procedurally torn paper edge**: an SVG `feTurbulence` displacement map applied to the band's bottom clip-path, producing a rough, fibrous deckle with a 1px darker &quot;paper core&quot; line and a few loose fibres at the tear. On the primary CTA sheet, a **single unbroken botanical line-drawing** (one continuous SVG path — a leaf sprig) runs the edge and, on scroll-in, *draws itself once* via `stroke-dashoffset`, finishing at a real leaf node, then stops. Torn edge + one-stroke growing leaf on a woven ground — no template ships this.
+
+**Deck signature — the Pressed Specimen cover.** The cover title is mounted like a botanical specimen pressed in a book: a hand-torn paper label (deckle edge, fibre fringe) laid on linen texture, the giant Fraunces word c</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Tear the edges. Every band separation and photo mat uses the deckle turbulence edge, not a straight cut.
+- Keep terracotta clay to **one element per screen** — the hero number, or one tag, or one stitched underline.
+- Draw botany as single continuous strokes; let one sprig grow in, then rest.
+- Let the oatmeal margins stay wide and empty — whitespace is the material.
+- Hang copy asymmetrically to the left; offset imagery past the margin.
+
+**Don't**
+- **不碰紫蓝俗套渐变** — no `#667eea → #764ba2` or any glossy purple-blue gradient. This system is matte earth; a gradient background instantly kills it.
+- **不做居中卡片三件套** — no centered &quot;title + grey subtitle + three equal rounded cards&quot; row. Break the grid, tear an edge, offset the composition instead.
+- **中文绝不用日文字体** — never render 简体中文 with Mochiy / Zen Maru or other Japanese faces; always fall back to `Noto Serif SC / Songti SC` (serif) or `LXGW WenKai / KaiTi` (handwriting).
+- **不动画化阴影** — never animate `box-shadow` / `text-shadow`; the grain shadow is static. No glow, no glass, no `backdrop-filter`.
+- No emoji as icons, no gloss, no perfectly straight machine-cut rounded rectangle as the hero shape.</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: LinenFold-design-system
+description: A sustainable natural-beauty system grounded in oatmeal linen, deep sage green, and a terracotta clay accent. Humanist Fraunces serif carries the craft; a handwritten kicker adds a human hand. The signature is physical, not digital — procedurally torn deckle paper edges, single-stroke botanical line drawings, and a woven linen texture ground. Never straight machine cuts, never gloss, never gradients.
+
+colors:
+  primary: &quot;#5c6b45&quot;
+  on-primary: &quot;#f6f1e7&quot;
+  ink: &quot;#2e2a20&quot;
+  canvas: &quot;#e7ddc9&quot;
+  surface: &quot;#f3ecdd&quot;
+  muted: &quot;#635b48&quot;
+  hairline: &quot;#d6c9ae&quot;
+  accent: &quot;#8f5333&quot;
+
+typography:
+  display-xl:
+    fontFamily: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 68px
+    fontWeight: 600
+    lineHeight: 1.04
+    letterSpacing: -1px
+  display-lg:
+    fontFamily: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 44px
+    fontWeight: 600
+    lineHeight: 1.12
+    letterSpacing: -0.4px
+  heading:
+    fontFamily: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+    fontSize: 24px
+    fontWeight: 600
+    lineHeight: 1.28
+    letterSpacing: -0.2px
+  body:
+    fontFamily: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: 0px
+  body-mono:
+    fontFamily: &quot;\&quot;Spline Sans Mono\&quot;, \&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, monospace&quot;
+    fontSize: 15px
+    fontWeight: 500
+    lineHeight: 1.5
+    letterSpacing: 0px
+  button:
+    fontFamily: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 15px
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: 0.3px
+  caption:
+    fontFamily: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 0.2px
+  eyebrow:
+    fontFamily: &quot;\&quot;Caveat\&quot;, \&quot;Gaegu\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;KaiTi\&quot;, \&quot;STKaiti\&quot;, cursive&quot;
+    fontSize: 22px
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: 0.3px
+
+rounded:
+  none: 0px
+  sm: 6px
+  md: 12px
+  lg: 20px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 96px
+
+components:
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  footer:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  chip-botanical:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  figure-caption:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  divider-fiber:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.accent}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# LinenFold · 亚麻褶
+
+A design system for sustainable, natural-beauty brands — skincare, botanical fragrance, refillable rituals. It looks like something you can touch: unbleached oatmeal paper, a leaf pressed between pages, a length of raw linen with the weave still showing. The whole system refuses the two default gestures of AI-generated beauty pages — the glossy gradient and the perfectly straight rounded rectangle. Here nothing is cut by a machine. Edges are torn. Lines are drawn by one continuous hand. The ground is woven.
+
+## Overview
+
+The mood is **quiet, warm, made-by-hand**. Two colours do the emotional work and everything else stays out of their way.
+
+- **Deep linen-sage `#5c6b45`** is the botanical anchor — the colour of a crushed sage leaf, of the brand itself. It carries every primary action, every chapter break, the footer. Used with discipline: it never becomes a full-bleed gradient, only a solid, matte field.
+- **Terracotta clay `#8f5333`** is the single warm accent — a thumbprint of fired earth. It exists to mark one thing per screen: the hero number, one tag, one stitched underline. If you see two terracotta elements fighting on a screen, one is wrong.
+
+Everything sits on **oatmeal canvas `#e7ddc9`** with **linen-paper surfaces `#f3ecdd`** floated a half-shade lighter, so cards read as *sheets of pressed paper laid on a table*, not as glowing panels. Text is **bark `#2e2a20`**, a warm near-black that never goes to pure `#000`.
+
+The type signature is a **humanist Fraunces serif** for everything that speaks — it has soft, organic contrast and real ink-trap character, so a headline already looks crafted before a single decoration is added. The human hand comes in through **a handwritten kicker** (Caveat / Gaegu, with `LXGW WenKai` → `KaiTi` for Chinese) used only as eyebrow labels and tags, never as body. Body copy is a calm humanist sans (Mulish) so long paragraphs stay legible where the serif would tire.
+
+The rhythm is **slow**: generous line-height, wide margins, one idea per band. The page should feel like turning pages in a beautifully printed catalogue, not scrolling a SaaS funnel.
+
+## Colors
+
+### Brand &amp; Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#5c6b45` | Linen-sage. Primary buttons, chapter dividers, footer, botanical stroke ink. Solid matte only. |
+| `accent` | `#8f5333` | Terracotta clay. One-per-screen emphasis: hero stat, one tag, stitched underline. |
+
+Linen green is deliberately deepened from the raw `#6b7a52` seed so cream text clears WCAG AA on it (≈5.1:1). The seed lives on as a decorative botanical-line tint at reduced opacity, never as a text-bearing surface.
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#e7ddc9` | Oatmeal page ground. The table the paper lies on. |
+| `surface` | `#f3ecdd` | Linen-paper sheet. Cards, stat blocks, stat-hero slides. Half a shade above canvas. |
+| `hairline` | `#d6c9ae` | Soft fibre rule — a 1px thread, not a hard grey line. |
+
+### Text
+| Token | Hex | Role | Contrast |
+|---|---|---|---|
+| `ink` | `#2e2a20` | Warm bark. All body and headings. | 10.6:1 on canvas / 12.2:1 on surface |
+| `muted` | `#635b48` | Taupe. Captions, metadata, secondary notes. | 5.0:1 on canvas / 5.7:1 on surface |
+| `on-primary` | `#f6f1e7` | Cream. Text on linen-sage and on clay. | 5.1:1 on primary / 5.4:1 on accent |
+
+### Semantic
+This is a beauty system, not a dashboard — it carries no up/down delta colours. If a status is ever needed, express it in linen-sage (positive/kept) versus terracotta clay (attention), never by adding a red or a green. Restraint is the semantic.
+
+**Contrast ledger (all component text pairs, self-checked WCAG AA ≥ 4.5:1):** cream/sage 5.1 · sage/paper 4.9 · bark/paper 12.2 · bark/oatmeal 10.6 · cream/clay 5.4 · clay/paper 5.2 · taupe/paper 5.7. Every pair clears.
+
+## Typography
+
+### Font Family
+- **Display &amp; headings — Fraunces** (humanist, high organic contrast). Fallback stack ends in `&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif` so Chinese headlines stay serif and never tofu.
+- **Body — Mulish**, ending `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`.
+- **Numerals — Spline Sans Mono / IBM Plex Mono** with `ui-monospace` system fallback for tabular alignment in stat blocks.
+- **Handwritten kicker — Caveat / Gaegu**, ending `&quot;LXGW WenKai&quot;, &quot;KaiTi&quot;, &quot;STKaiti&quot;, cursive`. This is the only script role and it carries at most a few words.
+
+&gt; 中文铁律: every Chinese-bearing stack ends in a system font — Serif → `Noto Serif SC / Songti SC / STSong`; Sans → `Noto Sans SC / PingFang SC / Microsoft YaHei`; handwriting → `LXGW WenKai / KaiTi / STKaiti`. 中文绝不用日文字体 (Mochiy / Zen Maru) rendering — 简体 will drop to tofu. Latin display fonts also carry system fallbacks so a headline never collapses to Times offline.
+
+### Hierarchy
+| Role | Size / Weight | Line / Tracking | Use |
+|---|---|---|---|
+| display-xl | 68 / 600 | 1.04 / -1px | Cover title, hero stat number |
+| display-lg | 44 / 600 | 1.12 / -0.4px | Section divider, pull-quote, closing CTA |
+| heading | 24 / 600 | 1.28 / -0.2px | Card titles, nav brand |
+| body | 17 / 400 | 1.7 / 0 | Paragraphs |
+| body-mono | 15 / 500 | 1.5 / 0 | Tabular figures, units |
+| button | 15 / 600 | 1 / 0.3px | Actions |
+| caption | 13 / 400 | 1.5 / 0.2px | Footer, figure notes |
+| eyebrow | 22 / 500 | 1.2 / 0.3px | Handwritten kicker, botanical tags |
+
+### Principles
+Contrast ratio between the biggest word and body is &gt; 4:1 — the cover word should feel almost *too* large, pressed like a specimen. Fraunces at display size is the ornament; do not add drop shadows or outlines to it. The handwritten eyebrow is a seasoning — one per band, tilted a degree or two, never a full sentence.
+
+## Layout
+
+**Spacing** runs `4 · 8 · 16 · 24 · 40` for component rhythm and `96` for the gap between full bands. The large jump from 40 to 96 is intentional: bands breathe far apart so each idea arrives alone.
+
+**Grid &amp; container.** A 12-column grid, max content width ~1200px, but the system leans **asymmetric**. Copy hangs left on a 7-column measure; a botanical line-drawing or a torn photo occupies the remaining 5, offset and bleeding past the margin. Center-locked symmetry is avoided on purpose — nature isn't centered.
+
+**Whitespace philosophy.** Whitespace here is *unbleached paper*, an active material. Leave the margins wide and empty so the torn edge and the single leaf line have room to be noticed. Density is a mistake in this system; if a band feels full, remove something.
+
+## Elevation &amp; Depth
+
+This system barely lifts off the page — depth is **material, not shadow**.
+
+| Layer | Treatment |
+|---|---|
+| Ground | Oatmeal canvas with a static woven-linen texture (SVG `feTurbulence` fractalNoise, ~5% opacity, multiply). |
+| Sheet | Surface cards raised by a soft, very low **grain shadow** — `0 2px 10px rgba(46,42,32,.08)`, static, warm-tinted, never a hard grey drop. |
+| Torn edge | A deckle paper edge separates bands (see Shapes) — the depth cue is the fibre fringe, not a divider line. |
+| Accent lift | The one clay element per screen may carry a faint pressed-in look via a `1px` inset lighter line, not a glow. |
+
+No glow, no glass. There is no `backdrop-filter` anywhere. Shadows are static and are **never animated** — a warm brand does not shimmer.
+
+## Shapes
+
+**Border radius** is soft but restrained: `sm 6` for chips and small notes, `md 12` for stat blocks, `lg 20` for cards and framed photos, `pill` for buttons and tags. Slides use `none` — a full-bleed sheet has no rounded corner.
+
+**Geometry &amp; imagery.** The defining shape here is **not** a rounded rectangle — it is the **torn edge**. Photos are masked into soft organic silhouettes or framed by a hand-torn paper mat. Botanical elements are drawn as **single continuous ink strokes** (one path, variable `stroke-width`, round caps) — a sprig, a stem, a leaf outline — never filled clip-art, never emoji. Dividers are a `hairline` fibre-thread, optionally dashed to read as stitching.
+
+## Components
+
+- **button-primary** — solid linen-sage pill, cream label. The one firm action per view. Matte; no gradient, no shadow travel on hover — instead the botanical stroke beside it draws itself in.
+- **button-secondary** — linen-paper pill, sage label, a `hairline` fibre border (drawn in prose/CSS). The quiet alternative.
+- **card-feature** — a sheet of pressed paper: surface fill, bark body copy, serif `heading` title, `lg` radius, low grain shadow. Its bottom edge may be torn (see Signature).
+- **stat-block** — surface tile, `md` radius; the figure set in mono for tabular alignment, its `eyebrow` label handwritten above.
+- **chip-botanical** — terracotta clay pill with a cream handwritten label, used as a single ingredient/claim tag (&quot;100% refillable&quot;, &quot;cold-pressed&quot;). One or two per band, never a row of five.
+- **figure-caption** — a small taupe note on paper, `sm` radius, for photo credits and ingredient notes.
+- **divider-fiber** — a `hairline` thread rule; render as a 1–2px fibre line or a stitched dash, never a hard full-width grey bar.
+- **nav-bar** — oatmeal, no corner radius, serif brand mark left, quiet links; it sits on the page like a printed masthead, not a floating glass bar.
+- **footer** — the one large linen-sage field on the page, cream caption text, closing the composition like the back cover of a catalogue.
+
+## Presentation System
+
+The same tokens drive a **16:9 deck**. Principle: **一页一句话 (one line per slide), 黄金三秒 (the first three seconds must land the mood), 视觉锤 (one visual hammer repeated across the set).** The visual hammer for LinenFold is the **torn deckle edge + the single botanical stroke** — every slide carries at least one, so the deck reads as one pressed herbarium.
+
+- **slide-cover** — oatmeal ground, woven-linen texture behind. The title is a *pressed specimen*: a hand-torn paper label bearing the giant Fraunces word, a botanical line-drawing pressed at ~8% behind it, and a single terracotta cross-stitch pinning one corner. Three seconds in, the viewer knows: natural, crafted, calm.
+- **slide-section-divider** — a full linen-sage field, cream chapter word, a large handwritten section number, and one white botanical stroke drawing itself across the field. The colour flip alone signals &quot;new chapter&quot;.
+- **slide-stat-hero** — linen-paper ground, one enormous **terracotta serif** number (display-xl), unit set small in mono beside it, and a hand-drawn underline that looks like a thread stitched through the paper. One number, nothing else competing.
+- **slide-quote** — oatmeal ground, a single Fraunces pull-quote at display-lg, hung left, wrapped balanced, with a torn-paper block behind the first line. One sentence, huge margins.
+- **slide-closing** — linen-sage field, cream CTA, the botanical stroke completing its final leaf, and the brand mark torn-labelled at the base. It ends like closing a book.
+
+Deck ground is a **static** linen texture (turbulence SVG), never a moving blur — it must stay smooth under a projector.
+
+## Signature Moment
+
+**UI signature — the Deckle Edge + self-drawing sprig.** Content bands never part on a straight line or a lazy wave. They separate on a **procedurally torn paper edge**: an SVG `feTurbulence` displacement map applied to the band's bottom clip-path, producing a rough, fibrous deckle with a 1px darker &quot;paper core&quot; line and a few loose fibres at the tear. On the primary CTA sheet, a **single unbroken botanical line-drawing** (one continuous SVG path — a leaf sprig) runs the edge and, on scroll-in, *draws itself once* via `stroke-dashoffset`, finishing at a real leaf node, then stops. Torn edge + one-stroke growing leaf on a woven ground — no template ships this.
+
+**Deck signature — the Pressed Specimen cover.** The cover title is mounted like a botanical specimen pressed in a book: a hand-torn paper label (deckle edge, fibre fringe) laid on linen texture, the giant Fraunces word centred *on the label not the slide*, a ghosted botanical stroke pressed behind at 8%, and **one terracotta thread cross-stitch** rendered as two crossed strokes pinning a corner of the label to the page. It reads as a real pressed leaf, not a text box.
+
+## Do's and Don'ts
+
+**Do**
+- Tear the edges. Every band separation and photo mat uses the deckle turbulence edge, not a straight cut.
+- Keep terracotta clay to **one element per screen** — the hero number, or one tag, or one stitched underline.
+- Draw botany as single continuous strokes; let one sprig grow in, then rest.
+- Let the oatmeal margins stay wide and empty — whitespace is the material.
+- Hang copy asymmetrically to the left; offset imagery past the margin.
+
+**Don't**
+- **不碰紫蓝俗套渐变** — no `#667eea → #764ba2` or any glossy purple-blue gradient. This system is matte earth; a gradient background instantly kills it.
+- **不做居中卡片三件套** — no centered &quot;title + grey subtitle + three equal rounded cards&quot; row. Break the grid, tear an edge, offset the composition instead.
+- **中文绝不用日文字体** — never render 简体中文 with Mochiy / Zen Maru or other Japanese faces; always fall back to `Noto Serif SC / Songti SC` (serif) or `LXGW WenKai / KaiTi` (handwriting).
+- **不动画化阴影** — never animate `box-shadow` / `text-shadow`; the grain shadow is static. No glow, no glass, no `backdrop-filter`.
+- No emoji as icons, no gloss, no perfectly straight machine-cut rounded rectangle as the hero shape.
+
+## Responsive Behavior
+
+| Breakpoint | Behaviour |
+|---|---|
+| ≥ 1024px | Asymmetric 7/5 split; copy left, torn photo / botanical stroke bleeding right past the margin. |
+| 640–1023px | Single column; the botanical stroke moves above the heading as a drawn-in header ornament; torn edges keep their fibre. |
+| ≤ 639px | Full-width paper sheets stacked; cover word set with `clamp()` so the longest line fits ≤ 390px with `white-space:nowrap` per line — zero orphans. Chips wrap to a soft two-row cluster, not a scroll. |
+
+Mobile is **re-composed, not shrunk**: the specimen-label cover restacks as label-over-texture, the 7/5 split becomes a vertical rhythm of paper → stroke → paper. Torn edges regenerate at the new width so a deckle never stretches into a smear. All motion (the self-drawing sprig, any fade) respects `prefers-reduced-motion: reduce` and drops to a static drawn state.
+
+## Anti-Slop Pledge
+
+Strip the brand name off any screen and it still reads as pressed by hand: a torn oatmeal edge, one sage stroke growing a single leaf, a terracotta thread stitched through paper on a woven ground. Nothing here is a straight machine cut, a stock gradient, or a centered three-card row — it could not have fallen off a pipeline. 用心做的，一眼能认出来。
+
+&lt;!-- HeiGe-Design · linen-fold · 亚麻褶 · MIT · original fictional brand, no real-company reference --&gt;
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #5c6b45;
+  --color-on-primary: #f6f1e7;
+  --color-ink: #2e2a20;
+  --color-canvas: #e7ddc9;
+  --color-surface: #f3ecdd;
+  --color-muted: #635b48;
+  --color-hairline: #d6c9ae;
+  --color-accent: #8f5333;
+  --font-display-xl: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Spline Sans Mono\&quot;, \&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Caveat\&quot;, \&quot;Gaegu\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;KaiTi\&quot;, \&quot;STKaiti\&quot;, cursive&quot;;
+  --text-display-xl: 68px;
+  --text-display-lg: 44px;
+  --text-heading: 24px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --text-eyebrow: 22px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.4px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 0.3px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 0.3px;
+  --font-weight-display-xl: 600;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 500;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#5c6b45&quot;,
+        &quot;on-primary&quot;: &quot;#f6f1e7&quot;,
+        &quot;ink&quot;: &quot;#2e2a20&quot;,
+        &quot;canvas&quot;: &quot;#e7ddc9&quot;,
+        &quot;surface&quot;: &quot;#f3ecdd&quot;,
+        &quot;muted&quot;: &quot;#635b48&quot;,
+        &quot;hairline&quot;: &quot;#d6c9ae&quot;,
+        &quot;accent&quot;: &quot;#8f5333&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;Spline Sans Mono\&quot;, \&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Caveat\&quot;, \&quot;Gaegu\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;KaiTi\&quot;, \&quot;STKaiti\&quot;, cursive&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;68px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;44px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;24px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;22px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;6px&quot;,
+        &quot;md&quot;: &quot;12px&quot;,
+        &quot;lg&quot;: &quot;20px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #5c6b45;
+  --color-on-primary: #f6f1e7;
+  --color-ink: #2e2a20;
+  --color-canvas: #e7ddc9;
+  --color-surface: #f3ecdd;
+  --color-muted: #635b48;
+  --color-hairline: #d6c9ae;
+  --color-accent: #8f5333;
+  --font-display-xl: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-lg: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-heading: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-body: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Spline Sans Mono\&quot;, \&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Caveat\&quot;, \&quot;Gaegu\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;KaiTi\&quot;, \&quot;STKaiti\&quot;, cursive&quot;;
+  --text-display-xl: 68px;
+  --text-display-lg: 44px;
+  --text-heading: 24px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --text-eyebrow: 22px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.4px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 0.3px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 0.3px;
+  --font-weight-display-xl: 600;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --font-weight-eyebrow: 500;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;A sustainable natural-beauty system grounded in oatmeal linen, deep sage green, and a terracotta clay accent. Humanist Fraunces serif carries the craft; a handwritten kicker adds a human hand. The signature is physical, not digital — procedurally torn deckle paper edges, single-stroke botanical line drawings, and a woven linen texture ground. Never straight machine cuts, never gloss, never gradients.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.361,
+          0.42,
+          0.271
+        ],
+        &quot;hex&quot;: &quot;#5c6b45&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.965,
+          0.945,
+          0.906
+        ],
+        &quot;hex&quot;: &quot;#f6f1e7&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.18,
+          0.165,
+          0.125
+        ],
+        &quot;hex&quot;: &quot;#2e2a20&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.906,
+          0.867,
+          0.788
+        ],
+        &quot;hex&quot;: &quot;#e7ddc9&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.953,
+          0.925,
+          0.867
+        ],
+        &quot;hex&quot;: &quot;#f3ecdd&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.388,
+          0.357,
+          0.282
+        ],
+        &quot;hex&quot;: &quot;#635b48&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.839,
+          0.788,
+          0.682
+        ],
+        &quot;hex&quot;: &quot;#d6c9ae&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.561,
+          0.325,
+          0.2
+        ],
+        &quot;hex&quot;: &quot;#8f5333&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 12,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 20,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 68,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 44,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 24,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Spline Sans Mono\&quot;, \&quot;IBM Plex Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Mulish\&quot;, \&quot;Inter\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Caveat\&quot;, \&quot;Gaegu\&quot;, \&quot;LXGW WenKai\&quot;, \&quot;KaiTi\&quot;, \&quot;STKaiti\&quot;, cursive&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 22,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 亚麻褶（linen-fold · 有机自然）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `linen-fold` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#5c6b45` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Fraunces`，正文 `Mulish`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint linen-fold` / 导出其它格式：`heige-design export linen-fold --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 亚麻褶 — 原创设定集，可商用。跑校验：<code>heige-design lint linen-fold</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

@@ -1,0 +1,924 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>精准等宽 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 瑞士纪律</div>
+<div class="hero"><div class="fam">瑞士纪律</div><h1>精准等宽<span class="badge">✓ lint 0 error</span></h1><div class="slug">akkurat-mono · AkkuratMono-design-system</div><p class="desc">AkkuratMono is a documentation-grade design system built on Swiss discipline — a near-white canvas (#F7F7F5), ink black (#18191C), and exactly one chromatic voice, a precise cobalt link (#0E4FE1). Inter carries the sans body and headlines while a monospace face owns code, margin annotations and giant tabular numerals as first-class citizens. Its signature is a relentless hairline grid annotated with monospace dimension labels, so every screen and every slide reads like a calibrated engineering drawing, never a marketing page.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#F7F7F5;--ink:#18191C;--pri:#0E4FE1;--onpri:#FFFFFF;--acc:#0E4FE1;--surf:#FFFFFF;--muted:#63656C;--line:#E3E3DF;--r:4px;--dff:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"JetBrains Mono", ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, "PingFang SC", "Noto Sans SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">精准等宽</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#0E4FE1"></i><i style="background:#FFFFFF"></i><i style="background:#18191C"></i><i style="background:#F7F7F5"></i><i style="background:#63656C"></i><i style="background:#E3E3DF"></i></div>
+  <div class="swrap"><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">input-field</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">code-block</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">hairline-rule</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">annotation-rule</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">status-tag</span></div>
+  </div>
+  <div class="card" style="--bg:#F7F7F5;--ink:#18191C;--pri:#0E4FE1;--onpri:#FFFFFF;--acc:#0E4FE1;--surf:#FFFFFF;--muted:#63656C;--line:#E3E3DF;--r:4px;--dff:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"JetBrains Mono", ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, "PingFang SC", "Noto Sans SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">精准等宽</div></div>
+    <div class="swrap"><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#FFFFFF;color:#18191C;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two moments this system owns that a generic template cannot reproduce:
+
+**UI — The Dimension Line（标注线系统）.** The right gutter and the whitespace between sections are annotated like a CAD or engineering drawing: hairlines tipped with tiny cobalt ticks carry monospace dimension labels — `↤ 72ch ↦`, `baseline: 8px`, `type-scale: 1.250`, `clearance: 80px`. The page does not just use a grid, it **publishes its own measurements** in the margin. The `annotation-rule` component plus a persistent baseline-tick gutter turns any documentation page into a self-describing spec sheet. No template ships margin dimension-annotations by default; this is drawn on purpose.
+
+**Deck — The Registration-Mark Cover（套准十字封面）.** The 16:9 cover is framed by four corner **crosshair registration marks** (the `+` of print alignment and instrument calibration) carrying mono coordinate labels (`x:0 y:0`, `x:1920 y:1080`)</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Let the hairline carry structure. When in doubt, draw a 1px line, not a box shadow.
+- Keep cobalt scarce — links, one action, one hero number, one tick. Scarcity is what makes it read as &quot;the link color.&quot;
+- Set every number in tabular mono and align it to the pixel.
+- Annotate whitespace with mono labels; make the clearance intentional.
+- Left-align to the baseline grid and let text go ragged-right.
+
+**Don't**
+- **Don't touch the purple-blue cliché gradient** (`#667eea → #764ba2`) or any of its cousins. This system's only color is the cobalt link; a gradient background would erase the entire idea.
+- **Don't build the centered card triptych** — one title, one gray subtitle, three identical rounded cards repeated down the page. Cards here are sharp, hairline-bordered, and asymmetrically placed against the reading column.
+- **Don't render Chinese in Japanese fonts** (Mochiy Pop One, Zen Maru Gothic and the like). Chinese falls back to Noto Sans SC / PingFang SC only; Japanese faces drop simplified glyphs to tofu.
+- **Don't animate shadows or glows.** There are no shadows in this system, and animated elevation stutters on scroll. Depth is a static drawn line.
+- Don't round everything to 8px with a soft grey shadow — that is the AI-default look this system is built to refute.
+- Don't encode hierarchy in color. Size, weight and space do that work; color is reserved</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: AkkuratMono-design-system
+description: AkkuratMono is a documentation-grade design system built on Swiss discipline — a near-white canvas (#F7F7F5), ink black (#18191C), and exactly one chromatic voice, a precise cobalt link (#0E4FE1). Inter carries the sans body and headlines while a monospace face owns code, margin annotations and giant tabular numerals as first-class citizens. Its signature is a relentless hairline grid annotated with monospace dimension labels, so every screen and every slide reads like a calibrated engineering drawing, never a marketing page.
+
+colors:
+  primary: &quot;#0E4FE1&quot;
+  on-primary: &quot;#FFFFFF&quot;
+  ink: &quot;#18191C&quot;
+  canvas: &quot;#F7F7F5&quot;
+  surface: &quot;#FFFFFF&quot;
+  muted: &quot;#63656C&quot;
+  hairline: &quot;#E3E3DF&quot;
+
+typography:
+  display-xl:
+    fontFamily: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 64px
+    fontWeight: 700
+    lineHeight: 1.02
+    letterSpacing: -1.8px
+  display-lg:
+    fontFamily: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 40px
+    fontWeight: 600
+    lineHeight: 1.08
+    letterSpacing: -0.8px
+  heading:
+    fontFamily: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 22px
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: -0.2px
+  body:
+    fontFamily: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: 1.65
+    letterSpacing: 0px
+  body-mono:
+    fontFamily: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+    fontSize: 14px
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: 0px
+  numeral:
+    fontFamily: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+    fontSize: 96px
+    fontWeight: 500
+    lineHeight: 1.0
+    letterSpacing: -3px
+  button:
+    fontFamily: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.0
+    letterSpacing: 0.6px
+  caption:
+    fontFamily: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+    fontSize: 12px
+    fontWeight: 500
+    lineHeight: 1.5
+    letterSpacing: 0.2px
+  eyebrow:
+    fontFamily: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+    fontSize: 12px
+    fontWeight: 600
+    lineHeight: 1.0
+    letterSpacing: 2.4px
+
+rounded:
+  none: 0px
+  sm: 2px
+  md: 4px
+  lg: 6px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 80px
+
+components:
+  button-primary: { backgroundColor: &quot;{colors.primary}&quot;, textColor: &quot;{colors.on-primary}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;{spacing.sm} {spacing.lg}&quot; }
+  button-secondary: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.button}&quot;, rounded: &quot;{rounded.sm}&quot;, padding: &quot;{spacing.sm} {spacing.lg}&quot; }
+  nav-bar: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.heading}&quot;, padding: &quot;{spacing.lg}&quot; }
+  input-field: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.body-mono}&quot;, rounded: &quot;{rounded.md}&quot;, padding: &quot;{spacing.sm} {spacing.md}&quot; }
+  card-feature: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.body}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.lg}&quot; }
+  stat-block: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.primary}&quot;, typography: &quot;{typography.numeral}&quot;, rounded: &quot;{rounded.none}&quot;, padding: &quot;{spacing.lg}&quot; }
+  code-block: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.body-mono}&quot;, rounded: &quot;{rounded.lg}&quot;, padding: &quot;{spacing.md}&quot; }
+  hairline-rule: { backgroundColor: &quot;{colors.hairline}&quot;, rounded: &quot;{rounded.none}&quot;, height: 1px, width: 100% }
+  annotation-rule: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.muted}&quot;, typography: &quot;{typography.caption}&quot;, padding: 6px 0 }
+  status-tag: { backgroundColor: &quot;{colors.surface}&quot;, textColor: &quot;{colors.muted}&quot;, typography: &quot;{typography.caption}&quot;, rounded: &quot;{rounded.pill}&quot;, padding: &quot;{spacing.xs} {spacing.md}&quot; }
+  link-inline: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.primary}&quot;, typography: &quot;{typography.body}&quot; }
+  eyebrow-kicker: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.muted}&quot;, typography: &quot;{typography.eyebrow}&quot;, padding: 0 }
+  footer: { backgroundColor: &quot;{colors.ink}&quot;, textColor: &quot;{colors.surface}&quot;, typography: &quot;{typography.body}&quot;, padding: &quot;{spacing.xl}&quot; }
+  slide-cover: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-xl}&quot;, padding: &quot;{spacing.section}&quot; }
+  slide-section-divider: { backgroundColor: &quot;{colors.ink}&quot;, textColor: &quot;{colors.canvas}&quot;, typography: &quot;{typography.display-lg}&quot;, padding: 72px }
+  slide-stat-hero: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.primary}&quot;, typography: &quot;{typography.numeral}&quot;, padding: 72px }
+  slide-quote: { backgroundColor: &quot;{colors.canvas}&quot;, textColor: &quot;{colors.ink}&quot;, typography: &quot;{typography.display-lg}&quot;, padding: 72px }
+  slide-closing: { backgroundColor: &quot;{colors.ink}&quot;, textColor: &quot;{colors.surface}&quot;, typography: &quot;{typography.display-lg}&quot;, padding: 72px }
+---
+
+# AkkuratMono · 精准等宽
+
+A Swiss-discipline system for API references, technical manuals and developer portals. It behaves like a precision instrument's calibration screen: near-white field, one cobalt link, and a hairline grid that measures itself out loud in monospace.
+
+## Overview
+
+Most documentation design tries to soften the machine. AkkuratMono does the opposite. It treats the page as a measured drawing and lets the ruler show.
+
+The palette runs on **two structural colors and one voice**. Ink `#18191C` sets every letter and every dark punctuation page. Canvas `#F7F7F5` is the paper. Between them sits a single chromatic actor — cobalt `#0E4FE1`, the link color — and it is the only color a reader will ever call by name. Hierarchy is built with **size, weight and space, not with a rainbow of tints**. If you feel the urge to add a second hue, add a hairline instead.
+
+Type is a deliberate split. **Inter** carries reading matter and headlines with quiet Swiss confidence. A **monospace** face carries everything technical — code, inline annotations, status labels, and the giant tabular numerals on stat pages — as first-class content rather than decoration. Kickers and captions are always mono, so the interface constantly signals &quot;this was engineered, and here are its coordinates.&quot;
+
+The rhythm is light content interrupted by dark punctuation. Reading screens are white and airy; section dividers, closings and the footer invert to ink. The reader moves through calm documentation and hits a hard black beat at every chapter break.
+
+## Colors
+
+Restraint is the whole point. One chromatic color, everything else neutral.
+
+### Brand &amp; Accent
+- `primary` `#0E4FE1` — **the link cobalt.** The single chromatic voice. Reserved for links, the primary action, the giant hero numeral, and one tick mark on the cover. If it appears more than a few times per screen it is being wasted.
+- `on-primary` `#FFFFFF` — text on the cobalt button. Contrast 6.5:1.
+
+### Surface
+- `canvas` `#F7F7F5` — the paper field. A near-white with a hair of warmth so pure-white panels can float a step brighter above it.
+- `surface` `#FFFFFF` — cards, code panels, inputs, tags. The one-step-brighter plane, separated from canvas by a hairline, never by a shadow.
+
+### Text
+- `ink` `#18191C` — body and headlines. A cool near-black, never pure `#000`, so long-form reading does not vibrate. Also the fill for every dark page.
+- `muted` `#63656C` — secondary text, mono annotations, tag labels. Passes AA on both canvas (5.4:1) and surface (5.8:1).
+
+### Structural
+- `hairline` `#E3E3DF` — the 1px system. This is the load-bearing element of the whole aesthetic. Dividers, card borders, code frames, table rules, baseline ticks. Depth here is a line, not a blur.
+
+## Typography
+
+### Font Family
+
+**Sans — Inter (reading &amp; headline):**
+`&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`
+
+**Mono — JetBrains Mono (code, annotation, numerals):**
+`&quot;JetBrains Mono&quot;, ui-monospace, &quot;SF Mono&quot;, &quot;SFMono-Regular&quot;, Menlo, Consolas, &quot;PingFang SC&quot;, &quot;Noto Sans SC&quot;, monospace`
+
+铁律：两条字体栈末尾都挂了系统兜底与中文兜底，webfont 加载失败也不塌成 Times、中文不掉成豆腐。**中文一律走 Noto Sans SC / PingFang SC，绝不用任何日文字体渲染**（简体缺字会变异体或方块）。The mono stack carries a CJK fallback last, so Chinese inside a monospace annotation renders cleanly even though it will not be strictly monospaced.
+
+### Hierarchy
+
+| Role | Face | Size | Weight | Leading | Tracking | Use |
+|---|---|---|---|---|---|---|
+| display-xl | Inter | 64px | 700 | 1.02 | -1.8px | Cover statement, page hero |
+| display-lg | Inter | 40px | 600 | 1.08 | -0.8px | Divider title, pull-quote |
+| heading | Inter | 22px | 600 | 1.3 | -0.2px | Section &amp; card titles, nav brand |
+| body | Inter | 16px | 400 | 1.65 | 0 | Prose, long-form docs |
+| body-mono | Mono | 14px | 400 | 1.7 | 0 | Code, inline annotation, inputs |
+| numeral | Mono | 96px | 500 | 1.0 | -3px | Giant tabular stat numbers |
+| button | Mono | 13px | 600 | 1.0 | 0.6px | Actions (rendered uppercase) |
+| caption | Mono | 12px | 500 | 1.5 | 0.2px | Dimension labels, tags, footnotes |
+| eyebrow | Mono | 12px | 600 | 1.0 | 2.4px | `// SECTION` kicker (uppercase) |
+
+### Principles
+- **Sans reads, mono measures.** If a string is a coordinate, a count, a path, a key or a command, it is mono. Everything else is Inter.
+- **Tabular numerals everywhere numbers matter.** Apply `font-variant-numeric: tabular-nums` on the numeral and body-mono roles so digits align to the pixel in tables and stat blocks.
+- **Contrast comes from the 1:6 jump** between body (16px) and display-xl (64px), not from color.
+- Uppercase is applied in CSS (`text-transform`) for button and eyebrow; it is never baked into content strings.
+
+## Layout
+
+### Spacing
+An 8px-derived scale: `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 80`. Vertical rhythm snaps to an **8px baseline grid**, and the grid is not hidden — hairline ticks in the gutter make it visible, which is half the personality.
+
+### Grid &amp; Container
+- Documentation uses a **three-zone layout**: left nav rail (mono), center reading column capped at ~72ch of Inter, right gutter reserved for **monospace margin annotations**.
+- Content column is left-aligned, ragged right. Nothing important is centered.
+- Slides use a 12-column 16:9 field with a persistent baseline hairline running full-bleed.
+
+### Whitespace
+Whitespace is measured, not sprinkled. Big air lands between sections (`section` = 80px), tight air inside components (`md`/`lg`). Every large void is implicitly labeled by the hairline+mono annotation system, so emptiness reads as &quot;specified clearance,&quot; not as an accident.
+
+## Elevation &amp; Depth
+
+There are no drop shadows. Depth is expressed entirely through the **hairline system** and a single one-step brightness lift.
+
+| Layer | Method |
+|---|---|
+| Base | `canvas` field |
+| Raised (card, code, input) | `surface` (one step brighter) + 1px `hairline` border |
+| Active / focus | 1px border swaps to `primary` cobalt; no glow |
+| Dark punctuation (divider, closing, footer) | full `ink` fill, hairline seam at the top edge |
+
+Production rule: **shadows are never animated**, because there are no shadows to animate. No `backdrop-filter`. Elevation is a drawn line, which is free to composite and cannot stutter on scroll.
+
+## Shapes
+
+Corners are nearly square. Softness would betray the instrument.
+
+| Token | Value | Use |
+|---|---|---|
+| none | 0px | Cards, stat blocks — sharp Swiss corners |
+| sm | 2px | Buttons |
+| md | 4px | Inputs / search |
+| lg | 6px | Code panels (the one slightly relaxed surface) |
+| pill | 9999px | Status tags only |
+
+Images and diagrams sit in **hairline-framed rectangles** at `none` radius, captioned in mono below. Figures are numbered (`FIG. 01`) like a manual, not floated like a brochure.
+
+## Components
+
+- **button-primary** — cobalt fill, mono uppercase label, 2px corners. Reads like a command: `GET KEY`, `COPY`. The only filled color on a reading screen.
+- **button-secondary** — white surface, ink label, hairline border. Cobalt border on focus, never a fill.
+- **nav-bar** — white bar, hairline underline, Inter brand left, mono links, a `⌘K` search hint right. No shadow separating it from content, only the seam.
+- **input-field** — mono placeholder, hairline border, 4px corners. The doc search box; feels like a terminal prompt.
+- **card-feature** — sharp-cornered, hairline-bordered, mono eyebrow + Inter heading + body. Endpoint cards and topic cards. Never centered, never stacked in identical triplets.
+- **stat-block** — giant cobalt tabular numeral + mono label beneath. Pixel-aligned digits.
+- **code-block** — first-class citizen: white panel, 6px corners, hairline frame, mono content, a hairline line-number gutter, and cobalt reserved for keywords/links inside. Long lines scroll horizontally inside their own `overflow-x:auto` container.
+- **hairline-rule** — the 1px primitive itself: a full-width `hairline`-filled line, zero radius, 1px tall. Every border, divider and table rule in the system is this one element. Depth is drawn, never blurred.
+- **annotation-rule** — the dimension line: a hairline with a mono caption label riding it (`↤ 1440px ↦`, `type-scale 1.250`). The connective tissue of the aesthetic.
+- **status-tag** — pill, mono caption, hairline outline (`● STABLE`, `v2.1`). The only pill in the system.
+- **link-inline** — cobalt, underlined on hover, mono variant available for paths. The color the whole palette is named after.
+- **eyebrow-kicker** — mono, letter-spaced, muted (`// 02 — AUTHENTICATION`). Sits above every section and every slide.
+- **footer** — ink slab, white text, mono legal/version line, hairline top seam.
+
+## Presentation System
+
+The same discipline turns into 16:9. One idea per slide, legible in the golden three seconds, anchored by a single visual hammer: **the hairline coordinate frame + one cobalt tick**. Text is left-aligned to the baseline grid; nothing floats.
+
+- **slide-cover** — canvas field. Corner **registration crosshairs** with mono coordinate labels, a full-bleed baseline hairline, a mono metadata row (`AKKURAT · DEVELOPER MANUAL · 2026-07`), the title in Inter display-xl, and exactly one cobalt tick on the baseline. Golden-three-seconds read: this is a spec, not a pitch.
+- **slide-section-divider** — hard cut to ink. Giant mono chapter mark (`§ 02`) in canvas, a mono filepath breadcrumb (`docs/ › authentication.md`), one cobalt hairline. The black beat between chapters.
+- **slide-stat-hero** — one giant cobalt tabular numeral (numeral role), a mono unit label, and a mono footnote citing the source. One number owns the frame. 一页一个数字。
+- **slide-quote** — a single sentence in Inter display-lg on canvas, opened by a cobalt tick mark instead of quotation glyphs, attributed in mono. One sentence, nothing else.
+- **slide-closing** — ink field, white call to action in Inter, one cobalt mono command line (`$ start building →`), registration crosshairs echoing the cover to close the loop.
+
+Visual hammer placement: the cobalt tick and the corner crosshairs are the memory anchor. They appear on the cover, vanish through the body, and return on the closing — a calibration mark that brackets the whole deck.
+
+## Signature Moment
+
+Two moments this system owns that a generic template cannot reproduce:
+
+**UI — The Dimension Line（标注线系统）.** The right gutter and the whitespace between sections are annotated like a CAD or engineering drawing: hairlines tipped with tiny cobalt ticks carry monospace dimension labels — `↤ 72ch ↦`, `baseline: 8px`, `type-scale: 1.250`, `clearance: 80px`. The page does not just use a grid, it **publishes its own measurements** in the margin. The `annotation-rule` component plus a persistent baseline-tick gutter turns any documentation page into a self-describing spec sheet. No template ships margin dimension-annotations by default; this is drawn on purpose.
+
+**Deck — The Registration-Mark Cover（套准十字封面）.** The 16:9 cover is framed by four corner **crosshair registration marks** (the `+` of print alignment and instrument calibration) carrying mono coordinate labels (`x:0 y:0`, `x:1920 y:1080`), bisected by a single full-bleed baseline hairline, with the title pinned exactly to that baseline and one cobalt tick marking the origin. The whole frame reads like the calibration screen of a precision instrument. Those crosshairs return on the closing slide to bracket the deck — a signature no stock cover produces.
+
+## Do's and Don'ts
+
+**Do**
+- Let the hairline carry structure. When in doubt, draw a 1px line, not a box shadow.
+- Keep cobalt scarce — links, one action, one hero number, one tick. Scarcity is what makes it read as &quot;the link color.&quot;
+- Set every number in tabular mono and align it to the pixel.
+- Annotate whitespace with mono labels; make the clearance intentional.
+- Left-align to the baseline grid and let text go ragged-right.
+
+**Don't**
+- **Don't touch the purple-blue cliché gradient** (`#667eea → #764ba2`) or any of its cousins. This system's only color is the cobalt link; a gradient background would erase the entire idea.
+- **Don't build the centered card triptych** — one title, one gray subtitle, three identical rounded cards repeated down the page. Cards here are sharp, hairline-bordered, and asymmetrically placed against the reading column.
+- **Don't render Chinese in Japanese fonts** (Mochiy Pop One, Zen Maru Gothic and the like). Chinese falls back to Noto Sans SC / PingFang SC only; Japanese faces drop simplified glyphs to tofu.
+- **Don't animate shadows or glows.** There are no shadows in this system, and animated elevation stutters on scroll. Depth is a static drawn line.
+- Don't round everything to 8px with a soft grey shadow — that is the AI-default look this system is built to refute.
+- Don't encode hierarchy in color. Size, weight and space do that work; color is reserved for the link.
+
+## Responsive Behavior
+
+Mobile is a re-choreography of the measured drawing, not a shrink.
+
+| Breakpoint | Layout |
+|---|---|
+| ≥ 1200px | Three zones: nav rail · reading column · annotation gutter (dimension lines live in the right margin) |
+| 768–1199px | Two zones: reading column + collapsible nav; margin annotations move **inline** as mono captions directly under their target |
+| &lt; 768px | Single column. Nav collapses to a mono top bar; every dimension annotation becomes a full-width mono label above its block; code-blocks scroll horizontally in their own container |
+
+Production guarantees:
+- Display and numeral roles use `clamp()` so the 64px hero and 96px numeral shrink gracefully and **never spill a single character or unit onto an orphan line** at ≤390px.
+- Chinese width limits use `em`/`px`, never `ch` (which is sized to a Latin digit and would force Chinese to wrap early into orphans).
+- The baseline hairline and registration marks reflow to the mobile frame; they are redrawn, not scaled.
+- All motion is gated behind `prefers-reduced-motion: reduce`; the resting state is fully static, so reduced-motion loses nothing.
+
+## Anti-Slop Pledge
+
+Strip the name off any AkkuratMono page and it still reads as a precision instrument someone calibrated by hand — one cobalt link, a hairline grid that publishes its own measurements in monospace, and registration marks bracketing the story. It could not have fallen out of a template, because a template does not know its own dimensions.
+
+---
+
+*Designed by HeiGe-Design. MIT. 100% original — no reverse-engineering of any real brand.*
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #0e4fe1;
+  --color-on-primary: #ffffff;
+  --color-ink: #18191c;
+  --color-canvas: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-muted: #63656c;
+  --color-hairline: #e3e3df;
+  --font-display-xl: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-numeral: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-caption: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --text-display-xl: 64px;
+  --text-display-lg: 40px;
+  --text-heading: 22px;
+  --text-body: 16px;
+  --text-body-mono: 14px;
+  --text-numeral: 96px;
+  --text-button: 13px;
+  --text-caption: 12px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: -1.8px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-numeral: -3px;
+  --tracking-button: 0.6px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2.4px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-numeral: 500;
+  --font-weight-button: 600;
+  --font-weight-caption: 500;
+  --font-weight-eyebrow: 600;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#0e4fe1&quot;,
+        &quot;on-primary&quot;: &quot;#ffffff&quot;,
+        &quot;ink&quot;: &quot;#18191c&quot;,
+        &quot;canvas&quot;: &quot;#f7f7f5&quot;,
+        &quot;surface&quot;: &quot;#ffffff&quot;,
+        &quot;muted&quot;: &quot;#63656c&quot;,
+        &quot;hairline&quot;: &quot;#e3e3df&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+        ],
+        &quot;numeral&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;64px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1.8px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;40px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.8px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;22px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;numeral&quot;: [
+          &quot;96px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-3px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.6px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;2px&quot;,
+        &quot;md&quot;: &quot;4px&quot;,
+        &quot;lg&quot;: &quot;6px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;80px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #0e4fe1;
+  --color-on-primary: #ffffff;
+  --color-ink: #18191c;
+  --color-canvas: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-muted: #63656c;
+  --color-hairline: #e3e3df;
+  --font-display-xl: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-numeral: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-caption: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;;
+  --text-display-xl: 64px;
+  --text-display-lg: 40px;
+  --text-heading: 22px;
+  --text-body: 16px;
+  --text-body-mono: 14px;
+  --text-numeral: 96px;
+  --text-button: 13px;
+  --text-caption: 12px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: -1.8px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-numeral: -3px;
+  --tracking-button: 0.6px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2.4px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 600;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-numeral: 500;
+  --font-weight-button: 600;
+  --font-weight-caption: 500;
+  --font-weight-eyebrow: 600;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;AkkuratMono is a documentation-grade design system built on Swiss discipline — a near-white canvas (#F7F7F5), ink black (#18191C), and exactly one chromatic voice, a precise cobalt link (#0E4FE1). Inter carries the sans body and headlines while a monospace face owns code, margin annotations and giant tabular numerals as first-class citizens. Its signature is a relentless hairline grid annotated with monospace dimension labels, so every screen and every slide reads like a calibrated engineering drawing, never a marketing page.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.055,
+          0.31,
+          0.882
+        ],
+        &quot;hex&quot;: &quot;#0e4fe1&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.094,
+          0.098,
+          0.11
+        ],
+        &quot;hex&quot;: &quot;#18191c&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.969,
+          0.969,
+          0.961
+        ],
+        &quot;hex&quot;: &quot;#f7f7f5&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.388,
+          0.396,
+          0.424
+        ],
+        &quot;hex&quot;: &quot;#63656c&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.89,
+          0.89,
+          0.875
+        ],
+        &quot;hex&quot;: &quot;#e3e3df&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 80,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 2,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 64,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1.8,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 40,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.8,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 22,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Inter\&quot;, -apple-system, BlinkMacSystemFont, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;numeral&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 96,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;SF Mono\&quot;, \&quot;SFMono-Regular\&quot;, Menlo, Consolas, \&quot;PingFang SC\&quot;, \&quot;Noto Sans SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 精准等宽（akkurat-mono · 瑞士纪律）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `akkurat-mono` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#0E4FE1` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Inter`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint akkurat-mono` / 导出其它格式：`heige-design export akkurat-mono --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 精准等宽 — 原创设定集，可商用。跑校验：<code>heige-design lint akkurat-mono</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

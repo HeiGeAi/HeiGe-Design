@@ -1,0 +1,277 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QUENCH · 冷启动已死 · Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#c8ff00;--on-primary:#0c0d0e;--ink:#f5f6f3;
+    --canvas:#0c0d0e;--surface:#17191b;--muted:#9a9d9f;
+    --hairline:#313437;--molten:#ff5a1f;
+    --f-display:'Archivo Black','Space Grotesk','Helvetica Neue','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+    --f-lg:'Space Grotesk','Archivo','Helvetica Neue','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+    --f-body:'Space Grotesk','Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+    --f-mono:'JetBrains Mono','SFMono-Regular',ui-monospace,'Noto Sans SC','PingFang SC',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:#000;color:var(--ink);font-family:var(--f-body);
+    overflow:hidden;display:grid;place-items:center;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--primary);color:var(--on-primary)}
+
+  /* ===== 16:9 stage, scaled by JS ===== */
+  #scaler{width:1280px;height:720px;position:relative;transform-origin:center center}
+  .stage{width:1280px;height:720px;position:relative;overflow:hidden;background:var(--canvas)}
+
+  .slide{
+    position:absolute;inset:0;padding:72px 80px;
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .28s ease,transform .28s ease;
+    transform:scale(1.015);
+    display:flex;flex-direction:column;
+  }
+  .slide.active{opacity:1;visibility:visible;pointer-events:auto;transform:scale(1)}
+  @media (prefers-reduced-motion: reduce){
+    .slide{transition:opacity .12s linear;transform:none}
+    .slide.active{transform:none}
+    .led,.blip{animation:none!important}
+  }
+
+  /* machine-bed rulers */
+  .ruler{position:absolute;left:0;right:0;display:flex;justify-content:space-between;padding:0 80px;font-family:var(--f-mono);font-size:12px;letter-spacing:2px;color:var(--muted)}
+  .ruler.t{top:26px}.ruler.b{bottom:26px}
+  .ruler .lit{color:var(--primary)}
+  .bed{position:absolute;inset:0;pointer-events:none;
+    background-image:repeating-linear-gradient(to right,transparent,transparent calc(100%/12 - 1px),var(--hairline) calc(100%/12 - 1px),var(--hairline) calc(100%/12));
+    opacity:.18}
+  .glow{position:absolute;width:640px;height:640px;pointer-events:none;
+    background:radial-gradient(circle,rgba(200,255,0,.13),rgba(200,255,0,0) 62%)}
+
+  .kick{font-family:var(--f-mono);font-size:15px;font-weight:600;letter-spacing:3px;color:var(--primary);text-transform:uppercase;display:inline-flex;align-items:center;gap:12px}
+  .led{width:11px;height:11px;border-radius:9999px;background:var(--molten);box-shadow:0 0 10px var(--molten),0 0 3px var(--molten);animation:led 1.9s ease-in-out infinite}
+  @keyframes led{0%,100%{opacity:1}50%{opacity:.3}}
+  .foot{font-family:var(--f-mono);font-size:13px;letter-spacing:1px;color:var(--muted)}
+  .foot b{color:var(--ink);font-weight:500}
+
+  /* ===== COVER ===== */
+  .s-cover{justify-content:center}
+  .s-cover .glow{left:-80px;top:-60px}
+  .s-cover .manifesto{font-family:var(--f-display);font-weight:900;font-size:150px;line-height:.9;letter-spacing:-5px;margin:28px 0 0}
+  .s-cover .manifesto span{display:block;white-space:nowrap}
+  .s-cover .manifesto .lit{color:var(--primary)}
+  .s-cover .sub{margin-top:30px;color:var(--muted);font-size:22px;max-width:22em}
+  .s-cover .sub b{color:var(--ink);font-weight:700}
+
+  /* ===== ACID SLAM DIVIDER ===== */
+  .s-divider{background:var(--primary);color:var(--on-primary);justify-content:center;padding:80px}
+  .s-divider .num{font-family:var(--f-mono);font-weight:700;font-size:300px;line-height:.82;letter-spacing:-12px;color:var(--on-primary)}
+  .s-divider .chap{font-family:var(--f-mono);font-size:20px;font-weight:600;letter-spacing:6px;color:var(--on-primary);opacity:.72}
+  .s-divider .big{font-family:var(--f-display);font-weight:900;font-size:60px;line-height:.98;letter-spacing:-1.5px;margin-top:18px;color:var(--on-primary);white-space:nowrap}
+  .s-divider .rule{width:120px;height:8px;background:var(--on-primary);margin-top:34px}
+
+  /* ===== STAT HERO ===== */
+  .s-stat{justify-content:center}
+  .s-stat .glow{right:-40px;bottom:-60px}
+  .s-stat .big{display:flex;align-items:baseline;gap:24px;margin-top:14px}
+  .s-stat .num{font-family:var(--f-mono);font-weight:700;font-size:300px;line-height:.8;letter-spacing:-14px;color:var(--primary)}
+  .s-stat .unit{font-family:var(--f-mono);font-weight:700;font-size:60px;color:var(--ink)}
+  .s-stat .cap{font-family:var(--f-lg);font-weight:700;font-size:34px;letter-spacing:-.5px;margin-top:20px}
+  .s-stat .delta{font-family:var(--f-mono);font-size:18px;color:var(--molten);margin-top:14px;display:inline-flex;align-items:center;gap:10px}
+  .s-stat .delta i{width:9px;height:9px;border-radius:9999px;background:var(--molten);box-shadow:0 0 9px var(--molten)}
+
+  /* ===== ARGUMENT ===== */
+  .s-arg{justify-content:center}
+  .s-arg .glow{left:40%;top:-80px}
+  .s-arg .idx{font-family:var(--f-mono);font-weight:700;font-size:22px;letter-spacing:4px;color:var(--primary)}
+  .s-arg h2{font-family:var(--f-display);font-weight:900;font-size:104px;line-height:.92;letter-spacing:-3px;margin:22px 0 0;white-space:nowrap}
+  .s-arg h2 .lit{color:var(--primary)}
+  .s-arg .line{margin-top:28px;font-size:24px;color:var(--muted);max-width:24em;line-height:1.5}
+  .s-arg .line b{color:var(--ink);font-weight:700}
+  .s-arg .spec{margin-top:34px;font-family:var(--f-mono);font-size:15px;letter-spacing:1px;color:var(--ink);border-left:4px solid var(--primary);padding-left:16px}
+  .s-arg .spec b{color:var(--primary);font-weight:700}
+
+  /* ===== QUOTE ===== */
+  .s-quote{justify-content:center}
+  .s-quote .mark{font-family:var(--f-display);font-size:130px;line-height:.6;color:var(--primary);height:70px}
+  .s-quote h2{font-family:var(--f-display);font-weight:900;font-size:88px;line-height:1.0;letter-spacing:-2.5px;margin-top:20px}
+  .s-quote h2 u{text-decoration:none;box-shadow:inset 0 -18px 0 var(--primary);color:var(--ink);padding:0 2px}
+  .s-quote .by{margin-top:34px;font-family:var(--f-mono);font-size:15px;letter-spacing:2px;color:var(--muted)}
+
+  /* ===== CLOSING ===== */
+  .s-close{justify-content:center}
+  .s-close .glow{right:-60px;top:-40px}
+  .s-close h2{font-family:var(--f-display);font-weight:900;font-size:96px;line-height:.94;letter-spacing:-3px;margin:24px 0 0}
+  .s-close h2 .lit{color:var(--primary)}
+  .s-close .actions{display:flex;align-items:center;gap:28px;margin-top:44px;flex-wrap:wrap}
+  .s-close .btn{display:inline-flex;align-items:center;gap:12px;background:var(--primary);color:var(--on-primary);font-family:var(--f-body);font-weight:700;font-size:19px;letter-spacing:.6px;padding:20px 40px;box-shadow:6px 6px 0 #000}
+  .s-close .btn .arw{font-family:var(--f-mono)}
+  .s-close .term{font-family:var(--f-mono);font-size:16px;color:var(--muted)}
+  .s-close .term .p{color:var(--primary)}
+
+  /* ===== HUD ===== */
+  #hud{position:fixed;z-index:20;left:0;right:0;bottom:20px;display:flex;justify-content:center;align-items:center;gap:22px;pointer-events:none}
+  #hud .box{pointer-events:auto;display:flex;align-items:center;gap:18px;background:rgba(23,25,27,.86);border:2px solid var(--hairline);padding:9px 16px;font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+  #hud button{background:none;border:none;color:var(--ink);font-family:var(--f-mono);font-size:16px;cursor:pointer;padding:2px 6px;line-height:1}
+  #hud button:hover{color:var(--primary)}
+  #hud .count b{color:var(--primary)}
+  #hud .title{color:var(--muted);letter-spacing:1px}
+  #prog{position:fixed;z-index:20;left:0;top:0;height:4px;background:var(--primary);width:0;transition:width .28s ease}
+</style>
+
+<div id="prog"></div>
+
+<div id="scaler">
+  <div class="stage" id="stage">
+
+    <!-- 1 · COVER -->
+    <section class="slide s-cover active">
+      <div class="bed"></div><div class="glow"></div>
+      <div class="ruler t"><span class="lit">QUENCH · RUNTIME</span><span>16:9 · REV 04</span></div>
+      <span class="kick"><i class="led"></i>[ COLD BOOT · SYSTEM ONLINE ]</span>
+      <h1 class="manifesto"><span>RUN AT</span><span class="lit">THE METAL.</span></h1>
+      <p class="sub">冷启动已死。<b>贴着金属跑</b>的边缘运行时。</p>
+      <div class="ruler b"><span>DECK · QUENCH</span><span>← / → 翻页</span></div>
+    </section>
+
+    <!-- 2 · DIVIDER 001 (acid slam) -->
+    <section class="slide s-divider">
+      <div class="chap">CHAPTER · 冷启动这笔账</div>
+      <div class="num">001</div>
+      <div class="rule"></div>
+      <div class="big">每一次冷启动，都在偷用户的时间。</div>
+    </section>
+
+    <!-- 3 · STAT HERO -->
+    <section class="slide s-stat">
+      <div class="bed"></div><div class="glow"></div>
+      <div class="ruler t"><span class="lit">DATA · 冷启动延迟</span><span>MEASURED · P99</span></div>
+      <span class="kick"><i class="led"></i>[ 唯一要记住的数 ]</span>
+      <div class="big"><div class="num">0</div><div class="unit">毫秒</div></div>
+      <div class="cap">从请求进来，到代码满速跑，中间没有空窗。</div>
+      <div class="delta"><i></i>行业平均 8 秒 → 淬火 0 毫秒</div>
+      <div class="ruler b"><span>QUENCH · BENCH</span><span>02 / 09</span></div>
+    </section>
+
+    <!-- 4 · ARGUMENT 01 -->
+    <section class="slide s-arg">
+      <div class="bed"></div><div class="glow"></div>
+      <div class="ruler t"><span class="lit">论点 · 01</span><span>SNAPSHOT</span></div>
+      <div class="idx">01 / 快照恢复</div>
+      <h2>实例<span class="lit">从不睡去。</span></h2>
+      <p class="line">进程被冻成<b>微秒级可还原的快照</b>，请求进来直接接住，没有那段等它爬起来的空窗。</p>
+      <div class="spec">RESTORE <b>&lt; 900µs</b> · 内存态整存整取</div>
+      <div class="ruler b"><span>QUENCH · CORE</span><span>03 / 09</span></div>
+    </section>
+
+    <!-- 5 · ARGUMENT 02 -->
+    <section class="slide s-arg">
+      <div class="bed"></div><div class="glow"></div>
+      <div class="ruler t"><span class="lit">论点 · 02</span><span>BARE-METAL</span></div>
+      <div class="idx">02 / 贴金属调度</div>
+      <h2>少一层，<span class="lit">快一截。</span></h2>
+      <p class="line">绕过一整层容器抽象，<b>代码直接落到裸金属</b>上跑。少一层，就少一次调度、一次拷贝、一次等待。</p>
+      <div class="spec">BARE-METAL <b>0 层容器</b> · 调度器写在内核旁</div>
+      <div class="ruler b"><span>QUENCH · CORE</span><span>04 / 09</span></div>
+    </section>
+
+    <!-- 6 · DIVIDER 002 (acid slam repeat) -->
+    <section class="slide s-divider">
+      <div class="chap">CHAPTER · 部署这件事</div>
+      <div class="num">002</div>
+      <div class="rule"></div>
+      <div class="big">基础设施该像开关，不该像考试。</div>
+    </section>
+
+    <!-- 7 · ARGUMENT 03 -->
+    <section class="slide s-arg">
+      <div class="bed"></div><div class="glow"></div>
+      <div class="ruler t"><span class="lit">论点 · 03</span><span>DEPLOY</span></div>
+      <div class="idx">03 / 一条命令</div>
+      <h2>一行，<span class="lit">铺满全球。</span></h2>
+      <p class="line">一句 <b>quench deploy</b> 把服务铺到 300 个边缘节点，回滚也是一行。上线不该是一场考试。</p>
+      <div class="spec">DEPLOY <b>340ms</b> · 全球一次铺开</div>
+      <div class="ruler b"><span>QUENCH · CORE</span><span>05 / 09</span></div>
+    </section>
+
+    <!-- 8 · QUOTE -->
+    <section class="slide s-quote">
+      <div class="bed"></div>
+      <div class="mark">&ldquo;</div>
+      <h2>最快的启动，<br>是<u>根本没有启动</u>。</h2>
+      <div class="by">— QUENCH 工程手册 · 第一条</div>
+      <div class="ruler b"><span>QUENCH · MANIFESTO</span><span>07 / 09</span></div>
+    </section>
+
+    <!-- 9 · CLOSING -->
+    <section class="slide s-close">
+      <div class="bed"></div><div class="glow"></div>
+      <div class="ruler t"><span class="lit">SHIP IT</span><span>SYSTEM ONLINE</span></div>
+      <span class="kick"><i class="led"></i>[ 现在就通电 ]</span>
+      <h2>别再为<span class="lit">冷启动</span>买单。</h2>
+      <div class="actions">
+        <a href="#" class="btn">开始锻造 <span class="arw">→</span></a>
+        <span class="term"><span class="p">$</span> quench deploy · 无需信用卡</span>
+      </div>
+      <div class="ruler b"><span>© 2026 QUENCH · 虚构演示 · HeiGe-Design</span><span>09 / 09</span></div>
+    </section>
+
+  </div>
+</div>
+
+<div id="hud">
+  <div class="box">
+    <button id="prev" aria-label="上一页">&#8592;</button>
+    <span class="count"><b id="cur">01</b> / <span id="tot">09</span></span>
+    <span class="title" id="stitle">封面</span>
+    <button id="next" aria-label="下一页">&#8594;</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var titles=['封面','过渡 · 001','数据 · 0ms','论点 · 快照恢复','论点 · 贴金属','过渡 · 002','论点 · 一条命令','金句','收尾'];
+  var i=0, n=slides.length;
+  var curEl=document.getElementById('cur'),
+      totEl=document.getElementById('tot'),
+      titleEl=document.getElementById('stitle'),
+      prog=document.getElementById('prog');
+  totEl.textContent=String(n).padStart(2,'0');
+
+  function show(k){
+    i=(k+n)%n;
+    slides.forEach(function(s,idx){s.classList.toggle('active',idx===i);});
+    curEl.textContent=String(i+1).padStart(2,'0');
+    titleEl.textContent=titles[i]||'';
+    prog.style.width=((i+1)/n*100)+'%';
+  }
+  function next(){show(i+1);}
+  function prev(){show(i-1);}
+
+  document.getElementById('next').onclick=next;
+  document.getElementById('prev').onclick=prev;
+  window.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();next();}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}
+    else if(e.key==='Home'){show(0);}
+    else if(e.key==='End'){show(n-1);}
+  });
+  // click stage halves to navigate
+  document.getElementById('stage').addEventListener('click',function(e){
+    var r=this.getBoundingClientRect();
+    (e.clientX-r.left)>r.width/2 ? next() : prev();
+  });
+
+  // fit 1280x720 stage to viewport
+  var scaler=document.getElementById('scaler');
+  function fit(){
+    var s=Math.min(window.innerWidth/1280, window.innerHeight/720);
+    scaler.style.transform='scale('+s+')';
+  }
+  window.addEventListener('resize',fit); fit(); show(0);
+})();
+</script>

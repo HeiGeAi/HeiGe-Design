@@ -1,0 +1,1033 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>陶土 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 有机自然</div>
+<div class="hero"><div class="fam">有机自然</div><h1>陶土<span class="badge">✓ lint 0 error</span></h1><div class="slug">clayfield · Clayfield-design-system</div><p class="desc">Clayfield is a hand-thrown, sun-baked wellness identity. Fired terracotta is the load-bearing brand color set against oat cream, with sage green as its garden companion. A rounded humanist sans (Nunito) carries the everyday voice while a warm serif (Fraunces) punctuates it at eyebrows, pull-quotes and hero numerals. Every image is masked to a unique thrown-clay blob over a paper-grain field — never a rounded rectangle, never a drop-shadow, never a purple gradient.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#f2e9dc;--ink:#3a2e26;--pri:#a8482a;--onpri:#faf5ec;--acc:#a8482a;--surf:#fbf5ea;--muted:#6f5f52;--line:#e2d5c2;--r:16px;--dff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">陶土</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#a8482a"></i><i style="background:#faf5ec"></i><i style="background:#3a2e26"></i><i style="background:#f2e9dc"></i><i style="background:#fbf5ea"></i><i style="background:#6f5f52"></i><i style="background:#e2d5c2"></i><i style="background:#c96f4a"></i></div>
+  <div class="swrap"><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">divider</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">tag-chip</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">eyebrow-label</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">body-text</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">caption-note</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">stat-block</span></div>
+  </div>
+  <div class="card" style="--bg:#f2e9dc;--ink:#3a2e26;--pri:#a8482a;--onpri:#faf5ec;--acc:#a8482a;--surf:#fbf5ea;--muted:#6f5f52;--line:#e2d5c2;--r:16px;--dff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">陶土</div></div>
+    <div class="swrap"><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#fbf5ea;color:#3a2e26;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two things this system does that a swapped-in template physically cannot reproduce.
+
+**UI signature — the throw-mark media blob.** Every image is masked to a **hand-thrown asymmetric blob** whose `border-radius` is seeded uniquely per instance (no two identical), backed by an **offset sage slab** peeking out like a second slice of clay, wrapped in a **2px hand-inked contour**, dusted with a **paper-grain multiply overlay**, and stamped with a small **terracotta thumbprint seal** in the lower-left corner. It is a photographed piece of pottery, not a `border-radius: 8px` box with a drop-shadow. Change the template and this dies instantly.
+
+**Deck signature — the kiln cover.** A full-bleed **fired-terracotta** slide with a single **cream clay slab pressed into the field** (depth read as an indentation, via a 1px inner seam, not a shadow), the one-sentence headline set inside it in Fraunces,</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Fire terracotta in whole blocks (a cover, a button), then let oat-cream do the breathing.
+- Mask every photo to a per-instance thrown blob with a hand-inked contour and paper-grain.
+- Keep a static clay-grain texture on large fields at ~6% multiply.
+- Let Fraunces speak exactly three places: eyebrow, quote, hero number.
+- Stack depth as solid offset clay slabs (sage behind terracotta), left-align text off a live edge.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient** `#667eea → #764ba2` or any of its cousins. This system's warmth exists to make that impossible.
+- **Don't build the centered card trio** — title, gray subtitle, three equal rounded-rectangle cards. Cards here are asymmetric clay slabs on a two-field split, never a symmetric row.
+- **Don't render Chinese in a Japanese font** (Mochiy / Zen Maru). Simplified glyphs drop to tofu. Chinese rides Noto Sans SC / Noto Serif SC / PingFang / Songti only.
+- **Don't animate shadows or glows.** Depth is physical stacking and static grain; animating `box-shadow`/`text-shadow` repaints every frame and betrays the handmade calm.
+- Don't let raw clay `#c96f4a` carry body text (it fails AA) — it fills shapes, terracotta `#a8482a` carries the words.
+- Don't reach for a fourth color. If the layout feels flat, add oat-cream silence, not pigment.</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: Clayfield-design-system
+description: Clayfield is a hand-thrown, sun-baked wellness identity. Fired terracotta is the load-bearing brand color set against oat cream, with sage green as its garden companion. A rounded humanist sans (Nunito) carries the everyday voice while a warm serif (Fraunces) punctuates it at eyebrows, pull-quotes and hero numerals. Every image is masked to a unique thrown-clay blob over a paper-grain field — never a rounded rectangle, never a drop-shadow, never a purple gradient.
+
+colors:
+  primary: &quot;#a8482a&quot;      # fired terracotta — kiln-baked, load-bearing brand color (buttons, cover, closing)
+  on-primary: &quot;#faf5ec&quot;   # kiln cream — text pressed onto terracotta
+  ink: &quot;#3a2e26&quot;          # baked earth — warm near-black body text, never pure #000
+  canvas: &quot;#f2e9dc&quot;       # oat cream — the page, the tabletop
+  surface: &quot;#fbf5ea&quot;      # clay slab — card face, a shade lighter than canvas
+  muted: &quot;#6f5f52&quot;        # kiln smoke — warm taupe secondary text (AA-safe)
+  hairline: &quot;#e2d5c2&quot;     # soft clay line — 1px seams and borders
+  clay: &quot;#c96f4a&quot;         # raw clay — decorative blob fill only, the seed terracotta, never carries small text
+  sage: &quot;#9caf88&quot;         # sage — the garden companion, chips and section fields with ink text
+
+typography:
+  eyebrow:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: 2.5px
+  display-xl:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 72px
+    fontWeight: 800
+    lineHeight: 1.02
+    letterSpacing: -1.5px
+  display:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 44px
+    fontWeight: 800
+    lineHeight: 1.08
+    letterSpacing: -0.6px
+  heading:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 24px
+    fontWeight: 700
+    lineHeight: 1.25
+    letterSpacing: -0.2px
+  body:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: 0px
+  quote:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 30px
+    fontWeight: 400
+    lineHeight: 1.35
+    letterSpacing: -0.2px
+  figure:
+    fontFamily: '&quot;Fraunces&quot;, &quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif'
+    fontSize: 88px
+    fontWeight: 600
+    lineHeight: 0.95
+    letterSpacing: -2px
+  button:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 16px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: 0.3px
+  caption:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 14px
+    fontWeight: 500
+    lineHeight: 1.5
+    letterSpacing: 0.2px
+
+rounded:
+  sm: 8px
+  md: 16px
+  lg: 28px
+  xl: 44px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 96px
+
+components:
+  # —— UI 界面组件 ——
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.lg} {spacing.xl}&quot;
+  divider:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    height: 1px
+    padding: &quot;0&quot;
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  tag-chip:
+    backgroundColor: &quot;{colors.sage}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  eyebrow-label:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    padding: &quot;{spacing.xs} 0&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.xl}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  body-text:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    padding: &quot;0&quot;
+  caption-note:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    padding: &quot;{spacing.sm} 0&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.figure}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg} {spacing.xl}&quot;
+  blob-media:
+    backgroundColor: &quot;{colors.clay}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;0&quot;
+  input-field:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md}&quot;
+  footer:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+  # —— slide 演示组件（融合 HeiGe-PPT · 16:9）——
+  slide-cover:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.xl}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.sage}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.figure}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.quote}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.xl}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Clayfield · 陶土
+
+&gt; A wellness identity thrown on a wheel, not stamped from a template. Kiln-fired terracotta, oat cream, a sprig of sage — every surface remembers the hand that shaped it.
+
+## Overview
+
+Clayfield is what a health-and-food brand looks like when it refuses to hide behind sterile white space. The whole system behaves like a piece of **hand-thrown pottery**: warm, slightly imperfect, sun-baked, and unmistakably made by a person.
+
+主色扮演两个角色。**Fired terracotta `#a8482a`** is the load-bearing voice — it fills covers, presses into buttons, and closes decks. Its lighter sibling **raw clay `#c96f4a`** never carries text; it lives only as the fill of the organic blobs and hand-drawn illustration, the color of wet clay before the kiln. 奶油 `#f2e9dc` 是桌面，是呼吸，是让陶土显得温热的底。**Sage `#9caf88`** 是花园里的那一株，只在标签和过渡页出场，从不喧宾夺主。
+
+字体签名是一场**圆润无衬线 + 温暖衬线的对话**。Nunito 的软圆终端是日常的嗓音，亲切、松弛；Fraunces 只在最有分量的三个位置现身 —— eyebrow 小标、pull-quote 金句、和 hero 数字，像手工品上那一枚落款印。
+
+节奏靠版式不靠堆色：three colors, a lot of oat-cream silence, and one physically-modeled clay blob per screen doing all the heavy lifting.
+
+## Colors
+
+### Brand &amp; Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#a8482a` | Fired terracotta. Load-bearing brand color: buttons, cover fields, closing CTA. Passes AA on cream (5.3:1). |
+| `clay` | `#c96f4a` | Raw clay. The seed terracotta, kept **decorative only** — fills blobs and illustration, never carries small text (fails AA as a text bg). |
+| `sage` | `#9caf88` | Sage green. The garden companion — chips, section-divider fields, botanical line art. Carries ink text at 5.6:1. |
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#f2e9dc` | Oat cream. The page, the tabletop. |
+| `surface` | `#fbf5ea` | Clay slab. Card faces, one shade up from canvas so cards read as objects resting on the table, not holes cut into it. |
+| `hairline` | `#e2d5c2` | Soft clay seam. 1px borders and the hand-inked blob contour tint. |
+
+### Text
+| Token | Hex | Role |
+|---|---|---|
+| `ink` | `#3a2e26` | Baked earth. Body and headings — a warm near-black, **never pure `#000`** (pure black looks industrial against cream). 10.9:1 on canvas. |
+| `on-primary` | `#faf5ec` | Kiln cream. Text pressed onto terracotta and onto the dark footer. |
+| `muted` | `#6f5f52` | Kiln smoke. Secondary captions and metadata, deliberately darkened to clear AA (5.1:1 on canvas). |
+
+**Color discipline.** Terracotta is a spice, not a wall. Fire it in blocks — a whole cover, a whole button — then step back and let oat-cream do the breathing. Sage appears at most once per view. If a screen needs a fourth color to feel alive, the layout has failed, not the palette.
+
+## Typography
+
+### Font Family
+- **Rounded sans (workhorse):** `Nunito` — humanist, soft-terminal, warm. Carries nav, headings, body, buttons, captions.
+- **Warm serif (the seasoning):** `Fraunces` — organic, slightly wonky old-style serif. Restricted to eyebrows, pull-quotes, and hero numerals. It is the落款印, not the paragraph.
+
+**中文兜底铁律.** Nunito 不含 CJK，字栈末尾必挂 `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif`；Fraunces 衬线栈末尾挂 `&quot;Noto Serif SC&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif`。断网 webfont 加载失败时，中文照样干净落在思源/苹方上，绝不塌成 Times 或豆腐块。**中文一律不用日文字体渲染**（简体缺字变豆腐）。
+
+### Hierarchy
+| Role | Font | Size / Weight | Use |
+|---|---|---|---|
+| `display-xl` | Nunito 800 | 72 / -1.5 tracking | Cover statement, one big warm sentence |
+| `display` | Nunito 800 | 44 / -0.6 | Section titles, divider words |
+| `heading` | Nunito 700 | 24 | Card titles |
+| `body` | Nunito 400 | 17 / 1.7 leading | Paragraphs — generous line height is the wellness tell |
+| `quote` | Fraunces 400 | 30 (italic in use) | Pull-quotes — the serif enters here |
+| `figure` | Fraunces 600 | 88 / tabular-nums | Hero numerals, stats — warm serif digits |
+| `eyebrow` | Fraunces 600 | 13 / +2.5, uppercase | Kicker labels above headings |
+| `button` | Nunito 700 | 16 | Actions |
+| `caption` | Nunito 500 | 14 | Metadata, footnotes |
+
+### Principles
+- **Contrast ≥ 1:4.** The cover `display-xl` (72) against `body` (17) is more than four to one — the big one is allowed to feel almost too big.
+- **Serif is punctuation.** Fraunces earns its place three times per page maximum. Over-use it and the handcraft feel curdles into a wedding invitation.
+- **`figure` uses `font-variant-numeric: tabular-nums`** so stacked stats stay column-aligned like a ledger of harvest weights.
+- **Left-align by default.** Body copy runs ragged-right off a left edge; only the cover slab and the quote center, and only inside their organic shape.
+
+## Layout
+
+### Spacing
+An 8-based scale that breathes wide: `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 96`. The jump from `xl` to `section` is deliberate and large — sections are separated by a full field of oat-cream, the way objects on a wooden table have room around them.
+
+### Grid &amp; Container
+- 12-column grid, **1120px** max content width, 24–40px gutters.
+- Content is **not** trapped in a centered column. The signature move is an **asymmetric two-field split**: a clay blob field on one side (40%), text ragged off a left edge on the other (60%), swapping sides down the page so nothing feels stamped.
+- Vertical rhythm is loose. When in doubt, add another `section` of silence rather than another divider line.
+
+### Whitespace Philosophy
+Whitespace here is oat-cream *tabletop*, not emptiness. It exists so each thrown-clay object has room to cast its own presence. Never fill a gap just because it is there — the breathing room **is** the luxury signal in a handcraft system.
+
+## Elevation &amp; Depth
+
+Clayfield has almost no drop-shadows. Depth comes from **physical stacking of clay slabs**, not from blur.
+
+| Level | Technique |
+|---|---|
+| Flat | Elements sit directly on canvas, separated by a 1px `hairline` seam. |
+| Slab | A `surface` card offset by a **solid `sage` blob 8–12px behind it** — a second slab of clay peeking out, not a soft shadow. |
+| Pressed | The cover headline sits inside a cream blob *pressed into* the terracotta field — depth read as an indentation, via a 1px inner `hairline`. |
+
+**Texture over shadow.** Every large field carries a subtle **paper-grain / clay-grain overlay** (a tiling PNG or SVG turbulence at ~6% opacity, `mix-blend-mode: multiply`). This is the single most important depth cue and it is completely static — it must never animate. No `backdrop-filter` anywhere; frosted glass is the opposite of fired clay.
+
+## Shapes
+
+### Border Radius
+| Token | Value | Use |
+|---|---|---|
+| `sm` | 8px | Input fields, nav seams |
+| `md` | 16px | Inputs, small media, divider blocks |
+| `lg` | 28px | Cards, stat blocks, quote slabs |
+| `xl` | 44px | Cover slab, feature cards, closing field |
+| `pill` | 9999px | Buttons and chips — soft river pebbles |
+
+### The thrown blob
+The defining shape is **not** in the radius scale because a single radius can't describe it. Media and hero shapes use an **asymmetric organic blob** via `border-radius` shorthand, e.g. `62% 38% 55% 45% / 48% 60% 40% 52%`, with a **different value seeded per instance** so no two blobs are twins. Backed by a paper-grain fill and a 2px hand-inked `ink` contour. Buttons and chips stay `pill`; structural cards stay `xl`. **No element is a plain rounded rectangle** — that is the AI-slop tell this whole system is built to avoid.
+
+## Components
+
+- **nav-bar** — oat-cream bar, ink wordmark left, a single terracotta `button-primary` right. Bottom seam is 1px `hairline`, not a shadow.
+- **button-primary** — fired terracotta pill, cream label. The one loud element per view.
+- **button-secondary** — cream pill, terracotta label, hairline outline. Quiet sibling.
+- **tag-chip** — sage pill with ink text for ingredients, categories, &quot;organic / gluten-free&quot; style labels.
+- **card-feature** — clay-slab surface, `xl` radius, backed by an offset sage blob for the stacked-slab depth. Eyebrow (Fraunces) + heading (Nunito) + body, all left-aligned, never a centered trio.
+- **stat-block** — surface slab holding a giant Fraunces `figure` in terracotta over a muted caption. Harvest-ledger feel.
+- **blob-media** — the signature: any photo masked to a per-instance thrown blob, raw-clay fill showing at the edges, 2px hand-inked contour, paper-grain overlay, a pressed thumbprint seal lower-left.
+- **input-field** — surface fill, hairline border, `md` radius, generous 16px padding. Focus state warms the border to terracotta (no glow).
+- **footer** — baked-earth `ink` field, cream text, sage links, a single botanical line-drawing sprig growing off the top edge.
+
+Interaction states stay **physical, not glowy**: hover lifts a card 2px and deepens its sage backing slab; press settles it back down. `prefers-reduced-motion` removes the lift entirely.
+
+## Presentation System
+
+Clayfield decks are 16:9 fields of fired clay and oat cream — 一页一句话, 黄金三秒立住手作温度, 视觉锤永远是那块 thrown-clay 陶片。
+
+- **slide-cover** — full-bleed **fired terracotta**. A single cream clay-slab blob pressed center-left holds one Fraunces-flavored sentence (`display-xl`). A sage botanical sprig grows off the slab's top edge; one thumbprint seal stamped in the corner. Three seconds, one sentence, one shape.
+- **slide-section-divider** — a calm **sage** field, oversized chapter word in `display`, a Fraunces `figure` chapter number (01 / 02) pressed into the corner. The palette shift from terracotta to sage *is* the transition.
+- **slide-stat-hero** — oat-cream field, one enormous terracotta Fraunces number filling the left two-thirds, unit and one-line context ragged off it. Never more than one number per slide.
+- **slide-quote** — clay-slab surface, a 30px Fraunces italic pull-quote inside a blob, attribution in muted caption below. The serif's one big moment in the deck.
+- **slide-closing** — back to full fired terracotta, cream CTA sentence, a single `button-primary`-styled action shape, thumbprint seal signing off. Bookends the cover.
+
+**视觉锤:** the thrown-clay slab. It opens the deck, holds every quote, and signs the close — one recurring physical object the audience remembers after the numbers fade.
+
+## Signature Moment
+
+Two things this system does that a swapped-in template physically cannot reproduce.
+
+**UI signature — the throw-mark media blob.** Every image is masked to a **hand-thrown asymmetric blob** whose `border-radius` is seeded uniquely per instance (no two identical), backed by an **offset sage slab** peeking out like a second slice of clay, wrapped in a **2px hand-inked contour**, dusted with a **paper-grain multiply overlay**, and stamped with a small **terracotta thumbprint seal** in the lower-left corner. It is a photographed piece of pottery, not a `border-radius: 8px` box with a drop-shadow. Change the template and this dies instantly.
+
+**Deck signature — the kiln cover.** A full-bleed **fired-terracotta** slide with a single **cream clay slab pressed into the field** (depth read as an indentation, via a 1px inner seam, not a shadow), the one-sentence headline set inside it in Fraunces, a **sage botanical line drawing growing off the slab's top edge**, and **one pressed thumbprint seal** in the corner. One page, one sentence, one shape — a cover you could recognize with the brand name torn off.
+
+## Do's and Don'ts
+
+**Do**
+- Fire terracotta in whole blocks (a cover, a button), then let oat-cream do the breathing.
+- Mask every photo to a per-instance thrown blob with a hand-inked contour and paper-grain.
+- Keep a static clay-grain texture on large fields at ~6% multiply.
+- Let Fraunces speak exactly three places: eyebrow, quote, hero number.
+- Stack depth as solid offset clay slabs (sage behind terracotta), left-align text off a live edge.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient** `#667eea → #764ba2` or any of its cousins. This system's warmth exists to make that impossible.
+- **Don't build the centered card trio** — title, gray subtitle, three equal rounded-rectangle cards. Cards here are asymmetric clay slabs on a two-field split, never a symmetric row.
+- **Don't render Chinese in a Japanese font** (Mochiy / Zen Maru). Simplified glyphs drop to tofu. Chinese rides Noto Sans SC / Noto Serif SC / PingFang / Songti only.
+- **Don't animate shadows or glows.** Depth is physical stacking and static grain; animating `box-shadow`/`text-shadow` repaints every frame and betrays the handmade calm.
+- Don't let raw clay `#c96f4a` carry body text (it fails AA) — it fills shapes, terracotta `#a8482a` carries the words.
+- Don't reach for a fourth color. If the layout feels flat, add oat-cream silence, not pigment.
+
+## Responsive Behavior
+
+Mobile is a **re-thrown composition**, not a squeezed desktop.
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥ 1120px | Full asymmetric two-field split; blob and text side by side, alternating sides down the page. |
+| 768–1119px | Fields stack: blob on top at 70% width, text below, still ragged-left. `section` spacing eases to 72px. |
+| ≤ 767px | Single column. `display-xl` drops via `clamp()` to fit the longest line at 360px with **no orphan characters**; blob shrinks but keeps its seeded organic radius; grain overlay stays, decorative sprigs thin out. Nav collapses to wordmark + one terracotta action. |
+
+孤字铁律: 手动断行的大标题按最长行收敛字号，每行 `white-space:nowrap` 锁整行，`clamp()` 保证 ≤390px 不折出单字单标点；中文限宽用 `em`/`px`，绝不用 `ch`（会让中文提前折行）。居中的金句用 `text-wrap:balance` 让各行均衡。
+
+## Anti-Slop Pledge
+
+Tear the brand name off Clayfield and you still see a person's hands in it — the fired-clay color fields, the thrown blobs where no two are the same shape, the warm serif entering only where it earns the moment, the thumbprint pressed in the corner. Nothing here fell out of a Hero-Features-Pricing template. It was thrown, glazed, and fired on purpose.
+
+---
+
+*Designed by HeiGe-Design · MIT · 100% original, fictional brand.*
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #a8482a;
+  --color-on-primary: #faf5ec;
+  --color-ink: #3a2e26;
+  --color-canvas: #f2e9dc;
+  --color-surface: #fbf5ea;
+  --color-muted: #6f5f52;
+  --color-hairline: #e2d5c2;
+  --color-clay: #c96f4a;
+  --color-sage: #9caf88;
+  --font-eyebrow: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-xl: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-display: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-quote: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-figure: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-button: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --text-eyebrow: 13px;
+  --text-display-xl: 72px;
+  --text-display: 44px;
+  --text-heading: 24px;
+  --text-body: 17px;
+  --text-quote: 30px;
+  --text-figure: 88px;
+  --text-button: 16px;
+  --text-caption: 14px;
+  --tracking-eyebrow: 2.5px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display: -0.6px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-quote: -0.2px;
+  --tracking-figure: -2px;
+  --tracking-button: 0.3px;
+  --tracking-caption: 0.2px;
+  --font-weight-eyebrow: 600;
+  --font-weight-display-xl: 800;
+  --font-weight-display: 800;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-quote: 400;
+  --font-weight-figure: 600;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-xl: 44px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#a8482a&quot;,
+        &quot;on-primary&quot;: &quot;#faf5ec&quot;,
+        &quot;ink&quot;: &quot;#3a2e26&quot;,
+        &quot;canvas&quot;: &quot;#f2e9dc&quot;,
+        &quot;surface&quot;: &quot;#fbf5ea&quot;,
+        &quot;muted&quot;: &quot;#6f5f52&quot;,
+        &quot;hairline&quot;: &quot;#e2d5c2&quot;,
+        &quot;clay&quot;: &quot;#c96f4a&quot;,
+        &quot;sage&quot;: &quot;#9caf88&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;display&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;quote&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;figure&quot;: [
+          &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;eyebrow&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.5px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;display-xl&quot;: [
+          &quot;72px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1.5px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;display&quot;: [
+          &quot;44px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.6px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;24px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;quote&quot;: [
+          &quot;30px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;figure&quot;: [
+          &quot;88px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;28px&quot;,
+        &quot;xl&quot;: &quot;44px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #a8482a;
+  --color-on-primary: #faf5ec;
+  --color-ink: #3a2e26;
+  --color-canvas: #f2e9dc;
+  --color-surface: #fbf5ea;
+  --color-muted: #6f5f52;
+  --color-hairline: #e2d5c2;
+  --color-clay: #c96f4a;
+  --color-sage: #9caf88;
+  --font-eyebrow: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-display-xl: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-display: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-quote: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-figure: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;;
+  --font-button: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --text-eyebrow: 13px;
+  --text-display-xl: 72px;
+  --text-display: 44px;
+  --text-heading: 24px;
+  --text-body: 17px;
+  --text-quote: 30px;
+  --text-figure: 88px;
+  --text-button: 16px;
+  --text-caption: 14px;
+  --tracking-eyebrow: 2.5px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display: -0.6px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-quote: -0.2px;
+  --tracking-figure: -2px;
+  --tracking-button: 0.3px;
+  --tracking-caption: 0.2px;
+  --font-weight-eyebrow: 600;
+  --font-weight-display-xl: 800;
+  --font-weight-display: 800;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-quote: 400;
+  --font-weight-figure: 600;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-xl: 44px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Clayfield is a hand-thrown, sun-baked wellness identity. Fired terracotta is the load-bearing brand color set against oat cream, with sage green as its garden companion. A rounded humanist sans (Nunito) carries the everyday voice while a warm serif (Fraunces) punctuates it at eyebrows, pull-quotes and hero numerals. Every image is masked to a unique thrown-clay blob over a paper-grain field — never a rounded rectangle, never a drop-shadow, never a purple gradient.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.659,
+          0.282,
+          0.165
+        ],
+        &quot;hex&quot;: &quot;#a8482a&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.98,
+          0.961,
+          0.925
+        ],
+        &quot;hex&quot;: &quot;#faf5ec&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.227,
+          0.18,
+          0.149
+        ],
+        &quot;hex&quot;: &quot;#3a2e26&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.949,
+          0.914,
+          0.863
+        ],
+        &quot;hex&quot;: &quot;#f2e9dc&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.984,
+          0.961,
+          0.918
+        ],
+        &quot;hex&quot;: &quot;#fbf5ea&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.435,
+          0.373,
+          0.322
+        ],
+        &quot;hex&quot;: &quot;#6f5f52&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.886,
+          0.835,
+          0.761
+        ],
+        &quot;hex&quot;: &quot;#e2d5c2&quot;
+      }
+    },
+    &quot;clay&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.788,
+          0.435,
+          0.29
+        ],
+        &quot;hex&quot;: &quot;#c96f4a&quot;
+      }
+    },
+    &quot;sage&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.612,
+          0.686,
+          0.533
+        ],
+        &quot;hex&quot;: &quot;#9caf88&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 28,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 44,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 72,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 44,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 24,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;quote&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 30,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;figure&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Fraunces\&quot;, \&quot;Noto Serif SC\&quot;, \&quot;Songti SC\&quot;, \&quot;STSong\&quot;, serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 88,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 陶土（clayfield · 有机自然）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `clayfield` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#a8482a` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Nunito`，正文 `Nunito`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint clayfield` / 导出其它格式：`heige-design export clayfield --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 陶土 — 原创设定集，可商用。跑校验：<code>heige-design lint clayfield</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

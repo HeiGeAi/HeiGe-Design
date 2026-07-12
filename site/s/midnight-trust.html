@@ -1,0 +1,989 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>午夜蓝 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 暗色科技</div>
+<div class="hero"><div class="fam">暗色科技</div><h1>午夜蓝<span class="badge">✓ lint 0 error</span></h1><div class="slug">midnight-trust · Sentris-design-system</div><p class="desc">Sentris is the enterprise-AI dark system engineered for trust, not spectacle. A midnight blue-black canvas holds one restrained ice-blue accent that only glows where verification happens; steel-gray structure carries the weight, Inter runs a strict step scale, and tabular monospace presents every number as a countersigned fact. Signature move: a single continuous ice-blue keel line threads every dashboard, and low-intensity static glow is reserved for the one currently-verified state.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#0b1018;--ink:#dde5f2;--pri:#5e8fff;--onpri:#08111d;--acc:#5e8fff;--surf:#0f1826;--muted:#8b98ad;--line:#1c2740;--r:8px;--dff:Inter, "SF Pro Display", "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:Inter, "SF Pro Text", "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"JetBrains Mono", "SF Mono", "Cascadia Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">午夜蓝</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#5e8fff"></i><i style="background:#08111d"></i><i style="background:#dde5f2"></i><i style="background:#0b1018"></i><i style="background:#0f1826"></i><i style="background:#8b98ad"></i><i style="background:#1c2740"></i><i style="background:#38445c"></i></div>
+  <div class="swrap"><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">feature-row</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">status-pill-operational</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">status-pill-alert</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">tag-secure</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">keel-divider</span></div>
+  </div>
+  <div class="card" style="--bg:#0b1018;--ink:#dde5f2;--pri:#5e8fff;--onpri:#08111d;--acc:#5e8fff;--surf:#0f1826;--muted:#8b98ad;--line:#1c2740;--r:8px;--dff:Inter, "SF Pro Display", "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:Inter, "SF Pro Text", "Segoe UI", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"JetBrains Mono", "SF Mono", "Cascadia Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">午夜蓝</div></div>
+    <div class="swrap"><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#0f1826;color:#dde5f2;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">换个模板绝对做不出来的两个签名时刻，写死：
+
+- **UI —— The Keel Line（龙骨线）**：一条连续的 1px 冰蓝 hairline，从仪表盘顶贯到底，当作整个界面的结构脊椎。所有状态节点、能力行、主按钮都「停靠」在这条线上；而**只有当前已核验的那一个节点**带低强度冰蓝辉光（静态 shadow，不动画），其余节点只是线上的暗点。信任的表达不是到处发光，是全局克制、只让一个点亮。
+- **Deck —— The Ledger Reveal（审计式揭示）**：数据页把一个巨型冰蓝数字压在午夜满版上，数字正下方是一行等宽、带时间戳、右对齐的审计句，读起来像一条已countersign 的合规记录；末位数字下压一道**静止的**冰蓝下划光标。数字不是被「宣布」的营销口号，是被「记录并签字」的事实。这套的记忆点，就是把一个数呈现得像法务证据。</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- 主色当信号灯用，全屏 ≤ 3 处：主按钮 / 已核验态 / 龙骨线。少亮，才值钱。
+- 数字全部走等宽 tabular-nums，右对齐成柱，让金额和时间戳可被逐行核对。
+- 分层靠 1px 钢灰 hairline 和网格，不靠加亮度、不靠堆投影。
+- 标题与数据一律左对齐咬网格左线，留白留给「一屏一件主事」。
+- 辉光只用静态 box-shadow，常亮不闪，`prefers-reduced-motion` 下全部可关。
+
+**Don't**
+- **不碰紫蓝烂大街渐变**（`#667eea → #764ba2` 及其全家桶），这是 AI 界面的身份证，本套用冰蓝单色 + 结构替代。
+- **不做居中卡片三件套**（一行标题 + 一行灰副标 + 三个等宽圆角卡整页重复），本套用龙骨线串起非对称信息，左对齐。
+- **中文绝不用日文字体渲染**，简体走 Noto Sans SC / PingFang SC，缺字变豆腐一律回炉。
+- **不动画化阴影 / 不用 backdrop-filter**，滚动重绘会掉帧；玻璃感用半透明纯色。
+- 不让语义绿红进标题，不让主色到处发光，不用 emoji 当功能图标。</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: Sentris-design-system
+description: &quot;Sentris is the enterprise-AI dark system engineered for trust, not spectacle. A midnight blue-black canvas holds one restrained ice-blue accent that only glows where verification happens; steel-gray structure carries the weight, Inter runs a strict step scale, and tabular monospace presents every number as a countersigned fact. Signature move: a single continuous ice-blue keel line threads every dashboard, and low-intensity static glow is reserved for the one currently-verified state.&quot;
+
+colors:
+  primary: &quot;#5e8fff&quot;
+  on-primary: &quot;#08111d&quot;
+  ink: &quot;#dde5f2&quot;
+  canvas: &quot;#0b1018&quot;
+  surface: &quot;#0f1826&quot;
+  muted: &quot;#8b98ad&quot;
+  hairline: &quot;#1c2740&quot;
+  steel: &quot;#38445c&quot;
+  up: &quot;#3ecf8e&quot;
+  down: &quot;#f26d6d&quot;
+
+typography:
+  display-xl:
+    fontFamily: 'Inter, &quot;SF Pro Display&quot;, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 64px
+    fontWeight: 700
+    lineHeight: 1.04
+    letterSpacing: &quot;-1.6px&quot;
+  display-lg:
+    fontFamily: 'Inter, &quot;SF Pro Display&quot;, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 40px
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: &quot;-0.8px&quot;
+  heading:
+    fontFamily: 'Inter, &quot;SF Pro Text&quot;, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 24px
+    fontWeight: 600
+    lineHeight: 1.25
+    letterSpacing: &quot;-0.2px&quot;
+  body:
+    fontFamily: 'Inter, &quot;SF Pro Text&quot;, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 16px
+    fontWeight: 400
+    lineHeight: 1.65
+    letterSpacing: &quot;0em&quot;
+  body-mono:
+    fontFamily: '&quot;JetBrains Mono&quot;, &quot;SF Mono&quot;, &quot;Cascadia Mono&quot;, ui-monospace, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 15px
+    fontWeight: 500
+    lineHeight: 1.5
+    letterSpacing: &quot;0.2px&quot;
+    fontFeature: '&quot;tnum&quot; 1, &quot;zero&quot; 1'
+  eyebrow:
+    fontFamily: '&quot;JetBrains Mono&quot;, &quot;SF Mono&quot;, &quot;Cascadia Mono&quot;, ui-monospace, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 12px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: &quot;2.4px&quot;
+  button:
+    fontFamily: 'Inter, &quot;SF Pro Text&quot;, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 15px
+    fontWeight: 600
+    lineHeight: 1.0
+    letterSpacing: &quot;0.2px&quot;
+  caption:
+    fontFamily: 'Inter, &quot;SF Pro Text&quot;, &quot;Segoe UI&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: &quot;0.1px&quot;
+
+rounded:
+  none: 0px
+  sm: 4px
+  md: 8px
+  lg: 14px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 96px
+
+components:
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    padding: &quot;{spacing.md}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  feature-row:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  status-pill-operational:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.up}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  status-pill-alert:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.down}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  tag-secure:
+    backgroundColor: &quot;{colors.steel}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xs}&quot;
+  keel-divider:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    width: 1px
+    height: 1px
+  data-panel:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  footer:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Sentris · 午夜蓝 (Midnight Trust)
+
+Enterprise AI that has to be believed before it is used. 这套系统的全部工作，是让一块午夜蓝黑的屏幕看起来像可以签字背书的证据，而不是一张营销海报。
+
+## Overview
+
+Sentris 是「暗色科技」家族里穿西装的那一套。它不靠炫技发光，靠克制建立信任。
+
+- **气质**：午夜值班室的冷静。大面积近黑蓝底，一条冰蓝的强调色只在「已核验」的地方亮起，其余全部压成钢灰结构。安静，因此可信。
+- **主色的两个角色**：`#0b1018` 午夜蓝黑是承重的地面，负责把注意力全部让给内容；`#5e8fff` 冰蓝是唯一的信号灯，只用在主行动、已核验状态、和一条贯穿全局的龙骨线上。信任来自这盏灯极少亮。
+- **字体签名**：Inter 走一条严格的字号阶梯（64 / 40 / 24 / 16），拉丁与中文都干净；所有数字交给等宽体 JetBrains Mono，开 tabular-nums，让每一列金额、每一个时间戳像审计记录一样对齐成柱。
+- **整体节奏**：结构靠钢灰的 1px hairline 和网格切分，不靠色块。留白大、密度低、对齐狠。一屏只让一件事发光。
+
+抹掉品牌名，这套依然一眼是「企业级、被审计过、有人为它签过字」的语气。
+
+## Colors
+
+克制是这套的第一性原理。十个色，主色只在三处出现。
+
+### Brand &amp; Accent
+- `primary` **#5e8fff** 冰蓝：唯一强调色。主按钮、龙骨线、已核验节点、数据页的巨型数字。全页出现不超过三处，多一处就贬值。
+- `on-primary` **#08111d** 深午夜墨：叠在冰蓝主色之上的文字，对比 6.18:1，稳过 AA。
+
+### Surface
+- `canvas` **#0b1018** 午夜蓝黑：页面与演示底色，承重地面。
+- `surface` **#0f1826** 钢蓝面：卡片、面板、数据台。比 canvas 只抬一档，靠 hairline 而不是靠亮度分层。
+- `hairline` **#1c2740** 钢灰细线：所有 1px 分隔与网格线，包括那条龙骨。
+
+### Text
+- `ink` **#dde5f2** 冷白：正文与标题。不用纯白，留一层蓝灰让长时间阅读不刺眼（对比 canvas 15.0:1）。
+- `muted` **#8b98ad** 钢灰字：次要说明、单位、页脚、过渡页章节名（对比 canvas 6.5:1，仍过 AA）。
+- `steel` **#38445c** 钢：安全标签底、二级结构块。冷、无声、承结构。
+
+### Semantic
+- `up` **#3ecf8e** 核验绿：Operational / Verified / 增长 delta（对比 surface 8.9:1）。
+- `down` **#f26d6d** 告警红：Degraded / Breach / 下降 delta（对比 surface 6.1:1）。语义色只在数据台和状态胶囊里出现，绝不进标题。
+
+**对比度自检**：所有 `textColor + backgroundColor` 组合最低 6.1:1（down on surface），全部 ≥ 4.5:1 的 WCAG AA 线。
+
+## Typography
+
+### Font Family
+- 拉丁与中文正文标题：Inter 打头，系统兜底 `&quot;SF Pro Text/Display&quot; → &quot;Segoe UI&quot; → &quot;Noto Sans SC&quot; → &quot;PingFang SC&quot; → &quot;Microsoft YaHei&quot; → sans-serif`。webfont 加载不到也不塌成 Times，中文不掉成豆腐。
+- 数字与工程标注：JetBrains Mono 打头，兜底 `&quot;SF Mono&quot; → &quot;Cascadia Mono&quot; → ui-monospace → &quot;Noto Sans SC&quot; → &quot;PingFang SC&quot; → monospace`。
+- **中文铁律**：中文永远走 Noto Sans SC / PingFang SC，绝不用任何日文字体（Mochiy / Zen Maru 等）渲染简体，简体会缺字变异体。
+
+### Hierarchy
+| Role | Font | Size | Weight | 用途 |
+|---|---|---|---|---|
+| display-xl | Inter | 64px | 700 | 封面主句、数据页巨型数字 |
+| display-lg | Inter | 40px | 700 | 过渡页章节、金句页 |
+| heading | Inter | 24px | 600 | 卡片标题、收尾页行动句 |
+| body | Inter | 16px | 400 | 正文、列表行，行高 1.65 |
+| body-mono | JetBrains Mono | 15px | 500 | 金额、时间戳、审计行，tabular-nums |
+| eyebrow | JetBrains Mono | 12px | 600 | 全大写 kicker，字距 2.4px |
+| button | Inter | 15px | 600 | 按钮标签 |
+| caption | Inter | 13px | 400 | 页脚、标签、脚注 |
+
+### Principles
+- 最大字 64px 对正文 16px 是 4:1，字号阶梯陡，层级靠尺寸不靠颜色。
+- eyebrow 用等宽全大写 + 2.4px 字距做「系统标签」感，像终端里打出来的分类标记。
+- 所有数字统一 tabular-nums，跳数时不抖动，多行金额右对齐成一根柱子。
+
+## Layout
+
+- **Spacing 系统**：4 / 8 / 16 / 24 / 40 / 96 的 4pt 基数阶梯（xs→section）。段内用 8/16，卡片内用 24，模块间用 40，整屏切换用 96 制造呼吸。
+- **Grid &amp; Container**：12 列，gutter 24，最大内容宽 1200px。左对齐优先，标题与数据都咬网格左线，绝不无脑居中。
+- **Whitespace 哲学**：留白是给「已核验」这件事让位。信息密度故意压低，一屏一件主事，剩下的全是安静的午夜。密不是信息多，是对齐狠。
+
+## Elevation &amp; Depth
+
+暗色系不用投影堆层，用「结构 + 极克制的光」。
+
+| 层级 | 手法 |
+|---|---|
+| 地面 | canvas #0b1018，无任何装饰 |
+| 面板 | surface #0f1826，靠 1px hairline 描边区分，不靠亮度 |
+| 强调 | 冰蓝低强度辉光，仅「已核验」节点：`box-shadow: 0 0 0 1px rgba(94,143,255,.35), 0 0 24px -6px rgba(94,143,255,.45)` |
+
+- **辉光只用静态 box-shadow / radial-gradient**，常亮不闪，绝不动画化阴影（逐帧重绘会掉帧）。
+- **绝不用 backdrop-filter**，玻璃感用半透明纯色 `rgba(15,24,38,.72)` 替代，滚动不重绘。
+- 背景网格用一层极淡的 hairline 线阵（`linear-gradient` 铺 40px 网格，透明度 4%），静止不动。
+
+## Shapes
+
+| Token | 值 | 用途 |
+|---|---|---|
+| none | 0px | 龙骨线、数据台单元格、演示满版边——锐利即秩序 |
+| sm | 4px | 标签、列表行 |
+| md | 8px | 按钮、金句卡 |
+| lg | 14px | 卡片、数据面板 |
+| pill | 9999px | 状态胶囊（Operational / Alert） |
+
+- 几何语气：直角为主，圆角克制。企业信任感来自「像图纸一样精确」，不是像糖果一样圆。
+- 图片与图表一律直角出血或咬网格，不做有机 blob 裁切。
+
+## Components
+
+- **button-primary**：冰蓝底 + 深墨字，md 圆角。全页最多一个，永远落在龙骨线上。
+- **button-secondary**：钢蓝面 + 冷白字 + 1px 钢灰描边（描边在 CSS，不进 token）。承接次要动作。
+- **nav-bar**：canvas 底，eyebrow 等宽标签做导航项，底部一条 hairline 收口。
+- **card-feature**：surface 面板，heading 标题 + body 说明，14px 圆角，1px hairline 描边。
+- **feature-row**：能力清单的一行，左端一个冰蓝小节点咬在龙骨线上。
+- **stat-block**：等宽巨数 + muted 单位，右上角一个 up/down delta 胶囊。数字右对齐成柱。
+- **status-pill-operational / -alert**：胶囊状态灯，绿=Operational 红=Degraded，等宽全大写。
+- **tag-secure**：钢底冷白字小标签，标记「SOC-grade / Encrypted / Audited」这类合规属性（属性名虚构示意，不指代任何真实认证）。
+- **keel-divider**：1px 钢灰线元件，既做水平分隔，也竖起来当那条贯穿全局的龙骨。
+- **data-panel**：审计台，等宽表格 + hairline 行线 + tabular 数字，一次一个签名时刻。
+- **footer**：canvas 底、muted 字、顶部一条 hairline。
+
+## Presentation System
+
+16:9 演示版式，对齐 HeiGe-PPT 的「一页一句话 + 黄金三秒 + 视觉锤」。视觉锤固定是：**那条冰蓝龙骨线 + 唯一发光的核验点**。
+
+- **封面 slide-cover**：午夜蓝黑满版，左对齐一句 display-xl 主张（≤12 字），顶端一行 eyebrow 等宽标签（如 `ENTERPRISE AI · TRUST LAYER`），左侧一条冰蓝龙骨从上贯到底。黄金三秒立的是「冷静、被审计过」的气场。
+- **过渡 slide-section-divider**：钢蓝面，超大 muted 章节名压在左下，一个冰蓝大序号 `01 / 02` 咬左线，一条 8px 冰蓝短横做分节锤。
+- **数据 slide-stat-hero**：满版午夜，居中偏左一个冰蓝 display-xl 巨数（如 `99.98%`），下方一行等宽审计句带时间戳，末位数字下一道**静止不闪**的冰蓝下划光标。数字被呈现成「被签过字的事实」。
+- **金句 slide-quote**：钢蓝面卡，一句 display-lg 占屏话，左侧龙骨 + 一个冰蓝引号节点发光。一页只放这一句。
+- **收尾 slide-closing**：唯一反转屏——整屏翻成冰蓝主色底、深墨字，一句 heading 行动号召 + 一个深色按钮。全场只有这一次让冰蓝占满，收束干脆。
+
+## Signature Moment
+
+换个模板绝对做不出来的两个签名时刻，写死：
+
+- **UI —— The Keel Line（龙骨线）**：一条连续的 1px 冰蓝 hairline，从仪表盘顶贯到底，当作整个界面的结构脊椎。所有状态节点、能力行、主按钮都「停靠」在这条线上；而**只有当前已核验的那一个节点**带低强度冰蓝辉光（静态 shadow，不动画），其余节点只是线上的暗点。信任的表达不是到处发光，是全局克制、只让一个点亮。
+- **Deck —— The Ledger Reveal（审计式揭示）**：数据页把一个巨型冰蓝数字压在午夜满版上，数字正下方是一行等宽、带时间戳、右对齐的审计句，读起来像一条已countersign 的合规记录；末位数字下压一道**静止的**冰蓝下划光标。数字不是被「宣布」的营销口号，是被「记录并签字」的事实。这套的记忆点，就是把一个数呈现得像法务证据。
+
+## Do's and Don'ts
+
+**Do**
+- 主色当信号灯用，全屏 ≤ 3 处：主按钮 / 已核验态 / 龙骨线。少亮，才值钱。
+- 数字全部走等宽 tabular-nums，右对齐成柱，让金额和时间戳可被逐行核对。
+- 分层靠 1px 钢灰 hairline 和网格，不靠加亮度、不靠堆投影。
+- 标题与数据一律左对齐咬网格左线，留白留给「一屏一件主事」。
+- 辉光只用静态 box-shadow，常亮不闪，`prefers-reduced-motion` 下全部可关。
+
+**Don't**
+- **不碰紫蓝烂大街渐变**（`#667eea → #764ba2` 及其全家桶），这是 AI 界面的身份证，本套用冰蓝单色 + 结构替代。
+- **不做居中卡片三件套**（一行标题 + 一行灰副标 + 三个等宽圆角卡整页重复），本套用龙骨线串起非对称信息，左对齐。
+- **中文绝不用日文字体渲染**，简体走 Noto Sans SC / PingFang SC，缺字变豆腐一律回炉。
+- **不动画化阴影 / 不用 backdrop-filter**，滚动重绘会掉帧；玻璃感用半透明纯色。
+- 不让语义绿红进标题，不让主色到处发光，不用 emoji 当功能图标。
+
+## Responsive Behavior
+
+移动端是重新编排的另一段叙事，不是桌面端缩一缩。
+
+| 断点 | 布局 |
+|---|---|
+| ≥ 1200px | 12 列，龙骨线走内容区左侧，数据台多列并置 |
+| 768–1199px | 8 列，数据台降为两列，卡片单列堆叠 |
+| ≤ 767px | 单列，龙骨线移到屏幕最左 16px 处贯穿，节点横向对齐折成纵向清单，巨数字 clamp 收敛保证最窄屏不溢出 |
+
+- 大标题用 `clamp()` 按最长行收字号，每行 `white-space:nowrap` 锁整行，≤390px 无孤字、无横向溢出。
+- 中文限宽用 `em`/`px` 不用 `ch`，避免中文提前折行出孤字。
+- 数据台在窄屏改为「一行一条记录」的卡片流，仍保留等宽对齐与 delta 胶囊。
+
+## Anti-Slop Pledge
+
+抹掉 Sentris 这个名字，这套依然一眼看得出是有人认真做过取舍的：它敢让整块屏幕安静下去，只留一条冰蓝龙骨和一个发光的核验点；它把每个数字排成可被逐行签字核对的审计柱；它拒绝紫蓝渐变、拒绝居中三件套、拒绝到处发光。信任不是被说出来的，是被这套克制的结构演出来的。这不是流水线生成的暗色模板，是为「企业级 AI 必须先被相信」这一件事，从头调过一遍的设计语言。
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #5e8fff;
+  --color-on-primary: #08111d;
+  --color-ink: #dde5f2;
+  --color-canvas: #0b1018;
+  --color-surface: #0f1826;
+  --color-muted: #8b98ad;
+  --color-hairline: #1c2740;
+  --color-steel: #38445c;
+  --color-up: #3ecf8e;
+  --color-down: #f26d6d;
+  --font-display-xl: &quot;Inter, \&quot;SF Pro Display\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;Inter, \&quot;SF Pro Display\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, \&quot;Cascadia Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, \&quot;Cascadia Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 64px;
+  --text-display-lg: 40px;
+  --text-heading: 24px;
+  --text-body: 16px;
+  --text-body-mono: 15px;
+  --text-eyebrow: 12px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --tracking-display-xl: -1.6px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0em;
+  --tracking-body-mono: 0.2px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.1px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-eyebrow: 600;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#5e8fff&quot;,
+        &quot;on-primary&quot;: &quot;#08111d&quot;,
+        &quot;ink&quot;: &quot;#dde5f2&quot;,
+        &quot;canvas&quot;: &quot;#0b1018&quot;,
+        &quot;surface&quot;: &quot;#0f1826&quot;,
+        &quot;muted&quot;: &quot;#8b98ad&quot;,
+        &quot;hairline&quot;: &quot;#1c2740&quot;,
+        &quot;steel&quot;: &quot;#38445c&quot;,
+        &quot;up&quot;: &quot;#3ecf8e&quot;,
+        &quot;down&quot;: &quot;#f26d6d&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;Inter, \&quot;SF Pro Display\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;Inter, \&quot;SF Pro Display\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, \&quot;Cascadia Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, \&quot;Cascadia Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;64px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1.6px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;40px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.8px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;24px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0em&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.4px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;4px&quot;,
+        &quot;md&quot;: &quot;8px&quot;,
+        &quot;lg&quot;: &quot;14px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #5e8fff;
+  --color-on-primary: #08111d;
+  --color-ink: #dde5f2;
+  --color-canvas: #0b1018;
+  --color-surface: #0f1826;
+  --color-muted: #8b98ad;
+  --color-hairline: #1c2740;
+  --color-steel: #38445c;
+  --color-up: #3ecf8e;
+  --color-down: #f26d6d;
+  --font-display-xl: &quot;Inter, \&quot;SF Pro Display\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;Inter, \&quot;SF Pro Display\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, \&quot;Cascadia Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, \&quot;Cascadia Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --text-display-xl: 64px;
+  --text-display-lg: 40px;
+  --text-heading: 24px;
+  --text-body: 16px;
+  --text-body-mono: 15px;
+  --text-eyebrow: 12px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --tracking-display-xl: -1.6px;
+  --tracking-display-lg: -0.8px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0em;
+  --tracking-body-mono: 0.2px;
+  --tracking-eyebrow: 2.4px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.1px;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 600;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-eyebrow: 600;
+  --font-weight-button: 600;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Sentris is the enterprise-AI dark system engineered for trust, not spectacle. A midnight blue-black canvas holds one restrained ice-blue accent that only glows where verification happens; steel-gray structure carries the weight, Inter runs a strict step scale, and tabular monospace presents every number as a countersigned fact. Signature move: a single continuous ice-blue keel line threads every dashboard, and low-intensity static glow is reserved for the one currently-verified state.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.369,
+          0.561,
+          1
+        ],
+        &quot;hex&quot;: &quot;#5e8fff&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.031,
+          0.067,
+          0.114
+        ],
+        &quot;hex&quot;: &quot;#08111d&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.867,
+          0.898,
+          0.949
+        ],
+        &quot;hex&quot;: &quot;#dde5f2&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.043,
+          0.063,
+          0.094
+        ],
+        &quot;hex&quot;: &quot;#0b1018&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.059,
+          0.094,
+          0.149
+        ],
+        &quot;hex&quot;: &quot;#0f1826&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.545,
+          0.596,
+          0.678
+        ],
+        &quot;hex&quot;: &quot;#8b98ad&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.11,
+          0.153,
+          0.251
+        ],
+        &quot;hex&quot;: &quot;#1c2740&quot;
+      }
+    },
+    &quot;steel&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.22,
+          0.267,
+          0.361
+        ],
+        &quot;hex&quot;: &quot;#38445c&quot;
+      }
+    },
+    &quot;up&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.243,
+          0.812,
+          0.557
+        ],
+        &quot;hex&quot;: &quot;#3ecf8e&quot;
+      }
+    },
+    &quot;down&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.949,
+          0.427,
+          0.427
+        ],
+        &quot;hex&quot;: &quot;#f26d6d&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 14,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;SF Pro Display\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 64,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1.6,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;SF Pro Display\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 40,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.8,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 24,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;em&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, \&quot;Cascadia Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;JetBrains Mono\&quot;, \&quot;SF Mono\&quot;, \&quot;Cascadia Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;Inter, \&quot;SF Pro Text\&quot;, \&quot;Segoe UI\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 午夜蓝（midnight-trust · 暗色科技）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `midnight-trust` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#5e8fff` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Inter`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint midnight-trust` / 导出其它格式：`heige-design export midnight-trust --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 午夜蓝 — 原创设定集，可商用。跑校验：<code>heige-design lint midnight-trust</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

@@ -1,0 +1,900 @@
+[
+  {
+    "slug": "forge-anvil",
+    "family": "凶悍工业",
+    "cn": "熔炉",
+    "name": "forge-anvil-design-system",
+    "primary": "#c8ff00",
+    "bg": "#0c0d0e",
+    "dark": true,
+    "palette": [
+      "#c8ff00",
+      "#0c0d0e",
+      "#f5f6f3",
+      "#17191b",
+      "#9a9d9f",
+      "#313437",
+      "#ff5a1f"
+    ]
+  },
+  {
+    "slug": "rebar-concrete",
+    "family": "凶悍工业",
+    "cn": "钢筋",
+    "name": "Rebar-design-system",
+    "primary": "#ff5b1f",
+    "bg": "#b8b5ad",
+    "dark": false,
+    "palette": [
+      "#ff5b1f",
+      "#17181a",
+      "#b8b5ad",
+      "#d9d6cd",
+      "#3c3e41",
+      "#6a6862"
+    ]
+  },
+  {
+    "slug": "riot-press",
+    "family": "凶悍工业",
+    "cn": "暴走印刷",
+    "name": "RiotPress-design-system",
+    "primary": "#ffe600",
+    "bg": "#e7e4da",
+    "dark": false,
+    "palette": [
+      "#ffe600",
+      "#0b0a06",
+      "#14130f",
+      "#e7e4da",
+      "#171610",
+      "#f2efe4",
+      "#57564d"
+    ]
+  },
+  {
+    "slug": "ironclad-ledger",
+    "family": "凶悍工业",
+    "cn": "铁账",
+    "name": "IroncladLedger-design-system",
+    "primary": "#b7410e",
+    "bg": "#1b1d20",
+    "dark": true,
+    "palette": [
+      "#b7410e",
+      "#f5efe3",
+      "#1b1d20",
+      "#26282c",
+      "#9a9ca1",
+      "#3a3d42",
+      "#3fb950"
+    ]
+  },
+  {
+    "slug": "brut-signal",
+    "family": "凶悍工业",
+    "cn": "呐喊",
+    "name": "BrutSignal-design-system",
+    "primary": "#e00000",
+    "bg": "#f4efe3",
+    "dark": false,
+    "palette": [
+      "#e00000",
+      "#ffffff",
+      "#141414",
+      "#f4efe3",
+      "#0a0a0a",
+      "#57534a",
+      "#d7d0c2"
+    ]
+  },
+  {
+    "slug": "nocturne-teal",
+    "family": "暗色科技",
+    "cn": "深空电青",
+    "name": "Halonyx-design-system",
+    "primary": "#2dd4bf",
+    "bg": "#08090d",
+    "dark": true,
+    "palette": [
+      "#2dd4bf",
+      "#031815",
+      "#e9edf3",
+      "#08090d",
+      "#0f1319",
+      "#8a94a4",
+      "#20262f"
+    ]
+  },
+  {
+    "slug": "aurora-mesh",
+    "family": "暗色科技",
+    "cn": "极光",
+    "name": "AuroraMesh-design-system",
+    "primary": "#34d399",
+    "bg": "#0a0b12",
+    "dark": true,
+    "palette": [
+      "#34d399",
+      "#06131f",
+      "#38bdf8",
+      "#7dd3fc",
+      "#e6edf3",
+      "#94a3b8",
+      "#0a0b12"
+    ]
+  },
+  {
+    "slug": "carbon-lime",
+    "family": "暗色科技",
+    "cn": "碳黑电绿",
+    "name": "carbon-lime-design-system",
+    "primary": "#b4ff39",
+    "bg": "#0a0a0a",
+    "dark": true,
+    "palette": [
+      "#b4ff39",
+      "#0a0a0a",
+      "#e8ece2",
+      "#131512",
+      "#868d7d",
+      "#262a22",
+      "#6f8f2a"
+    ]
+  },
+  {
+    "slug": "midnight-trust",
+    "family": "暗色科技",
+    "cn": "午夜蓝",
+    "name": "Sentris-design-system",
+    "primary": "#5e8fff",
+    "bg": "#0b1018",
+    "dark": true,
+    "palette": [
+      "#5e8fff",
+      "#08111d",
+      "#dde5f2",
+      "#0b1018",
+      "#0f1826",
+      "#8b98ad",
+      "#1c2740"
+    ]
+  },
+  {
+    "slug": "obsidian-flux",
+    "family": "暗色科技",
+    "cn": "黑曜流光",
+    "name": "ObsidianFlux-design-system",
+    "primary": "#7c5cff",
+    "bg": "#060608",
+    "dark": true,
+    "palette": [
+      "#7c5cff",
+      "#050506",
+      "#eceaf4",
+      "#060608",
+      "#0f0e17",
+      "#8b899c",
+      "#232130"
+    ]
+  },
+  {
+    "slug": "void-hud",
+    "family": "暗色科技",
+    "cn": "虚空仪表",
+    "name": "VoidHud-design-system",
+    "primary": "#22d3ee",
+    "bg": "#0b0e11",
+    "dark": true,
+    "palette": [
+      "#22d3ee",
+      "#04181d",
+      "#d7e5ec",
+      "#0b0e11",
+      "#12171d",
+      "#8194a0",
+      "#202a33"
+    ]
+  },
+  {
+    "slug": "sermon-serif",
+    "family": "优雅编辑",
+    "cn": "布道",
+    "name": "sermon-serif-design-system",
+    "primary": "#1a1a18",
+    "bg": "#faf7f2",
+    "dark": false,
+    "palette": [
+      "#1a1a18",
+      "#faf7f2",
+      "#23201b",
+      "#f2ebde",
+      "#6c645a",
+      "#ddd4c4",
+      "#935428"
+    ]
+  },
+  {
+    "slug": "noir-vermilion",
+    "family": "优雅编辑",
+    "cn": "玄墨绛红",
+    "name": "NoirVermilion-design-system",
+    "primary": "#CE1432",
+    "bg": "#141210",
+    "dark": true,
+    "palette": [
+      "#CE1432",
+      "#F7F4ED",
+      "#EDEAE3",
+      "#141210",
+      "#1C1916",
+      "#9A9082",
+      "#34302B"
+    ]
+  },
+  {
+    "slug": "broadsheet",
+    "family": "优雅编辑",
+    "cn": "大报",
+    "name": "Broadsheet-design-system",
+    "primary": "#c0392b",
+    "bg": "#f4f1ea",
+    "dark": false,
+    "palette": [
+      "#c0392b",
+      "#faf8f3",
+      "#1c1a16",
+      "#f4f1ea",
+      "#ece6d8",
+      "#5c554a",
+      "#cdc6b8"
+    ]
+  },
+  {
+    "slug": "atelier-bone",
+    "family": "优雅编辑",
+    "cn": "象牙工坊",
+    "name": "AtelierBone-design-system",
+    "primary": "#a98b4e",
+    "bg": "#f3ede1",
+    "dark": false,
+    "palette": [
+      "#a98b4e",
+      "#1e1c18",
+      "#33302b",
+      "#f3ede1",
+      "#faf6ec",
+      "#6b655c",
+      "#d9cfbd"
+    ]
+  },
+  {
+    "slug": "manifesto-ink",
+    "family": "优雅编辑",
+    "cn": "墨宣言",
+    "name": "Redline-design-system",
+    "primary": "#15110a",
+    "bg": "#f7f4ee",
+    "dark": false,
+    "palette": [
+      "#15110a",
+      "#faf7f1",
+      "#1d1710",
+      "#f7f4ee",
+      "#efe8db",
+      "#6d6353",
+      "#d8cfbe"
+    ]
+  },
+  {
+    "slug": "helvetic-ledger",
+    "family": "瑞士纪律",
+    "cn": "账本",
+    "name": "Rulewerk-design-system",
+    "primary": "#d81f1a",
+    "bg": "#f5f5f3",
+    "dark": false,
+    "palette": [
+      "#d81f1a",
+      "#ffffff",
+      "#141414",
+      "#f5f5f3",
+      "#616160",
+      "#dcdcd9",
+      "#efeeeb"
+    ]
+  },
+  {
+    "slug": "grid-bureau",
+    "family": "瑞士纪律",
+    "cn": "制表局",
+    "name": "GridBureau-design-system",
+    "primary": "#2757d6",
+    "bg": "#f4f5f7",
+    "dark": false,
+    "palette": [
+      "#2757d6",
+      "#ffffff",
+      "#1a1d24",
+      "#f4f5f7",
+      "#5b6270",
+      "#d5d8dd",
+      "#e4e6ea"
+    ]
+  },
+  {
+    "slug": "datum-signal",
+    "family": "瑞士纪律",
+    "cn": "数点",
+    "name": "DatumSignal-design-system",
+    "primary": "#1f4dff",
+    "bg": "#fbfbfa",
+    "dark": false,
+    "palette": [
+      "#1f4dff",
+      "#ffffff",
+      "#15171c",
+      "#fbfbfa",
+      "#565c65",
+      "#e6e6e4",
+      "#15803d"
+    ]
+  },
+  {
+    "slug": "akkurat-mono",
+    "family": "瑞士纪律",
+    "cn": "精准等宽",
+    "name": "AkkuratMono-design-system",
+    "primary": "#0E4FE1",
+    "bg": "#F7F7F5",
+    "dark": false,
+    "palette": [
+      "#0E4FE1",
+      "#FFFFFF",
+      "#18191C",
+      "#F7F7F5",
+      "#63656C",
+      "#E3E3DF"
+    ]
+  },
+  {
+    "slug": "synthwave-drive",
+    "family": "复古未来",
+    "cn": "合成波",
+    "name": "SynthwaveDrive-design-system",
+    "primary": "#ff2fb9",
+    "bg": "#17102b",
+    "dark": true,
+    "palette": [
+      "#ff2fb9",
+      "#12061f",
+      "#ece7ff",
+      "#17102b",
+      "#241a49",
+      "#9a8fc4",
+      "#34275f"
+    ]
+  },
+  {
+    "slug": "y2k-chrome",
+    "family": "复古未来",
+    "cn": "千禧金属",
+    "name": "y2k-chrome-design-system",
+    "primary": "#4d5bff",
+    "bg": "#ebedf5",
+    "dark": false,
+    "palette": [
+      "#4d5bff",
+      "#ffffff",
+      "#16172b",
+      "#ebedf5",
+      "#f6f7fb",
+      "#5a5d78",
+      "#c9ccd4"
+    ]
+  },
+  {
+    "slug": "arcade-crt",
+    "family": "复古未来",
+    "cn": "街机荧光",
+    "name": "arcade-crt-design-system",
+    "primary": "#33ff66",
+    "bg": "#060806",
+    "dark": true,
+    "palette": [
+      "#33ff66",
+      "#041006",
+      "#cfffd8",
+      "#060806",
+      "#0e150e",
+      "#6fae83",
+      "#1c3a26"
+    ]
+  },
+  {
+    "slug": "vaporwave-marble",
+    "family": "复古未来",
+    "cn": "蒸汽石膏",
+    "name": "gesso-design-system",
+    "primary": "#ff5fb0",
+    "bg": "#f3ecf7",
+    "dark": false,
+    "palette": [
+      "#ff5fb0",
+      "#241832",
+      "#2b1d3f",
+      "#f3ecf7",
+      "#fbf7fd",
+      "#705c86",
+      "#e4d6ef"
+    ]
+  },
+  {
+    "slug": "cassette-futurism",
+    "family": "复古未来",
+    "cn": "磁带未来",
+    "name": "Ferrite-design-system",
+    "primary": "#d9662a",
+    "bg": "#e8e0cf",
+    "dark": false,
+    "palette": [
+      "#d9662a",
+      "#1c1710",
+      "#241f17",
+      "#e8e0cf",
+      "#f1ebdc",
+      "#5e5544",
+      "#c9bfa8"
+    ]
+  },
+  {
+    "slug": "clayfield",
+    "family": "有机自然",
+    "cn": "陶土",
+    "name": "Clayfield-design-system",
+    "primary": "#a8482a",
+    "bg": "#f2e9dc",
+    "dark": false,
+    "palette": [
+      "#a8482a",
+      "#faf5ec",
+      "#3a2e26",
+      "#f2e9dc",
+      "#fbf5ea",
+      "#6f5f52",
+      "#e2d5c2"
+    ]
+  },
+  {
+    "slug": "morandi-still",
+    "family": "有机自然",
+    "cn": "莫兰迪静物",
+    "name": "morandi-still-design-system",
+    "primary": "#55676B",
+    "bg": "#E7E1D6",
+    "dark": false,
+    "palette": [
+      "#55676B",
+      "#F4F0E8",
+      "#3B3833",
+      "#E7E1D6",
+      "#F1ECE3",
+      "#695F52",
+      "#D6CFC2"
+    ]
+  },
+  {
+    "slug": "linen-fold",
+    "family": "有机自然",
+    "cn": "亚麻褶",
+    "name": "LinenFold-design-system",
+    "primary": "#5c6b45",
+    "bg": "#e7ddc9",
+    "dark": false,
+    "palette": [
+      "#5c6b45",
+      "#f6f1e7",
+      "#2e2a20",
+      "#e7ddc9",
+      "#f3ecdd",
+      "#635b48",
+      "#d6c9ae"
+    ]
+  },
+  {
+    "slug": "harvest-warm",
+    "family": "有机自然",
+    "cn": "丰收",
+    "name": "Croftmark-design-system",
+    "primary": "#8a5a2b",
+    "bg": "#f4ebd9",
+    "dark": false,
+    "palette": [
+      "#8a5a2b",
+      "#f9f3e2",
+      "#2e2114",
+      "#f4ebd9",
+      "#fbf5e7",
+      "#71603f",
+      "#d8c7a3"
+    ]
+  },
+  {
+    "slug": "boing-candy",
+    "family": "玩味玩具",
+    "cn": "弹跳糖",
+    "name": "boing-candy-design-system",
+    "primary": "#FF5CA8",
+    "bg": "#FFF6FB",
+    "dark": false,
+    "palette": [
+      "#FF5CA8",
+      "#2E1A47",
+      "#FFF6FB",
+      "#FFFFFF",
+      "#7A5C8E",
+      "#F1D9E8",
+      "#33D9B2"
+    ]
+  },
+  {
+    "slug": "jelly-pop",
+    "family": "玩味玩具",
+    "cn": "果冻",
+    "name": "JellyPop-design-system",
+    "primary": "#D61F76",
+    "bg": "#FFF3F9",
+    "dark": false,
+    "palette": [
+      "#D61F76",
+      "#FFFFFF",
+      "#2E1A36",
+      "#FFF3F9",
+      "#7A5C77",
+      "#F6D9E9",
+      "#07C4B4"
+    ]
+  },
+  {
+    "slug": "sticker-club",
+    "family": "玩味玩具",
+    "cn": "贴纸俱乐部",
+    "name": "sticker-club-design-system",
+    "primary": "#2536e8",
+    "bg": "#f5f1e6",
+    "dark": false,
+    "palette": [
+      "#2536e8",
+      "#ffffff",
+      "#17171f",
+      "#f5f1e6",
+      "#63625b",
+      "#e4dfd0",
+      "#ff3b3b"
+    ]
+  },
+  {
+    "slug": "doodle-note",
+    "family": "玩味玩具",
+    "cn": "涂鸦本",
+    "name": "DoodleNote-design-system",
+    "primary": "#1f3f73",
+    "bg": "#faf7ee",
+    "dark": false,
+    "palette": [
+      "#1f3f73",
+      "#fbf8ef",
+      "#1e2a38",
+      "#faf7ee",
+      "#fffdf6",
+      "#5f5a50",
+      "#d5dbe6"
+    ]
+  },
+  {
+    "slug": "wenkai-warm",
+    "family": "温暖人文",
+    "cn": "文楷暖",
+    "name": "WenkaiWarm-design-system",
+    "primary": "#b34f30",
+    "bg": "#efe7d6",
+    "dark": false,
+    "palette": [
+      "#b34f30",
+      "#fbf4e6",
+      "#33291f",
+      "#efe7d6",
+      "#f7f1e3",
+      "#6f5f4b",
+      "#ddd2bc"
+    ]
+  },
+  {
+    "slug": "hearth-story",
+    "family": "温暖人文",
+    "cn": "炉边",
+    "name": "hearth-story-design-system",
+    "primary": "#ac4914",
+    "bg": "#f4ece0",
+    "dark": false,
+    "palette": [
+      "#ac4914",
+      "#fdf6ec",
+      "#33251a",
+      "#f4ece0",
+      "#eadfcb",
+      "#7a6552",
+      "#d8c9b2"
+    ]
+  },
+  {
+    "slug": "almanac-folk",
+    "family": "温暖人文",
+    "cn": "民历",
+    "name": "Tongshu-design-system",
+    "primary": "#c23b22",
+    "bg": "#ead9b8",
+    "dark": false,
+    "palette": [
+      "#c23b22",
+      "#fdf6e6",
+      "#2a1e12",
+      "#ead9b8",
+      "#f4ecd6",
+      "#5f4f33",
+      "#c8b083"
+    ]
+  },
+  {
+    "slug": "coffee-house",
+    "family": "温暖人文",
+    "cn": "咖啡馆",
+    "name": "coffee-house-design-system",
+    "primary": "#4a352a",
+    "bg": "#efe3d3",
+    "dark": false,
+    "palette": [
+      "#4a352a",
+      "#f4ebda",
+      "#3a2a20",
+      "#efe3d3",
+      "#f7efe1",
+      "#6f5b48",
+      "#dcccb6"
+    ]
+  },
+  {
+    "slug": "soundwave-wrapped",
+    "family": "张扬极繁",
+    "cn": "声浪",
+    "name": "soundwave-design-system",
+    "primary": "#FF2D95",
+    "bg": "#0E0C14",
+    "dark": true,
+    "palette": [
+      "#FF2D95",
+      "#140F14",
+      "#F7F4EC",
+      "#0E0C14",
+      "#1B1826",
+      "#ADA8BC",
+      "#2E2B3C"
+    ]
+  },
+  {
+    "slug": "acg-stellar",
+    "family": "张扬极繁",
+    "cn": "二次元星轨",
+    "name": "acg-stellar-design-system",
+    "primary": "#FF1F8F",
+    "bg": "#F4F5FB",
+    "dark": false,
+    "palette": [
+      "#FF1F8F",
+      "#1A0F2E",
+      "#16122B",
+      "#F4F5FB",
+      "#FFFFFF",
+      "#5B5470",
+      "#DAD8E8"
+    ]
+  },
+  {
+    "slug": "collage-riot",
+    "family": "张扬极繁",
+    "cn": "拼贴暴动",
+    "name": "CollageRiot-design-system",
+    "primary": "#FF1F8E",
+    "bg": "#EDE7D8",
+    "dark": false,
+    "palette": [
+      "#FF1F8E",
+      "#0A0A0A",
+      "#17140F",
+      "#EDE7D8",
+      "#F7F2E8",
+      "#5E5749",
+      "#26221B"
+    ]
+  },
+  {
+    "slug": "neon-market",
+    "family": "张扬极繁",
+    "cn": "霓虹夜市",
+    "name": "NeonMarket-design-system",
+    "primary": "#ff2e4d",
+    "bg": "#0d0b0f",
+    "dark": true,
+    "palette": [
+      "#ff2e4d",
+      "#140b0d",
+      "#f7ede9",
+      "#0d0b0f",
+      "#181419",
+      "#a89aa2",
+      "#332b32"
+    ]
+  },
+  {
+    "slug": "onyx-gold",
+    "family": "奢侈高定",
+    "cn": "玄金",
+    "name": "OnyxGold-design-system",
+    "primary": "#b8912e",
+    "bg": "#060606",
+    "dark": true,
+    "palette": [
+      "#b8912e",
+      "#060606",
+      "#ede6d3",
+      "#100e0a",
+      "#a69b80",
+      "#4a3d22",
+      "#e4c466"
+    ]
+  },
+  {
+    "slug": "champagne-silk",
+    "family": "奢侈高定",
+    "cn": "香槟丝绸",
+    "name": "ChampagneSilk-design-system",
+    "primary": "#e8d9be",
+    "bg": "#f7f0e4",
+    "dark": false,
+    "palette": [
+      "#e8d9be",
+      "#241d1a",
+      "#2b2320",
+      "#f7f0e4",
+      "#fdf8f0",
+      "#715d4b",
+      "#e6d5b8"
+    ]
+  },
+  {
+    "slug": "monogram-noir",
+    "family": "奢侈高定",
+    "cn": "字母黑",
+    "name": "MonogramNoir-design-system",
+    "primary": "#111111",
+    "bg": "#EFE9DF",
+    "dark": false,
+    "palette": [
+      "#111111",
+      "#EFE9DF",
+      "#1C1814",
+      "#F5F0E7",
+      "#625B50",
+      "#D8D0C2",
+      "#6E1423"
+    ]
+  },
+  {
+    "slug": "marble-vein",
+    "family": "奢侈高定",
+    "cn": "大理石纹",
+    "name": "MarbleVein-design-system",
+    "primary": "#1f2228",
+    "bg": "#f0ede8",
+    "dark": false,
+    "palette": [
+      "#1f2228",
+      "#f0ede8",
+      "#2a2d33",
+      "#f6f4ef",
+      "#5f636b",
+      "#d8d3c9",
+      "#828b97"
+    ]
+  },
+  {
+    "slug": "moxi-void",
+    "family": "东方新中式",
+    "cn": "水墨留白",
+    "name": "MoxiVoid-design-system",
+    "primary": "#1c1a17",
+    "bg": "#f4f0e6",
+    "dark": false,
+    "palette": [
+      "#1c1a17",
+      "#f6f1e4",
+      "#f4f0e6",
+      "#fbf8f0",
+      "#6b655c",
+      "#d9d2c2",
+      "#c8483a"
+    ]
+  },
+  {
+    "slug": "gugong-red",
+    "family": "东方新中式",
+    "cn": "故宫红金",
+    "name": "GugongRed-design-system",
+    "primary": "#9A2B2B",
+    "bg": "#F3EAD6",
+    "dark": false,
+    "palette": [
+      "#9A2B2B",
+      "#F5EFE1",
+      "#241A15",
+      "#F3EAD6",
+      "#FBF6EA",
+      "#746351",
+      "#D9C7A0"
+    ]
+  },
+  {
+    "slug": "song-celadon",
+    "family": "东方新中式",
+    "cn": "宋瓷极简",
+    "name": "SongCeladon-design-system",
+    "primary": "#a3b7a0",
+    "bg": "#f2f0ea",
+    "dark": false,
+    "palette": [
+      "#a3b7a0",
+      "#20272a",
+      "#2a322c",
+      "#f2f0ea",
+      "#f8f6f0",
+      "#586459",
+      "#d3d8cc"
+    ]
+  },
+  {
+    "slug": "guochao-cyber",
+    "family": "东方新中式",
+    "cn": "赛博国潮",
+    "name": "GuochaoCyber-design-system",
+    "primary": "#d52823",
+    "bg": "#0c0b0d",
+    "dark": true,
+    "palette": [
+      "#d52823",
+      "#fdf6ea",
+      "#f2ebdb",
+      "#0c0b0d",
+      "#171419",
+      "#9a9088",
+      "#2a2530"
+    ]
+  },
+  {
+    "slug": "dunhuang-mineral",
+    "family": "东方新中式",
+    "cn": "敦煌矿彩",
+    "name": "DunhuangMineral-design-system",
+    "primary": "#2e6b8f",
+    "bg": "#ece1cb",
+    "dark": false,
+    "palette": [
+      "#2e6b8f",
+      "#f6f1e4",
+      "#2a2018",
+      "#ece1cb",
+      "#f4ebd8",
+      "#5f5540",
+      "#d6c8a8"
+    ]
+  }
+]

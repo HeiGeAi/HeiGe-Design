@@ -1,0 +1,969 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>千禧金属 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 复古未来</div>
+<div class="hero"><div class="fam">复古未来</div><h1>千禧金属<span class="badge">✓ lint 0 error</span></h1><div class="slug">y2k-chrome · y2k-chrome-design-system</div><p class="desc">Y2K liquid-chrome for fashion, toy, beauty and Gen-Z brands. Electric blue</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#ebedf5;--ink:#16172b;--pri:#4d5bff;--onpri:#ffffff;--acc:#ff86d0;--surf:#f6f7fb;--muted:#5a5d78;--line:#c9ccd4;--r:12px;--dff:"Baloo 2", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"DM Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", ui-monospace, "SFMono-Regular", "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">千禧金属</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#4d5bff"></i><i style="background:#ffffff"></i><i style="background:#16172b"></i><i style="background:#ebedf5"></i><i style="background:#f6f7fb"></i><i style="background:#5a5d78"></i><i style="background:#c9ccd4"></i><i style="background:#ff86d0"></i></div>
+  <div class="swrap"><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">button-accent</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">badge-pill</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">card-feature</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">divider-chrome</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">meta-caption</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">footer</span></div>
+  </div>
+  <div class="card" style="--bg:#ebedf5;--ink:#16172b;--pri:#4d5bff;--onpri:#ffffff;--acc:#ff86d0;--surf:#f6f7fb;--muted:#5a5d78;--line:#c9ccd4;--r:12px;--dff:"Baloo 2", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"DM Sans", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", ui-monospace, "SFMono-Regular", "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">千禧金属</div></div>
+    <div class="swrap"><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#f6f7fb;color:#16172b;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI — Mercury Sparkle Button (水银星芒按钮).** The primary CTA is not a flat blue pill. It is mercury: a layered silver-to-electric-blue chrome gradient reading as a reflected horizon on curved metal, a static silver highlight lip along the top edge, and exactly **one four-point star glint** parked at the top-left corner. On hover the glint scales up (`transform` only, never an animated shadow); the metal itself stays still. It looks like a drop of liquid chrome you could press into. Swap the template and this button is gone — no generic system produces beveled mercury with a single deliberate sparkle.
+
+**Deck — Chrome Hero Word in a Blob (铬字浮泡封面).** The cover's visual hammer is one word set in Baloo 2 800 with `background-clip: text` filling it with the silver→blue chrome gradient, floated inside an asymmetric organic blob, crowned by a lone star glint. Chrome letterform + blob container + s</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Keep electric blue as the *only* interactive color, so pressability is instantly legible.
+- Spend bubblegum pink exactly once per view — one chip, one quote slide.
+- Treat chrome silver as a material (bevels, hairlines, gradient sweeps), never a flat fill.
+- Let one blob break the grid; keep everything else on strict alignment.
+- Ship exactly one star glint per composition. Two is confetti.
+
+**Don't**
+- **Don't touch the purple-blue AI gradient** (`#667eea → #764ba2`) or any of its family. This system's blue is `#4d5bff` on solid grounds, never that cliché wash.
+- **Don't build the centered-card trilogy** — title, gray subtitle, three equal rounded cards repeating down the page. Break symmetry with blobs and off-axis nav.
+- **Never render Chinese in a Japanese font** (Mochiy, Zen Maru). Simplified glyphs must land on Noto Sans SC / PingFang SC.
+- **Don't animate shadows or glows.** Chrome bevels and star glints are static; only `transform`/`opacity` move.
+- Don't multiply candy colors, don't chrome-treat body text, don't blob everything.</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: y2k-chrome-design-system
+description: Y2K liquid-chrome for fashion, toy, beauty and Gen-Z brands. Electric blue #4d5bff carries every interactive surface, chrome silver #c9ccd4 supplies the beveled metal edge, and bubblegum pink #ff86d0 pops as the single accent. Chubby rounded Baloo 2 headings wear a silver-to-blue chrome sheen while Space Mono runs the digital readouts. Signature move is a mercury-beveled pill with one four-point star glint, organic blob masks, and a strict no purple-blue gradient rule.
+
+colors:
+  primary: &quot;#4d5bff&quot;
+  on-primary: &quot;#ffffff&quot;
+  ink: &quot;#16172b&quot;
+  canvas: &quot;#ebedf5&quot;
+  surface: &quot;#f6f7fb&quot;
+  muted: &quot;#5a5d78&quot;
+  hairline: &quot;#c9ccd4&quot;
+  accent: &quot;#ff86d0&quot;
+  on-accent: &quot;#2b1024&quot;
+
+typography:
+  display-xl:
+    fontFamily: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 76px
+    fontWeight: 800
+    lineHeight: 1.0
+    letterSpacing: -1.5px
+  display-lg:
+    fontFamily: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 52px
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: -1px
+  heading:
+    fontFamily: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 30px
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: -0.4px
+  body:
+    fontFamily: &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.65
+    letterSpacing: 0px
+  body-mono:
+    fontFamily: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+    fontSize: 15px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 0px
+  button:
+    fontFamily: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 16px
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: 0.2px
+  caption:
+    fontFamily: &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 13px
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: 0.2px
+  eyebrow:
+    fontFamily: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+    fontSize: 12px
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: 2.5px
+
+rounded:
+  none: 0px
+  sm: 6px
+  md: 12px
+  lg: 20px
+  xl: 32px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 80px
+
+components:
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-accent:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.on-accent}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  badge-pill:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.on-accent}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  nav-bar:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  card-feature:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.xl}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  divider-chrome:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    height: 2px
+  meta-caption:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.sm} {spacing.md}&quot;
+  footer:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.surface}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.surface}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.on-accent}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# 千禧金属 · Y2K Chrome
+
+Liquid metal, jelly gloss, and one four-point star glint. This is the year-2000 daydream of the future rebuilt as a working design system for fashion, toy, beauty, and Gen-Z brands — chrome that flexes, pink that pops, blue that carries the weight.
+
+## Overview
+
+千禧金属 runs on a three-material logic, not a three-color palette. **Electric blue `#4d5bff` is the only interactive surface** — every button, every closing slide, every thing you can press glows the same electric indigo. **Chrome silver `#c9ccd4` is a material, never a fill** — it lives exclusively as beveled hairline edges, the light-catching lip on a card, the sweep across a mercury pill. **Bubblegum pink `#ff86d0` is the one permitted scream** — used once per view, on an accent chip or a full-bleed quote slide, and then it shuts up.
+
+The rhythm is glossy but disciplined. Type is chubby and rounded (Baloo 2) so the chrome sheen has round shoulders to travel across; numbers and labels drop to Space Mono for that early-2000s digital-readout coldness. The whole system swings between **pearl-light UI** (cool silver canvas, so blue and pink burn bright) and **saturated full-bleed slides** (blue or pink edge to edge). No gray middle ground, no safe minimal.
+
+The signature is a metal treatment you apply, not a decoration you drop in: a silver-to-blue chrome gradient on heading glyphs, an organic blob mask on imagery, and exactly one star sparkle per composition. Restraint is what keeps Y2K from becoming a costume.
+
+## Colors
+
+### Brand &amp; Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#4d5bff` | Electric blue. Every interactive surface — buttons, links, the closing slide. White text on it clears AA (~4.9:1). |
+| `accent` | `#ff86d0` | Bubblegum pink. One appearance per view: an accent chip, a badge, or a full-bleed quote slide. |
+| `on-primary` | `#ffffff` | Text and icons riding on electric blue. |
+| `on-accent` | `#2b1024` | Deep plum ink on bubblegum pink (~8:1). Not black — a bubblegum-native dark that keeps the sugar. |
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#ebedf5` | Cool pearl page base. Slightly blue-silver so chrome edges read as metal, not gray. |
+| `surface` | `#f6f7fb` | Brighter chrome-white for cards, nav, secondary buttons. |
+| `hairline` | `#c9ccd4` | Chrome silver. The material token — beveled borders, card lips, the metal in the mercury pill. Never a background fill. |
+
+### Text
+| Token | Hex | Role |
+|---|---|---|
+| `ink` | `#16172b` | Deep gunmetal-navy body and heading text. Cool chrome black, never `#000`. |
+| `muted` | `#5a5d78` | Slate secondary text on light surfaces (~6:1 on canvas). Timestamps, meta, captions. |
+
+### Semantic note
+This system stays intentionally lean on semantic color. Success/warning states borrow the accent pink for attention and the ink for calm; it never introduces a second saturated hue, because two competing candy colors is exactly how Y2K collapses into clown.
+
+## Typography
+
+### Font Family
+- **Display / Headings / Buttons — Baloo 2.** Chubby, rounded, heavy (800/700). Round shoulders are what let the chrome gradient sweep look like reflected light instead of a flat fill. Falls back through `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif` so Chinese renders in the proper simplified system face.
+- **Body / Caption — DM Sans.** A neutral, slightly geometric workhorse that gets out of the way and lets the chrome display carry all personality. Same CJK fallback tail.
+- **Data / Readouts / Eyebrow — Space Mono.** Numbers, stat blocks, and uppercase digital labels. That monospaced tick is the coldest, most Y2K-terminal thing in the system, offsetting all the sugar.
+
+**Chinese rule (hard):** every stack ends in `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;` (sans) — Baloo 2 and DM Sans carry no CJK, so Simplified Chinese must land on a true system face. **Never a Japanese font** (Mochiy, Zen Maru): Simplified glyphs would drop to tofu or render as Japanese variants. If you ever need a chubby *Chinese* display face to match Baloo 2's mood, reach for `ZCOOL KuaiLe` — not a Japanese round gothic.
+
+### Hierarchy
+| Role | Family | Size | Weight | Line | Tracking |
+|---|---|---|---|---|---|
+| display-xl | Baloo 2 | 76 | 800 | 1.0 | -1.5 |
+| display-lg | Baloo 2 | 52 | 800 | 1.05 | -1.0 |
+| heading | Baloo 2 | 30 | 700 | 1.15 | -0.4 |
+| body | DM Sans | 17 | 400 | 1.65 | 0 |
+| body-mono | Space Mono | 15 | 400 | 1.5 | 0 |
+| button | Baloo 2 | 16 | 700 | 1.0 | 0.2 |
+| caption | DM Sans | 13 | 500 | 1.4 | 0.2 |
+| eyebrow | Space Mono | 12 | 700 | 1.0 | 2.5 |
+
+### Principles
+- The chrome sheen is a *heading-only* treatment. Body text stays solid ink — chrome on running text is unreadable and screams template.
+- Display-to-body contrast holds at roughly 4.5:1 in size. The hero word is allowed to be almost obnoxiously large; that oversize is the point.
+- Eyebrows are always uppercase Space Mono with wide 2.5px tracking. They read like a device label, cold against the warm rounded display.
+
+## Layout
+
+**Spacing.** An 8px-derived scale: `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 80`. Cards breathe on `xl` internal padding so the beveled chrome edge has room to catch light. Sections separate on `section` (80px) — Y2K wants air around each glossy object, like product shots on a white sweep.
+
+**Grid &amp; container.** 12-column, ~1200px max content width, 24px gutters. Blob-masked imagery is allowed to break the grid and bleed past a column edge; text never does. The tension between a strict grid and one escaping organic blob is the whole layout game.
+
+**Whitespace.** Light UI leans on generous pearl negative space so the electric blue and bubblegum pink read as jewels, not walls. On saturated slides the logic flips: color goes edge-to-edge and whitespace becomes the dark ink margin around a single chrome word.
+
+## Elevation &amp; Depth
+
+Depth here is *metal*, not soft shadow. Chrome reads through a **two-tone bevel**, not a blur.
+
+| Layer | Treatment |
+|---|---|
+| Flat (canvas) | No shadow. Pearl base. |
+| Raised card | 1px `hairline` top/left light edge + a static, un-animated drop shadow beneath. Never a glowing halo. |
+| Mercury / chrome object | A layered linear-gradient (light silver at top → mid-gray → electric blue at bottom) simulating a reflected horizon on curved metal. Applied as background or `background-clip: text`. |
+| Star glint | A single 4-point sparkle (CSS `clip-path` polygon or tiny inline SVG) with a static white core. |
+
+Hard rules: **no `backdrop-filter`** (it repaints every scroll frame) — fake glass with a semi-transparent solid `surface`. **No animated shadows** — the chrome bevel and glint are always static; only `transform`/`opacity` may animate. The gloss must never cost a frame.
+
+## Shapes
+
+| Token | Value | Use |
+|---|---|---|
+| none | 0px | Full-bleed slides, footer. |
+| sm | 6px | Meta chips, inline tags. |
+| md | 12px | Stat blocks, small controls. |
+| lg | 20px | Floating nav pill, mid containers. |
+| xl | 32px | Jelly feature cards. |
+| pill | 9999px | All buttons and badges. |
+
+**Blob geometry.** Imagery and hero backdrops use an organic blob mask via asymmetric radius, e.g. `border-radius: 42% 58% 63% 37% / 45% 39% 61% 55%`. Keep it to one blob per view; a wall of blobs is noise. The blob is the soft foil to the pill's perfect geometry.
+
+## Components
+
+- **button-primary** — electric-blue pill, white label, chrome top-edge highlight. The one primary action.
+- **button-secondary** — chrome-white pill with a silver `hairline` bevel and ink label. The metal, quieter twin.
+- **button-accent** — bubblegum pill with deep-plum label. Reserved for one celebratory CTA (join, drop, claim).
+- **badge-pill** — pink capsule, uppercase mono eyebrow. &quot;NEW&quot;, &quot;LIMITED&quot;, the drop counter.
+- **nav-bar** — a floating chrome-white bar (`lg` radius) with a silver hairline, sitting off the top edge like a metal tray.
+- **card-feature** — jelly card on `xl` radius, silver-lipped, ink body. Heading may take the chrome sheen.
+- **stat-block** — mono numbers in an `md`-radius chrome tile; the figure scales up huge, label stays cool caption.
+- **divider-chrome** — a 2px silver `hairline` rule with pill ends, the physical metal seam between sections.
+- **meta-caption** — muted slate on a small `sm` chip for timestamps and secondary labels.
+- **footer** — full-width gunmetal-ink slab, chrome-white text, sharp `none` corners to ground the page.
+
+## Presentation System
+
+The 16:9 deck is where 千禧金属 goes maximal. It obeys HeiGe-PPT's三条铁律：**一页一句话**（one page, one sentence），**黄金三秒**（the first three seconds set the register），**视觉锤**（one visual hammer per slide）。
+
+- **Cover (slide-cover).** Pearl canvas, one hero word rendered in liquid chrome inside an organic blob, one star glint at its top-left. The视觉锤 is the chrome word itself — three seconds and you know this is Y2K, not corporate.
+- **Section divider (slide-section-divider).** Flip to gunmetal ink. A giant chrome-beveled number `01 / 02` fills the frame, chrome-white label beneath. The dark page is the breath between bright acts.
+- **Stat hero (slide-stat-hero).** Pearl canvas, one colossal Space Mono figure (the number in electric blue), unit small beside it. 一页一句话 taken literally — a single metric owns the whole slide.
+- **Quote (slide-quote).** Full-bleed bubblegum pink, deep-plum display text, one word inside the line lifted to chrome. This is the emotional peak — the loudest color in the whole system, spent all at once.
+- **Closing (slide-closing).** Full-bleed electric blue, white CTA, one pill button. The action is unmissable because the entire slide is the brand's one interactive color.
+
+Deck rhythm: light → dark → light → hot pink → electric blue. It breathes, it peaks on the pink quote, it lands hard on the blue call to action.
+
+## Signature Moment
+
+**UI — Mercury Sparkle Button (水银星芒按钮).** The primary CTA is not a flat blue pill. It is mercury: a layered silver-to-electric-blue chrome gradient reading as a reflected horizon on curved metal, a static silver highlight lip along the top edge, and exactly **one four-point star glint** parked at the top-left corner. On hover the glint scales up (`transform` only, never an animated shadow); the metal itself stays still. It looks like a drop of liquid chrome you could press into. Swap the template and this button is gone — no generic system produces beveled mercury with a single deliberate sparkle.
+
+**Deck — Chrome Hero Word in a Blob (铬字浮泡封面).** The cover's visual hammer is one word set in Baloo 2 800 with `background-clip: text` filling it with the silver→blue chrome gradient, floated inside an asymmetric organic blob, crowned by a lone star glint. Chrome letterform + blob container + sparkle — the three signature moves fused into a single object that is unmistakably 千禧金属 and reproducible on no other template.
+
+## Do's and Don'ts
+
+**Do**
+- Keep electric blue as the *only* interactive color, so pressability is instantly legible.
+- Spend bubblegum pink exactly once per view — one chip, one quote slide.
+- Treat chrome silver as a material (bevels, hairlines, gradient sweeps), never a flat fill.
+- Let one blob break the grid; keep everything else on strict alignment.
+- Ship exactly one star glint per composition. Two is confetti.
+
+**Don't**
+- **Don't touch the purple-blue AI gradient** (`#667eea → #764ba2`) or any of its family. This system's blue is `#4d5bff` on solid grounds, never that cliché wash.
+- **Don't build the centered-card trilogy** — title, gray subtitle, three equal rounded cards repeating down the page. Break symmetry with blobs and off-axis nav.
+- **Never render Chinese in a Japanese font** (Mochiy, Zen Maru). Simplified glyphs must land on Noto Sans SC / PingFang SC.
+- **Don't animate shadows or glows.** Chrome bevels and star glints are static; only `transform`/`opacity` move.
+- Don't multiply candy colors, don't chrome-treat body text, don't blob everything.
+
+## Responsive Behavior
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥1200px | 12-col grid, floating nav pill, hero blob bleeds past a column. |
+| 768–1199px | 8-col, feature cards stack to two-up, hero word `clamp()`-scales. |
+| ≤767px | Single column re-narration: nav collapses to a chrome pill + sheet, hero word drops to one manually-broken line locked with `white-space: nowrap`, blob recenters. |
+
+Mobile is a **re-composition, not a shrink**. The hero word is re-broken by hand and size-clamped so it never drops a lone character to its own line (zero orphan rule); the deck's full-bleed color slides simply restack their single sentence. Chinese widths are constrained in `em`/`px`, never `ch` (which is Latin-narrow and would force early wraps and orphans). All motion respects `prefers-reduced-motion: reduce` — the hover glint and any float animation switch off cleanly.
+
+## Anti-Slop Pledge
+
+Strip the name off this system and it still reads as built, not generated: mercury-beveled pills, a hand-tuned silver-to-blue chrome sweep on rounded glyphs, one deliberate star glint, one blob breaking a strict grid, and a hot-pink quote slide spent exactly once. No template ships liquid chrome with this much restraint. — HeiGe-Design
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #4d5bff;
+  --color-on-primary: #ffffff;
+  --color-ink: #16172b;
+  --color-canvas: #ebedf5;
+  --color-surface: #f6f7fb;
+  --color-muted: #5a5d78;
+  --color-hairline: #c9ccd4;
+  --color-accent: #ff86d0;
+  --color-on-accent: #2b1024;
+  --font-display-xl: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 52px;
+  --text-heading: 30px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display-lg: -1px;
+  --tracking-heading: -0.4px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2.5px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#4d5bff&quot;,
+        &quot;on-primary&quot;: &quot;#ffffff&quot;,
+        &quot;ink&quot;: &quot;#16172b&quot;,
+        &quot;canvas&quot;: &quot;#ebedf5&quot;,
+        &quot;surface&quot;: &quot;#f6f7fb&quot;,
+        &quot;muted&quot;: &quot;#5a5d78&quot;,
+        &quot;hairline&quot;: &quot;#c9ccd4&quot;,
+        &quot;accent&quot;: &quot;#ff86d0&quot;,
+        &quot;on-accent&quot;: &quot;#2b1024&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;76px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1.5px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;52px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;30px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2.5px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;6px&quot;,
+        &quot;md&quot;: &quot;12px&quot;,
+        &quot;lg&quot;: &quot;20px&quot;,
+        &quot;xl&quot;: &quot;32px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;80px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #4d5bff;
+  --color-on-primary: #ffffff;
+  --color-ink: #16172b;
+  --color-canvas: #ebedf5;
+  --color-surface: #f6f7fb;
+  --color-muted: #5a5d78;
+  --color-hairline: #c9ccd4;
+  --color-accent: #ff86d0;
+  --color-on-accent: #2b1024;
+  --font-display-xl: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 52px;
+  --text-heading: 30px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --text-eyebrow: 12px;
+  --tracking-display-xl: -1.5px;
+  --tracking-display-lg: -1px;
+  --tracking-heading: -0.4px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2.5px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Y2K liquid-chrome for fashion, toy, beauty and Gen-Z brands. Electric blue&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.302,
+          0.357,
+          1
+        ],
+        &quot;hex&quot;: &quot;#4d5bff&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.086,
+          0.09,
+          0.169
+        ],
+        &quot;hex&quot;: &quot;#16172b&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.922,
+          0.929,
+          0.961
+        ],
+        &quot;hex&quot;: &quot;#ebedf5&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.965,
+          0.969,
+          0.984
+        ],
+        &quot;hex&quot;: &quot;#f6f7fb&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.353,
+          0.365,
+          0.471
+        ],
+        &quot;hex&quot;: &quot;#5a5d78&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.788,
+          0.8,
+          0.831
+        ],
+        &quot;hex&quot;: &quot;#c9ccd4&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.525,
+          0.816
+        ],
+        &quot;hex&quot;: &quot;#ff86d0&quot;
+      }
+    },
+    &quot;on-accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.169,
+          0.063,
+          0.141
+        ],
+        &quot;hex&quot;: &quot;#2b1024&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 80,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 12,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 20,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 32,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 76,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 52,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 30,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;DM Sans\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, ui-monospace, \&quot;SFMono-Regular\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 千禧金属（y2k-chrome · 复古未来）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `y2k-chrome` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#4d5bff` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Baloo 2`，正文 `DM Sans`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint y2k-chrome` / 导出其它格式：`heige-design export y2k-chrome --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 千禧金属 — 原创设定集，可商用。跑校验：<code>heige-design lint y2k-chrome</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

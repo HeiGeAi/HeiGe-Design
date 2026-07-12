@@ -1,0 +1,117 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#5e8fff",
+        "on-primary": "#08111d",
+        "ink": "#dde5f2",
+        "canvas": "#0b1018",
+        "surface": "#0f1826",
+        "muted": "#8b98ad",
+        "hairline": "#1c2740",
+        "steel": "#38445c",
+        "up": "#3ecf8e",
+        "down": "#f26d6d"
+      },
+      "fontFamily": {
+        "display-xl": [
+          "Inter, \"SF Pro Display\", \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "display-lg": [
+          "Inter, \"SF Pro Display\", \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "heading": [
+          "Inter, \"SF Pro Text\", \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "body": [
+          "Inter, \"SF Pro Text\", \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "body-mono": [
+          "\"JetBrains Mono\", \"SF Mono\", \"Cascadia Mono\", ui-monospace, \"Noto Sans SC\", \"PingFang SC\", monospace"
+        ],
+        "eyebrow": [
+          "\"JetBrains Mono\", \"SF Mono\", \"Cascadia Mono\", ui-monospace, \"Noto Sans SC\", \"PingFang SC\", monospace"
+        ],
+        "button": [
+          "Inter, \"SF Pro Text\", \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "caption": [
+          "Inter, \"SF Pro Text\", \"Segoe UI\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ]
+      },
+      "fontSize": {
+        "display-xl": [
+          "64px",
+          {
+            "letterSpacing": "-1.6px",
+            "fontWeight": "700"
+          }
+        ],
+        "display-lg": [
+          "40px",
+          {
+            "letterSpacing": "-0.8px",
+            "fontWeight": "700"
+          }
+        ],
+        "heading": [
+          "24px",
+          {
+            "letterSpacing": "-0.2px",
+            "fontWeight": "600"
+          }
+        ],
+        "body": [
+          "16px",
+          {
+            "letterSpacing": "0em",
+            "fontWeight": "400"
+          }
+        ],
+        "body-mono": [
+          "15px",
+          {
+            "letterSpacing": "0.2px",
+            "fontWeight": "500"
+          }
+        ],
+        "eyebrow": [
+          "12px",
+          {
+            "letterSpacing": "2.4px",
+            "fontWeight": "600"
+          }
+        ],
+        "button": [
+          "15px",
+          {
+            "letterSpacing": "0.2px",
+            "fontWeight": "600"
+          }
+        ],
+        "caption": [
+          "13px",
+          {
+            "letterSpacing": "0.1px",
+            "fontWeight": "400"
+          }
+        ]
+      },
+      "borderRadius": {
+        "none": "0px",
+        "sm": "4px",
+        "md": "8px",
+        "lg": "14px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "section": "96px"
+      }
+    }
+  }
+}

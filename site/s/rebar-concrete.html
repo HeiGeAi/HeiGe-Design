@@ -1,0 +1,983 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>钢筋 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 凶悍工业</div>
+<div class="hero"><div class="fam">凶悍工业</div><h1>钢筋<span class="badge">✓ lint 0 error</span></h1><div class="slug">rebar-concrete · Rebar-design-system</div><p class="desc">Rebar is an industrial construction-tech design system built on the order aesthetics of a work site. A poured concrete-gray field carries asphalt-black structural blocks, and one load-bearing caution orange is spent only where load actually transfers. Compressed stencil display type stamps giant component numbers while monospace annotations read like blueprint callouts. Sections are welded together by full-bleed 45-degree hazard-stripe dividers over a naked load-bearing grid. Hard offset shadows, zero blur, zero glow, sharp corners throughout. It looks engineered to carry weight, because it is. Signed HeiGe-Design.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#b8b5ad;--ink:#17181a;--pri:#ff5b1f;--onpri:#17181a;--acc:#ff5b1f;--surf:#d9d6cd;--muted:#3c3e41;--line:#6a6862;--r:2px;--dff:"Anton", "Archivo Black", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Archivo", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "JetBrains Mono", "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">钢筋</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#ff5b1f"></i><i style="background:#17181a"></i><i style="background:#b8b5ad"></i><i style="background:#d9d6cd"></i><i style="background:#3c3e41"></i><i style="background:#6a6862"></i></div>
+  <div class="swrap"><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">tag-caution</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">status-load</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">card-panel</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">divider-rule</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">card-structural</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">caption-meta</span></div>
+  </div>
+  <div class="card" style="--bg:#b8b5ad;--ink:#17181a;--pri:#ff5b1f;--onpri:#17181a;--acc:#ff5b1f;--surf:#d9d6cd;--muted:#3c3e41;--line:#6a6862;--r:2px;--dff:"Anton", "Archivo Black", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Archivo", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"IBM Plex Mono", "JetBrains Mono", "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">钢筋</div></div>
+    <div class="swrap"><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#d9d6cd;color:#17181a;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI 签名时刻 · 载荷钢印分隔带（Load-Stamp Divider）**
+每两个 section 之间不是一条普通分割线，是一条满幅 45° 橙黑警示斜条纹带，巨型 Anton 编号被「冲压」进条纹里（编号用混凝土色镂空穿过橙黑纹路），且编号出血甩到最左，一半露在容器外，像工地刷在承重墙上的构件号。这条带子同时干三件事：焊接上下两段、报出段号、把警示色温灌进整页节奏。换一套模板，做不出这条「会承重、会报号、会警示」三合一的分隔带。
+
+**Deck 签名时刻 · 危险区收尾牌（Hazard-Zone Closing）**
+收尾页整屏铺满警示橙，黑色 stencil 行动句居左压在页面承重基线上，页面上下边缘各一条黑橙 45° 斜条纹警戒带把整屏「围」起来，像把最后一句话立成一块工地出口的警示牌。橙底 + 黑 stencil + 双警戒带的组合，只有这套敢用满屏橙收尾，别的模板到这儿一定退回白底黑字。
+
+---</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- 一屏一个橙。橙是荷载信号，落下即受力，多一处就泄一次力。
+- 编号砸大、出血、走等宽数字，让它当版面骨架。
+- 网格线露出来，承重结构看得见才成立。
+- 阴影只用硬 offset（`6px 6px 0`），边永远是硬的。
+- 黑白橙交替制造张弛，强块后留素混凝土呼吸。
+
+**Don't**
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2` 及全家桶），这套只认混凝土 / 沥青 / 警示橙。
+- **不做居中卡片三件套**（一标题 + 一灰副标 + 三等宽圆角卡整页重复），钢筋左对齐咬网格。
+- **中文绝不用日文字体**（Mochiy / Zen Maru 等）渲染，简体缺字变豆腐，中文只走思源黑体 / 苹方兜底。
+- **不动画化阴影 / 发光**，硬 offset 常亮不闪；不用 `backdrop-filter` 毛玻璃。
+- 橙面不放白字（对比不足，也不够工地），橙上文字一律沥青黑。
+- 照片不做圆角、不做柔边，直角硬裁双色调。
+
+---</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: Rebar-design-system
+description: Rebar is an industrial construction-tech design system built on the order aesthetics of a work site. A poured concrete-gray field carries asphalt-black structural blocks, and one load-bearing caution orange is spent only where load actually transfers. Compressed stencil display type stamps giant component numbers while monospace annotations read like blueprint callouts. Sections are welded together by full-bleed 45-degree hazard-stripe dividers over a naked load-bearing grid. Hard offset shadows, zero blur, zero glow, sharp corners throughout. It looks engineered to carry weight, because it is. Signed HeiGe-Design.
+
+colors:
+  primary: &quot;#ff5b1f&quot;
+  on-primary: &quot;#17181a&quot;
+  ink: &quot;#17181a&quot;
+  canvas: &quot;#b8b5ad&quot;
+  surface: &quot;#d9d6cd&quot;
+  muted: &quot;#3c3e41&quot;
+  hairline: &quot;#6a6862&quot;
+
+typography:
+  display-xl:
+    fontFamily: &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 96px
+    fontWeight: 800
+    lineHeight: 0.9
+    letterSpacing: -1px
+  display-lg:
+    fontFamily: &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 56px
+    fontWeight: 800
+    lineHeight: 0.95
+    letterSpacing: -0.5px
+  heading:
+    fontFamily: &quot;\&quot;Archivo\&quot;, \&quot;Archivo Narrow\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 28px
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: -0.2px
+  body:
+    fontFamily: &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: 0px
+  body-mono:
+    fontFamily: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+    fontSize: 15px
+    fontWeight: 500
+    lineHeight: 1.5
+    letterSpacing: 0px
+  eyebrow:
+    fontFamily: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: 2px
+  button:
+    fontFamily: &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+    fontSize: 16px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: 1px
+  caption:
+    fontFamily: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+    fontSize: 13px
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: 0.3px
+
+rounded:
+  none: 0px
+  sm: 2px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 80px
+
+components:
+  nav-bar:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.surface}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.surface}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  tag-caution:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  status-load:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  card-panel:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  divider-rule:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    height: 1px
+    width: 100%
+  card-structural:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.surface}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  caption-meta:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.sm}&quot;
+  input-field:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.sm} {spacing.md}&quot;
+  footer:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.surface}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.xl}&quot;
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# Rebar · 钢筋
+
+An industrial design system that behaves like a job site under a permit. Everything on screen is either **poured**（承重底面）、**cast**（结构块）、**stamped**（钢印编号）或 **flagged**（警示）。没有第五种角色，也不需要。署名 HeiGe-Design。
+
+---
+
+## Overview
+
+钢筋的气质是「施工现场的秩序美学」，警示与承重两件事定义全部视觉。
+
+底面是一整片浇筑好的混凝土灰 `#b8b5ad`，不是白，也不是黑，是养护到第七天、还带着模板纹的那种灰。所有承重构件是沥青黑 `#17181a` 的实心块，压在混凝土上，边缘是硬的，阴影是硬的。整套系统只花一种彩色，警示橙 `#ff5b1f`，它不是装饰，是荷载信号，只出现在真正需要转移注意力和承担点击的地方：主按钮、警示斜条纹、巨型编号、收尾牌。
+
+**主色的两个角色**：`#ff5b1f` 对内是「荷载」（load-bearing），凡是它落下的地方就是这一屏的受力点；对外是「警示」（caution），它天生带工地色温，看见就知道这里要小心、要动手。混凝土灰和沥青黑负责秩序，橙色负责事故现场那一下。
+
+**字体签名**：压缩体 stencil display（Anton）把编号和大标题当钢印去砸，字面窄、字重满、字号大到有点过分；等宽体（IBM Plex Mono）当施工标注，尺寸、荷载、编号一律用它写，像图纸边上的引线注释。
+
+**整体节奏**：不靠颜色分层，靠尺寸、间距和一条条承重网格线分层。强块（黑底橙字巨型编号）之后必须留一段素混凝土呼吸，然后再来一条 45° 警示斜条纹带把下一段焊上去。密、疏、砸、再密。
+
+---
+
+## Colors
+
+只养三种材料色加两级中性，别的都是浪费。
+
+### Brand &amp; Load（承重 / 警示）
+| Token | Hex | 角色 |
+|---|---|---|
+| `primary` | `#ff5b1f` | 警示橙。系统唯一彩色，等于荷载信号。主按钮、警示斜条纹、巨型编号、收尾牌，只落在受力点。 |
+| `on-primary` | `#17181a` | 橙面上的文字。用沥青黑，对比 5.73:1。**橙底绝不放白字**（白配 3.1:1 不合格，也不够工地）。 |
+
+### Structure（结构面）
+| Token | Hex | 角色 |
+|---|---|---|
+| `canvas` | `#b8b5ad` | 混凝土灰底面。整页浇筑层，一切构件压在它上面。 |
+| `surface` | `#d9d6cd` | 预制形板面。卡片和输入框是从底面抬起来的浅色浇筑板，左缘咬一道橙色承重边。 |
+| `ink` | `#17181a` | 沥青黑。正文、承重实心块、导航钢梁、页脚基座。不用纯黑，留一点沥青的暖。 |
+
+### Text（文字层级）
+| Token | Hex | 角色 |
+|---|---|---|
+| `ink` | `#17181a` | 一级正文与标题，压在混凝土上 8.68:1，压在形板上 12.2:1。 |
+| `muted` | `#3c3e41` | 二级文字与标注，锈化钢灰。压混凝土 5.24:1、压形板 7.38:1，两处都过 AA。 |
+
+### Line（分隔）
+| Token | Hex | 角色 |
+|---|---|---|
+| `hairline` | `#6a6862` | 承重网格线与形板缝。1px 钢筋缝，负责画出「结构」，从不做文字。 |
+
+语义说明：这套没有涨绿跌红那一组。**橙色一色承担全部语义**，它同时是主行动、是警告、是当前受力点。一色多义，逼系统克制，也逼每一处橙都必须有理由。
+
+---
+
+## Typography
+
+### Font Family
+- **Display / 编号**：`Anton`，压缩到极致的 stencil 体，字面窄、天生重，专门砸巨型编号和大标题；断网兜底 `Archivo Black`。
+- **Heading / Body**：`Archivo`，工业感 grotesque，字重齐、结构方，承担小标题与正文。
+- **Mono / 标注**：`IBM Plex Mono`，工程等宽体，写尺寸、荷载、构件号、图纸引线。
+
+**中文铁律**：三条字体栈末尾一律接 `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;`（无衬线）。Anton、Archivo、IBM Plex Mono 都只画拉丁与数字，中文自动落到思源黑体或苹方，重量对齐，不塌豆腐。**中文绝不用日文字体（Mochiy / Zen Maru 一律禁），简体会缺字变方块。** 巨型编号用阿拉伯数字（01 / 02 / 03），正好走 Anton，天然是这套的主角。
+
+### Hierarchy
+| Role | Size / Weight / Leading / Tracking | 用途 |
+|---|---|---|
+| `display-xl` | 96 / 800 / 0.9 / -1px | 巨型钢印编号、封面主标、数据英雄数字。大到出血甩出边框。 |
+| `display-lg` | 56 / 800 / 0.95 / -0.5px | 过渡页章节号、金句、收尾行动句。 |
+| `heading` | 28 / 700 / 1.15 / -0.2px | 卡片标题、模块小标。 |
+| `body` | 17 / 400 / 1.6 / 0px | 正文。混凝土上也读得清。 |
+| `body-mono` | 15 / 500 / 1.5 / 0px | 施工标注、数据表、尺寸引线。 |
+| `eyebrow` | 13 / 600 / 1.2 / 2px | 钢印 kicker，全大写宽字距，像喷在墙上的段号。 |
+| `button` | 16 / 700 / 1 / 1px | 按钮文字，全大写。 |
+| `caption` | 13 / 400 / 1.4 / 0.3px | 页脚、状态条、脚注。 |
+
+最大字 96 对正文 17 是 5.6:1，远超 1:4 底线。**层级用尺寸拉开，不用颜色。**
+
+### Principles
+- 大标题手动断行，按最长那行收字号，每行 `white-space:nowrap` 锁住，字号 `clamp()` 保证最窄屏也不出孤字。
+- 中文限宽用 `em` 或 `px`，绝不用 `ch`（`ch` 按拉丁 0 算宽，中文会提前折行甩孤字）。
+- 编号、荷载、尺寸一律走等宽，`tabular` 对齐，数字上下对得像图纸。
+
+---
+
+## Layout
+
+### Spacing
+4 / 8 / 16 / 24 / 40 / 80 的硬阶梯（`xs → section`）。模块内用 `md`，卡内 `lg`，段与段之间用 `xl`，整段落幕用 `section`。间距不是留白装饰，是构件之间的**受力间隙**，多一分晃、少一分挤。
+
+### Grid &amp; Container
+- 桌面 12 列，列缝用 `hairline` 画出来，**网格是裸露的**，不藏。这是承重网格，看得见才叫结构。
+- 最大容器 1200px，内容左对齐咬住网格，不做无脑居中。
+- 巨型编号可以突破容器边界向左出血，像刷在承重墙外沿的构件号。
+
+### Whitespace
+留白全是混凝土色 `#b8b5ad`，它本身有材质，所以「空」也不空。呼吸段只留素混凝土，一个字不放，让下一条警示带砸下来时有落差。
+
+---
+
+## Elevation &amp; Depth
+
+这套的深度靠**硬**，不靠柔。
+
+| 层级 | 手法 |
+|---|---|
+| 底面 | 混凝土 `canvas`，无阴影，就是地。 |
+| 形板卡 | `surface` 抬起，硬 offset 阴影 `6px 6px 0 #17181a`，不模糊。左缘 6px `primary` 承重边。 |
+| 结构块 | `ink` 实心块，平贴不悬浮，靠色重压住场，自成一层。 |
+| 警示层 | `primary` 斜条纹带，永远在最上，谁都压不住它。 |
+
+**铁律**：阴影只用硬 offset（`Npx Npx 0`），永远不模糊、不发光、不动画化。暗块不用 `backdrop-filter`，不用毛玻璃。要「重」，靠色和硬边，不靠虚化。
+
+---
+
+## Shapes
+
+- **圆角**：`none` 0px 是默认，按钮、卡片、导航、结构块全是直角。`sm` 2px 只给贴纸小标（钢印微收一下角）。`pill` 只给状态点和荷载指示条。
+- **45° 警示斜条纹**：橙黑等宽斜条纹带，是这套的母题。用 `repeating-linear-gradient(45deg, #ff5b1f 0 24px, #17181a 24px 48px)` 铺满分隔带，纯 CSS，零图片。
+- **承重网格线**：`hairline` 1px 直线，横竖成格，露在版面上。
+- **图片处理**：一律硬裁矩形，直角，双色调（沥青黑 + 混凝土灰 duotone），压高对比。**照片绝不做圆角、绝不做柔化描边。**
+- **巨型编号当图形**：01 / 02 / 03 用 Anton 放到 200px 以上，橙色或黑色，出血、被斜条纹「冲压」，本身就是版面骨架。
+
+---
+
+## Components
+
+**UI 组件**
+- `nav-bar`：沥青黑钢梁横贯顶部，`eyebrow` 段号 + 链接全大写，直角，左右 `xl` 大边距。
+- `button-primary`：警示橙实心块，黑字全大写，直角，硬 offset 阴影。**这是唯一的橙按钮，一屏一个受力点。**
+- `button-secondary`：沥青黑实心块，浅形板色字，直角。次要动作压成结构块。
+- `tag-caution`：橙底黑字钢印小标，`sm` 微收角，段号 / 状态标签用它。
+- `status-load`：橙底黑字 `pill`，唯一的圆，标「承载中 / 高负荷」这类系统状态。
+- `card-panel`：形板卡，浅色抬起，左缘 6px 橙承重边，`heading` 标题，硬 offset 阴影。
+- `card-structural`：沥青黑结构块，浅字，平贴，装重内容与巨型编号。
+- `stat-block`：黑底巨型橙数字（`display-xl`），下压等宽 `caption` 单位标注，数据的英雄位。
+- `caption-meta`：形板上的等宽标注（锈钢灰 `muted`），写尺寸 / 荷载 / 引线注释。
+- `divider-rule`：`hairline` 钢筋缝 1px 直线，画承重网格与形板分缝，只画结构不放字。
+- `input-field`：形板底 + `sm` 微角，聚焦时边框换橙、加硬 offset。
+- `footer`：沥青黑基座，等宽 `caption`，版权与构件铭牌。
+
+**Slide 演示组件**（16:9，见下一节）
+- `slide-cover`：混凝土封面 + 巨型标题 + 顶部警示带。
+- `slide-section-divider`：黑底过渡页 + 巨型橙章节号。
+- `slide-stat-hero`：黑底数据页 + 出血巨型橙数字。
+- `slide-quote`：混凝土金句页 + 一句占屏。
+- `slide-closing`：满屏警示橙收尾牌。
+
+---
+
+## Presentation System
+
+钢筋做 16:9 演示，对齐 HeiGe-PPT 的「一页一句话、黄金三秒、视觉锤」。视觉锤是**警示斜条纹带 + 巨型钢印编号**，从头贯到尾。
+
+- **封面 `slide-cover`**：混凝土满底，顶部一条 45° 橙黑警示带压边，主标 `display-xl` 左对齐咬网格，右下角等寸构件铭牌（项目号 / 日期 / 版本，走等宽）。黄金三秒立的是「工地感」，截图就知道要动土。
+- **过渡页 `slide-section-divider`**：整屏沥青黑，一个巨型橙章节号 `01` 出血甩到左侧占满高度，右侧一行 `eyebrow` 段名。一页只干一件事，报出下一段。
+- **数据页 `slide-stat-hero`**：黑底，一个巨型橙数字顶天立地（`display-xl`，可放到 240px），下面一行等寸单位与说明。一页一个数，数就是视觉锤。
+- **金句页 `slide-quote`**：混凝土底，一句话占屏（`display-lg`），左对齐，句末一段橙色短横做承重标记。**一页一句话**的样板。
+- **收尾页 `slide-closing`**：满屏警示橙，黑色 stencil 行动句压在承重基线上，上下边缘黑橙斜条纹警戒带收口。像立在工地出口的一块警示牌，看完就动手。
+
+节奏建议：混凝土封面（疏）→ 黑底编号（砸）→ 混凝土内容（呼吸）→ 黑底数据（砸）→ 橙色收尾（引爆）。张弛全靠底色黑白橙的交替。
+
+---
+
+## Signature Moment
+
+**UI 签名时刻 · 载荷钢印分隔带（Load-Stamp Divider）**
+每两个 section 之间不是一条普通分割线，是一条满幅 45° 橙黑警示斜条纹带，巨型 Anton 编号被「冲压」进条纹里（编号用混凝土色镂空穿过橙黑纹路），且编号出血甩到最左，一半露在容器外，像工地刷在承重墙上的构件号。这条带子同时干三件事：焊接上下两段、报出段号、把警示色温灌进整页节奏。换一套模板，做不出这条「会承重、会报号、会警示」三合一的分隔带。
+
+**Deck 签名时刻 · 危险区收尾牌（Hazard-Zone Closing）**
+收尾页整屏铺满警示橙，黑色 stencil 行动句居左压在页面承重基线上，页面上下边缘各一条黑橙 45° 斜条纹警戒带把整屏「围」起来，像把最后一句话立成一块工地出口的警示牌。橙底 + 黑 stencil + 双警戒带的组合，只有这套敢用满屏橙收尾，别的模板到这儿一定退回白底黑字。
+
+---
+
+## Do's and Don'ts
+
+**Do**
+- 一屏一个橙。橙是荷载信号，落下即受力，多一处就泄一次力。
+- 编号砸大、出血、走等宽数字，让它当版面骨架。
+- 网格线露出来，承重结构看得见才成立。
+- 阴影只用硬 offset（`6px 6px 0`），边永远是硬的。
+- 黑白橙交替制造张弛，强块后留素混凝土呼吸。
+
+**Don't**
+- **不碰紫蓝俗套渐变**（`#667eea → #764ba2` 及全家桶），这套只认混凝土 / 沥青 / 警示橙。
+- **不做居中卡片三件套**（一标题 + 一灰副标 + 三等宽圆角卡整页重复），钢筋左对齐咬网格。
+- **中文绝不用日文字体**（Mochiy / Zen Maru 等）渲染，简体缺字变豆腐，中文只走思源黑体 / 苹方兜底。
+- **不动画化阴影 / 发光**，硬 offset 常亮不闪；不用 `backdrop-filter` 毛玻璃。
+- 橙面不放白字（对比不足，也不够工地），橙上文字一律沥青黑。
+- 照片不做圆角、不做柔边，直角硬裁双色调。
+
+---
+
+## Responsive Behavior
+
+移动端是重新编排的另一段施工方案，不是把桌面端缩一缩。
+
+| 断点 | 布局 |
+|---|---|
+| ≥ 1200px | 12 列裸露网格，巨型编号出血甩左，斜条纹带满幅。 |
+| 768 – 1199px | 8 列，编号出血收窄，卡片双列。 |
+| ≤ 767px | 单列。承重网格收成单轴，卡片竖排堆叠。 |
+
+折叠策略：
+- 巨型编号在窄屏不缩到看不见，改成顶部横向「钢印条」，编号 + 段名一行走等宽，仍旧砸。
+- 45° 警示斜条纹带在窄屏变成顶端一条横向警戒条，母题不丢。
+- 等宽标注从图片旁的引线，改到构件下方成注脚，保持图纸感。
+- 巨型标题 `clamp()` 收字号，最长行 `nowrap` 锁死，≤390px 无孤字、无横向溢出。
+- 所有动效可被 `prefers-reduced-motion: reduce` 全部关掉。
+
+---
+
+## Anti-Slop Pledge
+
+把 Rebar 这个名字抹掉，这套仍一眼看得出是有人拿工地的秩序去焊出来的：混凝土底、沥青黑承重块、一色警示橙的克制、被斜条纹冲压的巨型钢印编号、硬到没有一丝虚化的边。它不是流水线随手生成的模板，是按承重逻辑排出来的结构。签名 HeiGe-Design。
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #ff5b1f;
+  --color-on-primary: #17181a;
+  --color-ink: #17181a;
+  --color-canvas: #b8b5ad;
+  --color-surface: #d9d6cd;
+  --color-muted: #3c3e41;
+  --color-hairline: #6a6862;
+  --font-display-xl: &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Archivo\&quot;, \&quot;Archivo Narrow\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 96px;
+  --text-display-lg: 56px;
+  --text-heading: 28px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-eyebrow: 13px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-eyebrow: 2px;
+  --tracking-button: 1px;
+  --tracking-caption: 0.3px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-eyebrow: 600;
+  --font-weight-button: 700;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#ff5b1f&quot;,
+        &quot;on-primary&quot;: &quot;#17181a&quot;,
+        &quot;ink&quot;: &quot;#17181a&quot;,
+        &quot;canvas&quot;: &quot;#b8b5ad&quot;,
+        &quot;surface&quot;: &quot;#d9d6cd&quot;,
+        &quot;muted&quot;: &quot;#3c3e41&quot;,
+        &quot;hairline&quot;: &quot;#6a6862&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Archivo\&quot;, \&quot;Archivo Narrow\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;96px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;56px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;28px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;15px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;1px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.3px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;2px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;80px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #ff5b1f;
+  --color-on-primary: #17181a;
+  --color-ink: #17181a;
+  --color-canvas: #b8b5ad;
+  --color-surface: #d9d6cd;
+  --color-muted: #3c3e41;
+  --color-hairline: #6a6862;
+  --font-display-xl: &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Archivo\&quot;, \&quot;Archivo Narrow\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-eyebrow: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --text-display-xl: 96px;
+  --text-display-lg: 56px;
+  --text-heading: 28px;
+  --text-body: 17px;
+  --text-body-mono: 15px;
+  --text-eyebrow: 13px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-eyebrow: 2px;
+  --tracking-button: 1px;
+  --tracking-caption: 0.3px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 700;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 500;
+  --font-weight-eyebrow: 600;
+  --font-weight-button: 700;
+  --font-weight-caption: 400;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 80px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Rebar is an industrial construction-tech design system built on the order aesthetics of a work site. A poured concrete-gray field carries asphalt-black structural blocks, and one load-bearing caution orange is spent only where load actually transfers. Compressed stencil display type stamps giant component numbers while monospace annotations read like blueprint callouts. Sections are welded together by full-bleed 45-degree hazard-stripe dividers over a naked load-bearing grid. Hard offset shadows, zero blur, zero glow, sharp corners throughout. It looks engineered to carry weight, because it is. Signed HeiGe-Design.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.357,
+          0.122
+        ],
+        &quot;hex&quot;: &quot;#ff5b1f&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.09,
+          0.094,
+          0.102
+        ],
+        &quot;hex&quot;: &quot;#17181a&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.09,
+          0.094,
+          0.102
+        ],
+        &quot;hex&quot;: &quot;#17181a&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.722,
+          0.71,
+          0.678
+        ],
+        &quot;hex&quot;: &quot;#b8b5ad&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.851,
+          0.839,
+          0.804
+        ],
+        &quot;hex&quot;: &quot;#d9d6cd&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.235,
+          0.243,
+          0.255
+        ],
+        &quot;hex&quot;: &quot;#3c3e41&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.416,
+          0.408,
+          0.384
+        ],
+        &quot;hex&quot;: &quot;#6a6862&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 80,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 2,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 96,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Anton\&quot;, \&quot;Archivo Black\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 56,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Archivo\&quot;, \&quot;Archivo Narrow\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 28,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 15,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Archivo\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;IBM Plex Mono\&quot;, \&quot;JetBrains Mono\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.3,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 钢筋（rebar-concrete · 凶悍工业）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `rebar-concrete` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#ff5b1f` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Anton`，正文 `Archivo`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint rebar-concrete` / 导出其它格式：`heige-design export rebar-concrete --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 钢筋 — 原创设定集，可商用。跑校验：<code>heige-design lint rebar-concrete</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

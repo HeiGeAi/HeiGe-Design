@@ -1,0 +1,311 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "$description": "Dunhuang-Mineral is a Neo-Oriental cave-mural system for art exhibitions, cultural tourism, high-end 文创, and digital collectibles. Four ground-stone pigments — 石青 azurite #2e6b8f, 石绿 malachite #4a8b6f, 朱砂 cinnabar #c8483a, 土金 earth-gold #b08d3e — are layered over aged earth-wall plaster (#ece1cb), the way color is built up stroke by stroke on a grotto wall. Azurite leads as the calm structural blue; cinnabar and gold are stamped and inlaid, never washed. A calligraphic 楷体/魏碑 display (Ma Shan Zheng over system KaiTi) stands on an airy sans body, and the signature move is a 藻井 caisson medallion built from stacked mineral strata, with 飞天 apsara ribbon-lines carrying the eye.",
+  "color": {
+    "$type": "color",
+    "primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.18,
+          0.42,
+          0.561
+        ],
+        "hex": "#2e6b8f"
+      }
+    },
+    "on-primary": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.965,
+          0.945,
+          0.894
+        ],
+        "hex": "#f6f1e4"
+      }
+    },
+    "ink": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.165,
+          0.125,
+          0.094
+        ],
+        "hex": "#2a2018"
+      }
+    },
+    "canvas": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.925,
+          0.882,
+          0.796
+        ],
+        "hex": "#ece1cb"
+      }
+    },
+    "surface": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.957,
+          0.922,
+          0.847
+        ],
+        "hex": "#f4ebd8"
+      }
+    },
+    "muted": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.373,
+          0.333,
+          0.251
+        ],
+        "hex": "#5f5540"
+      }
+    },
+    "hairline": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.839,
+          0.784,
+          0.659
+        ],
+        "hex": "#d6c8a8"
+      }
+    },
+    "accent": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.29,
+          0.545,
+          0.435
+        ],
+        "hex": "#4a8b6f"
+      }
+    },
+    "seal-red": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.784,
+          0.282,
+          0.227
+        ],
+        "hex": "#c8483a"
+      }
+    },
+    "gold": {
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.69,
+          0.553,
+          0.243
+        ],
+        "hex": "#b08d3e"
+      }
+    }
+  },
+  "spacing": {
+    "$type": "dimension",
+    "xs": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 56,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$value": {
+        "value": 100,
+        "unit": "px"
+      }
+    }
+  },
+  "rounded": {
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 3,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "pill": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "typography": {
+    "display-xl": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Ma Shan Zheng\", \"LXGW WenKai\", \"KaiTi\", \"STKaiti\", \"Kaiti SC\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 80,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 2,
+          "unit": "px"
+        }
+      }
+    },
+    "display-lg": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Ma Shan Zheng\", \"LXGW WenKai\", \"KaiTi\", \"STKaiti\", \"Kaiti SC\", \"Noto Serif SC\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 48,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    },
+    "heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Noto Serif SC\", \"Songti SC\", \"STSong\", serif",
+        "fontSize": {
+          "value": 26,
+          "unit": "px"
+        },
+        "fontWeight": 700,
+        "letterSpacing": {
+          "value": 0.5,
+          "unit": "px"
+        }
+      }
+    },
+    "body": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Inter\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", \"Hiragino Sans GB\", sans-serif",
+        "fontSize": {
+          "value": 17,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.2,
+          "unit": "px"
+        }
+      }
+    },
+    "numeral": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Cormorant Garamond\", \"Baskerville\", \"Times New Roman\", \"Songti SC\", serif",
+        "fontSize": {
+          "value": 96,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": -1,
+          "unit": "px"
+        }
+      }
+    },
+    "button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Inter\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 15,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 1.5,
+          "unit": "px"
+        }
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Inter\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 13,
+          "unit": "px"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.4,
+          "unit": "px"
+        }
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "\"Inter\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "fontSize": {
+          "value": 12,
+          "unit": "px"
+        },
+        "fontWeight": 600,
+        "letterSpacing": {
+          "value": 4,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

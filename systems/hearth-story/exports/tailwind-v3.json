@@ -1,0 +1,145 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#ac4914",
+        "on-primary": "#fdf6ec",
+        "ink": "#33251a",
+        "canvas": "#f4ece0",
+        "surface": "#eadfcb",
+        "muted": "#7a6552",
+        "hairline": "#d8c9b2",
+        "ember": "#d2601a"
+      },
+      "fontFamily": {
+        "display-xl": [
+          "\"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "display-lg": [
+          "\"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "heading": [
+          "\"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "quote": [
+          "\"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "stat": [
+          "\"Fraunces\", \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "subhead": [
+          "\"Source Sans 3\", \"Source Sans Pro\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "body": [
+          "\"Source Sans 3\", \"Source Sans Pro\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "eyebrow": [
+          "\"Source Sans 3\", \"Source Sans Pro\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "button": [
+          "\"Source Sans 3\", \"Source Sans Pro\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "caption": [
+          "\"Source Sans 3\", \"Source Sans Pro\", \"Noto Sans SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif"
+        ],
+        "signature": [
+          "\"Caveat\", \"LXGW WenKai\", \"Noto Serif SC\", \"Kaiti SC\", cursive"
+        ]
+      },
+      "fontSize": {
+        "display-xl": [
+          "60px",
+          {
+            "letterSpacing": "-1px",
+            "fontWeight": "600"
+          }
+        ],
+        "display-lg": [
+          "40px",
+          {
+            "letterSpacing": "-0.4px",
+            "fontWeight": "600"
+          }
+        ],
+        "heading": [
+          "25px",
+          {
+            "letterSpacing": "-0.1px",
+            "fontWeight": "600"
+          }
+        ],
+        "quote": [
+          "34px",
+          {
+            "letterSpacing": "-0.2px",
+            "fontWeight": "500"
+          }
+        ],
+        "stat": [
+          "88px",
+          {
+            "letterSpacing": "-2px",
+            "fontWeight": "600"
+          }
+        ],
+        "subhead": [
+          "17px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "600"
+          }
+        ],
+        "body": [
+          "17px",
+          {
+            "letterSpacing": "0.1px",
+            "fontWeight": "400"
+          }
+        ],
+        "eyebrow": [
+          "12px",
+          {
+            "letterSpacing": "2.4px",
+            "fontWeight": "700"
+          }
+        ],
+        "button": [
+          "16px",
+          {
+            "letterSpacing": "0.4px",
+            "fontWeight": "600"
+          }
+        ],
+        "caption": [
+          "13px",
+          {
+            "letterSpacing": "0.3px",
+            "fontWeight": "500"
+          }
+        ],
+        "signature": [
+          "32px",
+          {
+            "letterSpacing": "0.5px",
+            "fontWeight": "500"
+          }
+        ]
+      },
+      "borderRadius": {
+        "none": "0px",
+        "sm": "6px",
+        "md": "12px",
+        "lg": "20px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "section": "96px"
+      }
+    }
+  }
+}

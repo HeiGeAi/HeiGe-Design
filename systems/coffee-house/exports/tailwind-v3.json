@@ -1,0 +1,127 @@
+{
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": "#4a352a",
+        "on-primary": "#f4ebda",
+        "ink": "#3a2a20",
+        "canvas": "#efe3d3",
+        "surface": "#f7efe1",
+        "muted": "#6f5b48",
+        "hairline": "#dcccb6",
+        "accent": "#c17a35",
+        "crema": "#d7a869",
+        "roast": "#2a1d15"
+      },
+      "fontFamily": {
+        "display-xl": [
+          "Fraunces, Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "display": [
+          "Fraunces, Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "heading": [
+          "Fraunces, Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "lead": [
+          "Newsreader, Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "body": [
+          "Newsreader, Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "eyebrow": [
+          "Fraunces, Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "annotation": [
+          "Caveat, \"LXGW WenKai\", \"Kaiti SC\", \"STKaiti\", \"Noto Serif SC\", cursive"
+        ],
+        "caption": [
+          "Newsreader, Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ],
+        "button": [
+          "Fraunces, Georgia, \"Noto Serif SC\", \"Songti SC\", \"STSong\", serif"
+        ]
+      },
+      "fontSize": {
+        "display-xl": [
+          "66px",
+          {
+            "letterSpacing": "-1px",
+            "fontWeight": "600"
+          }
+        ],
+        "display": [
+          "42px",
+          {
+            "letterSpacing": "-0.4px",
+            "fontWeight": "600"
+          }
+        ],
+        "heading": [
+          "27px",
+          {
+            "letterSpacing": "-0.2px",
+            "fontWeight": "600"
+          }
+        ],
+        "lead": [
+          "21px",
+          {
+            "letterSpacing": "0px",
+            "fontWeight": "400"
+          }
+        ],
+        "body": [
+          "17px",
+          {
+            "letterSpacing": "0.1px",
+            "fontWeight": "400"
+          }
+        ],
+        "eyebrow": [
+          "13px",
+          {
+            "letterSpacing": "2.4px",
+            "fontWeight": "600"
+          }
+        ],
+        "annotation": [
+          "23px",
+          {
+            "letterSpacing": "0.3px",
+            "fontWeight": "500"
+          }
+        ],
+        "caption": [
+          "14px",
+          {
+            "letterSpacing": "0.2px",
+            "fontWeight": "400"
+          }
+        ],
+        "button": [
+          "16px",
+          {
+            "letterSpacing": "0.3px",
+            "fontWeight": "600"
+          }
+        ]
+      },
+      "borderRadius": {
+        "none": "0px",
+        "sm": "6px",
+        "md": "12px",
+        "lg": "20px",
+        "pill": "9999px"
+      },
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "40px",
+        "section": "96px"
+      }
+    }
+  }
+}

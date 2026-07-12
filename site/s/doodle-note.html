@@ -1,0 +1,976 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>涂鸦本 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 玩味玩具</div>
+<div class="hero"><div class="fam">玩味玩具</div><h1>涂鸦本<span class="badge">✓ lint 0 error</span></h1><div class="slug">doodle-note · DoodleNote-design-system</div><p class="desc">DoodleNote is a hand-drawn notebook identity for note-taking, learning and lightweight productivity tools. Ballpoint ink-blue does all the writing and structure; a single highlighter yellow marks only what matters; every surface is real graph paper. A handwritten display face scrawls the headline while a clean rounded sans keeps the reading calm. The signature move is a rough highlighter swipe with a pen-drawn arrow curling out of the margin — warm, human, unmistakably made by hand rather than generated.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#faf7ee;--ink:#1e2a38;--pri:#1f3f73;--onpri:#fbf8ef;--acc:#f6e05e;--surf:#fffdf6;--muted:#5f5a50;--line:#d5dbe6;--r:12px;--dff:"Shantell Sans", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">涂鸦本</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#1f3f73"></i><i style="background:#fbf8ef"></i><i style="background:#1e2a38"></i><i style="background:#faf7ee"></i><i style="background:#fffdf6"></i><i style="background:#5f5a50"></i><i style="background:#d5dbe6"></i><i style="background:#f6e05e"></i></div>
+  <div class="swrap"><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">divider</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">highlighter-mark</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">index-tab</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">card-note</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">body-text</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">page-number</span></div>
+  </div>
+  <div class="card" style="--bg:#faf7ee;--ink:#1e2a38;--pri:#1f3f73;--onpri:#fbf8ef;--acc:#f6e05e;--surf:#fffdf6;--muted:#5f5a50;--line:#d5dbe6;--r:12px;--dff:"Shantell Sans", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, "Noto Sans SC", "PingFang SC", monospace"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">涂鸦本</div></div>
+    <div class="swrap"><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#fffdf6;color:#1e2a38;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two things this system does that a swapped-in template physically cannot reproduce.
+
+**UI signature — the highlighter swipe with the margin arrow.** The single most important phrase on a screen gets a **rough highlighter block** behind it: an inline SVG rectangle in `accent` yellow, tilted ~-1.5°, its edges frayed and **overshooting the word by ~6px** (because a real marker never stops exactly on the letter), set to `mix-blend-mode: multiply` so the graph grid and the ink both show *through* the yellow. Curling out of the left margin toward it is a **hand-drawn ballpoint arrow** — an SVG path with ±1.5px seeded jitter, a wobbly shaft and a two-stroke arrowhead, round-capped, a different wobble every instance. Highlight + arrow together say *this one, look here* the way you'd mark your own notes. Swap the template and both the overshoot and the jitter die into a flat rounded rectangle.
+
+*</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Treat blue as the pen (use it freely) and yellow as the highlighter (use it once, on the thing that matters).
+- Draw borders, arrows, lassos and shadows as **hand-jittered SVG strokes**, seeded differently per instance — never machine-perfect vectors.
+- Keep the 8px graph grid faintly visible under everything and snap layout to it.
+- Let handwriting shout exactly one line per view; keep every paragraph in clean Nunito.
+- Show lift as a **doubled offset ink outline** (sketch-shadow), and let the highlighter `multiply` so ink and grid read through it.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient** `#667eea → #764ba2` or any cousin. This system's flat ballpoint-blue-on-paper exists precisely to make that gradient unthinkable.
+- **Don't build the centered card trio** — title, gray subtitle, three equal rounded-rectangle cards in a row. Cards here are index slips on a margin-and-body split, ragged-left, never a symmetric centered trio.
+- **Don't render Chinese in a Japanese font** (Mochiy Pop One / Zen Maru Gothic). Simplified glyphs drop to tofu. Chinese handwriting rides **ZCOOL KuaiLe → Noto Sans SC / PingFang SC** only.
+- **Don't animate shadows or glows.** The sketch-outline and highlighter are static ink on a still page; a repainting shadow shatters the calm and tanks scroll performance.
+- Don't let the highlighter become a decorative fill or appear more t</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: DoodleNote-design-system
+description: DoodleNote is a hand-drawn notebook identity for note-taking, learning and lightweight productivity tools. Ballpoint ink-blue does all the writing and structure; a single highlighter yellow marks only what matters; every surface is real graph paper. A handwritten display face scrawls the headline while a clean rounded sans keeps the reading calm. The signature move is a rough highlighter swipe with a pen-drawn arrow curling out of the margin — warm, human, unmistakably made by hand rather than generated.
+
+colors:
+  primary: &quot;#1f3f73&quot;      # ballpoint ink blue — the pen. Load-bearing: headings, strokes, buttons, cover ink (9.8:1 on paper)
+  on-primary: &quot;#fbf8ef&quot;   # paper white — text pressed onto the ink-blue field
+  ink: &quot;#1e2a38&quot;          # graphite navy — warm near-black body text, never pure #000 (13.6:1 on canvas)
+  canvas: &quot;#faf7ee&quot;       # warm graph paper — the page, the ruled field
+  surface: &quot;#fffdf6&quot;      # index-card paper — card faces, one shade brighter than canvas
+  muted: &quot;#5f5a50&quot;        # pencil gray — secondary metadata, AA-safe on paper (6.4:1)
+  hairline: &quot;#d5dbe6&quot;     # pale blue grid line — the graph squares, 1px seams and borders
+  accent: &quot;#f6e05e&quot;       # highlighter yellow — the one marker, sweeps behind text (ink reads at 10.9:1)
+
+typography:
+  eyebrow:
+    fontFamily: '&quot;Space Mono&quot;, &quot;JetBrains Mono&quot;, ui-monospace, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 12px
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: 2px
+  display-xl:
+    fontFamily: '&quot;Shantell Sans&quot;, &quot;ZCOOL KuaiLe&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 78px
+    fontWeight: 700
+    lineHeight: 1.0
+    letterSpacing: -1px
+  display-lg:
+    fontFamily: '&quot;Shantell Sans&quot;, &quot;ZCOOL KuaiLe&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 46px
+    fontWeight: 700
+    lineHeight: 1.08
+    letterSpacing: -0.4px
+  heading:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 26px
+    fontWeight: 800
+    lineHeight: 1.25
+    letterSpacing: -0.2px
+  body:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 17px
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: 0px
+  body-mono:
+    fontFamily: '&quot;Space Mono&quot;, &quot;JetBrains Mono&quot;, ui-monospace, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, monospace'
+    fontSize: 14px
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: 0px
+  button:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 16px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: 0.2px
+  caption:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 500
+    lineHeight: 1.5
+    letterSpacing: 0.1px
+
+rounded:
+  none: 0px
+  sm: 6px
+  md: 12px
+  lg: 18px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 24px
+  xl: 40px
+  section: 88px
+
+components:
+  # —— UI 界面组件 ——
+  nav-bar:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.md} {spacing.xl}&quot;
+  divider:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    height: 1px
+    padding: &quot;0&quot;
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  button-secondary:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md} {spacing.lg}&quot;
+  highlighter-mark:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: &quot;{spacing.xs} {spacing.sm}&quot;
+  index-tab:
+    backgroundColor: &quot;{colors.accent}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: &quot;{spacing.xs} {spacing.md}&quot;
+  card-note:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg}&quot;
+  body-text:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    padding: &quot;0&quot;
+  stat-block:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: &quot;{spacing.lg} {spacing.xl}&quot;
+  page-number:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.body-mono}&quot;
+    padding: &quot;{spacing.xs} 0&quot;
+  input-field:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: &quot;{spacing.md}&quot;
+  footer:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section} {spacing.xl}&quot;
+  # —— slide 演示组件（融合 HeiGe-PPT · 16:9）——
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-section-divider:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-quote:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+  slide-closing:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: &quot;{spacing.section}&quot;
+---
+
+# DoodleNote · 涂鸦本
+
+&gt; A notebook that admits it was written by a person. Ballpoint ink-blue does the thinking, one tired highlighter marks what mattered, and the whole thing sits on graph paper you could tear a corner off. Nothing here was stamped — it was scribbled on purpose.
+
+## Overview
+
+DoodleNote is what a note-taking or learning tool looks like when it stops pretending to be a sterile SaaS dashboard and remembers where notes actually happen: **on paper, in pen, in a hurry**. The system behaves like a real notebook page. There is a grid under everything. There is one blue pen. There is exactly one highlighter, and it is running low.
+
+主色只有两个角色，泾渭分明。**Ballpoint ink `#1f3f73`** is the pen — it writes every heading, draws every arrow, fills every primary button, and inks every hand-drawn stroke. It is the only &quot;brand&quot; color and it is doing the work of four. **Highlighter yellow `#f6e05e`** is the marker, and a marker means *this line, remember this one* — it never fills a background for decoration, it only ever swipes behind the single most important phrase on screen. Overuse it and it stops meaning anything, exactly like a real highlighter.
+
+纸是安静的底：warm graph paper `#faf7ee` ruled with a faint blue grid, index-card `#fffdf6` for cards that lift off the page. 层级靠**手写与工整的对话**：a scrawled handwriting face (Shantell Sans, ZCOOL KuaiLe 承载中文) shouts the one big sentence, and a clean rounded sans (Nunito) keeps every paragraph calm and readable underneath. The tension between *messy headline* and *tidy body* is the whole personality — a smart person's fast notes, not a child's scribble.
+
+节奏靠版式不靠堆色: blue ink, yellow marker, ruled paper, and a lot of quiet grid where the reader's eye can breathe between the doodles.
+
+## Colors
+
+### Brand &amp; Accent
+| Token | Hex | Role |
+|---|---|---|
+| `primary` | `#1f3f73` | Ballpoint ink blue. The pen — load-bearing: headings, hand-drawn arrows and lassos, primary buttons, cover ink. Passes AA on paper (9.8:1). |
+| `accent` | `#f6e05e` | Highlighter yellow. The single marker. Swipes **only** behind the one phrase that matters, never a decorative fill. Ink text rides it at 10.9:1. |
+
+### Surface
+| Token | Hex | Role |
+|---|---|---|
+| `canvas` | `#faf7ee` | Warm graph paper. The page — carries the ruled 1px blue grid as its background texture. |
+| `surface` | `#fffdf6` | Index-card paper. Card and input faces, a hair brighter than canvas so cards read as slips resting *on* the page, not holes cut into it. |
+| `hairline` | `#d5dbe6` | Pale blue grid line. The graph squares themselves, plus every 1px border and seam. This color literally draws the paper. |
+
+### Text
+| Token | Hex | Role |
+|---|---|---|
+| `ink` | `#1e2a38` | Graphite navy. Body and card headings — a warm near-black that reads as pencil-on-paper, **never pure `#000`** (13.6:1 on canvas). |
+| `on-primary` | `#fbf8ef` | Paper white. Text and doodles pressed onto the ink-blue field (dividers, closing). |
+| `muted` | `#5f5a50` | Pencil gray. Metadata, page numbers, footnotes — darkened deliberately to clear AA on paper (6.4:1). |
+
+**Color discipline.** Two colors, and they are not interchangeable. Blue is a *tool* (it can be everywhere — that is what a pen is). Yellow is a *verdict* (at most once per view — that is what a highlighter is for). The moment a screen wants a third color to feel alive, the layout has failed, not the palette. Add another blue stroke or another inch of grid, never a new pigment.
+
+## Typography
+
+### Font Family
+- **Handwriting display (the scrawl):** `Shantell Sans` — a confident marker-hand variable face, the voice of someone writing fast and meaning it. Carries the one big headline and nothing small.
+- **Rounded sans (the fair copy):** `Nunito` — humanist, soft-terminal, extremely legible. Carries nav, card titles, all body, buttons, captions. This is the &quot;written up neatly later&quot; half.
+- **Mono (the margin):** `Space Mono` — typewritten, slightly quirky. Lives in the margins as page numbers, date stamps, and index-tab labels, like the pre-printed marks on a real notebook.
+
+**中文兜底铁律.** Shantell Sans 不含 CJK，手写字栈中文交给 **`&quot;ZCOOL KuaiLe&quot;`（俏皮圆手感）**，再兜 `&quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`；Nunito / Space Mono 栈末尾同样挂思源/苹方系统兜底。webfont 断网加载失败时，中文照样干净落在思源/苹方上，绝不塌成 Times 或豆腐块。**中文一律不用日文字体渲染**（Mochiy / Zen Maru 等，简体缺字变豆腐）——手写感全部由 ZCOOL KuaiLe 承担。
+
+### Hierarchy
+| Role | Font | Size / Weight | Use |
+|---|---|---|---|
+| `display-xl` | Shantell 700 | 78 / -1 tracking | Cover sentence, the one giant hero number — the scrawl |
+| `display-lg` | Shantell 700 | 46 / -0.4 | Section divider words, deck pull-quotes |
+| `heading` | Nunito 800 | 26 | Card titles, nav wordmark — the tidy half |
+| `body` | Nunito 400 | 17 / 1.7 leading | Paragraphs — the fair copy, always legible |
+| `body-mono` | Space Mono 400 | 14 | Page numbers, date stamps, units, margin marks |
+| `eyebrow` | Space Mono 700 | 12 / +2 uppercase | Index-tab labels, kicker stamps |
+| `button` | Nunito 700 | 16 | Actions |
+| `caption` | Nunito 500 | 13 | Footnotes, metadata |
+
+### Principles
+- **Handwriting is a headline, never a paragraph.** Shantell Sans appears exactly once per view — the single most important line. A wall of handwriting is unreadable and instantly reads as gimmick. Everything you actually read is clean Nunito.
+- **Contrast ≥ 1:4.** The `display-xl` cover (78) against `body` (17) clears four-to-one easily — the scrawl is allowed to feel almost too big, the way the title on a real page dwarfs the notes.
+- **`body-mono` uses `font-variant-numeric: tabular-nums`** so page numbers and stat units line up like the pre-printed rules in the margin.
+- **Left-align, off a live edge.** Notes start at the left margin and run ragged-right. Only the deck cover and quote center, and only inside their doodle frame.
+
+## Layout
+
+### Spacing
+An 8-based scale that breathes: `xs 4 · sm 8 · md 16 · lg 24 · xl 40 · section 88`. Crucially, **spacing snaps to the 8px grid** — because the grid is *visible* on this system, sloppy off-grid gaps show up instantly as smudges. Everything lands on a ruled line.
+
+### Grid &amp; Container
+- 12-column grid, **1120px** max content width, 24–32px gutters — but the real grid here is the **printed 8px graph paper** under everything, and content aligns to *that*.
+- Content is **not** trapped in one centered column. The signature layout is a **margin-and-body split**: a narrow left margin rail (mono page numbers, index tabs, a doodle or two) and a wide ragged-left body — exactly a lined notebook page, alternating which side the doodles crowd into so nothing feels stamped.
+- Vertical rhythm is loose and honest. When in doubt, leave a few empty graph rows rather than adding another divider.
+
+### Whitespace Philosophy
+Whitespace here is *ruled paper*, not void — the grid is faintly visible in it, so empty space still reads as &quot;page you could write on,&quot; never as a hole. The breathing room is where the next thought goes. Never cram a doodle into a gap just because it is empty; a real notebook has margins for a reason.
+
+## Elevation &amp; Depth
+
+DoodleNote has almost no drop-shadows. Depth is **paper physically resting on paper**, and lift is drawn *by hand*, not blurred.
+
+| Level | Technique |
+|---|---|
+| On-page | Elements sit directly on the graph field, separated only by the 1px `hairline` grid — flat, like ink on the sheet. |
+| Slip | A `surface` index card lifts off the page via a **2px hand-inked offset outline** in `primary` (a second stroke drawn 3–4px down-right, slightly jittered) — a sketched shadow, not a soft one. |
+| Marked | The highlighter swipe sits *behind* text at `mix-blend-mode: multiply`, so the grid and ink show through the marker — real translucent ink, the top layer of the page. |
+
+**The sketch-shadow is the whole depth language.** Where a template reaches for `box-shadow: 0 4px 6px rgba(0,0,0,.1)`, DoodleNote draws a **doubled hand-jittered ink outline** offset down-right — the way you'd shade a box in a margin. It is completely static. No `backdrop-filter` anywhere (frosted glass is the opposite of paper), and shadows/glows are **never animated** — a repainting shadow betrays the calm of a page that isn't moving.
+
+## Shapes
+
+### Border Radius
+| Token | Value | Use |
+|---|---|---|
+| `none` | 0px | Full-bleed slide fields, the graph sheet itself |
+| `sm` | 6px | Highlighter marks, small tags |
+| `md` | 12px | Buttons, inputs — a relaxed hand-drawn box |
+| `lg` | 18px | Index cards, stat slips — rounded-corner note cards |
+| `pill` | 9999px | Index tabs — the rounded sticky tab on a page edge |
+
+### The hand-drawn line
+The defining geometry is **not a smooth vector** — it is a drawn one. Borders, arrows, lassos, underlines and the sketch-shadow are all rendered as **inline SVG paths with seeded per-instance jitter** (a `&lt;path&gt;` whose points wobble ±1–2px, redrawn differently each place it appears) and a **round line-cap**, so no two strokes are identical and none is machine-perfect. Corners are relaxed, never sharp except on full-bleed slides. **Nothing critical is a plain `border-radius: 8px` rectangle with a smooth 1px border** — that flat perfection is the AI-slop tell this whole system exists to avoid.
+
+## Components
+
+- **nav-bar** — a graph-paper strip, Nunito wordmark left with a hand-drawn ink underline, one `button-primary` right. Bottom edge is a 1px `hairline` grid line, not a shadow.
+- **button-primary** — solid ink-blue box, paper-white label, `md` radius, a 2px jittered sketch-outline offset down-right. The one loud action per view.
+- **button-secondary** — paper box, ink-blue label, hand-drawn 2px ink border (the SVG-jitter outline). Quiet sibling.
+- **highlighter-mark** — ★ the signature. A rough highlighter block behind a word (see Signature Moment). Ink text on yellow, `multiply` blend so the grid shows through.
+- **index-tab** — a yellow rounded `pill` tab clipped to a card or page edge, mono uppercase label — the filed sticky-tab of a real notebook.
+- **card-note** — index-card `surface` slip, `lg` radius, 1px hairline border plus the offset sketch-shadow. Heading (Nunito) + body, left-aligned off the card margin, never a centered trio.
+- **stat-block** — a surface slip holding one giant ink-blue `display-xl` number with a highlighter swipe under it and a mono unit label. One number per slip.
+- **page-number** — mono numeral in the left margin rail, pencil-gray, like the pre-printed corner of a page.
+- **input-field** — surface fill, 1px hairline border sitting on the grid; focus draws a 2px ink-blue hand-outline around it (no glow).
+- **footer** — a paper &quot;back page&quot;: surface field, pencil-gray caption text, a 1px hairline top rule, and a small ballpoint doodle signing off in the corner.
+
+Interaction states stay **drawn, not glowy**: hover deepens and offsets the sketch-outline (the card &quot;lifts&quot; as its hand-drawn shadow slides out 1–2px more); press settles it back onto the page. `prefers-reduced-motion` freezes the outline in place.
+
+## Presentation System
+
+DoodleNote decks are 16:9 notebook pages — 一页一句话，黄金三秒立住&quot;这是手写的&quot;，视觉锤永远是那一道荧光笔 + 手绘箭头。
+
+- **slide-cover** — a full graph-paper page. One handwritten sentence (`display-xl`) sits ragged in the upper-left like the title you wrote at the top of a fresh page. The single load-bearing word is **lassoed by a hand-drawn ink ellipse and swiped with highlighter**; a ballpoint arrow curls out of the corner pointing at a mono date-stamp in the margin. Three seconds, one sentence, one circled word.
+- **slide-section-divider** — the palette *flips*: a full **ink-blue** field, as if the pen filled the whole page. The chapter word runs in paper-white `display-lg`, and the chapter number is a big **highlighter-yellow** hand-scrawled `01 / 02` in the corner. The blue-flood *is* the transition.
+- **slide-stat-hero** — ink-blue field, one enormous paper-white `display-xl` number filling two-thirds, a highlighter-yellow hand-underline slashed beneath it, mono unit and a one-line context ragged off the number. Never more than one number per page.
+- **slide-quote** — back to graph paper, a 46px handwritten pull-quote (`display-lg`) with the highlighter swiping behind the key phrase and a hand-drawn open-quote doodle in the margin. Attribution in mono below the rule.
+- **slide-closing** — full ink-blue again, paper-white CTA, one highlighter-yellow action box, and a ballpoint arrow doodle pointing straight at it. Bookends the cover — the page you circle before closing the notebook.
+
+**视觉锤:** the highlighter swipe + margin arrow. It opens the deck (circling the cover word), marks every stat and quote, and points at the closing action — one recurring hand gesture the audience remembers after the numbers blur.
+
+## Signature Moment
+
+Two things this system does that a swapped-in template physically cannot reproduce.
+
+**UI signature — the highlighter swipe with the margin arrow.** The single most important phrase on a screen gets a **rough highlighter block** behind it: an inline SVG rectangle in `accent` yellow, tilted ~-1.5°, its edges frayed and **overshooting the word by ~6px** (because a real marker never stops exactly on the letter), set to `mix-blend-mode: multiply` so the graph grid and the ink both show *through* the yellow. Curling out of the left margin toward it is a **hand-drawn ballpoint arrow** — an SVG path with ±1.5px seeded jitter, a wobbly shaft and a two-stroke arrowhead, round-capped, a different wobble every instance. Highlight + arrow together say *this one, look here* the way you'd mark your own notes. Swap the template and both the overshoot and the jitter die into a flat rounded rectangle.
+
+**Deck signature — the graph-paper cover with the pen-lassoed word.** A full 16:9 **real graph-grid page** (an 8px `hairline` grid, not a decorative motif), the one-sentence title handwritten ragged in the upper-left, and the single load-bearing word **lassoed by a hand-drawn ink ellipse** — an SVG stroke that *overshoots its own starting point at the top of the loop*, exactly like circling a word with a pen — layered over a highlighter swipe, with a **ballpoint arrow doodled from the corner** to a mono date-stamp in the margin. One page, one sentence, one circled word. You could tear the brand name off and still know a person drew this.
+
+## Do's and Don'ts
+
+**Do**
+- Treat blue as the pen (use it freely) and yellow as the highlighter (use it once, on the thing that matters).
+- Draw borders, arrows, lassos and shadows as **hand-jittered SVG strokes**, seeded differently per instance — never machine-perfect vectors.
+- Keep the 8px graph grid faintly visible under everything and snap layout to it.
+- Let handwriting shout exactly one line per view; keep every paragraph in clean Nunito.
+- Show lift as a **doubled offset ink outline** (sketch-shadow), and let the highlighter `multiply` so ink and grid read through it.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient** `#667eea → #764ba2` or any cousin. This system's flat ballpoint-blue-on-paper exists precisely to make that gradient unthinkable.
+- **Don't build the centered card trio** — title, gray subtitle, three equal rounded-rectangle cards in a row. Cards here are index slips on a margin-and-body split, ragged-left, never a symmetric centered trio.
+- **Don't render Chinese in a Japanese font** (Mochiy Pop One / Zen Maru Gothic). Simplified glyphs drop to tofu. Chinese handwriting rides **ZCOOL KuaiLe → Noto Sans SC / PingFang SC** only.
+- **Don't animate shadows or glows.** The sketch-outline and highlighter are static ink on a still page; a repainting shadow shatters the calm and tanks scroll performance.
+- Don't let the highlighter become a decorative fill or appear more than once per view — a marker used everywhere marks nothing.
+- Don't set handwriting as body copy, and don't make the doodles *messy* — this is a smart person's fast notes, not a child's scribble. Legible first, hand-drawn second.
+
+## Responsive Behavior
+
+Mobile is a **re-scribbled page**, not a shrunken one.
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥ 1120px | Full margin-and-body split: mono page-number rail + index tabs on the left, ragged-left content on the right, doodles alternating margins down the page. |
+| 768–1119px | Margin rail collapses into inline mono stamps above each section; content goes single-column, still ragged-left. `section` spacing eases to 64px; graph grid stays. |
+| ≤ 767px | One column, one thumb's width of margin. `display-xl` drops via `clamp()` to fit the longest line at 360px with **zero orphan characters**; the highlighter swipe and margin arrow survive but shrink; index tabs move to inline chips. The grid gets slightly larger squares so it never turns to visual noise on a small screen. |
+
+孤字铁律: 手动断行的手写大标题按最长行收敛字号，每行 `white-space:nowrap` 锁整行，`clamp()` 保证 ≤390px 不折出单字单标点；中文限宽用 `em`/`px`，绝不用 `ch`（会让中文提前折行出孤字）。居中的金句用 `text-wrap:balance` 让各行均衡。出货前桌面 + ≤390px 各查一遍：无孤字、无横向溢出（`scrollWidth == clientWidth`）。
+
+## Anti-Slop Pledge
+
+Tear the brand name off DoodleNote and you still see a hand at work — the ballpoint arrow wobbling out of the margin, the highlighter overshooting its word and letting the grid show through, the sketch-shadow drawn instead of blurred, the one scrawled headline over a page of tidy notes. Every stroke has a seeded jitter so no two are twins, and the highlighter is used like a person uses one: rarely, and only when it counts. Nothing here fell out of a Hero-Features-Pricing template. It was written down on purpose.
+
+---
+
+*Designed by HeiGe-Design · MIT · 100% original, fictional brand.*
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #1f3f73;
+  --color-on-primary: #fbf8ef;
+  --color-ink: #1e2a38;
+  --color-canvas: #faf7ee;
+  --color-surface: #fffdf6;
+  --color-muted: #5f5a50;
+  --color-hairline: #d5dbe6;
+  --color-accent: #f6e05e;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-display-xl: &quot;\&quot;Shantell Sans\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Shantell Sans\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --text-eyebrow: 12px;
+  --text-display-xl: 78px;
+  --text-display-lg: 46px;
+  --text-heading: 26px;
+  --text-body: 17px;
+  --text-body-mono: 14px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --tracking-eyebrow: 2px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.4px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.1px;
+  --font-weight-eyebrow: 700;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 800;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 88px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#1f3f73&quot;,
+        &quot;on-primary&quot;: &quot;#fbf8ef&quot;,
+        &quot;ink&quot;: &quot;#1e2a38&quot;,
+        &quot;canvas&quot;: &quot;#faf7ee&quot;,
+        &quot;surface&quot;: &quot;#fffdf6&quot;,
+        &quot;muted&quot;: &quot;#5f5a50&quot;,
+        &quot;hairline&quot;: &quot;#d5dbe6&quot;,
+        &quot;accent&quot;: &quot;#f6e05e&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Shantell Sans\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Shantell Sans\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;body-mono&quot;: [
+          &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;eyebrow&quot;: [
+          &quot;12px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;display-xl&quot;: [
+          &quot;78px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;46px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.4px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;26px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;17px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;body-mono&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0px&quot;,
+            &quot;fontWeight&quot;: &quot;400&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;16px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;6px&quot;,
+        &quot;md&quot;: &quot;12px&quot;,
+        &quot;lg&quot;: &quot;18px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;24px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;section&quot;: &quot;88px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #1f3f73;
+  --color-on-primary: #fbf8ef;
+  --color-ink: #1e2a38;
+  --color-canvas: #faf7ee;
+  --color-surface: #fffdf6;
+  --color-muted: #5f5a50;
+  --color-hairline: #d5dbe6;
+  --color-accent: #f6e05e;
+  --font-eyebrow: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-display-xl: &quot;\&quot;Shantell Sans\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Shantell Sans\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-body-mono: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;;
+  --font-button: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --text-eyebrow: 12px;
+  --text-display-xl: 78px;
+  --text-display-lg: 46px;
+  --text-heading: 26px;
+  --text-body: 17px;
+  --text-body-mono: 14px;
+  --text-button: 16px;
+  --text-caption: 13px;
+  --tracking-eyebrow: 2px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.4px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0px;
+  --tracking-body-mono: 0px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.1px;
+  --font-weight-eyebrow: 700;
+  --font-weight-display-xl: 700;
+  --font-weight-display-lg: 700;
+  --font-weight-heading: 800;
+  --font-weight-body: 400;
+  --font-weight-body-mono: 400;
+  --font-weight-button: 700;
+  --font-weight-caption: 500;
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-section: 88px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;DoodleNote is a hand-drawn notebook identity for note-taking, learning and lightweight productivity tools. Ballpoint ink-blue does all the writing and structure; a single highlighter yellow marks only what matters; every surface is real graph paper. A handwritten display face scrawls the headline while a clean rounded sans keeps the reading calm. The signature move is a rough highlighter swipe with a pen-drawn arrow curling out of the margin — warm, human, unmistakably made by hand rather than generated.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.122,
+          0.247,
+          0.451
+        ],
+        &quot;hex&quot;: &quot;#1f3f73&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.984,
+          0.973,
+          0.937
+        ],
+        &quot;hex&quot;: &quot;#fbf8ef&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.118,
+          0.165,
+          0.22
+        ],
+        &quot;hex&quot;: &quot;#1e2a38&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.98,
+          0.969,
+          0.933
+        ],
+        &quot;hex&quot;: &quot;#faf7ee&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.992,
+          0.965
+        ],
+        &quot;hex&quot;: &quot;#fffdf6&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.373,
+          0.353,
+          0.314
+        ],
+        &quot;hex&quot;: &quot;#5f5a50&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.835,
+          0.859,
+          0.902
+        ],
+        &quot;hex&quot;: &quot;#d5dbe6&quot;
+      }
+    },
+    &quot;accent&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.965,
+          0.878,
+          0.369
+        ],
+        &quot;hex&quot;: &quot;#f6e05e&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 24,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 88,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 6,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 12,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 18,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 12,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Shantell Sans\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 78,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Shantell Sans\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 46,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.4,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 26,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 17,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body-mono&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Space Mono\&quot;, \&quot;JetBrains Mono\&quot;, ui-monospace, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, monospace&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 400,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 16,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 涂鸦本（doodle-note · 玩味玩具）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `doodle-note` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#1f3f73` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Shantell Sans`，正文 `Nunito`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint doodle-note` / 导出其它格式：`heige-design export doodle-note --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 涂鸦本 — 原创设定集，可商用。跑校验：<code>heige-design lint doodle-note</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>

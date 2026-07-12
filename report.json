@@ -1,0 +1,622 @@
+{
+  "acg-stellar": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "akkurat-mono": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 7 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+      }
+    ]
+  },
+  "almanac-folk": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "arcade-crt": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 4 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "atelier-bone": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 8 typography scales, 4 rounding levels, 6 spacing tokens, 18 components."
+      }
+    ]
+  },
+  "aurora-mesh": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "boing-candy": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "broadsheet": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 7 colors, 10 typography scales, 2 rounding levels, 6 spacing tokens, 20 components."
+      }
+    ]
+  },
+  "brut-signal": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 7 colors, 8 typography scales, 2 rounding levels, 6 spacing tokens, 15 components."
+      }
+    ]
+  },
+  "carbon-lime": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+      }
+    ]
+  },
+  "cassette-futurism": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 15 components."
+      }
+    ]
+  },
+  "champagne-silk": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 10 colors, 7 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "clayfield": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+      }
+    ]
+  },
+  "coffee-house": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 10 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+      }
+    ]
+  },
+  "collage-riot": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "datum-signal": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 10 typography scales, 3 rounding levels, 6 spacing tokens, 17 components."
+      }
+    ]
+  },
+  "doodle-note": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 17 components."
+      }
+    ]
+  },
+  "dunhuang-mineral": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+      }
+    ]
+  },
+  "forge-anvil": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 15 components."
+      }
+    ]
+  },
+  "grid-bureau": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 18 components."
+      }
+    ]
+  },
+  "gugong-red": {
+    "errors": 0,
+    "warnings": 13,
+    "findings": [
+      {
+        "severity": "warning",
+        "path": "components.nav-bar.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.button-primary.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.button-ghost.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.card-lattice.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.stat-block.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.seal-mark.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.collection-tag.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.footer.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.slide-cover.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.slide-section-divider.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.slide-stat-hero.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.slide-quote.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.slide-closing.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "info",
+        "message": "Design system defines 10 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 13 components."
+      }
+    ]
+  },
+  "guochao-cyber": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 14 components."
+      }
+    ]
+  },
+  "harvest-warm": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 17 components."
+      }
+    ]
+  },
+  "hearth-story": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 11 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "helvetic-ledger": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 17 components."
+      }
+    ]
+  },
+  "ironclad-ledger": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 10 typography scales, 3 rounding levels, 6 spacing tokens, 17 components."
+      }
+    ]
+  },
+  "jelly-pop": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 6 rounding levels, 6 spacing tokens, 17 components."
+      }
+    ]
+  },
+  "linen-fold": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 14 components."
+      }
+    ]
+  },
+  "manifesto-ink": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 19 components."
+      }
+    ]
+  },
+  "marble-vein": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 18 components."
+      }
+    ]
+  },
+  "midnight-trust": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 17 components."
+      }
+    ]
+  },
+  "monogram-noir": {
+    "errors": 0,
+    "warnings": 6,
+    "findings": [
+      {
+        "severity": "warning",
+        "path": "components.nav-bar.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.card-collection.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.button-secondary.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.tag-season.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.input-newsletter.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.footer.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 9 typography scales, 4 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "morandi-still": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "moxi-void": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "neon-market": {
+    "errors": 0,
+    "warnings": 5,
+    "findings": [
+      {
+        "severity": "warning",
+        "path": "components.button-secondary.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.nav-bar.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.card-stall.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.menu-row.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "warning",
+        "path": "components.footer.borderColor",
+        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
+      },
+      {
+        "severity": "info",
+        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 13 components."
+      }
+    ]
+  },
+  "nocturne-teal": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 15 components."
+      }
+    ]
+  },
+  "noir-vermilion": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 7 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "obsidian-flux": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 7 typography scales, 5 rounding levels, 6 spacing tokens, 13 components."
+      }
+    ]
+  },
+  "onyx-gold": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 8 typography scales, 4 rounding levels, 5 spacing tokens, 13 components."
+      }
+    ]
+  },
+  "rebar-concrete": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 7 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 17 components."
+      }
+    ]
+  },
+  "riot-press": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 7 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 15 components."
+      }
+    ]
+  },
+  "sermon-serif": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 9 typography scales, 4 rounding levels, 6 spacing tokens, 18 components."
+      }
+    ]
+  },
+  "song-celadon": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "soundwave-wrapped": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "sticker-club": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 15 components."
+      }
+    ]
+  },
+  "synthwave-drive": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 5 spacing tokens, 13 components."
+      }
+    ]
+  },
+  "vaporwave-marble": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "void-hud": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 10 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 17 components."
+      }
+    ]
+  },
+  "wenkai-warm": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+      }
+    ]
+  },
+  "y2k-chrome": {
+    "errors": 0,
+    "warnings": 0,
+    "findings": [
+      {
+        "severity": "info",
+        "message": "Design system defines 9 colors, 8 typography scales, 6 rounding levels, 6 spacing tokens, 15 components."
+      }
+    ]
+  }
+}

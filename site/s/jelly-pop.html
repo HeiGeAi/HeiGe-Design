@@ -1,0 +1,995 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>果冻 · HeiGe·Design</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Archivo:wght@400;600;800&family=Archivo+Black&family=Anton&family=Bebas+Neue&family=Oswald:wght@500;700&family=Playfair+Display:wght@400;600;700;900&family=Cormorant:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=EB+Garamond:wght@400;600&family=Fraunces:wght@400;600;900&family=DM+Serif+Display&family=Manrope:wght@400;600;800&family=Sora:wght@400;600;800&family=Syne:wght@600;800&family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;600;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&family=Chakra+Petch:wght@500;700&family=Press+Start+2P&family=VT323&family=Baloo+2:wght@500;700;800&family=Fredoka:wght@500;600;700&family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700;900&family=LXGW+WenKai+TC&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&family=Ma+Shan+Zheng&family=Long+Cang&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+<style>:root{--shell:#0a0b0d;--shell2:#111318;--edge:#20242c;--fg:#e8ecf2;--dim:#8b93a2;--brand:#c8ff00}*{box-sizing:border-box}html,body{margin:0;background:var(--shell);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.wrap{max-width:1400px;margin:0 auto;padding:0 32px}
+.top{padding:20px 0;border-bottom:1px solid var(--edge);font-size:13px;color:var(--dim)}.top a{color:var(--brand)}
+.hero{padding:30px 0;border-bottom:1px solid var(--edge)}
+.fam{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+h1{margin:8px 0 4px;font-size:44px;font-weight:800;letter-spacing:-.02em}.slug{font-family:"Space Mono",monospace;color:var(--dim);font-size:13px}
+.badge{display:inline-block;margin-left:10px;font-family:"Space Mono",monospace;font-size:11px;padding:3px 9px;border-radius:999px;background:#12331a;color:#7ee787;border:1px solid #1f5130}
+.desc{color:var(--dim);font-size:14.5px;line-height:1.7;max-width:820px;margin:14px 0 0}
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;padding:30px 0}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{border:1px solid var(--edge);border-radius:14px;overflow:hidden;background:var(--shell2)}
+.card h3{margin:0;padding:14px 18px;font-size:13px;letter-spacing:.04em;color:var(--dim);border-bottom:1px solid var(--edge);font-weight:600}
+.pv{background:var(--bg);color:var(--ink);font-family:var(--bff);padding:34px 28px}
+.pv .ey{font-family:var(--mff);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);opacity:.85}
+.pv .h{font-family:var(--dff);font-size:52px;line-height:1.03;font-weight:var(--dw);letter-spacing:var(--dls);margin:10px 0 12px;color:var(--ink)}
+.pv .sub{font-family:var(--bff);font-size:15px;color:var(--muted);line-height:1.6;max-width:22em}
+.pv .row{display:flex;gap:12px;align-items:center;margin-top:20px}
+.pv .b1{background:var(--pri);color:var(--onpri);border-radius:var(--r);padding:11px 22px;font-weight:600;font-size:14px}
+.pv .b2{border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:11px 22px;font-size:14px}
+.pv .stat{display:flex;gap:26px;margin-top:26px}.pv .stat b{font-family:var(--mff);font-size:26px;color:var(--acc);display:block}.pv .stat span{font-size:12px;color:var(--muted)}
+.slide{aspect-ratio:16/9;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;flex-direction:column;justify-content:center;margin:16px 18px 20px}
+.slide .k{font-family:var(--mff);font-size:11px;letter-spacing:.2em;color:var(--acc)}.slide .t{font-family:var(--dff);font-size:34px;font-weight:var(--dw);letter-spacing:var(--dls);margin-top:8px;color:var(--ink)}
+.pal{display:flex;height:40px;border-radius:8px;overflow:hidden;margin:0 18px 16px;border:1px solid var(--line)}.pal i{flex:1;position:relative}
+.swrap{padding:0 18px 18px;display:flex;flex-wrap:wrap;gap:6px}.cc{font-family:var(--mff);font-size:11px;padding:5px 9px;border-radius:6px}
+.sec{padding:24px 0;border-top:1px solid var(--edge)}.sec h2{font-size:16px;margin:0 0 12px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:800px){.dd{grid-template-columns:1fr}}
+.dd .box{border:1px solid var(--edge);border-radius:12px;padding:16px;background:var(--shell2);font-size:13px;line-height:1.7;color:#c3cad4;white-space:pre-wrap}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tab{font-size:12.5px;padding:7px 13px;border:1px solid var(--edge);border-radius:8px;color:var(--dim);cursor:pointer;background:transparent;font-family:inherit}
+.tab.on{background:var(--fg);color:#0a0b0d;font-weight:600}
+.codebox{position:relative;border:1px solid var(--edge);border-radius:12px;overflow:hidden}
+.copy{position:absolute;top:10px;right:10px;font-size:12px;padding:6px 12px;border-radius:7px;border:1px solid var(--edge);background:var(--shell2);color:var(--fg);cursor:pointer}
+pre{margin:0;padding:16px;overflow:auto;max-height:460px;font-family:"JetBrains Mono","Space Mono",monospace;font-size:12px;line-height:1.6;color:#cdd3db;background:#0d0f13}
+.flag{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}.flag a{border:1px solid var(--edge);border-radius:10px;padding:12px 18px;color:var(--fg);font-size:13.5px;background:var(--shell2)}.flag a b{color:var(--brand)}
+footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);font-size:13px}
+</style></head><body>
+<div class="wrap">
+<div class="top"><a href="../index.html">← 全部 50 套</a> · 玩味玩具</div>
+<div class="hero"><div class="fam">玩味玩具</div><h1>果冻<span class="badge">✓ lint 0 error</span></h1><div class="slug">jelly-pop · JellyPop-design-system</div><p class="desc">Jelly-Pop (果冻) is a translucent candy playground for kids' learning products. Bubblegum magenta leads, jelly teal and lemon accent, and every surface reads like a gummy you could squish. Fat rounded display (Baloo 2 / ZCOOL KuaiLe) with a Chinese system fallback, exaggerated 40px corners, and a wobble spring on tap. Signature move — two translucent blobs overlap and multiply into a third jelly hue, printing a see-through core behind giant numbers. Warm blackberry ink, no pure black, no purple-blue slop.</p></div>
+
+<div class="cols">
+  <div class="card" style="--bg:#FFF3F9;--ink:#2E1A36;--pri:#D61F76;--onpri:#FFFFFF;--acc:#D61F76;--surf:#FFFFFF;--muted:#7A5C77;--line:#F6D9E9;--r:18px;--dff:"Baloo 2", "Fredoka", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Baloo 2", "Fredoka", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
+    <div class="ey">Design System Preview</div><div class="h">果冻</div>
+    <div class="sub">一份设定集，同时驱动界面与演示。这块预览完全由该系统的颜色 / 字体 / 圆角 token 渲染。</div>
+    <div class="row"><span class="b1">Start building</span><span class="b2">Docs</span></div>
+    <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
+  </div>
+  <div class="pal"><i style="background:#D61F76"></i><i style="background:#FFFFFF"></i><i style="background:#2E1A36"></i><i style="background:#FFF3F9"></i><i style="background:#7A5C77"></i><i style="background:#F6D9E9"></i><i style="background:#07C4B4"></i><i style="background:#FFCC33"></i></div>
+  <div class="swrap"><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">button-play</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">card-lesson</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">card-jelly</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">tag-pill</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">eyebrow-kicker</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">caption-note</span></div>
+  </div>
+  <div class="card" style="--bg:#FFF3F9;--ink:#2E1A36;--pri:#D61F76;--onpri:#FFFFFF;--acc:#D61F76;--surf:#FFFFFF;--muted:#7A5C77;--line:#F6D9E9;--r:18px;--dff:"Baloo 2", "Fredoka", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Baloo 2", "Fredoka", "ZCOOL KuaiLe", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif"><h3>Deck 预览（slide-* 组件）</h3>
+    <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">果冻</div></div>
+    <div class="swrap"><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">slide-cover</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">slide-section-divider</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">slide-stat-hero</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">slide-quote</span><span class="cc" style="background:#FFFFFF;color:#2E1A36;border:1px solid var(--line)">slide-closing</span></div>
+  </div>
+</div>
+
+
+
+<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">Two moments no other template reproduces:
+
+- **UI — the Jelly Tap.** Every button and card is a physical gummy. On press it squishes (`transform: scale(1.06, 0.9)`), then springs back through an overshoot (`scale(0.98, 1.04) → 1`) on a spring curve, while the solid underside shadow collapses from `0 10px 0` to `0 2px 0` and rebounds. Where the pressed element overlaps a neighbor, their translucent fills multiply into a darker jelly core for the frame. It is transform-and-opacity only — no animated shadow, no blur — so it stays 60fps and honors `prefers-reduced-motion: reduce` (motion off, the static candy sheen and offset shadow remain, so it still reads as gummy). This is the &quot;捏一下会 Q 弹回来&quot; moment.
+
+- **Deck — the Gummy Reveal.** On `slide-stat-hero`, the giant number is not printed on the teal slab, it is printed *inside* it. Two overlapping solid blobs (teal + bubblegum) multi</div></div></div>
+<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
+- Do let one fat bubblegum element own each screen, wrapped in calm canvas.
+- Do keep accents (teal, lemon) as fills paired only with blackberry ink.
+- Do make numbers the hero — big, round, one per view.
+- Do build translucency with real solid layers + `mix-blend-mode`, static.
+- Do exaggerate the corners (40px cards, full-pill buttons) — this is the point.
+- Do give the whole thing exactly one spring animation and honor reduced-motion.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient** (`#667eea → #764ba2`) or any of its family — Jelly-Pop's depth comes from candy, not from the AI default sky.
+- **Don't do the centered card triptych** — one title, one gray subtitle, three equal rounded cards repeated down the page is exactly the template we refuse.
+- **Don't render Chinese with Japanese fonts** (Mochiy Pop, Zen Maru Gothic) — simplified glyphs turn to tofu; always fall back through ZCOOL KuaiLe → Noto Sans SC → PingFang SC.
+- **Don't animate shadows or glows** — the press is transform + swapped static shadow, never a per-frame recolor; and never `backdrop-filter`.
+- Don't dilute into &quot;gentle pastels&quot; — jelly is saturated and translucent, not washed out.
+- Don't pair an accent with white text (fails contrast) — accents always carry ink.
+- Don't use emoji as functional icons — use fat rounded candy icons.</div></div>
+
+<div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
+version: alpha
+name: JellyPop-design-system
+description: &quot;Jelly-Pop (果冻) is a translucent candy playground for kids' learning products. Bubblegum magenta leads, jelly teal and lemon accent, and every surface reads like a gummy you could squish. Fat rounded display (Baloo 2 / ZCOOL KuaiLe) with a Chinese system fallback, exaggerated 40px corners, and a wobble spring on tap. Signature move — two translucent blobs overlap and multiply into a third jelly hue, printing a see-through core behind giant numbers. Warm blackberry ink, no pure black, no purple-blue slop.&quot;
+
+colors:
+  primary: &quot;#D61F76&quot;
+  on-primary: &quot;#FFFFFF&quot;
+  ink: &quot;#2E1A36&quot;
+  canvas: &quot;#FFF3F9&quot;
+  surface: &quot;#FFFFFF&quot;
+  muted: &quot;#7A5C77&quot;
+  hairline: &quot;#F6D9E9&quot;
+  accent-jelly: &quot;#07C4B4&quot;
+  accent-sun: &quot;#FFCC33&quot;
+
+typography:
+  display-xl:
+    fontFamily: '&quot;Baloo 2&quot;, &quot;Fredoka&quot;, &quot;ZCOOL KuaiLe&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 76px
+    fontWeight: 800
+    lineHeight: 1.02
+    letterSpacing: -1px
+  display-lg:
+    fontFamily: '&quot;Baloo 2&quot;, &quot;Fredoka&quot;, &quot;ZCOOL KuaiLe&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 52px
+    fontWeight: 800
+    lineHeight: 1.08
+    letterSpacing: -0.5px
+  heading:
+    fontFamily: '&quot;Baloo 2&quot;, &quot;Fredoka&quot;, &quot;ZCOOL KuaiLe&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 28px
+    fontWeight: 700
+    lineHeight: 1.25
+    letterSpacing: -0.2px
+  body:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif'
+    fontSize: 18px
+    fontWeight: 500
+    lineHeight: 1.65
+    letterSpacing: 0.1px
+  numeral:
+    fontFamily: '&quot;Baloo 2&quot;, &quot;Fredoka&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, sans-serif'
+    fontSize: 112px
+    fontWeight: 800
+    lineHeight: 0.95
+    letterSpacing: -2px
+  button:
+    fontFamily: '&quot;Baloo 2&quot;, &quot;Fredoka&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, sans-serif'
+    fontSize: 18px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: 0.2px
+  caption:
+    fontFamily: '&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif'
+    fontSize: 14px
+    fontWeight: 600
+    lineHeight: 1.5
+    letterSpacing: 0.2px
+  eyebrow:
+    fontFamily: '&quot;Baloo 2&quot;, &quot;Fredoka&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, sans-serif'
+    fontSize: 13px
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: 2px
+
+rounded:
+  none: 0px
+  sm: 10px
+  md: 18px
+  lg: 28px
+  xl: 40px
+  pill: 9999px
+
+spacing:
+  xs: 4px
+  sm: 8px
+  md: 16px
+  lg: 28px
+  xl: 48px
+  section: 96px
+
+components:
+  button-primary:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 14px 30px
+  button-secondary:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 14px 30px
+  button-play:
+    backgroundColor: &quot;{colors.accent-jelly}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.button}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 14px 30px
+  card-lesson:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.lg}&quot;
+    padding: 28px
+  card-jelly:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.xl}&quot;
+    padding: 32px
+  nav-bar:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.heading}&quot;
+    rounded: &quot;{rounded.md}&quot;
+    padding: 16px 24px
+  tag-pill:
+    backgroundColor: &quot;{colors.accent-sun}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 6px 14px
+  eyebrow-kicker:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.primary}&quot;
+    typography: &quot;{typography.eyebrow}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: 4px 8px
+  stat-block:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    rounded: &quot;{rounded.xl}&quot;
+    padding: 32px
+  caption-note:
+    backgroundColor: &quot;{colors.surface}&quot;
+    textColor: &quot;{colors.muted}&quot;
+    typography: &quot;{typography.caption}&quot;
+    rounded: &quot;{rounded.sm}&quot;
+    padding: 8px 12px
+  divider-hairline:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    rounded: &quot;{rounded.pill}&quot;
+    padding: 2px
+  footer:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.canvas}&quot;
+    typography: &quot;{typography.body}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 48px 24px
+  slide-cover:
+    backgroundColor: &quot;{colors.canvas}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-xl}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 96px
+  slide-section-divider:
+    backgroundColor: &quot;{colors.primary}&quot;
+    textColor: &quot;{colors.on-primary}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 96px
+  slide-stat-hero:
+    backgroundColor: &quot;{colors.accent-jelly}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.numeral}&quot;
+    rounded: &quot;{rounded.xl}&quot;
+    padding: 80px
+  slide-quote:
+    backgroundColor: &quot;{colors.accent-sun}&quot;
+    textColor: &quot;{colors.ink}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 96px
+  slide-closing:
+    backgroundColor: &quot;{colors.ink}&quot;
+    textColor: &quot;{colors.canvas}&quot;
+    typography: &quot;{typography.display-lg}&quot;
+    rounded: &quot;{rounded.none}&quot;
+    padding: 96px
+---
+
+# Jelly-Pop · 果冻
+
+A translucent candy design system for kids, learning and family products. Everything on screen should look like a gummy you could press with a thumb and watch bounce back.
+
+## Overview
+
+Jelly-Pop is built on one physical idea: **soft translucent candy**. Not flat &quot;playful pastels&quot;, not another rounded-corner SaaS. Real gummy behavior — squish on press, wobble back, and color that bleeds through where two jelly shapes overlap.
+
+The palette runs on a **bubblegum magenta** primary (`#D61F76`) that carries every call-to-action, paired with two candy accents that never touch text duty on their own: **jelly teal** (`#07C4B4`) and **lemon** (`#FFCC33`). The two roles of the primary: it is the one loud voice (buttons, the divider slab, active states) and it is the ink-accent that colors kickers and links. Accents are the flavor, primary is the voice.
+
+Type is deliberately **fat and round** — Baloo 2 as the Latin display with ZCOOL KuaiLe carrying the Chinese playful weight, then a hard system fallback so nothing ever turns to tofu. Ink is a warm **blackberry** (`#2E1A36`), never pure black, so even the darkest text feels like candy shell instead of a terminal.
+
+Rhythm: big rounded shapes, generous air, one hero per screen, and a single spring animation that makes the whole thing feel alive without ever touching a shadow or a blur filter.
+
+## Colors
+
+### Brand &amp; Accent
+- **Primary — Bubblegum `#D61F76`**: the one loud color. Primary buttons, active tabs, the section-divider slab, chapter numbers, link and kicker ink. Deep enough to carry white text at 4.86:1.
+- **Jelly Teal `#07C4B4`**: cool candy accent. Fills the &quot;play&quot; / secondary action button and the stat-hero slab. Always paired with blackberry ink (7.26:1), never with white.
+- **Lemon `#FFCC33`**: warm candy accent. Tag pills, reward badges, the quote slide. Always paired with ink (10.58:1).
+
+### Surface
+- **Canvas — Pale Bubblegum `#FFF3F9`**: page background, a barely-there pink so white cards float warmly instead of clinically.
+- **Surface — White `#FFFFFF`**: cards, nav, sheets. The clean plate the candy sits on.
+- **Hairline `#F6D9E9`**: 1px pink separators and progress-track fills. Soft, never gray.
+
+### Text
+- **Ink — Blackberry `#2E1A36`**: all primary text. Warm-dark, reads at 14.8:1 on canvas.
+- **Muted — Grape `#7A5C77`**: captions, metadata, helper text. 5.79:1 on white — legible, not a whisper.
+
+### Semantic &amp; translucency
+Jelly overlays are **not** tokens (they must stay legible-safe), they are decorative CSS. Build the &quot;gummy overlap&quot; with two solid blobs at `opacity: 0.72` and `mix-blend-mode: multiply` — where bubblegum crosses jelly teal they print a deep grape core; where lemon crosses teal they print a soft lime. This third-hue-from-overlap is the whole point, and it is static (no animated filters).
+
+## Typography
+
+### Font Family
+- **Display / Heading / Numbers**: `&quot;Baloo 2&quot;, &quot;Fredoka&quot;, &quot;ZCOOL KuaiLe&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif`. Baloo 2 gives the fat round Latin, ZCOOL KuaiLe gives Chinese the same bouncy weight.
+- **Body / Caption**: `&quot;Nunito&quot;, &quot;Noto Sans SC&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, &quot;Hiragino Sans GB&quot;, sans-serif`. Nunito's rounded terminals keep the candy feel readable at paragraph length.
+- **中文铁律**: 中文永远走 `ZCOOL KuaiLe → Noto Sans SC → PingFang SC` 这条兜底链，绝不用日文圆体（Mochiy Pop、Zen Maru）渲染简体，会缺字变豆腐。Webfont 放最前，系统字兜底，断网也不塌成 Times。
+
+### Hierarchy
+
+| Role | Size | Weight | Line | Tracking | Use |
+|---|---|---|---|---|---|
+| display-xl | 76px | 800 | 1.02 | -1px | slide cover title, hero headline |
+| display-lg | 52px | 800 | 1.08 | -0.5px | divider / quote / closing slides |
+| numeral | 112px | 800 | 0.95 | -2px | the one big number per stat |
+| heading | 28px | 700 | 1.25 | -0.2px | card titles, nav |
+| body | 18px | 500 | 1.65 | 0.1px | paragraphs, footer |
+| button | 18px | 700 | 1 | 0.2px | all CTAs |
+| caption | 14px | 600 | 1.5 | 0.2px | metadata, helper |
+| eyebrow | 13px | 700 | 1 | 2px | wide-tracked kickers, tags (UPPERCASE) |
+
+### Principles
+- **Fat contrast**: display-to-body ratio is 76:18 (&gt;4:1). The hero word should feel almost too big.
+- **Round everywhere**: no thin or condensed weights anywhere — a hairline serif would break the whole world.
+- **Numbers are heroes**: `numeral` is its own role because a kids product lives on &quot;3 stars&quot;, &quot;day 12&quot;, &quot;98%&quot;. Give the number the stage.
+- **Zero orphans**: hand-broken headlines wrap on the longest line and lock each line with `white-space: nowrap`; size the hero with `clamp()` so the longest line fits at 390px. Never limit Chinese width with `ch`.
+
+## Layout
+
+### Spacing
+An 8-based candy scale: `xs 4 · sm 8 · md 16 · lg 28 · xl 48 · section 96`. Cards breathe on `md`–`lg` inner padding, sections separate on the full `section` rhythm. Playful does not mean cramped — the air is what lets a single fat shape read as the hero.
+
+### Grid &amp; Container
+- Content max-width **1120px**, 12-column grid, `lg` (28px) gutters.
+- Cards are chunky: minimum touch target 56px because the audience has small, imprecise fingers.
+- Slides run a fixed **16:9** frame at `section` (96px) padding, one idea per frame.
+
+### Whitespace philosophy
+Air is grouped, not sprinkled. A loud bubblegum hero earns a wide margin of calm canvas around it so the eye lands, wobbles, and moves on. Density is reserved for reward moments (a wall of earned sticker badges), never for the reading path.
+
+## Elevation &amp; Depth
+
+Depth here is **candy thickness**, not floating cards.
+
+| Layer | Treatment |
+|---|---|
+| Base | canvas `#FFF3F9` |
+| Resting card | surface white, `rounded.xl`, soft static drop `0 10px 0 #F6D9E9` (a solid candy underside, offset only) |
+| Pressed | translate down 2px, shrink the offset to `0 2px 0` — reads as the gummy compressing |
+| Overlay blob | two solid shapes, `opacity 0.72`, `mix-blend-mode: multiply` for the third-hue core |
+
+- **No `box-shadow` animation** — the &quot;press&quot; is a `transform` + a swapped static shadow, never a per-frame glowing recolor.
+- **No `backdrop-filter`** — translucency is real solid layers with blend modes, so scrolling never repaints a blur.
+- Inner &quot;jelly sheen&quot;: one static `inset 0 6px 0 rgba(255,255,255,.5)` top-light per gummy element. Static, always on.
+
+## Shapes
+
+### Border Radius
+`none 0 · sm 10 · md 18 · lg 28 · xl 40 · pill 9999`. The system runs **exaggerated**: default card is `xl` (40px), buttons and tags are full `pill`. Only full-bleed slide color blocks drop to `none`.
+
+### Geometry
+- **Blobs over rectangles**: decorative shapes are organic gummy blobs (`border-radius: 42% 58% 63% 37% / 45% 45% 55% 55%`), not circles.
+- **Image masking**: photos sit inside rounded-`xl` or blob masks, never hard rectangles.
+- **Icons are fat**: 2.5px+ rounded strokes, filled candy style — big enough to read as toys, never hairline line-icons, never emoji standing in for icons.
+
+## Components
+
+- **button-primary**: bubblegum pill, white label, spring press. The one true CTA.
+- **button-secondary**: white pill, bubblegum label, hairline ring. Quiet twin.
+- **button-play**: jelly-teal pill, ink label. The &quot;start / play / next&quot; candy action.
+- **card-lesson**: white card, `lg` radius, solid candy underside shadow. Holds one lesson, one icon, one title.
+- **card-jelly**: canvas-tinted `xl` card for grouped soft content and the translucent overlap backdrop.
+- **nav-bar**: white bar, ink labels, `md` radius, floating with an air gap from the top.
+- **tag-pill**: lemon pill, ink eyebrow text — level tags, categories, &quot;NEW&quot;.
+- **eyebrow-kicker**: bubblegum wide-tracked micro-label above headings.
+- **stat-block**: canvas tile framing one big `numeral` — progress, streaks, scores.
+- **caption-note**: muted helper text on white for hints and metadata.
+- **divider-hairline**: soft pink 1px rule / progress track (`pill` capped ends).
+- **footer**: blackberry night slab, pale canvas text — the calm bottom of the candy world.
+
+## Presentation System
+
+Jelly-Pop turns into a 16:9 deck that obeys **one page = one sentence**, wins the **golden three seconds**, and lands its **visual hammer** = the translucent overlapping jelly blob printing a third hue.
+
+- **Cover (`slide-cover`)**: pale canvas, one fat headline in blackberry, two out-of-frame gummy blobs bleeding a grape core behind the last word. Kicker pill top-left. The title wobbles once on load, then rests.
+- **Section divider (`slide-section-divider`)**: full-bleed bubblegum slab, white oversized chapter number (`01`) and three words. Pure color-block reset for the eye — this is the deck's breath.
+- **Stat hero (`slide-stat-hero`)**: jelly-teal `xl` slab, a single 112px number in ink, sitting exactly over a multiplied blob so it looks embedded in see-through candy. One number, one label, nothing else.
+- **Quote (`slide-quote`)**: lemon full-bleed, one sentence in blackberry display-lg, screen-filling. The candy exclamation mark of the deck.
+- **Closing (`slide-closing`)**: blackberry night, pale text, one bubblegum `button-primary` as the single glowing action. Calm end, clear next step.
+
+Rhythm across the deck: canvas → color-block → canvas → color-block, so every loud frame is followed by a quiet one. No two adjacent slides share a background color.
+
+## Signature Moment
+
+Two moments no other template reproduces:
+
+- **UI — the Jelly Tap.** Every button and card is a physical gummy. On press it squishes (`transform: scale(1.06, 0.9)`), then springs back through an overshoot (`scale(0.98, 1.04) → 1`) on a spring curve, while the solid underside shadow collapses from `0 10px 0` to `0 2px 0` and rebounds. Where the pressed element overlaps a neighbor, their translucent fills multiply into a darker jelly core for the frame. It is transform-and-opacity only — no animated shadow, no blur — so it stays 60fps and honors `prefers-reduced-motion: reduce` (motion off, the static candy sheen and offset shadow remain, so it still reads as gummy). This is the &quot;捏一下会 Q 弹回来&quot; moment.
+
+- **Deck — the Gummy Reveal.** On `slide-stat-hero`, the giant number is not printed on the teal slab, it is printed *inside* it. Two overlapping solid blobs (teal + bubblegum) multiply directly behind the digits, so a deep grape core glows through the number as if you are reading it through a slice of see-through candy. One number, embedded in jelly, filling the golden-three-second frame. Change the template and the number goes flat on a rectangle — this is the shape that cannot be copied.
+
+## Do's and Don'ts
+
+**Do**
+- Do let one fat bubblegum element own each screen, wrapped in calm canvas.
+- Do keep accents (teal, lemon) as fills paired only with blackberry ink.
+- Do make numbers the hero — big, round, one per view.
+- Do build translucency with real solid layers + `mix-blend-mode`, static.
+- Do exaggerate the corners (40px cards, full-pill buttons) — this is the point.
+- Do give the whole thing exactly one spring animation and honor reduced-motion.
+
+**Don't**
+- **Don't touch the purple-blue slop gradient** (`#667eea → #764ba2`) or any of its family — Jelly-Pop's depth comes from candy, not from the AI default sky.
+- **Don't do the centered card triptych** — one title, one gray subtitle, three equal rounded cards repeated down the page is exactly the template we refuse.
+- **Don't render Chinese with Japanese fonts** (Mochiy Pop, Zen Maru Gothic) — simplified glyphs turn to tofu; always fall back through ZCOOL KuaiLe → Noto Sans SC → PingFang SC.
+- **Don't animate shadows or glows** — the press is transform + swapped static shadow, never a per-frame recolor; and never `backdrop-filter`.
+- Don't dilute into &quot;gentle pastels&quot; — jelly is saturated and translucent, not washed out.
+- Don't pair an accent with white text (fails contrast) — accents always carry ink.
+- Don't use emoji as functional icons — use fat rounded candy icons.
+
+## Responsive Behavior
+
+| Breakpoint | Behavior |
+|---|---|
+| ≥1120px | 12-col grid, hero + floating blob cluster side by side, full 96px section rhythm |
+| 768–1119px | 8-col, blob cluster moves behind hero as a single decorative layer, cards 2-up |
+| ≤767px | single column, hero `clamp()` shrinks, cards stack full-width, nav collapses to a fat pill menu |
+| ≤390px | headline re-broken on the longest line with `white-space: nowrap`, `numeral` clamps down, touch targets stay ≥56px |
+
+Mobile is a **re-composition, not a shrink**: the blob backdrop simplifies to one shape, the stat-hero goes number-over-slab full-bleed, and the deck's 16:9 frames re-flow to 9:16 story cards with the same one-idea-per-frame law. Verify no orphan lines and `scrollWidth == clientWidth` at 390px before shipping.
+
+## Anti-Slop Pledge
+
+Strip the name off any Jelly-Pop screen and it still reads as made by hand: a warm blackberry ink instead of black, a bubblegum voice that never once becomes a purple-blue gradient, corners exaggerated on purpose, numbers built as heroes, and one gummy that actually squishes back. Two translucent blobs multiplying a third hue behind a number is not something a template hands you — it is a decision. That decision is the whole system.
+
+*HeiGe-Design · MIT.*
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+  --color-primary: #d61f76;
+  --color-on-primary: #ffffff;
+  --color-ink: #2e1a36;
+  --color-canvas: #fff3f9;
+  --color-surface: #ffffff;
+  --color-muted: #7a5c77;
+  --color-hairline: #f6d9e9;
+  --color-accent-jelly: #07c4b4;
+  --color-accent-sun: #ffcc33;
+  --font-display-xl: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-numeral: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 52px;
+  --text-heading: 28px;
+  --text-body: 18px;
+  --text-numeral: 112px;
+  --text-button: 18px;
+  --text-caption: 14px;
+  --text-eyebrow: 13px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0.1px;
+  --tracking-numeral: -2px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 700;
+  --font-weight-body: 500;
+  --font-weight-numeral: 800;
+  --font-weight-button: 700;
+  --font-weight-caption: 600;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 28px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;theme&quot;: {
+    &quot;extend&quot;: {
+      &quot;colors&quot;: {
+        &quot;primary&quot;: &quot;#d61f76&quot;,
+        &quot;on-primary&quot;: &quot;#ffffff&quot;,
+        &quot;ink&quot;: &quot;#2e1a36&quot;,
+        &quot;canvas&quot;: &quot;#fff3f9&quot;,
+        &quot;surface&quot;: &quot;#ffffff&quot;,
+        &quot;muted&quot;: &quot;#7a5c77&quot;,
+        &quot;hairline&quot;: &quot;#f6d9e9&quot;,
+        &quot;accent-jelly&quot;: &quot;#07c4b4&quot;,
+        &quot;accent-sun&quot;: &quot;#ffcc33&quot;
+      },
+      &quot;fontFamily&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;display-lg&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;heading&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;body&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;
+        ],
+        &quot;numeral&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;
+        ],
+        &quot;button&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;
+        ],
+        &quot;caption&quot;: [
+          &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;
+        ]
+      },
+      &quot;fontSize&quot;: {
+        &quot;display-xl&quot;: [
+          &quot;76px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-1px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;display-lg&quot;: [
+          &quot;52px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.5px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;heading&quot;: [
+          &quot;28px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;body&quot;: [
+          &quot;18px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.1px&quot;,
+            &quot;fontWeight&quot;: &quot;500&quot;
+          }
+        ],
+        &quot;numeral&quot;: [
+          &quot;112px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;-2px&quot;,
+            &quot;fontWeight&quot;: &quot;800&quot;
+          }
+        ],
+        &quot;button&quot;: [
+          &quot;18px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ],
+        &quot;caption&quot;: [
+          &quot;14px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;0.2px&quot;,
+            &quot;fontWeight&quot;: &quot;600&quot;
+          }
+        ],
+        &quot;eyebrow&quot;: [
+          &quot;13px&quot;,
+          {
+            &quot;letterSpacing&quot;: &quot;2px&quot;,
+            &quot;fontWeight&quot;: &quot;700&quot;
+          }
+        ]
+      },
+      &quot;borderRadius&quot;: {
+        &quot;none&quot;: &quot;0px&quot;,
+        &quot;sm&quot;: &quot;10px&quot;,
+        &quot;md&quot;: &quot;18px&quot;,
+        &quot;lg&quot;: &quot;28px&quot;,
+        &quot;xl&quot;: &quot;40px&quot;,
+        &quot;pill&quot;: &quot;9999px&quot;
+      },
+      &quot;spacing&quot;: {
+        &quot;xs&quot;: &quot;4px&quot;,
+        &quot;sm&quot;: &quot;8px&quot;,
+        &quot;md&quot;: &quot;16px&quot;,
+        &quot;lg&quot;: &quot;28px&quot;,
+        &quot;xl&quot;: &quot;48px&quot;,
+        &quot;section&quot;: &quot;96px&quot;
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+  --color-primary: #d61f76;
+  --color-on-primary: #ffffff;
+  --color-ink: #2e1a36;
+  --color-canvas: #fff3f9;
+  --color-surface: #ffffff;
+  --color-muted: #7a5c77;
+  --color-hairline: #f6d9e9;
+  --color-accent-jelly: #07c4b4;
+  --color-accent-sun: #ffcc33;
+  --font-display-xl: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-display-lg: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-heading: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-body: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;;
+  --font-numeral: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;;
+  --font-button: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;;
+  --font-caption: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;;
+  --font-eyebrow: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;;
+  --text-display-xl: 76px;
+  --text-display-lg: 52px;
+  --text-heading: 28px;
+  --text-body: 18px;
+  --text-numeral: 112px;
+  --text-button: 18px;
+  --text-caption: 14px;
+  --text-eyebrow: 13px;
+  --tracking-display-xl: -1px;
+  --tracking-display-lg: -0.5px;
+  --tracking-heading: -0.2px;
+  --tracking-body: 0.1px;
+  --tracking-numeral: -2px;
+  --tracking-button: 0.2px;
+  --tracking-caption: 0.2px;
+  --tracking-eyebrow: 2px;
+  --font-weight-display-xl: 800;
+  --font-weight-display-lg: 800;
+  --font-weight-heading: 700;
+  --font-weight-body: 500;
+  --font-weight-numeral: 800;
+  --font-weight-button: 700;
+  --font-weight-caption: 600;
+  --font-weight-eyebrow: 700;
+  --radius-none: 0px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+  --radius-pill: 9999px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 28px;
+  --spacing-xl: 48px;
+  --spacing-section: 96px;
+}
+
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+  &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
+  &quot;$description&quot;: &quot;Jelly-Pop (果冻) is a translucent candy playground for kids' learning products. Bubblegum magenta leads, jelly teal and lemon accent, and every surface reads like a gummy you could squish. Fat rounded display (Baloo 2 / ZCOOL KuaiLe) with a Chinese system fallback, exaggerated 40px corners, and a wobble spring on tap. Signature move — two translucent blobs overlap and multiply into a third jelly hue, printing a see-through core behind giant numbers. Warm blackberry ink, no pure black, no purple-blue slop.&quot;,
+  &quot;color&quot;: {
+    &quot;$type&quot;: &quot;color&quot;,
+    &quot;primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.839,
+          0.122,
+          0.463
+        ],
+        &quot;hex&quot;: &quot;#d61f76&quot;
+      }
+    },
+    &quot;on-primary&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;ink&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.18,
+          0.102,
+          0.212
+        ],
+        &quot;hex&quot;: &quot;#2e1a36&quot;
+      }
+    },
+    &quot;canvas&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.953,
+          0.976
+        ],
+        &quot;hex&quot;: &quot;#fff3f9&quot;
+      }
+    },
+    &quot;surface&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hex&quot;: &quot;#ffffff&quot;
+      }
+    },
+    &quot;muted&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.478,
+          0.361,
+          0.467
+        ],
+        &quot;hex&quot;: &quot;#7a5c77&quot;
+      }
+    },
+    &quot;hairline&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.965,
+          0.851,
+          0.914
+        ],
+        &quot;hex&quot;: &quot;#f6d9e9&quot;
+      }
+    },
+    &quot;accent-jelly&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          0.027,
+          0.769,
+          0.706
+        ],
+        &quot;hex&quot;: &quot;#07c4b4&quot;
+      }
+    },
+    &quot;accent-sun&quot;: {
+      &quot;$value&quot;: {
+        &quot;colorSpace&quot;: &quot;srgb&quot;,
+        &quot;components&quot;: [
+          1,
+          0.8,
+          0.2
+        ],
+        &quot;hex&quot;: &quot;#ffcc33&quot;
+      }
+    }
+  },
+  &quot;spacing&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;xs&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 4,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 8,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 16,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 28,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 48,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;section&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 96,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;rounded&quot;: {
+    &quot;$type&quot;: &quot;dimension&quot;,
+    &quot;none&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 0,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;sm&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 10,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;md&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 18,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;lg&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 28,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;xl&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 40,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    },
+    &quot;pill&quot;: {
+      &quot;$value&quot;: {
+        &quot;value&quot;: 9999,
+        &quot;unit&quot;: &quot;px&quot;
+      }
+    }
+  },
+  &quot;typography&quot;: {
+    &quot;display-xl&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 76,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;display-lg&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 52,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.5,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;heading&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;ZCOOL KuaiLe\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 28,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;body&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, \&quot;Hiragino Sans GB\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 18,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 500,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.1,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;numeral&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 112,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 800,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: -2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;button&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 18,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;caption&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Nunito\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, \&quot;Microsoft YaHei\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 14,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 600,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 0.2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    },
+    &quot;eyebrow&quot;: {
+      &quot;$type&quot;: &quot;typography&quot;,
+      &quot;$value&quot;: {
+        &quot;fontFamily&quot;: &quot;\&quot;Baloo 2\&quot;, \&quot;Fredoka\&quot;, \&quot;Noto Sans SC\&quot;, \&quot;PingFang SC\&quot;, sans-serif&quot;,
+        &quot;fontSize&quot;: {
+          &quot;value&quot;: 13,
+          &quot;unit&quot;: &quot;px&quot;
+        },
+        &quot;fontWeight&quot;: 700,
+        &quot;letterSpacing&quot;: {
+          &quot;value&quot;: 2,
+          &quot;unit&quot;: &quot;px&quot;
+        }
+      }
+    }
+  }
+}
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 果冻（jelly-pop · 玩味玩具）
+
+你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `jelly-pop` 设定集，为我的【产品/页面】生成一版可运行页面。
+
+开始写代码前先做三件事：
+1. 读取本目录同级的 `DESIGN.md`（以及 `exports/tailwind-v4.css` 或 `variables.css`），把 tokens 接入项目主题层。
+2. 复述这套的 5 条不可违反的视觉原则（含主色用法、字体、圆角、间距、签名时刻）。
+3. 给出页面结构草案，再动手。
+
+必须遵守：
+- 主色 `#D61F76` 只给关键 CTA 与强调，克制使用。
+- 标题字体 `Baloo 2`，正文 `Nunito`，中文字体栈末尾必带系统兜底，中文不用日文字体。
+- 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
+- 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
+
+可选一键校验：`heige-design lint jelly-pop` / 导出其它格式：`heige-design export jelly-pop --format tailwind-v3|dtcg|css-vars`。
+</pre></div>
+</div>
+
+<footer>HeiGe·Design · 果冻 — 原创设定集，可商用。跑校验：<code>heige-design lint jelly-pop</code>。</footer>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.tabc').forEach(c=>c.style.display=c.dataset.i===b.dataset.i?'':'none');});
+document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentElement.querySelector('pre').textContent;navigator.clipboard.writeText(t).then(()=>{b.textContent='已复制 ✓';setTimeout(()=>b.textContent='复制',1400);});});
+</script></body></html>
