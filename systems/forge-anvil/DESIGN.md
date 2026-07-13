@@ -221,6 +221,27 @@ components:
 - **rule-line**：2px 高的 `hairline` 实色横线，裸露网格与分节的基本零件，反复铺成机床工作台的量尺。
 - **footer**：铁黑 + `muted` 灰 caption + 顶部 2px `hairline` 分线（用 rule-line），压满坐标注脚。
 
+## Motion
+
+熔炉的动效是机械动作：零件到位，落点干脆，"咔"一声收尾。
+
+- **签名曲线**：`steps(1)` 硬切当招牌；确需位移时用功能曲线 `cubic-bezier(0.4, 0, 0.2, 1)`，短促、零戏剧。
+- **氛围签名**：`[ SYSTEM ONLINE ]` 的 molten LED 微闪。4s 周期里 92% 时间静止，只在两帧抖一下 opacity，每次闪烁都是事件。全页唯一循环。
+- **hover 语言**：印章抬起。硬 offset 画在伪元素上，hover 时主体 `translate(-2px, -2px)`，位移量与影子偏移互补，光源固定、铁块离台。
+
+| 档位 | 数值 | 用途 |
+|---|---|---|
+| 微反馈 | 200ms | 链接、导航、眉标 |
+| 按下 | 0ms | offset 归零瞬时压实，零缓动 |
+| 入场 | 0.4s | 规格卡上浮 16px |
+| stagger | 60ms，`(index % cols)` 取模 | 卡片瀑布，等待封顶 120ms |
+
+签名动效：
+- **电压印章按压**。硬酸绿 offset 是伪元素色块，active 时主体瞬时 `translate(6px, 6px)` 压到影子上，只动 transform，机械归位。
+- **宣言逐行硬入场**。首屏巨型宣言整行整行地出现（steps 式，行间隔 120ms），像铅字排进版框，禁逐字打字机。
+
+所有动画可被 `@media (prefers-reduced-motion: reduce)` 关掉，LED 闪烁类直接 `animation: none`。
+
 ## Presentation System
 
 同一套 token 直接驱动 16:9 演示。原则对齐 HeiGe-PPT：**一页一句话、黄金三秒、视觉锤**。

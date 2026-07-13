@@ -61,6 +61,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 **UI — The Red Ledger Break.** A pristine monochrome data table: every figure ink-black, baseline-aligned, columns locked in tabular mono, hairline rules showing. Exactly one figure is negative — *in the red*. That figure is set in `primary`, gains the red `status-dot`, and is allowed to **hang past the right rule into the reserved margin column**, breaking the otherwise perfect grid. One colour, one break, both spent on the single number that matters. Remove the loss and the grid heals — the design literally responds to the data.
 
 **Deck — The Hairline Divider.** A section-divider slide that is 95% empty. A single hairline vertical rule is dropped at the 8-column mark — deliberately off the optical centre — an oversized thin section index sits hard against it, and one 8px signal-red tick</div></div></div>
+
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
 - Keep red under 5% of any surface. Spend it on the one figure, alert, or action that must not be missed.
 - Snap everything to the 12-column baseline grid and leave the hairline rules exposed.
@@ -922,6 +923,7 @@ Strip the name off any Rulewerk page and it is still unmistakably a made thing: 
 - 主色 `#d81f1a` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Neue Haas Grotesk Display Pro`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

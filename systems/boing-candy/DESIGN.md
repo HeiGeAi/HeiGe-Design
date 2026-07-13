@@ -304,6 +304,26 @@ Everything trends toward the circle. Buttons are pills, the nav bar is a floatin
 
 States are real, not decorative: `:focus-visible` draws a 3px bubblegum ring; loading uses three bouncing gumball dots (transform-only); empty states put Bibo front and center with one friendly line. All of it honors `prefers-reduced-motion`.
 
+## Motion
+
+Motion is the brand. Everything in boing-candy obeys toy physics: drop, squash, stretch, settle.
+
+- **Signature curve** — `cubic-bezier(0.34, 1.56, 0.64, 1)`. The one family in the library that overshoots by default; anything that springs past 1 must settle back to exactly 1 — the spring always closes its loop.
+- **Ambient signature** — at most one slow float (12s `ease-in-out`, ±6px) on a decorative candy. The energy budget goes to interactions; the background stays clean.
+- **Hover language** — the big lift: cards rise 6–8px with the hard candy shadow drawn on a pseudo-element, so only `transform` and pseudo-element `opacity` ever animate. Tap: small buttons squash to `scale 0.95`, wide cards to `0.985`.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 200ms | buttons, chips |
+| entrance | 0.45s | cards dropping in with overshoot |
+| stagger | 70ms, `index % cols` | candy grids; waiting caps around 140ms |
+
+Signature moves:
+- **The Landing Boing.** `translateY` springs past zero, `scaleY` squashes to 0.9 on impact and stretches back to 1.0, the card ending a few degrees rotated in its fanned stack. Transform-only, every frame.
+- **The Checkmark Pop.** Confirmations scale `0.4 → 1.3 → 1` with a `-20° → 0` rotate over 0.45s — a sweet pressed into place.
+
+`prefers-reduced-motion: reduce` swaps every spring for a clean fade; the toy still works with the bounce turned off.
+
 ## Presentation System
 
 16:9, **一页一句话**. A candy deck earns attention by being the least boring slide in the room, so each slide commits to a single loud idea and lets cotton whitespace carry the rest.

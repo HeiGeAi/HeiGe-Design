@@ -298,6 +298,27 @@ The system is **mostly sharp-cornered** — 16:9 slides and panels sit square, w
 
 Slide components (see Presentation System): `slide-cover` · `slide-section-divider` · `slide-stat-hero` · `slide-quote` · `slide-body` · `slide-closing`.
 
+## Motion
+
+Motion in Halonyx is an instrument reading, not a performance. The screen stays calm; the few things that move are the ones that are alive.
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)`. Every entrance and state change rides this long-tail ease-out. Loops never use it: loops are `linear` or `ease-in-out` only.
+- **Ambient signature** — the **breathing live-dot**, and nothing else. 2.4s `ease-in-out`, animating only `opacity` + `transform: scale`. The glow shaft and the CTA halo stay static, always.
+- **Hover language** — powered-on, never lifted: border, label, and a pre-rendered glow pseudo-element change together over 220ms. The glow layer fades via `opacity`; the `box-shadow` value itself is never transitioned.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 220ms | links, pills, buttons |
+| entrance | 0.6s | cards and panels rising 16px |
+| stagger | 70ms, `index % cols` | grid entrances; waiting caps at ~140ms |
+| measurement | 1.4s | the decoding numeral below |
+
+Signature moves:
+- **The Decoding Numeral.** The hero stat counts up over 1.4s on a finite rAF (`1-(1-p)^3` progress), digits set in `font-variant-numeric: tabular-nums`, the last digit jittering until ~85% then locking with a `scale 1.08 → 1` settle. Data earning its glow — the one ritual this system allows.
+- **The Breathing Dot.** `opacity .55 → 1` + `scale .9 → 1`, 2.4s, infinite. The system's heartbeat and its only loop.
+
+一屏只有一处在动，和一屏只点亮一件事，是同一条纪律。Every animation dies under `@media (prefers-reduced-motion: reduce)`; the counter then renders its final value immediately.
+
 ## Presentation System
 
 Halonyx renders as a **16:9 keynote** with one rule above all: **one line per slide, one anchor per slide.** The deck is the same design language as the UI — same black, same one teal, same hairline grid — so a product screen and a pitch slide are visibly one system.

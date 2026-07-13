@@ -63,6 +63,24 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 
 - **Deck 签名 · 酸绿闪断章（Acid Slam Divider）**
   章节过渡页整屏翻成 `#c8ff00` 满版酸绿，正中一个黑色 `data-hero` 三位章节号（`001`）。它被刻意夹在两张纯铁黑内容页中间，于是每次切章，屏幕就从全黑猛地闪一记满版酸绿再落回黑——视网膜残像本身成了章节分隔符。没有第二套配色能承受这种满版酸绿的暴击，这是熔炉独有的&quot;用刺眼当导航&quot;。</div></div></div>
+<div class="sec"><h2>动效 Motion</h2><div class="box" style="white-space:pre-wrap">熔炉的动效是机械动作：零件到位，落点干脆，&quot;咔&quot;一声收尾。
+
+- **签名曲线**：`steps(1)` 硬切当招牌；确需位移时用功能曲线 `cubic-bezier(0.4, 0, 0.2, 1)`，短促、零戏剧。
+- **氛围签名**：`[ SYSTEM ONLINE ]` 的 molten LED 微闪。4s 周期里 92% 时间静止，只在两帧抖一下 opacity，每次闪烁都是事件。全页唯一循环。
+- **hover 语言**：印章抬起。硬 offset 画在伪元素上，hover 时主体 `translate(-2px, -2px)`，位移量与影子偏移互补，光源固定、铁块离台。
+
+| 档位 | 数值 | 用途 |
+|---|---|---|
+| 微反馈 | 200ms | 链接、导航、眉标 |
+| 按下 | 0ms | offset 归零瞬时压实，零缓动 |
+| 入场 | 0.4s | 规格卡上浮 16px |
+| stagger | 60ms，`(index % cols)` 取模 | 卡片瀑布，等待封顶 120ms |
+
+签名动效：
+- **电压印章按压**。硬酸绿 offset 是伪元素色块，active 时主体瞬时 `translate(6px, 6px)` 压到影子上，只动 transform，机械归位。
+- **宣言逐行硬入场**。首屏巨型宣言整行整行地出现（steps 式，行间隔 120ms），像铅字排进版框，禁逐字打字机。
+
+所有动画可被 `@media (prefers-reduced-motion: reduce)` 关掉，LED 闪烁类直接 `animation: none`。</div></div>
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
 - 一屏一句狠话，字大到过分，四周留到过分。
 - 酸绿当电压用，一屏最多亮一两处；其余全交给黑白灰的骨架。
@@ -301,6 +319,27 @@ components:
 - **status-live**：唯一的胶囊，surface 底 + `molten` 橙字 + 橙点，标&quot;运行中 / 跑热&quot;。全屏唯一暖色。
 - **rule-line**：2px 高的 `hairline` 实色横线，裸露网格与分节的基本零件，反复铺成机床工作台的量尺。
 - **footer**：铁黑 + `muted` 灰 caption + 顶部 2px `hairline` 分线（用 rule-line），压满坐标注脚。
+
+## Motion
+
+熔炉的动效是机械动作：零件到位，落点干脆，&quot;咔&quot;一声收尾。
+
+- **签名曲线**：`steps(1)` 硬切当招牌；确需位移时用功能曲线 `cubic-bezier(0.4, 0, 0.2, 1)`，短促、零戏剧。
+- **氛围签名**：`[ SYSTEM ONLINE ]` 的 molten LED 微闪。4s 周期里 92% 时间静止，只在两帧抖一下 opacity，每次闪烁都是事件。全页唯一循环。
+- **hover 语言**：印章抬起。硬 offset 画在伪元素上，hover 时主体 `translate(-2px, -2px)`，位移量与影子偏移互补，光源固定、铁块离台。
+
+| 档位 | 数值 | 用途 |
+|---|---|---|
+| 微反馈 | 200ms | 链接、导航、眉标 |
+| 按下 | 0ms | offset 归零瞬时压实，零缓动 |
+| 入场 | 0.4s | 规格卡上浮 16px |
+| stagger | 60ms，`(index % cols)` 取模 | 卡片瀑布，等待封顶 120ms |
+
+签名动效：
+- **电压印章按压**。硬酸绿 offset 是伪元素色块，active 时主体瞬时 `translate(6px, 6px)` 压到影子上，只动 transform，机械归位。
+- **宣言逐行硬入场**。首屏巨型宣言整行整行地出现（steps 式，行间隔 120ms），像铅字排进版框，禁逐字打字机。
+
+所有动画可被 `@media (prefers-reduced-motion: reduce)` 关掉，LED 闪烁类直接 `animation: none`。
 
 ## Presentation System
 
@@ -893,6 +932,7 @@ components:
 - 主色 `#c8ff00` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Archivo Black`，正文 `Space Grotesk`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

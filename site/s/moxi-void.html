@@ -65,6 +65,23 @@ anywhere on the site; the bloom and the seal are the entire visual vocabulary. Y
 into a template — it requires composing the headline, the bloom, and the seal as one wet object on an empty sheet.
 
 **Deck — 留白过场 (The Void Divider).** Every section opens on a slide that is more than 90% </div></div></div>
+<div class="sec"><h2>动效 Motion</h2><div class="box" style="white-space:pre-wrap">Motion in Moxi-Void is ink meeting paper: slow, absorbent, finished the moment it lands. The page itself is still. 留白即静。
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)` at the slowest register in the library.
+- **Ambient signature** — none. Zero loops anywhere; scrolling this system should feel like unrolling a handscroll, silent end to end.
+- **Hover language** — a hair-thin cinnabar underline growing from the left (animating `width`), or an inset ink keyline on read-only surfaces. No lifting, no glow.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 240ms | links, nav |
+| entrance | 0.9s | headline and paper blocks, y ≤ 16px |
+| stagger | 100ms, linear `i * delay` | manifesto lines and vertical runs |
+
+Signature moves:
+- **落墨 (The Ink Settle).** The bloom is a pre-rendered static `radial-gradient` layer; on entrance it develops via `opacity 0 → 1` + `scale 0.96 → 1` over 0.9s. The feathered 晕染 edge is baked into the layer — the spread of ink is played entirely with compositor-safe properties, never by animating `filter`.
+- **盖章 (The Seal Stamp).** The cinnabar seal drops from above (`translateY(-10px) → 0`, 0.35s) and settles into its off-square rotation. The one downward entrance on the page — everything else rises like paper being laid down; the seal is pressed on.
+
+Under `@media (prefers-reduced-motion: reduce)` the bloom and the seal render in pl</div></div>
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
 - Keep cinnabar as a seal — one stamped square, one hair-thin rule, one opening mark. Ration it to 一点.
 - Let the heavy Song headline and the empty paper carry the design; treat 留白 as material, not a gap to fill.
@@ -429,6 +446,26 @@ signature graphic primitives — the only two marks allowed to be red.
 - **rule-hairline** — the 1px `hairline` bar: column lines, card edges, the faint ledger. The system's quiet connective tissue.
 - **seal-stamp (落款)** — a 56px **朱砂 square**, fill only, no text pairing in token space; in render it carries a reversed carved glyph. The recurring red gesture — see Signature Moment.
 - **footer** — the ink slab floods full-width: `#1c1a17` ground, canvas-cream text, wide margins, one small seal signing off. No link soup.
+
+## Motion
+
+Motion in Moxi-Void is ink meeting paper: slow, absorbent, finished the moment it lands. The page itself is still. 留白即静。
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)` at the slowest register in the library.
+- **Ambient signature** — none. Zero loops anywhere; scrolling this system should feel like unrolling a handscroll, silent end to end.
+- **Hover language** — a hair-thin cinnabar underline growing from the left (animating `width`), or an inset ink keyline on read-only surfaces. No lifting, no glow.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 240ms | links, nav |
+| entrance | 0.9s | headline and paper blocks, y ≤ 16px |
+| stagger | 100ms, linear `i * delay` | manifesto lines and vertical runs |
+
+Signature moves:
+- **落墨 (The Ink Settle).** The bloom is a pre-rendered static `radial-gradient` layer; on entrance it develops via `opacity 0 → 1` + `scale 0.96 → 1` over 0.9s. The feathered 晕染 edge is baked into the layer — the spread of ink is played entirely with compositor-safe properties, never by animating `filter`.
+- **盖章 (The Seal Stamp).** The cinnabar seal drops from above (`translateY(-10px) → 0`, 0.35s) and settles into its off-square rotation. The one downward entrance on the page — everything else rises like paper being laid down; the seal is pressed on.
+
+Under `@media (prefers-reduced-motion: reduce)` the bloom and the seal render in place, fully formed.
 
 ## Presentation System
 
@@ -1063,6 +1100,7 @@ fill the page; this system reaches to empty it, and lets one seal say a person w
 - 主色 `#1c1a17` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Noto Serif SC`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

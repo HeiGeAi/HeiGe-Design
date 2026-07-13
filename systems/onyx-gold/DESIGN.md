@@ -296,6 +296,26 @@ Slide components share the same tokens so a deck and a site are visibly one hous
 - **slide-quote** — Onyx field, `display-lg` ivory serif, one sentence, wide margins. Attribution in muted caption.
 - **slide-closing** — The inversion. Full brushed-gold ground, onyx serif line. The one time gold becomes the room instead of the light.
 
+## Motion
+
+Composure is the motion language. Nothing bounces, nothing pulses, nothing loops. The luxury signal is how little moves, and how unhurried it is when it does.
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)`, run at the slowest register in the library.
+- **Ambient signature** — none. The anchor-gold halo is static and always on; a glow on a timer would read as a shop sign, and this is a vitrine.
+- **Hover language** — gilding: border and label warm from structure gold to anchor gold over 300ms, zero displacement. Read-only surfaces take a 1px inset gold keyline.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 240ms | links, labels — color only |
+| entrance | 0.9s | fades with y ≤ 8px; most elements simply appear |
+| stagger | 120ms, linear `i * delay` | the few elements that enter in sequence |
+
+Signature moves:
+- **The Drawn Hairline.** The two brushed-gold rules above and below the gilt anchor draw in via `transform: scaleX(0 → 1)` from the left over 0.9s, like an engraver finishing a line. The anchor word then fades in between them, pure `opacity`.
+- **The Unveiling.** Sections enter as slow opacity fades with at most 8px of travel — appearing without arriving. The house does not hurry.
+
+All motion is removed under `@media (prefers-reduced-motion: reduce)`; hairlines and anchor render fully drawn.
+
 ## Presentation System
 
 16:9, built for a dim room and a slow speaker. Aligned to HeiGe-PPT's three laws: **一页一句话 · 黄金三秒 · 视觉锤**.

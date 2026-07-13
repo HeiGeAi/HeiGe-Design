@@ -61,6 +61,23 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 **UI — The Gilt Anchor.** On a full onyx field, a single word is set in anchor gold (`accent`) with a static radial halo (a soft always-on `box-shadow` glow, never animated). It is the only lit thing on the screen. Directly above and below it run two 1px brushed-gold hairlines that stop 64px short of the margins, so the rules float rather than border. Everything else on the page is ivory or muted, at least four sizes smaller. The result: one word appears to be softly illuminated inside a dark vitrine, framed by two lines of gold that go nowhere and hold everything. Change the template and you get a headline; here you get a jewel under a spotlight.
 
 **Deck — The Gold Inversion.** The closing slide is the one time the system inverts. For the entire presentation gold has been the light on black; on the final frame the whole 16:9 fli</div></div></div>
+<div class="sec"><h2>动效 Motion</h2><div class="box" style="white-space:pre-wrap">Composure is the motion language. Nothing bounces, nothing pulses, nothing loops. The luxury signal is how little moves, and how unhurried it is when it does.
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)`, run at the slowest register in the library.
+- **Ambient signature** — none. The anchor-gold halo is static and always on; a glow on a timer would read as a shop sign, and this is a vitrine.
+- **Hover language** — gilding: border and label warm from structure gold to anchor gold over 300ms, zero displacement. Read-only surfaces take a 1px inset gold keyline.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 240ms | links, labels — color only |
+| entrance | 0.9s | fades with y ≤ 8px; most elements simply appear |
+| stagger | 120ms, linear `i * delay` | the few elements that enter in sequence |
+
+Signature moves:
+- **The Drawn Hairline.** The two brushed-gold rules above and below the gilt anchor draw in via `transform: scaleX(0 → 1)` from the left over 0.9s, like an engraver finishing a line. The anchor word then fades in between them, pure `opacity`.
+- **The Unveiling.** Sections enter as slow opacity fades with at most 8px of travel — appearing without arriving. The house does not hurry.
+
+All motion is removed under `@media (prefers-reduced-motion: reduce)`; hairlines and anchor render fully drawn.</div></div>
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
 
 - Let onyx occupy the majority of every view. Space is the product.
@@ -379,6 +396,26 @@ Slide components share the same tokens so a deck and a site are visibly one hous
 - **slide-stat-hero** — Onyx field, one enormous anchor-gold numeral, unit tucked tight beneath it. One number owns the screen.
 - **slide-quote** — Onyx field, `display-lg` ivory serif, one sentence, wide margins. Attribution in muted caption.
 - **slide-closing** — The inversion. Full brushed-gold ground, onyx serif line. The one time gold becomes the room instead of the light.
+
+## Motion
+
+Composure is the motion language. Nothing bounces, nothing pulses, nothing loops. The luxury signal is how little moves, and how unhurried it is when it does.
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)`, run at the slowest register in the library.
+- **Ambient signature** — none. The anchor-gold halo is static and always on; a glow on a timer would read as a shop sign, and this is a vitrine.
+- **Hover language** — gilding: border and label warm from structure gold to anchor gold over 300ms, zero displacement. Read-only surfaces take a 1px inset gold keyline.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 240ms | links, labels — color only |
+| entrance | 0.9s | fades with y ≤ 8px; most elements simply appear |
+| stagger | 120ms, linear `i * delay` | the few elements that enter in sequence |
+
+Signature moves:
+- **The Drawn Hairline.** The two brushed-gold rules above and below the gilt anchor draw in via `transform: scaleX(0 → 1)` from the left over 0.9s, like an engraver finishing a line. The anchor word then fades in between them, pure `opacity`.
+- **The Unveiling.** Sections enter as slow opacity fades with at most 8px of travel — appearing without arriving. The house does not hurry.
+
+All motion is removed under `@media (prefers-reduced-motion: reduce)`; hairlines and anchor render fully drawn.
 
 ## Presentation System
 
@@ -953,6 +990,7 @@ Strip the maison name and this page still reads as considered, not generated: a 
 - 主色 `#b8912e` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Cormorant Garamond`，正文 `Jost`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

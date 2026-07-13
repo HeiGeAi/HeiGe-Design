@@ -59,6 +59,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 <div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI signature — the Deckle Edge + self-drawing sprig.** Content bands never part on a straight line or a lazy wave. They separate on a **procedurally torn paper edge**: an SVG `feTurbulence` displacement map applied to the band's bottom clip-path, producing a rough, fibrous deckle with a 1px darker &quot;paper core&quot; line and a few loose fibres at the tear. On the primary CTA sheet, a **single unbroken botanical line-drawing** (one continuous SVG path — a leaf sprig) runs the edge and, on scroll-in, *draws itself once* via `stroke-dashoffset`, finishing at a real leaf node, then stops. Torn edge + one-stroke growing leaf on a woven ground — no template ships this.
 
 **Deck signature — the Pressed Specimen cover.** The cover title is mounted like a botanical specimen pressed in a book: a hand-torn paper label (deckle edge, fibre fringe) laid on linen texture, the giant Fraunces word c</div></div></div>
+
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
 - Tear the edges. Every band separation and photo mat uses the deckle turbulence edge, not a straight cut.
 - Keep terracotta clay to **one element per screen** — the hero number, or one tag, or one stitched underline.
@@ -924,6 +925,7 @@ Strip the brand name off any screen and it still reads as pressed by hand: a tor
 - 主色 `#5c6b45` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Fraunces`，正文 `Mulish`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

@@ -3,7 +3,7 @@ name: HeiGe-Design
 description: 给 AI 一张视觉角色卡。50 套原创品牌设定集（DESIGN.md 格式），一份同时驱动界面和演示。当用户要做界面/落地页/组件/演示 deck 且希望有明确设计风格、摆脱默认 AI 模板味时使用；也用于从任意网站提取设计规范、校验/导出设计 token。触发词：做个页面要 XX 风、给我 DESIGN.md、按某套风格生成、提取这个网站的设计、导出 Tailwind token、这套过 lint 吗。
 ---
 
-# HeiGe·Design — 视觉设定集工具
+# HeiGe·Design 视觉设定集工具
 
 一个 AI 做设计时的"视觉角色卡"库。50 套原创虚构品牌设定集，覆盖 11 个气质家族（凶悍工业 / 暗色科技 / 优雅编辑 / 瑞士纪律 / 复古未来 / 有机自然 / 玩味玩具 / 温暖人文 / 张扬极繁 / 奢侈高定 / 东方新中式）。兼容 Google design.md 标准，全过 lint。一份设定集同时驱动网页界面和 16:9 演示。
 
@@ -42,6 +42,7 @@ heige-design site                 重建校验+导出+画廊+详情页
 - 中文字体栈末尾必带系统兜底（PingFang/YaHei/思源），中文不用日文字体渲染。
 - 大标题零孤字；辉光只用 box-shadow / radial-gradient，不用 backdrop-filter；无限动画只动 transform/opacity。
 - 复现该套 DESIGN.md 里写死的签名时刻，这是它区别于模板的地方。
+- 动效性格按该套 `## Motion` 章节做，缺省用 `references/motion-personality.md` 的家族预设；一屏循环动画至多一两处，全部支持 prefers-reduced-motion。
 - 不碰紫蓝俗套渐变，不做居中卡片三件套。
 
 ## 想要一套全新风格

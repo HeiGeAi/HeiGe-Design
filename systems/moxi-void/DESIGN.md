@@ -348,6 +348,26 @@ signature graphic primitives — the only two marks allowed to be red.
 - **seal-stamp (落款)** — a 56px **朱砂 square**, fill only, no text pairing in token space; in render it carries a reversed carved glyph. The recurring red gesture — see Signature Moment.
 - **footer** — the ink slab floods full-width: `#1c1a17` ground, canvas-cream text, wide margins, one small seal signing off. No link soup.
 
+## Motion
+
+Motion in Moxi-Void is ink meeting paper: slow, absorbent, finished the moment it lands. The page itself is still. 留白即静。
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)` at the slowest register in the library.
+- **Ambient signature** — none. Zero loops anywhere; scrolling this system should feel like unrolling a handscroll, silent end to end.
+- **Hover language** — a hair-thin cinnabar underline growing from the left (animating `width`), or an inset ink keyline on read-only surfaces. No lifting, no glow.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 240ms | links, nav |
+| entrance | 0.9s | headline and paper blocks, y ≤ 16px |
+| stagger | 100ms, linear `i * delay` | manifesto lines and vertical runs |
+
+Signature moves:
+- **落墨 (The Ink Settle).** The bloom is a pre-rendered static `radial-gradient` layer; on entrance it develops via `opacity 0 → 1` + `scale 0.96 → 1` over 0.9s. The feathered 晕染 edge is baked into the layer — the spread of ink is played entirely with compositor-safe properties, never by animating `filter`.
+- **盖章 (The Seal Stamp).** The cinnabar seal drops from above (`translateY(-10px) → 0`, 0.35s) and settles into its off-square rotation. The one downward entrance on the page — everything else rises like paper being laid down; the seal is pressed on.
+
+Under `@media (prefers-reduced-motion: reduce)` the bloom and the seal render in place, fully formed.
+
 ## Presentation System
 
 The same tokens drive a 16:9 deck for a talk, a gallery walkthrough, a tea-brand keynote. This is a

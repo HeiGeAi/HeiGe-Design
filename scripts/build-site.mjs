@@ -62,7 +62,7 @@ for(const slug of Object.keys(META)){
   const hasFlag=fs.existsSync(path.join(SYS,slug,'flagship','page.html'));
   const hasDeck=fs.existsSync(path.join(SYS,slug,'flagship','deck.html'));
   systems.push({slug,family,cn,name:fm.name||slug,desc:fm.description||'',bg,ink,primary,onp,accent,surface,muted,line,dark,dff,bff,mff,dw,dls,radius,palette,comps,
-    dodont:sect(raw,"Do's and Don'ts"),sig:sect(raw,'Signature Moment'),overview:sect(raw,'Overview'),rep,hasFlag,hasDeck,
+    dodont:sect(raw,"Do's and Don'ts"),sig:sect(raw,'Signature Moment'),motion:sect(raw,'Motion'),overview:sect(raw,'Overview'),rep,hasFlag,hasDeck,
     cssvar:{'--bg':bg,'--ink':ink,'--pri':primary,'--onpri':onp,'--acc':accent,'--surf':surface,'--muted':muted,'--line':line,'--r':radius,'--dff':dff,'--bff':bff,'--mff':mff}});
 }
 
@@ -200,6 +200,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 ${s.hasFlag||s.hasDeck?`<div class="sec"><h2>旗舰全页（一份 DESIGN.md 同时产出）</h2><div class="flag">${s.hasFlag?`<a href="../../systems/${s.slug}/flagship/page.html" target="_blank"><b>▶ 整页落地页</b> page.html</a>`:''}${s.hasDeck?`<a href="../../systems/${s.slug}/flagship/deck.html" target="_blank"><b>▶ 16:9 演示</b> deck.html（← → 翻页）</a>`:''}</div></div>`:''}
 
 ${s.sig?`<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">${esc(s.sig).slice(0,900)}</div></div></div>`:''}
+${s.motion?`<div class="sec"><h2>动效 Motion</h2><div class="box" style="white-space:pre-wrap">${esc(s.motion).slice(0,1400)}</div></div>`:''}
 ${s.dodont?`<div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">${esc(s.dodont).slice(0,1400)}</div></div>`:''}
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>

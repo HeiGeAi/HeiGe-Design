@@ -63,6 +63,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 收尾页整屏铺满警示橙，黑色 stencil 行动句居左压在页面承重基线上，页面上下边缘各一条黑橙 45° 斜条纹警戒带把整屏「围」起来，像把最后一句话立成一块工地出口的警示牌。橙底 + 黑 stencil + 双警戒带的组合，只有这套敢用满屏橙收尾，别的模板到这儿一定退回白底黑字。
 
 ---</div></div></div>
+
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
 - 一屏一个橙。橙是荷载信号，落下即受力，多一处就泄一次力。
 - 编号砸大、出血、走等宽数字，让它当版面骨架。
@@ -968,6 +969,7 @@ An industrial design system that behaves like a job site under a permit. Everyth
 - 主色 `#ff5b1f` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Anton`，正文 `Archivo`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

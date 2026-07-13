@@ -59,6 +59,23 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 <div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI — The Landing Boing.** Cards drop in from above and **overshoot**, then settle with a spring: `translateY` springs past zero, `scaleY` squashes to 0.9 on impact and stretches back to 1.0, the card ends a few degrees rotated in a fanned stack. Bibo, the two-tone gumdrop mascot, bounces once beside the stack when it lands. Every frame animates only `transform` and `opacity` — no shadow re-render, no blur, no jank — and `prefers-reduced-motion` swaps the whole thing for a clean fade. Change the template and you lose the squash-and-stretch; it's baked into the physics, not the pixels.
 
 **Deck — The Gumdrop Divider.** Every section transition is a full-bubblegum slide where the giant chapter number lives **inside a squashed candy-drop silhouette caught mid-bounce**, with a dotted bounce-trail arcing in from off-slide. It reads as a single gumdrop falling into the deck and flattening on l</div></div></div>
+<div class="sec"><h2>动效 Motion</h2><div class="box" style="white-space:pre-wrap">Motion is the brand. Everything in boing-candy obeys toy physics: drop, squash, stretch, settle.
+
+- **Signature curve** — `cubic-bezier(0.34, 1.56, 0.64, 1)`. The one family in the library that overshoots by default; anything that springs past 1 must settle back to exactly 1 — the spring always closes its loop.
+- **Ambient signature** — at most one slow float (12s `ease-in-out`, ±6px) on a decorative candy. The energy budget goes to interactions; the background stays clean.
+- **Hover language** — the big lift: cards rise 6–8px with the hard candy shadow drawn on a pseudo-element, so only `transform` and pseudo-element `opacity` ever animate. Tap: small buttons squash to `scale 0.95`, wide cards to `0.985`.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 200ms | buttons, chips |
+| entrance | 0.45s | cards dropping in with overshoot |
+| stagger | 70ms, `index % cols` | candy grids; waiting caps around 140ms |
+
+Signature moves:
+- **The Landing Boing.** `translateY` springs past zero, `scaleY` squashes to 0.9 on impact and stretches back to 1.0, the card ending a few degrees rotated in its fanned stack. Transform-only, every frame.
+- **The Checkmark Pop.** Confirmations scale `0.4 → 1.3 → 1` with a `-20° → 0` rotate over 0.45s — a sweet pressed into place.
+
+`prefers-reduced-motion: reduce` swaps every spring for a clean fade; the toy still works with the bounce tur</div></div>
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">### Do
 - Do put **grape ink on bright candy fills** — that pairing is the whole identity.
 - Do fan cards with slight rotation and stagger; let them overlap and land unevenly.
@@ -382,6 +399,26 @@ Everything trends toward the circle. Buttons are pills, the nav bar is a floatin
 - **footer** — The one deep-grape block on the page, cotton text, a big 44px radius. Grounds the sugar rush at the bottom.
 
 States are real, not decorative: `:focus-visible` draws a 3px bubblegum ring; loading uses three bouncing gumball dots (transform-only); empty states put Bibo front and center with one friendly line. All of it honors `prefers-reduced-motion`.
+
+## Motion
+
+Motion is the brand. Everything in boing-candy obeys toy physics: drop, squash, stretch, settle.
+
+- **Signature curve** — `cubic-bezier(0.34, 1.56, 0.64, 1)`. The one family in the library that overshoots by default; anything that springs past 1 must settle back to exactly 1 — the spring always closes its loop.
+- **Ambient signature** — at most one slow float (12s `ease-in-out`, ±6px) on a decorative candy. The energy budget goes to interactions; the background stays clean.
+- **Hover language** — the big lift: cards rise 6–8px with the hard candy shadow drawn on a pseudo-element, so only `transform` and pseudo-element `opacity` ever animate. Tap: small buttons squash to `scale 0.95`, wide cards to `0.985`.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 200ms | buttons, chips |
+| entrance | 0.45s | cards dropping in with overshoot |
+| stagger | 70ms, `index % cols` | candy grids; waiting caps around 140ms |
+
+Signature moves:
+- **The Landing Boing.** `translateY` springs past zero, `scaleY` squashes to 0.9 on impact and stretches back to 1.0, the card ending a few degrees rotated in its fanned stack. Transform-only, every frame.
+- **The Checkmark Pop.** Confirmations scale `0.4 → 1.3 → 1` with a `-20° → 0` rotate over 0.45s — a sweet pressed into place.
+
+`prefers-reduced-motion: reduce` swaps every spring for a clean fade; the toy still works with the bounce turned off.
 
 ## Presentation System
 
@@ -971,6 +1008,7 @@ Mobile keeps the deck's one-idea-per-screen logic: on phones the slides become f
 - 主色 `#FF5CA8` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Baloo 2`，正文 `Nunito`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

@@ -59,6 +59,23 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 <div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">**UI — 手稿卡 (The Manuscript Insert).** On a black article page, a single **cream `#EDEAE3` card** is punched in with a real paper drop-shadow, as if a page of manuscript were laid on the desk. Its top-left corner carries a **giant vermilion Didone serial (01)** that is deliberately oversized so it *overflows the card edge onto the black canvas* — half the numeral reads vermilion-on-cream, half reads vermilion-on-black, split exactly at the paper's torn edge, stitched by the 8px vermilion rule. That half-on-half-off overflow is impossible to reproduce by dropping content into a generic template; it requires designing the number and the card as one bleeding object.
 
 **Deck — 绛红大序号过渡页 into 红页 (The Serial Divider → Red Rupture).** Every section opens on a black divider where a Didone **01 / 02** stands vermilion and enormous beside a Noto Serif SC title, cut by the 8px rule. Then, once per de</div></div></div>
+<div class="sec"><h2>动效 Motion</h2><div class="box" style="white-space:pre-wrap">Motion here is editorial pacing: the page settles like paper being laid on a desk. Nothing loops — paper does not move by itself.
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)`, run at ceremonial length. The long tail is the sound of a page settling.
+- **Ambient signature** — none. Stillness is part of the 文人感; the only atmosphere is how long things take.
+- **Hover language** — the growing rule: links grow a short vermilion underline from the left (animating `width`, so the line stays sharp); read-only cards take an inset cream keyline (`inset 0 0 0 1px`), zero layout shift.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 220ms | links, nav, footnotes |
+| entrance | 0.8s | manuscript card and headlines rising 24px |
+| stagger | 100ms, linear `i * delay` | serials and manifesto lines — the order is the meaning |
+
+Signature moves:
+- **The Manuscript Landing.** The cream card rises 24px over 0.8s; the giant vermilion serial fades in 0.4s later, pure `opacity`, already overflowing the card edge. The lead moves, the annotation only appears — motion budget follows editorial rank.
+- **The Red Rupture Cut.** The full-bleed vermilion page enters as a hard cut: one frame black, next frame red, zero fade. 红只用硬切进场，切换本身就是仪式。Withholding easing here is the same discipline as withholding the color.
+
+All motion is disabled under `@media (prefers-reduced-motion: reduc</div></div>
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
 - Keep vermilion as punctuation — serials, rules, one red page, button fills. Ration it hard.
 - Let the giant Noto Serif SC headline and the Didone numeral carry the design; treat empty black as a material, not a gap.
@@ -367,6 +384,26 @@ Images run full-bleed or hard-cropped to the column edge, never rounded. The **8
 - **rule-vermilion** — the 8px × 48px vermilion short rule, the system's connective primitive: it opens sections, sits under button-secondary, and stitches serial to title.
 - **rule-hairline** — the 1px `hairline` divider bar; column lines, card edges, and the faint 45° cross-hatch are built from it.
 - **footer** — muted caption on canvas above a hairline rule, wide margins, no link soup.
+
+## Motion
+
+Motion here is editorial pacing: the page settles like paper being laid on a desk. Nothing loops — paper does not move by itself.
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)`, run at ceremonial length. The long tail is the sound of a page settling.
+- **Ambient signature** — none. Stillness is part of the 文人感; the only atmosphere is how long things take.
+- **Hover language** — the growing rule: links grow a short vermilion underline from the left (animating `width`, so the line stays sharp); read-only cards take an inset cream keyline (`inset 0 0 0 1px`), zero layout shift.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 220ms | links, nav, footnotes |
+| entrance | 0.8s | manuscript card and headlines rising 24px |
+| stagger | 100ms, linear `i * delay` | serials and manifesto lines — the order is the meaning |
+
+Signature moves:
+- **The Manuscript Landing.** The cream card rises 24px over 0.8s; the giant vermilion serial fades in 0.4s later, pure `opacity`, already overflowing the card edge. The lead moves, the annotation only appears — motion budget follows editorial rank.
+- **The Red Rupture Cut.** The full-bleed vermilion page enters as a hard cut: one frame black, next frame red, zero fade. 红只用硬切进场，切换本身就是仪式。Withholding easing here is the same discipline as withholding the color.
+
+All motion is disabled under `@media (prefers-reduced-motion: reduce)`.
 
 ## Presentation System
 
@@ -911,6 +948,7 @@ Strip the brand name and this page still reads as made by a hand that cared: war
 - 主色 `#CE1432` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Playfair Display`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

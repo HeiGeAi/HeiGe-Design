@@ -61,6 +61,22 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - **UI — &quot;The Beacon.&quot;** A near-black hero over a faint hairline grid. One teal **radial glow shaft** cast diagonally from the upper-right, falling onto exactly one object: the glowing pill CTA. Beside it, a single **breathing live-dot** (`glow` core, `primary` ring) softly pulsing `opacity`+`scale`. Nothing else competes. The entire screen is deep space, one light, one heartbeat. Swap the template and you lose the discipline that makes one light read as luxury.
 
 - **Deck — &quot;The Glowing Numeral.&quot;** `slide-stat-hero`: pure deep-space black, one **giant mono numeral** lit in `glow`, the diagonal shaft touching only that number, its unit whispered in tiny mono beneath. `99.98` filling a 16:9 frame, glowing, alone. One number, three seconds, unforgettable — and impossible to fake by centering a card and </div></div></div>
+<div class="sec"><h2>动效 Motion</h2><div class="box" style="white-space:pre-wrap">Motion in Halonyx is an instrument reading, not a performance. The screen stays calm; the few things that move are the ones that are alive.
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)`. Every entrance and state change rides this long-tail ease-out. Loops never use it: loops are `linear` or `ease-in-out` only.
+- **Ambient signature** — the **breathing live-dot**, and nothing else. 2.4s `ease-in-out`, animating only `opacity` + `transform: scale`. The glow shaft and the CTA halo stay static, always.
+- **Hover language** — powered-on, never lifted: border, label, and a pre-rendered glow pseudo-element change together over 220ms. The glow layer fades via `opacity`; the `box-shadow` value itself is never transitioned.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 220ms | links, pills, buttons |
+| entrance | 0.6s | cards and panels rising 16px |
+| stagger | 70ms, `index % cols` | grid entrances; waiting caps at ~140ms |
+| measurement | 1.4s | the decoding numeral below |
+
+Signature moves:
+- **The Decoding Numeral.** The hero stat counts up over 1.4s on a finite rAF (`1-(1-p)^3` progress), digits set in `font-variant-numeric: tabular-nums`, the last digit jittering until ~85% then locking with a `scale 1.08 → 1` settle. Data earning its glow — the one ritual this system allows.
+- **The Breathing Dot.** `opacity .55 → 1` + `scale .9 → 1`, 2.4s, infinite.</div></div>
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
 - Keep teal rare. One glow, one CTA, one live-dot per screen.
 - Let the black breathe — large dark fields are the design, not empty slots to fill.
@@ -376,6 +392,27 @@ The system is **mostly sharp-cornered** — 16:9 slides and panels sit square, w
 - **footer** — `canvas`, top `hairline`, `muted` mono caption. Signed HeiGe-Design.
 
 Slide components (see Presentation System): `slide-cover` · `slide-section-divider` · `slide-stat-hero` · `slide-quote` · `slide-body` · `slide-closing`.
+
+## Motion
+
+Motion in Halonyx is an instrument reading, not a performance. The screen stays calm; the few things that move are the ones that are alive.
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)`. Every entrance and state change rides this long-tail ease-out. Loops never use it: loops are `linear` or `ease-in-out` only.
+- **Ambient signature** — the **breathing live-dot**, and nothing else. 2.4s `ease-in-out`, animating only `opacity` + `transform: scale`. The glow shaft and the CTA halo stay static, always.
+- **Hover language** — powered-on, never lifted: border, label, and a pre-rendered glow pseudo-element change together over 220ms. The glow layer fades via `opacity`; the `box-shadow` value itself is never transitioned.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 220ms | links, pills, buttons |
+| entrance | 0.6s | cards and panels rising 16px |
+| stagger | 70ms, `index % cols` | grid entrances; waiting caps at ~140ms |
+| measurement | 1.4s | the decoding numeral below |
+
+Signature moves:
+- **The Decoding Numeral.** The hero stat counts up over 1.4s on a finite rAF (`1-(1-p)^3` progress), digits set in `font-variant-numeric: tabular-nums`, the last digit jittering until ~85% then locking with a `scale 1.08 → 1` settle. Data earning its glow — the one ritual this system allows.
+- **The Breathing Dot.** `opacity .55 → 1` + `scale .9 → 1`, 2.4s, infinite. The system's heartbeat and its only loop.
+
+一屏只有一处在动，和一屏只点亮一件事，是同一条纪律。Every animation dies under `@media (prefers-reduced-motion: reduce)`; the counter then renders its final value immediately.
 
 ## Presentation System
 
@@ -978,6 +1015,7 @@ Erase the name and this is still, at a glance, something made on purpose. No pur
 - 主色 `#2dd4bf` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Geist`，正文 `Inter`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

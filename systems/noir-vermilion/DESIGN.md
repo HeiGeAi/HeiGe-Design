@@ -292,6 +292,26 @@ Images run full-bleed or hard-cropped to the column edge, never rounded. The **8
 - **rule-hairline** — the 1px `hairline` divider bar; column lines, card edges, and the faint 45° cross-hatch are built from it.
 - **footer** — muted caption on canvas above a hairline rule, wide margins, no link soup.
 
+## Motion
+
+Motion here is editorial pacing: the page settles like paper being laid on a desk. Nothing loops — paper does not move by itself.
+
+- **Signature curve** — `cubic-bezier(0.22, 1, 0.36, 1)`, run at ceremonial length. The long tail is the sound of a page settling.
+- **Ambient signature** — none. Stillness is part of the 文人感; the only atmosphere is how long things take.
+- **Hover language** — the growing rule: links grow a short vermilion underline from the left (animating `width`, so the line stays sharp); read-only cards take an inset cream keyline (`inset 0 0 0 1px`), zero layout shift.
+
+| Motion token | Value | Use |
+|---|---|---|
+| micro feedback | 220ms | links, nav, footnotes |
+| entrance | 0.8s | manuscript card and headlines rising 24px |
+| stagger | 100ms, linear `i * delay` | serials and manifesto lines — the order is the meaning |
+
+Signature moves:
+- **The Manuscript Landing.** The cream card rises 24px over 0.8s; the giant vermilion serial fades in 0.4s later, pure `opacity`, already overflowing the card edge. The lead moves, the annotation only appears — motion budget follows editorial rank.
+- **The Red Rupture Cut.** The full-bleed vermilion page enters as a hard cut: one frame black, next frame red, zero fade. 红只用硬切进场，切换本身就是仪式。Withholding easing here is the same discipline as withholding the color.
+
+All motion is disabled under `@media (prefers-reduced-motion: reduce)`.
+
 ## Presentation System
 
 The same tokens drive a 16:9 deck. This is a **teaching deck** — one breath per slide, built on 一页一句话 / 黄金三秒 / 视觉锤.

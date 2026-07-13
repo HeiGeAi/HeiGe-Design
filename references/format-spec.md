@@ -79,24 +79,26 @@ components:                    # 关键：同时装 UI 组件 + slide 组件，t
 - 每个 `component` 若有 `textColor` + `backgroundColor`，两者对比度要 ≥ 4.5:1（lint 查 WCAG AA），否则 warning。定义颜色时先自检对比度。
 - 定义的每个 `colors` / `typography` token 最好被至少一个 component 引用，否则 lint 报 unused warning。宁可少定义，别囤 token。
 - 嵌套 YAML（如需要）保证缩进正确，用最新版 CLI（0.3.0 才修好嵌套解析）。
+- 正文新增章节（如 `## Motion`）lint 不校验，安全；但 front matter 禁加 `motion` 顶层键，lint 虽不报错，官方 export 器会静默丢弃该键，等于白写。动效 token 一律写正文。
 - 目标：`lint` 输出 0 error（warning 可接受但尽量清零）。
 
 ## 三、Markdown body（结构固定 + HeiGe 融合层）
 
 按顺序写这些章节：
 
-1. `## Overview` — 这套的气质总述、主色的两个角色、字体签名、整体节奏。
-2. `## Colors` — 分 Brand & Accent / Surface / Text / Semantic，每个色标 hex + 用途。
-3. `## Typography` — Font Family（含中文兜底与不用日文渲染中文的提醒）+ Hierarchy 表 + Principles。
-4. `## Layout` — Spacing 系统、Grid & Container、Whitespace 哲学。
-5. `## Elevation & Depth` — 分层表 + 装饰性深度手法（暗色系用辉光，不用 backdrop-filter）。
-6. `## Shapes` — Border Radius 表 + 图形/图片几何。
-7. `## Components` — 逐个 UI 组件说明。
-8. `## Presentation System`（HeiGe 融合层）— 这套做成 16:9 演示时的版式：封面/过渡/数据/金句/收尾各怎么排，视觉锤放哪，对齐 HeiGe-PPT 的"一页一句话 + 黄金三秒 + 视觉锤"。
-9. `## Signature Moment`（HeiGe 融合层）— 明确写出这套换个模板绝对做不出来的那一个签名时刻（UI 一个 + deck 一个）。
-10. `## Do's and Don'ts` — Do 若干 + Don't 若干，Don't 里必含"不碰紫蓝俗套渐变、不居中卡片三件套、中文不用日文字体"。
-11. `## Responsive Behavior` — 断点表 + 折叠策略（移动端是重新编排，不是缩放）。
-12. `## Anti-Slop Pledge`（HeiGe 融合层）— 一句话承诺：抹掉品牌名，这套仍一眼看出是用心做的、非流水线生成。
+1. `## Overview`：这套的气质总述、主色的两个角色、字体签名、整体节奏。
+2. `## Colors`：分 Brand & Accent / Surface / Text / Semantic，每个色标 hex + 用途。
+3. `## Typography`：Font Family（含中文兜底与不用日文渲染中文的提醒）+ Hierarchy 表 + Principles。
+4. `## Layout`：Spacing 系统、Grid & Container、Whitespace 哲学。
+5. `## Elevation & Depth`：分层表 + 装饰性深度手法（暗色系用辉光，不用 backdrop-filter）。
+6. `## Shapes`：Border Radius 表 + 图形/图片几何。
+7. `## Components`：逐个 UI 组件说明。
+8. `## Motion`（HeiGe 融合层，可选）：动效性格，同时服务界面和 deck。结构固定：三行定性（签名曲线 / 氛围签名 / hover 语言）+ 一张小表定量（微反馈 / 入场 / stagger）+ 一两个签名动效。曲线和档位从 `references/motion-personality.md` 的共享 token 里取，性能红线守 `references/production-checklist.md` 第三节。老设定集不加此章节完全合法，缺省按家族预设。
+9. `## Presentation System`（HeiGe 融合层）：这套做成 16:9 演示时的版式，封面/过渡/数据/金句/收尾各怎么排，视觉锤放哪，对齐 HeiGe-PPT 的"一页一句话 + 黄金三秒 + 视觉锤"。
+10. `## Signature Moment`（HeiGe 融合层）：明确写出这套换个模板绝对做不出来的那一个签名时刻（UI 一个 + deck 一个）。
+11. `## Do's and Don'ts`：Do 若干 + Don't 若干，Don't 里必含"不碰紫蓝俗套渐变、不居中卡片三件套、中文不用日文字体"。
+12. `## Responsive Behavior`：断点表 + 折叠策略（移动端要重新编排版式，禁止整页等比缩放）。
+13. `## Anti-Slop Pledge`（HeiGe 融合层）：一句话承诺：抹掉品牌名，这套仍一眼看出是用心做的、非流水线生成。
 
 ## 四、字体与中文铁律（继承 HeiGe 生产铁律，写进每套）
 - 每个能承载中文的 font-family 栈末尾必带系统兜底：无衬线 `..., "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif`；衬线 `..., "Noto Serif SC", "Songti SC", serif`。

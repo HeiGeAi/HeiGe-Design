@@ -63,6 +63,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 
 ### Deck 签名时刻 · 招牌轰炸开场（Signboard Barrage）
 `slide-cover` 上四块霓虹招牌（红/黄/青/粉）在**开场三秒内错峰点亮**，每块延迟约 300ms，用 `opacity` + `transform` 合成器动画完成，末块是标题即视觉锤。三秒后全部定住，画面只剩那一句话与常亮的光。第一眼的信息轰炸和随后的静默定格，构成这套 deck 的黄金三秒。</div></div></div>
+
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">### Do
 - 让招牌红只出现在行动点和那块最亮的灯，克制到全屏只认它一支红。
 - 用密度差讲节奏：巷子里挤到贴脸，巷子口整屏留黑。
@@ -982,6 +983,7 @@ components:
 - 主色 `#ff2e4d` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Archivo Black`，正文 `Archivo`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

@@ -61,6 +61,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 **UI — 红线落款 (The Redline Stamp).** In the hero, a single Fraunces sentence sits alone. As the reader scrolls it into view, a **hand-weighted red underline strokes itself on** beneath one clause — a real pen mark, drawn via an SVG stroke that animates `stroke-dashoffset` (compositor-cheap, `transform`/`opacity` only, killed under `prefers-reduced-motion`). Beneath it, a mono dateline sets like a printed standfirst. It is un-copyable because it is the *combination*: essayist one-sentence-per-line silence + the editor's red pen marking the exact clause that matters. Not a highlight box, not an accent bar — a stamp of conviction.
 
 **Deck — 社论对页 (The Op-Ed Spread).** A `slide-quote` that is nothing but one giant serif sentence on warm paper, one word carrying the red underline, a mono folio `No. 07` in the top corner and </div></div></div>
+
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">### Do
 - Give one sentence an entire screen. Let the biggest word be almost too big.
 - Ration red to a single gesture per view — the underline, the numeral, or the closing. Never two reds fighting.
@@ -1031,6 +1032,7 @@ Strip the name off any Redline page and it still reads as one thing: a written c
 - 主色 `#15110a` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Fraunces`，正文 `Newsreader`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 

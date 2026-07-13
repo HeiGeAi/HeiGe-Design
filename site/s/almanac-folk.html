@@ -60,6 +60,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 
 - **UI 签名 · 通书日页卡（宜忌日历）**：卡片四边是真刻出来的木刻回纹花边（`repeating-linear-gradient` 走出万字锦骨、边角碎口把羊皮纸底透出），卡面正中公历大数字与农历「四月初九 · 立夏」等宽双列对齐，下半张分「宜」「忌」两栏，宜项挂民间红小标、忌项挂松绿小标，右上角压一枚 -4° 歪、错位 2px 的「通书堂印」红朱印，套印故意没对准。整张卡像从墙上黄历撕下来的一页，不是一块 SaaS 面板。
 - **Deck 签名 · 节气过场页**：过渡页整屏民间红，一侧竖排当日节气二字（立夏 / 霜降），字距拉到刻在梁上；正中超大 Fraunces 章节号套一圈出血到画面外的奶油回纹花边框，右下一枚奶油朱印盖住页角，把整页压成一张寄出的节气帖。红底、竖节气、歪朱印三件套一出，这页只可能是民历。</div></div></div>
+
 <div class="sec"><h2>Do's & Don'ts（当验收清单）</h2><div class="box" style="white-space:pre-wrap">**Do**
 - 红绿各归各位：红管「宜」与主动，绿管「忌」与页边，同框只让一个当家。
 - 日期一律 IBM Plex Mono 等宽，公历农历双列对齐才是黄历的骨。
@@ -947,6 +948,7 @@ Signed, HeiGe-Design.
 - 主色 `#c23b22` 只给关键 CTA 与强调，克制使用。
 - 标题字体 `Fraunces`，正文 `LXGW WenKai`，中文字体栈末尾必带系统兜底，中文不用日文字体。
 - 复现 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+- 动效性格按 DESIGN.md 的 `## Motion` 章节做（签名曲线 / 时长档 / stagger / 签名动效；没有该章节就用 references/motion-personality.md 的家族预设）；无限动画只动 transform/opacity，一切动画支持 prefers-reduced-motion。
 - 交付前用 `## Do's and Don'ts` 逐条自查；跑 `npx @google/design.md lint DESIGN.md` 确认 0 error。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
