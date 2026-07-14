@@ -5,6 +5,7 @@
   "type": "module",
   "bin": { "heige-design": "bin/heige-design" },
   "scripts": {
+    "test": "node --test tests/*.test.mjs",
     "site": "node bin/heige-design site",
     "lint": "node bin/heige-design lint all"
   },
