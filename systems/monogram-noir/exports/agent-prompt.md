@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint monogram-noir` / 导出其它格式：`heige-design export monogram-noir --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#1C1814`
+- 次要 muted：`#625B50`
+- 底色 canvas：`#EFE9DF`
+- 卡片面 surface：`#F5F0E7`
+- 分隔线 hairline：`#D8D0C2`
+- 主色 primary：`#111111`（只给关键 CTA / 强调，克制使用）
+- 辅助 wine：`#6E1423`
+
+**字体**：标题 `Bodoni Moda` / 正文 `Cormorant Garamond` / 数字 `Bodoni Moda`
+
+**相邻风格（同家族，可换选）**：`onyx-gold`（玄金） · `champagne-silk`（香槟丝绸） · `marble-vein`（大理石纹）

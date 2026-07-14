@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint wenkai-warm` / 导出其它格式：`heige-design export wenkai-warm --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#33291f`
+- 次要 muted：`#6f5f4b`
+- 底色 canvas：`#efe7d6`
+- 卡片面 surface：`#f7f1e3`
+- 分隔线 hairline：`#ddd2bc`
+- 主色 primary：`#b34f30`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#315b47`
+
+**字体**：标题 `LXGW WenKai` / 正文 `Nunito` / 数字 `Nunito`
+
+**相邻风格（同家族，可换选）**：`hearth-story`（炉边） · `almanac-folk`（民历） · `coffee-house`（咖啡馆）

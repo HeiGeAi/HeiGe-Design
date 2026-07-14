@@ -90,7 +90,7 @@ All motion is disabled under `@media (prefers-reduced-motion: reduc</div></div>
 - Don't let vermilion become a background wash, don't add a second accent color, don't round the cards.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: NoirVermilion-design-system
@@ -455,7 +455,44 @@ Strip the brand name and this page still reads as made by a hand that cared: war
 ---
 
 *HeiGe-Design · noir-vermilion · MIT.*
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 玄墨绛红（noir-vermilion · 优雅编辑）— Compact
+
+&gt; Noir-Vermilion is a dark editorial system for knowledge brands and long-form media. A single cut of vermilion (#CE1432) burns across a smoke-black canvas (#141210) over warm cream ink (#EDEAE3): the red never fills, it punctuates — as oversized Didone serial numbers, 8px section rules, and one full-bleed quote page that ruptures the black. Noto Serif SC carries manifesto-scale Chinese headlines; Inter keeps the body quiet and legible. Sharp corners, generous line-height, a faint 45° cross-hatch, no glow. Restraint is the luxury; the red is the only thing allowed to shout.
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#CE1432` |
+| 正文 | `ink` | `#EDEAE3` |
+| 底色 | `canvas` | `#141210` |
+| 卡片面 | `surface` | `#1C1916` |
+| 次要文字 | `muted` | `#9A9082` |
+| 分隔线 | `hairline` | `#34302B` |
+
+## 字体
+
+- 标题：`Playfair Display`
+- 正文：`Inter`
+- 数字 / 等宽：`Playfair Display`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 48px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#CE1432` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint noir-vermilion` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #ce1432;
   --color-on-primary: #f7f4ed;
   --color-ink: #edeae3;
@@ -506,7 +543,7 @@ Strip the brand name and this page still reads as made by a hand that cared: war
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -618,7 +655,7 @@ Strip the brand name and this page still reads as made by a hand that cared: war
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #ce1432;
   --color-on-primary: #f7f4ed;
   --color-ink: #edeae3;
@@ -669,7 +706,7 @@ Strip the brand name and this page still reads as made by a hand that cared: war
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Noir-Vermilion is a dark editorial system for knowledge brands and long-form media. A single cut of vermilion (#CE1432) burns across a smoke-black canvas (#141210) over warm cream ink (#EDEAE3): the red never fills, it punctuates — as oversized Didone serial numbers, 8px section rules, and one full-bleed quote page that ruptures the black. Noto Serif SC carries manifesto-scale Chinese headlines; Inter keeps the body quiet and legible. Sharp corners, generous line-height, a faint 45° cross-hatch, no glow. Restraint is the luxury; the red is the only thing allowed to shout.&quot;,
   &quot;color&quot;: {
@@ -935,7 +972,7 @@ Strip the brand name and this page still reads as made by a hand that cared: war
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 玄墨绛红（noir-vermilion · 优雅编辑）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 玄墨绛红（noir-vermilion · 优雅编辑）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `noir-vermilion` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -953,6 +990,22 @@ Strip the brand name and this page still reads as made by a hand that cared: war
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint noir-vermilion` / 导出其它格式：`heige-design export noir-vermilion --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#EDEAE3`
+- 次要 muted：`#9A9082`
+- 底色 canvas：`#141210`
+- 卡片面 surface：`#1C1916`
+- 分隔线 hairline：`#34302B`
+- 主色 primary：`#CE1432`（只给关键 CTA / 强调，克制使用）
+
+**字体**：标题 `Playfair Display` / 正文 `Inter` / 数字 `Playfair Display`
+
+**相邻风格（同家族，可换选）**：`sermon-serif`（布道） · `broadsheet`（大报） · `atelier-bone`（象牙工坊）
 </pre></div>
 </div>
 

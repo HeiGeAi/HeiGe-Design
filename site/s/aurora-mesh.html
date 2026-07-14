@@ -81,7 +81,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - 不让极光泛滥成满屏彩色噪点，一屏只留一处成为主角。</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: AuroraMesh-design-system
@@ -442,7 +442,46 @@ components:
 抹掉品牌名，这套依然一眼看得出是人用心排的：一整片午夜黑上，一条从青绿流向天蓝的极光，一张 1px 微光边采样了背后光色的玻璃卡，一个敢占满全屏的 gradient text 巨数。没有紫蓝烂渐变，没有居中三件套，没有逐帧发光的性能陷阱。它有一个换模板绝对复制不出的签名时刻，也扛得住断网、窄屏、reduce-motion 三重生产考验。这不是流水线生成的，是有人认真让一片黑发了一次光。
 
 — HeiGe-Design · MIT
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 极光（aurora-mesh · 暗色科技）— Compact
+
+&gt; Aurora Mesh (极光) is a machine-learning platform identity for the dark-tech era. A midnight-black canvas #0a0b12 is crossed by one drifting aurora ribbon that flows from aurora green #34d399 into sky blue #38bdf8. Type is engineered: Space Grotesk display cut into gradient text, Geist for body, Geist Mono for tabular metrics. The signature is a dark glass card whose 1px edge catches the aurora light drifting behind it. Glow is radial only, never blurred, never animated.
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#34d399` |
+| 正文 | `ink` | `#e6edf3` |
+| 底色 | `canvas` | `#0a0b12` |
+| 卡片面 | `surface` | `#12141d` |
+| 次要文字 | `muted` | `#94a3b8` |
+| 分隔线 | `hairline` | `#232838` |
+| 辅助 | `accent` | `#38bdf8` |
+| 辅助 | `glow` | `#7dd3fc` |
+
+## 字体
+
+- 标题：`Space Grotesk`
+- 正文：`Geist`
+- 数字 / 等宽：`Geist Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 6px / md 10px / lg 16px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 28px / xl 48px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#34d399` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint aurora-mesh` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #34d399;
   --color-on-primary: #06131f;
   --color-accent: #38bdf8;
@@ -497,7 +536,7 @@ components:
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -613,7 +652,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #34d399;
   --color-on-primary: #06131f;
   --color-accent: #38bdf8;
@@ -668,7 +707,7 @@ components:
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Aurora Mesh (极光) is a machine-learning platform identity for the dark-tech era. A midnight-black canvas #0a0b12 is crossed by one drifting aurora ribbon that flows from aurora green #34d399 into sky blue #38bdf8. Type is engineered: Space Grotesk display cut into gradient text, Geist for body, Geist Mono for tabular metrics. The signature is a dark glass card whose 1px edge catches the aurora light drifting behind it. Glow is radial only, never blurred, never animated.&quot;,
   &quot;color&quot;: {
@@ -968,7 +1007,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 极光（aurora-mesh · 暗色科技）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 极光（aurora-mesh · 暗色科技）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `aurora-mesh` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -986,6 +1025,24 @@ components:
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint aurora-mesh` / 导出其它格式：`heige-design export aurora-mesh --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#e6edf3`
+- 次要 muted：`#94a3b8`
+- 底色 canvas：`#0a0b12`
+- 卡片面 surface：`#12141d`
+- 分隔线 hairline：`#232838`
+- 主色 primary：`#34d399`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#38bdf8`
+- 辅助 glow：`#7dd3fc`
+
+**字体**：标题 `Space Grotesk` / 正文 `Geist` / 数字 `Geist Mono`
+
+**相邻风格（同家族，可换选）**：`nocturne-teal`（深空电青） · `carbon-lime`（碳黑电绿） · `midnight-trust`（午夜蓝）
 </pre></div>
 </div>
 

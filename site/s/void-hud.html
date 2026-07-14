@@ -96,7 +96,7 @@ an otherwise empty 16:9 black field, wr</div></div></div>
   spreadsheet.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: VoidHud-design-system
@@ -591,7 +591,47 @@ who has watched real fleets fail at 3 a.m.: cyan that only ever means live, ambe
 that only ever means attention, every digit column-locked in monospace, and framing
 done with a reticle instead of a rounded card and a soft shadow. Nothing here is a
 default. — HeiGe-Design
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 虚空仪表（void-hud · 暗色科技）— Compact
+
+&gt; A cold acid-cyan HUD for multi-agent orchestration consoles. Near-black canvas, a single #22d3ee cyan that only ever means &quot;live&quot;, and an amber caution accent that only ever means &quot;attention&quot;. Titles run in a geometric sans; every status, metric, and timestamp lives in tabular monospace. The signature is the reticle: corner brackets and a breathing dot-matrix instead of boxes and shadows.
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#22d3ee` |
+| 正文 | `ink` | `#d7e5ec` |
+| 底色 | `canvas` | `#0b0e11` |
+| 卡片面 | `surface` | `#12171d` |
+| 次要文字 | `muted` | `#8194a0` |
+| 分隔线 | `hairline` | `#202a33` |
+| 辅助 | `alert` | `#ff8a24` |
+| 辅助 | `on-alert` | `#1a0e02` |
+| 辅助 | `critical` | `#ff4d5e` |
+
+## 字体
+
+- 标题：`Space Grotesk`
+- 正文：`Inter`
+- 数字 / 等宽：`JetBrains Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / xs 2px / sm 3px / md 6px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 80px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#22d3ee` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint void-hud` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #22d3ee;
   --color-on-primary: #04181d;
   --color-ink: #d7e5ec;
@@ -651,7 +691,7 @@ default. — HeiGe-Design
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -778,7 +818,7 @@ default. — HeiGe-Design
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #22d3ee;
   --color-on-primary: #04181d;
   --color-ink: #d7e5ec;
@@ -838,7 +878,7 @@ default. — HeiGe-Design
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;A cold acid-cyan HUD for multi-agent orchestration consoles. Near-black canvas, a single #22d3ee cyan that only ever means \&quot;live\&quot;, and an amber caution accent that only ever means \&quot;attention\&quot;. Titles run in a geometric sans; every status, metric, and timestamp lives in tabular monospace. The signature is the reticle: corner brackets and a breathing dot-matrix instead of boxes and shadows.&quot;,
   &quot;color&quot;: {
@@ -1164,7 +1204,7 @@ default. — HeiGe-Design
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 虚空仪表（void-hud · 暗色科技）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 虚空仪表（void-hud · 暗色科技）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `void-hud` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1182,6 +1222,25 @@ default. — HeiGe-Design
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint void-hud` / 导出其它格式：`heige-design export void-hud --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#d7e5ec`
+- 次要 muted：`#8194a0`
+- 底色 canvas：`#0b0e11`
+- 卡片面 surface：`#12171d`
+- 分隔线 hairline：`#202a33`
+- 主色 primary：`#22d3ee`（只给关键 CTA / 强调，克制使用）
+- 辅助 alert：`#ff8a24`
+- 辅助 on-alert：`#1a0e02`
+- 辅助 critical：`#ff4d5e`
+
+**字体**：标题 `Space Grotesk` / 正文 `Inter` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`nocturne-teal`（深空电青） · `aurora-mesh`（极光） · `carbon-lime`（碳黑电绿）
 </pre></div>
 </div>
 

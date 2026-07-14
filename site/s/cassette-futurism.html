@@ -95,7 +95,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - Don't reach for glassmorphism or `backdrop-filter`; the glass </div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: Ferrite-design-system
@@ -508,7 +508,46 @@ machine someone imagined in 1979 and cared enough to actually mold — a
 first-principles material system, not a template with the colors swapped.
 
 _Signed HeiGe-Design · MIT._
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 磁带未来（cassette-futurism · 复古未来）— Compact
+
+&gt; Cassette-futurism system for FERRITE, a fictional hardware house that imagines the future the way 1979 did: molded beige plastic lit by a single amber readout. Chassis orange #d9662a runs the physical push-buttons; amber #ffb347 is caged inside dark readout windows and never touches the beige. Space Grotesk stamps the faceplate legends, Space Mono drives the seven-segment counters. The signature move is the power-on readout, where oversized amber digits breathe over an engraved beige panel.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#d9662a` |
+| 正文 | `ink` | `#241f17` |
+| 底色 | `canvas` | `#e8e0cf` |
+| 卡片面 | `surface` | `#f1ebdc` |
+| 次要文字 | `muted` | `#5e5544` |
+| 分隔线 | `hairline` | `#c9bfa8` |
+| 辅助 | `amber` | `#ffb347` |
+| 辅助 | `readout` | `#141009` |
+
+## 字体
+
+- 标题：`Space Grotesk`
+- 正文：`Space Grotesk`
+- 数字 / 等宽：`Space Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 3px / md 7px / lg 12px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 88px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#d9662a` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint cassette-futurism` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #d9662a;
   --color-on-primary: #1c1710;
   --color-ink: #241f17;
@@ -563,7 +602,7 @@ _Signed HeiGe-Design · MIT._
   --spacing-section: 88px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -679,7 +718,7 @@ _Signed HeiGe-Design · MIT._
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #d9662a;
   --color-on-primary: #1c1710;
   --color-ink: #241f17;
@@ -734,7 +773,7 @@ _Signed HeiGe-Design · MIT._
   --spacing-section: 88px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Cassette-futurism system for FERRITE, a fictional hardware house that imagines the future the way 1979 did: molded beige plastic lit by a single amber readout. Chassis orange #d9662a runs the physical push-buttons; amber #ffb347 is caged inside dark readout windows and never touches the beige. Space Grotesk stamps the faceplate legends, Space Mono drives the seven-segment counters. The signature move is the power-on readout, where oversized amber digits breathe over an engraved beige panel.&quot;,
   &quot;color&quot;: {
@@ -1034,7 +1073,7 @@ _Signed HeiGe-Design · MIT._
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 磁带未来（cassette-futurism · 复古未来）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 磁带未来（cassette-futurism · 复古未来）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `cassette-futurism` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1052,6 +1091,24 @@ _Signed HeiGe-Design · MIT._
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint cassette-futurism` / 导出其它格式：`heige-design export cassette-futurism --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#241f17`
+- 次要 muted：`#5e5544`
+- 底色 canvas：`#e8e0cf`
+- 卡片面 surface：`#f1ebdc`
+- 分隔线 hairline：`#c9bfa8`
+- 主色 primary：`#d9662a`（只给关键 CTA / 强调，克制使用）
+- 辅助 amber：`#ffb347`
+- 辅助 readout：`#141009`
+
+**字体**：标题 `Space Grotesk` / 正文 `Space Grotesk` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`synthwave-drive`（合成波） · `y2k-chrome`（千禧金属） · `arcade-crt`（街机荧光）
 </pre></div>
 </div>
 

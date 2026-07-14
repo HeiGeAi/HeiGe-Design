@@ -16,3 +16,19 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint broadsheet` / 导出其它格式：`heige-design export broadsheet --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#1c1a16`
+- 次要 muted：`#5c554a`
+- 底色 canvas：`#f4f1ea`
+- 卡片面 surface：`#ece6d8`
+- 分隔线 hairline：`#cdc6b8`
+- 主色 primary：`#c0392b`（只给关键 CTA / 强调，克制使用）
+
+**字体**：标题 `Newsreader` / 正文 `Newsreader` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`sermon-serif`（布道） · `noir-vermilion`（玄墨绛红） · `atelier-bone`（象牙工坊）

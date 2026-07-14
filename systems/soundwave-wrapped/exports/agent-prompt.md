@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint soundwave-wrapped` / 导出其它格式：`heige-design export soundwave-wrapped --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#F7F4EC`
+- 次要 muted：`#ADA8BC`
+- 底色 canvas：`#0E0C14`
+- 卡片面 surface：`#1B1826`
+- 分隔线 hairline：`#2E2B3C`
+- 主色 primary：`#FF2D95`（只给关键 CTA / 强调，克制使用）
+- 辅助 volt：`#FFE500`
+- 辅助 cobalt：`#1E4DFF`
+
+**字体**：标题 `Anton` / 正文 `Inter` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`acg-stellar`（二次元星轨） · `collage-riot`（拼贴暴动） · `neon-market`（霓虹夜市）

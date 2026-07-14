@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint clayfield` / 导出其它格式：`heige-design export clayfield --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#3a2e26`
+- 次要 muted：`#6f5f52`
+- 底色 canvas：`#f2e9dc`
+- 卡片面 surface：`#fbf5ea`
+- 分隔线 hairline：`#e2d5c2`
+- 主色 primary：`#a8482a`（只给关键 CTA / 强调，克制使用）
+- 辅助 clay：`#c96f4a`
+- 辅助 sage：`#9caf88`
+
+**字体**：标题 `Nunito` / 正文 `Nunito` / 数字 `Fraunces`
+
+**相邻风格（同家族，可换选）**：`morandi-still`（莫兰迪静物） · `linen-fold`（亚麻褶） · `harvest-warm`（丰收）

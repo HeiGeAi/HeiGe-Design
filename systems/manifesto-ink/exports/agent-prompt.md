@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint manifesto-ink` / 导出其它格式：`heige-design export manifesto-ink --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#1d1710`
+- 次要 muted：`#6d6353`
+- 底色 canvas：`#f7f4ee`
+- 卡片面 surface：`#efe8db`
+- 分隔线 hairline：`#d8cfbe`
+- 主色 primary：`#15110a`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#c42718`
+
+**字体**：标题 `Fraunces` / 正文 `Newsreader` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`sermon-serif`（布道） · `noir-vermilion`（玄墨绛红） · `broadsheet`（大报）

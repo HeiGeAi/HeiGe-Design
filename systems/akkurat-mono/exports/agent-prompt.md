@@ -16,3 +16,19 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint akkurat-mono` / 导出其它格式：`heige-design export akkurat-mono --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#18191C`
+- 次要 muted：`#63656C`
+- 底色 canvas：`#F7F7F5`
+- 卡片面 surface：`#FFFFFF`
+- 分隔线 hairline：`#E3E3DF`
+- 主色 primary：`#0E4FE1`（只给关键 CTA / 强调，克制使用）
+
+**字体**：标题 `Inter` / 正文 `Inter` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`helvetic-ledger`（账本） · `grid-bureau`（制表局） · `datum-signal`（数点）

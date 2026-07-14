@@ -92,7 +92,7 @@ Signature moves:
 - Don't use pure `#000` / pure `#fff`, don't scatter teal everywhere, don't add a second saturated brand color.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: Halonyx-design-system
@@ -380,6 +380,21 @@ The system is **mostly sharp-cornered** — 16:9 slides and panels sit square, w
 - Images and diagrams sit in `md`/`lg` rounded frames with a 1px `hairline` edge.
 - The teal is allowed to become geometry in exactly one place: the diagonal glow shaft. Everywhere else, teal is a stroke, a dot, or a fill on a pill.
 
+## Imagery
+
+Imagery runs dark and instrumental. Photos are rare; when they appear they read like sensor output, not stock photography. Most &quot;images&quot; here are the UI itself — a hairline grid, one glow shaft, one lit numeral.
+
+| Layer | Treatment |
+|---|---|
+| Photography | Sparse and dark-key. Product shots or deep-space textures exposed so the near-black `canvas` continues into the image with no seam. Framed in `md`/`lg` corners with a 1px `hairline` edge. Never bright lifestyle stock. |
+| Illustration / diagram | Technical and line-based: thin `hairline` strokes on `canvas`, teal on exactly one active path or node. Architecture and agent-graph diagrams are the native illustration of this system. |
+| Icons | 1.5px stroke, `ink` default, `muted` when secondary, `primary` teal only on the single live/active icon. Outlined, never filled, never multicolor. |
+| Charts | `canvas` ground, `hairline` grid, `muted` axes, mono tabular labels. One series glows in `primary`/`glow`; every other series stays `muted`. Data glows where it matters and nowhere else. |
+| Glow as imagery | The diagonal teal shaft is the system's one piece of &quot;art&quot; — a static `radial-gradient`, never a photo of light, never animated. It falls on one object per screen. |
+| Density | Very low. Deep-space black is the dominant visual; an image is an event, not a texture. |
+
+---
+
 ## Components
 
 - **nav-bar** — `surface` bar, bottom `hairline`, uppercase mono (`eyebrow`) links in `ink`. Sharp corners. A single `badge-live` may sit at the right edge.
@@ -439,6 +454,25 @@ Two moments this system can produce that a generic template cannot:
 
 - **Deck — &quot;The Glowing Numeral.&quot;** `slide-stat-hero`: pure deep-space black, one **giant mono numeral** lit in `glow`, the diagonal shaft touching only that number, its unit whispered in tiny mono beneath. `99.98` filling a 16:9 frame, glowing, alone. One number, three seconds, unforgettable — and impossible to fake by centering a card and calling it a stat.
 
+## Agent 配方卡
+
+Copy-ready recipes. Exact values only.
+
+**速查色卡**
+- Ink（正文）`#e9edf3`（近白，不用纯白）· Muted `#8a94a4` · Canvas（页底）`#08090d` · Surface（卡片）`#0f1319` · Hairline `#20262f`
+- Primary teal `#2dd4bf`：全屏一处，只给 CTA / 一束辉光 / 一颗心跳点。Glow peak `#5ff0dc`（数字与 live-dot 核心）。Accent amber `#f6a35c`：仅告警。
+- 字体：display `Geist` / 正文 `Inter` / 数字·kicker `JetBrains Mono`。
+
+1. **发光主按钮** — `#2dd4bf` 填充，`#031815` 字，Geist 15px weight 600，圆角 9999px，内边距 8px 24px，叠一层静态 teal 辉光（box-shadow，不动画）。一屏一个。
+2. **次级按钮** — `#0f1319` 填充，1px `#20262f` 描边，`#e9edf3` 字，圆角 9999px。退场，绝不发光。
+3. **The Beacon（Hero）** — `#08090d` 底叠 48px 间距的 `#20262f` 细网格，一道从右上斜射的 teal `radial-gradient` 辉光只落在那颗主按钮上；旁边一颗 breathing live-dot（`#5ff0dc` 核 + `#2dd4bf` 环，2.4s 呼吸只动 opacity/scale）。
+4. **特性卡** — `#0f1319` 面，1px `#20262f` 描边，圆角 16px。标题 Geist 20px weight 600 `#e9edf3`，正文 Inter 16px，meta 用 `#8a94a4`。无灰投影。
+5. **数据块** — `#0f1319` 面，圆角 10px，数字 JetBrains Mono `#2dd4bf`（tabular 等宽），标签 `#8a94a4`。
+6. **Live 徽章** — 圆角 9999px，`#0f1319` 底，`#2dd4bf` 全大写 mono 标签，前缀一颗呼吸点。系统心跳。
+7. **页脚** — `#08090d` 底，顶部 1px `#20262f`，`#8a94a4` mono 小字。
+
+---
+
 ## Do's and Don'ts
 
 **Do**
@@ -471,12 +505,63 @@ Reflow rules (production-grade):
 - **16:9 → mobile:** deck slides stack vertically; the stat-hero keeps its one-numeral-per-screen law, just re-scaled.
 - **Motion off:** every animation (the breathing dot included) is disabled under `@media (prefers-reduced-motion: reduce)`.
 
+## 相邻风格
+
+同属「暗色科技」家族，按锚点色和气质分岔：
+
+- **`midnight-trust`（午夜蓝）**：同样极简深色，但锚点是可信赖的蓝，气质更金融、更稳重。做银行 / 合规 / 企业级选它；做 AI 基建那种「运行时发光」的锐利感留在深空电青。
+- **`carbon-lime`（碳黑电绿）**：碳黑底配电光绿，能量更外放、更硬核工程感。要冲击力和赛博锋芒选它；要克制到只剩一束光的高级留白留在这套。
+- **`void-hud`（虚空仪表）**：仪表盘 HUD 语言，数据密度更高、界面元素更多。做实时监控大屏选它；做「一屏一光一心跳」的产品站留在深空电青。
+
+**深空电青自己最适合**：AI 基建、agent 编排、开发者工具、SaaS 后台，凡是要安静、premium、运行时发光气质的深色产品。
+
+---
+
 ## Anti-Slop Pledge
 
 Erase the name and this is still, at a glance, something made on purpose. No purple-blue gradient, no three centered cards, no naked system font, no emoji standing in for icons, no &quot;empower / all-in-one&quot; filler. Just deep-space black, one teal light falling on one thing, and a single heartbeat in the corner. If it doesn't look like it runs in production while you sleep, it isn't Halonyx.
 
 — HeiGe-Design · MIT · nocturne-teal
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 深空电青（nocturne-teal · 暗色科技）— Compact
+
+&gt; Halonyx is a minimal-dark system for AI infrastructure and agent-orchestration platforms — the calm, premium look of software that runs while you sleep. A near-black deep-space canvas (#08090d) holds one electric-mint teal (#2dd4bf) that appears only where it earns attention: a single diagonal radial glow shaft, one glowing pill CTA, one breathing live-dot. Geist and Inter carry tight display type; JetBrains Mono carries every numeral and kicker. The signature move is a teal light shaft cast across a hairline grid, lighting exactly one thing on screen. Restraint is the brand. HeiGe-Design.
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#2dd4bf` |
+| 正文 | `ink` | `#e9edf3` |
+| 底色 | `canvas` | `#08090d` |
+| 卡片面 | `surface` | `#0f1319` |
+| 次要文字 | `muted` | `#8a94a4` |
+| 分隔线 | `hairline` | `#20262f` |
+| 辅助 | `glow` | `#5ff0dc` |
+| 辅助 | `accent` | `#f6a35c` |
+
+## 字体
+
+- 标题：`Geist`
+- 正文：`Inter`
+- 数字 / 等宽：`JetBrains Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 6px / md 10px / lg 16px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#2dd4bf` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint nocturne-teal` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #2dd4bf;
   --color-on-primary: #031815;
   --color-ink: #e9edf3;
@@ -531,7 +616,7 @@ Erase the name and this is still, at a glance, something made on purpose. No pur
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -647,7 +732,7 @@ Erase the name and this is still, at a glance, something made on purpose. No pur
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #2dd4bf;
   --color-on-primary: #031815;
   --color-ink: #e9edf3;
@@ -702,7 +787,7 @@ Erase the name and this is still, at a glance, something made on purpose. No pur
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Halonyx is a minimal-dark system for AI infrastructure and agent-orchestration platforms — the calm, premium look of software that runs while you sleep. A near-black deep-space canvas (#08090d) holds one electric-mint teal (#2dd4bf) that appears only where it earns attention: a single diagonal radial glow shaft, one glowing pill CTA, one breathing live-dot. Geist and Inter carry tight display type; JetBrains Mono carries every numeral and kicker. The signature move is a teal light shaft cast across a hairline grid, lighting exactly one thing on screen. Restraint is the brand. HeiGe-Design.&quot;,
   &quot;color&quot;: {
@@ -1002,7 +1087,7 @@ Erase the name and this is still, at a glance, something made on purpose. No pur
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 深空电青（nocturne-teal · 暗色科技）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 深空电青（nocturne-teal · 暗色科技）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `nocturne-teal` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1020,6 +1105,24 @@ Erase the name and this is still, at a glance, something made on purpose. No pur
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint nocturne-teal` / 导出其它格式：`heige-design export nocturne-teal --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#e9edf3`
+- 次要 muted：`#8a94a4`
+- 底色 canvas：`#08090d`
+- 卡片面 surface：`#0f1319`
+- 分隔线 hairline：`#20262f`
+- 主色 primary：`#2dd4bf`（只给关键 CTA / 强调，克制使用）
+- 辅助 glow：`#5ff0dc`
+- 辅助 accent：`#f6a35c`
+
+**字体**：标题 `Geist` / 正文 `Inter` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`aurora-mesh`（极光） · `carbon-lime`（碳黑电绿） · `midnight-trust`（午夜蓝）
 </pre></div>
 </div>
 

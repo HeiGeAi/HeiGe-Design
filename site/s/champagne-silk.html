@@ -77,7 +77,7 @@ The hero background is a **triple-layered soft-light sheen**: three static `radi
 - **Don't let champagne become body text on ivory.** It fails legibility and cheapens the foil. C</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: ChampagneSilk-design-system
@@ -445,7 +445,47 @@ Mobile is re-composed, not shrunk. The deck-scale drama is re-set for one narrow
 Strip the name off this system and it is still unmistakably made by hand. The proof is in the restraint: one soft-light sheen instead of a color wash, one drop of rouge instead of a palette, a serif thin enough to break and a label tracked wide enough to breathe. What remains — champagne on ivory, espresso ink, a single couture rouge that fades in slowly — could not fall out of a generator, because a generator would reach for the purple gradient and pour the color everywhere. **香槟丝绸 spends one drop of rouge, and the patience is the design.**
 
 — HeiGe-Design · MIT
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 香槟丝绸（champagne-silk · 奢侈高定）— Compact
+
+&gt; A couture-beauty system in champagne gold over warm ivory, lit like light sliding across silk. Champagne (#e8d9be) is the material; a deep couture rouge (#8e3b44) is the one drop of color spent on action, and a soft silk rouge (#d98a8a) tints the sheen. Ultra-thin Cormorant serif fades up over layered soft-light gradients; wide-tracked Jost small-caps stand beneath at attention. UI runs on ivory, the deck goes to warm espresso noir. Signature: a silk sheen behind the hero, a full-bleed rouge numeral dividing the deck.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#e8d9be` |
+| 正文 | `ink` | `#2b2320` |
+| 底色 | `canvas` | `#f7f0e4` |
+| 卡片面 | `surface` | `#fdf8f0` |
+| 次要文字 | `muted` | `#715d4b` |
+| 分隔线 | `hairline` | `#e6d5b8` |
+| 辅助 | `accent` | `#d98a8a` |
+| 辅助 | `rouge` | `#8e3b44` |
+| 辅助 | `noir` | `#211a1c` |
+
+## 字体
+
+- 标题：`Cormorant Garamond`
+- 正文：`Jost`
+- 数字 / 等宽：`Cormorant Garamond`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / md 8px / lg 16px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 112px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#e8d9be` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint champagne-silk` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #e8d9be;
   --color-on-primary: #241d1a;
   --color-ink: #2b2320;
@@ -497,7 +537,7 @@ Strip the name off this system and it is still unmistakably made by hand. The pr
   --spacing-section: 112px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -604,7 +644,7 @@ Strip the name off this system and it is still unmistakably made by hand. The pr
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #e8d9be;
   --color-on-primary: #241d1a;
   --color-ink: #2b2320;
@@ -656,7 +696,7 @@ Strip the name off this system and it is still unmistakably made by hand. The pr
   --spacing-section: 112px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;A couture-beauty system in champagne gold over warm ivory, lit like light sliding across silk. Champagne (#e8d9be) is the material; a deep couture rouge (#8e3b44) is the one drop of color spent on action, and a soft silk rouge (#d98a8a) tints the sheen. Ultra-thin Cormorant serif fades up over layered soft-light gradients; wide-tracked Jost small-caps stand beneath at attention. UI runs on ivory, the deck goes to warm espresso noir. Signature: a silk sheen behind the hero, a full-bleed rouge numeral dividing the deck.&quot;,
   &quot;color&quot;: {
@@ -952,7 +992,7 @@ Strip the name off this system and it is still unmistakably made by hand. The pr
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 香槟丝绸（champagne-silk · 奢侈高定）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 香槟丝绸（champagne-silk · 奢侈高定）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `champagne-silk` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -970,6 +1010,25 @@ Strip the name off this system and it is still unmistakably made by hand. The pr
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint champagne-silk` / 导出其它格式：`heige-design export champagne-silk --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#2b2320`
+- 次要 muted：`#715d4b`
+- 底色 canvas：`#f7f0e4`
+- 卡片面 surface：`#fdf8f0`
+- 分隔线 hairline：`#e6d5b8`
+- 主色 primary：`#e8d9be`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#d98a8a`
+- 辅助 rouge：`#8e3b44`
+- 辅助 noir：`#211a1c`
+
+**字体**：标题 `Cormorant Garamond` / 正文 `Jost` / 数字 `Cormorant Garamond`
+
+**相邻风格（同家族，可换选）**：`onyx-gold`（玄金） · `monogram-noir`（字母黑） · `marble-vein`（大理石纹）
 </pre></div>
 </div>
 

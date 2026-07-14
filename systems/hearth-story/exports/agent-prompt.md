@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint hearth-story` / 导出其它格式：`heige-design export hearth-story --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#33251a`
+- 次要 muted：`#7a6552`
+- 底色 canvas：`#f4ece0`
+- 卡片面 surface：`#eadfcb`
+- 分隔线 hairline：`#d8c9b2`
+- 主色 primary：`#ac4914`（只给关键 CTA / 强调，克制使用）
+- 辅助 ember：`#d2601a`
+
+**字体**：标题 `Fraunces` / 正文 `Source Sans 3` / 数字 `Fraunces`
+
+**相邻风格（同家族，可换选）**：`wenkai-warm`（文楷暖） · `almanac-folk`（民历） · `coffee-house`（咖啡馆）

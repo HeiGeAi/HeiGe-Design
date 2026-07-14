@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint sermon-serif` / 导出其它格式：`heige-design export sermon-serif --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#23201b`
+- 次要 muted：`#6c645a`
+- 底色 canvas：`#faf7f2`
+- 卡片面 surface：`#f2ebde`
+- 分隔线 hairline：`#ddd4c4`
+- 主色 primary：`#1a1a18`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#935428`
+
+**字体**：标题 `Fraunces` / 正文 `Inter` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`noir-vermilion`（玄墨绛红） · `broadsheet`（大报） · `atelier-bone`（象牙工坊）

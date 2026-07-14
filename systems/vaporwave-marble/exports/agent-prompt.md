@@ -16,3 +16,22 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint vaporwave-marble` / 导出其它格式：`heige-design export vaporwave-marble --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#2b1d3f`
+- 次要 muted：`#705c86`
+- 底色 canvas：`#f3ecf7`
+- 卡片面 surface：`#fbf7fd`
+- 分隔线 hairline：`#e4d6ef`
+- 主色 primary：`#ff5fb0`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent-rose：`#ff9ee5`
+- 辅助 accent-cyan：`#8ad9ff`
+- 辅助 twilight：`#1c1230`
+
+**字体**：标题 `Playfair Display` / 正文 `Inter` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`synthwave-drive`（合成波） · `y2k-chrome`（千禧金属） · `arcade-crt`（街机荧光）

@@ -16,3 +16,19 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint brut-signal` / 导出其它格式：`heige-design export brut-signal --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#141414`
+- 次要 muted：`#57534a`
+- 底色 canvas：`#f4efe3`
+- 卡片面 surface：`#0a0a0a`
+- 分隔线 hairline：`#d7d0c2`
+- 主色 primary：`#e00000`（只给关键 CTA / 强调，克制使用）
+
+**字体**：标题 `Alfa Slab One` / 正文 `Archivo` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`forge-anvil`（熔炉） · `rebar-concrete`（钢筋） · `riot-press`（暴走印刷）

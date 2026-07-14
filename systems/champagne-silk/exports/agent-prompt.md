@@ -16,3 +16,22 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint champagne-silk` / 导出其它格式：`heige-design export champagne-silk --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#2b2320`
+- 次要 muted：`#715d4b`
+- 底色 canvas：`#f7f0e4`
+- 卡片面 surface：`#fdf8f0`
+- 分隔线 hairline：`#e6d5b8`
+- 主色 primary：`#e8d9be`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#d98a8a`
+- 辅助 rouge：`#8e3b44`
+- 辅助 noir：`#211a1c`
+
+**字体**：标题 `Cormorant Garamond` / 正文 `Jost` / 数字 `Cormorant Garamond`
+
+**相邻风格（同家族，可换选）**：`onyx-gold`（玄金） · `monogram-noir`（字母黑） · `marble-vein`（大理石纹）

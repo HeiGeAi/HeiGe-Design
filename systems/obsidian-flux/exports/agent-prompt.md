@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint obsidian-flux` / 导出其它格式：`heige-design export obsidian-flux --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#eceaf4`
+- 次要 muted：`#8b899c`
+- 底色 canvas：`#060608`
+- 卡片面 surface：`#0f0e17`
+- 分隔线 hairline：`#232130`
+- 主色 primary：`#7c5cff`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#9d84ff`
+
+**字体**：标题 `Geist` / 正文 `Satoshi` / 数字 `Geist Mono`
+
+**相邻风格（同家族，可换选）**：`nocturne-teal`（深空电青） · `aurora-mesh`（极光） · `carbon-lime`（碳黑电绿）

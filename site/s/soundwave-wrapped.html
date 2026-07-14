@@ -77,7 +77,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - 别把巨号数字缩成温吞小字，那就丢了这套的全部气场。</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: soundwave-design-system
@@ -364,6 +364,21 @@ components:
 ### 图形 / 图片几何
 图片走硬边满出血或方块裁切，叠上旋转的贴纸标签与波形条。绝不用柔角大圆卡把图裹成通用 SaaS 的样子。
 
+## Imagery
+
+图像在这套里是能量本身，密度高、出血狠、堆叠满，和极简派反着来。但满不等于乱，每一墙只留一个视觉主角。
+
+| 层 | 处理 |
+|---|---|
+| 照片 | 硬边满出血或方块裁切，高饱和、高对比、演唱会现场感。叠上旋转的贴纸标签与波形条，绝不用柔角大圆卡把图裹成通用 SaaS 样子。人像可做三色分色 / 半调网点处理。 |
+| 插画 | 平涂色块拼贴风，荧光粉 / 电黄 / 电蓝三色硬碰硬，几何切割、错位叠压。不用柔和渐变插画，不用拟物光影。 |
+| 图标 | 粗描边或实心平涂，单色为主，命中焦点可染单一撞色。可轻微旋转当贴纸用，绝不多色小清新。 |
+| 图表 | concert-black 底，三色平涂柱 / 块，Space Mono 等宽读数，网格用 `hairline` 极低调。一张图一个高潮数据，其余压 `muted`。 |
+| 波形 | 签名图像元素，一排竖条三色平涂，靠 `transform: scaleY` 跳动。静态时也是最强的版式锚。 |
+| 密度 | 高。信息墙允许挤、允许跨列拼贴、允许小角度旋转，但靠栅格纪律兜住，挤而不糊。 |
+
+---
+
 ## Components
 
 - **nav-bar** — canvas 底 + hairline 下边线，左品牌右 eyebrow 导航，克制不抢戏。
@@ -402,6 +417,25 @@ slide 组件见下一节。
 **Deck 签名时刻 · The Wrapped Reveal（爆数一屏）**
 `slide-stat-hero` 上，电黄整版铺满，一个 Anton 巨号数字（如 `47,213`）以 scale + opacity 爆入，落在一条从左出血到右的冻结波形基线上，单位用 Space Mono 小字压角。一屏只有一个数字、一种颜色、一记锤 —— 黄金三秒里让人只记住这一个数。这是&quot;年度盘点&quot;最想让人截图转发的那一屏。
 
+## Agent 配方卡
+
+给 coding agent 直接抄的落地卡，数值精确，别自己换。
+
+**速查色卡**
+- Ink（正文）`#F7F4EC` · Muted `#ADA8BC` · Canvas（演唱会黑底）`#0E0C14` · Surface（面）`#1B1826` · Hairline `#2E2B3C`
+- 三撞色：荧光粉 primary `#FF2D95` / 电黄 volt `#FFE500` / 电蓝 cobalt `#1E4DFF`，永远平涂不互调；富黑字 on-primary `#140F14`。
+- 字体：巨号 display `Anton` / 标题·按钮 `Space Grotesk` / eyebrow·等宽 `Space Mono` / 正文 `Inter`。
+
+1. **主按钮** — `#FF2D95` 填充，`#140F14` 字，Space Grotesk 15px weight 700，圆角 9999px，内边距 16px 40px。全站唯一主焦点。
+2. **电黄按钮** — `#FFE500` 填充，`#140F14` 字，同规格。给「看我的年度报告」这类高兴奋 CTA。
+3. **数据封面 / Hero** — `#0E0C14` 底，Anton 120px weight 800 巨号（可染 `#FFE500` 或 `#FF2D95`）压屏，身后一排三色波形竖条，一枚旋转电黄贴纸标签点缀。一屏一个数字主角。
+4. **特性卡** — `#1B1826` 面，1px `#2E2B3C` 描边，圆角 6px，内边距 24px。标题 Space Grotesk 30px weight 700 `#F7F4EC`，正文 Inter 17px。
+5. **数据拼贴块** — `#1E4DFF` 电蓝出血块，圆角 14px，Space Mono 等宽数据 + Anton 巨号 `#F7F4EC`，用来切分板块。
+6. **贴纸标签** — `#FFE500` 电黄底，`#140F14` 全大写 mono 字，圆角 9999px，可旋转小角度撒在信息墙上。
+7. **页脚** — `#1B1826` 面，`#ADA8BC` 字，署名与元信息，克制收尾。
+
+---
+
 ## Do's and Don'ts
 
 **Do**
@@ -428,10 +462,61 @@ slide 组件见下一节。
 
 移动端是把信息墙**重新编排成竖向翻页的色块流**，不是把桌面拼贴等比缩小。巨号数字用 `clamp()` 控制，保证最长那行在 ≤390px 也放得下、不出孤字、不横向溢出。手动断行的标题每行锁 `nowrap`，按最长行收字号。
 
+## 相邻风格
+
+同属「张扬极繁」家族，按能量类型分岔：
+
+- **`acg-stellar`（二次元星轨）**：同样高饱和撞色，但走二次元速度线加星爆，斜切分屏、冲刺感强。做 ACG / 游戏 / 年轻社区选它；做音乐 / 年度报告那种数据高潮留在声浪。
+- **`neon-market`（霓虹夜市）**：霓虹招牌加夜市烟火气，暖、闹、市井。做餐饮 / 夜经济 / 市集选它；要演唱会级冷冽三色撞击留在这套。
+- **`collage-riot`（拼贴暴动）**：剪贴报刊拼贴风，纸感、手撕边、复古暴动感。做潮流杂志 / 街头文化选它；要屏幕原生的荧光平涂和会跳的波形留在声浪。
+
+**声浪自己最适合**：音乐年度报告、Spotify-Wrapped 式回顾、演唱会 / 音乐节、品牌 campaign 大促，凡是要一个数字炸场、有主角有高潮的场合。
+
+---
+
 ## Anti-Slop Pledge
 
 抹掉品牌名，这一页仍能一眼看出是用心做的：三支撞色平涂在 concert-black 上炸开，Anton 巨号压着一条会跳的波形，三体字故意打架却各归各位 —— 没有紫蓝渐变、没有居中三卡、没有 emoji 撑场。这是一套有主角、有高潮、有签名心跳的声浪，不是流水线吐出来的通用模板。
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 声浪（soundwave-wrapped · 张扬极繁）— Compact
+
+&gt; Soundwave (声浪) is a maximalist year-in-review system for music and campaign recaps, loud on purpose. Fluorescent pink
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#FF2D95` |
+| 正文 | `ink` | `#F7F4EC` |
+| 底色 | `canvas` | `#0E0C14` |
+| 卡片面 | `surface` | `#1B1826` |
+| 次要文字 | `muted` | `#ADA8BC` |
+| 分隔线 | `hairline` | `#2E2B3C` |
+| 辅助 | `volt` | `#FFE500` |
+| 辅助 | `cobalt` | `#1E4DFF` |
+
+## 字体
+
+- 标题：`Anton`
+- 正文：`Inter`
+- 数字 / 等宽：`Space Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 3px / md 6px / lg 14px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 80px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#FF2D95` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint soundwave-wrapped` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #ff2d95;
   --color-on-primary: #140f14;
   --color-ink: #f7f4ec;
@@ -486,7 +571,7 @@ slide 组件见下一节。
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -602,7 +687,7 @@ slide 组件见下一节。
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #ff2d95;
   --color-on-primary: #140f14;
   --color-ink: #f7f4ec;
@@ -657,7 +742,7 @@ slide 组件见下一节。
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Soundwave (声浪) is a maximalist year-in-review system for music and campaign recaps, loud on purpose. Fluorescent pink&quot;,
   &quot;color&quot;: {
@@ -957,7 +1042,7 @@ slide 组件见下一节。
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 声浪（soundwave-wrapped · 张扬极繁）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 声浪（soundwave-wrapped · 张扬极繁）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `soundwave-wrapped` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -975,6 +1060,24 @@ slide 组件见下一节。
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint soundwave-wrapped` / 导出其它格式：`heige-design export soundwave-wrapped --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#F7F4EC`
+- 次要 muted：`#ADA8BC`
+- 底色 canvas：`#0E0C14`
+- 卡片面 surface：`#1B1826`
+- 分隔线 hairline：`#2E2B3C`
+- 主色 primary：`#FF2D95`（只给关键 CTA / 强调，克制使用）
+- 辅助 volt：`#FFE500`
+- 辅助 cobalt：`#1E4DFF`
+
+**字体**：标题 `Anton` / 正文 `Inter` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`acg-stellar`（二次元星轨） · `collage-riot`（拼贴暴动） · `neon-market`（霓虹夜市）
 </pre></div>
 </div>
 

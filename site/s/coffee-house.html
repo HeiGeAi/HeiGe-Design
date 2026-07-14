@@ -79,7 +79,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - Don't draw a perfect circle or a crisp border-bottom for the signatures — perfection kills the hand-made read.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: coffee-house-design-system
@@ -457,7 +457,47 @@ Re-composition rules: on phones the handwriting becomes an **inline aside**, not
 ## Anti-Slop Pledge
 
 Strip the name off any CoffeeHouse page and you still see it: a warm oat cream page, roasted-brown serifs set with air to breathe, one caramel circle around the number that matters, and a real handwritten note in the margin. The coffee-ring bleeding from a card corner is a decision no template ships by default. This was poured by hand, and it shows — signed HeiGe-Design.
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 咖啡馆（coffee-house · 温暖人文）— Compact
+
+&gt; CoffeeHouse is a cozy, serif-forward warmth system for indie blogs, podcasts and small roasters. Its color logic is a single cup: espresso brown carries every heading and action, milk-foam cream holds the page, and a caramel drizzle marks only what matters. Fraunces gives a soft, slightly wonky display serif, Newsreader keeps long reading unhurried, and Caveat scribbles handwritten margin notes. The signature is a faint coffee-ring bleeding from a card corner and a hand-drawn caramel circle around a stat, like napkin math. Restrained, tactile, unmistakably hand-made.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#4a352a` |
+| 正文 | `ink` | `#3a2a20` |
+| 底色 | `canvas` | `#efe3d3` |
+| 卡片面 | `surface` | `#f7efe1` |
+| 次要文字 | `muted` | `#6f5b48` |
+| 分隔线 | `hairline` | `#dcccb6` |
+| 辅助 | `accent` | `#c17a35` |
+| 辅助 | `crema` | `#d7a869` |
+| 辅助 | `roast` | `#2a1d15` |
+
+## 字体
+
+- 标题：`Fraunces`
+- 正文：`Newsreader`
+- 数字 / 等宽：`Fraunces`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 6px / md 12px / lg 20px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#4a352a` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint coffee-house` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #4a352a;
   --color-on-primary: #f4ebda;
   --color-ink: #3a2a20;
@@ -517,7 +557,7 @@ Strip the name off any CoffeeHouse page and you still see it: a warm oat cream p
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -644,7 +684,7 @@ Strip the name off any CoffeeHouse page and you still see it: a warm oat cream p
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #4a352a;
   --color-on-primary: #f4ebda;
   --color-ink: #3a2a20;
@@ -704,7 +744,7 @@ Strip the name off any CoffeeHouse page and you still see it: a warm oat cream p
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;CoffeeHouse is a cozy, serif-forward warmth system for indie blogs, podcasts and small roasters. Its color logic is a single cup: espresso brown carries every heading and action, milk-foam cream holds the page, and a caramel drizzle marks only what matters. Fraunces gives a soft, slightly wonky display serif, Newsreader keeps long reading unhurried, and Caveat scribbles handwritten margin notes. The signature is a faint coffee-ring bleeding from a card corner and a hand-drawn caramel circle around a stat, like napkin math. Restrained, tactile, unmistakably hand-made.&quot;,
   &quot;color&quot;: {
@@ -1030,7 +1070,7 @@ Strip the name off any CoffeeHouse page and you still see it: a warm oat cream p
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 咖啡馆（coffee-house · 温暖人文）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 咖啡馆（coffee-house · 温暖人文）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `coffee-house` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1048,6 +1088,25 @@ Strip the name off any CoffeeHouse page and you still see it: a warm oat cream p
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint coffee-house` / 导出其它格式：`heige-design export coffee-house --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#3a2a20`
+- 次要 muted：`#6f5b48`
+- 底色 canvas：`#efe3d3`
+- 卡片面 surface：`#f7efe1`
+- 分隔线 hairline：`#dcccb6`
+- 主色 primary：`#4a352a`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#c17a35`
+- 辅助 crema：`#d7a869`
+- 辅助 roast：`#2a1d15`
+
+**字体**：标题 `Fraunces` / 正文 `Newsreader` / 数字 `Fraunces`
+
+**相邻风格（同家族，可换选）**：`wenkai-warm`（文楷暖） · `hearth-story`（炉边） · `almanac-folk`（民历）
 </pre></div>
 </div>
 

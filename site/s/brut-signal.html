@@ -77,7 +77,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - 不把血红当浅底上的正文红字（对比度不够），不给任何东西加通用 12px 圆角与柔光。</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: BrutSignal-design-system
@@ -418,7 +418,44 @@ components:
 抹掉 HeiGe-Design 的署名，呐喊 也一眼是**有人真刻出来的抗议海报**，不是流水线生成的模板。它的记忆点是那道 3px 错位的红黑撞色缝、大到过分的木刻口号、和只用三色却敢喊出声的克制。没有紫蓝渐变，没有居中卡片三件套，没有柔光圆角，没有一个 emoji 撑场面。字体加载失败也不崩，任何屏宽都不出孤字，滚动起来不掉帧。要么喊出声，要么别做这套。
 
 — HeiGe-Design · MIT
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 呐喊（brut-signal · 凶悍工业）— Compact
+
+&gt; BRUT-SIGNAL is a protest-poster system built on the roughness of woodblock printing: press black, newsprint white, and one arterial blood red, nothing else. An ultra-heavy slab shouts in all caps while an ultra-black grotesque and monospaced press-marks carry the rest. Its signature is the hard red-black seam, two full-bleed planks butting at a cheap-press mis-registration, and slogans sized to fill the frame. Sharp corners, carved-grain texture, zero soft edges. For advocacy, events, manifestos, and any brand willing to take a stance.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#e00000` |
+| 正文 | `ink` | `#141414` |
+| 底色 | `canvas` | `#f4efe3` |
+| 卡片面 | `surface` | `#0a0a0a` |
+| 次要文字 | `muted` | `#57534a` |
+| 分隔线 | `hairline` | `#d7d0c2` |
+
+## 字体
+
+- 标题：`Alfa Slab One`
+- 正文：`Archivo`
+- 数字 / 等宽：`Space Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 48px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#e00000` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint brut-signal` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #e00000;
   --color-on-primary: #ffffff;
   --color-ink: #141414;
@@ -468,7 +505,7 @@ components:
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -579,7 +616,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #e00000;
   --color-on-primary: #ffffff;
   --color-ink: #141414;
@@ -629,7 +666,7 @@ components:
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;BRUT-SIGNAL is a protest-poster system built on the roughness of woodblock printing: press black, newsprint white, and one arterial blood red, nothing else. An ultra-heavy slab shouts in all caps while an ultra-black grotesque and monospaced press-marks carry the rest. Its signature is the hard red-black seam, two full-bleed planks butting at a cheap-press mis-registration, and slogans sized to fill the frame. Sharp corners, carved-grain texture, zero soft edges. For advocacy, events, manifestos, and any brand willing to take a stance.&quot;,
   &quot;color&quot;: {
@@ -889,7 +926,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 呐喊（brut-signal · 凶悍工业）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 呐喊（brut-signal · 凶悍工业）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `brut-signal` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -907,6 +944,22 @@ components:
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint brut-signal` / 导出其它格式：`heige-design export brut-signal --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#141414`
+- 次要 muted：`#57534a`
+- 底色 canvas：`#f4efe3`
+- 卡片面 surface：`#0a0a0a`
+- 分隔线 hairline：`#d7d0c2`
+- 主色 primary：`#e00000`（只给关键 CTA / 强调，克制使用）
+
+**字体**：标题 `Alfa Slab One` / 正文 `Archivo` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`forge-anvil`（熔炉） · `rebar-concrete`（钢筋） · `riot-press`（暴走印刷）
 </pre></div>
 </div>
 

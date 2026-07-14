@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint moxi-void` / 导出其它格式：`heige-design export moxi-void --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#1c1a17`
+- 次要 muted：`#6b655c`
+- 底色 canvas：`#f4f0e6`
+- 卡片面 surface：`#fbf8f0`
+- 分隔线 hairline：`#d9d2c2`
+- 主色 primary：`#1c1a17`（只给关键 CTA / 强调，克制使用）
+- 辅助 seal-red：`#c8483a`
+
+**字体**：标题 `Noto Serif SC` / 正文 `Inter` / 数字 `Noto Serif`
+
+**相邻风格（同家族，可换选）**：`gugong-red`（故宫红金） · `song-celadon`（宋瓷极简） · `guochao-cyber`（赛博国潮）

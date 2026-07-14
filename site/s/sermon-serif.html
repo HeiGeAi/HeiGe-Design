@@ -79,7 +79,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 ---</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: sermon-serif-design-system
@@ -403,7 +403,45 @@ Mobile is a **re-composition of the spread**, not a shrunk desktop.
 Strip the studio name off any screen of Sermon-Serif and it still reads as something a person set by hand: one warm paper, one warm ink, one ochre spent like a signature, a serif large enough to be believed, and empty space treated as the most expensive material on the page. No stock gradient, no card trio, no drop-shadow filler — only type, paper, and a rule. If it could have come off a template, it isn't finished.
 
 *Sermon-Serif — HeiGe-Design. Original fictional system. MIT.*
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 布道（sermon-serif · 优雅编辑）— Compact
+
+&gt; House style of a fictional editorial design studio where the serif itself is the argument. Warm paper (#faf7f2) carries a warm near-black ink and one restrained ochre; a light optical serif sets giant ragged-right pull-quotes against clean grotesque body text, with hanging mono folios and text that wraps around a single figure. Column grids, deep negative space, no gradients. One token set drives both a portfolio site and a 16:9 keynote. Ochre is used like a signature — once per view, never as fill.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#1a1a18` |
+| 正文 | `ink` | `#23201b` |
+| 底色 | `canvas` | `#faf7f2` |
+| 卡片面 | `surface` | `#f2ebde` |
+| 次要文字 | `muted` | `#6c645a` |
+| 分隔线 | `hairline` | `#ddd4c4` |
+| 辅助 | `accent` | `#935428` |
+
+## 字体
+
+- 标题：`Fraunces`
+- 正文：`Inter`
+- 数字 / 等宽：`IBM Plex Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / md 6px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 80px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#1a1a18` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint sermon-serif` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #1a1a18;
   --color-on-primary: #faf7f2;
   --color-ink: #23201b;
@@ -460,7 +498,7 @@ Strip the studio name off any screen of Sermon-Serif and it still reads as somet
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -584,7 +622,7 @@ Strip the studio name off any screen of Sermon-Serif and it still reads as somet
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #1a1a18;
   --color-on-primary: #faf7f2;
   --color-ink: #23201b;
@@ -641,7 +679,7 @@ Strip the studio name off any screen of Sermon-Serif and it still reads as somet
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;House style of a fictional editorial design studio where the serif itself is the argument. Warm paper (#faf7f2) carries a warm near-black ink and one restrained ochre; a light optical serif sets giant ragged-right pull-quotes against clean grotesque body text, with hanging mono folios and text that wraps around a single figure. Column grids, deep negative space, no gradients. One token set drives both a portfolio site and a 16:9 keynote. Ochre is used like a signature — once per view, never as fill.&quot;,
   &quot;color&quot;: {
@@ -939,7 +977,7 @@ Strip the studio name off any screen of Sermon-Serif and it still reads as somet
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 布道（sermon-serif · 优雅编辑）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 布道（sermon-serif · 优雅编辑）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `sermon-serif` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -957,6 +995,23 @@ Strip the studio name off any screen of Sermon-Serif and it still reads as somet
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint sermon-serif` / 导出其它格式：`heige-design export sermon-serif --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#23201b`
+- 次要 muted：`#6c645a`
+- 底色 canvas：`#faf7f2`
+- 卡片面 surface：`#f2ebde`
+- 分隔线 hairline：`#ddd4c4`
+- 主色 primary：`#1a1a18`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#935428`
+
+**字体**：标题 `Fraunces` / 正文 `Inter` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`noir-vermilion`（玄墨绛红） · `broadsheet`（大报） · `atelier-bone`（象牙工坊）
 </pre></div>
 </div>
 

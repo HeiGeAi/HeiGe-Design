@@ -76,7 +76,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - Don't use emoji as icons; draw a sprite or use a pixel glyph.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: arcade-crt-design-system
@@ -411,7 +411,46 @@ Deck rhythm: warm-up cover → alternating quiet content screens and loud amber 
 Strip the name off this file and it is still, unmistakably, a hand-built cathode-ray world — you can feel the tube warm up, count the scanlines, and watch the block cursor wait for a coin. Two phosphors, one curved screen, zero purple gradients. Not a template with a green tint; a machine that boots.
 
 — HeiGe-Design
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 街机荧光（arcade-crt · 复古未来）— Compact
+
+&gt; A phosphor-green cathode-ray design system for indie games, retro hardware, and pixel art. Everything lives inside a simulated CRT tube — static scanlines, a barrel-vignette curve, and a steady green bloom on
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#33ff66` |
+| 正文 | `ink` | `#cfffd8` |
+| 底色 | `canvas` | `#060806` |
+| 卡片面 | `surface` | `#0e150e` |
+| 次要文字 | `muted` | `#6fae83` |
+| 分隔线 | `hairline` | `#1c3a26` |
+| 辅助 | `accent` | `#ffb000` |
+| 辅助 | `on-accent` | `#1a0f00` |
+
+## 字体
+
+- 标题：`Press Start 2P`
+- 正文：`JetBrains Mono`
+- 数字 / 等宽：`Press Start 2P`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 3px / md 10px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 48px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#33ff66` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint arcade-crt` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #33ff66;
   --color-on-primary: #041006;
   --color-ink: #cfffd8;
@@ -465,7 +504,7 @@ Strip the name off this file and it is still, unmistakably, a hand-built cathode
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -580,7 +619,7 @@ Strip the name off this file and it is still, unmistakably, a hand-built cathode
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #33ff66;
   --color-on-primary: #041006;
   --color-ink: #cfffd8;
@@ -634,7 +673,7 @@ Strip the name off this file and it is still, unmistakably, a hand-built cathode
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;A phosphor-green cathode-ray design system for indie games, retro hardware, and pixel art. Everything lives inside a simulated CRT tube — static scanlines, a barrel-vignette curve, and a steady green bloom on&quot;,
   &quot;color&quot;: {
@@ -928,7 +967,7 @@ Strip the name off this file and it is still, unmistakably, a hand-built cathode
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 街机荧光（arcade-crt · 复古未来）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 街机荧光（arcade-crt · 复古未来）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `arcade-crt` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -946,6 +985,24 @@ Strip the name off this file and it is still, unmistakably, a hand-built cathode
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint arcade-crt` / 导出其它格式：`heige-design export arcade-crt --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#cfffd8`
+- 次要 muted：`#6fae83`
+- 底色 canvas：`#060806`
+- 卡片面 surface：`#0e150e`
+- 分隔线 hairline：`#1c3a26`
+- 主色 primary：`#33ff66`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#ffb000`
+- 辅助 on-accent：`#1a0f00`
+
+**字体**：标题 `Press Start 2P` / 正文 `JetBrains Mono` / 数字 `Press Start 2P`
+
+**相邻风格（同家族，可换选）**：`synthwave-drive`（合成波） · `y2k-chrome`（千禧金属） · `vaporwave-marble`（蒸汽石膏）
 </pre></div>
 </div>
 

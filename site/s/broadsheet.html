@@ -94,7 +94,7 @@ does not just increment — the whole slide **flips to</div></div></div>
 - No emoji as icons and no filler copy («赋能»「一站式」). A broadshe</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: Broadsheet-design-system
@@ -599,7 +599,44 @@ real column, hairline rules doing the work shadows do elsewhere, one high-contra
 carrying every headline, and not a single gradient, pill, or glow in sight. It reads like
 an edition that was set and sent to press — deliberate, dense, confident — not like a
 template that rendered. That is the whole promise. — HeiGe-Design.
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 大报（broadsheet · 优雅编辑）— Compact
+
+&gt; The masthead grandeur of longform print, rebuilt for the screen. A single high-contrast serif carries every headline; a lone masthead red (#c0392b) cuts one rule across an ink-on-newsprint page. Columns are real columns, the lede opens on a four-line drop cap, and hairline rules do the work that cards and shadows do elsewhere. No pills, no glow, no gradients. It reads like an edition went to press, not like a template rendered. By HeiGe-Design.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#c0392b` |
+| 正文 | `ink` | `#1c1a16` |
+| 底色 | `canvas` | `#f4f1ea` |
+| 卡片面 | `surface` | `#ece6d8` |
+| 次要文字 | `muted` | `#5c554a` |
+| 分隔线 | `hairline` | `#cdc6b8` |
+
+## 字体
+
+- 标题：`Newsreader`
+- 正文：`Newsreader`
+- 数字 / 等宽：`IBM Plex Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 48px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#c0392b` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint broadsheet` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #c0392b;
   --color-on-primary: #faf8f3;
   --color-ink: #1c1a16;
@@ -657,7 +694,7 @@ template that rendered. That is the whole promise. — HeiGe-Design.
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -788,7 +825,7 @@ template that rendered. That is the whole promise. — HeiGe-Design.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #c0392b;
   --color-on-primary: #faf8f3;
   --color-ink: #1c1a16;
@@ -846,7 +883,7 @@ template that rendered. That is the whole promise. — HeiGe-Design.
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;The masthead grandeur of longform print, rebuilt for the screen. A single high-contrast serif carries every headline; a lone masthead red (#c0392b) cuts one rule across an ink-on-newsprint page. Columns are real columns, the lede opens on a four-line drop cap, and hairline rules do the work that cards and shadows do elsewhere. No pills, no glow, no gradients. It reads like an edition went to press, not like a template rendered. By HeiGe-Design.&quot;,
   &quot;color&quot;: {
@@ -1136,7 +1173,7 @@ template that rendered. That is the whole promise. — HeiGe-Design.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 大报（broadsheet · 优雅编辑）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 大报（broadsheet · 优雅编辑）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `broadsheet` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1154,6 +1191,22 @@ template that rendered. That is the whole promise. — HeiGe-Design.
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint broadsheet` / 导出其它格式：`heige-design export broadsheet --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#1c1a16`
+- 次要 muted：`#5c554a`
+- 底色 canvas：`#f4f1ea`
+- 卡片面 surface：`#ece6d8`
+- 分隔线 hairline：`#cdc6b8`
+- 主色 primary：`#c0392b`（只给关键 CTA / 强调，克制使用）
+
+**字体**：标题 `Newsreader` / 正文 `Newsreader` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`sermon-serif`（布道） · `noir-vermilion`（玄墨绛红） · `atelier-bone`（象牙工坊）
 </pre></div>
 </div>
 

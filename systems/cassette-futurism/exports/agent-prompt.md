@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint cassette-futurism` / 导出其它格式：`heige-design export cassette-futurism --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#241f17`
+- 次要 muted：`#5e5544`
+- 底色 canvas：`#e8e0cf`
+- 卡片面 surface：`#f1ebdc`
+- 分隔线 hairline：`#c9bfa8`
+- 主色 primary：`#d9662a`（只给关键 CTA / 强调，克制使用）
+- 辅助 amber：`#ffb347`
+- 辅助 readout：`#141009`
+
+**字体**：标题 `Space Grotesk` / 正文 `Space Grotesk` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`synthwave-drive`（合成波） · `y2k-chrome`（千禧金属） · `arcade-crt`（街机荧光）

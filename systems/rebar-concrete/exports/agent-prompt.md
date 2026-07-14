@@ -16,3 +16,19 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint rebar-concrete` / 导出其它格式：`heige-design export rebar-concrete --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#17181a`
+- 次要 muted：`#3c3e41`
+- 底色 canvas：`#b8b5ad`
+- 卡片面 surface：`#d9d6cd`
+- 分隔线 hairline：`#6a6862`
+- 主色 primary：`#ff5b1f`（只给关键 CTA / 强调，克制使用）
+
+**字体**：标题 `Anton` / 正文 `Archivo` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`forge-anvil`（熔炉） · `riot-press`（暴走印刷） · `ironclad-ledger`（铁账）

@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint helvetic-ledger` / 导出其它格式：`heige-design export helvetic-ledger --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#141414`
+- 次要 muted：`#616160`
+- 底色 canvas：`#f5f5f3`
+- 卡片面 surface：`#ffffff`
+- 分隔线 hairline：`#dcdcd9`
+- 主色 primary：`#d81f1a`（只给关键 CTA / 强调，克制使用）
+- 辅助 subtle：`#efeeeb`
+
+**字体**：标题 `Neue Haas Grotesk Display Pro` / 正文 `Inter` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`grid-bureau`（制表局） · `datum-signal`（数点） · `akkurat-mono`（精准等宽）

@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint guochao-cyber` / 导出其它格式：`heige-design export guochao-cyber --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#f2ebdb`
+- 次要 muted：`#9a9088`
+- 底色 canvas：`#0c0b0d`
+- 卡片面 surface：`#171419`
+- 分隔线 hairline：`#2a2530`
+- 主色 primary：`#d52823`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#2ff3ff`
+- 辅助 gold：`#e8b84b`
+
+**字体**：标题 `Ma Shan Zheng` / 正文 `Noto Sans SC` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`moxi-void`（水墨留白） · `gugong-red`（故宫红金） · `song-celadon`（宋瓷极简）

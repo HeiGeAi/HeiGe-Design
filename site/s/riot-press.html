@@ -80,7 +80,7 @@ A single slide, **full-bleed `#ffe600`**, carrying **one** screen-filling black 
 - Don't round the corners, don't soften the contrast, don't let anything look polished.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: RiotPress-design-system
@@ -465,7 +465,44 @@ Mobile is a **re-paste, not a shrink**. Headlines get new hand-breaks sized to t
 Strip the name off any RiotPress page and it still reads as **made by a person with a grudge and a photocopier** — not squeezed out of a template. The proof is in the parts a generator never bothers with: the tape rotated a specific -2.5°, the torn clip-path edges, the mono stamp that dates the run, the hazard line hand-broken to sit orphan-free at 390px, the one coin of yellow spent on exactly one word. High contrast, hard shadows, real toner grain. If it ever looks safe, smooth, or centered, it isn't finished — it's been laundered.
 
 — HeiGe-Design · MIT
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 暴走印刷（riot-press · 凶悍工业）— Compact
+
+&gt; RiotPress is an underground xerox-zine identity: hazard yellow #ffe600 slapped over photocopier black on gray copy-stock paper. Ultra-condensed all-caps display type stacks like flyposted headlines, mono stamps date every block, and crooked torn-tape labels carry the attitude. Hard offset shadows, zero radius, static half-tone grain. One token set drives both the 界面 and the 16:9 演示. No gradients, no soft corners, all bite.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#ffe600` |
+| 正文 | `ink` | `#14130f` |
+| 底色 | `canvas` | `#e7e4da` |
+| 卡片面 | `surface` | `#171610` |
+| 次要文字 | `muted` | `#57564d` |
+| 辅助 | `on-surface` | `#f2efe4` |
+
+## 字体
+
+- 标题：`Anton`
+- 正文：`Archivo`
+- 数字 / 等宽：`Space Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 80px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#ffe600` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint riot-press` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #ffe600;
   --color-on-primary: #0b0a06;
   --color-ink: #14130f;
@@ -520,7 +557,7 @@ Strip the name off any RiotPress page and it still reads as **made by a person w
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -642,7 +679,7 @@ Strip the name off any RiotPress page and it still reads as **made by a person w
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #ffe600;
   --color-on-primary: #0b0a06;
   --color-ink: #14130f;
@@ -697,7 +734,7 @@ Strip the name off any RiotPress page and it still reads as **made by a person w
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;RiotPress is an underground xerox-zine identity: hazard yellow #ffe600 slapped over photocopier black on gray copy-stock paper. Ultra-condensed all-caps display type stacks like flyposted headlines, mono stamps date every block, and crooked torn-tape labels carry the attitude. Hard offset shadows, zero radius, static half-tone grain. One token set drives both the 界面 and the 16:9 演示. No gradients, no soft corners, all bite.\n&quot;,
   &quot;color&quot;: {
@@ -978,7 +1015,7 @@ Strip the name off any RiotPress page and it still reads as **made by a person w
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 暴走印刷（riot-press · 凶悍工业）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 暴走印刷（riot-press · 凶悍工业）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `riot-press` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -996,6 +1033,23 @@ Strip the name off any RiotPress page and it still reads as **made by a person w
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint riot-press` / 导出其它格式：`heige-design export riot-press --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#14130f`
+- 次要 muted：`#57564d`
+- 底色 canvas：`#e7e4da`
+- 卡片面 surface：`#171610`
+- 分隔线 hairline：`—`
+- 主色 primary：`#ffe600`（只给关键 CTA / 强调，克制使用）
+- 辅助 on-surface：`#f2efe4`
+
+**字体**：标题 `Anton` / 正文 `Archivo` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`forge-anvil`（熔炉） · `rebar-concrete`（钢筋） · `ironclad-ledger`（铁账）
 </pre></div>
 </div>
 

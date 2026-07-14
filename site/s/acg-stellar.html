@@ -85,7 +85,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - 亮色上不压白字（对比不够，且泄了动漫的气）。</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: acg-stellar-design-system
@@ -468,7 +468,46 @@ components:
 ---
 
 *Authored by HeiGe-Design · MIT · 原创虚构品牌，不逆向任何真实公司。*
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 二次元星轨（acg-stellar · 张扬极繁）— Compact
+
+&gt; acg-stellar (二次元星轨) is a maximalist anime-fan identity built on speed and sparkle. Idol-magenta #FF1F8F leads, clashing against cyber-cyan and star-yellow over a starlight-white canvas, with heavy near-black type carrying the shout. Sharp italic Archivo display collides with rounded Nunito body. The signature is a diagonal shear split cut by converging speed lines, focused on a single four-point white sparkle. It fuses UI and 16:9 deck into one high-energy, manga-impact system. Authored by HeiGe-Design.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#FF1F8F` |
+| 正文 | `ink` | `#16122B` |
+| 底色 | `canvas` | `#F4F5FB` |
+| 卡片面 | `surface` | `#FFFFFF` |
+| 次要文字 | `muted` | `#5B5470` |
+| 分隔线 | `hairline` | `#DAD8E8` |
+| 辅助 | `accent` | `#12E6FF` |
+| 辅助 | `spark` | `#FFE500` |
+
+## 字体
+
+- 标题：`Archivo`
+- 正文：`Nunito`
+- 数字 / 等宽：`JetBrains Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 6px / md 12px / lg 20px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 80px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#FF1F8F` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint acg-stellar` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #ff1f8f;
   --color-on-primary: #1a0f2e;
   --color-ink: #16122b;
@@ -523,7 +562,7 @@ components:
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -639,7 +678,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #ff1f8f;
   --color-on-primary: #1a0f2e;
   --color-ink: #16122b;
@@ -694,7 +733,7 @@ components:
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;acg-stellar (二次元星轨) is a maximalist anime-fan identity built on speed and sparkle. Idol-magenta #FF1F8F leads, clashing against cyber-cyan and star-yellow over a starlight-white canvas, with heavy near-black type carrying the shout. Sharp italic Archivo display collides with rounded Nunito body. The signature is a diagonal shear split cut by converging speed lines, focused on a single four-point white sparkle. It fuses UI and 16:9 deck into one high-energy, manga-impact system. Authored by HeiGe-Design.&quot;,
   &quot;color&quot;: {
@@ -994,7 +1033,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 二次元星轨（acg-stellar · 张扬极繁）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 二次元星轨（acg-stellar · 张扬极繁）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `acg-stellar` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1012,6 +1051,24 @@ components:
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint acg-stellar` / 导出其它格式：`heige-design export acg-stellar --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#16122B`
+- 次要 muted：`#5B5470`
+- 底色 canvas：`#F4F5FB`
+- 卡片面 surface：`#FFFFFF`
+- 分隔线 hairline：`#DAD8E8`
+- 主色 primary：`#FF1F8F`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#12E6FF`
+- 辅助 spark：`#FFE500`
+
+**字体**：标题 `Archivo` / 正文 `Nunito` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`soundwave-wrapped`（声浪） · `collage-riot`（拼贴暴动） · `neon-market`（霓虹夜市）
 </pre></div>
 </div>
 

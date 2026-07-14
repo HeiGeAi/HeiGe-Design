@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint onyx-gold` / 导出其它格式：`heige-design export onyx-gold --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#ede6d3`
+- 次要 muted：`#a69b80`
+- 底色 canvas：`#060606`
+- 卡片面 surface：`#100e0a`
+- 分隔线 hairline：`#4a3d22`
+- 主色 primary：`#b8912e`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#e4c466`
+
+**字体**：标题 `Cormorant Garamond` / 正文 `Jost` / 数字 `Fragment Mono`
+
+**相邻风格（同家族，可换选）**：`champagne-silk`（香槟丝绸） · `monogram-noir`（字母黑） · `marble-vein`（大理石纹）

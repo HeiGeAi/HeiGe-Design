@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint sticker-club` / 导出其它格式：`heige-design export sticker-club --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#17171f`
+- 次要 muted：`#63625b`
+- 底色 canvas：`#f5f1e6`
+- 卡片面 surface：`#ffffff`
+- 分隔线 hairline：`#e4dfd0`
+- 主色 primary：`#2536e8`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent-red：`#ff3b3b`
+- 辅助 accent-yellow：`#ffd21e`
+
+**字体**：标题 `Fredoka` / 正文 `Nunito` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`boing-candy`（弹跳糖） · `jelly-pop`（果冻） · `doodle-note`（涂鸦本）

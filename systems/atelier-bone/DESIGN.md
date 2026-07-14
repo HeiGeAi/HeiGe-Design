@@ -293,6 +293,22 @@ Geometry rule: **images are full-bleed or hard-edged rectangles.** No floating r
 
 ---
 
+## Imagery
+
+Imagery is punctuation, not spectacle. This is a text-first house: on most views a single photograph does the work of ten, and it earns its place by being the only image in a screen of ivory.
+
+| Layer | Treatment |
+|---|---|
+| Photography | Editorial and still — warm-desaturated or true monochrome, printed-plate tonality, never saturated stock. Full-bleed off the page edge, or set inside a single `hairline` frame like a plate in an art book. No drop shadows, no rounded photo cards. |
+| Illustration | Rare and linear. If drawn at all, one-weight `ink` line art on ivory at engraving density. No flat-color spot art, no 3D render, no gradient mesh. |
+| Icons | Hairline stroke (~1.25px), monochrome `ink`, geometric and quiet. Icons align to the type baseline and never carry color — the gold is spent elsewhere. |
+| Charts | Ivory ground, `ink` marks, `muted` gridlines at hairline weight, and exactly one gold line or point for the series that matters. Data obeys the same one-gold rule as the page. |
+| Density | Low by design. One hero image per section at most. A stretch of ivory holding no image is finished, not empty. |
+
+Gold may appear inside a photograph as a real-world object (a gilt edge, a brass detail). That is the one place gold is allowed to sit on a light field.
+
+---
+
 ## Components
 
 - **nav-bar** — Ivory bar, `ink` wordmark, uppercase `eyebrow` links spaced wide. A single `hairline` under it. No fill, no shadow, no sticky glass.
@@ -337,6 +353,24 @@ The `slide-section-divider`: a full-bleed espresso field holding **one giant thi
 
 ---
 
+## Agent 配方卡
+
+Copy-ready recipes. Every value is exact; do not invent alternates.
+
+**速查色卡**
+- Ink（正文）`#33302b` · Muted（次要）`#6b655c` · Canvas（页底）`#f3ede1` · Surface（卡片）`#faf6ec` · Hairline（分隔）`#d9cfbd` · Panel（暗场）`#221e18`
+- Primary gold `#a98b4e`：一屏一次，绝不做正文，绝不在象牙底上当文字色。
+- 字体：display `Cormorant Garamond`（weight 300）· 正文/标签 `Inter` · 章序 `IBM Plex Mono`。
+
+1. **金箔按钮** — `#a98b4e` 填充，`#1e1c18` 字，Inter 13px / weight 500 / 字距 1.6px / 全大写，圆角 0px，内边距 16px 32px。全屏唯一的金，一视图一个。
+2. **幽灵按钮** — `#f3ede1` 底，`#33302b` 字，1px `#33302b` 描边，圆角 0px，字体同上。所有次级动作。
+3. **编辑感 Hero** — `#f3ede1` 场。Eyebrow：Inter 12px / weight 500 / 字距 2.4px `#6b655c`，下方一道 48px 宽、1px 的 `#a98b4e` 金线。主标：Cormorant Garamond 76px / weight 300 / 行高 1.02 / 字距 -0.5px `#33302b`，压在左下，右半幅留空。
+4. **特性卡** — `#faf6ec` 面，1px `#d9cfbd` 描边，圆角 2px，内边距 40px。标题 Cormorant 28px / weight 500 `#33302b`；正文 Inter 17px `#33302b`，行高 1.7。靠亮度和描边起层，不用阴影。
+5. **数据块** — Cormorant 52px `#33302b` 数字，`#6b655c` 单位小字，一道 1px `#a98b4e` 下划线。锐角。
+6. **页脚** — `#221e18` 深咖底，`#f3ede1` 字（Inter 13px），上下内边距 96px。金只留给一道线或一个链接。
+
+---
+
 ## Do's and Don'ts
 
 ### Do
@@ -368,6 +402,18 @@ Mobile is re-set, not shrunk. The deck-scale drama is re-composed for a single n
 | ≤767px | One column. Headlines re-flow to short balanced lines (`text-wrap: balance`), each manually-broken line locked `white-space: nowrap` so **no single character or 标点 is ever orphaned**. Eyebrow, gold rule, headline stack vertically. The gilded folio numeral shrinks but keeps its ocean of margin — proportionally, mobile gets *more* whitespace, not less. |
 
 零孤字自检: 桌面与 ≤390px 窄屏各过一遍每个标题，确认 `scrollWidth == clientWidth`、无横向溢出、无孤字。中文限宽用 `em`/`px`，不用 `ch`。
+
+---
+
+## 相邻风格
+
+同属「优雅编辑」家族，选型按气质分岔：
+
+- **`broadsheet`（大报）**：报纸头版的密度与网格，栏窄、信息量大、黑白硬朗。要「读起来像严肃大报」选它；要「留白到奢侈、一页一个手势」留在象牙工坊。
+- **`sermon-serif`（布道）**：同样衬线主导，但情绪更重、字更大、对比更戏剧。要布道式的宣告感选它；要克制到隐身的高定感留在这套。
+- **`manifesto-ink`（墨宣言）**：纯墨黑白的宣言体，锋利、无金、态度外露。要锋芒毕露选它；要一线金箔的安静奢华留在象牙工坊。
+
+**象牙工坊自己最适合**：安静高定、艺术空间、精品出版、高端品牌白皮书，凡是敢于留空、一次只花一分金的场合。
 
 ---
 

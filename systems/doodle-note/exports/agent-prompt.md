@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint doodle-note` / 导出其它格式：`heige-design export doodle-note --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#1e2a38`
+- 次要 muted：`#5f5a50`
+- 底色 canvas：`#faf7ee`
+- 卡片面 surface：`#fffdf6`
+- 分隔线 hairline：`#d5dbe6`
+- 主色 primary：`#1f3f73`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#f6e05e`
+
+**字体**：标题 `Shantell Sans` / 正文 `Nunito` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`boing-candy`（弹跳糖） · `jelly-pop`（果冻） · `sticker-club`（贴纸俱乐部）

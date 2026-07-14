@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint y2k-chrome` / 导出其它格式：`heige-design export y2k-chrome --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#16172b`
+- 次要 muted：`#5a5d78`
+- 底色 canvas：`#ebedf5`
+- 卡片面 surface：`#f6f7fb`
+- 分隔线 hairline：`#c9ccd4`
+- 主色 primary：`#4d5bff`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#ff86d0`
+- 辅助 on-accent：`#2b1024`
+
+**字体**：标题 `Baloo 2` / 正文 `DM Sans` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`synthwave-drive`（合成波） · `arcade-crt`（街机荧光） · `vaporwave-marble`（蒸汽石膏）

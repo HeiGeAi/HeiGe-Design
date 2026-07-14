@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint synthwave-drive` / 导出其它格式：`heige-design export synthwave-drive --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#ece7ff`
+- 次要 muted：`#9a8fc4`
+- 底色 canvas：`#17102b`
+- 卡片面 surface：`#241a49`
+- 分隔线 hairline：`#34275f`
+- 主色 primary：`#ff2fb9`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#2ff3ff`
+
+**字体**：标题 `Chakra Petch` / 正文 `Space Grotesk` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`y2k-chrome`（千禧金属） · `arcade-crt`（街机荧光） · `vaporwave-marble`（蒸汽石膏）

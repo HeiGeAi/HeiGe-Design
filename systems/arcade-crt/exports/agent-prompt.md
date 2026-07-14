@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint arcade-crt` / 导出其它格式：`heige-design export arcade-crt --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#cfffd8`
+- 次要 muted：`#6fae83`
+- 底色 canvas：`#060806`
+- 卡片面 surface：`#0e150e`
+- 分隔线 hairline：`#1c3a26`
+- 主色 primary：`#33ff66`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#ffb000`
+- 辅助 on-accent：`#1a0f00`
+
+**字体**：标题 `Press Start 2P` / 正文 `JetBrains Mono` / 数字 `Press Start 2P`
+
+**相邻风格（同家族，可换选）**：`synthwave-drive`（合成波） · `y2k-chrome`（千禧金属） · `vaporwave-marble`（蒸汽石膏）

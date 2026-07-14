@@ -16,3 +16,22 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint midnight-trust` / 导出其它格式：`heige-design export midnight-trust --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#dde5f2`
+- 次要 muted：`#8b98ad`
+- 底色 canvas：`#0b1018`
+- 卡片面 surface：`#0f1826`
+- 分隔线 hairline：`#1c2740`
+- 主色 primary：`#5e8fff`（只给关键 CTA / 强调，克制使用）
+- 辅助 steel：`#38445c`
+- 辅助 up：`#3ecf8e`
+- 辅助 down：`#f26d6d`
+
+**字体**：标题 `Inter` / 正文 `Inter` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`nocturne-teal`（深空电青） · `aurora-mesh`（极光） · `carbon-lime`（碳黑电绿）

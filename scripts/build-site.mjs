@@ -112,8 +112,8 @@ footer{border-top:1px solid var(--edge);padding:38px 0 64px;color:var(--dim);fon
 <div class="wrap"><header>
 <div class="ey">HeiGe · Design System Atlas · 设计工具</div>
 <h1>视觉设定集库<span style="color:var(--brand)">.</span></h1>
-<p class="lead">${systems.length} 套原创品牌设定集，一份 <b>DESIGN.md</b> 同时驱动界面与演示。兼容 Google design.md（全过 lint），内容 100% 原创，含独家 <b>东方新中式</b> 家族。点任意一套看详情：预览 / 调色板 / 组件 / Do-Don't / 五格式一键复制 / 旗舰全页。</p>
-<div class="stat"><span><b>${systems.length}</b> 套</span><span><b>11</b> 家族</span><span><b>50/50</b> 0 lint error</span><span>五层导出</span><span>URL→DESIGN.md 提取</span><span>UI+Deck 融合</span></div>
+<p class="lead">${systems.length} 套原创品牌设定集，一份 <b>DESIGN.md</b> 同时驱动界面与演示。兼容 Google design.md（全过 lint），内容 100% 原创，含独家 <b>东方新中式</b> 家族。点任意一套看详情：预览 / 调色板 / 组件 / Do-Don't / Compact 速览 / 六档一键复制 / 旗舰全页。</p>
+<div class="stat"><span><b>${systems.length}</b> 套</span><span><b>11</b> 家族</span><span><b>50/50</b> 0 lint error</span><span>六层导出</span><span>URL→DESIGN.md 提取</span><span>UI+Deck 融合</span></div>
 </header></div>
 <div class="bar"><div class="wrap"><input id="q" placeholder="搜索：中文名 / slug / 家族 / 颜色关键词…"><button class="chip on" data-mode="all">全部明暗</button><button class="chip" data-mode="light">浅色</button><button class="chip" data-mode="dark">深色</button></div>
 <div class="wrap" style="margin-top:10px">${chips.map((c,i)=>`<button class="chip fam ${i===0?'on':''}" data-f="${c}">${c}</button>`).join('')}</div></div>
@@ -137,7 +137,7 @@ fs.writeFileSync(path.join(SITE,'index.html'),galleryHTML);
 
 // —— 详情页 ——
 function detail(s){
-  const tabs=[['DESIGN.md',fs.readFileSync(path.join(SYS,s.slug,'DESIGN.md'),'utf8')],['Tailwind v4',readEx(s.slug,'tailwind-v4.css')],['Tailwind v3',readEx(s.slug,'tailwind-v3.json')],['CSS Variables',readEx(s.slug,'variables.css')],['W3C DTCG',readEx(s.slug,'tokens.dtcg.json')],['Agent 提示词',readEx(s.slug,'agent-prompt.md')]];
+  const tabs=[['DESIGN.md',fs.readFileSync(path.join(SYS,s.slug,'DESIGN.md'),'utf8')],['Compact',readEx(s.slug,'compact.md')],['Tailwind v4',readEx(s.slug,'tailwind-v4.css')],['Tailwind v3',readEx(s.slug,'tailwind-v3.json')],['CSS Variables',readEx(s.slug,'variables.css')],['W3C DTCG',readEx(s.slug,'tokens.dtcg.json')],['Agent 提示词',readEx(s.slug,'agent-prompt.md')]];
   const comps=Object.entries(s.comps);
   const ui=comps.filter(([k])=>!/^slide-|^deck-/.test(k)), sl=comps.filter(([k])=>/^slide-|^deck-/.test(k));
   const compChip=([k,v])=>`<span class="cc" style="background:${(v.backgroundColor||'').replace(/\{[^}]+\}/,s.surface)||s.surface};color:${(v.textColor||'').replace(/\{[^}]+\}/,s.ink)||s.ink};border:1px solid var(--line)">${esc(k)}</span>`;

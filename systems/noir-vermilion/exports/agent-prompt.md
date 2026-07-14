@@ -16,3 +16,19 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint noir-vermilion` / 导出其它格式：`heige-design export noir-vermilion --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#EDEAE3`
+- 次要 muted：`#9A9082`
+- 底色 canvas：`#141210`
+- 卡片面 surface：`#1C1916`
+- 分隔线 hairline：`#34302B`
+- 主色 primary：`#CE1432`（只给关键 CTA / 强调，克制使用）
+
+**字体**：标题 `Playfair Display` / 正文 `Inter` / 数字 `Playfair Display`
+
+**相邻风格（同家族，可换选）**：`sermon-serif`（布道） · `broadsheet`（大报） · `atelier-bone`（象牙工坊）

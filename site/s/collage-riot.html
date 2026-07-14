@@ -76,7 +76,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - Don't neaten the grid into perfect alignment — pasted, not placed.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: CollageRiot-design-system
@@ -408,7 +408,46 @@ Mobile rules from the production checklist: headline font sizes use `clamp()` wi
 Strip the brand name off and this page still reads as **glue, scissors, and a photocopier at 2am** — four process inks overprinted on newsprint, headlines cut from two magazines and taped down crooked, one round pink sticker, hard shadows that never move. No purple-blue gradient. No centered card triptych. No system-font hero. If it looks like a template could have poured it out, it is not Collage Riot yet — go tear something.
 
 — HeiGe-Design · MIT
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 拼贴暴动（collage-riot · 张扬极繁）— Compact
+
+&gt; A ransom-note collage system for music-festival sponsorship pitches and street-culture events. Four process inks — fluoro pink, process cyan, marker yellow, key black — clash on warm newsprint like a poster torn off a wall and re-pasted. Headlines are cut-and-spliced across Anton and Archivo Black, anchored by rotated masking-tape stickers and hard static offset shadows. Sharp cut edges, bare column rules, mono date-stamps. Loud, printed, physical. Nothing here reads as a template — it reads as glue, scissors, and a photocopier at 2am.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#FF1F8E` |
+| 正文 | `ink` | `#17140F` |
+| 底色 | `canvas` | `#EDE7D8` |
+| 卡片面 | `surface` | `#F7F2E8` |
+| 次要文字 | `muted` | `#5E5749` |
+| 分隔线 | `hairline` | `#26221B` |
+| 辅助 | `accent` | `#00AEEF` |
+| 辅助 | `highlight` | `#FFE500` |
+
+## 字体
+
+- 标题：`Anton`
+- 正文：`Space Grotesk`
+- 数字 / 等宽：`Space Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / md 4px / lg 8px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 80px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#FF1F8E` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint collage-riot` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #ff1f8e;
   --color-on-primary: #0a0a0a;
   --color-ink: #17140f;
@@ -463,7 +502,7 @@ Strip the brand name off and this page still reads as **glue, scissors, and a ph
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -579,7 +618,7 @@ Strip the brand name off and this page still reads as **glue, scissors, and a ph
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #ff1f8e;
   --color-on-primary: #0a0a0a;
   --color-ink: #17140f;
@@ -634,7 +673,7 @@ Strip the brand name off and this page still reads as **glue, scissors, and a ph
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;A ransom-note collage system for music-festival sponsorship pitches and street-culture events. Four process inks — fluoro pink, process cyan, marker yellow, key black — clash on warm newsprint like a poster torn off a wall and re-pasted. Headlines are cut-and-spliced across Anton and Archivo Black, anchored by rotated masking-tape stickers and hard static offset shadows. Sharp cut edges, bare column rules, mono date-stamps. Loud, printed, physical. Nothing here reads as a template — it reads as glue, scissors, and a photocopier at 2am.&quot;,
   &quot;color&quot;: {
@@ -934,7 +973,7 @@ Strip the brand name off and this page still reads as **glue, scissors, and a ph
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 拼贴暴动（collage-riot · 张扬极繁）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 拼贴暴动（collage-riot · 张扬极繁）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `collage-riot` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -952,6 +991,24 @@ Strip the brand name off and this page still reads as **glue, scissors, and a ph
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint collage-riot` / 导出其它格式：`heige-design export collage-riot --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#17140F`
+- 次要 muted：`#5E5749`
+- 底色 canvas：`#EDE7D8`
+- 卡片面 surface：`#F7F2E8`
+- 分隔线 hairline：`#26221B`
+- 主色 primary：`#FF1F8E`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#00AEEF`
+- 辅助 highlight：`#FFE500`
+
+**字体**：标题 `Anton` / 正文 `Space Grotesk` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`soundwave-wrapped`（声浪） · `acg-stellar`（二次元星轨） · `neon-market`（霓虹夜市）
 </pre></div>
 </div>
 

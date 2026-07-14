@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint collage-riot` / 导出其它格式：`heige-design export collage-riot --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#17140F`
+- 次要 muted：`#5E5749`
+- 底色 canvas：`#EDE7D8`
+- 卡片面 surface：`#F7F2E8`
+- 分隔线 hairline：`#26221B`
+- 主色 primary：`#FF1F8E`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#00AEEF`
+- 辅助 highlight：`#FFE500`
+
+**字体**：标题 `Anton` / 正文 `Space Grotesk` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`soundwave-wrapped`（声浪） · `acg-stellar`（二次元星轨） · `neon-market`（霓虹夜市）

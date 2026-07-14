@@ -1,4 +1,6 @@
-# HeiGe DESIGN.md 格式规范（Format Spec v1.0）
+# HeiGe DESIGN.md 格式规范（Format Spec v1.1）
+
+> v1.1（2026-07-14）：对照同赛道 refero styles 补三个正文维度（图像语言 / Agent 配方卡 / 相邻风格）+ 两个自动生成的消费资产（compact 速览 / agent-prompt 速查卡）。旗舰四套先做样板，其余按需回填。
 
 HeiGe DESIGN.md 在 Google `design.md` 格式之上做融合扩展：**一份设定集，同时驱动界面（HeiGe-UI）和演示（HeiGe-PPT）。**
 
@@ -92,13 +94,25 @@ components:                    # 关键：同时装 UI 组件 + slide 组件，t
 4. `## Layout`：Spacing 系统、Grid & Container、Whitespace 哲学。
 5. `## Elevation & Depth`：分层表 + 装饰性深度手法（暗色系用辉光，不用 backdrop-filter）。
 6. `## Shapes`：Border Radius 表 + 图形/图片几何。
-7. `## Components`：逐个 UI 组件说明。
-8. `## Motion`（HeiGe 融合层，可选）：动效性格，同时服务界面和 deck。结构固定：三行定性（签名曲线 / 氛围签名 / hover 语言）+ 一张小表定量（微反馈 / 入场 / stagger）+ 一两个签名动效。曲线和档位从 `references/motion-personality.md` 的共享 token 里取，性能红线守 `references/production-checklist.md` 第三节。老设定集不加此章节完全合法，缺省按家族预设。
-9. `## Presentation System`（HeiGe 融合层）：这套做成 16:9 演示时的版式，封面/过渡/数据/金句/收尾各怎么排，视觉锤放哪，对齐 HeiGe-PPT 的"一页一句话 + 黄金三秒 + 视觉锤"。
-10. `## Signature Moment`（HeiGe 融合层）：明确写出这套换个模板绝对做不出来的那一个签名时刻（UI 一个 + deck 一个）。
-11. `## Do's and Don'ts`：Do 若干 + Don't 若干，Don't 里必含"不碰紫蓝俗套渐变、不居中卡片三件套、中文不用日文字体"。
-12. `## Responsive Behavior`：断点表 + 折叠策略（移动端要重新编排版式，禁止整页等比缩放）。
-13. `## Anti-Slop Pledge`（HeiGe 融合层）：一句话承诺：抹掉品牌名，这套仍一眼看出是用心做的、非流水线生成。
+7. `## Imagery`（图像语言，v1.1 新增）：这套怎么处理照片 / 插画 / 图标 / 图表 / 图像密度。结构固定：一段定调（图像在这套里是主角还是标点、整体密度高还是低）+ 一张小表分述照片处理、插画风格、图标语言、图表配色、留白与图的关系。给 agent 落真实页面时的图像判据，补上 tokens 管不到的那一层。写法参考旗舰 `atelier-bone` / `nocturne-teal`。
+8. `## Components`：逐个 UI 组件说明。
+9. `## Motion`（HeiGe 融合层，可选）：动效性格，同时服务界面和 deck。结构固定：三行定性（签名曲线 / 氛围签名 / hover 语言）+ 一张小表定量（微反馈 / 入场 / stagger）+ 一两个签名动效。曲线和档位从 `references/motion-personality.md` 的共享 token 里取，性能红线守 `references/production-checklist.md` 第三节。老设定集不加此章节完全合法，缺省按家族预设。
+10. `## Presentation System`（HeiGe 融合层）：这套做成 16:9 演示时的版式，封面/过渡/数据/金句/收尾各怎么排，视觉锤放哪，对齐 HeiGe-PPT 的"一页一句话 + 黄金三秒 + 视觉锤"。
+11. `## Signature Moment`（HeiGe 融合层）：明确写出这套换个模板绝对做不出来的那一个签名时刻（UI 一个 + deck 一个）。
+12. `## Agent 配方卡`（Agent Recipes，v1.1 新增）：给 coding agent 直接抄的落地卡。结构固定：先一张"速查色卡"（正文色 / 次要色 / 底色 / 卡片面 / 分隔线 / 主色角色，全带 hex）+ 一行字体速查，再给 4-6 段编号可粘贴组件配方（按钮 / Hero / 卡片 / 导航 / 页脚 / 数据块选其中几个），每段用一句话讲清底色+文字色+字体+字号+字重+圆角+内边距，全部落到精确 hex/px。这一节是把散落在 front matter 和正文里的规格，收成"复制即用"的一屏。写法参考旗舰四套。
+13. `## Do's and Don'ts`：Do 若干 + Don't 若干，Don't 里必含"不碰紫蓝俗套渐变、不居中卡片三件套、中文不用日文字体"。
+14. `## Responsive Behavior`：断点表 + 折叠策略（移动端要重新编排版式，禁止整页等比缩放）。
+15. `## 相邻风格`（Adjacent Styles，v1.1 新增）：库内选型交叉引用。列 2-3 套气质相近的姊妹设定集（用 slug + 中文名），每套一句话讲清"它和这套的差别 + 什么场景该改选它"，最后一句给"这套自己最适合的场景"。不引任何真实品牌（守原创红线），只在 HeiGe-Design 自己 50 套之间互指，帮 agent 和用户快速选对气质。
+16. `## Anti-Slop Pledge`（HeiGe 融合层）：一句话承诺：抹掉品牌名，这套仍一眼看出是用心做的、非流水线生成。
+
+## 三·五、自动生成的消费资产（v1.1 新增，全 50 套免费获得）
+
+`scripts/export-tokens.mjs` 从 front matter 确定性派生，不用手写，改一次生成器全库受益：
+
+- **`exports/compact.md`**：一屏速览档。品牌名 + 一句话气质 + Theme + 关键色速查表 + 字体速查 + 圆角/间距关键值 + 5 条铁律指针。对标 refero 的 Compact 档，给"只想快速扫一眼这套长什么样"的场景，不用读完整 DESIGN.md。
+- **`exports/agent-prompt.md` 尾部速查卡**：自动追加"速查色卡 / 字体速查 / 相邻风格（同家族姊妹）"三块。手写的 `## Agent 配方卡` 负责精修组件配方，生成器负责兜底速查，二者互补。
+
+旗舰四套（`atelier-bone` / `nocturne-teal` / `moxi-void` / `soundwave-wrapped`）已手工补齐 `## Imagery` / `## Agent 配方卡` / `## 相邻风格` 三节做样板，其余系统按需增量回填即可，缺这三节不影响 lint。
 
 ## 四、字体与中文铁律（继承 HeiGe 生产铁律，写进每套）
 - 每个能承载中文的 font-family 栈末尾必带系统兜底：无衬线 `..., "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif`；衬线 `..., "Noto Serif SC", "Songti SC", serif`。

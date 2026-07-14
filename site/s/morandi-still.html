@@ -96,7 +96,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - Don't use pure black or pure white. Umber ink and plaster ground, always.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: morandi-still-design-system
@@ -556,7 +556,46 @@ Strip the name off this file and you will still see a person's hand: a rationed
 single pigment, a deliberate off-center void, one light source, one long soft
 shadow, and objects that rest together like a painting held its breath. This is
 the calm you compose, not the calm a template defaults to.
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 莫兰迪静物（morandi-still · 有机自然）— Compact
+
+&gt; Morandi Still — a hushed, high-grey system for homeware, ceramics and slow lifestyle brands. Anchored by a single dusty slate blue (#55676B) and warmed by clay-rose and dusty-sage accents over a plaster ground, it treats every layout as a still-life: objects grouped asymmetrically on one shared groundline, one directional light wash, one long soft shadow, and vast quiet negative space. A soft Fraunces serif carries the calm; an airy humanist sans breathes underneath. Restraint is the entire point, not a compromise.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#55676B` |
+| 正文 | `ink` | `#3B3833` |
+| 底色 | `canvas` | `#E7E1D6` |
+| 卡片面 | `surface` | `#F1ECE3` |
+| 次要文字 | `muted` | `#695F52` |
+| 分隔线 | `hairline` | `#D6CFC2` |
+| 辅助 | `accent` | `#B0857A` |
+| 辅助 | `sage` | `#96A088` |
+
+## 字体
+
+- 标题：`Fraunces`
+- 正文：`Mulish`
+- 数字 / 等宽：`Fraunces`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 6px / md 12px / lg 20px / pill 9999px
+- 间距：xs 6px / sm 12px / md 20px / lg 32px / xl 56px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#55676B` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint morandi-still` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #55676b;
   --color-on-primary: #f4f0e8;
   --color-ink: #3b3833;
@@ -611,7 +650,7 @@ the calm you compose, not the calm a template defaults to.
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -727,7 +766,7 @@ the calm you compose, not the calm a template defaults to.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #55676b;
   --color-on-primary: #f4f0e8;
   --color-ink: #3b3833;
@@ -782,7 +821,7 @@ the calm you compose, not the calm a template defaults to.
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Morandi Still — a hushed, high-grey system for homeware, ceramics and slow lifestyle brands. Anchored by a single dusty slate blue (#55676B) and warmed by clay-rose and dusty-sage accents over a plaster ground, it treats every layout as a still-life: objects grouped asymmetrically on one shared groundline, one directional light wash, one long soft shadow, and vast quiet negative space. A soft Fraunces serif carries the calm; an airy humanist sans breathes underneath. Restraint is the entire point, not a compromise.&quot;,
   &quot;color&quot;: {
@@ -1082,7 +1121,7 @@ the calm you compose, not the calm a template defaults to.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 莫兰迪静物（morandi-still · 有机自然）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 莫兰迪静物（morandi-still · 有机自然）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `morandi-still` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1100,6 +1139,24 @@ the calm you compose, not the calm a template defaults to.
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint morandi-still` / 导出其它格式：`heige-design export morandi-still --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#3B3833`
+- 次要 muted：`#695F52`
+- 底色 canvas：`#E7E1D6`
+- 卡片面 surface：`#F1ECE3`
+- 分隔线 hairline：`#D6CFC2`
+- 主色 primary：`#55676B`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#B0857A`
+- 辅助 sage：`#96A088`
+
+**字体**：标题 `Fraunces` / 正文 `Mulish` / 数字 `Fraunces`
+
+**相邻风格（同家族，可换选）**：`clayfield`（陶土） · `linen-fold`（亚麻褶） · `harvest-warm`（丰收）
 </pre></div>
 </div>
 

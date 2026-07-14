@@ -98,7 +98,7 @@ the **ink-green seal** stamps</div></div></div>
 ---</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: WenkaiWarm-design-system
@@ -556,7 +556,45 @@ no tofu Chinese, no emoji icons, no &quot;赋能一站式&quot; filler. If it lo
 off a template, it isn't this system.
 
 *Signed, HeiGe-Design. MIT.*
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 文楷暖（wenkai-warm · 温暖人文）— Compact
+
+&gt; WenKai-Warm is a humanist storytelling system for education, courses, and public-benefit sharing. It sets LXGW WenKai, a warm calligraphic kai typeface, at giant scale on oatmeal paper (#efe7d6) so headlines read like a handwritten note rather than a slide. Baked terracotta (#b34f30) is the single voice for emphasis and full-bleed dividers; a deep ink-green seals each heartfelt line like a stamp. Rounded Nunito carries the body. The signature is a hand-drawn organic underline plus a small seal on one closing sentence: sincerity you can feel, never a template.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#b34f30` |
+| 正文 | `ink` | `#33291f` |
+| 底色 | `canvas` | `#efe7d6` |
+| 卡片面 | `surface` | `#f7f1e3` |
+| 次要文字 | `muted` | `#6f5f4b` |
+| 分隔线 | `hairline` | `#ddd2bc` |
+| 辅助 | `accent` | `#315b47` |
+
+## 字体
+
+- 标题：`LXGW WenKai`
+- 正文：`Nunito`
+- 数字 / 等宽：`Nunito`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 6px / md 12px / lg 20px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#b34f30` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint wenkai-warm` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #b34f30;
   --color-on-primary: #fbf4e6;
   --color-ink: #33291f;
@@ -610,7 +648,7 @@ off a template, it isn't this system.
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -725,7 +763,7 @@ off a template, it isn't this system.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #b34f30;
   --color-on-primary: #fbf4e6;
   --color-ink: #33291f;
@@ -779,7 +817,7 @@ off a template, it isn't this system.
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;WenKai-Warm is a humanist storytelling system for education, courses, and public-benefit sharing. It sets LXGW WenKai, a warm calligraphic kai typeface, at giant scale on oatmeal paper (#efe7d6) so headlines read like a handwritten note rather than a slide. Baked terracotta (#b34f30) is the single voice for emphasis and full-bleed dividers; a deep ink-green seals each heartfelt line like a stamp. Rounded Nunito carries the body. The signature is a hand-drawn organic underline plus a small seal on one closing sentence: sincerity you can feel, never a template.&quot;,
   &quot;color&quot;: {
@@ -1068,7 +1106,7 @@ off a template, it isn't this system.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 文楷暖（wenkai-warm · 温暖人文）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 文楷暖（wenkai-warm · 温暖人文）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `wenkai-warm` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1086,6 +1124,23 @@ off a template, it isn't this system.
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint wenkai-warm` / 导出其它格式：`heige-design export wenkai-warm --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#33291f`
+- 次要 muted：`#6f5f4b`
+- 底色 canvas：`#efe7d6`
+- 卡片面 surface：`#f7f1e3`
+- 分隔线 hairline：`#ddd2bc`
+- 主色 primary：`#b34f30`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#315b47`
+
+**字体**：标题 `LXGW WenKai` / 正文 `Nunito` / 数字 `Nunito`
+
+**相邻风格（同家族，可换选）**：`hearth-story`（炉边） · `almanac-folk`（民历） · `coffee-house`（咖啡馆）
 </pre></div>
 </div>
 

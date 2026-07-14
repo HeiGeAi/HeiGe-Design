@@ -96,7 +96,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - 不给任何东西加圆角讨好，不用柔和弥散阴影，不把酸绿铺满背景稀释成霓虹。</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: forge-anvil-design-system
@@ -392,7 +392,45 @@ components:
 ## Anti-Slop Pledge
 
 把 COLDFORGE 这个名字抹掉，这一页仍一眼看得出是有人硬手做出来的：一句浇铸的巨型宣言、一道只在该亮处亮的酸绿电压、一圈裸露刻度的机床网格、一记按下会归零的硬印章。它不是流水线吐出来的圆角紫蓝模板，它是一台冷启动的重型机床。
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 熔炉（forge-anvil · 凶悍工业）— Compact
+
+&gt; An aggressively industrial, high-contrast dark system for devtools and infrastructure. Iron-black canvas, one acid-green electric voltage, concrete-gray structure. Archivo Black manifesto headlines over JetBrains Mono data, hard non-blurred offset shadows, and exposed machine-bed grid rulers. Built to boot cold and hit hard.
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#c8ff00` |
+| 正文 | `ink` | `#f5f6f3` |
+| 底色 | `canvas` | `#0c0d0e` |
+| 卡片面 | `surface` | `#17191b` |
+| 次要文字 | `muted` | `#9a9d9f` |
+| 分隔线 | `hairline` | `#313437` |
+| 辅助 | `molten` | `#ff5a1f` |
+
+## 字体
+
+- 标题：`Archivo Black`
+- 正文：`Space Grotesk`
+- 数字 / 等宽：`JetBrains Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 48px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#c8ff00` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint forge-anvil` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #c8ff00;
   --color-on-primary: #0c0d0e;
   --color-ink: #f5f6f3;
@@ -448,7 +486,7 @@ components:
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -571,7 +609,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #c8ff00;
   --color-on-primary: #0c0d0e;
   --color-ink: #f5f6f3;
@@ -627,7 +665,7 @@ components:
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;An aggressively industrial, high-contrast dark system for devtools and infrastructure. Iron-black canvas, one acid-green electric voltage, concrete-gray structure. Archivo Black manifesto headlines over JetBrains Mono data, hard non-blurred offset shadows, and exposed machine-bed grid rulers. Built to boot cold and hit hard.&quot;,
   &quot;color&quot;: {
@@ -919,7 +957,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 熔炉（forge-anvil · 凶悍工业）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 熔炉（forge-anvil · 凶悍工业）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `forge-anvil` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -937,6 +975,23 @@ components:
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint forge-anvil` / 导出其它格式：`heige-design export forge-anvil --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#f5f6f3`
+- 次要 muted：`#9a9d9f`
+- 底色 canvas：`#0c0d0e`
+- 卡片面 surface：`#17191b`
+- 分隔线 hairline：`#313437`
+- 主色 primary：`#c8ff00`（只给关键 CTA / 强调，克制使用）
+- 辅助 molten：`#ff5a1f`
+
+**字体**：标题 `Archivo Black` / 正文 `Space Grotesk` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`rebar-concrete`（钢筋） · `riot-press`（暴走印刷） · `ironclad-ledger`（铁账）
 </pre></div>
 </div>
 

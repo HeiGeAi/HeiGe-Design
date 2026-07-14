@@ -334,6 +334,21 @@ Images are rare. When they appear they are cropped to a **circle or an organic i
 never a rounded rectangle. The **朱砂 seal square** and the **1px vertical cinnabar rule** are the
 signature graphic primitives — the only two marks allowed to be red.
 
+## Imagery
+
+Images are the rarest element in the system. The material is emptiness; a picture appears only when silence alone cannot carry the meaning, and even then it is cropped soft and floated in air.
+
+| Layer | Treatment |
+|---|---|
+| Photography | Sparse, tonal, quiet — tea, stone, brushwork, aged paper, shot warm and low-contrast so it sits inside the rice-paper world. Cropped to a **circle or an organic ink-bloom mask**, never a rounded rectangle. One image per view, floated in the open right third. |
+| Illustration | 水墨 gesture, not flat vector: a single wet stroke, a bamboo mark, a mountain silhouette bleeding at the edge — one weight of pine-soot ink on cream. No outline icons dressed up as art, no gradient. |
+| Icons | Thin brush-weight strokes in `ink`, `muted` when secondary, kept to the minimum. A small seal often replaces an icon entirely. Never red, never filled. |
+| Charts | Cream ground, `hairline` ledger lines, `muted` labels, ink marks. If one point must stand out it wears a tiny 朱砂 seal-dot, never a red fill or line. |
+| Seal & rule | The 朱砂 seal square and the 1px vertical cinnabar rule are the only two red marks and the system's signature graphics. Treat them as imagery — placed once, in a corner, pressed like a real stamp. |
+| Density | Extreme low. Two-thirds of the canvas stays empty at all times; the 留白 is defended as material, never filled with decorative imagery. |
+
+---
+
 ## Components
 
 - **button-primary** — ink fill, cream label, 3px corners, tracked-wide button type. The one place ink becomes a surface at UI scale. Hover deepens to a wetter black; focus adds a 2px ink ring, never a glow.
@@ -404,6 +419,25 @@ into a template — it requires composing the headline, the bloom, and the seal 
 and the title hung low-left. No fill, no box, no chart — the near-total emptiness *is* the transition. The power is in
 how much paper you are willing to leave blank; change the template and the first instinct is to fill it, which kills the moment.
 
+## Agent 配方卡
+
+Copy-ready recipes. Exact values only.
+
+**速查色卡**
+- Ink（正文·松烟墨）`#1c1a17` · Muted `#6b655c` · Canvas（宣纸底）`#f4f0e6` · Surface（生绢面）`#fbf8f0` · Hairline `#d9d2c2`
+- Seal-red 朱砂 `#c8483a`：全页一点，只做落款方印或一道 1px 竖朱线，绝不做底、做渐变、做正文。
+- 字体：Song 标题 `Noto Serif SC`（weight 900）/ 楷体眉批·引言 `LXGW WenKai` / 正文 `Inter` / 大数字 `Noto Serif`。
+
+1. **墨按钮（主）** — `#1c1a17` 填充，`#f6f1e4` 字，Inter 15px weight 500 字距 3px，圆角 3px，内边距 12px 32px。hover 加深到更湿的黑，focus 加 2px 墨环，不发光。
+2. **次按钮** — `#fbf8f0` 生绢底，`#1c1a17` 字，1px `#d9d2c2` 描边，圆角 3px。常压在一道短朱线之下，不喊。
+3. **封面 / Hero** — `#f4f0e6` 宣纸底，左三分之一放 Noto Serif SC 88px weight 900 `#1c1a17` 竖势主标，右侧大片留空放一团 ink-bloom，标题反白压进墨团里，右下角盖一枚 56px `#c8483a` 落款方印。
+4. **特性卡** — `#fbf8f0` 面，1px `#d9d2c2` 描边，圆角 6px，内边距 56px。标题 Noto Serif SC 30px weight 700 `#1c1a17`，正文 Inter 17px 行高 1.9。一卡一意，悬浮于空。
+5. **墨块卡（card-ink）** — `#1c1a17` 湿墨石板，`#f6f1e4` 正文，圆角 14px。一页一次，用来压住构图，像放大的印。
+6. **数据块** — Noto Serif 128px `#1c1a17` 巨数字落在生绢上，`#6b655c` 小单位在旁。数字永远是墨，红只在角落一枚印。
+7. **页脚** — `#1c1a17` 墨板通栏，`#f4f0e6` 字，宽留白，一枚小印落款收尾。
+
+---
+
 ## Do's and Don'ts
 
 **Do**
@@ -431,6 +465,18 @@ Mobile is a re-composition, not a shrink — and the 留白 ratio is defended, n
 `clamp()` sized to the longest manually-broken line, and each line is locked with `white-space: nowrap` so the Song title
 never drops an orphan 字 or 标点 on a 390px screen. Chinese width limits use `em` / `px`, never `ch`. Verify zero orphans and
 no horizontal overflow (`scrollWidth == clientWidth`) on both desktop and ≤390px before shipping.
+
+## 相邻风格
+
+同属「东方新中式」家族，按气质和场景分岔：
+
+- **`song-celadon`（宋瓷极简）**：同样极简东方，但底色转青瓷、气质更清冷素雅、少一分墨的锋利。做瓷器 / 茶 / 器物美学选它；要松烟墨的书写感和大留白留在水墨留白。
+- **`gugong-red`（故宫红金）**：宫廷红金，浓、贵、满，气场外放。做节庆 / 文创 / 国宝级隆重选它；要文人案头的清与空留在这套。
+- **`guochao-cyber`（赛博国潮）**：把国风推进赛博暗色，年轻、潮、冲突感强。做潮牌 / 联名 / 年轻向选它；要传统雅正的静气留在水墨留白。
+
+**水墨留白自己最适合**：茶室、艺术空间、高端文化品牌、书画 / 香道 / 器物，凡是要以空为材、一印落款的东方雅致场合。
+
+---
 
 ## Anti-Slop Pledge
 

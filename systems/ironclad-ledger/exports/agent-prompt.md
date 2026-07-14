@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint ironclad-ledger` / 导出其它格式：`heige-design export ironclad-ledger --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#f5efe3`
+- 次要 muted：`#9a9ca1`
+- 底色 canvas：`#1b1d20`
+- 卡片面 surface：`#26282c`
+- 分隔线 hairline：`#3a3d42`
+- 主色 primary：`#b7410e`（只给关键 CTA / 强调，克制使用）
+- 辅助 up：`#3fb950`
+
+**字体**：标题 `Space Grotesk` / 正文 `Space Grotesk` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`forge-anvil`（熔炉） · `rebar-concrete`（钢筋） · `riot-press`（暴走印刷）

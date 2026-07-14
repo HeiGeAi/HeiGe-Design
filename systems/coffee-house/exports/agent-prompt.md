@@ -16,3 +16,22 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint coffee-house` / 导出其它格式：`heige-design export coffee-house --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#3a2a20`
+- 次要 muted：`#6f5b48`
+- 底色 canvas：`#efe3d3`
+- 卡片面 surface：`#f7efe1`
+- 分隔线 hairline：`#dcccb6`
+- 主色 primary：`#4a352a`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#c17a35`
+- 辅助 crema：`#d7a869`
+- 辅助 roast：`#2a1d15`
+
+**字体**：标题 `Fraunces` / 正文 `Newsreader` / 数字 `Fraunces`
+
+**相邻风格（同家族，可换选）**：`wenkai-warm`（文楷暖） · `hearth-story`（炉边） · `almanac-folk`（民历）

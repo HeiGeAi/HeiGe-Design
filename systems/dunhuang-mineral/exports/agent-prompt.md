@@ -16,3 +16,22 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint dunhuang-mineral` / 导出其它格式：`heige-design export dunhuang-mineral --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#2a2018`
+- 次要 muted：`#5f5540`
+- 底色 canvas：`#ece1cb`
+- 卡片面 surface：`#f4ebd8`
+- 分隔线 hairline：`#d6c8a8`
+- 主色 primary：`#2e6b8f`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#4a8b6f`
+- 辅助 seal-red：`#c8483a`
+- 辅助 gold：`#b08d3e`
+
+**字体**：标题 `Ma Shan Zheng` / 正文 `Inter` / 数字 `Cormorant Garamond`
+
+**相邻风格（同家族，可换选）**：`moxi-void`（水墨留白） · `gugong-red`（故宫红金） · `song-celadon`（宋瓷极简）

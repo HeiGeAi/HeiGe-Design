@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint datum-signal` / 导出其它格式：`heige-design export datum-signal --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#15171c`
+- 次要 muted：`#565c65`
+- 底色 canvas：`#fbfbfa`
+- 卡片面 surface：`#ffffff`
+- 分隔线 hairline：`#e6e6e4`
+- 主色 primary：`#1f4dff`（只给关键 CTA / 强调，克制使用）
+- 辅助 up：`#15803d`
+- 辅助 down：`#c62828`
+
+**字体**：标题 `Inter` / 正文 `Inter` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`helvetic-ledger`（账本） · `grid-bureau`（制表局） · `akkurat-mono`（精准等宽）

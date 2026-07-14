@@ -83,7 +83,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 ---</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: MonogramNoir-design-system
@@ -407,7 +407,45 @@ components:
 抹掉时装屋名，这一页仍一眼看得出是有人用手排的：真黑与象牙的明度断层、Bodoni 报头的粗细反差、一封只出现一次的酒红蜡印、被出血大图撕断的裁片网格。它不是流水线吐出来的通用 SaaS 模板，是一座只用三种材料、把克制做到极致的时装屋。
 
 Built by HeiGe-Design · MIT.
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 字母黑（monogram-noir · 奢侈高定）— Compact
+
+&gt; MonogramNoir is a couture house system — ivory type on true noir, disciplined by a single oxblood-wine accent used once per view. A Bodoni-cut didone carries the masthead and an oversized interlocked monogram, while a wide-tracked geometric sans handles maison labels. Its signature is a repeated monogram motif ghosted across a couture module grid with one full-bleed image breaking the frame. Extreme negative space, sharp edges, slow fades. Built by HeiGe-Design.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#111111` |
+| 正文 | `ink` | `#1C1814` |
+| 底色 | `canvas` | `#EFE9DF` |
+| 卡片面 | `surface` | `#F5F0E7` |
+| 次要文字 | `muted` | `#625B50` |
+| 分隔线 | `hairline` | `#D8D0C2` |
+| 辅助 | `wine` | `#6E1423` |
+
+## 字体
+
+- 标题：`Bodoni Moda`
+- 正文：`Cormorant Garamond`
+- 数字 / 等宽：`Bodoni Moda`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / md 4px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 32px / xl 64px / section 120px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#111111` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint monogram-noir` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #111111;
   --color-on-primary: #efe9df;
   --color-ink: #1c1814;
@@ -464,7 +502,7 @@ Built by HeiGe-Design · MIT.
   --spacing-section: 120px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -588,7 +626,7 @@ Built by HeiGe-Design · MIT.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #111111;
   --color-on-primary: #efe9df;
   --color-ink: #1c1814;
@@ -645,7 +683,7 @@ Built by HeiGe-Design · MIT.
   --spacing-section: 120px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;MonogramNoir is a couture house system — ivory type on true noir, disciplined by a single oxblood-wine accent used once per view. A Bodoni-cut didone carries the masthead and an oversized interlocked monogram, while a wide-tracked geometric sans handles maison labels. Its signature is a repeated monogram motif ghosted across a couture module grid with one full-bleed image breaking the frame. Extreme negative space, sharp edges, slow fades. Built by HeiGe-Design.&quot;,
   &quot;color&quot;: {
@@ -943,7 +981,7 @@ Built by HeiGe-Design · MIT.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 字母黑（monogram-noir · 奢侈高定）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 字母黑（monogram-noir · 奢侈高定）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `monogram-noir` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -961,6 +999,23 @@ Built by HeiGe-Design · MIT.
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint monogram-noir` / 导出其它格式：`heige-design export monogram-noir --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#1C1814`
+- 次要 muted：`#625B50`
+- 底色 canvas：`#EFE9DF`
+- 卡片面 surface：`#F5F0E7`
+- 分隔线 hairline：`#D8D0C2`
+- 主色 primary：`#111111`（只给关键 CTA / 强调，克制使用）
+- 辅助 wine：`#6E1423`
+
+**字体**：标题 `Bodoni Moda` / 正文 `Cormorant Garamond` / 数字 `Bodoni Moda`
+
+**相邻风格（同家族，可换选）**：`onyx-gold`（玄金） · `champagne-silk`（香槟丝绸） · `marble-vein`（大理石纹）
 </pre></div>
 </div>
 

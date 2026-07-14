@@ -79,7 +79,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - 不把四种霓虹平均铺满，那是灯饰厂，不是招牌。</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: NeonMarket-design-system
@@ -430,7 +430,47 @@ components:
 ## Anti-Slop Pledge
 
 把 NEON MARKET 的名字抹掉，这一屏仍一眼看得出是有人蹲在夜市里，把招牌怎么挂歪、灯管怎么发光、价签怎么钉、哪块牌先亮，一处一处调出来的。它有密度、有对撞、有一条通了电的巷子，不是三栏卡片加紫蓝渐变的流水线货。签名 HeiGe-Design。
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 霓虹夜市（neon-market · 张扬极繁）— Compact
+
+&gt; NEON MARKET is a maximalist night-market signage system. A deep-night canvas gets ignited by four neon accents: signage red, lantern amber, tube cyan and magenta, stacked dense and slightly askew like an alley of glowing signboards. Heavy Archivo Black meets a Monoton neon-tube script and Space Mono price tags. The signature move is a wall of self-glowing stall signs that ignite on load. No purple gradients, no centered card trio.
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#ff2e4d` |
+| 正文 | `ink` | `#f7ede9` |
+| 底色 | `canvas` | `#0d0b0f` |
+| 卡片面 | `surface` | `#181419` |
+| 次要文字 | `muted` | `#a89aa2` |
+| 分隔线 | `hairline` | `#332b32` |
+| 辅助 | `accent-cyan` | `#22e6e6` |
+| 辅助 | `accent-lantern` | `#ffc21f` |
+| 辅助 | `accent-pink` | `#ff5cc8` |
+
+## 字体
+
+- 标题：`Archivo Black`
+- 正文：`Archivo`
+- 数字 / 等宽：`Space Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 4px / md 8px / lg 14px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 88px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#ff2e4d` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint neon-market` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #ff2e4d;
   --color-on-primary: #140b0d;
   --color-ink: #f7ede9;
@@ -486,7 +526,7 @@ components:
   --spacing-section: 88px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -603,7 +643,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #ff2e4d;
   --color-on-primary: #140b0d;
   --color-ink: #f7ede9;
@@ -659,7 +699,7 @@ components:
   --spacing-section: 88px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;NEON MARKET is a maximalist night-market signage system. A deep-night canvas gets ignited by four neon accents: signage red, lantern amber, tube cyan and magenta, stacked dense and slightly askew like an alley of glowing signboards. Heavy Archivo Black meets a Monoton neon-tube script and Space Mono price tags. The signature move is a wall of self-glowing stall signs that ignite on load. No purple gradients, no centered card trio.&quot;,
   &quot;color&quot;: {
@@ -970,7 +1010,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 霓虹夜市（neon-market · 张扬极繁）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 霓虹夜市（neon-market · 张扬极繁）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `neon-market` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -988,6 +1028,25 @@ components:
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint neon-market` / 导出其它格式：`heige-design export neon-market --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#f7ede9`
+- 次要 muted：`#a89aa2`
+- 底色 canvas：`#0d0b0f`
+- 卡片面 surface：`#181419`
+- 分隔线 hairline：`#332b32`
+- 主色 primary：`#ff2e4d`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent-cyan：`#22e6e6`
+- 辅助 accent-lantern：`#ffc21f`
+- 辅助 accent-pink：`#ff5cc8`
+
+**字体**：标题 `Archivo Black` / 正文 `Archivo` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`soundwave-wrapped`（声浪） · `acg-stellar`（二次元星轨） · `collage-riot`（拼贴暴动）
 </pre></div>
 </div>
 

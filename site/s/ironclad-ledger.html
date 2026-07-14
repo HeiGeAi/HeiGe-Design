@@ -81,7 +81,7 @@ The chapter break is a full-bleed rust field (`slide-section-divider`, `primary<
 - Do not s</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: IroncladLedger-design-system
@@ -472,7 +472,45 @@ Mobile is a re-layout, not a shrink. The desktop ledger table would force a mono
 Strip the name off this system and it still reads as built by someone who cared. The tell is not a logo; it is the decimal column that lines up like it was milled, the rust that only ever welds the load-bearing edge, the hard shadow with no blur, the hash stamped into every row like a serial number. No template ships a ledger that looks machined. 铁账 is not generated. It is fabricated, and it shows its bolts.
 
 *Ironclad Ledger · 铁账 — a HeiGe-Design original system. MIT. Signed HeiGe-Design.*
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 铁账（ironclad-ledger · 凶悍工业）— Compact
+
+&gt; Ironclad Ledger is a brutalist fintech system for hardcore builders. Gun-metal asphalt, oxidized-rust red, and one credit-green. Every figure is set in tabular monospace, so amounts align to the decimal like stamped metal. Hard 2px borders, zero radius, and blur-free offset shadows give each data block the weight of a machined plate. Headlines run in heavy grotesque; the ledger row is the hero.
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#b7410e` |
+| 正文 | `ink` | `#f5efe3` |
+| 底色 | `canvas` | `#1b1d20` |
+| 卡片面 | `surface` | `#26282c` |
+| 次要文字 | `muted` | `#9a9ca1` |
+| 分隔线 | `hairline` | `#3a3d42` |
+| 辅助 | `up` | `#3fb950` |
+
+## 字体
+
+- 标题：`Space Grotesk`
+- 正文：`Space Grotesk`
+- 数字 / 等宽：`JetBrains Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#b7410e` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint ironclad-ledger` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #b7410e;
   --color-on-primary: #f5efe3;
   --color-ink: #f5efe3;
@@ -532,7 +570,7 @@ Strip the name off this system and it still reads as built by someone who cared.
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -665,7 +703,7 @@ Strip the name off this system and it still reads as built by someone who cared.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #b7410e;
   --color-on-primary: #f5efe3;
   --color-ink: #f5efe3;
@@ -725,7 +763,7 @@ Strip the name off this system and it still reads as built by someone who cared.
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Ironclad Ledger is a brutalist fintech system for hardcore builders. Gun-metal asphalt, oxidized-rust red, and one credit-green. Every figure is set in tabular monospace, so amounts align to the decimal like stamped metal. Hard 2px borders, zero radius, and blur-free offset shadows give each data block the weight of a machined plate. Headlines run in heavy grotesque; the ledger row is the hero.&quot;,
   &quot;color&quot;: {
@@ -1032,7 +1070,7 @@ Strip the name off this system and it still reads as built by someone who cared.
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 铁账（ironclad-ledger · 凶悍工业）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 铁账（ironclad-ledger · 凶悍工业）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `ironclad-ledger` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1050,6 +1088,23 @@ Strip the name off this system and it still reads as built by someone who cared.
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint ironclad-ledger` / 导出其它格式：`heige-design export ironclad-ledger --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#f5efe3`
+- 次要 muted：`#9a9ca1`
+- 底色 canvas：`#1b1d20`
+- 卡片面 surface：`#26282c`
+- 分隔线 hairline：`#3a3d42`
+- 主色 primary：`#b7410e`（只给关键 CTA / 强调，克制使用）
+- 辅助 up：`#3fb950`
+
+**字体**：标题 `Space Grotesk` / 正文 `Space Grotesk` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`forge-anvil`（熔炉） · `rebar-concrete`（钢筋） · `riot-press`（暴走印刷）
 </pre></div>
 </div>
 

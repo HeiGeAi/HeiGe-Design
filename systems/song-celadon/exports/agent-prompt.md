@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint song-celadon` / 导出其它格式：`heige-design export song-celadon --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#2a322c`
+- 次要 muted：`#586459`
+- 底色 canvas：`#f2f0ea`
+- 卡片面 surface：`#f8f6f0`
+- 分隔线 hairline：`#d3d8cc`
+- 主色 primary：`#a3b7a0`（只给关键 CTA / 强调，克制使用）
+- 辅助 glaze-deep：`#3f5d4e`
+
+**字体**：标题 `Cormorant Garamond` / 正文 `Inter` / 数字 `Cormorant Garamond`
+
+**相邻风格（同家族，可换选）**：`moxi-void`（水墨留白） · `gugong-red`（故宫红金） · `guochao-cyber`（赛博国潮）

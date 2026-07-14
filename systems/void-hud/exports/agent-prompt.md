@@ -16,3 +16,22 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint void-hud` / 导出其它格式：`heige-design export void-hud --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#d7e5ec`
+- 次要 muted：`#8194a0`
+- 底色 canvas：`#0b0e11`
+- 卡片面 surface：`#12171d`
+- 分隔线 hairline：`#202a33`
+- 主色 primary：`#22d3ee`（只给关键 CTA / 强调，克制使用）
+- 辅助 alert：`#ff8a24`
+- 辅助 on-alert：`#1a0e02`
+- 辅助 critical：`#ff4d5e`
+
+**字体**：标题 `Space Grotesk` / 正文 `Inter` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`nocturne-teal`（深空电青） · `aurora-mesh`（极光） · `carbon-lime`（碳黑电绿）

@@ -80,7 +80,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 ---</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: Rulewerk-design-system
@@ -383,7 +383,45 @@ The grid-break signature survives every width: on mobile the reserved empty colu
 Strip the name off any Rulewerk page and it is still unmistakably a made thing: monochrome ink on ruled paper, one calibrated red spent only where a number went wrong, corners cut sharp, columns locked to the pixel, and a single deliberate break in an otherwise perfect grid. No purple gradient, no rounded-card trio, no shadow, no filler. This is not a template that happened to be tinted — it is the accountant's oldest discipline, drawn with a designer's precision. Every red mark on this system was earned.
 
 — **HeiGe-Design** · MIT · slug `helvetic-ledger`
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 账本（helvetic-ledger · 瑞士纪律）— Compact
+
+&gt; Rulewerk is a Swiss ledger system built on one law: value and the grid do the work, colour never fills — it only signals. Near-black ink sits on a warm-neutral paper canvas, everything snapped to a twelve-column baseline grid with exposed hairline rules and tabular figures. The single hue is a calibrated signal red, used the way an accountant uses it — the one number that is in the red. Two signatures anchor it: a data table where the negative figure breaks the grid, and a near-empty divider whose whitespace is the visual hammer.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#d81f1a` |
+| 正文 | `ink` | `#141414` |
+| 底色 | `canvas` | `#f5f5f3` |
+| 卡片面 | `surface` | `#ffffff` |
+| 次要文字 | `muted` | `#616160` |
+| 分隔线 | `hairline` | `#dcdcd9` |
+| 辅助 | `subtle` | `#efeeeb` |
+
+## 字体
+
+- 标题：`Neue Haas Grotesk Display Pro`
+- 正文：`Inter`
+- 数字 / 等宽：`IBM Plex Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 48px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#d81f1a` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint helvetic-ledger` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #d81f1a;
   --color-on-primary: #ffffff;
   --color-ink: #141414;
@@ -439,7 +477,7 @@ Strip the name off any Rulewerk page and it is still unmistakably a made thing: 
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -562,7 +600,7 @@ Strip the name off any Rulewerk page and it is still unmistakably a made thing: 
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #d81f1a;
   --color-on-primary: #ffffff;
   --color-ink: #141414;
@@ -618,7 +656,7 @@ Strip the name off any Rulewerk page and it is still unmistakably a made thing: 
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Rulewerk is a Swiss ledger system built on one law: value and the grid do the work, colour never fills — it only signals. Near-black ink sits on a warm-neutral paper canvas, everything snapped to a twelve-column baseline grid with exposed hairline rules and tabular figures. The single hue is a calibrated signal red, used the way an accountant uses it — the one number that is in the red. Two signatures anchor it: a data table where the negative figure breaks the grid, and a near-empty divider whose whitespace is the visual hammer.&quot;,
   &quot;color&quot;: {
@@ -910,7 +948,7 @@ Strip the name off any Rulewerk page and it is still unmistakably a made thing: 
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 账本（helvetic-ledger · 瑞士纪律）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 账本（helvetic-ledger · 瑞士纪律）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `helvetic-ledger` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -928,6 +966,23 @@ Strip the name off any Rulewerk page and it is still unmistakably a made thing: 
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint helvetic-ledger` / 导出其它格式：`heige-design export helvetic-ledger --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#141414`
+- 次要 muted：`#616160`
+- 底色 canvas：`#f5f5f3`
+- 卡片面 surface：`#ffffff`
+- 分隔线 hairline：`#dcdcd9`
+- 主色 primary：`#d81f1a`（只给关键 CTA / 强调，克制使用）
+- 辅助 subtle：`#efeeeb`
+
+**字体**：标题 `Neue Haas Grotesk Display Pro` / 正文 `Inter` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`grid-bureau`（制表局） · `datum-signal`（数点） · `akkurat-mono`（精准等宽）
 </pre></div>
 </div>
 

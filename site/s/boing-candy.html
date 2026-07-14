@@ -93,7 +93,7 @@ Signature moves:
 - Don't let the whole page bounce at once. One or two signature springs; the rest holds still.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: boing-candy-design-system
@@ -469,7 +469,46 @@ Mobile keeps the deck's one-idea-per-screen logic: on phones the slides become f
 ## Anti-Slop Pledge
 
 抹掉品牌名，这一套依然一眼看得出是有人真的坐下来把它捏圆、捏弹、捏出脾气的。糖果多色不是随手撒的高饱和，是主色定温、双味围拢、深葡萄墨兜住可读性的一套配方；弹跳不是加了个 transition，是 squash-and-stretch 的物理；立体感是硬糖阴影不是那层出卖 AI 的模糊。它会弹、会跳、会认字，不是流水线生成的。署名 HeiGe-Design。
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 弹跳糖（boing-candy · 玩味玩具）— Compact
+
+&gt; boing-candy is HeiGe-Design's high-bounce candy system for consumer tools and lightweight SaaS. A cotton-pink canvas, a bubblegum primary that carries deep grape ink instead of timid white, and mint plus lemon accents stacked like a gumball dispenser. Fat rounded Baloo 2 display lands with squash-and-stretch spring; the gumdrop mascot Bibo peeks between the cards. One token set drives both the interface and the 16:9 deck, and nothing floats on the flat blur shadows that give AI slop away.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#FF5CA8` |
+| 正文 | `ink` | `#2E1A47` |
+| 底色 | `canvas` | `#FFF6FB` |
+| 卡片面 | `surface` | `#FFFFFF` |
+| 次要文字 | `muted` | `#7A5C8E` |
+| 分隔线 | `hairline` | `#F1D9E8` |
+| 辅助 | `accent` | `#33D9B2` |
+| 辅助 | `accent-2` | `#FFD836` |
+
+## 字体
+
+- 标题：`Baloo 2`
+- 正文：`Nunito`
+- 数字 / 等宽：`Baloo 2`
+
+## 形状 &amp; 间距
+
+- 圆角：sm 10px / md 18px / lg 28px / xl 44px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 80px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#FF5CA8` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint boing-candy` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #ff5ca8;
   --color-on-primary: #2e1a47;
   --color-ink: #2e1a47;
@@ -524,7 +563,7 @@ Mobile keeps the deck's one-idea-per-screen logic: on phones the slides become f
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -640,7 +679,7 @@ Mobile keeps the deck's one-idea-per-screen logic: on phones the slides become f
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #ff5ca8;
   --color-on-primary: #2e1a47;
   --color-ink: #2e1a47;
@@ -695,7 +734,7 @@ Mobile keeps the deck's one-idea-per-screen logic: on phones the slides become f
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;boing-candy is HeiGe-Design's high-bounce candy system for consumer tools and lightweight SaaS. A cotton-pink canvas, a bubblegum primary that carries deep grape ink instead of timid white, and mint plus lemon accents stacked like a gumball dispenser. Fat rounded Baloo 2 display lands with squash-and-stretch spring; the gumdrop mascot Bibo peeks between the cards. One token set drives both the interface and the 16:9 deck, and nothing floats on the flat blur shadows that give AI slop away.&quot;,
   &quot;color&quot;: {
@@ -995,7 +1034,7 @@ Mobile keeps the deck's one-idea-per-screen logic: on phones the slides become f
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 弹跳糖（boing-candy · 玩味玩具）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 弹跳糖（boing-candy · 玩味玩具）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `boing-candy` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1013,6 +1052,24 @@ Mobile keeps the deck's one-idea-per-screen logic: on phones the slides become f
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint boing-candy` / 导出其它格式：`heige-design export boing-candy --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#2E1A47`
+- 次要 muted：`#7A5C8E`
+- 底色 canvas：`#FFF6FB`
+- 卡片面 surface：`#FFFFFF`
+- 分隔线 hairline：`#F1D9E8`
+- 主色 primary：`#FF5CA8`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#33D9B2`
+- 辅助 accent-2：`#FFD836`
+
+**字体**：标题 `Baloo 2` / 正文 `Nunito` / 数字 `Baloo 2`
+
+**相邻风格（同家族，可换选）**：`jelly-pop`（果冻） · `sticker-club`（贴纸俱乐部） · `doodle-note`（涂鸦本）
 </pre></div>
 </div>
 

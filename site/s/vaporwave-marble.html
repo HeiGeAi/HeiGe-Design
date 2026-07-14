@@ -80,7 +80,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 ---</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: gesso-design-system
@@ -382,7 +382,47 @@ Mobile is a **re-edit, not a shrink.** The dislocated grid narrows from 5 slices
 Strip the name off this page and it still reads as made by hand: a plaster bust fractured through a rose-to-cyan sunset, carved-serif inscriptions on gallery void, one pink pill you were saving. No purple-blue slop gradient, no centered-card trio, no naked system font, no Japanese glyphs standing in for Chinese, no animated glow. Every text-on-fill pair clears AA, every font stack survives a dead CDN, and no title strands an orphan at any width. If it looks like a template, it isn't this one.
 
 *HeiGe-Design · MIT.*
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 蒸汽石膏（vaporwave-marble · 复古未来）— Compact
+
+&gt; GESSO (Zhengqi Shigao) is a vaporwave-marble system that fractures classical plaster busts through a rose-to-cyan vapor gradient (#ff9ee5 to #8ad9ff) laid on plaster white. A hot-rose primary (#ff5fb0) drives CTAs while a deep grape ink and a twilight night ground the palette. Display type is an all-caps high-contrast serif carved like an inscription on a plinth, labeled by wide-tracked mono numerals; Chinese always falls back to Noto Serif SC, never Japanese fonts. Signatures: a dislocated column grid slicing a duotone statue, and a twilight vapor-horizon section divider. Sharp marble frames, pill candy buttons, gallery whitespace.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#ff5fb0` |
+| 正文 | `ink` | `#2b1d3f` |
+| 底色 | `canvas` | `#f3ecf7` |
+| 卡片面 | `surface` | `#fbf7fd` |
+| 次要文字 | `muted` | `#705c86` |
+| 分隔线 | `hairline` | `#e4d6ef` |
+| 辅助 | `accent-rose` | `#ff9ee5` |
+| 辅助 | `accent-cyan` | `#8ad9ff` |
+| 辅助 | `twilight` | `#1c1230` |
+
+## 字体
+
+- 标题：`Playfair Display`
+- 正文：`Inter`
+- 数字 / 等宽：`Space Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 3px / md 6px / lg 14px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#ff5fb0` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint vaporwave-marble` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #ff5fb0;
   --color-on-primary: #241832;
   --color-ink: #2b1d3f;
@@ -438,7 +478,7 @@ Strip the name off this page and it still reads as made by hand: a plaster bust 
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -555,7 +595,7 @@ Strip the name off this page and it still reads as made by hand: a plaster bust 
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #ff5fb0;
   --color-on-primary: #241832;
   --color-ink: #2b1d3f;
@@ -611,7 +651,7 @@ Strip the name off this page and it still reads as made by hand: a plaster bust 
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;GESSO (Zhengqi Shigao) is a vaporwave-marble system that fractures classical plaster busts through a rose-to-cyan vapor gradient (#ff9ee5 to #8ad9ff) laid on plaster white. A hot-rose primary (#ff5fb0) drives CTAs while a deep grape ink and a twilight night ground the palette. Display type is an all-caps high-contrast serif carved like an inscription on a plinth, labeled by wide-tracked mono numerals; Chinese always falls back to Noto Serif SC, never Japanese fonts. Signatures: a dislocated column grid slicing a duotone statue, and a twilight vapor-horizon section divider. Sharp marble frames, pill candy buttons, gallery whitespace.&quot;,
   &quot;color&quot;: {
@@ -922,7 +962,7 @@ Strip the name off this page and it still reads as made by hand: a plaster bust 
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 蒸汽石膏（vaporwave-marble · 复古未来）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 蒸汽石膏（vaporwave-marble · 复古未来）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `vaporwave-marble` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -940,6 +980,25 @@ Strip the name off this page and it still reads as made by hand: a plaster bust 
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint vaporwave-marble` / 导出其它格式：`heige-design export vaporwave-marble --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#2b1d3f`
+- 次要 muted：`#705c86`
+- 底色 canvas：`#f3ecf7`
+- 卡片面 surface：`#fbf7fd`
+- 分隔线 hairline：`#e4d6ef`
+- 主色 primary：`#ff5fb0`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent-rose：`#ff9ee5`
+- 辅助 accent-cyan：`#8ad9ff`
+- 辅助 twilight：`#1c1230`
+
+**字体**：标题 `Playfair Display` / 正文 `Inter` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`synthwave-drive`（合成波） · `y2k-chrome`（千禧金属） · `arcade-crt`（街机荧光）
 </pre></div>
 </div>
 

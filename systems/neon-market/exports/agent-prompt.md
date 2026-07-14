@@ -16,3 +16,22 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint neon-market` / 导出其它格式：`heige-design export neon-market --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#f7ede9`
+- 次要 muted：`#a89aa2`
+- 底色 canvas：`#0d0b0f`
+- 卡片面 surface：`#181419`
+- 分隔线 hairline：`#332b32`
+- 主色 primary：`#ff2e4d`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent-cyan：`#22e6e6`
+- 辅助 accent-lantern：`#ffc21f`
+- 辅助 accent-pink：`#ff5cc8`
+
+**字体**：标题 `Archivo Black` / 正文 `Archivo` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`soundwave-wrapped`（声浪） · `acg-stellar`（二次元星轨） · `collage-riot`（拼贴暴动）

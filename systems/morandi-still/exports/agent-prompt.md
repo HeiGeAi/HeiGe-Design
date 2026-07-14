@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint morandi-still` / 导出其它格式：`heige-design export morandi-still --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#3B3833`
+- 次要 muted：`#695F52`
+- 底色 canvas：`#E7E1D6`
+- 卡片面 surface：`#F1ECE3`
+- 分隔线 hairline：`#D6CFC2`
+- 主色 primary：`#55676B`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#B0857A`
+- 辅助 sage：`#96A088`
+
+**字体**：标题 `Fraunces` / 正文 `Mulish` / 数字 `Fraunces`
+
+**相邻风格（同家族，可换选）**：`clayfield`（陶土） · `linen-fold`（亚麻褶） · `harvest-warm`（丰收）

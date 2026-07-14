@@ -80,7 +80,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - Don't set long-form Chinese in mono, and don't limit Chinese width with `ch`.</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: Redline-design-system
@@ -492,7 +492,45 @@ Mobile is a re-typeset column, not a shrunk desktop.
 Strip the name off any Redline page and it still reads as one thing: a written conviction with the sentence that matters marked in red pen, set with the patience of a printed op-ed. No stock gradient could fake the silence between statements, no template could place that single red underline on exactly the right clause. If a screen looks assembled rather than argued, it is not Redline yet.
 
 &lt;sub&gt;HeiGe-Design · manifesto-ink · 墨宣言 · MIT&lt;/sub&gt;
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 墨宣言（manifesto-ink · 优雅编辑）— Compact
+
+&gt; Redline is the home turf of an opinion columnist. A heavy Fraunces serif is slammed in warm-black onto warm ivory paper, and a single cinnabar red is rationed for one weapon only: the hand-drawn underline that marks the sentence you are meant to remember. Running prose is set in a reading serif; datelines, folios, and buttons are set in mono, like the machinery of the press. Stark rectangles, almost no rounding, one argument per screen. Chinese falls back to Noto Serif SC / Songti SC, never a Japanese face.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#15110a` |
+| 正文 | `ink` | `#1d1710` |
+| 底色 | `canvas` | `#f7f4ee` |
+| 卡片面 | `surface` | `#efe8db` |
+| 次要文字 | `muted` | `#6d6353` |
+| 分隔线 | `hairline` | `#d8cfbe` |
+| 辅助 | `accent` | `#c42718` |
+
+## 字体
+
+- 标题：`Fraunces`
+- 正文：`Newsreader`
+- 数字 / 等宽：`IBM Plex Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 2px / pill 999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#15110a` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint manifesto-ink` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #15110a;
   --color-on-primary: #faf7f1;
   --color-ink: #1d1710;
@@ -548,7 +586,7 @@ Strip the name off any Redline page and it still reads as one thing: a written c
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -671,7 +709,7 @@ Strip the name off any Redline page and it still reads as one thing: a written c
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #15110a;
   --color-on-primary: #faf7f1;
   --color-ink: #1d1710;
@@ -727,7 +765,7 @@ Strip the name off any Redline page and it still reads as one thing: a written c
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Redline is the home turf of an opinion columnist. A heavy Fraunces serif is slammed in warm-black onto warm ivory paper, and a single cinnabar red is rationed for one weapon only: the hand-drawn underline that marks the sentence you are meant to remember. Running prose is set in a reading serif; datelines, folios, and buttons are set in mono, like the machinery of the press. Stark rectangles, almost no rounding, one argument per screen. Chinese falls back to Noto Serif SC / Songti SC, never a Japanese face.&quot;,
   &quot;color&quot;: {
@@ -1019,7 +1057,7 @@ Strip the name off any Redline page and it still reads as one thing: a written c
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 墨宣言（manifesto-ink · 优雅编辑）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 墨宣言（manifesto-ink · 优雅编辑）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `manifesto-ink` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -1037,6 +1075,23 @@ Strip the name off any Redline page and it still reads as one thing: a written c
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint manifesto-ink` / 导出其它格式：`heige-design export manifesto-ink --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#1d1710`
+- 次要 muted：`#6d6353`
+- 底色 canvas：`#f7f4ee`
+- 卡片面 surface：`#efe8db`
+- 分隔线 hairline：`#d8cfbe`
+- 主色 primary：`#15110a`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#c42718`
+
+**字体**：标题 `Fraunces` / 正文 `Newsreader` / 数字 `IBM Plex Mono`
+
+**相邻风格（同家族，可换选）**：`sermon-serif`（布道） · `noir-vermilion`（玄墨绛红） · `broadsheet`（大报）
 </pre></div>
 </div>
 

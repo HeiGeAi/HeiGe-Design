@@ -16,3 +16,20 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint forge-anvil` / 导出其它格式：`heige-design export forge-anvil --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#f5f6f3`
+- 次要 muted：`#9a9d9f`
+- 底色 canvas：`#0c0d0e`
+- 卡片面 surface：`#17191b`
+- 分隔线 hairline：`#313437`
+- 主色 primary：`#c8ff00`（只给关键 CTA / 强调，克制使用）
+- 辅助 molten：`#ff5a1f`
+
+**字体**：标题 `Archivo Black` / 正文 `Space Grotesk` / 数字 `JetBrains Mono`
+
+**相邻风格（同家族，可换选）**：`rebar-concrete`（钢筋） · `riot-press`（暴走印刷） · `ironclad-ledger`（铁账）

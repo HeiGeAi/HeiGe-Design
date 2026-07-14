@@ -285,6 +285,21 @@ The system is **mostly sharp-cornered** — 16:9 slides and panels sit square, w
 - Images and diagrams sit in `md`/`lg` rounded frames with a 1px `hairline` edge.
 - The teal is allowed to become geometry in exactly one place: the diagonal glow shaft. Everywhere else, teal is a stroke, a dot, or a fill on a pill.
 
+## Imagery
+
+Imagery runs dark and instrumental. Photos are rare; when they appear they read like sensor output, not stock photography. Most "images" here are the UI itself — a hairline grid, one glow shaft, one lit numeral.
+
+| Layer | Treatment |
+|---|---|
+| Photography | Sparse and dark-key. Product shots or deep-space textures exposed so the near-black `canvas` continues into the image with no seam. Framed in `md`/`lg` corners with a 1px `hairline` edge. Never bright lifestyle stock. |
+| Illustration / diagram | Technical and line-based: thin `hairline` strokes on `canvas`, teal on exactly one active path or node. Architecture and agent-graph diagrams are the native illustration of this system. |
+| Icons | 1.5px stroke, `ink` default, `muted` when secondary, `primary` teal only on the single live/active icon. Outlined, never filled, never multicolor. |
+| Charts | `canvas` ground, `hairline` grid, `muted` axes, mono tabular labels. One series glows in `primary`/`glow`; every other series stays `muted`. Data glows where it matters and nowhere else. |
+| Glow as imagery | The diagonal teal shaft is the system's one piece of "art" — a static `radial-gradient`, never a photo of light, never animated. It falls on one object per screen. |
+| Density | Very low. Deep-space black is the dominant visual; an image is an event, not a texture. |
+
+---
+
 ## Components
 
 - **nav-bar** — `surface` bar, bottom `hairline`, uppercase mono (`eyebrow`) links in `ink`. Sharp corners. A single `badge-live` may sit at the right edge.
@@ -344,6 +359,25 @@ Two moments this system can produce that a generic template cannot:
 
 - **Deck — "The Glowing Numeral."** `slide-stat-hero`: pure deep-space black, one **giant mono numeral** lit in `glow`, the diagonal shaft touching only that number, its unit whispered in tiny mono beneath. `99.98` filling a 16:9 frame, glowing, alone. One number, three seconds, unforgettable — and impossible to fake by centering a card and calling it a stat.
 
+## Agent 配方卡
+
+Copy-ready recipes. Exact values only.
+
+**速查色卡**
+- Ink（正文）`#e9edf3`（近白，不用纯白）· Muted `#8a94a4` · Canvas（页底）`#08090d` · Surface（卡片）`#0f1319` · Hairline `#20262f`
+- Primary teal `#2dd4bf`：全屏一处，只给 CTA / 一束辉光 / 一颗心跳点。Glow peak `#5ff0dc`（数字与 live-dot 核心）。Accent amber `#f6a35c`：仅告警。
+- 字体：display `Geist` / 正文 `Inter` / 数字·kicker `JetBrains Mono`。
+
+1. **发光主按钮** — `#2dd4bf` 填充，`#031815` 字，Geist 15px weight 600，圆角 9999px，内边距 8px 24px，叠一层静态 teal 辉光（box-shadow，不动画）。一屏一个。
+2. **次级按钮** — `#0f1319` 填充，1px `#20262f` 描边，`#e9edf3` 字，圆角 9999px。退场，绝不发光。
+3. **The Beacon（Hero）** — `#08090d` 底叠 48px 间距的 `#20262f` 细网格，一道从右上斜射的 teal `radial-gradient` 辉光只落在那颗主按钮上；旁边一颗 breathing live-dot（`#5ff0dc` 核 + `#2dd4bf` 环，2.4s 呼吸只动 opacity/scale）。
+4. **特性卡** — `#0f1319` 面，1px `#20262f` 描边，圆角 16px。标题 Geist 20px weight 600 `#e9edf3`，正文 Inter 16px，meta 用 `#8a94a4`。无灰投影。
+5. **数据块** — `#0f1319` 面，圆角 10px，数字 JetBrains Mono `#2dd4bf`（tabular 等宽），标签 `#8a94a4`。
+6. **Live 徽章** — 圆角 9999px，`#0f1319` 底，`#2dd4bf` 全大写 mono 标签，前缀一颗呼吸点。系统心跳。
+7. **页脚** — `#08090d` 底，顶部 1px `#20262f`，`#8a94a4` mono 小字。
+
+---
+
 ## Do's and Don'ts
 
 **Do**
@@ -375,6 +409,18 @@ Reflow rules (production-grade):
 - **Balanced wrapping:** centered multi-line copy uses `text-wrap: balance`; Chinese width is limited in `em`/`px`, **never `ch`** (which is latin-`0` width and forces Chinese to wrap early into orphans).
 - **16:9 → mobile:** deck slides stack vertically; the stat-hero keeps its one-numeral-per-screen law, just re-scaled.
 - **Motion off:** every animation (the breathing dot included) is disabled under `@media (prefers-reduced-motion: reduce)`.
+
+## 相邻风格
+
+同属「暗色科技」家族，按锚点色和气质分岔：
+
+- **`midnight-trust`（午夜蓝）**：同样极简深色，但锚点是可信赖的蓝，气质更金融、更稳重。做银行 / 合规 / 企业级选它；做 AI 基建那种「运行时发光」的锐利感留在深空电青。
+- **`carbon-lime`（碳黑电绿）**：碳黑底配电光绿，能量更外放、更硬核工程感。要冲击力和赛博锋芒选它；要克制到只剩一束光的高级留白留在这套。
+- **`void-hud`（虚空仪表）**：仪表盘 HUD 语言，数据密度更高、界面元素更多。做实时监控大屏选它；做「一屏一光一心跳」的产品站留在深空电青。
+
+**深空电青自己最适合**：AI 基建、agent 编排、开发者工具、SaaS 后台，凡是要安静、premium、运行时发光气质的深色产品。
+
+---
 
 ## Anti-Slop Pledge
 

@@ -16,3 +16,21 @@
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint boing-candy` / 导出其它格式：`heige-design export boing-candy --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#2E1A47`
+- 次要 muted：`#7A5C8E`
+- 底色 canvas：`#FFF6FB`
+- 卡片面 surface：`#FFFFFF`
+- 分隔线 hairline：`#F1D9E8`
+- 主色 primary：`#FF5CA8`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#33D9B2`
+- 辅助 accent-2：`#FFD836`
+
+**字体**：标题 `Baloo 2` / 正文 `Nunito` / 数字 `Baloo 2`
+
+**相邻风格（同家族，可换选）**：`jelly-pop`（果冻） · `sticker-club`（贴纸俱乐部） · `doodle-note`（涂鸦本）

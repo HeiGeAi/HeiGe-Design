@@ -75,7 +75,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - 红与青不在同一屏平分视觉权重，金永远是线不是面。</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: GuochaoCyber-design-system
@@ -401,7 +401,46 @@ components:
 ## Anti-Slop Pledge
 
 把品牌名抹掉，这一页仍一眼看得出是有人用心撞出来的：一枚发光的朱砂竖章、一笔甩成霓虹拖光的毛笔字、红面上被电青劈开的庙柱章节号——这些是流水线模板生成不出来的东方新中式撞击。断网不塌、任何屏宽不出孤字、滚动不掉帧。签名 HeiGe-Design。
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 赛博国潮（guochao-cyber · 东方新中式）— Compact
+
+&gt; Guochao Cyber collides Chinese calligraphic tradition with electric-street neon on a lacquer-black stage. A deep cinnabar seal red drives every call to action while one restrained neon-cyan glow and a single thread of imperial gold cut through the dark. Brush-stroke display type meets heavy gothic and tabular mono data, mixing Han characters with Latin at high speed. The signature move is a vertical cinnabar seal stamp and a wet-brush headline wrapped in a 1px neon outline. Built to fuse youth-culture UI and 16:9 keynote decks. Signed HeiGe-Design.
+
+**Theme：** dark
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#d52823` |
+| 正文 | `ink` | `#f2ebdb` |
+| 底色 | `canvas` | `#0c0b0d` |
+| 卡片面 | `surface` | `#171419` |
+| 次要文字 | `muted` | `#9a9088` |
+| 分隔线 | `hairline` | `#2a2530` |
+| 辅助 | `accent` | `#2ff3ff` |
+| 辅助 | `gold` | `#e8b84b` |
+
+## 字体
+
+- 标题：`Ma Shan Zheng`
+- 正文：`Noto Sans SC`
+- 数字 / 等宽：`Space Mono`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / sm 3px / md 6px / lg 10px / pill 9999px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 96px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#d52823` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 辉光只用 box-shadow / radial-gradient，不用 backdrop-filter，不动画化阴影。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint guochao-cyber` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #d52823;
   --color-on-primary: #fdf6ea;
   --color-ink: #f2ebdb;
@@ -456,7 +495,7 @@ components:
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -572,7 +611,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #d52823;
   --color-on-primary: #fdf6ea;
   --color-ink: #f2ebdb;
@@ -627,7 +666,7 @@ components:
   --spacing-section: 96px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Guochao Cyber collides Chinese calligraphic tradition with electric-street neon on a lacquer-black stage. A deep cinnabar seal red drives every call to action while one restrained neon-cyan glow and a single thread of imperial gold cut through the dark. Brush-stroke display type meets heavy gothic and tabular mono data, mixing Han characters with Latin at high speed. The signature move is a vertical cinnabar seal stamp and a wet-brush headline wrapped in a 1px neon outline. Built to fuse youth-culture UI and 16:9 keynote decks. Signed HeiGe-Design.&quot;,
   &quot;color&quot;: {
@@ -927,7 +966,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 赛博国潮（guochao-cyber · 东方新中式）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 赛博国潮（guochao-cyber · 东方新中式）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `guochao-cyber` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -945,6 +984,24 @@ components:
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint guochao-cyber` / 导出其它格式：`heige-design export guochao-cyber --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#f2ebdb`
+- 次要 muted：`#9a9088`
+- 底色 canvas：`#0c0b0d`
+- 卡片面 surface：`#171419`
+- 分隔线 hairline：`#2a2530`
+- 主色 primary：`#d52823`（只给关键 CTA / 强调，克制使用）
+- 辅助 accent：`#2ff3ff`
+- 辅助 gold：`#e8b84b`
+
+**字体**：标题 `Ma Shan Zheng` / 正文 `Noto Sans SC` / 数字 `Space Mono`
+
+**相邻风格（同家族，可换选）**：`moxi-void`（水墨留白） · `gugong-red`（故宫红金） · `song-celadon`（宋瓷极简）
 </pre></div>
 </div>
 

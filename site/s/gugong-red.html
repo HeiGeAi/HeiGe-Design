@@ -95,7 +95,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 - 不让朱印乱盖三四方，一页一印，印是落款不是贴纸。</div></div>
 
 <div class="sec"><h2>五层可执行资产（一键复制给 coding agent）</h2>
-  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Tailwind v4</button><button class="tab " data-i="2">Tailwind v3</button><button class="tab " data-i="3">CSS Variables</button><button class="tab " data-i="4">W3C DTCG</button><button class="tab " data-i="5">Agent 提示词</button></div>
+  <div class="tabs"><button class="tab on" data-i="0">DESIGN.md</button><button class="tab " data-i="1">Compact</button><button class="tab " data-i="2">Tailwind v4</button><button class="tab " data-i="3">Tailwind v3</button><button class="tab " data-i="4">CSS Variables</button><button class="tab " data-i="5">W3C DTCG</button><button class="tab " data-i="6">Agent 提示词</button></div>
   <div class="codebox tabc" data-i="0" style=""><button class="copy">复制</button><pre>---
 version: alpha
 name: GugongRed-design-system
@@ -448,7 +448,47 @@ components:
 ## Anti-Slop Pledge
 
 抹掉品牌名，这套依然一眼是用心做的：**深宫墙红压场、明金只走勾边、竖排楷宋像展开的手卷、一方朱印越过金线框实压落款**。它有宫墙的方正与典藏的克制，不是任何流水线套模板能生成的那种&quot;现代简约&quot;安全废话。署名 HeiGe-Design。
-</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre>@theme {
+</pre></div><div class="codebox tabc" data-i="1" style="display:none"><button class="copy">复制</button><pre># 故宫红金（gugong-red · 东方新中式）— Compact
+
+&gt; Neo-Oriental heritage system founded on the deep oxblood of a palace wall (#9A2B2B), edged in bright imperial gold and grounded by dai-blue roof shadow. Heavy Song-serif titles stand vertically like an unrolled handscroll while a cinnabar seal breaks a hairline gold lattice frame as the signing stamp. Sharp zero-radius blocks, wide silk-paper whitespace, and high-contrast Didot-style numerals carry archival serials. Built for museums, cultural heritage, premium heritage craft, and archival collections. Ceremonial, restrained, unmistakably imperial, never a template. Signed HeiGe-Design.
+
+**Theme：** light
+
+## 关键色
+
+| 角色 | Token | Hex |
+|---|---|---|
+| 主色 | `primary` | `#9A2B2B` |
+| 正文 | `ink` | `#241A15` |
+| 底色 | `canvas` | `#F3EAD6` |
+| 卡片面 | `surface` | `#FBF6EA` |
+| 次要文字 | `muted` | `#746351` |
+| 分隔线 | `hairline` | `#D9C7A0` |
+| 辅助 | `gold` | `#C9A227` |
+| 辅助 | `dai` | `#2E3A4A` |
+| 辅助 | `seal` | `#BE3626` |
+
+## 字体
+
+- 标题：`Noto Serif SC`
+- 正文：`Inter`
+- 数字 / 等宽：`Playfair Display`
+
+## 形状 &amp; 间距
+
+- 圆角：none 0px / xs 2px / sm 6px
+- 间距：xs 4px / sm 8px / md 16px / lg 24px / xl 40px / section 80px
+
+## 用前先读（5 条铁律）
+
+1. 主色 `#9A2B2B` 只给关键 CTA 与强调，克制使用。
+2. 复现完整 DESIGN.md 里 `## Signature Moment` 写死的签名时刻。
+3. 中文字体栈末尾必带系统兜底，中文不用日文字体渲染。
+4. 不碰紫蓝俗套渐变，不做居中卡片三件套。
+5. 交付前对照 `## Do's and Don'ts` 自查，跑 `heige-design lint gugong-red` 确认 0 error。
+
+&gt; 完整设定（组件规格 / 图像语言 / 演示系统 / Agent 配方卡）见同目录 `DESIGN.md`。
+</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>@theme {
   --color-primary: #9a2b2b;
   --color-on-primary: #f5efe1;
   --color-ink: #241a15;
@@ -502,7 +542,7 @@ components:
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="2" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>{
   &quot;theme&quot;: {
     &quot;extend&quot;: {
       &quot;colors&quot;: {
@@ -617,7 +657,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="3" style="display:none"><button class="copy">复制</button><pre>:root {
+</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>:root {
   --color-primary: #9a2b2b;
   --color-on-primary: #f5efe1;
   --color-ink: #241a15;
@@ -671,7 +711,7 @@ components:
   --spacing-section: 80px;
 }
 
-</pre></div><div class="codebox tabc" data-i="4" style="display:none"><button class="copy">复制</button><pre>{
+</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre>{
   &quot;$schema&quot;: &quot;https://www.designtokens.org/schemas/2025.10/format.json&quot;,
   &quot;$description&quot;: &quot;Neo-Oriental heritage system founded on the deep oxblood of a palace wall (#9A2B2B), edged in bright imperial gold and grounded by dai-blue roof shadow. Heavy Song-serif titles stand vertically like an unrolled handscroll while a cinnabar seal breaks a hairline gold lattice frame as the signing stamp. Sharp zero-radius blocks, wide silk-paper whitespace, and high-contrast Didot-style numerals carry archival serials. Built for museums, cultural heritage, premium heritage craft, and archival collections. Ceremonial, restrained, unmistakably imperial, never a template. Signed HeiGe-Design.&quot;,
   &quot;color&quot;: {
@@ -970,7 +1010,7 @@ components:
     }
   }
 }
-</pre></div><div class="codebox tabc" data-i="5" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 故宫红金（gugong-red · 东方新中式）
+</pre></div><div class="codebox tabc" data-i="6" style="display:none"><button class="copy">复制</button><pre># Agent 提示词 · 故宫红金（gugong-red · 东方新中式）
 
 你是资深前端设计工程师。请严格基于 HeiGe-Design 的 `gugong-red` 设定集，为我的【产品/页面】生成一版可运行页面。
 
@@ -988,6 +1028,25 @@ components:
 - 若要演示版，用 DESIGN.md 里的 `slide-*` 组件产出 16:9 deck（一份设定集同时驱动界面和演示）。
 
 可选一键校验：`heige-design lint gugong-red` / 导出其它格式：`heige-design export gugong-red --format tailwind-v3|dtcg|css-vars`。
+
+---
+
+## 速查卡（自动生成，可直接抄）
+
+**色卡**
+- 正文 ink：`#241A15`
+- 次要 muted：`#746351`
+- 底色 canvas：`#F3EAD6`
+- 卡片面 surface：`#FBF6EA`
+- 分隔线 hairline：`#D9C7A0`
+- 主色 primary：`#9A2B2B`（只给关键 CTA / 强调，克制使用）
+- 辅助 gold：`#C9A227`
+- 辅助 dai：`#2E3A4A`
+- 辅助 seal：`#BE3626`
+
+**字体**：标题 `Noto Serif SC` / 正文 `Inter` / 数字 `Playfair Display`
+
+**相邻风格（同家族，可换选）**：`moxi-void`（水墨留白） · `song-celadon`（宋瓷极简） · `guochao-cyber`（赛博国潮）
 </pre></div>
 </div>
 
