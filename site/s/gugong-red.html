@@ -36,7 +36,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 </style></head><body>
 <div class="wrap">
 <div class="top"><a href="../index.html">← 全部 50 套</a> · 东方新中式</div>
-<div class="hero"><div class="fam">东方新中式</div><h1>故宫红金<span class="badge">✓ lint 0 error / 13w</span></h1><div class="slug">gugong-red · GugongRed-design-system</div><p class="desc">Neo-Oriental heritage system founded on the deep oxblood of a palace wall (#9A2B2B), edged in bright imperial gold and grounded by dai-blue roof shadow. Heavy Song-serif titles stand vertically like an unrolled handscroll while a cinnabar seal breaks a hairline gold lattice frame as the signing stamp. Sharp zero-radius blocks, wide silk-paper whitespace, and high-contrast Didot-style numerals carry archival serials. Built for museums, cultural heritage, premium heritage craft, and archival collections. Ceremonial, restrained, unmistakably imperial, never a template. Signed HeiGe-Design.</p></div>
+<div class="hero"><div class="fam">东方新中式</div><h1>故宫红金<span class="badge">✓ lint 0 error</span></h1><div class="slug">gugong-red · GugongRed-design-system</div><p class="desc">Neo-Oriental heritage system founded on the deep oxblood of a palace wall (#9A2B2B), edged in bright imperial gold and grounded by dai-blue roof shadow. Heavy Song-serif titles stand vertically like an unrolled handscroll while a cinnabar seal breaks a hairline gold lattice frame as the signing stamp. Sharp zero-radius blocks, wide silk-paper whitespace, and high-contrast Didot-style numerals carry archival serials. Built for museums, cultural heritage, premium heritage craft, and archival collections. Ceremonial, restrained, unmistakably imperial, never a template. Signed HeiGe-Design.</p></div>
 
 <div class="cols">
   <div class="card" style="--bg:#F3EAD6;--ink:#241A15;--pri:#9A2B2B;--onpri:#F5EFE1;--acc:#C9A227;--surf:#FBF6EA;--muted:#746351;--line:#D9C7A0;--r:6px;--dff:"Noto Serif SC", "Songti SC", "STSong", serif;--bff:Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Noto Serif SC", "Songti SC", "STSong", serif"><h3>UI 预览（token 驱动）</h3><div class="pv">
@@ -46,7 +46,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
     <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
   </div>
   <div class="pal"><i style="background:#9A2B2B"></i><i style="background:#F5EFE1"></i><i style="background:#241A15"></i><i style="background:#F3EAD6"></i><i style="background:#FBF6EA"></i><i style="background:#746351"></i><i style="background:#D9C7A0"></i><i style="background:#C9A227"></i></div>
-  <div class="swrap"><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">button-ghost</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">card-lattice</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">seal-mark</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">collection-tag</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">footer</span></div>
+  <div class="swrap"><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">divider-hairline</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">divider-gold</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">button-ghost</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">card-lattice</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">stat-block</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">seal-mark</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">collection-tag</span><span class="cc" style="background:#FBF6EA;color:#241A15;border:1px solid var(--line)">footer</span></div>
   </div>
   <div class="card" style="--bg:#F3EAD6;--ink:#241A15;--pri:#9A2B2B;--onpri:#F5EFE1;--acc:#C9A227;--surf:#FBF6EA;--muted:#746351;--line:#D9C7A0;--r:6px;--dff:"Noto Serif SC", "Songti SC", "STSong", serif;--bff:Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;--mff:"Noto Serif SC", "Songti SC", "STSong", serif"><h3>Deck 预览（slide-* 组件）</h3>
     <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">故宫红金</div></div>
@@ -186,60 +186,60 @@ spacing:
 
 components:
   # —— UI 界面组件 ——
+  divider-hairline:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    height: 1px
+    width: 100%
+  divider-gold:
+    backgroundColor: &quot;{colors.gold}&quot;
+    height: 1px
+    width: 100%
   nav-bar:
     backgroundColor: &quot;{colors.canvas}&quot;
     textColor: &quot;{colors.ink}&quot;
     typography: &quot;{typography.heading}&quot;
-    borderColor: &quot;{colors.hairline}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;{spacing.md} {spacing.xl}&quot;
   button-primary:
     backgroundColor: &quot;{colors.primary}&quot;
     textColor: &quot;{colors.on-primary}&quot;
     typography: &quot;{typography.button}&quot;
-    borderColor: &quot;{colors.gold}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;14px 32px&quot;
   button-ghost:
     backgroundColor: &quot;{colors.canvas}&quot;
     textColor: &quot;{colors.primary}&quot;
     typography: &quot;{typography.button}&quot;
-    borderColor: &quot;{colors.primary}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;14px 32px&quot;
   card-lattice:
     backgroundColor: &quot;{colors.surface}&quot;
     textColor: &quot;{colors.ink}&quot;
     typography: &quot;{typography.body}&quot;
-    borderColor: &quot;{colors.gold}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;{spacing.lg}&quot;
   stat-block:
     backgroundColor: &quot;{colors.surface}&quot;
     textColor: &quot;{colors.ink}&quot;
     typography: &quot;{typography.numeral}&quot;
-    borderColor: &quot;{colors.hairline}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;{spacing.lg}&quot;
   seal-mark:
     backgroundColor: &quot;{colors.seal}&quot;
     textColor: &quot;{colors.on-primary}&quot;
     typography: &quot;{typography.heading}&quot;
-    borderColor: &quot;{colors.gold}&quot;
     rounded: &quot;{rounded.xs}&quot;
     padding: &quot;{spacing.xs}&quot;
   collection-tag:
     backgroundColor: &quot;{colors.surface}&quot;
     textColor: &quot;{colors.primary}&quot;
     typography: &quot;{typography.eyebrow}&quot;
-    borderColor: &quot;{colors.gold}&quot;
     rounded: &quot;{rounded.sm}&quot;
     padding: &quot;{spacing.xs} {spacing.sm}&quot;
   footer:
     backgroundColor: &quot;{colors.canvas}&quot;
     textColor: &quot;{colors.muted}&quot;
     typography: &quot;{typography.caption}&quot;
-    borderColor: &quot;{colors.gold}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;{spacing.xl}&quot;
   # —— slide 演示组件（16:9 演示版式）——
@@ -247,35 +247,30 @@ components:
     backgroundColor: &quot;{colors.canvas}&quot;
     textColor: &quot;{colors.ink}&quot;
     typography: &quot;{typography.display-xl}&quot;
-    borderColor: &quot;{colors.gold}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;{spacing.section}&quot;
   slide-section-divider:
     backgroundColor: &quot;{colors.dai}&quot;
     textColor: &quot;{colors.on-primary}&quot;
     typography: &quot;{typography.numeral}&quot;
-    borderColor: &quot;{colors.gold}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;{spacing.section}&quot;
   slide-stat-hero:
     backgroundColor: &quot;{colors.dai}&quot;
     textColor: &quot;{colors.on-primary}&quot;
     typography: &quot;{typography.numeral}&quot;
-    borderColor: &quot;{colors.gold}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;{spacing.section}&quot;
   slide-quote:
     backgroundColor: &quot;{colors.canvas}&quot;
     textColor: &quot;{colors.primary}&quot;
     typography: &quot;{typography.display-lg}&quot;
-    borderColor: &quot;{colors.hairline}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;{spacing.section}&quot;
   slide-closing:
     backgroundColor: &quot;{colors.primary}&quot;
     textColor: &quot;{colors.on-primary}&quot;
     typography: &quot;{typography.display-lg}&quot;
-    borderColor: &quot;{colors.gold}&quot;
     rounded: &quot;{rounded.none}&quot;
     padding: &quot;{spacing.section}&quot;
 ---

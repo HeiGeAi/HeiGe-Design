@@ -84,17 +84,18 @@ spacing:
   section: 120px
 
 components:
+  divider-hairline: { backgroundColor: "{colors.hairline}", height: 1px, width: 100% }
   brand-monogram: { backgroundColor: "{colors.canvas}", textColor: "{colors.ink}", typography: "{typography.monogram}", rounded: "{rounded.none}", padding: "{spacing.section}" }
-  nav-bar: { backgroundColor: "{colors.canvas}", textColor: "{colors.ink}", borderColor: "{colors.hairline}", typography: "{typography.eyebrow}", rounded: "{rounded.none}", padding: "{spacing.lg} {spacing.xl}" }
-  card-collection: { backgroundColor: "{colors.surface}", textColor: "{colors.ink}", borderColor: "{colors.hairline}", typography: "{typography.heading}", rounded: "{rounded.none}", padding: "{spacing.xl}" }
+  nav-bar: { backgroundColor: "{colors.canvas}", textColor: "{colors.ink}", typography: "{typography.eyebrow}", rounded: "{rounded.none}", padding: "{spacing.lg} {spacing.xl}" }
+  card-collection: { backgroundColor: "{colors.surface}", textColor: "{colors.ink}", typography: "{typography.heading}", rounded: "{rounded.none}", padding: "{spacing.xl}" }
   card-lookbook: { backgroundColor: "{colors.primary}", textColor: "{colors.on-primary}", typography: "{typography.body}", rounded: "{rounded.md}", padding: "{spacing.lg}" }
   button-primary: { backgroundColor: "{colors.primary}", textColor: "{colors.on-primary}", typography: "{typography.button}", rounded: "{rounded.none}", padding: "{spacing.sm} {spacing.xl}" }
-  button-secondary: { backgroundColor: "{colors.canvas}", textColor: "{colors.wine}", borderColor: "{colors.wine}", typography: "{typography.button}", rounded: "{rounded.none}", padding: "{spacing.sm} {spacing.xl}" }
+  button-secondary: { backgroundColor: "{colors.canvas}", textColor: "{colors.wine}", typography: "{typography.button}", rounded: "{rounded.none}", padding: "{spacing.sm} {spacing.xl}" }
   stat-block: { backgroundColor: "{colors.canvas}", textColor: "{colors.ink}", typography: "{typography.body-mono}", rounded: "{rounded.none}", padding: "{spacing.lg}" }
   seal-maison: { backgroundColor: "{colors.wine}", textColor: "{colors.on-primary}", typography: "{typography.eyebrow}", rounded: "{rounded.pill}", padding: "{spacing.md}" }
-  tag-season: { backgroundColor: "{colors.canvas}", textColor: "{colors.muted}", borderColor: "{colors.hairline}", typography: "{typography.caption}", rounded: "{rounded.md}", padding: "{spacing.xs} {spacing.sm}" }
-  input-newsletter: { backgroundColor: "{colors.surface}", textColor: "{colors.ink}", borderColor: "{colors.hairline}", typography: "{typography.caption}", rounded: "{rounded.sm}", padding: "{spacing.sm} {spacing.md}" }
-  footer: { backgroundColor: "{colors.primary}", textColor: "{colors.on-primary}", borderColor: "{colors.hairline}", typography: "{typography.caption}", rounded: "{rounded.none}", padding: "{spacing.section} {spacing.xl}" }
+  tag-season: { backgroundColor: "{colors.canvas}", textColor: "{colors.muted}", typography: "{typography.caption}", rounded: "{rounded.md}", padding: "{spacing.xs} {spacing.sm}" }
+  input-newsletter: { backgroundColor: "{colors.surface}", textColor: "{colors.ink}", typography: "{typography.caption}", rounded: "{rounded.sm}", padding: "{spacing.sm} {spacing.md}" }
+  footer: { backgroundColor: "{colors.primary}", textColor: "{colors.on-primary}", typography: "{typography.caption}", rounded: "{rounded.none}", padding: "{spacing.section} {spacing.xl}" }
   slide-cover: { backgroundColor: "{colors.primary}", textColor: "{colors.on-primary}", typography: "{typography.display-xl}", rounded: "{rounded.none}", padding: "{spacing.section}" }
   slide-section-divider: { backgroundColor: "{colors.canvas}", textColor: "{colors.ink}", typography: "{typography.display-lg}", rounded: "{rounded.none}", padding: "{spacing.section}" }
   slide-stat-hero: { backgroundColor: "{colors.canvas}", textColor: "{colors.ink}", typography: "{typography.body-mono}", rounded: "{rounded.none}", padding: "{spacing.section}" }
