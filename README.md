@@ -12,15 +12,22 @@
 |---|---|
 | ![落地页](assets/previews/flagship-nocturne-teal.webp) | ![演示](assets/previews/deck-nocturne-teal.webp) |
 
-每套都有一个详情页：token 驱动预览、调色板、组件、Do/Don't 验收清单、五格式一键复制、lint 徽章、旗舰全页入口。
+每套都有一个详情页：token 驱动预览、调色板、组件、Do/Don't 验收清单、Compact 速览、六档一键复制、lint 徽章、旗舰全页入口。
 
 ![详情页](assets/previews/detail-nocturne-teal.webp)
 
+再看两套气质完全相反的旗舰，证明同一套方法能一头扎进暖纸高定，也能一头冲进演唱会极繁：
+
+| 象牙工坊 `atelier-bone` · 暖纸金线高定 | 声浪 `soundwave-wrapped` · 演唱会极繁 |
+|---|---|
+| ![atelier-bone 落地页](assets/previews/flagship-atelier-bone.webp) | ![soundwave 落地页](assets/previews/flagship-soundwave-wrapped.webp) |
+| ![atelier-bone 演示](assets/previews/deck-atelier-bone.webp) | ![soundwave 演示](assets/previews/deck-soundwave-wrapped.webp) |
+
 从任意网站提取设计规范也是一条命令。示例 `ingested/stripe-demo/` 就是 `heige-design ingest https://stripe.com` 的产物，纯 CSSOM 提取出主色 `#533afd`，不依赖任何付费 API。
 
-> 说明：仓库内 50 套里 `nocturne-teal / noir-vermilion / forge-anvil / moxi-void / boing-candy / onyx-gold` 六套带手工旗舰全页当质量标杆，其余 44 套是 token 驱动预览，随时可用 `heige-design build <slug>` 生成整页。
+> 说明：仓库内 50 套里 `nocturne-teal / noir-vermilion / forge-anvil / moxi-void / boing-candy / onyx-gold / atelier-bone / soundwave-wrapped` 八套带手工旗舰全页当质量标杆，其余 42 套是 token 驱动预览，随时可用 `heige-design build <slug>` 生成整页。
 >
-> **v1.1（2026-07-14）**：DESIGN.md 新增三个正文维度 —— `## Imagery`（图像语言，怎么处理照片 / 插画 / 图标 / 图表）、`## Agent 配方卡`（带精确 hex/px 的可粘贴组件配方）、`## 相邻风格`（库内选型交叉引用）；导出层新增自动派生的 `compact.md` 一屏速览与 agent-prompt 速查色卡。旗舰 `atelier-bone / nocturne-teal / moxi-void / soundwave-wrapped` 四套已补齐三节做样板，其余按需增量回填。
+> **v1.1（2026-07-14）**：DESIGN.md 新增三个正文维度：`## Imagery`（图像语言，怎么处理照片 / 插画 / 图标 / 图表）、`## Agent 配方卡`（带精确 hex/px 的可粘贴组件配方）、`## 相邻风格`（库内选型交叉引用）；导出层新增自动派生的 `compact.md` 一屏速览与 agent-prompt 速查色卡。旗舰 `atelier-bone / nocturne-teal / moxi-void / soundwave-wrapped` 四套补齐三节做样板，并配齐手工落地页 + 16:9 演示全套。
 
 ## 它是什么
 

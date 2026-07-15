@@ -1,0 +1,187 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOLIO · 封版夜 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#a98b4e; --on-primary:#1e1c18; --ink:#33302b; --canvas:#f3ede1;
+    --surface:#faf6ec; --muted:#6b655c; --hairline:#d9cfbd; --panel:#221e18;
+    --serif:'Cormorant Garamond',Georgia,'Noto Serif SC','Songti SC',serif;
+    --sans:'Inter','Helvetica Neue',Arial,'Noto Sans SC','PingFang SC',sans-serif;
+    --mono:'IBM Plex Mono',Menlo,Consolas,'Noto Sans SC',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:#c9c0ad;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow:hidden}
+  ::selection{background:rgba(169,139,78,.28)}
+  .deck{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden;
+    background:radial-gradient(120% 80% at 50% 0%,#d6cdb9,#c1b8a4 72%)}
+  .stage{position:relative;width:min(100vw,177.78vh);height:min(56.25vw,100vh);
+    background:var(--canvas);overflow:hidden;container-type:size;box-shadow:0 30px 90px rgba(60,50,30,.28)}
+
+  .slide{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(12px);
+    transition:opacity .5s ease,transform .5s ease;display:flex;flex-direction:column;justify-content:center;padding:9cqw;z-index:2}
+  .slide.on{opacity:1;pointer-events:auto;transform:none;z-index:3}
+  .eyebrow{font-family:var(--sans);font-size:1.15cqw;font-weight:500;letter-spacing:.5cqw;
+    text-transform:uppercase;color:var(--muted)}
+  .grule{height:1px;width:5cqw;background:var(--primary);margin-top:1cqw}
+  .nowrap{white-space:nowrap}
+  .foot-sig{position:absolute;left:9cqw;bottom:6cqw;display:flex;gap:2cqw;align-items:center}
+  .foot-sig .m{font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2cqw;color:var(--muted)}
+
+  /* 1 cover */
+  .cover{justify-content:flex-end}
+  .cover h1{font-family:var(--serif);font-weight:300;font-size:9cqw;line-height:1.0;letter-spacing:-.1cqw;color:var(--ink);margin-top:2cqw}
+  .cover h1 em{font-style:italic;color:var(--primary)}
+  .cover .kick{margin-bottom:2.4cqw}
+
+  /* 2 divider · the gilded folio */
+  .divider{background:var(--panel);color:var(--canvas);justify-content:center}
+  .divider .num{position:absolute;right:7cqw;top:50%;transform:translateY(-50%);font-family:var(--serif);font-weight:300;
+    font-size:44cqw;line-height:.7;color:transparent;-webkit-text-stroke:.12cqw rgba(169,139,78,.55);letter-spacing:-3cqw}
+  .divider .eyebrow{color:var(--primary)}
+  .divider .grule{background:var(--primary);width:7cqw}
+  .divider h2{font-family:var(--serif);font-weight:300;font-size:6cqw;line-height:1.05;color:var(--canvas);margin-top:2cqw}
+  .divider .baseline{position:absolute;left:9cqw;right:9cqw;bottom:16cqw;height:1px;background:rgba(169,139,78,.5)}
+
+  /* 3 stat-hero */
+  .stathero{align-items:center;text-align:center}
+  .stathero .top{font-family:var(--sans);font-size:1.3cqw;letter-spacing:.45cqw;text-transform:uppercase;color:var(--muted);margin-bottom:1cqw}
+  .numeral{font-family:var(--serif);font-weight:300;font-size:30cqw;line-height:.9;color:var(--ink);letter-spacing:-1cqw}
+  .numeral .u{font-size:9cqw;color:var(--primary)}
+  .stathero .uline{height:1px;width:16cqw;background:var(--primary);margin:1.4cqw auto 1.6cqw}
+  .stathero .unit{font-family:var(--sans);font-size:1.5cqw;letter-spacing:.3cqw;color:var(--muted)}
+
+  /* 4-6 point */
+  .point .kick{margin-bottom:2.4cqw}
+  .point h2{font-family:var(--serif);font-weight:300;font-size:7cqw;line-height:1.06;color:var(--ink);letter-spacing:-.1cqw}
+  .point h2 em{font-style:italic;color:var(--primary)}
+  .point .meta{margin-top:3.4cqw;display:flex;align-items:center;gap:1.6cqw;flex-wrap:wrap}
+  .chip{display:inline-flex;align-items:baseline;gap:.6cqw;padding:1cqw 1.8cqw;background:var(--surface);border:1px solid var(--hairline);border-radius:2px}
+  .chip .n{font-family:var(--serif);font-weight:400;font-size:2.6cqw;color:var(--ink)}
+  .chip .l{font-family:var(--sans);font-size:1cqw;letter-spacing:.2cqw;text-transform:uppercase;color:var(--muted)}
+  .point .arrow{font-family:var(--mono);color:var(--primary);font-size:1.8cqw}
+
+  /* 7 quote */
+  .quote{background:var(--panel);color:var(--canvas);align-items:center;text-align:center}
+  .quote .grule{background:var(--primary);width:6cqw;margin:0 auto 2.6cqw}
+  .quote blockquote{font-family:var(--serif);font-weight:300;font-size:5cqw;line-height:1.2;color:var(--canvas);max-width:74cqw;margin:0 auto}
+  .quote blockquote em{font-style:italic;color:var(--primary)}
+  .quote .attr{font-family:var(--sans);font-size:1.2cqw;letter-spacing:.4cqw;text-transform:uppercase;color:var(--primary);margin-top:3cqw}
+
+  /* 8 closing */
+  .closing{align-items:flex-start;justify-content:center}
+  .closing .grule{width:6cqw;margin-bottom:2cqw}
+  .closing h2{font-family:var(--serif);font-weight:300;font-size:6.6cqw;line-height:1.06;color:var(--ink);letter-spacing:-.12cqw}
+  .closing .plaque{display:inline-flex;align-items:center;gap:1cqw;margin-top:3.4cqw;padding:1.4cqw 2.8cqw;
+    background:var(--primary);color:var(--on-primary);font-family:var(--sans);font-size:1.4cqw;font-weight:500;letter-spacing:.2cqw;text-transform:uppercase}
+  .closing .url{font-family:var(--mono);font-size:1.2cqw;color:var(--muted);margin-top:2.4cqw;letter-spacing:.2cqw}
+
+  .counter{position:fixed;right:22px;bottom:16px;z-index:41;font-family:var(--mono);font-size:12px;letter-spacing:1.5px;color:#6b655c}
+  .counter b{color:#a98b4e}
+  .progress{position:fixed;left:0;right:0;bottom:0;height:2px;z-index:40}
+  .progress .fill{height:100%;width:0;background:#a98b4e;transition:width .4s ease}
+  .navbtns{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:41;display:flex;gap:8px}
+  .navbtns button{pointer-events:auto;cursor:pointer;width:34px;height:30px;border:1px solid var(--hairline);
+    background:rgba(250,246,236,.9);color:#6b655c;font-family:var(--mono);font-size:14px}
+  .navbtns button:hover{color:var(--ink);border-color:var(--primary)}
+  .hint{position:fixed;left:22px;bottom:16px;z-index:41;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:#9c9488}
+  @media (max-width:640px){.hint{display:none}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.slide{transition:opacity .2s linear}}
+</style>
+
+<div class="deck"><div class="stage" id="stage">
+
+  <section class="slide cover on">
+    <div class="kick"><span class="eyebrow">封版夜 · 二〇二六</span><div class="grule"></div></div>
+    <h1>留白，<br>是<em>值得收藏</em>的作品。</h1>
+    <div class="foot-sig"><span class="m">象牙工坊 / FOLIO</span><span class="m">HeiGe-Design</span></div>
+  </section>
+
+  <section class="slide divider">
+    <div class="num">01</div>
+    <span class="eyebrow">第一辑</span><div class="grule"></div>
+    <h2>先说，为什么<br>只印一次。</h2>
+    <div class="baseline"></div>
+  </section>
+
+  <section class="slide stathero">
+    <div class="top">每一版限量</div>
+    <div class="numeral">1<span class="u">/50</span></div>
+    <div class="uline"></div>
+    <div class="unit">压印一次，签边封版，不再加印</div>
+  </section>
+
+  <section class="slide point">
+    <div class="kick"><span class="eyebrow">02 · 选纸 · The Paper</span><div class="grule"></div></div>
+    <h2>先有<em>象牙纸</em>，<br>才有那道墨。</h2>
+    <div class="meta">
+      <span class="chip"><span class="n">300</span><span class="l">克棉纸</span></span>
+      <span class="arrow">→</span>
+      <span class="chip"><span class="n">手工</span><span class="l">签边</span></span>
+      <span class="chip"><span class="n">128</span><span class="l">辑</span></span>
+    </div>
+  </section>
+
+  <section class="slide point">
+    <div class="kick"><span class="eyebrow">03 · 一处金 · The Gold</span><div class="grule"></div></div>
+    <h2>全辑<em>一道金线</em>，<br>压在签边。</h2>
+    <div class="meta">
+      <span class="chip"><span class="n">1</span><span class="l">处金箔</span></span>
+      <span class="arrow">·</span>
+      <span class="chip"><span class="n">0</span><span class="l">多余装饰</span></span>
+    </div>
+  </section>
+
+  <section class="slide point">
+    <div class="kick"><span class="eyebrow">04 · 留白 · The Void</span><div class="grule"></div></div>
+    <h2>敢留空，<br>才配称<em>典藏</em>。</h2>
+    <div class="meta">
+      <span class="chip"><span class="n">40</span><span class="l">城藏家</span></span>
+      <span class="chip"><span class="n">36</span><span class="l">艺术家</span></span>
+    </div>
+  </section>
+
+  <section class="slide quote">
+    <div class="grule"></div>
+    <blockquote>售罄之后，<em>空白</em><br>成了作品的一部分。</blockquote>
+    <div class="attr">FOLIO 工坊守则 · 第二条</div>
+  </section>
+
+  <section class="slide closing">
+    <div class="grule"></div>
+    <h2>辑 002，<br>只剩四版。</h2>
+    <span class="plaque">预定封版辑 ↗</span>
+    <div class="url">folio.editions</div>
+    <div class="foot-sig"><span class="m">Designed by HeiGe-Design · atelier-bone</span></div>
+  </section>
+
+</div></div>
+
+<div class="progress"><div class="fill" id="fill"></div></div>
+<div class="counter"><b id="cur">01</b> / <span id="tot">08</span></div>
+<div class="navbtns"><button id="prev" aria-label="上一页">←</button><button id="next" aria-label="下一页">→</button></div>
+<div class="hint">← → 翻页 · SPACE 前进</div>
+
+<script>
+  (function(){
+    var slides=[].slice.call(document.querySelectorAll('.slide')),i=0,n=slides.length;
+    var cur=document.getElementById('cur'),fill=document.getElementById('fill');
+    document.getElementById('tot').textContent=String(n).padStart(2,'0');
+    function pad(x){return String(x+1).padStart(2,'0');}
+    function show(x){i=Math.max(0,Math.min(n-1,x));slides.forEach(function(s,k){s.classList.toggle('on',k===i);});
+      cur.textContent=pad(i);fill.style.width=(i/(n-1)*100)+'%';}
+    window.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key==='Enter'){e.preventDefault();show(i+1);}
+      else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1);}
+      else if(e.key==='Home'){show(0);}else if(e.key==='End'){show(n-1);}});
+    document.getElementById('next').addEventListener('click',function(){show(i+1);});
+    document.getElementById('prev').addEventListener('click',function(){show(i-1);});
+    var x0=null;window.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+    window.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;
+      if(Math.abs(dx)>50){dx<0?show(i+1):show(i-1);}x0=null;},{passive:true});
+    show(0);
+  })();
+</script>

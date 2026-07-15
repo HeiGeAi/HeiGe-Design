@@ -1,0 +1,198 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>声浪 SOUNDWAVE · 2026 年度发布</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#FF2D95; --on-primary:#140F14; --ink:#F7F4EC; --canvas:#0E0C14;
+    --surface:#1B1826; --muted:#ADA8BC; --hairline:#2E2B3C; --volt:#FFE500; --cobalt:#1E4DFF;
+    --disp:'Anton',Impact,'Noto Sans SC','PingFang SC',sans-serif;
+    --head:'Space Grotesk','Inter','Noto Sans SC',sans-serif;
+    --mono:'Space Mono','Noto Sans SC',ui-monospace,monospace;
+    --body:'Inter','Noto Sans SC',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:#050409;color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow:hidden}
+  ::selection{background:rgba(255,45,149,.32)}
+  .deck{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#151020,#050409 72%)}
+  .stage{position:relative;width:min(100vw,177.78vh);height:min(56.25vw,100vh);
+    background:var(--canvas);overflow:hidden;container-type:size;box-shadow:0 0 0 1px var(--hairline),0 40px 120px rgba(0,0,0,.6)}
+
+  .slide{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(14px);
+    transition:opacity .5s ease,transform .5s ease;display:flex;flex-direction:column;justify-content:center;padding:9cqw;z-index:2}
+  .slide.on{opacity:1;pointer-events:auto;transform:none;z-index:3}
+  .eyebrow{font-family:var(--mono);font-size:1.1cqw;font-weight:700;letter-spacing:.35cqw;text-transform:uppercase;color:var(--muted)}
+  .eyebrow .p{color:var(--primary)}
+  .nowrap{white-space:nowrap}
+  .tag{display:inline-block;font-family:var(--mono);font-size:1cqw;font-weight:700;letter-spacing:.2cqw;text-transform:uppercase;
+    background:var(--volt);color:var(--on-primary);padding:.5cqw 1.2cqw;border-radius:9999px;transform:rotate(-3deg);width:max-content}
+  .foot-sig{position:absolute;left:9cqw;bottom:6cqw;font-family:var(--mono);font-size:1.05cqw;letter-spacing:.2cqw;color:var(--muted)}
+  .foot-sig b{color:var(--primary)}
+
+  /* equalizer */
+  .eq{display:flex;align-items:flex-end;gap:.5cqw;height:10cqw}
+  .eq i{display:block;width:1cqw;height:100%;transform-origin:bottom;border-radius:.2cqw;animation:bounce 1.1s ease-in-out infinite}
+  .eq i:nth-child(3n+1){background:var(--primary)}.eq i:nth-child(3n+2){background:var(--volt)}.eq i:nth-child(3n+3){background:var(--cobalt)}
+  .eq i:nth-child(2){animation-delay:-.5s}.eq i:nth-child(3){animation-delay:-.8s}.eq i:nth-child(4){animation-delay:-.1s}
+  .eq i:nth-child(5){animation-delay:-.6s}.eq i:nth-child(6){animation-delay:-.35s}.eq i:nth-child(7){animation-delay:-.75s}
+  .eq i:nth-child(8){animation-delay:-.15s}.eq i:nth-child(9){animation-delay:-.55s}.eq i:nth-child(10){animation-delay:-.9s}
+  @keyframes bounce{0%,100%{transform:scaleY(.28)}50%{transform:scaleY(1)}}
+
+  /* 1 cover · pink flood */
+  .cover{background:var(--primary);color:var(--on-primary)}
+  .cover .tag{background:var(--on-primary);color:var(--volt)}
+  .cover h1{font-family:var(--disp);font-size:15cqw;line-height:.86;letter-spacing:-.2cqw;text-transform:uppercase;margin-top:2.4cqw}
+  .cover .zh{font-family:var(--head);font-weight:700;font-size:2.6cqw;margin-top:2cqw}
+  .cover .eq{position:absolute;right:9cqw;bottom:6cqw;height:14cqw;opacity:.9}
+  .cover .foot-sig{color:rgba(20,15,20,.7)}.cover .foot-sig b{color:var(--on-primary)}
+
+  /* 2 divider · cobalt */
+  .divider{background:var(--cobalt)}
+  .divider .chapno{font-family:var(--disp);font-size:24cqw;line-height:.8;color:rgba(255,255,255,.14)}
+  .divider .row{display:flex;align-items:flex-end;gap:3cqw}
+  .divider h2{font-family:var(--head);font-weight:700;font-size:5.6cqw;line-height:1.02;color:var(--ink);margin-bottom:2cqw}
+  .divider .eyebrow{margin-bottom:1.4cqw}
+
+  /* 3 stat-hero · volt flood, giant numeral burst */
+  .stathero{background:var(--volt);color:var(--on-primary);align-items:center;text-align:center}
+  .stathero .top{font-family:var(--mono);font-size:1.2cqw;font-weight:700;letter-spacing:.42cqw;text-transform:uppercase;margin-bottom:.6cqw}
+  .numeral{font-family:var(--disp);font-size:34cqw;line-height:.82;letter-spacing:-.6cqw}
+  .stathero .unit{font-family:var(--head);font-weight:700;font-size:1.9cqw;margin-top:1.4cqw}
+  .stathero .eq{position:absolute;left:6cqw;bottom:6cqw;height:9cqw;opacity:.55}
+
+  /* 4-6 point */
+  .point .eyebrow{margin-bottom:2.4cqw}
+  .point h2{font-family:var(--head);font-weight:700;font-size:6.4cqw;line-height:1.0;letter-spacing:-.14cqw;color:var(--ink)}
+  .point h2 .p{color:var(--primary)}.point h2 .v{color:var(--volt)}
+  .point .meta{margin-top:3.4cqw;display:flex;align-items:center;gap:1.4cqw;flex-wrap:wrap}
+  .chip{display:inline-flex;align-items:baseline;gap:.6cqw;padding:1cqw 1.8cqw;border-radius:.8cqw;background:var(--surface);border:1px solid var(--hairline)}
+  .chip .n{font-family:var(--disp);font-size:3cqw;color:var(--primary)}
+  .chip.v .n{color:var(--volt)}.chip.c .n{color:var(--cobalt)}
+  .chip .l{font-family:var(--mono);font-size:1cqw;letter-spacing:.2cqw;text-transform:uppercase;color:var(--muted)}
+  .point .arrow{font-family:var(--mono);color:var(--muted);font-size:1.8cqw}
+
+  /* 7 quote */
+  .quote{align-items:center;text-align:center}
+  .quote .mark{font-family:var(--disp);font-size:16cqw;line-height:.5;color:var(--primary);height:8cqw}
+  .quote blockquote{font-family:var(--head);font-weight:700;font-size:5cqw;line-height:1.14;color:var(--ink);max-width:78cqw;margin:2cqw auto 0}
+  .quote blockquote .p{color:var(--primary)}
+  .quote .attr{font-family:var(--mono);font-size:1.3cqw;letter-spacing:.3cqw;color:var(--muted);margin-top:3cqw}
+
+  /* 8 closing · pink flood */
+  .closing{background:var(--primary);color:var(--on-primary);justify-content:center}
+  .closing .eyebrow{color:rgba(20,15,20,.65)}
+  .closing h2{font-family:var(--disp);font-size:9cqw;line-height:.9;text-transform:uppercase;letter-spacing:-.2cqw;margin-top:1.6cqw}
+  .closing .cta{display:inline-flex;align-items:center;gap:.8cqw;margin-top:3.4cqw;padding:1.3cqw 2.8cqw;border-radius:9999px;
+    background:var(--on-primary);color:var(--volt);font-family:var(--head);font-weight:700;font-size:1.6cqw}
+  .closing .url{font-family:var(--mono);font-size:1.3cqw;color:rgba(20,15,20,.7);margin-top:2cqw}
+  .closing .foot-sig{color:rgba(20,15,20,.7)}.closing .foot-sig b{color:var(--on-primary)}
+
+  .counter{position:fixed;right:22px;bottom:16px;z-index:41;font-family:var(--mono);font-size:12px;letter-spacing:1.5px;color:var(--muted)}
+  .counter b{color:var(--primary)}
+  .progress{position:fixed;left:0;right:0;bottom:0;height:2px;z-index:40}
+  .progress .fill{height:100%;width:0;background:var(--primary);transition:width .4s ease}
+  .navbtns{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:41;display:flex;gap:8px}
+  .navbtns button{pointer-events:auto;cursor:pointer;width:34px;height:30px;border-radius:8px;background:rgba(27,24,38,.9);
+    border:1px solid var(--hairline);color:var(--muted);font-family:var(--mono);font-size:14px}
+  .navbtns button:hover{color:var(--ink);border-color:var(--primary)}
+  .hint{position:fixed;left:22px;bottom:16px;z-index:41;font-family:var(--mono);font-size:11px;letter-spacing:1px;color:#5a5568}
+  @media (max-width:640px){.hint{display:none}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.slide{transition:opacity .2s linear}.eq i{transform:scaleY(.7)}}
+</style>
+
+<div class="deck"><div class="stage" id="stage">
+
+  <section class="slide cover on">
+    <span class="tag">2026 Wrapped</span>
+    <h1>声浪<br>年度发布</h1>
+    <div class="zh">你的一年，听出来了</div>
+    <div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="foot-sig">声浪 / SOUNDWAVE · <b>HeiGe-Design</b></div>
+  </section>
+
+  <section class="slide divider">
+    <div class="row">
+      <div class="chapno">01</div>
+      <div><div class="eyebrow">// 先看总量</div><h2>这一年，<br>你听了多久。</h2></div>
+    </div>
+  </section>
+
+  <section class="slide stathero">
+    <div class="top">// 全年播放总时长</div>
+    <div class="numeral">42.8K</div>
+    <div class="unit">分钟 · 够绕地球听两圈</div>
+    <div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </section>
+
+  <section class="slide point">
+    <div class="eyebrow">// 02 · <span class="p">年度主唱</span> · Top Artist</div>
+    <h2>有一个人，<br>陪你<span class="p">整整一年</span>。</h2>
+    <div class="meta">
+      <span class="chip"><span class="n">No.1</span><span class="l">年度歌手</span></span>
+      <span class="arrow">→</span>
+      <span class="chip v"><span class="n">1,204</span><span class="l">位歌手里</span></span>
+    </div>
+  </section>
+
+  <section class="slide point">
+    <div class="eyebrow">// 03 · <span class="p">深夜单曲</span> · Late Night</div>
+    <h2>那首歌，<br>你放了<span class="v">318 遍</span>。</h2>
+    <div class="meta">
+      <span class="chip v"><span class="n">318</span><span class="l">遍循环</span></span>
+      <span class="chip c"><span class="n">0-4</span><span class="l">点高发</span></span>
+    </div>
+  </section>
+
+  <section class="slide point">
+    <div class="eyebrow">// 04 · <span class="p">你的段位</span> · Rank</div>
+    <h2>你的耳朵，<br>排进<span class="p">前 1%</span>。</h2>
+    <div class="meta">
+      <span class="chip"><span class="n">TOP 1%</span><span class="l">听歌时长</span></span>
+      <span class="chip c"><span class="n">12</span><span class="l">类风格</span></span>
+    </div>
+  </section>
+
+  <section class="slide quote">
+    <div class="mark">&ldquo;</div>
+    <blockquote>一年的耳朵，<br><span class="p">一张卡就炸出来。</span></blockquote>
+    <div class="attr">— 声浪年度档案</div>
+  </section>
+
+  <section class="slide closing">
+    <div class="eyebrow">// 三秒生成，一键分享</div>
+    <h2>生成你的<br>2026 声浪</h2>
+    <span class="cta">立即生成 ↗</span>
+    <div class="url">soundwave.fm/2026</div>
+    <div class="foot-sig">Designed by <b>HeiGe-Design</b> · soundwave-wrapped</div>
+  </section>
+
+</div></div>
+
+<div class="progress"><div class="fill" id="fill"></div></div>
+<div class="counter"><b id="cur">01</b> / <span id="tot">08</span></div>
+<div class="navbtns"><button id="prev" aria-label="上一页">←</button><button id="next" aria-label="下一页">→</button></div>
+<div class="hint">← → 翻页 · SPACE 前进</div>
+
+<script>
+  (function(){
+    var slides=[].slice.call(document.querySelectorAll('.slide')),i=0,n=slides.length;
+    var cur=document.getElementById('cur'),fill=document.getElementById('fill');
+    document.getElementById('tot').textContent=String(n).padStart(2,'0');
+    function pad(x){return String(x+1).padStart(2,'0');}
+    function show(x){i=Math.max(0,Math.min(n-1,x));slides.forEach(function(s,k){s.classList.toggle('on',k===i);});
+      cur.textContent=pad(i);fill.style.width=(i/(n-1)*100)+'%';}
+    window.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key==='Enter'){e.preventDefault();show(i+1);}
+      else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1);}
+      else if(e.key==='Home'){show(0);}else if(e.key==='End'){show(n-1);}});
+    document.getElementById('next').addEventListener('click',function(){show(i+1);});
+    document.getElementById('prev').addEventListener('click',function(){show(i-1);});
+    var x0=null;window.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+    window.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;
+      if(Math.abs(dx)>50){dx<0?show(i+1):show(i-1);}x0=null;},{passive:true});
+    show(0);
+  })();
+</script>
