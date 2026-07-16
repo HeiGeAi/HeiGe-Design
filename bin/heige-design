@@ -13,7 +13,16 @@ const S = (p) => path.join(ROOT, 'scripts', p);
 const [cmd, ...args] = process.argv.slice(2);
 const flag = (n) => { const i = args.indexOf('--' + n); return i >= 0 ? (args[i + 1] || true) : null; };
 const dm = (slug) => path.join(SYS, slug, 'DESIGN.md');
-const node = (script, a = []) => spawnSync(process.execPath, [S(script), ...a], { stdio: 'inherit' });
+const run = (command, a = []) => {
+  const result = spawnSync(command, a, { stdio: 'inherit' });
+  if (result.error) {
+    console.error(result.error.message);
+    process.exit(1);
+  }
+  if (result.status !== 0) process.exit(result.status ?? 1);
+  return result;
+};
+const node = (script, a = []) => run(process.execPath, [S(script), ...a]);
 const die = (m) => { console.error(m); process.exit(1); };
 
 function manifest() { return JSON.parse(fs.readFileSync(path.join(ROOT, 'manifest.json'), 'utf8')); }
@@ -55,14 +64,14 @@ switch (cmd) {
   case 'lint': {
     const t = args[0] || 'all';
     if (t === 'all') node('validate.mjs');
-    else { if (!fs.existsSync(dm(t))) die(`没有这套: ${t}`); spawnSync(BIN, ['lint', dm(t)], { stdio: 'inherit' }); }
+    else { if (!fs.existsSync(dm(t))) die(`没有这套: ${t}`); run(BIN, ['lint', dm(t)]); }
     break;
   }
   case 'diff': {
     const [a, b] = args;
     if (!a || !b) die('用法: heige-design diff <slugA> <slugB>');
     const fa = fs.existsSync(a) ? a : dm(a), fb = fs.existsSync(b) ? b : dm(b);
-    spawnSync(BIN, ['diff', fa, fb], { stdio: 'inherit' });
+    run(BIN, ['diff', fa, fb]);
     break;
   }
   case 'ingest': {

@@ -88,60 +88,60 @@ spacing:
 
 components:
   # —— UI 界面组件 ——
+  divider-hairline:
+    backgroundColor: "{colors.hairline}"
+    height: 1px
+    width: 100%
+  divider-gold:
+    backgroundColor: "{colors.gold}"
+    height: 1px
+    width: 100%
   nav-bar:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.ink}"
     typography: "{typography.heading}"
-    borderColor: "{colors.hairline}"
     rounded: "{rounded.none}"
     padding: "{spacing.md} {spacing.xl}"
   button-primary:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.on-primary}"
     typography: "{typography.button}"
-    borderColor: "{colors.gold}"
     rounded: "{rounded.none}"
     padding: "14px 32px"
   button-ghost:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.primary}"
     typography: "{typography.button}"
-    borderColor: "{colors.primary}"
     rounded: "{rounded.none}"
     padding: "14px 32px"
   card-lattice:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
     typography: "{typography.body}"
-    borderColor: "{colors.gold}"
     rounded: "{rounded.none}"
     padding: "{spacing.lg}"
   stat-block:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
     typography: "{typography.numeral}"
-    borderColor: "{colors.hairline}"
     rounded: "{rounded.none}"
     padding: "{spacing.lg}"
   seal-mark:
     backgroundColor: "{colors.seal}"
     textColor: "{colors.on-primary}"
     typography: "{typography.heading}"
-    borderColor: "{colors.gold}"
     rounded: "{rounded.xs}"
     padding: "{spacing.xs}"
   collection-tag:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.primary}"
     typography: "{typography.eyebrow}"
-    borderColor: "{colors.gold}"
     rounded: "{rounded.sm}"
     padding: "{spacing.xs} {spacing.sm}"
   footer:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.muted}"
     typography: "{typography.caption}"
-    borderColor: "{colors.gold}"
     rounded: "{rounded.none}"
     padding: "{spacing.xl}"
   # —— slide 演示组件（16:9 演示版式）——
@@ -149,35 +149,30 @@ components:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.ink}"
     typography: "{typography.display-xl}"
-    borderColor: "{colors.gold}"
     rounded: "{rounded.none}"
     padding: "{spacing.section}"
   slide-section-divider:
     backgroundColor: "{colors.dai}"
     textColor: "{colors.on-primary}"
     typography: "{typography.numeral}"
-    borderColor: "{colors.gold}"
     rounded: "{rounded.none}"
     padding: "{spacing.section}"
   slide-stat-hero:
     backgroundColor: "{colors.dai}"
     textColor: "{colors.on-primary}"
     typography: "{typography.numeral}"
-    borderColor: "{colors.gold}"
     rounded: "{rounded.none}"
     padding: "{spacing.section}"
   slide-quote:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.primary}"
     typography: "{typography.display-lg}"
-    borderColor: "{colors.hairline}"
     rounded: "{rounded.none}"
     padding: "{spacing.section}"
   slide-closing:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.on-primary}"
     typography: "{typography.display-lg}"
-    borderColor: "{colors.gold}"
     rounded: "{rounded.none}"
     padding: "{spacing.section}"
 ---

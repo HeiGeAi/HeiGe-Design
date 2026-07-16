@@ -87,6 +87,10 @@ spacing:
   section: 88px
 
 components:
+  divider-hairline:
+    backgroundColor: "{colors.hairline}"
+    height: 1px
+    width: 100%
   button-primary:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.on-primary}"
@@ -96,27 +100,23 @@ components:
   button-secondary:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.accent-cyan}"
-    borderColor: "{colors.accent-cyan}"
     typography: "{typography.button}"
     rounded: "{rounded.pill}"
     padding: "{spacing.md} {spacing.xl}"
   nav-bar:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.ink}"
-    borderColor: "{colors.hairline}"
     typography: "{typography.eyebrow}"
     padding: "{spacing.lg} {spacing.xl}"
   card-stall:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
-    borderColor: "{colors.hairline}"
     typography: "{typography.heading}"
     rounded: "{rounded.lg}"
     padding: "{spacing.lg}"
   menu-row:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
-    borderColor: "{colors.hairline}"
     typography: "{typography.body}"
     rounded: "{rounded.sm}"
     padding: "{spacing.sm} {spacing.lg}"
@@ -135,7 +135,6 @@ components:
   footer:
     backgroundColor: "{colors.canvas}"
     textColor: "{colors.muted}"
-    borderColor: "{colors.hairline}"
     typography: "{typography.caption}"
     padding: "{spacing.xl} {spacing.xl}"
   slide-cover:

@@ -36,7 +36,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
 </style></head><body>
 <div class="wrap">
 <div class="top"><a href="../index.html">← 全部 50 套</a> · 张扬极繁</div>
-<div class="hero"><div class="fam">张扬极繁</div><h1>霓虹夜市<span class="badge">✓ lint 0 error / 5w</span></h1><div class="slug">neon-market · NeonMarket-design-system</div><p class="desc">NEON MARKET is a maximalist night-market signage system. A deep-night canvas gets ignited by four neon accents: signage red, lantern amber, tube cyan and magenta, stacked dense and slightly askew like an alley of glowing signboards. Heavy Archivo Black meets a Monoton neon-tube script and Space Mono price tags. The signature move is a wall of self-glowing stall signs that ignite on load. No purple gradients, no centered card trio.</p></div>
+<div class="hero"><div class="fam">张扬极繁</div><h1>霓虹夜市<span class="badge">✓ lint 0 error</span></h1><div class="slug">neon-market · NeonMarket-design-system</div><p class="desc">NEON MARKET is a maximalist night-market signage system. A deep-night canvas gets ignited by four neon accents: signage red, lantern amber, tube cyan and magenta, stacked dense and slightly askew like an alley of glowing signboards. Heavy Archivo Black meets a Monoton neon-tube script and Space Mono price tags. The signature move is a wall of self-glowing stall signs that ignite on load. No purple gradients, no centered card trio.</p></div>
 
 <div class="cols">
   <div class="card" style="--bg:#0d0b0f;--ink:#f7ede9;--pri:#ff2e4d;--onpri:#140b0d;--acc:#ff2e4d;--surf:#181419;--muted:#a89aa2;--line:#332b32;--r:8px;--dff:"Archivo Black", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Archivo", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, monospace"><h3>UI 预览（token 驱动）</h3><div class="pv">
@@ -46,7 +46,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
     <div class="stat"><span><b>48B</b>Processed</span><span><b>99.99%</b>Uptime</span><span><b>180+</b>Regions</span></div>
   </div>
   <div class="pal"><i style="background:#ff2e4d"></i><i style="background:#140b0d"></i><i style="background:#f7ede9"></i><i style="background:#0d0b0f"></i><i style="background:#181419"></i><i style="background:#a89aa2"></i><i style="background:#332b32"></i><i style="background:#22e6e6"></i></div>
-  <div class="swrap"><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">card-stall</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">menu-row</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">stat-price</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">badge-neon</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">footer</span></div>
+  <div class="swrap"><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">divider-hairline</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">button-primary</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">button-secondary</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">nav-bar</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">card-stall</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">menu-row</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">stat-price</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">badge-neon</span><span class="cc" style="background:#181419;color:#f7ede9;border:1px solid var(--line)">footer</span></div>
   </div>
   <div class="card" style="--bg:#0d0b0f;--ink:#f7ede9;--pri:#ff2e4d;--onpri:#140b0d;--acc:#ff2e4d;--surf:#181419;--muted:#a89aa2;--line:#332b32;--r:8px;--dff:"Archivo Black", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--bff:"Archivo", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;--mff:"Space Mono", "JetBrains Mono", ui-monospace, monospace"><h3>Deck 预览（slide-* 组件）</h3>
     <div class="slide"><div class="k">01 · KEYNOTE</div><div class="t">霓虹夜市</div></div>
@@ -169,6 +169,10 @@ spacing:
   section: 88px
 
 components:
+  divider-hairline:
+    backgroundColor: &quot;{colors.hairline}&quot;
+    height: 1px
+    width: 100%
   button-primary:
     backgroundColor: &quot;{colors.primary}&quot;
     textColor: &quot;{colors.on-primary}&quot;
@@ -178,27 +182,23 @@ components:
   button-secondary:
     backgroundColor: &quot;{colors.surface}&quot;
     textColor: &quot;{colors.accent-cyan}&quot;
-    borderColor: &quot;{colors.accent-cyan}&quot;
     typography: &quot;{typography.button}&quot;
     rounded: &quot;{rounded.pill}&quot;
     padding: &quot;{spacing.md} {spacing.xl}&quot;
   nav-bar:
     backgroundColor: &quot;{colors.canvas}&quot;
     textColor: &quot;{colors.ink}&quot;
-    borderColor: &quot;{colors.hairline}&quot;
     typography: &quot;{typography.eyebrow}&quot;
     padding: &quot;{spacing.lg} {spacing.xl}&quot;
   card-stall:
     backgroundColor: &quot;{colors.surface}&quot;
     textColor: &quot;{colors.ink}&quot;
-    borderColor: &quot;{colors.hairline}&quot;
     typography: &quot;{typography.heading}&quot;
     rounded: &quot;{rounded.lg}&quot;
     padding: &quot;{spacing.lg}&quot;
   menu-row:
     backgroundColor: &quot;{colors.surface}&quot;
     textColor: &quot;{colors.ink}&quot;
-    borderColor: &quot;{colors.hairline}&quot;
     typography: &quot;{typography.body}&quot;
     rounded: &quot;{rounded.sm}&quot;
     padding: &quot;{spacing.sm} {spacing.lg}&quot;
@@ -217,7 +217,6 @@ components:
   footer:
     backgroundColor: &quot;{colors.canvas}&quot;
     textColor: &quot;{colors.muted}&quot;
-    borderColor: &quot;{colors.hairline}&quot;
     typography: &quot;{typography.caption}&quot;
     padding: &quot;{spacing.xl} {spacing.xl}&quot;
   slide-cover:

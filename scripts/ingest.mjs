@@ -31,11 +31,67 @@ function findChrome(){
   return null;
 }
 const CHROME = findChrome();
-if (!CHROME) { console.error('未找到 chromium。请先安装：npx playwright install chromium（或设 HEIGE_CHROME 指向可执行文件）'); process.exit(1); }
 const url = process.argv[2];
 if (!url) { console.error('用法: node ingest.mjs <url> [slug]'); process.exit(1); }
 const host = new URL(url).hostname.replace(/^www\./, '');
 const slug = process.argv[3] || host.replace(/[^a-z0-9]+/gi, '-');
+if (!/^[a-z0-9](?:[a-z0-9-]{0,78}[a-z0-9])?$/i.test(slug)) {
+  console.error('slug 只能包含字母、数字和连字符，长度不超过 80，且首尾必须是字母或数字');
+  process.exit(1);
+}
+
+function lstatIfPresent(target) {
+  try { return fs.lstatSync(target); }
+  catch (error) {
+    if (error?.code === 'ENOENT') return null;
+    throw error;
+  }
+}
+
+function isInside(base, target) {
+  const relative = path.relative(base, target);
+  return relative === '' || (!relative.startsWith(`..${path.sep}`) && relative !== '..' && !path.isAbsolute(relative));
+}
+
+const ingestedRoot = path.join(ROOT, 'ingested');
+const rootEntry = lstatIfPresent(ingestedRoot);
+if (rootEntry?.isSymbolicLink()) {
+  console.error('ingested 根目录不能是软链接');
+  process.exit(1);
+}
+fs.mkdirSync(ingestedRoot, { recursive: true });
+const realRoot = fs.realpathSync(ROOT);
+const realIngestedRoot = fs.realpathSync(ingestedRoot);
+if (!isInside(realRoot, realIngestedRoot)) {
+  console.error('ingested 根目录必须位于仓库内');
+  process.exit(1);
+}
+
+const outDir = path.join(ingestedRoot, slug);
+const outFile = path.join(outDir, 'DESIGN.md');
+function assertSafeOutputDestination() {
+  const outEntry = lstatIfPresent(outDir);
+  if (outEntry?.isSymbolicLink()) {
+    console.error('输出目录不能是软链接');
+    process.exit(1);
+  }
+  if (outEntry && !outEntry.isDirectory()) {
+    console.error('输出路径必须是目录');
+    process.exit(1);
+  }
+  if (outEntry && !isInside(realIngestedRoot, fs.realpathSync(outDir))) {
+    console.error('输出目录必须位于 ingested 目录内');
+    process.exit(1);
+  }
+  const fileEntry = lstatIfPresent(outFile);
+  if (fileEntry?.isSymbolicLink()) {
+    console.error('输出文件不能是软链接');
+    process.exit(1);
+  }
+}
+assertSafeOutputDestination();
+
+if (!CHROME) { console.error('未找到 chromium。请先安装：npx playwright install chromium（或设 HEIGE_CHROME 指向可执行文件）'); process.exit(1); }
 
 // —— 颜色工具 ——
 const toHex = (r,g,b)=>'#'+[r,g,b].map(x=>Math.max(0,Math.min(255,x|0)).toString(16).padStart(2,'0')).join('');
@@ -115,7 +171,7 @@ const onPrimary = contrast({r:255,g:255,b:255},primary) >= contrast({r:17,g:17,b
 const design = `---
 version: alpha
 name: ${slug}-extracted
-description: Draft design system extracted from ${url} by HeiGe-Design ingest (playwright CSSOM). Review and refine before use — extracted tokens are approximate, not ground truth.
+description: ${JSON.stringify(`Draft design system extracted from ${url} by HeiGe-Design ingest (playwright CSSOM). Review and refine before use — extracted tokens are approximate, not ground truth.`)}
 
 colors:
   primary: "${primary.hex}"
@@ -128,19 +184,19 @@ colors:
 
 typography:
   display-xl:
-    fontFamily: "${ff(dispStack)}"
+    fontFamily: ${JSON.stringify(ff(dispStack))}
     fontSize: 48px
     fontWeight: 700
     lineHeight: 1.1
     letterSpacing: -0.02em
   body-md:
-    fontFamily: "${ff(bodyStack)}"
+    fontFamily: ${JSON.stringify(ff(bodyStack))}
     fontSize: ${Math.round(raw.bodySize)||16}px
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: 0
   button:
-    fontFamily: "${ff(bodyStack)}"
+    fontFamily: ${JSON.stringify(ff(bodyStack))}
     fontSize: 15px
     fontWeight: 600
     lineHeight: 1
@@ -202,10 +258,15 @@ Display stack extracted as \`${dispStack.join(', ')||'—'}\`; body \`${bodyStac
 这是自动提取的草稿，需人工补齐设计理由和签名时刻后才算成品。
 `;
 
-const outDir = path.join(ROOT, 'ingested', slug);
 fs.mkdirSync(outDir, { recursive:true });
-const outFile = path.join(outDir, 'DESIGN.md');
-fs.writeFileSync(outFile, design);
+assertSafeOutputDestination();
+const tempFile = path.join(outDir, `.DESIGN.md.${process.pid}.tmp`);
+try {
+  fs.writeFileSync(tempFile, design, { flag: 'wx' });
+  fs.renameSync(tempFile, outFile);
+} finally {
+  fs.rmSync(tempFile, { force: true });
+}
 console.log('提取完成 →', outFile);
 console.log(`主色 ${primary.hex} | canvas ${canvas.hex}(${dark?'dark':'light'}) | ink ${ink.hex} | 圆角 ${radius}`);
 // 顺手 lint
