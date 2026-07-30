@@ -28,6 +28,8 @@
 > 说明：仓库内 50 套里 `nocturne-teal / noir-vermilion / forge-anvil / moxi-void / boing-candy / onyx-gold / atelier-bone / soundwave-wrapped` 八套带手工旗舰全页当质量标杆，其余 42 套是 token 驱动预览，随时可用 `heige-design build <slug>` 生成整页。
 >
 > **v1.1（2026-07-14）**：DESIGN.md 新增三个正文维度：`## Imagery`（图像语言，怎么处理照片 / 插画 / 图标 / 图表）、`## Agent 配方卡`（带精确 hex/px 的可粘贴组件配方）、`## 相邻风格`（库内选型交叉引用）；导出层新增自动派生的 `compact.md` 一屏速览与 agent-prompt 速查色卡。旗舰 `atelier-bone / nocturne-teal / moxi-void / soundwave-wrapped` 四套补齐三节做样板，并配齐手工落地页 + 16:9 演示全套。
+>
+> **v1.1.1（2026-07-31）**：CLI 可靠传播 lint、diff 与站点构建失败；修复 `forge-anvil` 演示在窄屏离开视口的问题。
 
 ## 它是什么
 
@@ -66,6 +68,9 @@ AI 写代码越来越稳，做界面却常有一股默认模板味：紫蓝渐�
 ## 快速上手
 
 ```bash
+# 首次使用先安装锁定依赖
+npm ci
+
 # 列出全部或某家族
 node bin/heige-design list
 node bin/heige-design list 暗色科技
