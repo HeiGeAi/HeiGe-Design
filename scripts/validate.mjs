@@ -30,4 +30,7 @@ fs.writeFileSync(path.join(ROOT, 'report.json'), JSON.stringify(report, null, 2)
 const n = Object.keys(report).length;
 console.log(`校验完成：${n} 套 | 0 error：${e0}/${n} | 完全干净(0e0w)：${w0}/${n}`);
 const bad = Object.entries(report).filter(([, r]) => r.errors > 0).map(([s]) => s);
-if (bad.length) console.log('有 error：', bad.join(', ')); else console.log('全部 0 error ✓');
+if (bad.length) {
+  console.log('有 error：', bad.join(', '));
+  process.exitCode = 1;
+} else console.log('全部 0 error ✓');

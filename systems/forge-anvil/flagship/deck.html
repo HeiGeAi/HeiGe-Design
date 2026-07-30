@@ -24,7 +24,7 @@
   ::selection{background:var(--primary);color:var(--on-primary)}
 
   /* ===== 16:9 stage, scaled by JS ===== */
-  #scaler{width:1280px;height:720px;position:relative;transform-origin:center center}
+  #scaler{width:1280px;height:720px;position:fixed;left:0;top:0;transform-origin:top left}
   .stage{width:1280px;height:720px;position:relative;overflow:hidden;background:var(--canvas)}
 
   .slide{
@@ -270,7 +270,9 @@
   var scaler=document.getElementById('scaler');
   function fit(){
     var s=Math.min(window.innerWidth/1280, window.innerHeight/720);
-    scaler.style.transform='scale('+s+')';
+    var x=(window.innerWidth-1280*s)/2;
+    var y=(window.innerHeight-720*s)/2;
+    scaler.style.transform='translate('+x+'px,'+y+'px) scale('+s+')';
   }
   window.addEventListener('resize',fit); fit(); show(0);
 })();
