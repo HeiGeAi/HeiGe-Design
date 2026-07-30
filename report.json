@@ -201,76 +201,11 @@
   },
   "gugong-red": {
     "errors": 0,
-    "warnings": 13,
+    "warnings": 0,
     "findings": [
       {
-        "severity": "warning",
-        "path": "components.nav-bar.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.button-primary.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.button-ghost.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.card-lattice.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.stat-block.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.seal-mark.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.collection-tag.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.footer.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.slide-cover.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.slide-section-divider.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.slide-stat-hero.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.slide-quote.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.slide-closing.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
         "severity": "info",
-        "message": "Design system defines 10 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 13 components."
+        "message": "Design system defines 10 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 15 components."
       }
     ]
   },
@@ -376,41 +311,11 @@
   },
   "monogram-noir": {
     "errors": 0,
-    "warnings": 6,
+    "warnings": 0,
     "findings": [
       {
-        "severity": "warning",
-        "path": "components.nav-bar.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.card-collection.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.button-secondary.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.tag-season.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.input-newsletter.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.footer.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
         "severity": "info",
-        "message": "Design system defines 8 colors, 9 typography scales, 4 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 8 colors, 9 typography scales, 4 rounding levels, 6 spacing tokens, 17 components."
       }
     ]
   },
@@ -436,36 +341,11 @@
   },
   "neon-market": {
     "errors": 0,
-    "warnings": 5,
+    "warnings": 0,
     "findings": [
       {
-        "severity": "warning",
-        "path": "components.button-secondary.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.nav-bar.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.card-stall.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.menu-row.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
-        "severity": "warning",
-        "path": "components.footer.borderColor",
-        "message": "'borderColor' is not a recognized component sub-token. Valid sub-tokens: backgroundColor, textColor, typography, rounded, padding, size, height, width."
-      },
-      {
         "severity": "info",
-        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 13 components."
+        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 14 components."
       }
     ]
   },
