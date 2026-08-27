@@ -6,6 +6,20 @@
 
 ## 示例（这一份设定集能干什么）
 
+### 暗色科技家族示范 · AI Agent 进化之路
+
+一张 13 页的 16:9 演示，演示暗色科技家族怎么用「阶段色编码 + 时间线贯穿」讲一段有节奏的故事。三阶段（Prompt / Context / Harness）分别用青 / 紫 / 橙三色编码，顶端 13 节点时间线随翻页推进，扫描线 / 辉光脉冲 / 终端等宽字体作为家族签名时刻的延伸。
+
+| 演示封面 | 源文件 |
+|---|---|
+| ![AI Agent 进化之路 封面](assets/previews/showcase-dark-tech-family.webp) | [`samples/dark-tech-family-showcase.html`](samples/dark-tech-family-showcase.html) ← → 翻页 |
+
+技术要点：纯单文件 HTML，零依赖，键盘 ← → 翻页，时间线节点可点直跳，P 键打印 PDF。配色直接复用了暗色科技家族的霓虹强调色（`#00f0ff / #a855f7 / #fbbf24`）+ 极深底（`#050810`）。
+
+---
+
+### 旗舰全页示范
+
 拿暗色科技家族的 `nocturne-teal`（深空电青）当例子。同一份 `DESIGN.md`，同时产出一张落地页和一套演示，签名时刻都是那道斜射的电青辉光轴。
 
 | 一份 DESIGN.md → 落地页 | 一份 DESIGN.md → 16:9 演示 |

@@ -1,0 +1,1342 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AI Agent 进化之路 // From Prompt to Harness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=VT323&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Syne+Mono&display=swap" rel="stylesheet">
+<style>
+/* ============== TOKENS ============== */
+:root{
+  --bg-deep:#050810;
+  --bg-mid:#0a0e1a;
+  --bg-card:#0f1626;
+  --bg-card-2:#141d33;
+  --line:rgba(255,255,255,0.08);
+  --line-bright:rgba(0,240,255,0.35);
+  --text:#e4e7eb;
+  --text-dim:#7d8ba3;
+  --text-bright:#ffffff;
+  --text-faint:#475569;
+
+  --c-cyan:#00f0ff;       /* Prompt */
+  --c-violet:#a855f7;     /* Context */
+  --c-amber:#fbbf24;      /* Harness */
+  --c-rose:#fb7185;       /* warn */
+  --c-green:#10b981;      /* ok */
+
+  --grid-color:rgba(0,240,255,0.045);
+  --scan-color:rgba(0,240,255,0.06);
+
+  --mono:'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --pixel:'VT323', monospace;
+  --cn:'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg-deep);color:var(--text);font-family:var(--cn);overflow:hidden;-webkit-font-smoothing:antialiased}
+body{position:relative}
+
+/* ============== STAGE ============== */
+.stage{
+  position:fixed;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+
+/* Background layers */
+.bg-grid{
+  position:fixed;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse at center, rgba(0,0,0,0.9), rgba(0,0,0,0.2) 80%);
+}
+.bg-scan{
+  position:fixed;inset:0;pointer-events:none;
+  background:linear-gradient(transparent 0%, var(--scan-color) 50%, transparent 100%);
+  background-size:100% 6px;
+  animation:scan 8s linear infinite;
+  opacity:0.5;
+}
+@keyframes scan{from{background-position:0 -100%}to{background-position:0 200%}}
+.bg-noise{
+  position:fixed;inset:0;pointer-events:none;opacity:0.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+
+/* ============== TIMELINE (fixed top) ============== */
+.timeline{
+  position:fixed;top:0;left:0;right:0;height:54px;z-index:100;
+  display:flex;align-items:center;
+  background:linear-gradient(180deg, rgba(5,8,16,0.92), rgba(5,8,16,0.7));
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(8px);
+}
+.tl-label{
+  font-family:var(--mono);font-size:11px;color:var(--text-dim);letter-spacing:0.12em;
+  padding:0 18px;text-transform:uppercase;white-space:nowrap;
+}
+.tl-track{
+  flex:1;height:1px;background:linear-gradient(90deg, transparent, var(--line) 5%, var(--line) 95%, transparent);
+  position:relative;margin:0 12px;
+}
+.tl-progress{
+  position:absolute;top:-1px;left:0;height:3px;
+  background:linear-gradient(90deg, var(--c-cyan), var(--c-violet), var(--c-amber));
+  box-shadow:0 0 12px var(--c-cyan), 0 0 24px rgba(0,240,255,0.4);
+  transition:width 0.6s cubic-bezier(.6,.2,.2,1);
+  width:0;
+}
+.tl-nodes{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;
+  padding:0 2px;
+}
+.tl-node{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--bg-mid);border:1px solid var(--line);
+  position:relative;cursor:pointer;transition:all 0.3s;
+}
+.tl-node:hover{transform:scale(1.4)}
+.tl-node.done{background:var(--c-cyan);border-color:var(--c-cyan);box-shadow:0 0 8px var(--c-cyan)}
+.tl-node.now{
+  background:#fff;border-color:#fff;
+  box-shadow:0 0 0 3px rgba(255,255,255,0.2), 0 0 16px var(--c-cyan);
+  animation:pulse 1.4s ease-in-out infinite;
+}
+.tl-node[data-phase="context"].done{background:var(--c-violet);border-color:var(--c-violet);box-shadow:0 0 8px var(--c-violet)}
+.tl-node[data-phase="context"].now{box-shadow:0 0 0 3px rgba(168,85,247,0.25), 0 0 16px var(--c-violet)}
+.tl-node[data-phase="harness"].done{background:var(--c-amber);border-color:var(--c-amber);box-shadow:0 0 8px var(--c-amber)}
+.tl-node[data-phase="harness"].now{box-shadow:0 0 0 3px rgba(251,191,36,0.25), 0 0 16px var(--c-amber)}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+.tl-tip{
+  position:absolute;top:18px;left:50%;transform:translateX(-50%);
+  font-family:var(--mono);font-size:9px;color:var(--text-dim);white-space:nowrap;
+  opacity:0;transition:opacity 0.2s;pointer-events:none;letter-spacing:0.05em;
+}
+.tl-node:hover .tl-tip{opacity:1}
+.tl-now-label{
+  font-family:var(--mono);font-size:11px;color:var(--c-cyan);
+  padding:0 18px;letter-spacing:0.1em;white-space:nowrap;
+  min-width:130px;text-align:right;
+}
+
+/* ============== SLIDE ============== */
+.slide{
+  position:absolute;inset:54px 0 44px 0;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:48px 80px;
+  opacity:0;pointer-events:none;
+  transition:opacity 0.45s ease;
+}
+.slide.active{opacity:1;pointer-events:auto;z-index:2}
+
+.s-meta{
+  font-family:var(--mono);font-size:11px;color:var(--text-faint);
+  letter-spacing:0.2em;text-transform:uppercase;margin-bottom:18px;
+  display:flex;align-items:center;gap:14px;
+}
+.s-meta .tag{
+  padding:3px 10px;border:1px solid currentColor;
+  border-radius:2px;letter-spacing:0.15em;
+}
+.tag-prompt{color:var(--c-cyan)}
+.tag-context{color:var(--c-violet)}
+.tag-harness{color:var(--c-amber)}
+.tag-meta{color:var(--text-dim)}
+
+.s-title{
+  font-family:var(--cn);font-weight:900;font-size:54px;
+  letter-spacing:-0.01em;line-height:1.1;color:var(--text-bright);
+  margin-bottom:14px;
+}
+.s-title em{font-style:normal;color:var(--c-cyan)}
+.s-subtitle{
+  font-family:var(--mono);font-size:14px;color:var(--text-dim);
+  letter-spacing:0.05em;margin-bottom:32px;
+}
+
+/* ============== FOOTER ============== */
+.footbar{
+  position:fixed;bottom:0;left:0;right:0;height:44px;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 22px;
+  background:linear-gradient(0deg, rgba(5,8,16,0.95), rgba(5,8,16,0.7));
+  border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;color:var(--text-dim);
+  letter-spacing:0.1em;
+}
+.footbar .left{display:flex;align-items:center;gap:16px}
+.footbar .right{display:flex;align-items:center;gap:16px}
+.footbar kbd{
+  font-family:var(--mono);font-size:10px;
+  background:var(--bg-card);border:1px solid var(--line);
+  padding:2px 6px;border-radius:3px;color:var(--text);
+}
+.blink{display:inline-block;width:7px;height:14px;background:var(--c-cyan);vertical-align:middle;margin-left:6px;animation:blink 1.05s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* ============== COVER (slide 1) ============== */
+.cover{align-items:flex-start;justify-content:center;padding-left:90px}
+.cover .top-line{
+  font-family:var(--mono);font-size:13px;color:var(--c-cyan);
+  letter-spacing:0.3em;margin-bottom:40px;
+  display:flex;align-items:center;gap:14px;
+}
+.cover .top-line::before{
+  content:"";display:block;width:42px;height:1px;background:var(--c-cyan);
+  box-shadow:0 0 8px var(--c-cyan);
+}
+.cover h1{
+  font-family:var(--cn);font-weight:900;font-size:128px;line-height:0.95;
+  letter-spacing:-0.04em;color:var(--text-bright);
+  margin-bottom:8px;
+}
+.cover h1 .accent{
+  background:linear-gradient(135deg, var(--c-cyan) 0%, var(--c-violet) 50%, var(--c-amber) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.cover .en-title{
+  font-family:var(--mono);font-size:24px;color:var(--text-dim);
+  letter-spacing:0.35em;margin-bottom:54px;
+}
+.cover .en-title .slash{color:var(--c-cyan);margin:0 8px}
+.cover .meta-grid{
+  display:grid;grid-template-columns:auto auto;gap:8px 28px;
+  font-family:var(--mono);font-size:12px;color:var(--text-dim);
+  margin-top:30px;letter-spacing:0.08em;
+}
+.cover .meta-grid b{color:var(--text);font-weight:400}
+.cover .corner-tl, .cover .corner-tr, .cover .corner-bl, .cover .corner-br{
+  position:fixed;font-family:var(--mono);font-size:10px;color:var(--text-faint);letter-spacing:0.15em;
+}
+.cover .corner-tl{top:74px;left:30px}
+.cover .corner-tr{top:74px;right:30px;text-align:right}
+.cover .corner-bl{bottom:60px;left:30px}
+.cover .corner-br{bottom:60px;right:30px;text-align:right}
+.big-ascii{
+  font-family:var(--mono);font-size:10px;line-height:1.1;color:rgba(0,240,255,0.08);
+  position:fixed;right:60px;top:50%;transform:translateY(-50%);
+  white-space:pre;pointer-events:none;user-select:none;letter-spacing:0.05em;
+}
+
+/* ============== GENERIC PAGE PIECES ============== */
+.cards{display:grid;gap:16px;margin-top:18px}
+.cards.c3{grid-template-columns:repeat(3,1fr)}
+.cards.c4{grid-template-columns:repeat(4,1fr)}
+.cards.c5{grid-template-columns:repeat(5,1fr)}
+.card{
+  background:linear-gradient(180deg, var(--bg-card), var(--bg-card-2));
+  border:1px solid var(--line);border-radius:4px;
+  padding:18px 18px 16px 18px;position:relative;overflow:hidden;
+  transition:border-color 0.2s, transform 0.2s;
+}
+.card:hover{border-color:rgba(0,240,255,0.3);transform:translateY(-2px)}
+.card::before{
+  content:"";position:absolute;top:0;left:0;width:24px;height:1px;background:var(--c-cyan);
+  box-shadow:0 0 6px var(--c-cyan);
+}
+.card[data-phase="context"]::before{background:var(--c-violet);box-shadow:0 0 6px var(--c-violet)}
+.card[data-phase="harness"]::before{background:var(--c-amber);box-shadow:0 0 6px var(--c-amber)}
+.card[data-phase="all"]::before{background:linear-gradient(90deg,var(--c-cyan),var(--c-violet),var(--c-amber));box-shadow:0 0 6px var(--c-cyan)}
+.card .num{
+  font-family:var(--pixel);font-size:30px;color:rgba(255,255,255,0.18);
+  position:absolute;top:8px;right:14px;letter-spacing:0;
+}
+.card h3{font-family:var(--cn);font-weight:700;font-size:18px;color:var(--text-bright);margin-bottom:6px}
+.card p{font-size:13px;color:var(--text-dim);line-height:1.55}
+.card code{
+  display:block;font-family:var(--mono);font-size:11px;color:var(--c-cyan);
+  background:rgba(0,0,0,0.4);padding:8px 10px;border-radius:3px;
+  border-left:2px solid var(--c-cyan);margin-top:10px;line-height:1.5;
+  white-space:pre-wrap;
+}
+.card[data-phase="context"] code{color:var(--c-violet);border-left-color:var(--c-violet)}
+.card[data-phase="harness"] code{color:var(--c-amber);border-left-color:var(--c-amber)}
+
+/* ============== BLOCKS ============== */
+.callout{
+  border-left:2px solid var(--c-cyan);padding:14px 18px;
+  background:rgba(0,240,255,0.04);margin-top:18px;
+  font-size:13px;color:var(--text);line-height:1.6;
+}
+.callout.rose{border-left-color:var(--c-rose);background:rgba(251,113,133,0.04)}
+.callout.violet{border-left-color:var(--c-violet);background:rgba(168,85,247,0.04)}
+.callout.amber{border-left-color:var(--c-amber);background:rgba(251,191,36,0.04)}
+.callout .lab{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.2em;
+  color:var(--c-cyan);text-transform:uppercase;margin-bottom:6px;
+}
+.callout.rose .lab{color:var(--c-rose)}
+.callout.violet .lab{color:var(--c-violet)}
+.callout.amber .lab{color:var(--c-amber)}
+
+.codeblock{
+  background:#04060d;border:1px solid var(--line);
+  border-radius:4px;padding:18px 22px;
+  font-family:var(--mono);font-size:13px;line-height:1.7;
+  color:var(--text);overflow:auto;position:relative;
+}
+.codeblock::before{
+  content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--c-cyan);
+  box-shadow:0 0 12px var(--c-cyan);
+}
+.codeblock.violet::before{background:var(--c-violet);box-shadow:0 0 12px var(--c-violet)}
+.codeblock.amber::before{background:var(--c-amber);box-shadow:0 0 12px var(--c-amber)}
+.codeblock .prompt{color:var(--c-cyan)}
+.codeblock.violet .prompt{color:var(--c-violet)}
+.codeblock.amber .prompt{color:var(--c-amber)}
+.codeblock .com{color:var(--text-faint);font-style:italic}
+.codeblock .key{color:#fff}
+.codeblock .str{color:var(--c-amber)}
+
+/* two-col */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+/* pill */
+.pill{
+  display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;
+  padding:3px 10px;border:1px solid var(--line);border-radius:99px;
+  color:var(--text-dim);margin-right:6px;
+}
+.pill.cyan{color:var(--c-cyan);border-color:rgba(0,240,255,0.4)}
+.pill.violet{color:var(--c-violet);border-color:rgba(168,85,247,0.4)}
+.pill.amber{color:var(--c-amber);border-color:rgba(251,191,36,0.4)}
+.pill.rose{color:var(--c-rose);border-color:rgba(251,113,133,0.4)}
+
+/* ============== STAGE 2 OVERVIEW ============== */
+.phase-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px}
+.phase{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+  border:1px solid var(--line);border-radius:6px;padding:24px;
+  position:relative;overflow:hidden;
+}
+.phase::after{
+  content:"";position:absolute;top:0;left:0;right:0;height:2px;
+}
+.phase.p1::after{background:linear-gradient(90deg, var(--c-cyan), transparent)}
+.phase.p2::after{background:linear-gradient(90deg, var(--c-violet), transparent)}
+.phase.p3::after{background:linear-gradient(90deg, var(--c-amber), transparent)}
+.phase .phase-num{
+  font-family:var(--pixel);font-size:56px;color:rgba(255,255,255,0.06);
+  position:absolute;top:6px;right:14px;line-height:1;
+}
+.phase h3{
+  font-family:var(--cn);font-weight:900;font-size:24px;color:var(--text-bright);
+  margin-bottom:6px;letter-spacing:-0.01em;
+}
+.phase .phase-en{
+  font-family:var(--mono);font-size:12px;color:var(--text-dim);letter-spacing:0.15em;
+  margin-bottom:14px;text-transform:uppercase;
+}
+.phase.p1 h3{color:var(--c-cyan)}
+.phase.p2 h3{color:var(--c-violet)}
+.phase.p3 h3{color:var(--c-amber)}
+.phase p{font-size:13px;color:var(--text);line-height:1.6;margin-bottom:10px}
+.phase ul{list-style:none;font-family:var(--mono);font-size:12px;color:var(--text-dim);line-height:1.8}
+.phase ul li::before{content:"› ";color:currentColor}
+
+/* ============== STAGE 9 TIMELINE (full) ============== */
+.full-tl{
+  position:relative;margin-top:42px;padding:0 12px;
+}
+.full-tl::before{
+  content:"";position:absolute;left:0;right:0;top:22px;height:1px;
+  background:linear-gradient(90deg, transparent, var(--line) 6%, var(--line) 94%, transparent);
+}
+.full-tl .row{display:flex;justify-content:space-between;align-items:flex-start;position:relative}
+.full-tl .pt{
+  display:flex;flex-direction:column;align-items:center;width:13%;
+  text-align:center;
+}
+.full-tl .pt .dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--bg-mid);border:2px solid var(--c-cyan);
+  box-shadow:0 0 12px var(--c-cyan);margin-bottom:14px;
+}
+.full-tl .pt[data-phase="context"] .dot{border-color:var(--c-violet);box-shadow:0 0 12px var(--c-violet)}
+.full-tl .pt[data-phase="harness"] .dot{border-color:var(--c-amber);box-shadow:0 0 12px var(--c-amber)}
+.full-tl .pt .date{
+  font-family:var(--mono);font-size:11px;color:var(--c-cyan);letter-spacing:0.1em;
+  margin-bottom:4px;
+}
+.full-tl .pt[data-phase="context"] .date{color:var(--c-violet)}
+.full-tl .pt[data-phase="harness"] .date{color:var(--c-amber)}
+.full-tl .pt .name{
+  font-family:var(--cn);font-weight:700;font-size:14px;color:var(--text-bright);
+  margin-bottom:6px;
+}
+.full-tl .pt .note{font-family:var(--mono);font-size:10px;color:var(--text-dim);line-height:1.5}
+
+/* ============== STAGE 10 TABLE ============== */
+.atable{
+  width:100%;border-collapse:collapse;margin-top:18px;font-size:13px;
+  font-family:var(--cn);
+}
+.atable thead th{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.15em;
+  text-align:left;color:var(--text-dim);font-weight:400;
+  padding:14px 16px;border-bottom:1px solid var(--line);
+  text-transform:uppercase;
+}
+.atable tbody td{
+  padding:18px 16px;border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+.atable tbody tr:hover{background:rgba(255,255,255,0.02)}
+.atable .prod{
+  font-family:var(--mono);font-size:14px;color:var(--text-bright);
+  font-weight:500;letter-spacing:0.05em;
+}
+.atable .prod .yr{color:var(--text-faint);font-size:11px;margin-left:6px}
+.atable .lim{color:var(--c-rose)}
+.atable .ok{color:var(--c-green)}
+
+/* ============== STAGE 11 GRID ============== */
+.six{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px;
+}
+.six .cell{
+  background:linear-gradient(180deg, rgba(251,191,36,0.04), rgba(251,191,36,0));
+  border:1px solid rgba(251,191,36,0.18);border-radius:4px;
+  padding:18px 20px;position:relative;
+}
+.six .cell .lab{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.2em;
+  color:var(--c-amber);margin-bottom:6px;text-transform:uppercase;
+}
+.six .cell h4{font-family:var(--cn);font-weight:700;font-size:17px;color:var(--text-bright);margin-bottom:8px}
+.six .cell p{font-size:12.5px;color:var(--text-dim);line-height:1.55}
+
+/* ============== STAGE 12 FUTURE ============== */
+.future-row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:18px}
+.future-card{
+  border:1px solid var(--line);background:rgba(255,255,255,0.02);
+  border-radius:6px;padding:22px;position:relative;overflow:hidden;
+}
+.future-card .arrow{
+  font-family:var(--mono);font-size:12px;color:var(--c-cyan);
+  letter-spacing:0.2em;margin-bottom:8px;
+}
+.future-card h3{font-family:var(--cn);font-weight:900;font-size:22px;color:var(--text-bright);margin-bottom:8px}
+.future-card .badge{
+  display:inline-block;font-family:var(--mono);font-size:10px;
+  color:var(--c-violet);border:1px solid var(--c-violet);
+  padding:2px 8px;border-radius:99px;letter-spacing:0.1em;
+  margin-bottom:10px;
+}
+.future-card p{font-size:13px;color:var(--text-dim);line-height:1.6}
+
+/* ============== STAGE 13 TAKEAWAY ============== */
+.tk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:18px}
+.tk{
+  border:1px solid var(--line);background:rgba(255,255,255,0.02);
+  padding:24px;border-radius:6px;position:relative;
+}
+.tk .n{
+  font-family:var(--pixel);font-size:48px;color:rgba(255,255,255,0.1);
+  position:absolute;top:6px;right:18px;
+}
+.tk .lab{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.2em;
+  margin-bottom:8px;text-transform:uppercase;
+}
+.tk.l1 .lab{color:var(--c-cyan)}
+.tk.l2 .lab{color:var(--c-violet)}
+.tk.l3 .lab{color:var(--c-amber)}
+.tk h3{font-family:var(--cn);font-weight:900;font-size:22px;color:var(--text-bright);margin-bottom:10px;line-height:1.25}
+.tk p{font-size:13px;color:var(--text-dim);line-height:1.65}
+.final-quote{
+  margin-top:36px;padding:22px 28px;
+  border-left:3px solid var(--c-cyan);background:rgba(0,240,255,0.03);
+  font-family:var(--cn);font-size:18px;color:var(--text);line-height:1.55;
+  position:relative;
+}
+.final-quote .who{
+  display:block;font-family:var(--mono);font-size:11px;color:var(--text-dim);
+  letter-spacing:0.2em;margin-top:12px;text-transform:uppercase;
+}
+.contact-line{
+  margin-top:30px;font-family:var(--mono);font-size:12px;color:var(--text-dim);
+  letter-spacing:0.1em;display:flex;gap:28px;align-items:center;
+}
+.contact-line .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--c-green);box-shadow:0 0 8px var(--c-green);margin-right:8px}
+
+/* ============== ANIMATE IN ============== */
+.slide.active .reveal{animation:revealUp 0.6s cubic-bezier(.2,.7,.2,1) both}
+.slide.active .reveal.d1{animation-delay:.08s}
+.slide.active .reveal.d2{animation-delay:.16s}
+.slide.active .reveal.d3{animation-delay:.24s}
+.slide.active .reveal.d4{animation-delay:.32s}
+.slide.active .reveal.d5{animation-delay:.40s}
+.slide.active .reveal.d6{animation-delay:.48s}
+.slide.active .reveal.d7{animation-delay:.56s}
+.slide.active .reveal.d8{animation-delay:.64s}
+@keyframes revealUp{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ============== MOBILE FALLBACK ============== */
+@media (max-width:900px){
+  body{overflow:auto;height:auto}
+  .stage{position:static;display:block;padding-top:60px;padding-bottom:50px}
+  .bg-grid,.bg-scan{display:none}
+  .slide{
+    position:relative;inset:auto;height:auto;min-height:100vh;
+    opacity:1!important;pointer-events:auto!important;display:flex;
+    padding:32px 22px 48px;justify-content:flex-start;
+  }
+  .cover{justify-content:flex-start;padding-left:22px}
+  .slide:not(.active){display:none}
+  .s-title{font-size:32px;line-height:1.2}
+  .cover h1{font-size:64px}
+  .cover .en-title{font-size:14px;letter-spacing:0.2em;margin-bottom:32px}
+  .cover .meta-grid{font-size:11px;gap:6px 18px}
+  .cards.c3,.cards.c4,.cards.c5{grid-template-columns:1fr}
+  .two-col,.three-col,.phase-row,.future-row,.six,.tk-grid{grid-template-columns:1fr;gap:14px}
+  .six{grid-template-columns:1fr 1fr}
+  .full-tl .row{flex-wrap:wrap;gap:18px 8px;justify-content:flex-start}
+  .full-tl .pt{width:48%}
+  .full-tl::before{display:none}
+  .atable{display:block;overflow-x:auto;white-space:nowrap}
+  .codeblock{font-size:11px;padding:14px 16px}
+  .big-ascii,.corner-tl,.corner-tr,.corner-bl,.corner-br{display:none}
+  .timeline{padding-left:8px;padding-right:8px}
+  .tl-label{font-size:9px;padding:0 6px}
+  .tl-now-label{font-size:9px;padding:0 6px;min-width:auto}
+  .tl-nodes{padding:0}
+  .footbar{font-size:9px;padding:0 8px}
+  .footbar .right span:not(:last-child){display:none}
+}
+
+/* ============== MEDIA PRINT ============== */
+@media print{
+  @page{size:1280px 720px;margin:0}
+  body{background:var(--bg-deep)}
+  .bg-scan,.timeline,.footbar{display:none!important}
+  .slide{position:relative;inset:auto;height:720px;width:1280px;page-break-after:always;opacity:1!important;pointer-events:auto!important;padding:48px 80px;display:flex;flex-direction:column;justify-content:center}
+  .stage{position:static;display:block}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-scan"></div>
+<div class="bg-noise"></div>
+
+<!-- ============== TIMELINE ============== -->
+<nav class="timeline" aria-label="progress">
+  <div class="tl-label">EVOLUTION //</div>
+  <div class="tl-track">
+    <div class="tl-progress" id="tlProgress"></div>
+    <div class="tl-nodes" id="tlNodes"></div>
+  </div>
+  <div class="tl-now-label" id="tlNowLabel">2022.11</div>
+</nav>
+
+<div class="stage">
+
+<!-- =================== SLIDE 1: COVER =================== -->
+<section class="slide active cover" data-page="1" data-phase="prompt" data-date="2022.11">
+  <div class="corner-tl">[ SYS://EVOLUTION.LOG ]<br>v1.0 // build 2025.08</div>
+  <div class="corner-tr">STATUS: <span style="color:var(--c-green)">ONLINE</span><br>SIGNAL: <span style="color:var(--c-cyan)">STRONG</span></div>
+
+  <div class="reveal d1 top-line">AI · AGENT · 进化之路</div>
+  <h1 class="reveal d2">从一句话<br><span class="accent">到一套系统</span></h1>
+  <div class="reveal d3 en-title">FROM PROMPT<span class="slash">//</span>TO CONTEXT<span class="slash">//</span>TO HARNESS</div>
+
+  <div class="reveal d4 meta-grid">
+    <span>phase_01</span><b style="color:var(--c-cyan)">Prompt Engineering</b>
+    <span>phase_02</span><b style="color:var(--c-violet)">Context Engineering</b>
+    <span>phase_03</span><b style="color:var(--c-amber)">Harness Engineering</b>
+    <span>horizon</span><b>2022.11 → 2026+</b>
+    <span>speaker</span><b>黑哥AI · Blake Xu</b>
+  </div>
+
+  <div class="big-ascii" aria-hidden="true">
+ █████╗ ██╗     █████╗  ██████╗ ███████╗███╗   ██╗████████╗
+██╔══██╗██║    ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝
+███████║██║    ███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║
+██╔══██║██║    ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║
+██║  ██║██║    ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║
+╚═╝  ╚═╝╚═╝    ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝
+  </div>
+</section>
+
+<!-- =================== SLIDE 2: OVERVIEW =================== -->
+<section class="slide" data-page="2" data-phase="all" data-date="2026+">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-meta">// 00 · OVERVIEW</span>
+    <span>三个阶段的进化全貌</span>
+  </div>
+  <h2 class="s-title reveal d2">三场跃迁，每一次都在换主角</h2>
+  <div class="s-subtitle reveal d3">主角从 <span style="color:var(--c-cyan)">Prompt</span> 换到 <span style="color:var(--c-violet)">Context</span>，再换到 <span style="color:var(--c-amber)">Harness</span>。被工程化的对象一直在升级。</div>
+
+  <div class="phase-row reveal d4">
+    <div class="phase p1">
+      <div class="phase-num">01</div>
+      <h3>Prompt Engineering</h3>
+      <div class="phase-en">// 2022.11 — 2023</div>
+      <p>把想要的输出，写进一段自然语言指令。</p>
+      <ul>
+        <li>Few-shot / CoT / ReAct / ToT</li>
+        <li>单次调用，无状态、无工具、无记忆</li>
+        <li>上限被模型能力锁死</li>
+      </ul>
+    </div>
+    <div class="phase p2">
+      <div class="phase-num">02</div>
+      <h3>Context Engineering</h3>
+      <div class="phase-en">// 2024 — 2025</div>
+      <p>把模型每次推理能用上的信息，组装好再喂进去。</p>
+      <ul>
+        <li>RAG / Memory / Tool Use / MCP</li>
+        <li>对抗 context rot 的工程实践</li>
+        <li>从「问得好」到「喂得对」</li>
+      </ul>
+    </div>
+    <div class="phase p3">
+      <div class="phase-num">03</div>
+      <h3>Harness Engineering</h3>
+      <div class="phase-en">// 2024.Q4 — 2026+</div>
+      <p>把模型包进一套能自主循环的工程骨架里。</p>
+      <ul>
+        <li>Loop + Tools + Context + Verify</li>
+        <li>Subagent + Permission 是分水岭</li>
+        <li>模型是引擎，harness 是变速箱</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout reveal d5">
+    <div class="lab">// INSIGHT</div>
+    每一次主角升级，前一阶段都没死。它只是从「明星技巧」降级成「基础组件」——Prompt 仍然是 Context 的输入，Context 仍然是 Harness 的燃料。
+  </div>
+</section>
+
+<!-- =================== SLIDE 3: PROMPT 起源 =================== -->
+<section class="slide" data-page="3" data-phase="prompt" data-date="2022.11">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-prompt">PHASE_01</span>
+    <span>Prompt Engineering · 起源</span>
+  </div>
+  <h2 class="s-title reveal d2">把「想要的输出」写进一段话</h2>
+  <div class="s-subtitle reveal d3">2022.11 ChatGPT 起飞，所有人突然发现：会写 prompt 的人，效率碾压不会写的人。</div>
+
+  <div class="two-col reveal d4">
+    <div>
+      <div class="callout">
+        <div class="lab">// 一句话定义</div>
+        Prompt Engineering 是把任务目标、约束条件、输出格式，全部编码进一段自然语言指令的工程实践。它的对手不是模型，是 prompt 写得不够清楚的自己。
+      </div>
+      <div class="callout" style="margin-top:14px">
+        <div class="lab">// 三个里程碑</div>
+        <div style="font-family:var(--mono);font-size:13px;line-height:1.9;color:var(--text)">
+          <span style="color:var(--text-faint)">2022.03</span> <b style="color:var(--text-bright)">InstructGPT</b><span style="color:var(--text-dim)"> · RLHF 把模型从补全器驯化成指令跟随者</span><br>
+          <span style="color:var(--text-faint)">2022.11</span> <b style="color:var(--text-bright)">ChatGPT</b><span style="color:var(--text-dim)"> · 5 天 100 万用户，prompt 进入大众词汇</span><br>
+          <span style="color:var(--text-faint)">2023.03</span> <b style="color:var(--text-bright)">GPT-4</b><span style="color:var(--text-dim)"> · 长指令、复杂推理、code interpreter 全部起飞</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="codeblock">
+<span class="com">// 一个最小可用的 prompt = 角色 + 任务 + 约束 + 格式</span>
+
+<span class="prompt">你是一位</span><span class="key">资深数据分析师</span><span class="prompt">。</span>
+<span class="prompt">任务：</span>从下面的销售记录中找出<span class="key">环比下降超过 20%</span>的产品。
+
+<span class="com"># 输入</span>
+<span class="str">2025-06,iPhone 15,1200</span>
+<span class="str">2025-07,iPhone 15,890</span>
+...
+
+<span class="com"># 输出格式（严格遵守）</span>
+<span class="key">产品名 | 下降幅度 | 建议动作</span>
+
+<span class="com"># 约束</span>
+<span class="prompt">- 只输出表格，不要解释</span>
+<span class="prompt">- 数字保留 1 位小数</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 4: PROMPT 技巧 =================== -->
+<section class="slide" data-page="4" data-phase="prompt" data-date="2023.03">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-prompt">PHASE_01</span>
+    <span>Prompt Engineering · 核心技巧</span>
+  </div>
+  <h2 class="s-title reveal d2">五把扳手，把模型拧到该有的位置</h2>
+  <div class="s-subtitle reveal d3">这些技巧在 2023 年集中爆发，今天仍然是写好 prompt 的肌肉记忆。</div>
+
+  <div class="cards c5 reveal d4">
+    <div class="card" data-phase="prompt">
+      <div class="num">01</div>
+      <h3>Few-shot</h3>
+      <p>给 2-3 个例子，模型照葫芦画瓢。零样本跑偏时最便宜的兜底。</p>
+      <code>输入: 开心 → 输出: 😊
+输入: 难过 → 输出: 😢
+输入: 兴奋 → </code>
+    </div>
+    <div class="card" data-phase="prompt">
+      <div class="num">02</div>
+      <h3>CoT</h3>
+      <p>Chain-of-Thought。让模型先写步骤再给答案，推理题立竿见影。</p>
+      <code>让我们一步步思考：
+1. 列出已知条件
+2. 列出未知量
+3. 推导关系
+4. 计算答案</code>
+    </div>
+    <div class="card" data-phase="prompt">
+      <div class="num">03</div>
+      <h3>ReAct</h3>
+      <p>Reason + Act。模型边推理边调用工具，把思考和动作交织成轨迹。</p>
+      <code>Thought: 需要查汇率
+Action: search("USD to CNY")
+Observation: 1 USD = 7.18 CNY
+Thought: 现在可以算了</code>
+    </div>
+    <div class="card" data-phase="prompt">
+      <div class="num">04</div>
+      <h3>ToT</h3>
+      <p>Tree-of-Thought。多路推理 + 投票，适合需要探索解空间的任务。</p>
+      <code>候选解 A: ...
+候选解 B: ...
+候选解 C: ...
+投票: B > A > C</code>
+    </div>
+    <div class="card" data-phase="prompt">
+      <div class="num">05</div>
+      <h3>Self-Consistency</h3>
+      <p>采样多条 CoT 路径，少数服从多数。准确率换算力的典型打法。</p>
+      <code>for i in 1..N:
+  chain = model.sample(prompt)
+answers.append(chain.final)
+return majority(answers)</code>
+    </div>
+  </div>
+
+  <div class="callout reveal d5">
+    <div class="lab">// 这些技巧的本质</div>
+    都是把「我想要 X」翻译成「模型能稳定输出 X」的协议。它们改善的是同一句话的命中率，不改变模型本身。
+  </div>
+</section>
+
+<!-- =================== SLIDE 5: PROMPT 局限 =================== -->
+<section class="slide" data-page="5" data-phase="prompt" data-date="2023.04">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-prompt">PHASE_01</span>
+    <span>Prompt Engineering · 局限性</span>
+  </div>
+  <h2 class="s-title reveal d2">写到天花板，问题就不在 prompt 里了</h2>
+  <div class="s-subtitle reveal d3">AutoGPT 2023.04 上线那天起，「自动循环 + 调工具 + 跨会话」的需求就把 prompt 撑破了。</div>
+
+  <div class="cards c4 reveal d4">
+    <div class="card" data-phase="prompt">
+      <div class="num">×</div>
+      <h3>单次调用</h3>
+      <p>一次输入一次输出。没有循环，没有「试试不行再换」的余地。</p>
+      <code style="color:var(--c-rose)">input → model → output
+↓ 结束</code>
+    </div>
+    <div class="card" data-phase="prompt">
+      <div class="num">×</div>
+      <h3>无状态</h3>
+      <p>模型不记得上一轮说过什么。多轮对话靠历史塞进 context，不是真正记忆。</p>
+      <code style="color:var(--c-rose)">session_2.start()
+context: []
+memory: ∅</code>
+    </div>
+    <div class="card" data-phase="prompt">
+      <div class="num">×</div>
+      <h3>无工具</h3>
+      <p>模型只能吐文字。查不到实时数据、动不了文件、调不了 API。</p>
+      <code style="color:var(--c-rose)">capability: [text_in, text_out]
+no: [search, code, db, file]</code>
+    </div>
+    <div class="card" data-phase="prompt">
+      <div class="num">×</div>
+      <h3>无记忆</h3>
+      <p>跨会话、跨用户、跨天，模型对你是陌生人。个性化无从谈起。</p>
+      <code style="color:var(--c-rose)">user_α == user_β
+today == tomorrow
+没有任何长期状态</code>
+    </div>
+  </div>
+
+  <div class="callout rose reveal d5">
+    <div class="lab">// 转场信号</div>
+    当 prompt 写到第 17 版还是同一个地方出错，问题就不在 prompt 里。prompt 不是工程，是 prompt 之外的事太少了。开始往 context 里塞东西吧。
+  </div>
+</section>
+
+<!-- =================== SLIDE 6: CONTEXT 为何重要 =================== -->
+<section class="slide" data-page="6" data-phase="context" data-date="2025.07">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-context">PHASE_02</span>
+    <span>Context Engineering · 为什么</span>
+  </div>
+  <h2 class="s-title reveal d2">窗口越大，<em>塞得多</em> ≠ 答得好</h2>
+  <div class="s-subtitle reveal d3">2025.07 Anthropic 发表《Effective context engineering for AI agents》，把「喂什么进去」从技巧升级成学科。</div>
+
+  <div class="two-col reveal d4">
+    <div>
+      <div class="callout violet">
+        <div class="lab">// 核心命题</div>
+        <b style="color:var(--text-bright)">Context Engineering 是为模型每次推理精心挑选和组装信息的工程实践。</b> Prompt 写的是「怎么问」，context engineering 写的是「喂什么」。前者优化一行，后者优化一整套输入构造流水线。
+      </div>
+      <div class="callout" style="margin-top:14px">
+        <div class="lab">// Context Rot</div>
+        模型在长上下文中的检索精度不是线性下降，而是会随着上下文增长出现 <b style="color:var(--c-rose)">非线性退化</b>。堆东西 ≠ 喂好东西。
+      </div>
+      <div class="callout rose" style="margin-top:14px">
+        <div class="lab">// 三条经验数据</div>
+        <div style="font-family:var(--mono);font-size:13px;line-height:1.9;color:var(--text)">
+          <span style="color:var(--c-rose)">▸</span> 多 needle-in-haystack 测试中，超过 60% 填充率后命中率陡降<br>
+          <span style="color:var(--c-rose)">▸</span> 中段信息比首尾更容易被忽略（lost-in-the-middle）<br>
+          <span style="color:var(--c-rose)">▸</span> 噪声指令会被模型当成真实指令执行
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="codeblock violet">
+<span class="com">// 一个 200K 上下文的典型失败</span>
+
+<span class="prompt">[ system_prompt ]</span>        <span class="com">// 2K</span>
+<span class="prompt">[ 10 个 tool definitions ]</span> <span class="com">// 8K</span>
+<span class="prompt">[ 5 篇 RAG 召回 ]</span>         <span class="com">// 12K</span>
+<span class="prompt">[ 历史对话 50 轮 ]</span>       <span class="com">// 18K</span>
+<span class="prompt">[ 当前用户问题 ]</span>          <span class="com">// 0.5K</span>
+<span class="prompt">[ 一些「以防万一」的兜底 ]</span>  <span class="com">// 160K 噪声</span>
+
+<span class="com">// → 模型在 system 指令和「兜底」之间困惑</span>
+<span class="com">// → tool 定义被压在中间，命中率下降</span>
+<span class="com">// → 真正该被用的 RAG 片段被淹没</span>
+
+<span class="key" style="color:var(--c-green)">解法 = 选 + 压 + 排</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 7: CONTEXT 技术 =================== -->
+<section class="slide" data-page="7" data-phase="context" data-date="2025.02">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-context">PHASE_02</span>
+    <span>Context Engineering · 关键技术</span>
+  </div>
+  <h2 class="s-title reveal d2">五大模块，给模型准备一顿好饭</h2>
+  <div class="s-subtitle reveal d3">Context Engineering 不是单点技术，是一组协同的工程模块。每一块都在回答「这条信息该不该出现在这次推理里」。</div>
+
+  <div class="cards c5 reveal d4">
+    <div class="card" data-phase="context">
+      <div class="num">01</div>
+      <h3>RAG</h3>
+      <p>检索增强生成。把私有知识从向量库召回到 context。</p>
+      <code>query → embed →
+  vector_search(top_k)
+→ rerank → 注入</code>
+    </div>
+    <div class="card" data-phase="context">
+      <div class="num">02</div>
+      <h3>Memory</h3>
+      <p>把跨会话的事实、偏好、反馈存进可检索层。</p>
+      <code>short: 当前任务状态
+long:  用户偏好
+episodic:  关键事件</code>
+    </div>
+    <div class="card" data-phase="context">
+      <div class="num">03</div>
+      <h3>Tool Use</h3>
+      <p>让模型在推理中调用外部能力。Function calling 是入口。</p>
+      <code>{ name, desc, schema }
+→ model 返回 tool_call
+→ 执行 → observation</code>
+    </div>
+    <div class="card" data-phase="context">
+      <div class="num">04</div>
+      <h3>MCP</h3>
+      <p>Model Context Protocol。工具和数据源的标准化接口协议。</p>
+      <code>host ⇄ MCP client
+       ⇄ server (tool/data)
+       ⇄ resources / prompts</code>
+    </div>
+    <div class="card" data-phase="context">
+      <div class="num">05</div>
+      <h3>长上下文</h3>
+      <p>1M token 窗口只是物理条件，关键是 placement 与压缩。</p>
+      <code>前后: 重要信息
+中段:  避免关键
+格式:  XML/JSON > Markdown</code>
+    </div>
+  </div>
+
+  <div class="callout violet reveal d5">
+    <div class="lab">// 协同规则</div>
+    RAG 解决「事实」，Memory 解决「状态」，Tool 解决「行动」，MCP 解决「对接」，长上下文解决「密度」。五个一起用，单点优化收益被锁死。
+  </div>
+</section>
+
+<!-- =================== SLIDE 8: HARNESS 是什么 =================== -->
+<section class="slide" data-page="8" data-phase="harness" data-date="2025.08">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-harness">PHASE_03</span>
+    <span>Harness Engineering · 是什么</span>
+  </div>
+  <h2 class="s-title reveal d2">模型是引擎，<em>harness</em> 是变速箱</h2>
+  <div class="s-subtitle reveal d3">2025 Anthropic 提出 Harness Engineering：把模型包进一套能自主循环、可验证、可治理的工程骨架。</div>
+
+  <div class="two-col reveal d4">
+    <div>
+      <div class="callout amber">
+        <div class="lab">// 一句话定义</div>
+        <b style="color:var(--text-bright)">Harness</b> 是包在模型外层的工程骨架。它决定模型<b style="color:var(--text-bright)">什么时候被调用、用什么工具、看到什么 context、产出怎么验证、错了怎么办、谁能拦下来</b>。同样的模型，不同 harness，能力天差地别。
+      </div>
+      <div class="callout" style="margin-top:14px">
+        <div class="lab">// 起源</div>
+        <div style="font-family:var(--mono);font-size:13px;line-height:1.9;color:var(--text)">
+          <span style="color:var(--text-faint)">2023.04</span> <b style="color:var(--text-bright)">AutoGPT</b><span style="color:var(--text-dim)"> · 第一次让 LLM 自主循环</span><br>
+          <span style="color:var(--text-faint)">2024.10</span> <b style="color:var(--text-bright)">Claude Computer Use</b><span style="color:var(--text-dim)"> · 模型直接操作系统</span><br>
+          <span style="color:var(--text-faint)">2025.02</span> <b style="color:var(--text-bright)">MCP 协议</b><span style="color:var(--text-dim)"> · harness 的标准化接口层</span><br>
+          <span style="color:var(--text-faint)">2025.08</span> <b style="color:var(--text-bright)">Claude Agent SDK + Harness Engineering</b><span style="color:var(--text-dim)"> · 框架术语正式成型</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="codeblock amber">
+<span class="com">// 一个最小 harness 的骨架</span>
+
+<span class="prompt">while</span> not task_done:
+    <span class="com"># 1. 组装 context</span>
+    context = build_context(
+        system, memory, rag,
+        tool_schemas, history
+    )
+
+    <span class="com"># 2. 调模型</span>
+    response = model(context)
+
+    <span class="com"># 3. 执行动作</span>
+    if response.tool_call:
+        result = run_tool(...)
+        verify(result)
+
+    <span class="com"># 4. 写回状态</span>
+    memory.update(...)
+
+    <span class="com"># 5. 守门</span>
+    permission.check(action)
+    budget.consume(tokens)
+
+<span class="key" style="color:var(--c-amber)">// 模型只负责第 2 步</span>
+<span class="key" style="color:var(--c-amber)">// 其它四步都是 harness 的事</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 9: AGENT 框架演进 =================== -->
+<section class="slide" data-page="9" data-phase="harness" data-date="2023.06">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-harness">PHASE_03</span>
+    <span>Harness Engineering · 框架演进</span>
+  </div>
+  <h2 class="s-title reveal d2">从能想到，到能做到，到能放手</h2>
+  <div class="s-subtitle reveal d3">两年时间，harness 从一个 GitHub repo 演化成一类正式工程。</div>
+
+  <div class="full-tl reveal d4">
+    <div class="row">
+      <div class="pt" data-phase="prompt">
+        <div class="dot"></div>
+        <div class="date">2022.10</div>
+        <div class="name">ReAct</div>
+        <div class="note">Reason + Act<br>思想框架诞生</div>
+      </div>
+      <div class="pt" data-phase="prompt">
+        <div class="dot"></div>
+        <div class="date">2023.04</div>
+        <div class="name">AutoGPT</div>
+        <div class="note">第一次自主循环<br>GitHub 10w+ star</div>
+      </div>
+      <div class="pt" data-phase="prompt">
+        <div class="dot"></div>
+        <div class="date">2023.06</div>
+        <div class="name">BabyAGI</div>
+        <div class="note">任务清单 + 优先级<br>loop 范式定型</div>
+      </div>
+      <div class="pt" data-phase="prompt">
+        <div class="dot"></div>
+        <div class="date">2023.10</div>
+        <div class="name">LangChain</div>
+        <div class="note">工程化 LLM 编排<br>链式 + 工具库</div>
+      </div>
+      <div class="pt" data-phase="context">
+        <div class="dot"></div>
+        <div class="date">2024.06</div>
+        <div class="name">LangGraph</div>
+        <div class="note">图状态机<br>复杂分支可表达</div>
+      </div>
+      <div class="pt" data-phase="harness">
+        <div class="dot"></div>
+        <div class="date">2024.10</div>
+        <div class="name">Computer Use</div>
+        <div class="note">模型直接操作系统<br>harness 形态质变</div>
+      </div>
+      <div class="pt" data-phase="harness">
+        <div class="dot"></div>
+        <div class="date">2025.02</div>
+        <div class="name">MCP</div>
+        <div class="note">工具 / 数据标准化<br>harness 的 USB-C</div>
+      </div>
+      <div class="pt" data-phase="harness">
+        <div class="dot"></div>
+        <div class="date">2025.08</div>
+        <div class="name">Agent SDK</div>
+        <div class="note">Claude Agent SDK<br>Harness 术语正式化</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="three-col" style="margin-top:34px">
+    <div class="callout reveal d5">
+      <div class="lab">// 2023 能想到</div>
+      ReAct + BabyAGI 证明了「让模型自己循环」可行。但 prompt 脆弱、工具乱接、循环死锁天天有。
+    </div>
+    <div class="callout violet reveal d6">
+      <div class="lab">// 2024 能做到</div>
+      LangGraph 把状态机做对了，Computer Use 让模型真正能操作系统。harness 第一次能跑通完整业务。
+    </div>
+    <div class="callout amber reveal d7">
+      <div class="lab">// 2025 能放手</div>
+      MCP 标准化接口，Agent SDK 把权限、预算、子 agent 内建。harness 从 demo 走向生产。
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 10: 代表产品对比 =================== -->
+<section class="slide" data-page="10" data-phase="harness" data-date="2024.06">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-harness">PHASE_03</span>
+    <span>Harness Engineering · 代表产品</span>
+  </div>
+  <h2 class="s-title reveal d2">同一时代，五个方向，各走各路</h2>
+  <div class="s-subtitle reveal d3">同一个 Claude 模型，套上不同 harness，呈现完全不同的能力边界。</div>
+
+  <table class="atable reveal d4">
+    <thead>
+      <tr>
+        <th style="width:18%">PRODUCT</th>
+        <th style="width:22%">核心能力</th>
+        <th style="width:18%">代表场景</th>
+        <th style="width:22%">强项</th>
+        <th style="width:20%">局限</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="prod">AutoGPT</span><span class="yr">2023.04</span></td>
+        <td>自主循环 + 任务分解 + 工具调用</td>
+        <td>研究 / 调研 / 多步任务</td>
+        <td class="ok">概念启蒙 · 框架范式</td>
+        <td class="lim">prompt 脆弱 · 易死循环</td>
+      </tr>
+      <tr>
+        <td><span class="prod">ACPAgent</span><span class="yr">2025</span></td>
+        <td>Computer Use + 多步任务 + 子 agent</td>
+        <td>桌面自动化 / 浏览器操作</td>
+        <td class="ok">真实操作系统交互</td>
+        <td class="lim">环境依赖 · 错误传播</td>
+      </tr>
+      <tr>
+        <td><span class="prod">OpenClaw</span><span class="yr">2025</span></td>
+        <td>本地 agent + 多 agent 协同 + 文件系统</td>
+        <td>个人 AI 工作台 / 离线任务</td>
+        <td class="ok">本地可控 · 隐私友好</td>
+        <td class="lim">生态早期 · 模型受限</td>
+      </tr>
+      <tr>
+        <td><span class="prod">Manus</span><span class="yr">2025</span></td>
+        <td>云端通用 agent + 多 harness 切换</td>
+        <td>研究 / 写代码 / 数据分析</td>
+        <td class="ok">多 harness 调度</td>
+        <td class="lim">黑盒 · 难定制</td>
+      </tr>
+      <tr>
+        <td><span class="prod">Devin</span><span class="yr">2024.03</span></td>
+        <td>软件工程 agent + IDE + 浏览器</td>
+        <td>完整项目开发 / 调试</td>
+        <td class="ok">工程场景深度</td>
+        <td class="lim">贵 · 复杂任务仍需人</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout reveal d5">
+    <div class="lab">// 关键观察</div>
+    没有「最强 harness」，只有「最匹配场景的 harness」。挑 harness 的本质是挑 <b style="color:var(--c-amber)">信任边界</b>：哪些动作自动执行、哪些必须人审、哪些需要 rollback。
+  </div>
+</section>
+
+<!-- =================== SLIDE 11: HARNESS 六件套 =================== -->
+<section class="slide" data-page="11" data-phase="harness" data-date="2024.10">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-harness">PHASE_03</span>
+    <span>Harness Engineering · 六件套</span>
+  </div>
+  <h2 class="s-title reveal d2">拆开任何 production harness，都是这六块</h2>
+  <div class="s-subtitle reveal d3">不管叫 Claude Agent SDK 还是 OpenAI Agents SDK 还是自研框架，六件套是骨架。</div>
+
+  <div class="six reveal d4">
+    <div class="cell">
+      <div class="lab">01 · LOOP</div>
+      <h4>主循环</h4>
+      <p>while not done: 组装 context → 调模型 → 执行 → 验证 → 写回状态。loop 的稳定性和退出条件决定 harness 死活。</p>
+    </div>
+    <div class="cell">
+      <div class="lab">02 · TOOLS</div>
+      <h4>工具集</h4>
+      <p>读、写、搜、跑命令、调 API。工具的设计比工具的数量重要十倍。每个 tool 必须有 schema、错误处理、超时。</p>
+    </div>
+    <div class="cell">
+      <div class="lab">03 · CONTEXT</div>
+      <h4>上下文装配</h4>
+      <p>把 system、memory、rag、tool defs、history 拼成最优输入。这是 phase_02 的全部积累。</p>
+    </div>
+    <div class="cell">
+      <div class="lab">04 · VERIFICATION</div>
+      <h4>验证层</h4>
+      <p>模型说什么都先验证。单元测试、类型检查、syntax lint、输出 schema 校验。harness 不验证 = 模型幻觉狂奔。</p>
+    </div>
+    <div class="cell">
+      <div class="lab">05 · SUBAGENT</div>
+      <h4>子 agent</h4>
+      <p>把任务拆给有独立 context、独立工具集的子 agent。是复杂任务的唯一解，也是 context rot 的主要解药。</p>
+    </div>
+    <div class="cell">
+      <div class="lab">06 · PERMISSION</div>
+      <h4>权限闸</h4>
+      <p>谁能跑、谁能删、谁能外发。production harness 的第一性问题是「这一刀切下去能不能撤回」。</p>
+    </div>
+  </div>
+
+  <div class="callout amber reveal d5">
+    <div class="lab">// 经验</div>
+    缺 loop 死循环，缺 tool 等于聊天，缺 context 模型瞎说，缺 verification 幻觉失控，缺 subagent 任务撑不开，缺 permission 老板不让上线。六件缺一不可。
+  </div>
+</section>
+
+<!-- =================== SLIDE 12: 未来方向 =================== -->
+<section class="slide" data-page="12" data-phase="all" data-date="2026+">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-meta">// FUTURE</span>
+    <span>下一站 · Spec / Mission / Outcome Engineering</span>
+  </div>
+  <h2 class="s-title reveal d2">下一步：把「过程」也工程化掉</h2>
+  <div class="s-subtitle reveal d3">从 prompt → context → harness，下一个被工程化的对象，是任务的<b style="color:var(--text-bright)">定义本身</b>。</div>
+
+  <div class="future-row reveal d4">
+    <div class="future-card">
+      <div class="arrow">FROM → TO</div>
+      <h3>Spec Engineering</h3>
+      <span class="badge">2026 雏形</span>
+      <p>不写 prompt，写规格说明书。模型自己拆解、自己验收。人的工作从「写怎么做」变成「写要什么」。</p>
+    </div>
+    <div class="future-card">
+      <div class="arrow">FROM → TO</div>
+      <h3>Mission Engineering</h3>
+      <span class="badge">2026+ 探索</span>
+      <p>把目标当 first-class object 传给模型。harness 不再被指定流程，而是被指定「结果」。</p>
+    </div>
+    <div class="future-card">
+      <div class="arrow">FROM → TO</div>
+      <h3>Outcome Engineering</h3>
+      <span class="badge">2027+ 雏形</span>
+      <p>模型直接对接业务 KPI，对效果负责。不再交付「做完了」，而是交付「指标涨了 X%」。</p>
+    </div>
+  </div>
+
+  <div class="callout reveal d5">
+    <div class="lab">// 关键判断</div>
+    真正的范式转移不在新模型，而在「人给机器的输入」这一端的形态升级。今天我们写 prompt，明天我们写 spec，后天我们写 outcome。每升一层，人类的注意力就从过程里抽身。
+  </div>
+</section>
+
+<!-- =================== SLIDE 13: TAKEAWAY =================== -->
+<section class="slide" data-page="13" data-phase="all" data-date="2026+">
+  <div class="s-meta reveal d1">
+    <span class="tag tag-meta">// END · KEY TAKEAWAYS</span>
+    <span>三句话带走这场分享</span>
+  </div>
+  <h2 class="s-title reveal d2">记住三件事就够了</h2>
+
+  <div class="tk-grid reveal d3">
+    <div class="tk l1">
+      <div class="n">01</div>
+      <div class="lab">PROMPT · CONTEXT · HARNESS</div>
+      <h3>主角一直在换</h3>
+      <p>被工程化的对象在升级：<span style="color:var(--c-cyan)">指令</span> → <span style="color:var(--c-violet)">信息</span> → <span style="color:var(--c-amber)">系统</span>。每一次主角升级，前一阶段都没死，降级成基础组件。</p>
+    </div>
+    <div class="tk l2">
+      <div class="n">02</div>
+      <div class="lab">CONTEXT > PROMPT</div>
+      <h3>喂得对比问得好重要</h3>
+      <p>Prompt 决定上限，context 决定实际命中。RAG / Memory / Tool / MCP 四件套是 context engineering 的肌肉。窗口大不等于喂得好。</p>
+    </div>
+    <div class="tk l3">
+      <div class="n">03</div>
+      <div class="lab">HARNESS = 生产化</div>
+      <h3>模型是引擎，骨架是变速箱</h3>
+      <p>Loop + Tools + Context + Verify + Subagent + Permission，六件缺一不可。挑 harness 是挑信任边界，不是挑模型。</p>
+    </div>
+  </div>
+
+  <div class="final-quote reveal d4">
+    「下一代 agent 工程师的核心能力，不是写 prompt，而是设计 harness。」
+    <span class="who">—— 2026 · 黑哥AI · Blake Xu</span>
+  </div>
+
+  <div class="contact-line reveal d5">
+    <span><span class="dot"></span>STATUS · READY_TO_SHIP</span>
+    <span style="color:var(--text-faint)">// 完 · END_OF_TRANSMISSION</span>
+  </div>
+</section>
+
+</div>
+
+<!-- ============== FOOTER ============== -->
+<div class="footbar">
+  <div class="left">
+    <span style="color:var(--c-cyan)">●</span> EVOLUTION.LOG
+    <span style="color:var(--text-faint)">|</span>
+    <span id="footPage">PAGE 01 / 13</span>
+    <span style="color:var(--text-faint)">|</span>
+    <span id="footPhase" style="color:var(--c-cyan)">PHASE_01 · PROMPT</span>
+  </div>
+  <div class="right">
+    <span><kbd>←</kbd> <kbd>→</kbd> NAV</span>
+    <span><kbd>SPACE</kbd> NEXT</span>
+    <span><kbd>HOME</kbd> FIRST</span>
+    <span><kbd>P</kbd> PRINT → PDF</span>
+    <span style="color:var(--c-green)"><span class="blink"></span> LIVE</span>
+  </div>
+</div>
+
+<script>
+/* ============== TIMELINE NODES ============== */
+const nodesData = [
+  {date:"2022.11", label:"ChatGPT", phase:"prompt"},
+  {date:"2023.03", label:"GPT-4", phase:"prompt"},
+  {date:"2023.04", label:"AutoGPT", phase:"prompt"},
+  {date:"2023.06", label:"ReAct", phase:"prompt"},
+  {date:"2024.06", label:"Claude 3.5", phase:"context"},
+  {date:"2024.10", label:"Computer Use", phase:"harness"},
+  {date:"2025.02", label:"MCP", phase:"harness"},
+  {date:"2025.07", label:"Context Eng", phase:"context"},
+  {date:"2025.08", label:"Harness Eng", phase:"harness"},
+  {date:"2025.10", label:"Opus 4.5", phase:"harness"},
+  {date:"2026+", label:"Spec Eng", phase:"all"},
+  {date:"2026+", label:"Multi-Agent", phase:"all"},
+  {date:"2026+", label:"Future", phase:"all"},
+];
+
+const tlNodes = document.getElementById('tlNodes');
+const tlProgress = document.getElementById('tlProgress');
+const tlNowLabel = document.getElementById('tlNowLabel');
+
+nodesData.forEach((n,i)=>{
+  const el = document.createElement('div');
+  el.className = 'tl-node';
+  el.dataset.idx = i;
+  el.dataset.phase = n.phase;
+  el.innerHTML = `<div class="tl-tip">${n.date} · ${n.label}</div>`;
+  el.addEventListener('click',()=>goTo(i+1));
+  tlNodes.appendChild(el);
+});
+
+const nodeEls = tlNodes.querySelectorAll('.tl-node');
+
+/* ============== SLIDES ============== */
+const slides = Array.from(document.querySelectorAll('.slide'));
+const total = slides.length;
+let cur = 0;
+
+const footPage = document.getElementById('footPage');
+const footPhase = document.getElementById('footPhase');
+
+function pad(n){return String(n).padStart(2,'0')}
+
+function render(){
+  slides.forEach((s,i)=>{
+    s.classList.toggle('active', i===cur);
+  });
+  const active = slides[cur];
+  const idx = parseInt(active.dataset.page,10);
+  const phase = active.dataset.phase;
+  const date = active.dataset.date;
+
+  // progress = (cur)/(total-1)
+  const pct = total===1 ? 100 : (cur/(total-1))*100;
+  tlProgress.style.width = pct + '%';
+
+  // node states
+  nodeEls.forEach((n,i)=>{
+    n.classList.remove('done','now');
+    if(i < cur) n.classList.add('done');
+    else if(i === cur) n.classList.add('now');
+  });
+
+  tlNowLabel.textContent = date;
+
+  footPage.textContent = `PAGE ${pad(idx)} / ${pad(total)}`;
+
+  const phaseMap = {
+    prompt:['PHASE_01 · PROMPT', 'var(--c-cyan)'],
+    context:['PHASE_02 · CONTEXT', 'var(--c-violet)'],
+    harness:['PHASE_03 · HARNESS', 'var(--c-amber)'],
+    all:['OVERVIEW · FUTURE', 'var(--text-dim)'],
+  };
+  const [pl, pc] = phaseMap[phase] || phaseMap.all;
+  footPhase.textContent = pl;
+  footPhase.style.color = pc;
+}
+
+function goTo(n){
+  cur = Math.max(0, Math.min(total-1, n));
+  render();
+}
+
+/* keyboard */
+document.addEventListener('keydown',e=>{
+  const t=e.target;
+  if(t && t.matches && t.matches('input,textarea,[contenteditable="true"]')) return;
+  if(e.key==='ArrowRight' || e.key===' ' || e.key==='PageDown'){e.preventDefault();goTo(cur+1)}
+  else if(e.key==='ArrowLeft' || e.key==='PageUp'){e.preventDefault();goTo(cur-1)}
+  else if(e.key==='Home'){goTo(0)}
+  else if(e.key==='End'){goTo(total-1)}
+  else if(/^[0-9]$/.test(e.key)){
+    const n = parseInt(e.key,10);
+    if(n>=1 && n<=total) goTo(n-1);
+  } else if(e.key==='p' || e.key==='P'){
+    window.print();
+  }
+});
+
+/* click anywhere → next (except nodes/links) */
+document.querySelector('.stage').addEventListener('click',e=>{
+  if(e.target.closest('.tl-node, a, button, kbd')) return;
+  goTo(cur+1);
+});
+
+render();
+</script>
+
+</body>
+</html>
