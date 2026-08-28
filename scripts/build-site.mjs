@@ -126,8 +126,8 @@ footer{border-top:1px solid var(--edge);padding:38px 0 64px;color:var(--dim);fon
 <div class="stat"><span><b>${systems.length}</b> 套</span><span><b>11</b> 家族</span><span><b>50/50</b> 0 lint error</span><span>六层导出</span><span>URL→DESIGN.md 提取</span><span>UI+Deck 融合</span></div>
 </header></div>
 <div class="wrap"><div class="showcase">
-<div class="sc-meta"><div class="fam-tag">家族示范 · FAMILY SHOWCASE</div><h2>暗色科技 · AI Agent 进化之路</h2><p class="sc-desc">13 页 16:9 演示。展示暗色科技家族怎么用「阶段色编码 + 时间线贯穿」讲一段有节奏的技术故事：Prompt（青）→ Context（紫）→ Harness（橙）。签名时刻是顶端 13 节点时间线随翻页推进 + 扫描线 / 辉光脉冲动效。</p><div class="sc-tags"><span>阶段色编码</span><span>时间线贯穿</span><span>单文件 HTML</span><span>零依赖</span></div><a class="sc-btn" href="../samples/dark-tech-family-showcase.html" target="_blank">查看演示 →</a></div>
-<div class="sc-cover"><img src="../assets/previews/showcase-dark-tech-family.webp" alt="AI Agent 进化之路 封面" loading="lazy"></div>
+<div class="sc-meta"><div class="fam-tag">家族示范 · FAMILY SHOWCASE</div><h2>暗色科技 · AI Agent 进化之路</h2><p class="sc-desc">13 页 16:9 演示。展示暗色科技家族怎么用「阶段色编码 + 时间线贯穿」讲一段有节奏的技术故事：Prompt（青）→ Context（紫）→ Harness（橙）。签名时刻是顶端 13 节点时间线随翻页推进 + 扫描线 / 辉光脉冲动效。</p><div class="sc-tags"><span>阶段色编码</span><span>时间线贯穿</span><span>单文件 HTML</span><span>零依赖</span></div><a class="sc-btn" href="./samples/dark-tech-family-showcase.html" target="_blank">查看演示 →</a></div>
+<div class="sc-cover"><img src="./assets/previews/showcase-dark-tech-family.webp" alt="AI Agent 进化之路 封面" loading="lazy"></div>
 </div></div>
 <div class="bar"><div class="wrap"><input id="q" placeholder="搜索：中文名 / slug / 家族 / 颜色关键词…"><button class="chip on" data-mode="all">全部明暗</button><button class="chip" data-mode="light">浅色</button><button class="chip" data-mode="dark">深色</button></div>
 <div class="wrap" style="margin-top:10px">${chips.map((c,i)=>`<button class="chip fam ${i===0?'on':''}" data-f="${c}">${c}</button>`).join('')}</div></div>
@@ -230,4 +230,14 @@ document.querySelectorAll('.copy').forEach(b=>b.onclick=()=>{const t=b.parentEle
 </script></body></html>`;
 }
 for(const s of systems) fs.writeFileSync(path.join(SITE,'s',s.slug+'.html'), detail(s));
+
+// 把家族示范 deck 和封面图复制到部署根，确保 GitHub Pages /docs 下链接和图片可用
+const cp = (src, dst) => {
+  if (!fs.existsSync(src)) return;
+  fs.mkdirSync(path.dirname(dst), { recursive: true });
+  fs.copyFileSync(src, dst);
+};
+cp(path.join(ROOT, 'samples', 'dark-tech-family-showcase.html'), path.join(SITE, 'samples', 'dark-tech-family-showcase.html'));
+cp(path.join(ROOT, 'assets', 'previews', 'showcase-dark-tech-family.webp'), path.join(SITE, 'assets', 'previews', 'showcase-dark-tech-family.webp'));
+
 console.log(`站点生成：画廊 + ${systems.length} 个详情页 →`, path.join(SITE,'index.html'));
