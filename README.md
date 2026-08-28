@@ -64,7 +64,7 @@ AI 写代码越来越稳，做界面却常有一股默认模板味：紫蓝渐�
 
 | 能力 | 命令 |
 |---|---|
-| 浏览与搜索 50 套（家族 / 颜色 / 明暗 / 关键词） | 打开 `site/index.html` |
+| 浏览与搜索 50 套（家族 / 颜色 / 明暗 / 关键词） | 打开 `docs/index.html` |
 | 六层可执行资产导出（Tailwind v4/v3 · CSS 变量 · W3C DTCG · agent 提示词 · Compact 速览） | `heige-design export <slug> --format ...` |
 | Compact 一屏速览 / Agent 速查色卡（自动派生，全 50 套） | 见 `systems/<slug>/exports/compact.md` |
 | 校验（结构 + WCAG 对比度，官方 lint） | `heige-design lint <slug\|all>` |

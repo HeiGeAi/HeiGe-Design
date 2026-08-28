@@ -89,7 +89,7 @@ switch (cmd) {
   case 'site': case 'gallery': {
     node('validate.mjs'); node('export-tokens.mjs');
     node('build-gallery.mjs'); node('build-site.mjs');
-    console.log('\n站点已重建: site/index.html');
+    console.log('\n站点已重建: docs/index.html');
     break;
   }
   default:

@@ -8,7 +8,7 @@ const yaml = require('js-yaml');
 
 const ROOT = path.resolve(process.argv[2] || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'));
 const SYS = path.join(ROOT, 'systems');
-const SITE = path.join(ROOT, 'site');
+const SITE = path.join(ROOT, 'docs');
 fs.mkdirSync(path.join(SITE, 's'), { recursive: true });
 const report = JSON.parse(fs.readFileSync(path.join(ROOT, 'report.json'), 'utf8'));
 
