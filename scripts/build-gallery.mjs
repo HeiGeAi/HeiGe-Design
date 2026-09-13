@@ -41,6 +41,11 @@ function firstFF(typ, includes){
 function anyFF(typ){ const k=Object.keys(typ||{})[0]; return k?(typ[k].fontFamily||''):''; }
 function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+// 防护：systems/ 目录与 META 表漂移时告警，新增系统只加目录不会被静默漏掉
+for (const d of fs.readdirSync(SYS)) {
+  if (fs.existsSync(path.join(SYS, d, 'DESIGN.md')) && !META[d]) console.warn('警告：systems/' + d + ' 不在 META 表中，已跳过；请同步 build-gallery.mjs 的 META');
+}
+
 const systems = [];
 for (const slug of Object.keys(META)) {
   const file = path.join(SYS, slug, 'DESIGN.md');

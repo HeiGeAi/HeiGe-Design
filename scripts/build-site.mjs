@@ -37,6 +37,11 @@ const readEx=(slug,f)=>{const p=path.join(SYS,slug,'exports',f);return fs.exists
 const FONTS=['Inter:wght@300;400;500;600;700;800','Space+Grotesk:wght@400;500;700','Archivo:wght@400;600;800','Archivo+Black','Anton','Bebas+Neue','Oswald:wght@500;700','Playfair+Display:wght@400;600;700;900','Cormorant:wght@400;600;700','Cormorant+Garamond:wght@400;600;700','EB+Garamond:wght@400;600','Fraunces:wght@400;600;900','DM+Serif+Display','Manrope:wght@400;600;800','Sora:wght@400;600;800','Syne:wght@600;800','Space+Mono:wght@400;700','JetBrains+Mono:wght@400;600;800','IBM+Plex+Mono:wght@400;600','IBM+Plex+Sans:wght@400;600','IBM+Plex+Serif:wght@400;600','Chakra+Petch:wght@500;700','Press+Start+2P','VT323','Baloo+2:wght@500;700;800','Fredoka:wght@500;600;700','Noto+Serif+SC:wght@400;600;900','Noto+Sans+SC:wght@400;500;700;900','LXGW+WenKai+TC','ZCOOL+KuaiLe','ZCOOL+XiaoWei','Ma+Shan+Zheng','Long+Cang','Zhi+Mang+Xing'];
 const FONTLINK=`https://fonts.googleapis.com/css2?${FONTS.map(f=>'family='+f).join('&')}&display=swap`;
 
+// 防护：systems/ 目录与 META 表漂移时告警，新增系统只加目录不会被静默漏掉
+for (const d of fs.readdirSync(SYS)) {
+  if (fs.existsSync(path.join(SYS, d, 'DESIGN.md')) && !META[d]) console.warn('警告：systems/' + d + ' 不在 META 表中，已跳过；请同步 build-site.mjs 的 META');
+}
+
 const systems=[];
 for(const slug of Object.keys(META)){
   const dm=path.join(SYS,slug,'DESIGN.md'); if(!fs.existsSync(dm))continue;
