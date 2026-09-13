@@ -78,8 +78,7 @@ for (const slug of Object.keys(META)) {
   // 调色板：去重取前 7
   const palette = [...new Set(Object.values(colors))].filter(c=>/^#/.test(c)).slice(0,7);
 
-  systems.push({ slug, family, cn, name: fm.name||slug, bg, ink, primary, onPrimary, accent, surface, muted, hairline, dark, displayFF, bodyFF, monoFF, dispWeight, dispLS, radius, palette,
-    tags: (fm.description||'').slice(0,0) });
+  systems.push({ slug, family, cn, name: fm.name||slug, bg, ink, primary, onPrimary, accent, surface, muted, hairline, dark, displayFF, bodyFF, monoFF, dispWeight, dispLS, radius, palette });
 }
 
 // manifest
