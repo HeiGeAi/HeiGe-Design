@@ -1,6 +1,6 @@
 {
   "name": "heige-design",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "给 AI 一张视觉角色卡。50 套原创品牌设定集，一份 DESIGN.md 同时驱动界面与演示。",
   "type": "module",
   "bin": { "heige-design": "bin/heige-design" },
