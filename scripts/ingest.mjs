@@ -33,7 +33,18 @@ function findChrome(){
 const CHROME = findChrome();
 const url = process.argv[2];
 if (!url) { console.error('用法: node ingest.mjs <url> [slug]'); process.exit(1); }
-const host = new URL(url).hostname.replace(/^www\./, '');
+let parsedUrl;
+try {
+  parsedUrl = new URL(url);
+} catch {
+  console.error(`URL 无法解析: ${url}`);
+  process.exit(1);
+}
+if (!['http:', 'https:', 'data:'].includes(parsedUrl.protocol)) {
+  console.error(`只支持 http/https/data 协议的 URL，收到: ${parsedUrl.protocol}`);
+  process.exit(1);
+}
+const host = parsedUrl.hostname.replace(/^www\./, '');
 const slug = process.argv[3] || host.replace(/[^a-z0-9]+/gi, '-');
 if (!/^[a-z0-9](?:[a-z0-9-]{0,78}[a-z0-9])?$/i.test(slug)) {
   console.error('slug 只能包含字母、数字和连字符，长度不超过 80，且首尾必须是字母或数字');
