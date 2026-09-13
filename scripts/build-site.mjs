@@ -10,7 +10,9 @@ const ROOT = path.resolve(process.argv[2] || path.resolve(path.dirname(fileURLTo
 const SYS = path.join(ROOT, 'systems');
 const SITE = path.join(ROOT, 'docs');
 fs.mkdirSync(path.join(SITE, 's'), { recursive: true });
-const report = JSON.parse(fs.readFileSync(path.join(ROOT, 'report.json'), 'utf8'));
+const reportPath = path.join(ROOT, 'report.json');
+if (!fs.existsSync(reportPath)) { console.error('缺少 report.json，请先运行 heige-design lint all 生成'); process.exit(1); }
+const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 
 const META = {
   'forge-anvil':['凶悍工业','熔炉'],'rebar-concrete':['凶悍工业','钢筋'],'riot-press':['凶悍工业','暴走印刷'],'ironclad-ledger':['凶悍工业','铁账'],'brut-signal':['凶悍工业','呐喊'],
