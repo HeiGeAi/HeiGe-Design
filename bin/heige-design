@@ -47,8 +47,8 @@ switch (cmd) {
     console.log(`主色 ${m.primary} · ${m.dark ? '深色' : '浅色'} · 调色板 ${(m.palette || []).join(' ')}`);
     console.log(`设定集: systems/${slug}/DESIGN.md`);
     console.log(`导出:   systems/${slug}/exports/ (tailwind-v4/v3 · variables.css · tokens.dtcg.json · agent-prompt.md)`);
-    const flag = path.join(SYS, slug, 'flagship', 'page.html');
-    if (fs.existsSync(flag)) console.log(`旗舰:   systems/${slug}/flagship/ (page.html + deck.html)`);
+    const flagshipPage = path.join(SYS, slug, 'flagship', 'page.html');
+    if (fs.existsSync(flagshipPage)) console.log(`旗舰:   systems/${slug}/flagship/ (page.html + deck.html)`);
     break;
   }
   case 'export': {
