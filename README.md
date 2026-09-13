@@ -113,7 +113,7 @@ systems/<slug>/
   DESIGN.md         设定集（YAML tokens + Markdown 理由 + UI/PPT 融合层）
   exports/          六层可执行资产（含 compact 速览）
   flagship/         整页落地页 + 16:9 deck（部分套）
-site/               画廊 + 50 个详情页
+docs/               画廊 + 50 个详情页（GitHub Pages 部署源）
 bin/heige-design    统一 CLI
 references/         气质图谱 / 格式规范 / 动效性格 / 反AI清单 / 生产铁律 / 能力矩阵 / 回写环路
 scripts/            导出 / 校验 / 提取 / 站点生成
