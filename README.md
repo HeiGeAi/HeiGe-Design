@@ -97,6 +97,7 @@ node bin/heige-design export nocturne-teal --format tailwind-v4
 
 # 从一个你喜欢的网站提取草稿
 node bin/heige-design ingest https://example.com
+# 可用 HEIGE_CHROME 指定浏览器可执行文件；注意该变量等价于指定任意可执行文件，只填你本机可信的浏览器路径
 
 # 校验 / 重建站点
 node bin/heige-design lint all
