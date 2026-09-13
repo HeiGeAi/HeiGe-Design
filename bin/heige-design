@@ -54,10 +54,14 @@ switch (cmd) {
   case 'export': {
     const slug = args[0] || die('用法: heige-design export <slug> [--format tailwind-v4|tailwind-v3|css-vars|dtcg]');
     const map = { 'tailwind-v4': 'tailwind-v4.css', 'tailwind-v3': 'tailwind-v3.json', 'css-vars': 'variables.css', 'dtcg': 'tokens.dtcg.json', 'prompt': 'agent-prompt.md' };
+    if (!fs.existsSync(dm(slug))) die(`没有这套: ${slug}`);
     const fmt = flag('format');
     const exdir = path.join(SYS, slug, 'exports');
-    if (!fs.existsSync(exdir)) node('export-tokens.mjs');
-    if (fmt && map[fmt]) process.stdout.write(fs.readFileSync(path.join(exdir, map[fmt]), 'utf8'));
+    if (fmt && map[fmt]) {
+      const f = path.join(exdir, map[fmt]);
+      if (!fs.existsSync(f)) die(`缺少导出产物 systems/${slug}/exports/${map[fmt]}，请先运行 heige-design site 生成`);
+      process.stdout.write(fs.readFileSync(f, 'utf8'));
+    }
     else console.log('可用格式: ' + Object.keys(map).join(' / ') + `\n资产目录: systems/${slug}/exports/`);
     break;
   }
@@ -81,8 +85,9 @@ switch (cmd) {
   }
   case 'build': {
     const slug = args[0] || die('用法: heige-design build <slug>  # 打印可直接粘给 coding agent 的提示词');
+    if (!fs.existsSync(dm(slug))) die(`没有这套: ${slug}`);
     const p = path.join(SYS, slug, 'exports', 'agent-prompt.md');
-    if (!fs.existsSync(p)) node('export-tokens.mjs');
+    if (!fs.existsSync(p)) die(`缺少 systems/${slug}/exports/agent-prompt.md，请先运行 heige-design site 生成`);
     process.stdout.write(fs.readFileSync(p, 'utf8'));
     break;
   }
