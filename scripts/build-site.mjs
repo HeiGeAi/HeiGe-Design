@@ -41,7 +41,9 @@ const systems=[];
 for(const slug of Object.keys(META)){
   const dm=path.join(SYS,slug,'DESIGN.md'); if(!fs.existsSync(dm))continue;
   const raw=fs.readFileSync(dm,'utf8');
-  const fm=yaml.load((raw.match(/^---\n([\s\S]*?)\n---/)||[,''])[1])||{};
+  const m=raw.match(/^---\n([\s\S]*?)\n---/);
+  let fm={};
+  try { fm=yaml.load(m?m[1]:'')||{}; } catch(e){ console.warn('YAML 解析失败，跳过', slug, e.message); continue; }
   const c=fm.colors||{},t=fm.typography||{},r=fm.rounded||{},comps=fm.components||{};
   const [family,cn]=META[slug];
   const bg=pick(c,['canvas','surface','bg','paper','base'])||'#fff';
