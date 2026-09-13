@@ -141,4 +141,7 @@ ${[colorRow('主色', 'primary'), colorRow('正文', 'ink'), colorRow('底色', 
   }
 }
 console.log(`导出完成：${ok} 套 × 6 资产（tailwind-v4/v3 + css-vars + dtcg + agent-prompt + compact）`);
-if (fail.length) console.log('失败：', fail.join(' | '));
+if (fail.length) {
+  console.log('失败：', fail.join(' | '));
+  process.exitCode = 1;
+}
