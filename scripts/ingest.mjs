@@ -16,7 +16,8 @@ function findChrome(){
   const alt = path.join(process.env.HOME || '', '.cache/ms-playwright'); // linux
   for (const base of [cache, alt]) {
     if (!fs.existsSync(base)) continue;
-    const dirs = fs.readdirSync(base).filter(d => /^chromium(_headless_shell)?-\d+/.test(d)).sort().reverse();
+    const ver = d => parseInt((d.match(/-(\d+)/) || [])[1] || '0', 10);
+    const dirs = fs.readdirSync(base).filter(d => /^chromium(_headless_shell)?-\d+/.test(d)).sort((a, b) => ver(b) - ver(a));
     for (const d of dirs) {
       const hits = [];
       const walk = p => { for (const e of fs.readdirSync(p, { withFileTypes: true })) {
