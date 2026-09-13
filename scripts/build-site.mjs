@@ -75,7 +75,7 @@ for(const slug of Object.keys(META)){
     cssvar:{'--bg':bg,'--ink':ink,'--pri':primary,'--onpri':onp,'--acc':accent,'--surf':surface,'--muted':muted,'--line':line,'--r':radius,'--dff':dff,'--bff':bff,'--mff':mff}});
 }
 
-const styleVars=s=>Object.entries(s.cssvar).map(([k,v])=>`${k}:${v}`).join(';');
+const styleVars=s=>Object.entries(s.cssvar).map(([k,v])=>`${k}:${esc(v)}`).join(';');
 
 // —— 画廊瓷砖（链接到详情页）——
 function tile(s){

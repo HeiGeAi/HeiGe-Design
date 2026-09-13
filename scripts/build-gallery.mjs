@@ -91,7 +91,7 @@ const fontsLink = `https://fonts.googleapis.com/css2?${FONTS.map(f=>'family='+f)
 function tile(s){
   const specimen = s.dark ? s.accent : s.primary;
   return `<article class="tile ${s.dark?'is-dark':'is-light'}" data-family="${esc(s.family)}" data-slug="${s.slug}"
-    style="--bg:${s.bg};--ink:${s.ink};--pri:${s.primary};--onpri:${s.onPrimary};--acc:${s.accent};--surf:${s.surface};--muted:${s.muted};--line:${s.hairline};--r:${s.radius};--dff:${esc(s.displayFF)};--bff:${esc(s.bodyFF)};--mff:${esc(s.monoFF||s.bodyFF)}">
+    style="--bg:${esc(s.bg)};--ink:${esc(s.ink)};--pri:${esc(s.primary)};--onpri:${esc(s.onPrimary)};--acc:${esc(s.accent)};--surf:${esc(s.surface)};--muted:${esc(s.muted)};--line:${esc(s.hairline)};--r:${esc(s.radius)};--dff:${esc(s.displayFF)};--bff:${esc(s.bodyFF)};--mff:${esc(s.monoFF||s.bodyFF)}">
     <div class="tile-top">
       <span class="fam">${esc(s.family)}</span>
       <span class="slug">${s.slug}</span>
