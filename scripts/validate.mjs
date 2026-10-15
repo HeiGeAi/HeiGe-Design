@@ -14,11 +14,26 @@ for (const slug of fs.readdirSync(SYS).sort()) {
   const f = path.join(SYS, slug, 'DESIGN.md');
   if (!fs.existsSync(f)) continue;
   let findings = [];
+  let output, failure;
   try {
-    const out = execFileSync(BIN, ['lint', f], { encoding: 'utf8' });
-    findings = (JSON.parse(out).findings) || [];
+    output = execFileSync(BIN, ['lint', f], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
   } catch (err) {
-    try { findings = (JSON.parse(err.stdout || '{}').findings) || []; } catch { findings = [{ severity: 'error', message: 'lint 执行失败' }]; }
+    output = err.stdout;
+    failure = err;
+  }
+  try {
+    const parsed = JSON.parse(output);
+    if (!Array.isArray(parsed.findings) || parsed.findings.some(x =>
+      !x || typeof x !== 'object' || !['error', 'warning', 'info'].includes(x.severity) ||
+      typeof x.message !== 'string')) throw new Error('invalid findings protocol');
+    findings = parsed.findings;
+  } catch (err) {
+    findings = [{ severity: 'error', message: 'lint 输出无效: ' + err.message }];
+  }
+  if (failure) {
+    findings.push({ severity: 'error', message: 'lint 执行失败: ' +
+      (failure.code || failure.signal || failure.status || failure.message),
+      exitCode: failure.status ?? null, stderr: String(failure.stderr || '').trim() });
   }
   const errors = findings.filter(x => x.severity === 'error').length;
   const warnings = findings.filter(x => x.severity === 'warning').length;
