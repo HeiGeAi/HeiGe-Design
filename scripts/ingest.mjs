@@ -106,12 +106,7 @@ assertSafeOutputDestination();
 if (!CHROME) { console.error('未找到 chromium。请先安装：npx playwright install chromium（或设 HEIGE_CHROME 指向可执行文件）'); process.exit(1); }
 
 // —— 颜色工具 ——
-const toHex = (r,g,b)=>'#'+[r,g,b].map(x=>Math.max(0,Math.min(255,x|0)).toString(16).padStart(2,'0')).join('');
-function parseColor(s){ const m=String(s).match(/rgba?\(([^)]+)\)/); if(!m) return null;
-  const p=m[1].split(',').map(x=>parseFloat(x)); if(p.length>=4&&p[3]===0) return null; return {r:p[0],g:p[1],b:p[2],hex:toHex(p[0],p[1],p[2])}; }
-function lum({r,g,b}){ const f=c=>{c/=255;return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}; return 0.2126*f(r)+0.7152*f(g)+0.0722*f(b); }
-function sat({r,g,b}){ const mx=Math.max(r,g,b)/255,mn=Math.min(r,g,b)/255; return mx===0?0:(mx-mn)/mx; }
-function contrast(a,b){ const L1=lum(a),L2=lum(b); return (Math.max(L1,L2)+0.05)/(Math.min(L1,L2)+0.05); }
+import { parseColor, lum, sat, contrast } from './colors.mjs';
 
 const raw = await (async()=>{
   const browser = await chromium.launch({ headless:true, executablePath: CHROME });
@@ -154,7 +149,7 @@ const colorsFrom=(o)=>top(o,14).map(parseColor).filter(Boolean);
 const bgs=colorsFrom(raw.bg), txts=colorsFrom(raw.txt), bords=colorsFrom(raw.bord);
 const canvas = parseColor(raw.pageBg) || bgs[0] || {hex:'#ffffff',r:255,g:255,b:255};
 const dark = lum(canvas) < 0.42;
-const ink = parseColor(raw.pageColor) || txts.find(c=>contrast(c,canvas)>=4.5) || {hex: dark?'#eaeaea':'#111111'};
+const ink = parseColor(raw.pageColor) || txts.find(c=>contrast(c,canvas)>=4.5) || parseColor(dark?'#eaeaea':'#111111');
 // 强调色：饱和度高、且与 canvas 有对比
 // 强调色：按 饱和度×出现频次 打分，排除近黑近白，取最抢眼的一个
 function scoredAccents(){
@@ -248,7 +243,7 @@ components:
 
 ## Overview
 
-Draft design system extracted from **${url}** (${raw.title || host}). Base canvas is ${dark?'dark':'light'} (\`${canvas.hex}\`), ink \`${ink.hex}\`, with \`${primary.hex}\` acting as the primary accent. This is an **approximate extraction** from computed CSS, not the site's real design system — treat it as a starting draft, then refine tokens, add the brand's rationale, and run \`heige-design lint ${slug}\`.
+Draft design system extracted from **${url}** (${raw.title || host}). Base canvas is ${dark?'dark':'light'} (\`${canvas.hex}\`), ink \`${ink.hex}\`, with \`${primary.hex}\` acting as the primary accent. This is an **approximate extraction** from computed CSS, not the site's real design system — treat it as a starting draft, then refine tokens, add the brand's rationale, and run \`heige-design lint ${JSON.stringify(outFile)}\`.
 
 ## Colors
 - **Primary** (\`${primary.hex}\`): main accent / CTA.

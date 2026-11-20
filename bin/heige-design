@@ -68,7 +68,11 @@ switch (cmd) {
   case 'lint': {
     const t = args[0] || 'all';
     if (t === 'all') node('validate.mjs');
-    else { if (!fs.existsSync(dm(t))) die(`没有这套: ${t}`); run(BIN, ['lint', dm(t)]); }
+    else {
+      const file = /[\\/]/.test(t) || /\.md$/i.test(t) ? path.resolve(t) : dm(t);
+      if (!fs.existsSync(file) || !fs.statSync(file).isFile()) die(`没有这套或文件: ${t}`);
+      run(BIN, ['lint', file]);
+    }
     break;
   }
   case 'diff': {
@@ -104,7 +108,7 @@ switch (cmd) {
   list [家族]              列出全部/某家族的系统
   show <slug>              查看一套的详情与资产路径
   export <slug> [--format] 导出 tailwind-v4|tailwind-v3|css-vars|dtcg|prompt
-  lint <slug|all>          官方 lint 校验（含 WCAG 对比度）
+  lint <slug|path/to/DESIGN.md|all>          官方 lint 校验（含 WCAG 对比度）
   diff <slugA> <slugB>     对比两套的 token/文案差异
   ingest <url> [slug]      从任意网站提取一份 DESIGN.md 草稿（自研，无付费API）
   build <slug>             打印可直接粘给 coding agent 的生成提示词

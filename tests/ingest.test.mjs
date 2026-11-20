@@ -16,7 +16,7 @@ const chromeCandidates = [
 ].filter(Boolean);
 const chrome = chromeCandidates.find((candidate) => fs.existsSync(candidate));
 
-test('ingest emits parseable YAML when a computed font stack contains quoted names', { timeout: 30_000 }, (t) => {
+test('ingest preserves quoted fonts and selects white text for a dark blue accent', { timeout: 30_000 }, (t) => {
   if (!chrome) {
     t.skip('Chrome or Chromium is required for the ingest integration test');
     return;
@@ -26,10 +26,11 @@ test('ingest emits parseable YAML when a computed font stack contains quoted nam
   const outputDir = path.join(ROOT, 'ingested', slug);
   const html = `<!doctype html><title>Font test</title>
     <style>
-      body { font-family: system-ui, sans-serif; }
+      body { background: white; color: black; font-family: system-ui, sans-serif; }
       h1 { font-family: "Noto Sans SC", "PingFang SC", sans-serif; }
     </style>
-    <h1>字体测试</h1><p>正文</p>`;
+    <h1>字体测试</h1><p>正文</p>
+    <button style="background:rgb(0,51,153);color:white;padding:30px">Example CTA</button>`;
   const url = `data:text/html;charset=utf-8,${encodeURIComponent(html)}`;
 
   try {
@@ -48,6 +49,8 @@ test('ingest emits parseable YAML when a computed font stack contains quoted nam
 
     const parsed = yaml.load(frontMatter[1]);
     assert.match(parsed.typography['display-xl'].fontFamily, /Noto Sans SC/);
+    assert.equal(parsed.colors.primary, '#003399');
+    assert.equal(parsed.colors['on-primary'], '#ffffff');
   } finally {
     fs.rmSync(outputDir, { recursive: true, force: true });
     const ingestedDir = path.dirname(outputDir);
