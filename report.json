@@ -5,7 +5,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -15,7 +16,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 7 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+        "message": "Design system defines 7 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 18 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -25,7 +27,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -35,7 +38,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 4 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 4 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -45,7 +49,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 8 typography scales, 4 rounding levels, 6 spacing tokens, 18 components."
+        "message": "Design system defines 8 colors, 8 typography scales, 4 rounding levels, 6 spacing tokens, 18 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -55,7 +60,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -65,7 +71,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -75,7 +82,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 7 colors, 10 typography scales, 2 rounding levels, 6 spacing tokens, 20 components."
+        "message": "Design system defines 7 colors, 10 typography scales, 2 rounding levels, 6 spacing tokens, 20 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -85,7 +93,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 7 colors, 8 typography scales, 2 rounding levels, 6 spacing tokens, 15 components."
+        "message": "Design system defines 7 colors, 8 typography scales, 2 rounding levels, 6 spacing tokens, 15 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -95,7 +104,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 18 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -105,7 +115,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 15 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 15 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -115,7 +126,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 10 colors, 7 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 10 colors, 7 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -125,7 +137,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+        "message": "Design system defines 9 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 18 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -135,7 +148,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 10 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+        "message": "Design system defines 10 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 18 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -145,7 +159,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -155,7 +170,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 10 typography scales, 3 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 9 colors, 10 typography scales, 3 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -165,7 +181,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -175,7 +192,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 18 components."
+        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 18 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -185,7 +203,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 15 components."
+        "message": "Design system defines 8 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 15 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -195,7 +214,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 18 components."
+        "message": "Design system defines 9 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 18 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -205,7 +225,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 10 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 15 components."
+        "message": "Design system defines 10 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 15 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -215,7 +236,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 14 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 14 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -225,7 +247,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -235,7 +258,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 11 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 8 colors, 11 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -245,7 +269,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 8 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -255,7 +280,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 10 typography scales, 3 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 8 colors, 10 typography scales, 3 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -265,7 +291,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 6 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 6 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -275,7 +302,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 14 components."
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 14 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -285,7 +313,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 19 components."
+        "message": "Design system defines 8 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 19 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -295,7 +324,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 18 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 18 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -305,7 +335,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -315,7 +346,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 9 typography scales, 4 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 8 colors, 9 typography scales, 4 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -325,7 +357,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -335,7 +368,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 8 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -345,7 +379,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 14 components."
+        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 14 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -355,7 +390,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 15 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 15 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -365,7 +401,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 7 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 7 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -375,7 +412,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 7 typography scales, 5 rounding levels, 6 spacing tokens, 13 components."
+        "message": "Design system defines 8 colors, 7 typography scales, 5 rounding levels, 6 spacing tokens, 13 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -385,7 +423,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 8 typography scales, 4 rounding levels, 5 spacing tokens, 13 components."
+        "message": "Design system defines 8 colors, 8 typography scales, 4 rounding levels, 5 spacing tokens, 13 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -395,7 +434,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 7 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 7 colors, 8 typography scales, 3 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -405,7 +445,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 7 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 15 components."
+        "message": "Design system defines 7 colors, 9 typography scales, 3 rounding levels, 6 spacing tokens, 15 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -415,7 +456,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 9 typography scales, 4 rounding levels, 6 spacing tokens, 18 components."
+        "message": "Design system defines 8 colors, 9 typography scales, 4 rounding levels, 6 spacing tokens, 18 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -425,7 +467,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -435,7 +478,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -445,7 +489,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 15 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 15 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -455,7 +500,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 5 spacing tokens, 13 components."
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 5 spacing tokens, 13 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -465,7 +511,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 10 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -475,7 +522,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 10 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 17 components."
+        "message": "Design system defines 10 colors, 9 typography scales, 5 rounding levels, 6 spacing tokens, 17 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -485,7 +533,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components."
+        "message": "Design system defines 8 colors, 8 typography scales, 5 rounding levels, 6 spacing tokens, 16 components.",
+        "rule": "token-summary"
       }
     ]
   },
@@ -495,7 +544,8 @@
     "findings": [
       {
         "severity": "info",
-        "message": "Design system defines 9 colors, 8 typography scales, 6 rounding levels, 6 spacing tokens, 15 components."
+        "message": "Design system defines 9 colors, 8 typography scales, 6 rounding levels, 6 spacing tokens, 15 components.",
+        "rule": "token-summary"
       }
     ]
   }
