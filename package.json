@@ -11,7 +11,7 @@
     "lint": "node bin/heige-design lint all"
   },
   "dependencies": {
-    "@google/design.md": "^0.3.0",
+    "@google/design.md": "file:vendor/google-design.md-0.4.1.tgz",
     "js-yaml": "^4.1.0",
     "playwright-core": "^1.40.0"
   },
