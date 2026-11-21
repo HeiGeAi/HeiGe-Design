@@ -72,7 +72,7 @@ for(const slug of Object.keys(META)){
   const hasDeck=fs.existsSync(path.join(SYS,slug,'flagship','deck.html'));
   systems.push({slug,family,cn,name:fm.name||slug,desc:fm.description||'',bg,ink,primary,onp,accent,surface,muted,line,dark,dff,bff,mff,dw,dls,radius,palette,comps,
     dodont:sect(raw,"Do's and Don'ts"),sig:sect(raw,'Signature Moment'),motion:sect(raw,'Motion'),overview:sect(raw,'Overview'),rep,hasFlag,hasDeck,
-    cssvar:{'--bg':bg,'--ink':ink,'--pri':primary,'--onpri':onp,'--acc':accent,'--surf':surface,'--muted':muted,'--line':line,'--r':radius,'--dff':dff,'--bff':bff,'--mff':mff}});
+    cssvar:{'--bg':bg,'--ink':ink,'--pri':primary,'--onpri':onp,'--acc':accent,'--surf':surface,'--muted':muted,'--line':line,'--r':radius,'--dff':dff,'--bff':bff,'--mff':mff,'--dw':dw,'--dls':dls}});
 }
 
 const styleVars=s=>Object.entries(s.cssvar).map(([k,v])=>`${k}:${esc(v)}`).join(';');
@@ -148,9 +148,9 @@ ${FAM.map(f=>`<div class="famhead" data-family="${f}"><h2>${f}</h2><span class="
 <script>
 const grid=document.getElementById('grid'),q=document.getElementById('q'),none=document.getElementById('none');
 let curF='全部',curM='all';
-function apply(){const kw=q.value.trim().toLowerCase();let n=0;
- grid.querySelectorAll('.tile').forEach(t=>{const okF=curF==='全部'||t.dataset.family===curF;const okM=curM==='all'||t.dataset.mode===curM;const okK=!kw||t.dataset.kw.includes(kw);const show=okF&&okM&&okK;t.style.display=show?'':'none';if(show)n++;});
- grid.querySelectorAll('.famhead').forEach(h=>{const anyF=curF==='全部'||h.dataset.family===curF;h.style.display=anyF?'':'none';});
+function apply(){const kw=q.value.trim().toLowerCase();let n=0;const vis=new Set();
+ grid.querySelectorAll('.tile').forEach(t=>{const okF=curF==='全部'||t.dataset.family===curF;const okM=curM==='all'||t.dataset.mode===curM;const okK=!kw||t.dataset.kw.includes(kw);const show=okF&&okM&&okK;t.style.display=show?'':'none';if(show){n++;vis.add(t.dataset.family);}});
+ grid.querySelectorAll('.famhead').forEach(h=>{h.style.display=vis.has(h.dataset.family)?'':'none';});
  none.style.display=n?'none':'';}
 q.oninput=apply;
 document.querySelectorAll('.chip.fam').forEach(c=>c.onclick=()=>{document.querySelectorAll('.chip.fam').forEach(x=>x.classList.remove('on'));c.classList.add('on');curF=c.dataset.f;apply();});
@@ -220,7 +220,7 @@ footer{border-top:1px solid var(--edge);padding:34px 0 60px;color:var(--dim);fon
   </div>
 </div>
 
-${s.hasFlag||s.hasDeck?`<div class="sec"><h2>旗舰全页（一份 DESIGN.md 同时产出）</h2><div class="flag">${s.hasFlag?`<a href="../../systems/${s.slug}/flagship/page.html" target="_blank"><b>▶ 整页落地页</b> page.html</a>`:''}${s.hasDeck?`<a href="../../systems/${s.slug}/flagship/deck.html" target="_blank"><b>▶ 16:9 演示</b> deck.html（← → 翻页）</a>`:''}</div></div>`:''}
+${s.hasFlag||s.hasDeck?`<div class="sec"><h2>旗舰全页（一份 DESIGN.md 同时产出）</h2><div class="flag">${s.hasFlag?`<a href="../flagship/${s.slug}/page.html" target="_blank"><b>▶ 整页落地页</b> page.html</a>`:''}${s.hasDeck?`<a href="../flagship/${s.slug}/deck.html" target="_blank"><b>▶ 16:9 演示</b> deck.html（← → 翻页）</a>`:''}</div></div>`:''}
 
 ${s.sig?`<div class="sec"><h2>签名时刻 Signature Moment</h2><div class="dd"><div class="box">${esc(s.sig).slice(0,900)}</div></div></div>`:''}
 ${s.motion?`<div class="sec"><h2>动效 Motion</h2><div class="box" style="white-space:pre-wrap">${esc(s.motion).slice(0,1400)}</div></div>`:''}
@@ -248,5 +248,9 @@ const cp = (src, dst) => {
 };
 cp(path.join(ROOT, 'samples', 'dark-tech-family-showcase.html'), path.join(SITE, 'samples', 'dark-tech-family-showcase.html'));
 cp(path.join(ROOT, 'assets', 'previews', 'showcase-dark-tech-family.webp'), path.join(SITE, 'assets', 'previews', 'showcase-dark-tech-family.webp'));
+for (const s of systems) {
+  if (s.hasFlag) cp(path.join(SYS, s.slug, 'flagship', 'page.html'), path.join(SITE, 'flagship', s.slug, 'page.html'));
+  if (s.hasDeck) cp(path.join(SYS, s.slug, 'flagship', 'deck.html'), path.join(SITE, 'flagship', s.slug, 'deck.html'));
+}
 
 console.log(`站点生成：画廊 + ${systems.length} 个详情页 →`, path.join(SITE,'index.html'));

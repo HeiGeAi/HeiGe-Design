@@ -1,0 +1,287 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aphelion · Keynote 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#2dd4bf; --on-primary:#031815; --ink:#e9edf3; --canvas:#08090d;
+    --surface:#0f1319; --muted:#8a94a4; --hairline:#20262f; --glow:#5ff0dc; --accent:#f6a35c;
+    --sans:'Geist','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif;
+    --body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC','PingFang SC','Microsoft YaHei','Hiragino Sans GB',sans-serif;
+    --mono:'JetBrains Mono','SF Mono',ui-monospace,'Cascadia Code','Noto Sans SC','PingFang SC',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{background:#050609;color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow:hidden}
+  ::selection{background:rgba(45,212,191,.28)}
+
+  .deck{position:fixed;inset:0;display:grid;place-items:center;overflow:hidden;background:
+    radial-gradient(120% 80% at 50% 0%, #0a0c11, #050609 70%)}
+  .stage{
+    position:relative; width:min(100vw,177.78vh); height:min(56.25vw,100vh);
+    background:var(--canvas); overflow:hidden; container-type:size;
+    box-shadow:0 0 0 1px var(--hairline), 0 40px 120px rgba(0,0,0,.6);
+  }
+
+  /* faint hairline grid, per slide texture */
+  .gridtex{position:absolute;inset:0;pointer-events:none;z-index:0;
+    background-image:
+      linear-gradient(rgba(32,38,47,.6) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(32,38,47,.6) 1px,transparent 1px);
+    background-size:6.2cqw 6.2cqw; opacity:.42;}
+
+  /* the recurring visual hammer: diagonal teal shaft */
+  .beam{position:absolute;top:-45%;right:12%;width:18cqw;height:190%;z-index:1;pointer-events:none;
+    transform:rotate(26deg);transform-origin:top center;
+    background:linear-gradient(90deg,transparent,rgba(95,240,220,.05) 42%,rgba(95,240,220,.18) 50%,rgba(95,240,220,.05) 58%,transparent);
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 14%,#000 64%,transparent);
+            mask-image:linear-gradient(180deg,transparent,#000 14%,#000 64%,transparent);}
+
+  /* slide framework */
+  .slide{position:absolute;inset:0;opacity:0;pointer-events:none;
+    transform:translateY(14px) scale(.994);transition:opacity .5s ease,transform .5s ease;
+    display:flex;flex-direction:column;justify-content:center;padding:9cqw;z-index:2}
+  .slide.on{opacity:1;pointer-events:auto;transform:none;z-index:3}
+  .slide *{position:relative;z-index:2}
+
+  .eyebrow{font-family:var(--mono);font-size:1.05cqw;font-weight:500;letter-spacing:.4cqw;
+    text-transform:uppercase;color:var(--muted)}
+  .eyebrow .hot{color:var(--primary)}
+  .badge-live{display:inline-flex;align-items:center;gap:.7cqw;padding:.6cqw 1.2cqw;border-radius:9999px;
+    background:var(--surface);border:1px solid var(--hairline);width:max-content;
+    font-family:var(--mono);font-size:1cqw;letter-spacing:.35cqw;text-transform:uppercase;color:var(--primary)}
+  .dot-breathe{position:relative;width:.85cqw;height:.85cqw;border-radius:50%;background:var(--glow);
+    box-shadow:0 0 1cqw rgba(95,240,220,.9)}
+  .dot-breathe::after{content:"";position:absolute;inset:-.55cqw;border-radius:50%;border:.14cqw solid var(--primary);
+    animation:breathe 2.6s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:.9;transform:scale(1.12)}}
+  .badge-alert{display:inline-flex;align-items:center;gap:.7cqw;padding:.6cqw 1.2cqw;border-radius:9999px;
+    background:var(--surface);border:1px solid rgba(246,163,92,.4);width:max-content;
+    font-family:var(--mono);font-size:1cqw;letter-spacing:.3cqw;text-transform:uppercase;color:var(--accent)}
+  .dot-amber{width:.7cqw;height:.7cqw;border-radius:50%;background:var(--accent);box-shadow:0 0 1cqw rgba(246,163,92,.7)}
+
+  .nowrap{white-space:nowrap}
+
+  /* 1 · cover */
+  .cover .atmos{position:absolute;inset:0;z-index:0;
+    background:radial-gradient(55% 55% at 86% -4%,rgba(45,212,191,.16),transparent 62%)}
+  .cover h1{font-family:var(--sans);font-weight:600;font-size:8cqw;line-height:1.0;letter-spacing:-.14cqw;
+    margin-top:3cqw;color:var(--ink)}
+  .cover h1 .gw{color:var(--glow);text-shadow:0 0 3.4cqw rgba(95,240,220,.5)}
+  .cover .zh{font-family:var(--sans);font-weight:600;font-size:2.4cqw;letter-spacing:.06cqw;color:var(--ink);margin-top:2.6cqw}
+  .cover .foot{position:absolute;left:9cqw;bottom:6cqw;display:flex;gap:2cqw;align-items:center}
+  .cover .foot .m{font-family:var(--mono);font-size:1.05cqw;letter-spacing:.25cqw;color:var(--muted)}
+
+  /* 2 · section divider (one step up) */
+  .divider{background:var(--surface)}
+  .divider .chapno{font-family:var(--mono);font-weight:500;font-size:22cqw;line-height:.82;
+    letter-spacing:-1cqw;color:#171d25}
+  .divider .chapno .cur{color:var(--muted)}
+  .divider .row{display:flex;align-items:flex-end;gap:3cqw}
+  .divider h2{font-family:var(--sans);font-weight:600;font-size:5.2cqw;line-height:1.06;letter-spacing:-.12cqw;
+    color:var(--ink);margin-bottom:2.2cqw}
+  .divider .eyebrow{margin-bottom:1.6cqw}
+
+  /* 3 · stat-hero · THE GLOWING NUMERAL */
+  .stathero{align-items:center;text-align:center}
+  .stathero .halo{position:absolute;left:50%;top:46%;width:56cqw;height:56cqw;transform:translate(-50%,-50%);z-index:0;pointer-events:none;
+    background:radial-gradient(50% 50% at 50% 50%,rgba(45,212,191,.20),rgba(45,212,191,.05) 44%,transparent 68%)}
+  .stathero .beam{right:20%}
+  .stathero .top{font-family:var(--mono);font-size:1.15cqw;letter-spacing:.42cqw;text-transform:uppercase;
+    color:var(--muted);margin-bottom:1cqw}
+  .numeral{font-family:var(--mono);font-weight:500;font-size:27cqw;line-height:.9;letter-spacing:-.6cqw;
+    color:var(--glow);text-shadow:0 0 6cqw rgba(95,240,220,.45);font-variant-numeric:tabular-nums}
+  .numeral .pct{font-size:12cqw;color:var(--primary);text-shadow:none}
+  .stathero .unit{font-family:var(--mono);font-size:1.6cqw;letter-spacing:.3cqw;color:var(--muted);margin-top:1.6cqw}
+
+  /* 4-6 · point slides */
+  .point .eyebrow{margin-bottom:2.4cqw}
+  .point h2{font-family:var(--sans);font-weight:600;font-size:6cqw;line-height:1.04;letter-spacing:-.14cqw;color:var(--ink)}
+  .point h2 .hot{color:var(--primary)}
+  .point .meta{margin-top:3.4cqw;display:flex;align-items:center;gap:1.4cqw;flex-wrap:wrap}
+  .statchip{display:inline-flex;align-items:baseline;gap:.6cqw;padding:1cqw 1.6cqw;border-radius:10px;
+    background:var(--surface);border:1px solid var(--hairline)}
+  .statchip .n{font-family:var(--mono);font-weight:500;font-size:2.2cqw;color:var(--primary);font-variant-numeric:tabular-nums}
+  .statchip .l{font-family:var(--mono);font-size:1cqw;letter-spacing:.2cqw;text-transform:uppercase;color:var(--muted)}
+  .point .arrow{font-family:var(--mono);color:var(--muted);font-size:1.6cqw}
+
+  /* 7 · quote */
+  .quote{align-items:center;text-align:center}
+  .quote .mark{font-family:var(--sans);font-weight:600;font-size:16cqw;line-height:.5;color:var(--primary);
+    text-shadow:0 0 4cqw rgba(45,212,191,.4);height:8cqw}
+  .quote blockquote{font-family:var(--sans);font-weight:600;font-size:4.6cqw;line-height:1.16;letter-spacing:-.08cqw;
+    color:var(--ink);max-width:74cqw;margin:2cqw auto 0;text-wrap:balance}
+  .quote .attr{font-family:var(--mono);font-size:1.3cqw;letter-spacing:.3cqw;color:var(--muted);margin-top:3.2cqw}
+
+  /* 8 · closing · teal flood (the reversal) */
+  .closing{background:var(--primary);justify-content:center}
+  .closing .atmos{position:absolute;inset:0;z-index:0;
+    background:radial-gradient(60% 60% at 78% -6%,rgba(255,255,255,.22),transparent 55%)}
+  .closing .eyebrow{color:rgba(3,24,21,.62)}
+  .closing h2{font-family:var(--sans);font-weight:600;font-size:6.6cqw;line-height:1.04;letter-spacing:-.16cqw;
+    color:var(--on-primary);margin-top:2cqw}
+  .closing .row{display:flex;align-items:center;gap:1.6cqw;margin-top:3.6cqw}
+  .closing .cta{display:inline-flex;align-items:center;gap:.8cqw;padding:1.2cqw 2.4cqw;border-radius:9999px;
+    background:var(--on-primary);color:var(--glow);font-family:var(--sans);font-weight:600;font-size:1.6cqw;letter-spacing:.02cqw}
+  .closing .cta .arw{font-family:var(--mono)}
+  .closing .url{font-family:var(--mono);font-size:1.3cqw;letter-spacing:.2cqw;color:rgba(3,24,21,.7)}
+  .closing .sig{position:absolute;left:9cqw;bottom:6cqw;font-family:var(--mono);font-size:1.05cqw;
+    letter-spacing:.2cqw;color:rgba(3,24,21,.6)}
+  .closing .sig b{color:var(--on-primary)}
+
+  /* chrome: counter + progress + hints */
+  .hud{position:fixed;z-index:40;left:0;right:0;bottom:0;pointer-events:none}
+  .progress{height:2px;background:transparent}
+  .progress .fill{height:100%;width:0;background:var(--primary);box-shadow:0 0 10px rgba(45,212,191,.7);transition:width .4s ease}
+  .counter{position:fixed;right:22px;bottom:16px;z-index:41;font-family:var(--mono);font-size:12px;
+    letter-spacing:1.5px;color:var(--muted)}
+  .counter b{color:var(--primary);font-weight:500}
+  .navbtns{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:41;display:flex;gap:8px}
+  .navbtns button{pointer-events:auto;cursor:pointer;width:34px;height:30px;border-radius:8px;
+    background:rgba(15,19,25,.9);border:1px solid var(--hairline);color:var(--muted);
+    font-family:var(--mono);font-size:14px;transition:color .18s,border-color .18s}
+  .navbtns button:hover{color:var(--ink);border-color:#33404d}
+  .hint{position:fixed;left:22px;bottom:16px;z-index:41;font-family:var(--mono);font-size:11px;
+    letter-spacing:1px;color:#4b5563}
+
+  @media (max-width:640px){ .hint{display:none} }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .slide{transition:opacity .2s linear}
+  }
+</style>
+
+<div class="deck">
+  <div class="stage" id="stage">
+
+    <!-- 1 · COVER -->
+    <section class="slide cover on">
+      <div class="atmos"></div><div class="gridtex"></div><div class="beam"></div>
+      <span class="badge-live"><span class="dot-breathe"></span>Aphelion · Keynote 2026</span>
+      <h1><span class="nowrap">Runs while</span><br><span class="nowrap">you <span class="gw">sleep.</span></span></h1>
+      <div class="zh">自主智能体舰队的控制平面</div>
+      <div class="foot">
+        <span class="m">深空电青 / Halonyx</span><span class="m">HeiGe-Design</span>
+      </div>
+    </section>
+
+    <!-- 2 · SECTION DIVIDER -->
+    <section class="slide divider">
+      <div class="gridtex"></div>
+      <div class="row">
+        <div class="chapno"><span class="cur">01</span>／05</div>
+        <div>
+          <div class="eyebrow">// The problem</div>
+          <h2>值夜班的人，<br>睡不着。</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · STAT-HERO · THE GLOWING NUMERAL (signature) -->
+    <section class="slide stathero">
+      <div class="halo"></div><div class="gridtex"></div><div class="beam"></div>
+      <div class="top">// 01 · The problem</div>
+      <div class="numeral tnum">99.98<span class="pct">%</span></div>
+      <div class="unit">的深夜告警，发生在没人看屏幕的时候</div>
+    </section>
+
+    <!-- 4 · POINT 1 -->
+    <section class="slide point">
+      <div class="gridtex"></div><div class="beam"></div>
+      <div class="eyebrow">// 02 · <span class="hot">编排</span> · Orchestration</div>
+      <h2>把一千个 agent，<br>当<span class="hot">一个进程</span>调度。</h2>
+      <div class="meta">
+        <span class="statchip"><span class="n">1,000</span><span class="l">agents</span></span>
+        <span class="arrow">→</span>
+        <span class="statchip"><span class="n">1</span><span class="l">control loop</span></span>
+        <span class="arrow">·</span>
+        <span class="statchip"><span class="n">&lt;12ms</span><span class="l">reschedule</span></span>
+      </div>
+    </section>
+
+    <!-- 5 · POINT 2 -->
+    <section class="slide point">
+      <div class="gridtex"></div><div class="beam"></div>
+      <div class="eyebrow">// 03 · <span class="hot">观测</span> · Observability</div>
+      <h2>每一分 token，<br>都能<span class="hot">倒带</span>。</h2>
+      <div class="meta">
+        <span class="statchip"><span class="n">100%</span><span class="l">traces kept</span></span>
+        <span class="statchip"><span class="n">90d</span><span class="l">replay window</span></span>
+        <span class="statchip"><span class="n">1</span><span class="l">timeline</span></span>
+      </div>
+    </section>
+
+    <!-- 6 · POINT 3 (the one warm moment) -->
+    <section class="slide point">
+      <div class="gridtex"></div><div class="beam"></div>
+      <div class="eyebrow">// 04 · <span class="hot">熔断</span> · Circuit breaking</div>
+      <h2>越界的那一刻，<br>自动<span class="hot">隔离</span>。</h2>
+      <div class="meta">
+        <span class="badge-alert"><span class="dot-amber"></span>Budget exceeded · contained</span>
+        <span class="arrow">凌晨三点，不叫醒你。</span>
+      </div>
+    </section>
+
+    <!-- 7 · QUOTE -->
+    <section class="slide quote">
+      <div class="gridtex"></div>
+      <div class="mark">&ldquo;</div>
+      <blockquote>最好的运维，是你根本<br>不知道它昨晚救过你。</blockquote>
+      <div class="attr">— Aphelion 设计原则 · 03</div>
+    </section>
+
+    <!-- 8 · CLOSING · teal flood -->
+    <section class="slide closing">
+      <div class="atmos"></div>
+      <div class="eyebrow">// Ready when you're asleep</div>
+      <h2>把值夜班的活，<br>交给它。</h2>
+      <div class="row">
+        <span class="cta">启动控制台 <span class="arw">↗</span></span>
+        <span class="url">aphelion.run</span>
+      </div>
+      <div class="sig">Designed by <b>HeiGe-Design</b> · nocturne-teal</div>
+    </section>
+
+  </div>
+</div>
+
+<div class="hud"><div class="progress"><div class="fill" id="fill"></div></div></div>
+<div class="counter"><b id="cur">01</b> / <span id="tot">08</span></div>
+<div class="navbtns"><button id="prev" aria-label="上一页">←</button><button id="next" aria-label="下一页">→</button></div>
+<div class="hint">← → 翻页 · SPACE 前进</div>
+
+<script>
+  (function(){
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var i = 0, n = slides.length;
+    var cur = document.getElementById('cur'), fill = document.getElementById('fill');
+    document.getElementById('tot').textContent = String(n).padStart(2,'0');
+    function pad(x){return String(x+1).padStart(2,'0');}
+    function show(x){
+      i = Math.max(0, Math.min(n-1, x));
+      slides.forEach(function(s,k){ s.classList.toggle('on', k===i); });
+      cur.textContent = pad(i);
+      fill.style.width = ((i)/(n-1)*100) + '%';
+    }
+    function nextS(){ show(i+1); }
+    function prevS(){ show(i-1); }
+    window.addEventListener('keydown', function(e){
+      if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '||e.key==='Enter'){ e.preventDefault(); nextS(); }
+      else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); prevS(); }
+      else if(e.key==='Home'){ show(0); }
+      else if(e.key==='End'){ show(n-1); }
+    });
+    document.getElementById('next').addEventListener('click', nextS);
+    document.getElementById('prev').addEventListener('click', prevS);
+    // touch swipe
+    var x0=null;
+    window.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+    window.addEventListener('touchend',function(e){
+      if(x0===null) return; var dx=e.changedTouches[0].clientX-x0;
+      if(Math.abs(dx)>50){ dx<0?nextS():prevS(); } x0=null;
+    },{passive:true});
+    show(0);
+  })();
+</script>

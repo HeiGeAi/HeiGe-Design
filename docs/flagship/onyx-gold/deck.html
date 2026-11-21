@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOCTAURUM · 玄金 · 典藏发布</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Fragment+Mono&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#b8912e;
+    --on-primary:#060606;
+    --ink:#ede6d3;
+    --canvas:#060606;
+    --surface:#100e0a;
+    --muted:#a69b80;
+    --hairline:#4a3d22;
+    --accent:#e4c466;
+
+    --serif:"Cormorant Garamond","Cormorant","Didot","Bodoni MT","Noto Serif SC","Songti SC",serif;
+    --sans:"Jost","Futura","Century Gothic","Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+    --mono:"Fragment Mono","JetBrains Mono","SFMono-Regular",ui-monospace,"Noto Sans SC",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    background:#000;
+    color:var(--ink);
+    font-family:var(--sans);
+    overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--primary);color:var(--on-primary);}
+
+  .deck-viewport{
+    position:fixed;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    background:
+      radial-gradient(120% 120% at 50% 0%, #0b0a08 0%, #000 70%);
+  }
+  .deck{
+    width:1280px;height:720px;
+    position:relative;
+    transform-origin:center center;
+    background:var(--canvas);
+    overflow:hidden;
+  }
+
+  .slide{
+    position:absolute;inset:0;
+    padding:120px;
+    display:flex;flex-direction:column;
+    opacity:0;visibility:hidden;
+    transform:translateY(14px);
+    transition:opacity .7s ease, transform .7s ease, visibility .7s;
+  }
+  .slide.active{opacity:1;visibility:visible;transform:none;}
+
+  /* ---------- shared type ---------- */
+  .eyebrow{
+    font-family:var(--sans);font-weight:500;font-size:15px;
+    letter-spacing:5px;text-transform:uppercase;color:var(--muted);
+  }
+  .eyebrow .dot{color:var(--primary);margin-inline:12px;}
+  .mono{font-family:var(--mono);letter-spacing:.5px;font-variant-numeric:tabular-nums;}
+  .serif{font-family:var(--serif);}
+  .anchor{
+    position:relative;color:var(--accent);
+    text-shadow:0 0 30px rgba(228,196,102,.5), 0 0 78px rgba(228,196,102,.22);
+  }
+  .anchor::before{
+    content:"";position:absolute;z-index:0;pointer-events:none;
+    left:50%;top:52%;width:150%;height:230%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(closest-side, rgba(228,196,102,.32), rgba(228,196,102,0) 72%);
+  }
+  .anchor > *{position:relative;z-index:1;}
+
+  .rule{height:1px;background:linear-gradient(90deg,var(--primary),rgba(184,145,46,.12));border:0;}
+
+  /* ---------- 1 · cover ---------- */
+  .s-cover{justify-content:center;}
+  .s-cover .brandline{display:flex;align-items:center;gap:16px;margin-bottom:70px;}
+  .hallmark{
+    width:52px;height:52px;border:1px solid var(--primary);border-radius:9999px;
+    display:grid;place-items:center;color:var(--primary);
+  }
+  .hallmark span{font-family:var(--serif);font-weight:600;font-size:24px;line-height:1;}
+  .s-cover h1{
+    font-family:var(--serif);font-weight:500;font-size:92px;line-height:1.02;
+    letter-spacing:3px;text-transform:uppercase;color:var(--ink);
+  }
+  .s-cover .cover-rule{margin:52px 0 0;width:70%;}
+  .s-cover .cover-foot{
+    margin-top:34px;display:flex;justify-content:space-between;width:70%;
+  }
+
+  /* ---------- 2 · section divider ---------- */
+  .s-divider{background:var(--surface);justify-content:center;}
+  .s-divider .chap{
+    font-family:var(--serif);font-weight:500;font-size:220px;line-height:.8;
+    letter-spacing:4px;color:transparent;-webkit-text-stroke:1px var(--hairline);
+    text-stroke:1px var(--hairline);
+  }
+  .s-divider .chap-lab{
+    margin-top:20px;font-size:17px;letter-spacing:6px;color:var(--accent);
+    text-transform:uppercase;font-weight:500;
+  }
+  .s-divider .chap-say{
+    margin-top:40px;font-family:var(--serif);font-size:46px;font-weight:500;
+    color:var(--ink);letter-spacing:1px;line-height:1.2;
+  }
+
+  /* ---------- 3 · stat hero ---------- */
+  .s-stat{justify-content:center;align-items:flex-start;}
+  .s-stat .eyebrow{margin-bottom:48px;}
+  .s-stat .big{
+    font-family:var(--serif);font-weight:500;font-size:340px;line-height:.82;
+    letter-spacing:2px;
+    display:flex;align-items:baseline;gap:24px;
+  }
+  .s-stat .big .unit{
+    font-size:64px;letter-spacing:2px;color:var(--muted);
+    font-family:var(--sans);font-weight:400;
+  }
+  .s-stat .cap{
+    margin-top:56px;font-family:var(--serif);font-size:40px;font-weight:500;
+    color:var(--ink);letter-spacing:1px;
+  }
+
+  /* ---------- 4-6 · argument slides ---------- */
+  .s-arg{justify-content:center;}
+  .s-arg .eyebrow{margin-bottom:auto;}
+  .s-arg .argbody{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:60px;}
+  .s-arg h2{
+    font-family:var(--serif);font-weight:500;font-size:60px;line-height:1.16;
+    letter-spacing:1px;color:var(--ink);white-space:nowrap;
+  }
+  .s-arg .hammer{
+    font-family:var(--serif);font-weight:500;font-size:200px;line-height:.8;
+    letter-spacing:1px;white-space:nowrap;
+  }
+  .s-arg .hammer .unit{font-size:46px;color:var(--muted);font-family:var(--sans);letter-spacing:2px;margin-left:10px;}
+  .s-arg .argfoot{margin-top:44px;}
+  .s-arg .argfoot .mono{color:var(--muted);font-size:15px;letter-spacing:1px;}
+
+  /* ---------- 7 · quote ---------- */
+  .s-quote{justify-content:center;align-items:center;text-align:center;}
+  .s-quote .qmark{
+    font-family:var(--serif);font-size:120px;color:var(--hairline);line-height:.4;
+    margin-bottom:20px;
+  }
+  .s-quote blockquote{
+    font-family:var(--serif);font-weight:500;font-size:56px;line-height:1.34;
+    letter-spacing:1px;color:var(--ink);
+  }
+  .s-quote .attrib{margin-top:56px;font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);}
+  .s-quote .attrib b{color:var(--accent);font-weight:400;}
+
+  /* ---------- 8 · closing · Gold Inversion ---------- */
+  .s-close{
+    background:var(--primary);
+    color:var(--on-primary);
+    justify-content:center;
+  }
+  .s-close .hallmark{border-color:var(--on-primary);color:var(--on-primary);}
+  .s-close .eyebrow{color:rgba(6,6,6,.62);}
+  .s-close .eyebrow .dot{color:var(--on-primary);}
+  .s-close .brandline{display:flex;align-items:center;gap:16px;margin-bottom:56px;}
+  .s-close h2{
+    font-family:var(--serif);font-weight:500;font-size:82px;line-height:1.05;
+    letter-spacing:2px;color:var(--on-primary);
+  }
+  .s-close .close-rule{height:1px;background:rgba(6,6,6,.28);border:0;margin:48px 0 34px;width:60%;}
+  .s-close .close-foot{display:flex;gap:44px;align-items:baseline;}
+  .s-close .close-foot .mono{color:rgba(6,6,6,.7);font-size:16px;letter-spacing:2px;}
+
+  /* ---------- deck UI ---------- */
+  .deck-ui{
+    position:fixed;left:0;right:0;bottom:26px;z-index:20;
+    display:flex;align-items:center;justify-content:center;gap:26px;
+    pointer-events:none;
+  }
+  .dots{display:flex;gap:12px;pointer-events:auto;}
+  .dot-btn{
+    width:9px;height:9px;border-radius:9999px;border:1px solid var(--hairline);
+    background:transparent;cursor:pointer;padding:0;transition:background .3s,border-color .3s;
+  }
+  .dot-btn.on{background:var(--accent);border-color:var(--accent);}
+  .page-count{
+    font-family:var(--mono);font-size:13px;letter-spacing:2px;color:var(--muted);
+    pointer-events:auto;
+  }
+  .page-count b{color:var(--accent);font-weight:400;}
+  .hint{
+    position:fixed;right:30px;bottom:24px;z-index:20;
+    font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--hairline);
+  }
+  .nav-zone{position:fixed;top:0;bottom:0;width:22%;z-index:15;cursor:pointer;}
+  .nav-zone.prev{left:0;} .nav-zone.next{right:0;}
+
+  @media (prefers-reduced-motion:reduce){
+    .slide{transition:opacity .001s;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="deck-viewport">
+    <div class="deck" id="deck">
+
+      <!-- 1 · COVER -->
+      <section class="slide s-cover active">
+        <div class="brandline">
+          <span class="hallmark"><span>N</span></span>
+          <span class="eyebrow">Noctaurum Maison<span class="dot">·</span>Est. 1897</span>
+        </div>
+        <h1 class="serif">Kept in Onyx,<br>Lit in <span class="anchor"><span>Aurum</span></span></h1>
+        <hr class="rule cover-rule">
+        <div class="cover-foot">
+          <span class="eyebrow">玄金 · 典藏发布</span>
+          <span class="mono" style="color:var(--muted)">MMXCVII</span>
+        </div>
+      </section>
+
+      <!-- 2 · SECTION DIVIDER -->
+      <section class="slide s-divider">
+        <div class="chap serif">I</div>
+        <div class="chap-lab">第一章 · 论稀缺</div>
+        <div class="chap-say">真正的奢侈，是拒绝多数人。</div>
+      </section>
+
+      <!-- 3 · STAT HERO -->
+      <section class="slide s-stat">
+        <span class="eyebrow">全年产量<span class="dot">·</span>Annual Production</span>
+        <div class="big serif anchor"><span>21</span><span class="unit">枚</span></div>
+        <div class="cap serif">一年只做二十一枚，做完即封模。</div>
+      </section>
+
+      <!-- 4 · ARGUMENT 一 · 材料 -->
+      <section class="slide s-arg">
+        <span class="eyebrow">其一<span class="dot">·</span>论材料</span>
+        <div class="argbody">
+          <h2 class="serif">黑，<br>是最难做的颜色。</h2>
+          <div class="hammer serif anchor"><span>玄</span></div>
+        </div>
+        <div class="argfoot">
+          <hr class="rule" style="width:100%;margin-bottom:20px">
+          <span class="mono">ONYX BLACK · 32 COATS OF LACQUER</span>
+        </div>
+      </section>
+
+      <!-- 5 · ARGUMENT 二 · 工艺 -->
+      <section class="slide s-arg">
+        <span class="eyebrow">其二<span class="dot">·</span>论工艺</span>
+        <div class="argbody">
+          <h2 class="serif">三十二道漆，<br>只为一面无光。</h2>
+          <div class="hammer serif anchor"><span>32</span><span class="unit">道</span></div>
+        </div>
+        <div class="argfoot">
+          <hr class="rule" style="width:100%;margin-bottom:20px">
+          <span class="mono">HAND-LACQUERED · ONE COAT PER DAY</span>
+        </div>
+      </section>
+
+      <!-- 6 · ARGUMENT 三 · 传承 -->
+      <section class="slide s-arg">
+        <span class="eyebrow">其三<span class="dot">·</span>论传承</span>
+        <div class="argbody">
+          <h2 class="serif">一枚表，<br>走给三代人看。</h2>
+          <div class="hammer serif anchor"><span>3</span><span class="unit">代</span></div>
+        </div>
+        <div class="argfoot">
+          <hr class="rule" style="width:100%;margin-bottom:20px">
+          <span class="mono">REGISTERED · LIFETIME CARE · 3 GENERATIONS</span>
+        </div>
+      </section>
+
+      <!-- 7 · QUOTE -->
+      <section class="slide s-quote">
+        <div class="qmark serif">“</div>
+        <blockquote class="serif">我们不制造时间，<br>只是替它守着，<br>直到有人配得上。</blockquote>
+        <div class="attrib">玄金 · 首席制表师 <b>让 · 诺塔</b></div>
+      </section>
+
+      <!-- 8 · CLOSING · Gold Inversion -->
+      <section class="slide s-close">
+        <div class="brandline">
+          <span class="hallmark"><span>N</span></span>
+          <span class="eyebrow">Noctaurum<span class="dot">·</span>玄金</span>
+        </div>
+        <h2 class="serif">此刻，玄金为你<br>点亮这一道金。</h2>
+        <hr class="close-rule">
+        <div class="close-foot">
+          <span class="eyebrow" style="color:var(--on-primary)">预约私人品鉴 · By Appointment</span>
+          <span class="mono">+86 021 1897 0000</span>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- UI -->
+  <div class="deck-ui">
+    <div class="dots" id="dots"></div>
+    <span class="page-count"><b id="cur">01</b> / <span id="total">08</span></span>
+  </div>
+  <span class="hint">← → 翻页</span>
+  <div class="nav-zone prev" id="zonePrev" aria-label="上一页"></div>
+  <div class="nav-zone next" id="zoneNext" aria-label="下一页"></div>
+
+<script>
+  (function(){
+    var deck = document.getElementById('deck');
+    var slides = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+    var idx = 0;
+    var total = slides.length;
+
+    // fit 1280x720 stage into viewport
+    function fit(){
+      var s = Math.min(window.innerWidth/1280, window.innerHeight/720);
+      deck.style.transform = 'scale(' + s + ')';
+    }
+    window.addEventListener('resize', fit);
+    fit();
+
+    // dots
+    var dotsWrap = document.getElementById('dots');
+    var dots = [];
+    for(var i=0;i<total;i++){
+      var b = document.createElement('button');
+      b.className = 'dot-btn';
+      b.setAttribute('aria-label', '第 '+(i+1)+' 页');
+      (function(n){ b.addEventListener('click', function(){ go(n); }); })(i);
+      dotsWrap.appendChild(b);
+      dots.push(b);
+    }
+    document.getElementById('total').textContent = String(total).padStart(2,'0');
+
+    function pad(n){ return String(n+1).padStart(2,'0'); }
+    function render(){
+      slides.forEach(function(sl,i){ sl.classList.toggle('active', i===idx); });
+      dots.forEach(function(d,i){ d.classList.toggle('on', i===idx); });
+      document.getElementById('cur').textContent = pad(idx);
+    }
+    function go(n){ idx = Math.max(0, Math.min(total-1, n)); render(); }
+    function next(){ go(idx+1); }
+    function prev(){ go(idx-1); }
+
+    document.addEventListener('keydown', function(e){
+      if(e.key==='ArrowRight' || e.key==='PageDown' || e.key===' '){ e.preventDefault(); next(); }
+      else if(e.key==='ArrowLeft' || e.key==='PageUp'){ e.preventDefault(); prev(); }
+      else if(e.key==='Home'){ go(0); }
+      else if(e.key==='End'){ go(total-1); }
+    });
+    document.getElementById('zoneNext').addEventListener('click', next);
+    document.getElementById('zonePrev').addEventListener('click', prev);
+
+    render();
+  })();
+</script>
+</body>
+</html>
