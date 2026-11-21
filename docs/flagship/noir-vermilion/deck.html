@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深稿 · 公开课 · 为什么你该写一篇长文</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#CE1432;
+    --primary-deep:#AC0F27;
+    --on-primary:#F7F4ED;
+    --ink:#EDEAE3;
+    --canvas:#141210;
+    --surface:#1C1916;
+    --muted:#9A9082;
+    --hairline:#34302B;
+
+    --serif-display:"Playfair Display","Noto Serif SC","Songti SC","STSong",serif;
+    --serif-sub:"Source Serif 4","Noto Serif SC","Songti SC","STSong",serif;
+    --numeral:"Playfair Display","Bodoni 72","Didot","GFS Didot",serif;
+    --sans:"Inter","Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:var(--sans);
+    background:#0b0a09;color:var(--ink);
+    overflow:hidden;
+  }
+  ::selection{background:var(--on-primary);color:var(--primary)}
+
+  .deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+
+  /* 16:9 stage, letterboxed, container for cqmin type scaling */
+  .stage{
+    position:relative;
+    width:min(100vw,177.78vh);
+    height:min(56.25vw,100vh);
+    container-type:size;
+    background-color:var(--canvas);
+    overflow:hidden;
+    box-shadow:0 0 120px rgba(0,0,0,.6);
+    background-image:
+      repeating-linear-gradient(45deg, rgba(154,144,130,.04) 0 1px, transparent 1px 26px),
+      repeating-linear-gradient(-45deg, rgba(154,144,130,.04) 0 1px, transparent 1px 26px);
+  }
+
+  .slide{
+    position:absolute;inset:0;
+    padding:6.5cqmin 9cqmin;
+    display:flex;flex-direction:column;justify-content:center;
+    opacity:0;pointer-events:none;z-index:1;
+    transition:opacity .5s ease;
+  }
+  .slide.active{opacity:1;pointer-events:auto;z-index:2}
+  /* content lifts in on the active slide — transforms the inner content, never the full-bleed slide */
+  .slide .s-mid{transform:translateY(1.4cqmin);transition:transform .55s ease}
+  .slide.active .s-mid{transform:none}
+
+  .s-top{position:absolute;top:6.2cqmin;left:9cqmin;right:9cqmin;display:flex;justify-content:space-between;align-items:center}
+  .s-bot{position:absolute;bottom:5.6cqmin;left:9cqmin;right:9cqmin;display:flex;justify-content:space-between;align-items:flex-end}
+
+  .eyebrow{
+    font-family:var(--sans);font-weight:600;
+    font-size:max(11px,1.75cqmin);letter-spacing:.32em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  .eyebrow .hot{color:var(--primary)}
+  .s-bot .brand{font-family:var(--serif-display);font-weight:600;font-size:max(11px,1.9cqmin);letter-spacing:.06em;color:var(--muted)}
+  .s-bot .pg{font-family:var(--numeral);font-style:italic;font-size:max(12px,2.3cqmin);color:var(--muted);letter-spacing:.05em}
+  .s-bot .pg b{color:var(--ink);font-weight:500}
+
+  .rule8{display:block;width:7cqmin;height:1.05cqmin;background:var(--primary)}
+
+  .title-lines span{display:block;white-space:nowrap}
+
+  /* ---- 1. cover ---- */
+  .cover .cover-title{
+    font-family:var(--serif-display);font-weight:600;
+    font-size:10.4cqmin;line-height:1.04;letter-spacing:-.01em;color:var(--ink);
+  }
+  .cover .cover-title .q{color:var(--ink)}
+  .cover .rule8{margin-top:3.4cqmin}
+  .cover .cover-sub{margin-top:3cqmin;font-size:max(12px,2cqmin);color:var(--muted);letter-spacing:.02em;max-width:34cqmin;line-height:1.6}
+
+  /* ---- 2. section-divider : SIGNATURE serial ---- */
+  .divider .div-row{display:flex;align-items:flex-end;gap:5cqmin}
+  .divider .div-serial{
+    font-family:var(--numeral);font-style:italic;font-weight:500;
+    font-size:44cqmin;line-height:.74;letter-spacing:-.03em;color:var(--primary);
+  }
+  .divider .div-txt{padding-bottom:3cqmin}
+  .divider .div-txt .rule8{margin-bottom:2.6cqmin}
+  .divider .div-title{
+    font-family:var(--serif-display);font-weight:600;
+    font-size:8cqmin;line-height:1.08;letter-spacing:-.01em;color:var(--ink);
+  }
+  .divider .div-sub{margin-top:4cqmin;font-size:max(12px,2.1cqmin);color:var(--muted);letter-spacing:.02em;max-width:52cqmin;line-height:1.6}
+
+  /* ---- 3. stat-hero ---- */
+  .stat .stat-fig{
+    font-family:var(--numeral);font-weight:500;
+    font-size:33cqmin;line-height:.9;letter-spacing:-.03em;color:var(--ink);
+    display:flex;align-items:baseline;gap:1.4cqmin;
+  }
+  .stat .stat-unit{font-family:var(--serif-display);font-weight:600;font-size:9cqmin;color:var(--primary);letter-spacing:0}
+  .stat .rule8{margin:2.6cqmin 0 3cqmin}
+  .stat .stat-cap{font-size:max(13px,2.5cqmin);color:var(--ink);letter-spacing:.01em;max-width:46cqmin;line-height:1.55;font-family:var(--serif-sub)}
+  .stat .stat-cap b{color:var(--primary);font-weight:600}
+
+  /* ---- 4-6. argument ---- */
+  .arg .arg-ghost{
+    position:absolute;top:3cqmin;right:6cqmin;z-index:0;pointer-events:none;
+    font-family:var(--numeral);font-style:italic;font-weight:500;
+    font-size:46cqmin;line-height:.8;color:rgba(237,234,227,.045);
+  }
+  .arg .arg-head{display:flex;align-items:center;gap:2cqmin;position:relative;z-index:1}
+  .arg .arg-idx{font-family:var(--numeral);font-style:italic;font-weight:500;font-size:5cqmin;color:var(--primary);line-height:1}
+  .arg .arg-kicker{font-family:var(--sans);font-weight:600;font-size:max(11px,1.75cqmin);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+  .arg .rule8{margin:3cqmin 0 3cqmin;position:relative;z-index:1}
+  .arg .arg-title{
+    font-family:var(--serif-display);font-weight:600;position:relative;z-index:1;
+    font-size:8.4cqmin;line-height:1.07;letter-spacing:-.01em;color:var(--ink);
+  }
+  .arg .arg-title em{font-style:normal;color:var(--primary)}
+  .arg .arg-sub{margin-top:3.4cqmin;position:relative;z-index:1;font-size:max(12px,2.1cqmin);color:var(--muted);letter-spacing:.02em;max-width:48cqmin;line-height:1.6}
+
+  /* ---- 7. quote : the RED RUPTURE (only red slide) ---- */
+  .quote{background:var(--primary)}
+  .quote .q-mark{
+    font-family:var(--serif-display);font-weight:700;font-size:24cqmin;line-height:.6;
+    color:rgba(247,244,237,.22);display:block;margin-bottom:-1cqmin;
+  }
+  .quote .q-line{
+    font-family:var(--serif-display);font-weight:600;
+    font-size:7.6cqmin;line-height:1.14;letter-spacing:-.005em;color:var(--on-primary);
+  }
+  .quote .q-by{margin-top:4cqmin;font-family:var(--sans);font-weight:600;font-size:max(11px,1.9cqmin);letter-spacing:.24em;text-transform:uppercase;color:rgba(247,244,237,.72)}
+  .quote .s-bot .brand,.quote .s-bot .pg,.quote .s-bot .pg b{color:rgba(247,244,237,.7)}
+  .quote .s-top .eyebrow{color:rgba(247,244,237,.7)}
+  .quote .s-top .eyebrow .hot{color:var(--on-primary)}
+
+  /* ---- 8. closing ---- */
+  .closing .close-line{
+    font-family:var(--serif-display);font-weight:600;
+    font-size:8.6cqmin;line-height:1.06;letter-spacing:-.01em;color:var(--ink);
+  }
+  .closing .rule8{margin:3.4cqmin 0}
+  .closing .close-cta{
+    display:inline-flex;align-items:center;gap:1.4cqmin;align-self:flex-start;
+    font-family:var(--sans);font-weight:600;font-size:max(13px,2.1cqmin);letter-spacing:.02em;
+    background:var(--primary);color:var(--on-primary);
+    padding:1.7cqmin 3.4cqmin;border-radius:2px;text-decoration:none;
+    transition:background .2s ease;
+  }
+  .closing .close-cta:hover{background:var(--primary-deep)}
+  .closing .close-meta{margin-top:3cqmin;font-size:max(11px,1.9cqmin);color:var(--muted);letter-spacing:.04em}
+
+  /* ---- HUD over the letterbox ---- */
+  .hud{position:fixed;left:0;right:0;bottom:max(14px,2.2vh);z-index:60;display:flex;align-items:center;justify-content:center;gap:18px;pointer-events:none}
+  .hud .grp{display:flex;align-items:center;gap:14px;pointer-events:auto}
+  .hud button{
+    width:34px;height:34px;border-radius:9999px;cursor:pointer;
+    background:rgba(28,25,22,.9);border:1px solid var(--hairline);color:var(--ink);
+    font-size:15px;display:flex;align-items:center;justify-content:center;
+    transition:border-color .2s ease,color .2s ease;
+  }
+  .hud button:hover{border-color:var(--primary);color:var(--primary)}
+  .hud button:focus-visible{outline:2px solid var(--muted);outline-offset:2px}
+  .dots{display:flex;gap:8px}
+  .dots i{width:7px;height:7px;border-radius:9999px;background:var(--hairline);transition:background .25s ease,width .25s ease}
+  .dots i.on{background:var(--primary);width:20px;border-radius:9999px}
+  .hint{position:fixed;top:max(12px,2vh);right:max(14px,2vw);z-index:60;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none !important}
+    .slide{transition:opacity .001s linear}
+    .slide .s-mid{transform:none !important;transition:none !important}
+  }
+</style>
+</head>
+<body>
+
+<div class="hint">← → 翻页</div>
+
+<div class="deck">
+  <div class="stage" id="stage">
+
+    <!-- 1 · COVER -->
+    <section class="slide cover active">
+      <div class="s-top">
+        <span class="eyebrow">深稿书院 · 公开课 · <span class="hot">№ 12</span></span>
+        <span class="eyebrow">玄年 · 冬</span>
+      </div>
+      <div class="s-mid">
+        <h1 class="cover-title title-lines">
+          <span>为什么</span>
+          <span>你该写</span>
+          <span class="q">一篇长文。</span>
+        </h1>
+        <span class="rule8"></span>
+        <p class="cover-sub">一场关于把话说透的公开课。八页，一口气。</p>
+      </div>
+      <div class="s-bot">
+        <span class="brand">深稿 · Shēngǎo</span>
+        <span class="pg"><b>01</b> / 08</span>
+      </div>
+    </section>
+
+    <!-- 2 · SECTION DIVIDER (signature serial) -->
+    <section class="slide divider">
+      <div class="s-top">
+        <span class="eyebrow"><span class="hot">第一章</span> · 处境</span>
+        <span class="eyebrow">深稿 · 公开课</span>
+      </div>
+      <div class="s-mid">
+        <div class="div-row">
+          <span class="div-serial">01</span>
+          <div class="div-txt">
+            <span class="rule8"></span>
+            <h2 class="div-title title-lines">
+              <span>短内容，</span>
+              <span>正在过期。</span>
+            </h2>
+          </div>
+        </div>
+        <p class="div-sub">刷得越快，记得越少。我们先看清这件事，再谈为什么长文反而是出路。</p>
+      </div>
+      <div class="s-bot">
+        <span class="brand">深稿 · Shēngǎo</span>
+        <span class="pg"><b>02</b> / 08</span>
+      </div>
+    </section>
+
+    <!-- 3 · STAT HERO -->
+    <section class="slide stat">
+      <div class="s-top">
+        <span class="eyebrow"><span class="hot">数据</span> · 一个数字</span>
+        <span class="eyebrow">深稿 · 公开课</span>
+      </div>
+      <div class="s-mid">
+        <div class="stat-fig">8<span class="stat-unit">秒</span></div>
+        <span class="rule8"></span>
+        <p class="stat-cap">一条短内容的平均注意力寿命。<b>长文，不在这条赛道上。</b></p>
+      </div>
+      <div class="s-bot">
+        <span class="brand">深稿 · Shēngǎo</span>
+        <span class="pg"><b>03</b> / 08</span>
+      </div>
+    </section>
+
+    <!-- 4 · ARGUMENT 02 -->
+    <section class="slide arg">
+      <span class="arg-ghost" aria-hidden="true">02</span>
+      <div class="s-top">
+        <span class="eyebrow"><span class="hot">第二章</span> · 为什么值得</span>
+        <span class="eyebrow">深稿 · 公开课</span>
+      </div>
+      <div class="s-mid">
+        <div class="arg-head"><span class="arg-idx">02</span><span class="arg-kicker">论点</span></div>
+        <span class="rule8"></span>
+        <h2 class="arg-title title-lines">
+          <span>对的人读完，</span>
+          <span>错的人<em>划走</em>。</span>
+        </h2>
+        <p class="arg-sub">长文替你筛选读者，把注意力留给真正的同类。它不讨好所有人，所以留下的都算数。</p>
+      </div>
+      <div class="s-bot">
+        <span class="brand">深稿 · Shēngǎo</span>
+        <span class="pg"><b>04</b> / 08</span>
+      </div>
+    </section>
+
+    <!-- 5 · ARGUMENT 03 -->
+    <section class="slide arg">
+      <span class="arg-ghost" aria-hidden="true">03</span>
+      <div class="s-top">
+        <span class="eyebrow"><span class="hot">第二章</span> · 为什么值得</span>
+        <span class="eyebrow">深稿 · 公开课</span>
+      </div>
+      <div class="s-mid">
+        <div class="arg-head"><span class="arg-idx">03</span><span class="arg-kicker">论点</span></div>
+        <span class="rule8"></span>
+        <h2 class="arg-title title-lines">
+          <span>三年后，它还在</span>
+          <span>替你<em>说话</em>。</span>
+        </h2>
+        <p class="arg-sub">短内容当天就沉底，长文却会被反复搜到、反复转发。它是少数能复利的资产。</p>
+      </div>
+      <div class="s-bot">
+        <span class="brand">深稿 · Shēngǎo</span>
+        <span class="pg"><b>05</b> / 08</span>
+      </div>
+    </section>
+
+    <!-- 6 · ARGUMENT 04 -->
+    <section class="slide arg">
+      <span class="arg-ghost" aria-hidden="true">04</span>
+      <div class="s-top">
+        <span class="eyebrow"><span class="hot">第二章</span> · 为什么值得</span>
+        <span class="eyebrow">深稿 · 公开课</span>
+      </div>
+      <div class="s-mid">
+        <div class="arg-head"><span class="arg-idx">04</span><span class="arg-kicker">论点</span></div>
+        <span class="rule8"></span>
+        <h2 class="arg-title title-lines">
+          <span>写长文，就是</span>
+          <span>把自己<em>想透</em>。</span>
+        </h2>
+        <p class="arg-sub">你以为想清楚了，落笔才发现漏洞。先说服自己，才轮到别人。</p>
+      </div>
+      <div class="s-bot">
+        <span class="brand">深稿 · Shēngǎo</span>
+        <span class="pg"><b>06</b> / 08</span>
+      </div>
+    </section>
+
+    <!-- 7 · QUOTE : RED RUPTURE -->
+    <section class="slide quote">
+      <div class="s-top">
+        <span class="eyebrow"><span class="hot">金句</span></span>
+        <span class="eyebrow">深稿 · 公开课</span>
+      </div>
+      <div class="s-mid">
+        <span class="q-mark" aria-hidden="true">“</span>
+        <h2 class="q-line title-lines">
+          <span>你写下的每一句，</span>
+          <span>都是在替未来的</span>
+          <span>自己说话。</span>
+        </h2>
+        <div class="q-by">深稿 · 驻院手记</div>
+      </div>
+      <div class="s-bot">
+        <span class="brand">深稿 · Shēngǎo</span>
+        <span class="pg"><b>07</b> / 08</span>
+      </div>
+    </section>
+
+    <!-- 8 · CLOSING -->
+    <section class="slide closing">
+      <div class="s-top">
+        <span class="eyebrow">深稿书院 · <span class="hot">第 12 期招募中</span></span>
+        <span class="eyebrow">玄年 · 冬</span>
+      </div>
+      <div class="s-mid">
+        <h2 class="close-line title-lines">
+          <span>现在，</span>
+          <span>写下第一句。</span>
+        </h2>
+        <span class="rule8"></span>
+        <a class="close-cta" href="#">加入第 12 期 <span aria-hidden="true">→</span></a>
+        <p class="close-meta">深稿书院 · 一所写给深夜创作者的长文书院</p>
+      </div>
+      <div class="s-bot">
+        <span class="brand">深稿 · Shēngǎo</span>
+        <span class="pg"><b>08</b> / 08</span>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- HUD -->
+<div class="hud">
+  <div class="grp">
+    <button id="prev" aria-label="上一页">‹</button>
+    <div class="dots" id="dots"></div>
+    <button id="next" aria-label="下一页">›</button>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+    var total = slides.length;
+    var i = 0;
+    var dotsWrap = document.getElementById('dots');
+
+    for(var d=0; d<total; d++){
+      var dot = document.createElement('i');
+      (function(idx){ dot.addEventListener('click', function(){ go(idx); }); })(d);
+      dotsWrap.appendChild(dot);
+    }
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+
+    function render(){
+      slides.forEach(function(s,n){ s.classList.toggle('active', n===i); });
+      dots.forEach(function(dt,n){ dt.classList.toggle('on', n===i); });
+    }
+    function go(n){ i = (n+total)%total; render(); }
+    function next(){ if(i<total-1) go(i+1); }
+    function prev(){ if(i>0) go(i-1); }
+
+    document.getElementById('next').addEventListener('click', next);
+    document.getElementById('prev').addEventListener('click', prev);
+
+    document.addEventListener('keydown', function(e){
+      if(e.key==='ArrowRight' || e.key==='PageDown'){ e.preventDefault(); next(); }
+      else if(e.key==='ArrowLeft' || e.key==='PageUp'){ e.preventDefault(); prev(); }
+      else if(e.key===' '){ e.preventDefault(); next(); }
+      else if(e.key==='Home'){ e.preventDefault(); go(0); }
+      else if(e.key==='End'){ e.preventDefault(); go(total-1); }
+    });
+
+    // click the stage to advance (ignore clicks on links/buttons)
+    document.getElementById('stage').addEventListener('click', function(e){
+      if(e.target.closest('a,button')) return;
+      var mid = window.innerWidth/2;
+      if(e.clientX < mid*0.32) prev(); else next();
+    });
+
+    // touch swipe
+    var x0=null;
+    document.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive:true});
+    document.addEventListener('touchend', function(e){
+      if(x0===null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if(Math.abs(dx)>48){ dx<0 ? next() : prev(); }
+      x0=null;
+    }, {passive:true});
+
+    render();
+  })();
+</script>
+
+</body>
+</html>

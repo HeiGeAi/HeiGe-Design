@@ -57,12 +57,16 @@ switch (cmd) {
     if (!fs.existsSync(dm(slug))) die(`没有这套: ${slug}`);
     const fmt = flag('format');
     const exdir = path.join(SYS, slug, 'exports');
-    if (fmt && map[fmt]) {
+    if (args.includes('--format')) {
+      if (typeof fmt !== 'string' || !map[fmt]) {
+        die(`未知导出格式: ${typeof fmt === 'string' ? fmt : '(缺少参数)'}\n可用格式: ${Object.keys(map).join(' / ')}`);
+      }
       const f = path.join(exdir, map[fmt]);
       if (!fs.existsSync(f)) die(`缺少导出产物 systems/${slug}/exports/${map[fmt]}，请先运行 heige-design site 生成`);
       process.stdout.write(fs.readFileSync(f, 'utf8'));
+    } else {
+      console.log('可用格式: ' + Object.keys(map).join(' / ') + `\n资产目录: systems/${slug}/exports/`);
     }
-    else console.log('可用格式: ' + Object.keys(map).join(' / ') + `\n资产目录: systems/${slug}/exports/`);
     break;
   }
   case 'lint': {

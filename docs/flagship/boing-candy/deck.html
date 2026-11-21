@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>啵啵 Poppo · 产品 Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Bagel+Fat+One&family=Nunito:wght@400;500;600;700;800&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#FF5CA8; --on-primary:#2E1A47; --ink:#2E1A47;
+  --canvas:#FFF6FB; --surface:#FFFFFF; --muted:#7A5C8E;
+  --hairline:#F1D9E8; --accent:#33D9B2; --accent-2:#FFD836;
+  --primary-dark:#C81C68; --lemon-dark:#E0B800; --mint-dark:#1FB89A; --grape-dark:#20113a;
+  --r-xl:44px; --r-lg:28px; --r-pill:9999px;
+  --font-display:"Baloo 2","Bagel Fat One","ZCOOL KuaiLe","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-heading:"Baloo 2","ZCOOL KuaiLe","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --font-body:"Nunito","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  --font-numeric:"Baloo 2","Bagel Fat One","Nunito","PingFang SC","Noto Sans SC",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:var(--font-body); color:var(--ink);
+  background:radial-gradient(1200px 600px at 20% -10%, #2c1750, #20113a 60%);
+  -webkit-font-smoothing:antialiased; font-synthesis:none; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+/* faint candy scatter behind stage */
+.bg-gum{position:fixed; border-radius:50%; z-index:0; pointer-events:none; opacity:.5}
+
+/* ===== STAGE ===== */
+#stage{
+  width:1280px; height:720px; position:relative; z-index:2;
+  transform-origin:center center; flex:none;
+}
+.slide{
+  position:absolute; inset:0; border-radius:var(--r-xl); overflow:hidden;
+  opacity:0; visibility:hidden; pointer-events:none;
+  transition:opacity .45s ease;
+  padding:80px; display:flex; flex-direction:column;
+  box-shadow:0 24px 0 rgba(0,0,0,.22);
+}
+.slide.active{opacity:1; visibility:visible; pointer-events:auto}
+.slide.active .pop{animation:pop-in .6s cubic-bezier(.22,1,.36,1) both}
+.slide.active .pop.d1{animation-delay:.08s}
+.slide.active .pop.d2{animation-delay:.18s}
+.slide.active .pop.d3{animation-delay:.30s}
+@keyframes pop-in{0%{opacity:0;transform:translateY(26px) scale(.97)}100%{opacity:1;transform:none}}
+
+.eyebrow{font-family:var(--font-body); font-weight:800; font-size:15px; letter-spacing:1.6px; text-transform:uppercase; display:inline-block; border-radius:10px; padding:7px 14px}
+.disp{font-family:var(--font-display); font-weight:800; letter-spacing:-1.5px; line-height:1.0; font-synthesis:none}
+.body{font-family:var(--font-body); font-weight:600; line-height:1.6}
+.drop{display:inline-block; background:var(--accent-2); color:var(--ink); border-radius:50% 50% 44% 44%/62% 62% 38% 38%; padding:0 .26em .05em; box-shadow:0 10px 0 var(--lemon-dark)}
+.ln{display:block; white-space:nowrap}
+
+/* ===== slide-cover ===== */
+.s-cover{background:var(--canvas); color:var(--ink)}
+.cover-disp{position:absolute; left:80px; top:150px; display:flex; flex-direction:column; gap:22px; z-index:3}
+.cover-disp .g{width:66px; height:66px; border-radius:50%}
+.cover-disp .g.p{background:var(--primary); box-shadow:0 8px 0 var(--primary-dark)}
+.cover-disp .g.m{background:var(--accent); box-shadow:0 8px 0 var(--mint-dark)}
+.cover-disp .g.l{background:var(--accent-2); box-shadow:0 8px 0 var(--lemon-dark)}
+.cover-disp .g.p2{background:#FF8DC2; box-shadow:0 8px 0 var(--primary-dark)}
+.cover-main{margin-left:150px; margin-top:auto; margin-bottom:auto; position:relative; z-index:3}
+.cover-main .eyebrow{background:var(--accent-2); color:var(--ink); margin-bottom:26px}
+.cover-main h1{font-family:var(--font-display); font-weight:800; font-size:150px; letter-spacing:-4px; line-height:.92; color:var(--ink); font-synthesis:none}
+.cover-main .pink{color:var(--primary)}
+.cover-main .sub{color:var(--muted); font-size:22px; font-weight:700; margin-top:28px}
+.cover-bibo{position:absolute; right:70px; bottom:56px; width:250px; z-index:2}
+.cover-tag{position:absolute; right:88px; top:80px; z-index:3}
+
+/* ===== slide-section-divider (Gumdrop Divider signature) ===== */
+.s-divider{background:var(--primary); color:var(--on-primary)}
+.div-grid{display:flex; align-items:center; gap:40px; height:100%; position:relative; z-index:2}
+.div-left{width:44%}
+.div-left .eyebrow{background:var(--on-primary); color:var(--canvas); margin-bottom:24px}
+.div-left h2{font-family:var(--font-display); font-weight:800; font-size:76px; letter-spacing:-2px; line-height:1.0; color:var(--on-primary); font-synthesis:none}
+.div-left p{color:#4a2a63; font-weight:700; font-size:22px; margin-top:22px; line-height:1.5; max-width:17em; text-wrap:balance}
+.div-right{flex:1; position:relative; height:100%}
+.gumdrop{
+  position:absolute; right:20px; top:50%; width:420px; height:390px;
+  transform:translateY(-50%);
+  background:var(--on-primary);
+  border-radius:50% 50% 42% 42% / 62% 62% 38% 38%;
+  box-shadow:0 20px 0 var(--grape-dark);
+  display:flex; align-items:center; justify-content:center;
+  transform-origin:bottom center;
+}
+.gumdrop::after{content:""; position:absolute; left:24%; top:16%; width:90px; height:70px; border-radius:50%; background:rgba(255,255,255,.14)}
+.gumdrop .num{font-family:var(--font-numeric); font-weight:800; font-size:210px; letter-spacing:-6px; color:var(--canvas); line-height:1; font-synthesis:none; position:relative; z-index:2}
+.trail{position:absolute; inset:0; z-index:1; pointer-events:none; overflow:visible}
+.trail path{stroke:var(--on-primary); stroke-width:9; fill:none; stroke-linecap:round; stroke-dasharray:0.1 30; opacity:.55}
+.ghost-drop{position:absolute; left:-40px; top:40px; width:110px; height:100px; background:rgba(46,26,71,.18); border-radius:50% 50% 42% 42% / 62% 62% 38% 38%}
+.slide.active .gumdrop.animate{animation:gum-squash 2.4s ease-in-out infinite}
+@keyframes gum-squash{0%,100%{transform:translateY(-50%) scale(1,1)} 50%{transform:translateY(-50%) scale(1.05,.93)}}
+
+/* ===== slide-stat-hero ===== */
+.s-stat{background:var(--accent); color:var(--ink); align-items:flex-start; justify-content:center}
+.s-stat .eyebrow{background:var(--ink); color:var(--canvas); margin-bottom:30px}
+.stat-num{font-family:var(--font-numeric); font-weight:800; font-size:300px; letter-spacing:-10px; line-height:.86; color:var(--ink); font-synthesis:none}
+.stat-num small{font-size:.32em; letter-spacing:-2px}
+.stat-lb{font-family:var(--font-heading); font-weight:700; font-size:34px; letter-spacing:-.5px; margin-top:20px; color:var(--ink)}
+.stat-lb b{color:var(--primary)}
+.stat-side{position:absolute; right:90px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:18px; z-index:2}
+.stat-side .g{width:56px;height:56px;border-radius:50%}
+.stat-side .g.a{background:var(--accent-2);box-shadow:0 7px 0 var(--lemon-dark)}
+.stat-side .g.b{background:var(--primary);box-shadow:0 7px 0 var(--primary-dark)}
+.stat-side .g.c{background:var(--ink)}
+
+/* ===== argument slides ===== */
+.s-arg{background:var(--surface); color:var(--ink)}
+.arg-grid{display:flex; align-items:center; gap:56px; height:100%; position:relative; z-index:2}
+.arg-left{width:52%}
+.arg-badge{
+  width:70px; height:70px; border-radius:50% 50% 44% 44%/60% 60% 40% 40%;
+  display:flex; align-items:center; justify-content:center; margin-bottom:28px;
+  font-family:var(--font-numeric); font-weight:800; font-size:34px; color:var(--ink);
+  box-shadow:0 8px 0 rgba(46,26,71,.14);
+}
+.s-arg.a1 .arg-badge{background:var(--primary); color:var(--on-primary)}
+.s-arg.a2 .arg-badge{background:var(--accent)}
+.s-arg.a3 .arg-badge{background:var(--accent-2)}
+.arg-left h2{font-family:var(--font-display); font-weight:800; font-size:74px; letter-spacing:-2px; line-height:1.04; color:var(--ink); font-synthesis:none}
+.arg-left .hl{color:var(--primary)}
+.s-arg.a2 .arg-left .hl{color:var(--mint-dark)}
+.s-arg.a3 .arg-left .hl{color:var(--lemon-dark)}
+.arg-left p{color:var(--muted); font-size:21px; font-weight:600; margin-top:24px; line-height:1.55; max-width:18em; text-wrap:balance}
+.arg-right{flex:1; display:flex; align-items:center; justify-content:center}
+.arg-visual{width:360px; height:360px; border-radius:var(--r-xl); display:flex; align-items:center; justify-content:center}
+.s-arg.a1 .arg-visual{background:#FFE0EF; box-shadow:0 16px 0 var(--hairline)}
+.s-arg.a2 .arg-visual{background:#D7F7EE; box-shadow:0 16px 0 var(--mint-dark)}
+.s-arg.a3 .arg-visual{background:#FFF3BF; box-shadow:0 16px 0 var(--lemon-dark)}
+
+/* ===== slide-quote ===== */
+.s-quote{background:var(--accent-2); color:var(--ink); justify-content:center}
+.quote-mark{font-family:var(--font-display); font-weight:800; font-size:200px; line-height:.6; color:var(--ink); opacity:.16; height:110px}
+.s-quote blockquote{font-family:var(--font-display); font-weight:800; font-size:78px; letter-spacing:-2px; line-height:1.14; color:var(--ink); max-width:15em; font-synthesis:none}
+.s-quote .attr{font-family:var(--font-body); font-weight:800; font-size:19px; letter-spacing:.5px; color:#7a5c0a; margin-top:36px}
+.quote-gum{position:absolute; right:90px; bottom:80px; display:flex; gap:16px; z-index:2}
+.quote-gum span{width:48px;height:48px;border-radius:50%}
+.quote-gum .p{background:var(--primary)} .quote-gum .m{background:var(--accent)} .quote-gum .i{background:var(--ink)}
+
+/* ===== slide-closing ===== */
+.s-close{background:var(--ink); color:var(--canvas); justify-content:center}
+.s-close .eyebrow{background:var(--accent-2); color:var(--ink); margin-bottom:30px}
+.s-close h2{font-family:var(--font-display); font-weight:800; font-size:100px; letter-spacing:-3px; line-height:.98; color:var(--canvas); font-synthesis:none}
+.s-close .drop{box-shadow:0 12px 0 var(--lemon-dark)}
+.s-close .cta-row{display:flex; align-items:center; gap:24px; margin-top:48px; flex-wrap:wrap}
+.btn-boing{
+  font-family:var(--font-body); font-weight:700; font-size:22px; letter-spacing:.2px; line-height:1;
+  border:none; cursor:pointer; border-radius:var(--r-pill); padding:22px 48px;
+  background:var(--primary); color:var(--on-primary); box-shadow:0 8px 0 var(--primary-dark);
+  display:inline-flex; align-items:center; gap:12px; text-decoration:none;
+  transition:transform .13s cubic-bezier(.34,1.56,.64,1);
+}
+.btn-boing:hover{transform:translateY(-3px) scale(1.03)}
+.btn-boing:active{transform:translateY(8px); box-shadow:0 0 0 var(--primary-dark)}
+.close-hint{color:#9c88b3; font-weight:700; font-size:18px}
+.close-sig{position:absolute; right:80px; bottom:70px; font-family:var(--font-body); font-weight:800; font-size:16px; color:#9c88b3; z-index:2}
+.close-sig b{color:var(--accent-2)}
+.close-bibo{position:absolute; right:120px; top:90px; width:170px; z-index:2}
+
+/* ===== chrome: dots, counter, arrows ===== */
+#chrome{position:fixed; z-index:20; left:0; right:0; bottom:22px; display:flex; align-items:center; justify-content:center; gap:16px; pointer-events:none}
+.dots{display:flex; gap:10px; pointer-events:auto; background:rgba(46,26,71,.5); padding:10px 16px; border-radius:var(--r-pill)}
+.dot{width:11px; height:11px; border-radius:50%; background:rgba(255,255,255,.32); border:none; cursor:pointer; padding:0; transition:transform .2s cubic-bezier(.34,1.56,.64,1), background .2s}
+.dot:hover{transform:scale(1.25)}
+.dot.on{background:var(--primary); width:30px; border-radius:var(--r-pill)}
+.counter{position:fixed; top:22px; right:26px; z-index:20; font-family:var(--font-numeric); font-weight:800; font-size:20px; color:rgba(255,255,255,.72); letter-spacing:0}
+.counter b{color:var(--accent-2)}
+.arrow{position:fixed; top:50%; transform:translateY(-50%); z-index:20; width:52px; height:52px; border-radius:50%; border:none; cursor:pointer; background:rgba(255,255,255,.14); color:#fff; display:flex; align-items:center; justify-content:center; transition:transform .15s, background .15s}
+.arrow:hover{background:var(--primary); color:var(--on-primary); transform:translateY(-50%) scale(1.08)}
+.arrow.prev{left:20px} .arrow.next{right:20px}
+.arrow:focus-visible, .dot:focus-visible, .btn-boing:focus-visible{outline:3px solid var(--accent-2); outline-offset:3px}
+.hint-kbd{position:fixed; top:24px; left:26px; z-index:20; color:rgba(255,255,255,.6); font-weight:700; font-size:13px; letter-spacing:.3px}
+.hint-kbd kbd{background:rgba(255,255,255,.16); border-radius:6px; padding:2px 8px; font-family:var(--font-numeric); font-size:13px}
+
+@media (prefers-reduced-motion:reduce){
+  .slide{transition:opacity .2s ease}
+  .slide.active .pop{animation:none}
+  .gumdrop.animate{animation:none !important}
+}
+</style>
+</head>
+<body>
+
+<span class="bg-gum" style="width:200px;height:200px;background:#FF5CA8;left:4%;top:12%"></span>
+<span class="bg-gum" style="width:120px;height:120px;background:#33D9B2;right:6%;top:16%"></span>
+<span class="bg-gum" style="width:90px;height:90px;background:#FFD836;left:10%;bottom:14%"></span>
+<span class="bg-gum" style="width:150px;height:150px;background:#FF8DC2;right:9%;bottom:10%"></span>
+
+<div class="hint-kbd"><kbd>&larr;</kbd> <kbd>&rarr;</kbd> 翻页</div>
+<div class="counter"><b id="cur">01</b> / <span id="tot">08</span></div>
+
+<div id="stage">
+
+  <!-- 1 · COVER -->
+  <section class="slide s-cover active">
+    <div class="cover-disp pop d1" aria-hidden="true">
+      <span class="g p"></span><span class="g m"></span><span class="g l"></span><span class="g p2"></span>
+    </div>
+    <span class="eyebrow cover-tag pop d1">PRODUCT DECK · 啵啵 POPPO</span>
+    <div class="cover-main">
+      <span class="eyebrow pop d1">会弹会跳的习惯 APP</span>
+      <h1 class="pop d2"><span class="ln">把坚持</span><span class="ln">做成<span class="pink">糖</span></span></h1>
+      <div class="sub pop d3">一份关于「怎么让人坚持得下去」的产品说明 · 2026</div>
+    </div>
+    <div class="cover-bibo pop d3" aria-hidden="true">
+      <svg viewBox="0 0 250 265" width="250">
+        <ellipse cx="125" cy="252" rx="70" ry="12" fill="#2E1A47" opacity=".08"/>
+        <path d="M125 16C75 16 42 70 42 134c0 58 37 96 83 96s83-38 83-96C208 70 175 16 125 16Z" fill="#FF5CA8"/>
+        <path d="M125 16C75 16 42 70 42 134c0 58 37 96 83 96Z" fill="#FF8DC2"/>
+        <ellipse cx="97" cy="126" rx="13" ry="15" fill="#2E1A47"/>
+        <ellipse cx="153" cy="126" rx="13" ry="15" fill="#2E1A47"/>
+        <circle cx="101" cy="120" r="4" fill="#fff"/><circle cx="157" cy="120" r="4" fill="#fff"/>
+        <circle cx="78" cy="156" r="14" fill="#FFD836" opacity=".8"/>
+        <circle cx="172" cy="156" r="14" fill="#FFD836" opacity=".8"/>
+        <path d="M104 162c8 10 34 10 42 0" stroke="#2E1A47" stroke-width="8" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 2 · SECTION DIVIDER (Gumdrop Divider signature) -->
+  <section class="slide s-divider">
+    <div class="div-grid">
+      <div class="div-left">
+        <span class="eyebrow pop d1">CHAPTER</span>
+        <h2 class="pop d2">掉糖机制</h2>
+        <p class="pop d3">为什么它让人一颗接一颗，停不下来</p>
+      </div>
+      <div class="div-right pop d2" aria-hidden="true">
+        <div class="ghost-drop"></div>
+        <svg class="trail" viewBox="0 0 620 390" preserveAspectRatio="none">
+          <path d="M-40 70 C 120 -20, 210 120, 300 195"/>
+        </svg>
+        <div class="gumdrop animate"><span class="num">01</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · STAT HERO -->
+  <section class="slide s-stat">
+    <span class="eyebrow pop d1">上线一年</span>
+    <div class="stat-num pop d2">230<small>万</small></div>
+    <div class="stat-lb pop d3">颗糖被亲手摇了下来，<b>62 万人</b>正在跳</div>
+    <div class="stat-side pop d3" aria-hidden="true">
+      <span class="g a"></span><span class="g b"></span><span class="g c"></span>
+    </div>
+  </section>
+
+  <!-- 4 · 论点 1 -->
+  <section class="slide s-arg a1">
+    <div class="arg-grid">
+      <div class="arg-left">
+        <div class="arg-badge pop d1">01</div>
+        <h2 class="pop d2"><span class="ln">完成不给红勾，</span><span class="ln">给你<span class="hl">一颗糖</span>。</span></h2>
+        <p class="pop d3">红勾是交作业，糖是发奖励。同一个动作，换一种反馈，人就愿意再来一次。</p>
+      </div>
+      <div class="arg-right pop d2" aria-hidden="true">
+        <div class="arg-visual">
+          <svg viewBox="0 0 220 220" width="240">
+            <path d="M110 18C96 18 86 34 86 52a24 24 0 0 0 48 0C134 34 124 18 110 18Z" fill="#FF5CA8"/>
+            <path d="M110 18C96 18 86 34 86 52a24 24 0 0 0 24 24Z" fill="#FF8DC2"/>
+            <path d="M110 84v22M92 96l-3 12M128 96l3 12" stroke="#2E1A47" stroke-width="4" stroke-linecap="round"/>
+            <path d="M60 132h100l-8 58a10 10 0 0 1-10 9H78a10 10 0 0 1-10-9z" fill="#fff" stroke="#F1D9E8" stroke-width="3"/>
+            <rect x="54" y="122" width="112" height="16" rx="8" fill="#33D9B2"/>
+            <circle cx="88" cy="162" r="9" fill="#FF5CA8"/><circle cx="118" cy="154" r="9" fill="#FFD836"/><circle cx="132" cy="176" r="9" fill="#33D9B2"/><circle cx="98" cy="182" r="9" fill="#2E1A47"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · 论点 2 -->
+  <section class="slide s-arg a2">
+    <div class="arg-grid">
+      <div class="arg-left">
+        <div class="arg-badge pop d1">02</div>
+        <h2 class="pop d2"><span class="ln">提醒不催你，</span><span class="ln">它自己<span class="hl">蹦</span>。</span></h2>
+        <p class="pop d3">到点了，Bibo 在锁屏上傻乎乎蹦一下。你会笑，然后顺手就把它做了。温柔，但赖不掉。</p>
+      </div>
+      <div class="arg-right pop d2" aria-hidden="true">
+        <div class="arg-visual">
+          <svg viewBox="0 0 220 220" width="240">
+            <path d="M40 172c26-52 44-72 70-72s44 20 70 72" stroke="#1FB89A" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="0.1 18"/>
+            <ellipse cx="110" cy="188" rx="46" ry="8" fill="#2E1A47" opacity=".08"/>
+            <path d="M110 58c-22 0-36 24-36 52 0 26 16 42 36 42s36-16 36-42C146 82 132 58 110 58Z" fill="#33D9B2"/>
+            <path d="M110 58c-22 0-36 24-36 52 0 26 16 42 36 42Z" fill="#5FE6C6"/>
+            <ellipse cx="98" cy="106" rx="6" ry="7" fill="#2E1A47"/><ellipse cx="122" cy="106" rx="6" ry="7" fill="#2E1A47"/>
+            <path d="M100 122c5 6 15 6 20 0" stroke="#2E1A47" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · 论点 3 -->
+  <section class="slide s-arg a3">
+    <div class="arg-grid">
+      <div class="arg-left">
+        <div class="arg-badge pop d1">03</div>
+        <h2 class="pop d2"><span class="ln">攒满一整罐，</span><span class="ln">就是你<span class="hl">走过的路</span>。</span></h2>
+        <p class="pop d3">不是冷冰冰的折线图。你的坚持攒成一罐五颜六色的糖，越满越好看，一眼看到自己走了多远。</p>
+      </div>
+      <div class="arg-right pop d2" aria-hidden="true">
+        <div class="arg-visual">
+          <svg viewBox="0 0 220 220" width="240">
+            <rect x="52" y="40" width="116" height="30" rx="12" fill="#FF5CA8"/>
+            <path d="M56 76h108v104a20 20 0 0 1-20 20H76a20 20 0 0 1-20-20z" fill="#fff" stroke="#F1D9E8" stroke-width="4"/>
+            <clipPath id="jar"><path d="M60 80h100v100a16 16 0 0 1-16 16H76a16 16 0 0 1-16-16z"/></clipPath>
+            <g clip-path="url(#jar)">
+              <circle cx="80" cy="180" r="13" fill="#FF5CA8"/><circle cx="112" cy="186" r="13" fill="#FFD836"/><circle cx="144" cy="180" r="13" fill="#33D9B2"/>
+              <circle cx="96" cy="158" r="13" fill="#33D9B2"/><circle cx="128" cy="160" r="13" fill="#FF8DC2"/>
+              <circle cx="78" cy="150" r="13" fill="#FFD836"/><circle cx="146" cy="152" r="13" fill="#2E1A47"/>
+              <circle cx="112" cy="138" r="13" fill="#FF5CA8"/><circle cx="90" cy="128" r="13" fill="#FFD836"/><circle cx="134" cy="130" r="13" fill="#33D9B2"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · QUOTE -->
+  <section class="slide s-quote">
+    <div class="quote-mark pop d1">&ldquo;</div>
+    <blockquote class="pop d2"><span class="ln">坚持不用很猛，</span><span class="ln">先甜一下就好。</span></blockquote>
+    <div class="attr pop d3">— 啵啵 Poppo · 产品信条</div>
+    <div class="quote-gum pop d3" aria-hidden="true"><span class="p"></span><span class="m"></span><span class="i"></span></div>
+  </section>
+
+  <!-- 8 · CLOSING -->
+  <section class="slide s-close">
+    <span class="eyebrow pop d1">该你了</span>
+    <h2 class="pop d2"><span class="ln">今天，</span><span class="ln">先掉<span class="drop">第一颗糖</span></span></h2>
+    <div class="cta-row pop d3">
+      <a class="btn-boing" href="#" onclick="return false">
+        <svg width="20" height="20" viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" stroke="#2E1A47" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        免费开跳
+      </a>
+      <span class="close-hint">啵啵 Poppo · poppo.candy</span>
+    </div>
+    <div class="close-bibo pop d3" aria-hidden="true">
+      <svg viewBox="0 0 170 182" width="170">
+        <path d="M85 12C51 12 29 48 29 92c0 40 25 66 56 66s56-26 56-66C141 48 119 12 85 12Z" fill="#FF5CA8"/>
+        <path d="M85 12C51 12 29 48 29 92c0 40 25 66 56 66Z" fill="#FF8DC2"/>
+        <ellipse cx="66" cy="86" rx="9" ry="10" fill="#2E1A47"/><ellipse cx="104" cy="86" rx="9" ry="10" fill="#2E1A47"/>
+        <circle cx="69" cy="82" r="3" fill="#fff"/><circle cx="107" cy="82" r="3" fill="#fff"/>
+        <circle cx="53" cy="106" r="9" fill="#FFD836" opacity=".8"/><circle cx="117" cy="106" r="9" fill="#FFD836" opacity=".8"/>
+        <path d="M71 110c6 7 22 7 28 0" stroke="#2E1A47" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="close-sig">Crafted with a bounce · <b>HeiGe-Design</b></div>
+  </section>
+
+</div>
+
+<button class="arrow prev" id="prev" aria-label="上一页"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<button class="arrow next" id="next" aria-label="下一页"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+<div id="chrome"><div class="dots" id="dots"></div></div>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length;
+  var i = 0;
+  var stage = document.getElementById('stage');
+  var curEl = document.getElementById('cur');
+  var dotsWrap = document.getElementById('dots');
+
+  document.getElementById('tot').textContent = String(total).padStart(2,'0');
+
+  // build dots
+  slides.forEach(function(_, idx){
+    var b = document.createElement('button');
+    b.className = 'dot' + (idx===0?' on':'');
+    b.setAttribute('aria-label','第 '+(idx+1)+' 页');
+    b.addEventListener('click', function(){ go(idx); });
+    dotsWrap.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  function go(n){
+    n = (n + total) % total;
+    slides[i].classList.remove('active');
+    dots[i].classList.remove('on');
+    i = n;
+    slides[i].classList.add('active');
+    dots[i].classList.add('on');
+    curEl.textContent = String(i+1).padStart(2,'0');
+  }
+  function next(){ go(i+1); }
+  function prev(){ go(i-1); }
+
+  document.getElementById('next').addEventListener('click', next);
+  document.getElementById('prev').addEventListener('click', prev);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight' || e.key==='ArrowDown' || e.key===' ' || e.key==='PageDown'){ e.preventDefault(); next(); }
+    else if(e.key==='ArrowLeft' || e.key==='ArrowUp' || e.key==='PageUp'){ e.preventDefault(); prev(); }
+    else if(e.key==='Home'){ e.preventDefault(); go(0); }
+    else if(e.key==='End'){ e.preventDefault(); go(total-1); }
+  });
+
+  // advance on stage click (ignore buttons/links)
+  stage.addEventListener('click', function(e){
+    if(e.target.closest('a,button')) return;
+    next();
+  });
+
+  // scale stage to fit viewport, keep 16:9
+  function fit(){
+    var m = 40; // breathing margin
+    var s = Math.min((window.innerWidth - m)/1280, (window.innerHeight - m)/720);
+    stage.style.transform = 'scale(' + s + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
+</body>
+</html>

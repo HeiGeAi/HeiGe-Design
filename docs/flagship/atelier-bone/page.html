@@ -1,0 +1,343 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOLIO · 限量艺术版画与珍本工坊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#a98b4e; --on-primary:#1e1c18; --ink:#33302b; --canvas:#f3ede1;
+    --surface:#faf6ec; --muted:#6b655c; --hairline:#d9cfbd; --panel:#221e18;
+    --serif:'Cormorant Garamond',Georgia,'Noto Serif SC','Songti SC','STSong',serif;
+    --sans:'Inter','Helvetica Neue',Arial,'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+    --mono:'IBM Plex Mono','SFMono-Regular',Menlo,Consolas,'Noto Sans SC','PingFang SC',monospace;
+    --xs:4px; --sm:8px; --md:16px; --lg:24px; --xl:40px; --section:96px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:16px;
+    line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(169,139,78,.24);color:var(--ink)}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 var(--xl);position:relative}
+
+  /* eyebrow + the drawn gold rule (signature) */
+  .eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:2.4px;
+    text-transform:uppercase;color:var(--muted);display:inline-block}
+  .gold-rule{display:block;height:1px;width:48px;background:var(--primary);margin:10px 0 0;
+    transform-origin:left center;animation:draw .5s cubic-bezier(.2,1,.36,1) both}
+  @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(243,237,225,.9);border-bottom:1px solid var(--hairline)}
+  @supports not (backdrop-filter:none){nav{background:var(--canvas)}}
+  .nav-in{max-width:1200px;margin:0 auto;padding:20px var(--xl);display:flex;align-items:center;gap:var(--xl)}
+  .brand{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:2px;color:var(--ink)}
+  .nav-links{display:flex;gap:30px;margin-left:12px}
+  .nav-links a{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:2.4px;
+    text-transform:uppercase;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-right{margin-left:auto}
+  .btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;font-family:var(--sans);
+    font-size:13px;font-weight:500;letter-spacing:1.6px;text-transform:uppercase;
+    padding:16px 32px;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s}
+  .btn-primary{background:var(--primary);color:var(--on-primary)}
+  .btn-primary:hover{background:#b89858}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--canvas)}
+  .btn.sm{padding:11px 22px}
+
+  /* hero */
+  .hero{padding:120px 0 104px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--xl);align-items:end}
+  .hero-kicker{margin-bottom:var(--lg)}
+  h1.hero-title{font-family:var(--serif);font-weight:300;font-size:clamp(52px,7.6vw,76px);
+    line-height:1.02;letter-spacing:-.5px;color:var(--ink)}
+  h1.hero-title em{font-style:italic;color:var(--primary)}
+  .hero-sub{font-size:17px;color:var(--muted);line-height:1.7;margin-top:var(--lg);max-width:440px}
+  .hero-actions{display:flex;gap:var(--md);margin-top:var(--xl);flex-wrap:wrap}
+  .hero-meta{margin-top:26px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.4px}
+  /* the plate — editorial photography stand-in, hairline framed */
+  .plate{aspect-ratio:3/4;border:1px solid var(--hairline);border-radius:6px;overflow:hidden;position:relative;
+    background:
+      radial-gradient(120% 80% at 30% 12%,#efe7d6,transparent 60%),
+      linear-gradient(160deg,#e7ddc8 0%,#d8ccb2 46%,#cabb9c 100%)}
+  .plate::after{content:"";position:absolute;left:50%;top:52%;width:38%;height:38%;transform:translate(-50%,-50%) rotate(45deg);
+    background:linear-gradient(135deg,rgba(169,139,78,.55),rgba(169,139,78,.08));border:1px solid rgba(169,139,78,.4)}
+  .plate .cap{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:11px;
+    letter-spacing:.6px;color:var(--muted);z-index:1}
+  .plate .fol{position:absolute;right:16px;top:14px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+  /* stat strip */
+  .stats{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+  .stats-in{max-width:1200px;margin:0 auto;padding:0 var(--xl);display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:var(--xl) var(--lg);border-left:1px solid var(--hairline)}
+  .stat:first-child{border-left:none;padding-left:0}
+  .stat .num{font-family:var(--serif);font-weight:300;font-size:52px;line-height:1;color:var(--ink);letter-spacing:-.3px}
+  .stat .rule{height:1px;width:32px;background:var(--primary);margin:12px 0 10px}
+  .stat .lab{font-family:var(--sans);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+
+  /* section */
+  section.band{padding:var(--section) 0}
+  .sec-head{max-width:720px;margin-bottom:56px}
+  .sec-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4.6vw,52px);line-height:1.06;
+    letter-spacing:-.3px;color:var(--ink);margin-top:16px}
+  .sec-head p{color:var(--muted);margin-top:14px;max-width:520px}
+
+  /* editions cards */
+  .editions{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--lg)}
+  .card{background:var(--surface);border:1px solid var(--hairline);border-radius:2px;padding:var(--xl);
+    display:flex;flex-direction:column;min-height:290px;transition:transform .25s,background .25s}
+  .card:hover{transform:translateY(-4px);background:#fff}
+  .card .idx{font-family:var(--mono);font-size:12px;letter-spacing:1px;color:var(--muted)}
+  .card h3{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.15;color:var(--ink);margin-top:16px}
+  .card p{color:var(--muted);font-size:15px;line-height:1.65;margin-top:12px}
+  .card .foot{margin-top:auto;padding-top:20px;display:flex;align-items:center;gap:10px}
+  .card .price-k{font-family:var(--mono);font-size:12px;letter-spacing:.5px;color:var(--ink)}
+  .card .avail{font-family:var(--sans);font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--primary)}
+
+  /* gilded folio pull-quote */
+  .folio{background:var(--panel);color:var(--canvas);position:relative;overflow:hidden}
+  .folio-in{max-width:1200px;margin:0 auto;padding:var(--section) var(--xl);position:relative}
+  .folio .num{position:absolute;right:6%;top:-8%;font-family:var(--serif);font-weight:300;font-size:40vh;
+    line-height:.7;color:transparent;-webkit-text-stroke:1px rgba(169,139,78,.5);letter-spacing:-6px;pointer-events:none}
+  .folio .goldline{height:1px;width:64px;background:var(--primary);margin-bottom:26px}
+  .folio blockquote{font-family:var(--serif);font-weight:300;font-size:clamp(30px,4.4vw,50px);line-height:1.22;
+    max-width:760px;color:var(--canvas);position:relative;z-index:1}
+  .folio blockquote em{font-style:italic;color:var(--primary)}
+  .folio .attr{font-family:var(--sans);font-size:12px;letter-spacing:2.4px;text-transform:uppercase;
+    color:var(--primary);margin-top:30px}
+
+  /* membership pricing */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--lg);align-items:stretch}
+  .plan{background:var(--surface);border:1px solid var(--hairline);border-radius:2px;padding:34px 30px;
+    display:flex;flex-direction:column;position:relative}
+  .plan.feat{background:#fff;border-color:var(--primary)}
+  .plan .rec{position:absolute;top:-1px;right:-1px;padding:6px 14px;background:var(--primary);color:var(--on-primary);
+    font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+  .plan .tier{font-family:var(--sans);font-size:12px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted)}
+  .plan .price{margin-top:18px;display:flex;align-items:baseline;gap:6px}
+  .plan .price .n{font-family:var(--serif);font-weight:300;font-size:52px;line-height:1;color:var(--ink);letter-spacing:-.5px}
+  .plan .price .per{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .plan .desc{color:var(--muted);font-size:14px;margin-top:14px;min-height:42px}
+  .plan .divide{height:1px;background:var(--hairline);margin:22px 0}
+  .plan ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:26px}
+  .plan li{position:relative;padding-left:22px;font-size:14.5px;color:var(--ink)}
+  .plan li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:1px;background:var(--primary)}
+  .plan li.dim{color:var(--muted)}
+  .plan li.dim::before{background:var(--hairline)}
+  .plan .btn{width:100%;justify-content:center;margin-top:auto}
+
+  /* CTA */
+  .cta{text-align:center}
+  .cta-in{max-width:760px;margin:0 auto}
+  .cta .gold-rule{margin:14px auto 0}
+  .cta h2{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5vw,58px);line-height:1.08;
+    letter-spacing:-.4px;color:var(--ink);margin-top:20px}
+  .cta p{color:var(--muted);margin-top:16px}
+  .cta .row{display:flex;justify-content:center;gap:var(--md);margin-top:34px;flex-wrap:wrap}
+
+  /* footer */
+  footer{background:var(--panel);color:var(--canvas)}
+  .foot-in{max-width:1200px;margin:0 auto;padding:var(--section) var(--xl) 48px}
+  .foot-top{display:flex;gap:var(--xl);flex-wrap:wrap;justify-content:space-between}
+  .foot-brand{max-width:300px}
+  .foot-brand .brand{color:var(--canvas)}
+  .foot-brand p{font-size:14px;color:#b9b1a0;line-height:1.65;margin-top:16px}
+  .foot-cols{display:flex;gap:64px;flex-wrap:wrap}
+  .foot-col h4{font-family:var(--sans);font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--primary);margin-bottom:18px}
+  .foot-col a{display:block;font-size:14px;color:#d7cfbe;margin-bottom:12px;transition:color .2s}
+  .foot-col a:hover{color:var(--canvas)}
+  .foot-bar{margin-top:56px;padding-top:24px;border-top:1px solid rgba(217,207,189,.18);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .foot-bar span{font-family:var(--mono);font-size:12px;color:#b9b1a0;letter-spacing:.4px}
+  .foot-bar .sig b{color:var(--primary)}
+
+  @media (max-width:960px){
+    .editions,.plans{grid-template-columns:1fr 1fr}
+    .stats-in{grid-template-columns:1fr 1fr}
+    .stat:nth-child(-n+2){border-top:none}
+    .stat:nth-child(odd){padding-left:0;border-left:none}
+    .stat:nth-child(n+3){border-top:1px solid var(--hairline)}
+  }
+  @media (max-width:720px){
+    .wrap,.nav-in,.stats-in,.foot-in{padding-left:22px;padding-right:22px}
+    .nav-links{display:none}
+    .hero{padding:80px 0 72px}
+    .hero-grid{grid-template-columns:1fr}
+    .plate{max-width:360px;order:-1}
+    .editions,.plans{grid-template-columns:1fr}
+    section.band{padding:72px 0}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">FOLIO</div>
+    <div class="nav-links"><a href="#">当期</a><a href="#">典藏</a><a href="#">艺术家</a><a href="#">会员</a></div>
+    <div class="nav-right"><a class="btn btn-ghost sm" href="#">预约看样</a></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-kicker">
+          <span class="eyebrow">Éditions · 二〇二六春卷</span>
+          <span class="gold-rule"></span>
+        </div>
+        <h1 class="hero-title">留白，<br>是一件<em>值得收藏</em><br>的作品。</h1>
+        <p class="hero-sub">FOLIO 是一间限量版画与珍本工坊。每一辑只压印一次，手工签边，一版一记。我们相信，一页象牙纸上克制的一道金线，比满版的喧哗更耐看。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#">浏览当期典藏</a>
+          <a class="btn btn-ghost" href="#">成为会员</a>
+        </div>
+        <p class="hero-meta">EST. 2019 · 累计 128 辑 · 全球 40 城藏家</p>
+      </div>
+      <div class="plate">
+        <span class="fol">PL. 001</span>
+        <span class="cap">《晨之象牙》· 铜版 · 手工签边</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-in">
+    <div class="stat"><div class="num">128</div><div class="rule"></div><div class="lab">已发行辑数</div></div>
+    <div class="stat"><div class="num">36</div><div class="rule"></div><div class="lab">合作艺术家</div></div>
+    <div class="stat"><div class="num">1<span style="font-size:24px">/50</span></div><div class="rule"></div><div class="lab">每版限量</div></div>
+    <div class="stat"><div class="num">40</div><div class="rule"></div><div class="lab">藏家所在城市</div></div>
+  </div>
+</div>
+
+<!-- EDITIONS -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">当期典藏</span><span class="gold-rule"></span>
+      <h2>三辑正在压印中。</h2>
+      <p>每一辑从选纸、调墨到签边，全程手作。售罄即封版，不再加印。</p>
+    </div>
+    <div class="editions">
+      <div class="card">
+        <span class="idx">辑 001</span>
+        <h3>象牙与炭<br>Bone &amp; Char</h3>
+        <p>十二幅铜版风景，印在 300 克象牙棉纸上，墨色沉入纤维，像旧书里的插图。</p>
+        <div class="foot"><span class="price-k">¥ 2,800</span><span class="avail">余 9 / 50</span></div>
+      </div>
+      <div class="card">
+        <span class="idx">辑 002</span>
+        <h3>一道金线<br>The Gold Rule</h3>
+        <p>极简线刻系列。全辑仅一处金箔，压在每幅右下的签边处，是这套的落款。</p>
+        <div class="foot"><span class="price-k">¥ 3,600</span><span class="avail">余 4 / 30</span></div>
+      </div>
+      <div class="card">
+        <span class="idx">辑 003</span>
+        <h3>空页<br>Empty Folio</h3>
+        <p>关于留白的一辑。大幅象牙纸上只有一枚烫金页码，献给懂得欣赏空的人。</p>
+        <div class="foot"><span class="price-k">¥ 4,200</span><span class="avail">预定中</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GILDED FOLIO QUOTE -->
+<section class="folio">
+  <div class="folio-in">
+    <div class="num">02</div>
+    <div class="goldline"></div>
+    <blockquote>一版只印一次，<br>售罄之后，<em>空白</em>本身<br>成了作品的一部分。</blockquote>
+    <div class="attr">FOLIO 工坊守则 · 第二条</div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">会员</span><span class="gold-rule"></span>
+      <h2>先于世界，见到每一辑。</h2>
+      <p>会员优先看样、优先预定，并可参加每年一次的封版夜。</p>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <div class="tier">Reader</div>
+        <div class="price"><span class="n">¥0</span><span class="per">/ 年</span></div>
+        <div class="desc">给刚认识象牙纸的你。</div>
+        <div class="divide"></div>
+        <ul>
+          <li>当期电子样册</li>
+          <li>新辑发行通知</li>
+          <li class="dim">不含优先预定</li>
+        </ul>
+        <a class="btn btn-ghost" href="#">免费加入</a>
+      </div>
+      <div class="plan feat">
+        <div class="rec">推荐</div>
+        <div class="tier">Patron</div>
+        <div class="price"><span class="n">¥1,880</span><span class="per">/ 年</span></div>
+        <div class="desc">给认真收藏的你。</div>
+        <div class="divide"></div>
+        <ul>
+          <li>每辑优先预定权</li>
+          <li>专属藏家编号</li>
+          <li>年度封版夜邀请</li>
+          <li>一次免费手工装裱</li>
+        </ul>
+        <a class="btn btn-primary" href="#">成为 Patron</a>
+      </div>
+      <div class="plan">
+        <div class="tier">Collector</div>
+        <div class="price"><span class="n">定制</span></div>
+        <div class="desc">给建立整座书房的你。</div>
+        <div class="divide"></div>
+        <ul>
+          <li>全辑自动留版</li>
+          <li>私人看样与顾问</li>
+          <li>艺术家签名场次</li>
+          <li>专属工坊委托</li>
+        </ul>
+        <a class="btn btn-ghost" href="#">预约洽谈</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band cta">
+  <div class="wrap"><div class="cta-in">
+    <span class="eyebrow">封版将至</span><span class="gold-rule"></span>
+    <h2>辑 002 只剩四版。</h2>
+    <p>一道金线，一次压印，售罄封版。留给懂得留白的人。</p>
+    <div class="row">
+      <a class="btn btn-primary" href="#">预定辑 002</a>
+      <a class="btn btn-ghost" href="#">预约看样</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">FOLIO</div>
+        <p>限量版画与珍本工坊。一版一记，一辑一金。象牙纸负责承载，金线负责签名。</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h4>典藏</h4><a href="#">当期</a><a href="#">往辑</a><a href="#">封版目录</a></div>
+        <div class="foot-col"><h4>工坊</h4><a href="#">关于</a><a href="#">艺术家</a><a href="#">装裱</a></div>
+        <div class="foot-col"><h4>会员</h4><a href="#">权益</a><a href="#">封版夜</a><a href="#">联系</a></div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 FOLIO Éditions · 象牙工坊</span>
+      <span class="sig">Designed by <b>HeiGe-Design</b> · atelier-bone</span>
+    </div>
+  </div>
+</footer>
